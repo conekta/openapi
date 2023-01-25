@@ -1,0 +1,23 @@
+{
+    "snapshotVersion": false,
+    "useRuntimeException": true,
+    "developerEmail": "core@conekta.io",
+    "developerName": "Conekta API Core Team",
+    "developerOrganization": "Conekta, Inc.",
+    "developerOrganizationUrl": "https://www.conekta.io",
+    "artifactUrl": "https://developers.conekta.com/",
+    "artifactVersion": "3.0.3",
+    "modelPackage": "com.conekta.model",
+    "licenseName": "MIT License",
+    "invokerPackage": "com.conekta",
+    "licenseUrl": "https://www.opensource.org/licenses/mit-license.php",
+    "apiPackage": "com.conekta",
+    "artifactDescription": "This is a java library that allows interaction with https://api.conekta.io API.",
+    "artifactId": "ct-conekta-java",
+    "groupId": "io.conekta",
+    "scmConnection": "scm:git:git@github.com:conekta/ct-conekta-java.git",
+    "scmDeveloperConnection": "scm:git:git@github.com:conekta/ct-conekta-java.git",
+    "scmUrl":   "https://github.com/conekta/ct-conekta-java/tree/master",
+    "java-min-version": "11",
+    "library": "okhttp-gson"
+}

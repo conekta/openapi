@@ -1,0 +1,198 @@
+openapi: 3.0.3
+servers:
+  - url: https://api.conekta.io
+info:
+  description: Conekta sdk 
+  version: 1.0.0
+  contact:
+    name: api support client
+    url:  https://github.com/conekta/conekta-python/issues
+    email: engineering@conekta.com
+  title: Conekta API
+  license:
+    name: MIT-LICENSE
+    url: 'https://www.apache.org/licenses/LICENSE-2.0.html'
+paths:
+  /logs:
+    get:
+      operationId: getLogs
+      summary: returns a set of /logs
+      responses:
+        200:
+          description: successful
+          content:
+            application/vnd.conekta-v2.0.0+json:
+              schema:
+                 $ref: '#/components/schemas/logsResponseV2'
+  /customers:
+    post:
+      operationId: createCustomer
+      summary: creates a new customer
+      description: 'The purpose of business is to create and keep a customer, you will learn what elements you need to create a customer.'
+      responses:
+        '200':
+          description: successful operation
+          content:
+             application/vnd.conekta-v2.0.0+json:
+              schema:
+                $ref: '#/components/schemas/CustomerResponse'
+      security:
+        - ApiKeyAuth: []
+      requestBody:
+        $ref: '#/components/requestBodies/Customer'
+
+      parameters:
+        - $ref: '#/components/parameters/CommonLanguageHeader'
+        - $ref: '#/components/parameters/CommonConektaClientUserAgent'
+      
+security:
+  - ApiKeyAuth: []
+components:  
+  parameters:
+    CommonConektaClientUserAgent:
+      in: header
+      name: "X-Conekta-Client-User-Agent"
+      required: true
+      description: metadata
+      schema:
+        type: string
+      
+    CommonLanguageHeader:
+      in: header
+      name: "Accept-Language"
+      description: use for knowing which language to use
+      required: true
+      schema:
+        type: string
+      examples:
+        "es":
+          summary: for spanish request/response
+          value:  "es"
+        "en":
+          summary: for english request/response
+          value:  "en"
+  requestBodies:
+    Customer:
+      description: requested field for customer        
+      content:
+        application/json:
+          schema:  
+            $ref: '#/components/schemas/Customer'
+      
+      required: true
+  securitySchemes:
+    ApiKeyAuth:
+      name: Authorization
+      in: header
+      type: apiKey
+      description: use for api key
+    BasicAuth:
+      type: http
+      scheme: basic
+  schemas:
+    CustomerShippingContacts:
+      title:  Contains the detail of the shipping addresses that the client has active or has used in Conekta
+      properties:
+        phone:
+          type: string
+          example:  "+525511223344"
+        receiver:
+          type: string
+          example:   "Marvin Fuller"
+        between_streets: 
+          type: string
+          example: "Ackerman Crescent"
+    CustomerPaymentSources:
+      title:  Contains details of the payment methods that the customer has active or has used in Conekta
+      required:
+        - "type"
+      properties:
+        "type":
+          type: string
+          example: card
+    logsResponseV2:
+      title: log response for v2 request
+      description: logs model
+      type: object
+      properties:
+        total:
+          description: returns total of rows
+          type: integer
+          example:  250
+      required:
+        - total
+    logsResponseV1:
+      title: log response for v1 request
+      description: logs model
+      properties:
+        id:
+          type: string
+          example:  63cffc8492c57fa73e97d234
+        "object":
+          type: string
+          example: log
+    CustomerResponse:
+      title: customer response
+      description: customer response
+      type: object
+      properties:
+        id:
+          type: string
+          example:  "cus_82634782634"
+        object: 
+          type: string
+          example: "customer"
+
+    Customer:
+      title: a customer
+      description: a customer
+      type: object
+      required:
+        - name
+        - email
+        - phone
+      properties:
+        name:
+          type: string
+          description: client's name
+          example:  miguel
+        email:
+          type: string
+          description: "An email address is a series of customizable characters followed by a universal Internet symbol, the at symbol (@), the name of a host server, and a web domain ending (.mx, .com, .org, . net, etc)."
+          example:  miguel@gmail.com
+        phone:
+          type: string
+          example: "+5215555555555"
+        plan_id:
+          type: string
+          example:  plan_987234823
+          description: Contains the ID of a plan, which could together with name, email and phone create a client directly to a subscription
+        default_shipping_contact_id:
+          type: string
+          example: ship_cont_1a2b3c4d5e6f7g8h
+        corporate:
+          type: boolean
+          example: false
+        payment_sources:
+          type: array
+          items:
+            type: object
+            $ref: '#/components/schemas/CustomerPaymentSources'
+          example: 
+            - type: card
+              token_id: "tok_76238476234"
+            - type: oxxo_recurrent
+        shipping_contacts:
+          type: array
+          items:
+            type: object
+            $ref: '#/components/schemas/CustomerShippingContacts'
+            example:
+              - phone: "+525511223344"
+                receiver:  "Marvin Fuller"
+                between_streets: "Ackerman Crescent"
+        default_payment_source_id:
+          type: string
+          description: "It is a parameter that allows to identify in the response, the Conekta ID of a payment method (payment_id)"
+          example: "src_1a2b3c4d5e6f7g8h"
+                
