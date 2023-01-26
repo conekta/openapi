@@ -1,11 +1,18 @@
-in: header
 name: "X-Conekta-Client-User-Agent"
+in: header
 required: true
 description: metadata
-example: "{\"publisher\" : \"conekta\", \"lang\": \"go\", \"bindings_version\": \"4.0.0\"}"
+examples:
+  go:
+    value:  "{\"publisher\" : \"conekta\", \"lang\": \"go\", \"bindings_version\": \"4.0.0\"}"
+  java:
+    value:  "{\"publisher\" : \"conekta\", \"lang\": \"java\", \"bindings_version\": \"4.0.0\"}"
 schema:
   type: object
   readOnly: true
+  title: "conektaClientUserAgent"
+  x-disabled-constructor: true
+  x-lang-value: true
   properties:
     publisher:
       type: string
@@ -13,8 +20,9 @@ schema:
       readOnly: true
     lang:
       type: string
-      default: VALUE_TO_REPLACE
+      default: default
       readOnly: true
+      x-lang-value: true
     bindings_version:
       type: string
       default: "4.0.0"
