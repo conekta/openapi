@@ -1,0 +1,12 @@
+    
+title: log response for v2 request
+description: logs model
+type: object
+properties:
+  total:
+    description: returns total of rows
+    type: integer
+    format: int32
+    example:  250
+required:
+  - total

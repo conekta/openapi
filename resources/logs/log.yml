@@ -1,0 +1,13 @@
+get:
+  operationId: getLogs
+  summary: returns a set of /logs
+  responses:
+    200:
+      description: successful
+      content:
+        application/vnd.conekta-v2.0.0+json:
+          schema:
+              $ref: '../../schemas/logs/logsResponseV2.yml'
+  parameters:
+    - $ref: '../../parameters/commons/headers/accept_language.yml'
+    - $ref: '../../parameters/commons/headers/conekta_client_user_agent.yml'

@@ -1,0 +1,52 @@
+title: a customer
+description: a customer
+type: object
+required:
+  - name
+  - email
+  - phone
+properties:
+  name:
+    type: string
+    description: client's name
+    example:  miguel
+  email:
+    type: string
+    description: "An email address is a series of customizable characters followed by a universal Internet symbol, the at symbol (@), the name of a host server, and a web domain ending (.mx, .com, .org, . net, etc)."
+    example:  miguel@gmail.com
+  phone:
+    type: string
+    example: "+5215555555555"
+  plan_id:
+    type: string
+    example:  plan_987234823
+    description: Contains the ID of a plan, which could together with name, email and phone create a client directly to a subscription
+  default_shipping_contact_id:
+    type: string
+    example: ship_cont_1a2b3c4d5e6f7g8h
+  corporate:
+    type: boolean
+    example: false
+  payment_sources:
+    type: array
+    items:
+      type: object
+      $ref: './customer_payment_sources.yml'
+    example: 
+      - type: card
+        token_id: "tok_76238476234"
+      - type: oxxo_recurrent
+  shipping_contacts:
+    type: array
+    items:
+      type: object
+      $ref: './customer_shipping_contacts.yml'
+      example:
+        - phone: "+525511223344"
+          receiver:  "Marvin Fuller"
+          between_streets: "Ackerman Crescent"
+  default_payment_source_id:
+    type: string
+    description: "It is a parameter that allows to identify in the response, the Conekta ID of a payment method (payment_id)"
+    example: "src_1a2b3c4d5e6f7g8h"
+    

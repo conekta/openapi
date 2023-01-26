@@ -1,0 +1,11 @@
+title:  Contains the detail of the shipping addresses that the client has active or has used in Conekta
+properties:
+  phone:
+    type: string
+    example:  "+525511223344"
+  receiver:
+    type: string
+    example:   "Marvin Fuller"
+  between_streets: 
+    type: string
+    example: "Ackerman Crescent"

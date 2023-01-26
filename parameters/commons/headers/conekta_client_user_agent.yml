@@ -1,0 +1,26 @@
+in: header
+name: "X-Conekta-Client-User-Agent"
+required: true
+description: metadata
+example: "{\"publisher\" : \"conekta\", \"lang\": \"go\", \"bindings_version\": \"4.0.0\"}"
+schema:
+  type: object
+  readOnly: true
+  properties:
+    publisher:
+      type: string
+      default:  "conekta"
+      readOnly: true
+    lang:
+      type: string
+      default: VALUE_TO_REPLACE
+      readOnly: true
+    bindings_version:
+      type: string
+      default: "4.0.0"
+      readOnly: true
+  required:
+    - lang
+    - bindings_version
+    - publisher
+  nullable: false

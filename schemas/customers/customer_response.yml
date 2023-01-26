@@ -1,0 +1,10 @@
+title: customer response
+description: customer response
+type: object
+properties:
+  id:
+    type: string
+    example:  "cus_82634782634"
+  object: 
+    type: string
+    example: "customer"

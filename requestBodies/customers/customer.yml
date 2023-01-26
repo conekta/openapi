@@ -1,0 +1,6 @@
+description: requested field for customer        
+content:
+  application/json:
+    schema:  
+      $ref: '../../schemas/customers/customer.yml'
+required: true
