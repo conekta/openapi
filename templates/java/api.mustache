@@ -5,6 +5,7 @@ package {{package}};
 import {{invokerPackage}}.ApiCallback;
 import {{invokerPackage}}.ApiClient;
 import {{invokerPackage}}.ApiException;
+import org.json.JSONObject;
 {{#dynamicOperations}}
 import {{invokerPackage}}.ApiOperation;
 {{/dynamicOperations}}
@@ -58,6 +59,17 @@ public class {{classname}} {
     private ApiClient localVarApiClient;
     private int localHostIndex;
     private String localCustomBaseUrl;
+
+    JSONObject userAgent = getUserAgent();
+
+    private JSONObject getUserAgent()  {
+        JSONObject userAgent = new JSONObject();
+        userAgent.put("bindings_version", "{{artifactVersion}}");
+        userAgent.put("lang", "java");
+        userAgent.put("lang_version", System.getProperty("java.version"));
+        userAgent.put("publisher", "conekta");
+        return userAgent;
+    }
 
     public {{classname}}() {
         this(Configuration.getDefaultApiClient());
@@ -202,7 +214,7 @@ public class {{classname}} {
             localVarHeaderParams.put("Accept", localVarAccept);
         }
 
-        localVarHeaderParams.put("X-Conekta-User-agent", "{\"lang\": \"java\"}");
+        localVarHeaderParams.put("X-Conekta-User-agent", userAgent.toString());
 
         final String[] localVarContentTypes = {
             {{#consumes}}
