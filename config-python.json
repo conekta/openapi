@@ -1,0 +1,8 @@
+{
+  "packageName": "conekta",
+  "generateSourceCodeOnly": "false",
+  "packageVersion": "2.6.2",
+  "packageUrl": "https://developers.conekta.com/",
+  "projectName": "conekta-python",
+  "templateDir": "templates/python"
+}

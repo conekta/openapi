@@ -22,8 +22,7 @@
     "files": {
         "AUTHORS.md" : {}
     },
-    "templateDir": "templates/java",
     "javaMinVersion" : 11,
     "swagger1AnnotationLibrary": true,
-    "javaxPackage" : "javax"
+    "templateDir": "templates/java"
 }
