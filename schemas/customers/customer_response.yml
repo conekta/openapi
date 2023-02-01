@@ -2,9 +2,63 @@ title: customer response
 description: customer response
 type: object
 properties:
+  antifraud_info:
+    type: object
+    nullable: true
+    properties:
+      first_paid_at:
+        type: integer
+        example: 1485151007
+      account_created_at:
+        type: integer
+        example: 1484040996
+  corporate:
+    type: boolean
+  created_at:
+    type: integer
+    format: int64
+    example: 1485151007
+  custom_reference:
+    type: string
+  default_shipping_contact_id:
+    type: string
+  default_payment_source_id:
+    type: string
+    nullable: true
+    example: src_2tHJfJ79KyUwpxTio
+  email:
+    type: string
+    example: Felipe@gmail.com
+    format: email
   id:
     type: string
-    example:  "cus_82634782634"
+    example:  "cus_2tHJfJ79KyUwpxTik"
+  livemode:
+    type: boolean
+    example: true
+  name: 
+    type: string
+    example: Felipe
   object: 
     type: string
     example: "customer"
+  payment_sources:
+    allOf:
+      - $ref: ../../schemas/pagination/pagination.yml
+      - type: object
+        properties:
+          data:
+            type: array
+            items: {}
+  phone:
+    type: string
+  shipping_contacts:
+    allOf:
+       - $ref: ../../schemas/pagination/pagination.yml
+       - type: object
+         properties:
+          data:
+            type: array
+            items: {}
+
+  

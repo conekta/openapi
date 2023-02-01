@@ -4,6 +4,10 @@ description: use for knowing which language to use
 required: true
 schema:
   type: string
+  enum: [ 
+    "es", 
+    "en"
+  ]
 examples:
   "es":
     summary: for spanish request/response

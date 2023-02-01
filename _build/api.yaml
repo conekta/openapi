@@ -1,0 +1,492 @@
+openapi: 3.0.3
+servers:
+  - url: 'https://api.conekta.io'
+info:
+  description: Conekta sdk
+  version: 1.0.0
+  contact:
+    name: api support client
+    url: 'https://github.com/conekta/openapi/issues'
+    email: engineering@conekta.com
+  title: Conekta API
+  license:
+    name: MIT-LICENSE
+    url: 'https://www.apache.org/licenses/LICENSE-2.0.html'
+paths:
+  /customers:
+    post:
+      operationId: createCustomer
+      summary: creates a new customer
+      description: 'The purpose of business is to create and keep a customer, you will learn what elements you need to create a customer.'
+      responses:
+        '200':
+          description: successful operation
+          content:
+            application/vnd.conekta-v2.0.0+json:
+              schema:
+                title: customer response
+                description: customer response
+                type: object
+                properties:
+                  antifraud_info:
+                    type: object
+                    nullable: true
+                    properties:
+                      first_paid_at:
+                        type: integer
+                        example: 1485151007
+                      account_created_at:
+                        type: integer
+                        example: 1484040996
+                  corporate:
+                    type: boolean
+                  created_at:
+                    type: integer
+                    format: int64
+                    example: 1485151007
+                  custom_reference:
+                    type: string
+                  default_shipping_contact_id:
+                    type: string
+                  default_payment_source_id:
+                    type: string
+                    nullable: true
+                    example: src_2tHJfJ79KyUwpxTio
+                  email:
+                    type: string
+                    example: Felipe@gmail.com
+                    format: email
+                  id:
+                    type: string
+                    example: cus_2tHJfJ79KyUwpxTik
+                  livemode:
+                    type: boolean
+                    example: true
+                  name:
+                    type: string
+                    example: Felipe
+                  object:
+                    type: string
+                    example: customer
+                  payment_sources:
+                    allOf:
+                      - title: pagination metadata
+                        description: pagination metadata
+                        type: object
+                        required:
+                          - object
+                          - has_more
+                          - total
+                        properties:
+                          object:
+                            type: string
+                            example: list
+                          has_more:
+                            type: boolean
+                            example: false
+                          total:
+                            type: integer
+                            format: int32
+                      - type: object
+                        properties:
+                          data:
+                            type: array
+                            items: {}
+                  phone:
+                    type: string
+                  shipping_contacts:
+                    allOf:
+                      - $ref: '#/paths/~1customers/post/responses/200/content/application~1vnd.conekta-v2.0.0%2Bjson/schema/properties/payment_sources/allOf/0'
+                      - type: object
+                        properties:
+                          data:
+                            type: array
+                            items: {}
+        '422':
+          description: parameter validation error
+          content:
+            application/vnd.conekta-v2.0.0+json:
+              schema:
+                $ref: '#/paths/~1logs/get/responses/401/content/application~1vnd.conekta-v2.0.0%2Bjson/schema'
+      security:
+        - ApiKeyAuth: []
+      requestBody:
+        description: requested field for customer
+        content:
+          application/json:
+            schema:
+              title: a customer
+              description: a customer
+              type: object
+              required:
+                - name
+                - email
+                - phone
+              properties:
+                name:
+                  type: string
+                  description: client's name
+                  example: miguel
+                email:
+                  type: string
+                  description: 'An email address is a series of customizable characters followed by a universal Internet symbol, the at symbol (@), the name of a host server, and a web domain ending (.mx, .com, .org, . net, etc).'
+                  example: miguel@gmail.com
+                phone:
+                  type: string
+                  example: '+5215555555555'
+                plan_id:
+                  type: string
+                  example: plan_987234823
+                  description: 'Contains the ID of a plan, which could together with name, email and phone create a client directly to a subscription'
+                default_shipping_contact_id:
+                  type: string
+                  example: ship_cont_1a2b3c4d5e6f7g8h
+                corporate:
+                  type: boolean
+                  example: false
+                custom_reference:
+                  type: string
+                  nullable: true
+                payment_sources:
+                  type: array
+                  items:
+                    type: object
+                    title: Contains details of the payment methods that the customer has active or has used in Conekta
+                    required:
+                      - type
+                    properties:
+                      type:
+                        type: string
+                        example: card
+                  example:
+                    - type: card
+                      token_id: tok_76238476234
+                    - type: oxxo_recurrent
+                shipping_contacts:
+                  type: array
+                  items:
+                    title: Contains the detail of the shipping addresses that the client has active or has used in Conekta
+                    properties:
+                      phone:
+                        type: string
+                        example: '+525511223344'
+                      receiver:
+                        type: string
+                        example: Marvin Fuller
+                      between_streets:
+                        type: string
+                        example: Ackerman Crescent
+                      address:
+                        type: object
+                        properties:
+                          street1:
+                            type: string
+                            example: avenida siempre viva
+                          street2:
+                            type: string
+                            example: fake street
+                          postal_code:
+                            type: string
+                            example: '06100'
+                          city:
+                            type: string
+                            example: Ciudad de Mexico
+                          state:
+                            type: string
+                            example: Ciudad de Mexico
+                          country:
+                            type: string
+                            example: MX
+                          residential:
+                            type: boolean
+                            example: true
+                      created_at:
+                        type: integer
+                      parent_id:
+                        type: string
+                      is_default:
+                        type: boolean
+                        example: false
+                      deleted:
+                        type: boolean
+                        example: false
+                antifraud_info:
+                  type: object
+                  nullable: true
+                  properties:
+                    account_created_at:
+                      type: integer
+                      example: 1484040996
+                    first_paid_at:
+                      type: integer
+                      example: 1485151007
+                default_payment_source_id:
+                  type: string
+                  description: 'It is a parameter that allows to identify in the response, the Conekta ID of a payment method (payment_id)'
+                  example: src_1a2b3c4d5e6f7g8h
+        required: true
+      parameters:
+        - $ref: '#/paths/~1logs/get/parameters/0'
+  /logs:
+    get:
+      operationId: getLogs
+      summary: returns a set of /logs
+      responses:
+        '200':
+          description: successful
+          content:
+            application/vnd.conekta-v2.0.0+json:
+              schema:
+                title: log response for v2 request
+                description: logs model
+                type: object
+                properties:
+                  total:
+                    description: Number of the number of records in the list
+                    type: integer
+                    format: int32
+                    example: 250
+                    readonly: true
+                  has_more:
+                    description: 'True, if there are more pages.'
+                    type: boolean
+                    readonly: true
+                  object:
+                    description: The object type
+                    type: string
+                    readonly: true
+                  next_page_url:
+                    description: URL of the next page.
+                    type: string
+                    readonly: true
+                    nullable: true
+                  previous_page_url:
+                    description: Url of the previous page.
+                    type: string
+                    readonly: true
+                    nullable: true
+                  data:
+                    description: set to page results.
+                    nullable: true
+                    type: array
+                    items: {}
+                required:
+                  - has_more
+                  - total
+                  - object
+        '401':
+          description: authentication error
+          content:
+            application/vnd.conekta-v2.0.0+json:
+              schema:
+                title: authentication error
+                description: err model
+                type: object
+                properties:
+                  log_id:
+                    description: log id
+                    type: string
+                    example: 507f1f77bcf86cd799439011
+                    format: hex
+                    nullable: true
+                  type:
+                    type: string
+                    example: authentication_error
+                  object:
+                    type: string
+                    example: error
+                  details:
+                    type: array
+                    items:
+                      type: object
+                      title: Contains details of the error
+                      properties:
+                        code:
+                          type: string
+                          example: conekta.errors.authentication.missing_key
+                        param:
+                          type: string
+                          nullable: true
+                        message:
+                          type: string
+                          example: Acceso no autorizado.
+                        debug_message:
+                          type: string
+                          example: Please include your access key in your request.
+      parameters:
+        - in: header
+          name: Accept-Language
+          description: use for knowing which language to use
+          required: true
+          schema:
+            type: string
+            enum:
+              - es
+              - en
+          examples:
+            es:
+              summary: for spanish request/response
+              value: es
+            en:
+              summary: for english request/response
+              value: en
+  '/logs/{id}':
+    get:
+      operationId: getLogById
+      summary: Info for a specific log
+      responses:
+        '200':
+          description: successful
+          content:
+            application/vnd.conekta-v2.0.0+json:
+              schema:
+                title: log response for v2 request
+                description: log model
+                type: object
+                properties:
+                  created_at:
+                    type: integer
+                    format: int64
+                    example: 1661445644
+                  id:
+                    type: string
+                    example: 6307a60c41de27127515a575
+                  ip_address:
+                    type: string
+                    format: ipv4
+                    example: 54.235.131.48
+                  livemode:
+                    type: boolean
+                    example: true
+                  loggable_id:
+                    type: string
+                    nullable: true
+                    example: ord_87632467832
+                  loggable_type:
+                    type: string
+                    nullable: true
+                    example: order
+                  method:
+                    type: string
+                    example: POST
+                  oauth_token_id:
+                    type: string
+                    nullable: true
+                  query_string:
+                    type: object
+                    additionalProperties:
+                      type: string
+                    example:
+                      limit: '20'
+                  related:
+                    type: string
+                    example: FilterResource
+                  request_body:
+                    type: object
+                    additionalProperties:
+                      type: object
+                    example:
+                      filters:
+                        amount:
+                          amount_from: 0
+                          amount_to: 0
+                        created_at:
+                          date_from: 1653627600
+                          date_to: 1661489999
+                        filterName: Payments
+                        search_term: null
+                        sort_by: created_at
+                        sort_direction: desc
+                        status: []
+                        type: []
+                      id: 78e65162-0f37-4942-847c-9bf7081d54c2
+                      page: '0'
+                      report_type: charges
+                      testMode: false
+                  request_headers:
+                    type: object
+                    additionalProperties:
+                      type: string
+                    example:
+                      Accept: application/vnd.conekta-v2.0.0+json
+                      Accept-Encoding: 'gzip, deflate, br'
+                      Accept-Language: 'es-419, es; q=0.9, en; q=0.8'
+                      Activitypermission: 'orders:read'
+                      Apiversion: 2.0.0
+                  response_body:
+                    type: object
+                    additionalProperties:
+                      type: object
+                  response_headers:
+                    type: object
+                    additionalProperties:
+                      type: string
+                    example:
+                      Access-Control-Allow-Headers: 'Content-Type, Depth, User-Agent, X-File-Size, X-Requested-With, If-Modified-Since, X-File-Name, Cache-Control, X-Prototype-Version, Authorization, Accept, Date, Version, X-Forwarded-For, Host, Connection, X-Forwarded-Proto, X-Forwarded-Port, X-Amzn-Trace-Id, Accept-Encoding, Accept-Language, Referer, Origin, Activitypermission, Apiversion, Entityid, Livemode, Sec-Ch-Ua, Sec-Ch-Ua-Mobile, Sec-Ch-Ua-Platform, Sec-Fetch-Dest, Sec-Fetch-Mode, Sec-Fetch-Site, X-Datadog-Parent-Id, X-Datadog-Sampling-Priority, X-Datadog-Trace-Id, X-Forwarded-Host, X-Forwarded-Server, X-Real-Ip'
+                      Access-Control-Allow-Methods: 'POST, GET, PUT, OPTIONS'
+                      Access-Control-Allow-Origin: '*'
+                      Access-Control-Max-Age: '1728000'
+                      Conekta-Media-Type: conekta-v2.0.0; format=application/json
+                      Content-Type: application/json; charset=utf-8
+                      Referrer-Policy: strict-origin-when-cross-origin
+                      Strict-Transport-Security: max-age=31536000; includeSubDomains
+                      X-Content-Type-Options: nosniff
+                      X-Download-Options: noopen
+                      X-Frame-Options: SAMEORIGIN
+                      X-Permitted-Cross-Domain-Policies: none
+                      X-XSS-Protection: 1; mode=block
+                  searchable_tags:
+                    type: array
+                    items:
+                      type: string
+                    example:
+                      - 6307a60c41de27127515a575
+                      - 6307a60c41de27127515a571
+                  status:
+                    type: string
+                    examples:
+                      '200':
+                        summary: successful
+                        value: 200
+                      '500':
+                        summary: unsuccessful
+                        value: 500
+                  updated_at:
+                    type: string
+                    format: date
+                    example: '2022-08-25T16:40:44.887Z'
+                  url:
+                    type: string
+                    example: /filter_resource
+                  user_account_id:
+                    type: string
+                    example: 5a0b7001edbb6e1725b0b2c6
+                  version:
+                    type: string
+                    example: 2.0.0
+        '401':
+          $ref: '#/paths/~1logs/get/responses/401'
+        '404':
+          description: not found entity
+          content:
+            application/vnd.conekta-v2.0.0+json:
+              schema:
+                $ref: '#/paths/~1logs/get/responses/401/content/application~1vnd.conekta-v2.0.0%2Bjson/schema'
+      parameters:
+        - in: path
+          name: id
+          description: log identifier
+          required: true
+          schema:
+            type: string
+          example: 6307a60c41de27127515a575
+        - $ref: '#/paths/~1logs/get/parameters/0'
+security:
+  - ApiKeyAuth: []
+components:
+  securitySchemes:
+    ApiKeyAuth:
+      name: Authorization
+      in: header
+      type: apiKey
+      description: use for api key

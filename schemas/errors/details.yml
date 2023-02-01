@@ -1,0 +1,14 @@
+title:  Contains details of the error
+properties:
+  code:
+    type: string
+    example: conekta.errors.authentication.missing_key
+  param:
+    type: string
+    nullable: true
+  message:
+    type: string
+    example: "Acceso no autorizado."
+  debug_message:
+    type: string
+    example: "Please include your access key in your request."

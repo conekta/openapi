@@ -27,6 +27,9 @@ properties:
   corporate:
     type: boolean
     example: false
+  custom_reference:
+    type: string
+    nullable: true
   payment_sources:
     type: array
     items:
@@ -39,12 +42,17 @@ properties:
   shipping_contacts:
     type: array
     items:
-      type: object
       $ref: './customer_shipping_contacts.yml'
-      example:
-        - phone: "+525511223344"
-          receiver:  "Marvin Fuller"
-          between_streets: "Ackerman Crescent"
+  antifraud_info:
+    type: object
+    nullable: true
+    properties:
+      account_created_at:
+        type: integer
+        example: 1484040996
+      first_paid_at:
+        type: integer
+        example: 1485151007
   default_payment_source_id:
     type: string
     description: "It is a parameter that allows to identify in the response, the Conekta ID of a payment method (payment_id)"

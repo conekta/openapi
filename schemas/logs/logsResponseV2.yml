@@ -4,9 +4,36 @@ description: logs model
 type: object
 properties:
   total:
-    description: returns total of rows
+    description: Number of the number of records in the list
     type: integer
     format: int32
     example:  250
+    readonly: true
+  has_more: 
+    description: True, if there are more pages.
+    type: boolean
+    readonly: true
+  "object":
+    description: The object type
+    type: string
+    readonly: true
+  next_page_url: 
+    description: URL of the next page.
+    type: string
+    readonly: true
+    nullable: true
+  previous_page_url:
+    description: Url of the previous page.
+    type: string
+    readonly: true
+    nullable: true
+  data:
+    description: set to page results.
+    nullable: true
+    type: array
+    items: {}
+
 required:
+  - has_more
   - total
+  - object

@@ -1,0 +1,21 @@
+title: authentication error
+description: err model
+type: object
+properties:
+  log_id:
+    description: log id
+    type: string
+    example:  "507f1f77bcf86cd799439011"
+    format: hex
+    nullable: true
+  type:
+    type: string
+    example: authentication_error
+  object:
+    type: string
+    example: error
+  details:
+    type: array
+    items:
+      type: object
+      $ref: './details.yml'

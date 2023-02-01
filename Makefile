@@ -1,6 +1,10 @@
+merge:
+	swagger-cli bundle api.yaml --outfile _build/api.yaml --type yaml
+	
 python:
 	npx @openapitools/openapi-generator-cli generate -i  api.yaml -g python -o conekta-python -c config-python.json   
 
 java:
-	npx @openapitools/openapi-generator-cli generate -i  api.yaml -g java -o conekta-java  -c config-java.json    --global-property modelDocs=false \
-		--global-property modelTests=false
+	mkdir -p conekta-java && cp .openapi-generator-ignore conekta-java/.openapi-generator-ignore &&   \
+	npx @openapitools/openapi-generator-cli generate -i  api.yaml -g java -o conekta-java    \
+	-c config-java.json  

@@ -1,0 +1,12 @@
+git_push.sh
+.travis.yml
+build.sbt
+build.gradle
+gradle.properties
+gradlew
+gradle
+gradlew.bat
+settings.gradle
+gradle/
+README.md
+AndroidManifest.xml

@@ -6,17 +6,19 @@ info:
   version: 1.0.0
   contact:
     name: api support client
-    url:  https://github.com/conekta/conekta-python/issues
+    url:  https://github.com/conekta/openapi/issues
     email: engineering@conekta.com
   title: Conekta API
   license:
     name: MIT-LICENSE
     url: 'https://www.apache.org/licenses/LICENSE-2.0.html'
 paths:
-  /logs:
-     $ref: "./resources/logs/log.yml"
   /customers:
     $ref: "./resources/customers/customer.yml"
+  /logs:
+     $ref: "./resources/logs/log.yml"
+  /logs/{id}:
+    $ref: "./resources/logs/log_by_id.yml"
 security:
   - ApiKeyAuth: []
 components:  
