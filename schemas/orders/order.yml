@@ -1,0 +1,63 @@
+title: a order
+description: a order
+type: object
+properties:
+  currency:
+    type: string
+    description: >-
+       Currency with which the payment will be made. It uses the 3-letter code of the [International Standard ISO 4217.](https://es.wikipedia.org/wiki/ISO_4217)
+    example:  "MXN"
+    maxLength: 3
+  customer_info:
+    type: object
+    properties:
+      customer_id:
+        type: string
+        example: "cus_23874283647"
+      name:
+        type: string
+        example: "DevTest"
+      email:
+        type: string
+        format: email
+        example: test@conekta.com
+      phone:
+        type: string
+        example: "5522997233"
+      corporate:
+        type: boolean
+  line_items:
+    type: array
+    items:
+      type: object
+      properties:
+        description:
+          type: string
+          maxLength: 250
+        sku:
+          type: string
+        name:
+          type: string
+          example: "Box of Cohiba S1s"
+        unit_price: 
+          type: integer
+          format: int32
+          example: 20000
+        quantity:
+          type: integer
+          format: int32
+          example: 1
+        tags:
+          type: array
+          items:
+            type: string
+        brand:
+          type: string
+        metadata:
+          type: object
+          additionalProperties:
+            type: string
+
+
+
+

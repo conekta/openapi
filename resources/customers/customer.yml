@@ -11,11 +11,12 @@ post:
             $ref: '../../schemas/customers/customer_response.yml'
     422:
      $ref: '../errors/422.yml'
-
+    401:
+     $ref: '../errors/401.yml'
   security:
     - ApiKeyAuth: []
   requestBody:
-    $ref: '../../requestBodies/customers/customer.yml'
+   $ref: '../../requestBodies/customers/customer.yml'
 
   parameters:
     - $ref: '../../parameters/commons/headers/accept_language.yml'

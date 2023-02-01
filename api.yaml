@@ -19,6 +19,8 @@ paths:
      $ref: "./resources/logs/log.yml"
   /logs/{id}:
     $ref: "./resources/logs/log_by_id.yml"
+  /orders:
+    $ref: "./resources/orders/order.yml"
 security:
   - ApiKeyAuth: []
 components:  

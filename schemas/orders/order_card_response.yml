@@ -1,0 +1,19 @@
+title: order response
+description: order response
+allOf:
+  - $ref: ./order_common.yml
+  - type: object
+    properties:
+      payment_method:
+        type: object
+        properties:
+          name:
+            type: string
+            example: "Fulanito Perez"
+          exp_month:
+            type: string
+            example: "02"
+          exp_year:
+            type: string
+            example: "30"
+  

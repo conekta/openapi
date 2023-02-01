@@ -102,12 +102,10 @@ paths:
                           data:
                             type: array
                             items: {}
+        '401':
+          $ref: '#/paths/~1logs/get/responses/401'
         '422':
-          description: parameter validation error
-          content:
-            application/vnd.conekta-v2.0.0+json:
-              schema:
-                $ref: '#/paths/~1logs/get/responses/401/content/application~1vnd.conekta-v2.0.0%2Bjson/schema'
+          $ref: '#/paths/~1orders/post/responses/422'
       security:
         - ApiKeyAuth: []
       requestBody:
@@ -246,34 +244,30 @@ paths:
                     type: integer
                     format: int32
                     example: 250
-                    readonly: true
+                    readOnly: true
                   has_more:
                     description: 'True, if there are more pages.'
                     type: boolean
-                    readonly: true
+                    readOnly: true
                   object:
                     description: The object type
                     type: string
-                    readonly: true
+                    readOnly: true
                   next_page_url:
                     description: URL of the next page.
                     type: string
-                    readonly: true
+                    readOnly: true
                     nullable: true
                   previous_page_url:
                     description: Url of the previous page.
                     type: string
-                    readonly: true
+                    readOnly: true
                     nullable: true
                   data:
                     description: set to page results.
                     nullable: true
                     type: array
                     items: {}
-                required:
-                  - has_more
-                  - total
-                  - object
         '401':
           description: authentication error
           content:
@@ -444,16 +438,9 @@ paths:
                       - 6307a60c41de27127515a571
                   status:
                     type: string
-                    examples:
-                      '200':
-                        summary: successful
-                        value: 200
-                      '500':
-                        summary: unsuccessful
-                        value: 500
+                    example: 200
                   updated_at:
                     type: string
-                    format: date
                     example: '2022-08-25T16:40:44.887Z'
                   url:
                     type: string
@@ -480,6 +467,151 @@ paths:
           schema:
             type: string
           example: 6307a60c41de27127515a575
+        - $ref: '#/paths/~1logs/get/parameters/0'
+  /orders:
+    post:
+      operationId: createOrder
+      summary: creates a new order
+      description: Create a new order.
+      responses:
+        '200':
+          description: successful operation
+          content:
+            application/vnd.conekta-v2.0.0+json:
+              schema:
+                oneOf:
+                  - title: order response
+                    description: order response
+                    allOf:
+                      - title: orders fields common
+                        description: orders fields common
+                        type: object
+                        properties:
+                          object:
+                            type: string
+                            example: charge
+                          id:
+                            type: string
+                            example: 62bce95741de276186407e41
+                          livemode:
+                            type: boolean
+                          created_at:
+                            type: integer
+                            format: int64
+                            example: '1656547671'
+                      - type: object
+                        properties:
+                          payment_method:
+                            type: object
+                            properties:
+                              service_name:
+                                type: string
+                                example: OxxoPay
+                              barcode_url:
+                                type: string
+                                example: 'https://s3.amazonaws.com/cash_payment_barcodes/sandbox_reference.png'
+                  - title: order response
+                    description: order response
+                    allOf:
+                      - $ref: '#/paths/~1orders/post/responses/200/content/application~1vnd.conekta-v2.0.0%2Bjson/schema/oneOf/0/allOf/0'
+                      - type: object
+                        properties:
+                          payment_method:
+                            type: object
+                            properties:
+                              name:
+                                type: string
+                                example: Fulanito Perez
+                              exp_month:
+                                type: string
+                                example: '02'
+                              exp_year:
+                                type: string
+                                example: '30'
+              examples:
+                cash:
+                  value:
+                    id: 62bce95741de276186407e41
+                    livemode: true
+                card:
+                  value:
+                    id: 63dab7d00558720001bb3c7d
+                    livemode: true
+        '401':
+          $ref: '#/paths/~1logs/get/responses/401'
+        '422':
+          description: parameter validation error
+          content:
+            application/vnd.conekta-v2.0.0+json:
+              schema:
+                $ref: '#/paths/~1logs/get/responses/401/content/application~1vnd.conekta-v2.0.0%2Bjson/schema'
+      security:
+        - ApiKeyAuth: []
+      requestBody:
+        description: requested field for order
+        content:
+          application/json:
+            schema:
+              title: a order
+              description: a order
+              type: object
+              properties:
+                currency:
+                  type: string
+                  description: 'Currency with which the payment will be made. It uses the 3-letter code of the [International Standard ISO 4217.](https://es.wikipedia.org/wiki/ISO_4217)'
+                  example: MXN
+                  maxLength: 3
+                customer_info:
+                  type: object
+                  properties:
+                    customer_id:
+                      type: string
+                      example: cus_23874283647
+                    name:
+                      type: string
+                      example: DevTest
+                    email:
+                      type: string
+                      format: email
+                      example: test@conekta.com
+                    phone:
+                      type: string
+                      example: '5522997233'
+                    corporate:
+                      type: boolean
+                line_items:
+                  type: array
+                  items:
+                    type: object
+                    properties:
+                      description:
+                        type: string
+                        maxLength: 250
+                      sku:
+                        type: string
+                      name:
+                        type: string
+                        example: Box of Cohiba S1s
+                      unit_price:
+                        type: integer
+                        format: int32
+                        example: 20000
+                      quantity:
+                        type: integer
+                        format: int32
+                        example: 1
+                      tags:
+                        type: array
+                        items:
+                          type: string
+                      brand:
+                        type: string
+                      metadata:
+                        type: object
+                        additionalProperties:
+                          type: string
+        required: true
+      parameters:
         - $ref: '#/paths/~1logs/get/parameters/0'
 security:
   - ApiKeyAuth: []

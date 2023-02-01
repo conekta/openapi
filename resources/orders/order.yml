@@ -1,0 +1,30 @@
+post:
+  operationId: createOrder
+  summary: creates a new order
+  description: 'Create a new order.'
+  responses:
+    '200':
+      description: successful operation
+      content:
+        application/vnd.conekta-v2.0.0+json:
+          schema:
+            oneOf:
+              - $ref: '../../schemas/orders/order_cash_response.yml'
+              - $ref: '../../schemas/orders/order_card_response.yml'
+          examples:
+            cash:
+              $ref: ../../schemas/orders/examples/order_cash.yml
+            card:
+              $ref: ../../schemas/orders/examples/order_card.yml
+    422:
+     $ref: '../errors/422.yml'
+    401:
+     $ref: '../errors/401.yml'
+
+  security:
+    - ApiKeyAuth: []
+  requestBody:
+    $ref: '../../requestBodies/orders/order.yml'
+
+  parameters:
+    - $ref: '../../parameters/commons/headers/accept_language.yml'

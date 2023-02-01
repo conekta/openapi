@@ -108,13 +108,7 @@ properties:
     example: ["6307a60c41de27127515a575", "6307a60c41de27127515a571"]
   status:
     type: string
-    examples:
-      200:
-        summary: successful
-        value: 200
-      500:
-        summary: unsuccessful
-        value: 500
+    example: 200
   updated_at:
     type: string
     example: "2022-08-25T16:40:44.887Z"

@@ -8,32 +8,27 @@ properties:
     type: integer
     format: int32
     example:  250
-    readonly: true
+    readOnly: true
   has_more: 
     description: True, if there are more pages.
     type: boolean
-    readonly: true
+    readOnly: true
   "object":
     description: The object type
     type: string
-    readonly: true
+    readOnly: true
   next_page_url: 
     description: URL of the next page.
     type: string
-    readonly: true
+    readOnly: true
     nullable: true
   previous_page_url:
     description: Url of the previous page.
     type: string
-    readonly: true
+    readOnly: true
     nullable: true
   data:
     description: set to page results.
     nullable: true
     type: array
     items: {}
-
-required:
-  - has_more
-  - total
-  - object
