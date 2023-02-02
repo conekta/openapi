@@ -25,5 +25,6 @@
     "javaMinVersion" : 11,
     "swagger1AnnotationLibrary": true,
     "javaxPackage" : "javax",
-    "templateDir": "templates/java"
+    "templateDir": "templates/java",
+    "disallowAdditionalPropertiesIfNotPresent" : false
 }

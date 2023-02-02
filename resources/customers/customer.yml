@@ -9,10 +9,15 @@ post:
         application/vnd.conekta-v2.0.0+json:
           schema:
             $ref: '../../schemas/customers/customer_response.yml'
+        application/json; charset=utf-8:
+          schema:
+            $ref: '../../schemas/customers/customer_response.yml'
     422:
      $ref: '../errors/422.yml'
     401:
      $ref: '../errors/401.yml'
+    500:
+     $ref: '../errors/500.yml'
   security:
     - ApiKeyAuth: []
   requestBody:

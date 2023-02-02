@@ -1,6 +1,7 @@
-openapi: 3.0.3
+openapi: "3.0.3"
 servers:
   - url: https://api.conekta.io
+    description: conekta main server
 info:
   description: Conekta sdk 
   version: 1.0.0
@@ -12,6 +13,7 @@ info:
   license:
     name: MIT-LICENSE
     url: 'https://www.apache.org/licenses/LICENSE-2.0.html'
+
 paths:
   /customers:
     $ref: "./resources/customers/customer.yml"

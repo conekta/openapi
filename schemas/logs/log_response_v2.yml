@@ -1,7 +1,10 @@
-    
 title: log response for v2 request
 description: log model
 type: object
+required:
+  - created_at
+  - id
+  - livemode
 properties:
   created_at:
     type: integer
@@ -43,8 +46,6 @@ properties:
     example: "FilterResource"
   request_body:
     type: object
-    additionalProperties:
-      type: object
     example: {
       "filters": {
             "amount": {
@@ -80,8 +81,6 @@ properties:
     }
   response_body:
     type: object
-    additionalProperties:
-      type: object
   response_headers:
     type: object
     additionalProperties:

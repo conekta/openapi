@@ -2,16 +2,24 @@ get:
   operationId: getLogById
   summary: Info for a specific log
   responses:
+    default:
+      $ref: '../errors/err.yml'
     200:
       description: successful
       content:
         application/vnd.conekta-v2.0.0+json:
           schema:
               $ref: '../../schemas/logs/log_response_v2.yml'
+        application/json; charset=utf-8:
+          schema:
+              $ref: '../../schemas/logs/log_response_v2.yml'
+    422:
+     $ref: '../errors/422.yml'
     401:
      $ref: '../errors/401.yml'
-    404:
-      $ref: '../errors/404.yml'
+    500:
+     $ref: '../errors/500.yml'
+   
   parameters:
     - $ref: '../../parameters/logs/log_id.yml'
     - $ref: '../../parameters/commons/headers/accept_language.yml'
