@@ -34,7 +34,7 @@ post:
      $ref: '../errors/500.yml'
 
   security:
-    - ApiKeyAuth: []
+    - bearerAuth: []
   requestBody:
     $ref: '../../requestBodies/orders/order.yml'
 

@@ -24,12 +24,10 @@ paths:
   /orders:
     $ref: "./resources/orders/order.yml"
 security:
-  - ApiKeyAuth: []
-components:  
+  - bearerAuth: []
+components:
   securitySchemes:
-    ApiKeyAuth:
-      name: Authorization
-      in: header
-      type: apiKey
-      description: use for api key
+    bearerAuth:
+      type: http
+      scheme: bearer
     

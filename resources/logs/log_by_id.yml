@@ -19,7 +19,8 @@ get:
      $ref: '../errors/401.yml'
     500:
      $ref: '../errors/500.yml'
-   
+  security:
+    - bearerAuth: []
   parameters:
     - $ref: '../../parameters/logs/log_id.yml'
     - $ref: '../../parameters/commons/headers/accept_language.yml'

@@ -4,5 +4,6 @@
   "packageVersion": "2.6.2",
   "packageUrl": "https://developers.conekta.com/",
   "projectName": "conekta-python",
-  "templateDir": "templates/python"
+  "templateDir": "templates/python",
+  "hasBearerMethods" : true
 }

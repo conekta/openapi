@@ -19,7 +19,7 @@ post:
     500:
      $ref: '../errors/500.yml'
   security:
-    - ApiKeyAuth: []
+    - bearerAuth: []
   requestBody:
    $ref: '../../requestBodies/customers/customer.yml'
 

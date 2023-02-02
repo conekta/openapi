@@ -113,7 +113,7 @@ paths:
         '500':
           $ref: '#/paths/~1logs/get/responses/500'
       security:
-        - ApiKeyAuth: []
+        - bearerAuth: []
       requestBody:
         description: requested field for customer
         content:
@@ -337,6 +337,8 @@ paths:
             application/json; charset=utf-8:
               schema:
                 $ref: '#/paths/~1logs/get/responses/401/content/application~1json%3B%20charset%3Dutf-8/schema'
+      security:
+        - bearerAuth: []
       parameters:
         - in: header
           name: Accept-Language
@@ -497,6 +499,8 @@ paths:
             $ref: '#/paths/~1logs/get/responses/422'
           '500':
             $ref: '#/paths/~1logs/get/responses/500'
+      security:
+        - bearerAuth: []
       parameters:
         - in: path
           name: id
@@ -592,7 +596,7 @@ paths:
         '500':
           $ref: '#/paths/~1logs/get/responses/500'
       security:
-        - ApiKeyAuth: []
+        - bearerAuth: []
       requestBody:
         description: requested field for order
         content:
@@ -660,11 +664,9 @@ paths:
       parameters:
         - $ref: '#/paths/~1logs/get/parameters/0'
 security:
-  - ApiKeyAuth: []
+  - bearerAuth: []
 components:
   securitySchemes:
-    ApiKeyAuth:
-      name: Authorization
-      in: header
-      type: apiKey
-      description: use for api key
+    bearerAuth:
+      type: http
+      scheme: bearer
