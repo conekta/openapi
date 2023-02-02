@@ -1,0 +1,24 @@
+title:  customer_info
+type: object
+required:
+  - corporate
+properties:
+  customer_id:
+    type: string
+    example: "cus_23874283647"
+  name:
+    type: string
+    example: "DevTest"
+  email:
+    type: string
+    format: email
+    example: test@conekta.com
+  phone:
+    type: string
+    example: "5522997233"
+  corporate:
+    default: false
+    type: boolean
+  object:
+    type: string
+    example: "customer_info"

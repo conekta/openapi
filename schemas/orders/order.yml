@@ -1,6 +1,9 @@
 title: a order
 description: a order
 type: object
+required:
+  - currency
+  - customer_info
 properties:
   currency:
     type: string
@@ -9,27 +12,15 @@ properties:
     example:  "MXN"
     maxLength: 3
   customer_info:
-    type: object
-    properties:
-      customer_id:
-        type: string
-        example: "cus_23874283647"
-      name:
-        type: string
-        example: "DevTest"
-      email:
-        type: string
-        format: email
-        example: test@conekta.com
-      phone:
-        type: string
-        example: "5522997233"
-      corporate:
-        type: boolean
+    $ref: ../customers/customer_info.yml
   line_items:
     type: array
     items:
       type: object
+      required:
+        - name
+        - unit_price
+        - quantity
       properties:
         description:
           type: string
