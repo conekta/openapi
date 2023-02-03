@@ -1,3 +1,6 @@
 value:
   id: "62bce95741de276186407e41"
   livemode: true
+  payment_method:
+    service_name: OxxoPay
+    barcode_url: "https://s3.amazonaws.com/cash_payment_barcodes/sandbox_reference.png"

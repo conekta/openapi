@@ -10,5 +10,6 @@
   "files": {
     "AUTHORS.md" : {}
   }
-  ,"templateDir": "templates/go"
+  ,"templateDir": "templates/go",
+  "useOneOfDiscriminatorLookup": true
 }

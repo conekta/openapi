@@ -2,8 +2,6 @@ get:
   operationId: getLogById
   summary: Info for a specific log
   responses:
-    default:
-      $ref: '../errors/err.yml'
     200:
       description: successful
       content:

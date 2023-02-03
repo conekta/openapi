@@ -9,8 +9,10 @@ post:
         application/vnd.conekta-v2.0.0+json:
           schema:
             oneOf:
-              - $ref: '../../schemas/orders/order_cash_response.yml'
-              - $ref: '../../schemas/orders/order_card_response.yml'
+              - $ref: '../../schemas/orders/order_cash_response.yml#/cash'
+              - $ref: '../../schemas/orders/order_card_response.yml#/card'
+            discriminator:
+              propertyName: object
           examples:
             cash:
               $ref: ../../schemas/orders/examples/order_cash.yml
@@ -19,13 +21,16 @@ post:
         application/json; charset=utf-8:
           schema:
             oneOf:
-              - $ref: '../../schemas/orders/order_cash_response.yml'
-              - $ref: '../../schemas/orders/order_card_response.yml'
+              - $ref: '../../schemas/orders/order_cash_response.yml#/cash'
+              - $ref: '../../schemas/orders/order_card_response.yml#/card'
+            discriminator:
+              propertyName: object
           examples:
             cash:
               $ref: ../../schemas/orders/examples/order_cash.yml
             card:
               $ref: ../../schemas/orders/examples/order_card.yml
+    
     422:
      $ref: '../errors/422.yml'
     401:

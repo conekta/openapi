@@ -1,16 +1,17 @@
-title: order response
-description: order response
-allOf:
-  - $ref: ./order_common.yml
-  - type: object
-    properties:
-      payment_method:
-        type: object
-        properties:
-          service_name:
-            type: string
-            example: OxxoPay
-          barcode_url:
-            type: string
-            example: "https://s3.amazonaws.com/cash_payment_barcodes/sandbox_reference.png"
+cash:
+  title: order response for cash
+  description: order response for cash
+  allOf:
+    - $ref: ./order_common.yml
+    - type: object
+      properties:
+        payment_method:
+          type: object
+          properties:
+            service_name:
+              type: string
+              example: OxxoPay
+            barcode_url:
+              type: string
+              example: "https://s3.amazonaws.com/cash_payment_barcodes/sandbox_reference.png"
   

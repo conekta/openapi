@@ -492,13 +492,6 @@ paths:
           $ref: '#/paths/~1logs/get/responses/422'
         '500':
           $ref: '#/paths/~1logs/get/responses/500'
-        default:
-          '401':
-            $ref: '#/paths/~1logs/get/responses/401'
-          '422':
-            $ref: '#/paths/~1logs/get/responses/422'
-          '500':
-            $ref: '#/paths/~1logs/get/responses/500'
       security:
         - bearerAuth: []
       parameters:
@@ -524,6 +517,8 @@ paths:
                 oneOf:
                   - $ref: '#/paths/~1orders/post/responses/200/content/application~1json%3B%20charset%3Dutf-8/schema/oneOf/0'
                   - $ref: '#/paths/~1orders/post/responses/200/content/application~1json%3B%20charset%3Dutf-8/schema/oneOf/1'
+                discriminator:
+                  propertyName: object
               examples:
                 cash:
                   $ref: '#/paths/~1orders/post/responses/200/content/application~1json%3B%20charset%3Dutf-8/examples/cash'
@@ -532,8 +527,8 @@ paths:
             application/json; charset=utf-8:
               schema:
                 oneOf:
-                  - title: order response
-                    description: order response
+                  - title: order response for cash
+                    description: order response for cash
                     allOf:
                       - title: orders fields common
                         description: orders fields common
@@ -562,8 +557,8 @@ paths:
                               barcode_url:
                                 type: string
                                 example: 'https://s3.amazonaws.com/cash_payment_barcodes/sandbox_reference.png'
-                  - title: order response
-                    description: order response
+                  - title: order response for card
+                    description: order response for cards
                     allOf:
                       - $ref: '#/paths/~1orders/post/responses/200/content/application~1json%3B%20charset%3Dutf-8/schema/oneOf/0/allOf/0'
                       - type: object
@@ -580,11 +575,16 @@ paths:
                               exp_year:
                                 type: string
                                 example: '30'
+                discriminator:
+                  propertyName: object
               examples:
                 cash:
                   value:
                     id: 62bce95741de276186407e41
                     livemode: true
+                    payment_method:
+                      service_name: OxxoPay
+                      barcode_url: 'https://s3.amazonaws.com/cash_payment_barcodes/sandbox_reference.png'
                 card:
                   value:
                     id: 63dab7d00558720001bb3c7d
@@ -605,6 +605,9 @@ paths:
               title: a order
               description: a order
               type: object
+              required:
+                - currency
+                - customer_info
               properties:
                 currency:
                   type: string
@@ -612,7 +615,10 @@ paths:
                   example: MXN
                   maxLength: 3
                 customer_info:
+                  title: customer_info
                   type: object
+                  required:
+                    - corporate
                   properties:
                     customer_id:
                       type: string
@@ -628,11 +634,19 @@ paths:
                       type: string
                       example: '5522997233'
                     corporate:
+                      default: false
                       type: boolean
+                    object:
+                      type: string
+                      example: customer_info
                 line_items:
                   type: array
                   items:
                     type: object
+                    required:
+                      - name
+                      - unit_price
+                      - quantity
                     properties:
                       description:
                         type: string
