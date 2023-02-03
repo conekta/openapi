@@ -1,6 +1,6 @@
 in: path
 name: "id"
-description: log identifier
+description:  identifier
 required: true
 schema:
   type: string

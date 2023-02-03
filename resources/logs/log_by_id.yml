@@ -20,5 +20,5 @@ get:
   security:
     - bearerAuth: []
   parameters:
-    - $ref: '../../parameters/logs/log_id.yml'
+    - $ref: '../../parameters/commons/path_param/id.yml'
     - $ref: '../../parameters/commons/headers/accept_language.yml'

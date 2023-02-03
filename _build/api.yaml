@@ -31,6 +31,12 @@ paths:
                 title: customer response
                 description: customer response
                 type: object
+                required:
+                  - id
+                  - livemode
+                  - created_at
+                  - corporate
+                  - object
                 properties:
                   antifraud_info:
                     type: object
@@ -95,7 +101,45 @@ paths:
                         properties:
                           data:
                             type: array
-                            items: {}
+                            items:
+                              oneOf:
+                                - allOf:
+                                    - type: object
+                                      required:
+                                        - type
+                                      properties:
+                                        type:
+                                          type: string
+                                      discriminator:
+                                        propertyName: type
+                                    - type: object
+                                      title: payment sources cash
+                                      description: use for cash responses
+                                      required:
+                                        - id
+                                        - object
+                                      properties:
+                                        id:
+                                          type: string
+                                          example: src_2s8K1B3PBKDontpi1
+                                        object:
+                                          type: string
+                                          example: payment_source
+                                - allOf:
+                                    - $ref: '#/paths/~1customers/post/responses/200/content/application~1json%3B%20charset%3Dutf-8/schema/properties/payment_sources/allOf/1/properties/data/items/oneOf/0/allOf/0'
+                                    - type: object
+                                      title: payment sources card
+                                      description: use for car responses
+                                      required:
+                                        - id
+                                        - object
+                                      properties:
+                                        id:
+                                          type: string
+                                          example: src_2s8K1B3PBKDontpi9
+                                        object:
+                                          type: string
+                                          example: payment_source
                   phone:
                     type: string
                   shipping_contacts:

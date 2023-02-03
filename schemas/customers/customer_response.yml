@@ -1,6 +1,12 @@
 title: customer response
 description: customer response
 type: object
+required:
+  - id
+  - livemode
+  - created_at
+  - corporate
+  - object
 properties:
   antifraud_info:
     type: object
@@ -49,7 +55,16 @@ properties:
         properties:
           data:
             type: array
-            items: {}
+            items:
+              discriminator:
+                propertyName: type
+                mapping:
+                  cash: payment_source_cash
+                  card: payment_source_card
+                  oxxo_recurrent: payment_source_cash
+              oneOf:
+                - $ref: 'customer_payment_source_cash_response.yml#/payment_source_cash'
+                - $ref: 'customer_payment_source_card_response.yml#/payment_source_card'
   phone:
     type: string
   shipping_contacts:

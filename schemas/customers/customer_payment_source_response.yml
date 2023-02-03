@@ -1,0 +1,9 @@
+payment_source:
+  type: object
+  required:
+    - type
+  properties:
+    type: 
+      type: string
+  
+   

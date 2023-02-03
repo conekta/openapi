@@ -23,8 +23,9 @@
         "AUTHORS.md" : {}
     },
     "javaMinVersion" : 11,
-    "swagger1AnnotationLibrary": true,
+    "swagger1AnnotationLibrary": false,
     "javaxPackage" : "javax",
     "templateDir": "templates/java",
-    "disallowAdditionalPropertiesIfNotPresent" : false
+    "disallowAdditionalPropertiesIfNotPresent" : false,
+    "useOneOfDiscriminatorLookup" : true
 }

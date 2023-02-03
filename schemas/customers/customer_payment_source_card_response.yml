@@ -1,0 +1,16 @@
+payment_source_card:
+  allOf:
+    - $ref: customer_payment_source_response.yml#/payment_source
+    - type: object
+      title: payment sources card
+      description: use for car responses
+      required:
+      - id
+      - object
+      properties:
+        id:
+          type: string
+          example: "src_2s8K1B3PBKDontpi9"
+        object: 
+          type: string
+          example: "payment_source"

@@ -17,6 +17,7 @@ properties:
     type: array
     items:
       type: object
+      title: line_items
       required:
         - name
         - unit_price

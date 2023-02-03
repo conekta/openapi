@@ -24,4 +24,5 @@ post:
    $ref: '../../requestBodies/customers/customer.yml'
 
   parameters:
+    - $ref: '../../parameters/commons/path_param/id.yml'
     - $ref: '../../parameters/commons/headers/accept_language.yml'
