@@ -18,14 +18,16 @@
     "scmConnection": "scm:git:git@github.com:conekta/ct-conekta-java.git",
     "scmDeveloperConnection": "scm:git:git@github.com:conekta/ct-conekta-java.git",
     "scmUrl": "https://github.com/conekta/ct-conekta-java/tree/master",
-    "library": "okhttp-gson",
+    "library": "jersey3",
     "files": {
         "AUTHORS.md" : {}
     },
     "javaMinVersion" : 11,
     "swagger1AnnotationLibrary": false,
     "javaxPackage" : "javax",
-    "templateDir": "templates/java",
+    "templateDir": "templates/java/jersey3",
     "disallowAdditionalPropertiesIfNotPresent" : false,
-    "useOneOfDiscriminatorLookup" : true
+    "useOneOfDiscriminatorLookup" : true,
+    "serializationLibrary" : "jackson",
+    "httpUserAgent": "Conekta/v2 JavaBindings/4.0.0"
 }

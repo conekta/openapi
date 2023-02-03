@@ -52,10 +52,12 @@ properties:
     allOf:
       - $ref: ../../schemas/pagination/pagination.yml
       - type: object
+        title: customerPaymentSources
         properties:
           data:
             type: array
             items:
+              title: customerPaymentSourcesData
               discriminator:
                 propertyName: type
                 mapping:

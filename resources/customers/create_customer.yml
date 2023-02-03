@@ -1,0 +1,27 @@
+post:
+  operationId: createCustomer
+  summary: creates a new customer
+  description: 'The purpose of business is to create and keep a customer, you will learn what elements you need to create a customer.'
+  responses:
+    '200':
+      description: successful operation
+      content:
+        application/vnd.conekta-v2.0.0+json:
+          schema:
+            $ref: '../../schemas/customers/customer_response.yml'
+        application/json; charset=utf-8:
+          schema:
+            $ref: '../../schemas/customers/customer_response.yml'
+    422:
+     $ref: '../errors/422.yml'
+    401:
+     $ref: '../errors/401.yml'
+    500:
+     $ref: '../errors/500.yml'
+  security:
+    - bearerAuth: []
+  requestBody:
+   $ref: '../../requestBodies/customers/customer.yml'
+
+  parameters:
+    - $ref: '../../parameters/commons/headers/accept_language.yml'

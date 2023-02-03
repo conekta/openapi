@@ -16,7 +16,9 @@ info:
 
 paths:
   /customers:
-    $ref: "./resources/customers/customer.yml"
+    $ref: "./resources/customers/create_customer.yml"
+  /customers/{id}:
+    $ref: "./resources/customers/get_customer.yml"
   /logs:
      $ref: "./resources/logs/log.yml"
   /logs/{id}:

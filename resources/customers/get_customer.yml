@@ -1,7 +1,7 @@
-post:
-  operationId: createCustomer
-  summary: creates a new customer
-  description: 'The purpose of business is to create and keep a customer, you will learn what elements you need to create a customer.'
+get:
+  operationId: getCustomerById
+  summary: returns a customer
+  description: 'Gets a customer resource that corresponds to a customer ID.'
   responses:
     '200':
       description: successful operation
@@ -20,8 +20,6 @@ post:
      $ref: '../errors/500.yml'
   security:
     - bearerAuth: []
-  requestBody:
-   $ref: '../../requestBodies/customers/customer.yml'
 
   parameters:
     - $ref: '../../parameters/commons/path_param/id.yml'

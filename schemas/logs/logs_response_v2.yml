@@ -20,12 +20,10 @@ properties:
   next_page_url: 
     description: URL of the next page.
     type: string
-    readOnly: true
     nullable: true
   previous_page_url:
     description: Url of the previous page.
     type: string
-    readOnly: true
     nullable: true
   data:
     description: set to page results.
