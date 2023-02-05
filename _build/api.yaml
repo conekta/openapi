@@ -204,7 +204,6 @@ paths:
                 payment_sources:
                   type: array
                   items:
-                    type: object
                     title: Contains details of the payment methods that the customer has active or has used in Conekta
                     required:
                       - type
@@ -285,7 +284,7 @@ paths:
     get:
       operationId: getCustomerById
       summary: returns a customer
-      description: 'The purpose of business is to create and keep a customer, you will learn what elements you need to create a customer.'
+      description: Gets a customer resource that corresponds to a customer ID.
       responses:
         '200':
           description: successful operation
@@ -361,38 +360,41 @@ paths:
               schema:
                 title: authentication error
                 description: err model
-                type: object
-                properties:
-                  log_id:
-                    description: log id
-                    type: string
-                    example: 507f1f77bcf86cd799439011
-                    format: hex
-                    nullable: true
-                  type:
-                    type: string
-                    example: authentication_error
-                  object:
-                    type: string
-                    example: error
-                  details:
-                    type: array
-                    items:
-                      type: object
-                      title: Contains details of the error
-                      properties:
-                        code:
-                          type: string
-                          example: conekta.errors.authentication.missing_key
-                        param:
-                          type: string
-                          nullable: true
-                        message:
-                          type: string
-                          example: Acceso no autorizado.
-                        debug_message:
-                          type: string
-                          example: Please include your access key in your request.
+                allOf:
+                  - type: object
+                    properties:
+                      details:
+                        type: array
+                        items:
+                          type: object
+                          title: Contains details of the error
+                          properties:
+                            code:
+                              type: string
+                              example: conekta.errors.authentication.missing_key
+                            param:
+                              type: string
+                              nullable: true
+                            message:
+                              type: string
+                              example: Acceso no autorizado.
+                            debug_message:
+                              type: string
+                              example: Please include your access key in your request.
+                  - type: object
+                    properties:
+                      log_id:
+                        description: log id
+                        type: string
+                        example: 507f1f77bcf86cd799439011
+                        format: hex
+                        nullable: true
+                      type:
+                        type: string
+                        example: authentication_error
+                      object:
+                        type: string
+                        example: error
         '422':
           description: parameter validation error
           content:

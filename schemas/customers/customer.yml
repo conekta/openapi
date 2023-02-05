@@ -33,7 +33,6 @@ properties:
   payment_sources:
     type: array
     items:
-      type: object
       $ref: './customer_payment_sources.yml'
     example: 
       - type: card
