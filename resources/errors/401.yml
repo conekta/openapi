@@ -3,6 +3,4 @@ content:
   application/vnd.conekta-v2.0.0+json:
     schema:
       $ref: '../../schemas/errors/error_2_x_x.yml'
-  application/json; charset=utf-8:
-    schema:
-      $ref: '../../schemas/errors/error_2_x_x.yml'
+ 
