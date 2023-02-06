@@ -3,14 +3,34 @@ payment_source_card:
     - $ref: customer_payment_source_response.yml#/payment_source
     - type: object
       title: payment sources card
-      description: use for car responses
-      required:
-      - id
-      - object
+      description: use for card responses
       properties:
-        id:
+        last4:
           type: string
-          example: "src_2s8K1B3PBKDontpi9"
-        object: 
+          example: "6410"
+        bin: 
           type: string
-          example: "payment_source"
+          example: "40276657"
+        card_type:
+          type: string
+          example: debit
+        exp_month:
+          type: string
+          example: "10"
+        exp_year:
+          type: string
+          example: "25"
+        brand:
+          type: string
+          example: "visa"
+        name: 
+          type: string
+          example: Fulano Perez"
+        default:
+          type: boolean
+        visible_on_checkout:
+          type: boolean
+        payment_source_status:
+          type: string
+          example: "active"
+        

@@ -1,0 +1,14 @@
+payment_source_spei_recurrent:
+  allOf:
+    - $ref: customer_payment_source_response.yml#/payment_source
+    - type: object
+      title: payment sources spei recurrent
+      description: use for spei responses
+      properties:
+        reference:
+          type: string
+          example: "93000262276908"
+        expires_at:
+          type: string
+          example: "none"
+       

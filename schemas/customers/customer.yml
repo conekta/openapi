@@ -1,4 +1,4 @@
-title: a customer
+title: customer request
 description: a customer
 type: object
 required:
@@ -16,6 +16,7 @@ properties:
     example:  miguel@gmail.com
   phone:
     type: string
+    description: Is the customer's phone number
     example: "+5215555555555"
   plan_id:
     type: string
@@ -23,12 +24,16 @@ properties:
     description: Contains the ID of a plan, which could together with name, email and phone create a client directly to a subscription
   default_shipping_contact_id:
     type: string
+    description: It is a parameter that allows to identify in the response, the Conekta ID of the shipping address (shipping_contact)
     example: ship_cont_1a2b3c4d5e6f7g8h
   corporate:
     type: boolean
+    description: It is a value that allows identifying if the email is corporate or not.
     example: false
+    default: false
   custom_reference:
     type: string
+    description: It is an undefined value.
     nullable: true
   payment_sources:
     type: array

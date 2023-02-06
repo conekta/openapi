@@ -1,4 +1,5 @@
-title:  Contains the detail of the shipping addresses that the client has active or has used in Conekta
+title: customer_shipping_contacts_request
+description: Contains the detail of the shipping addresses that the client has active or has used in Conekta
 properties:
   phone:
     type: string
@@ -33,11 +34,9 @@ properties:
       residential:
         type: boolean
         example: true
-  created_at:
-    type: integer
   parent_id:
     type: string
-  is_default:
+  default:
     type: boolean
     example: false
   deleted:

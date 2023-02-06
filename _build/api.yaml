@@ -32,10 +32,10 @@ paths:
                   - id
                   - livemode
                   - created_at
-                  - corporate
                   - object
                 properties:
                   antifraud_info:
+                    title: customer_antifraud_info_response
                     type: object
                     nullable: true
                     properties:
@@ -55,6 +55,7 @@ paths:
                     type: string
                   default_shipping_contact_id:
                     type: string
+                    example: ship_cont_2tKZsTYcsryyu7Ah8
                   default_payment_source_id:
                     type: string
                     nullable: true
@@ -76,6 +77,7 @@ paths:
                     type: string
                     example: customer
                   payment_sources:
+                    title: customer_payment_sources_response
                     allOf:
                       - title: pagination metadata
                         description: pagination metadata
@@ -107,54 +109,201 @@ paths:
                                   cash: payment_source_cash
                                   card: payment_source_card
                                   oxxo_recurrent: payment_source_cash
+                                  spei_recurrent: payment_source_spei_recurrent
                               oneOf:
                                 - allOf:
                                     - type: object
                                       required:
                                         - type
+                                        - id
+                                        - object
+                                        - created_at
                                       properties:
                                         type:
                                           type: string
-                                    - type: object
-                                      title: payment sources cash
-                                      description: use for cash responses
-                                      required:
-                                        - id
-                                        - object
-                                      properties:
-                                        id:
-                                          type: string
-                                          example: src_2s8K1B3PBKDontpi1
-                                        object:
-                                          type: string
-                                          example: payment_source
-                                - allOf:
-                                    - $ref: '#/paths/~1customers/post/responses/200/content/application~1vnd.conekta-v2.0.0%2Bjson/schema/properties/payment_sources/allOf/1/properties/data/items/oneOf/0/allOf/0'
-                                    - type: object
-                                      title: payment sources card
-                                      description: use for car responses
-                                      required:
-                                        - id
-                                        - object
-                                      properties:
                                         id:
                                           type: string
                                           example: src_2s8K1B3PBKDontpi9
                                         object:
                                           type: string
                                           example: payment_source
+                                        created_at:
+                                          type: integer
+                                          format: int64
+                                          example: 1675715413
+                                        parent_id:
+                                          type: string
+                                          example: cus_2s8K1B3PBKDontpi8
+                                    - type: object
+                                      title: payment sources cash
+                                      description: use for cash responses
+                                      properties:
+                                        reference:
+                                          type: string
+                                          example: '93000262276908'
+                                        barcode:
+                                          type: string
+                                          example: '93000262276908'
+                                        barcode_url:
+                                          type: string
+                                          example: 'https://pt-common-s3-stg.s3.amazonaws.com/644ebf80f2243197aad6cd8810375b905b613dbe.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=ASIA3UN6375MP4SLLCWV%2F20230203%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20230203T215750Z&X-Amz-Expires=604800&X-Amz-Security-Token=IQoJb3JpZ2luX2VjEH4aCXVzLWVhc3QtMSJGMEQCICd79cu7DYu%2F4%2B3HnVVswydgU9yHcE9kmQIIk2TLoZJrAiBVZ0HxVSeboK5lhdQSqADjwQF62XX35jhC%2F2riB0M8uCqQBAj2%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F8BEAIaDDc5OTgwMTA4MTY4OCIMXWZds9ZI5hzUdbeGKuQDFreMyeWnWWPqDuGZ2%2BHk6usCr%2Fl096%2FNJh9xtf8htLu56K%2FhWUTx%2BjiqFWM2O%2FF5zTS%2BIV6TqkLDZ%2BQ5Jo1miQrRmR57YDz6uP2Yd1mNZ1ouq5ipnNjUuu5UWCCBAmqyZQsrVmeMQpSV2IB%2BTERCCcW2SukFEYU%2F20%2Fzy5orsoZ8DxOW460IymR3cWBk5u3Xh2cV6Y1RdPEwDEThhqYEF5w%2ByKbLENloMsI%2FUm6sG5PPrO3yQOAP9aK2muLJs9lXQRU%2FL%2FSsmS4FKSUFOqlN6YU%2Bi2Y%2FyGIKAJT2VDkngvz5Sl%2Fadj0j%2BPKftVRV5FcEhySB6Rl%2BSkPN7kVQMJp6pS8hMJ6JCyEA%2BA3eWYdIfKgQhWVXAR4oCBfJ62DH8FU3a7WfSjjpTwfVkiReWen3GGCYfUWETTVKp46MKnJ9PG0CD3KzxKV8VfmEGc5krK%2FI%2F%2BDV2wtSa%2F9qf1%2BK1YYJIK9qZGb25ljUiGhTB4T%2BMUOSQFjetiWUoOJc5Q3Jz%2FXJbiTAMTST39MhdbCgiMgfrc8OGKN5DOVbex33Z7dn0xf%2FOCkSqurhLaG08efKQBdhLNS0RlE9hbg9yZ2ywwtQIF39fI6A7eeH0T11a5HMlvm51u4rAffPHRuEJfwJoIuj%2F2s3QzDg7%2FWeBjqmAbnPOlGfysjrDdvHyG7HVnaX02kdG%2BI3Q4PFOO4Mjaa3ocpjcfPT70%2BZ5a%2FSv5vP0jDLGrLToeM9%2BAUlNepptICRu23a1tLGW4ri0twPA%2FZ4JDTtUUUgdblyG8bKpcUTNp4oOsdmLLBz3FVyr4c2xQbDZSu2zYOtoOxB18W0AC6kIbsMWVU55Bf0mBhPeBWxGrtM4Kw1SgHHlt%2F8vetQi2OwtUcg08c%3D&X-Amz-SignedHeaders=host&X-Amz-Signature=d06dfa41550003359f2aabc8006063a80dfd806a13a54d244024946a76aa9abc'
+                                        expires_at:
+                                          type: integer
+                                          format: int64
+                                          example: 0
+                                - allOf:
+                                    - $ref: '#/paths/~1customers/post/responses/200/content/application~1vnd.conekta-v2.0.0%2Bjson/schema/properties/payment_sources/allOf/1/properties/data/items/oneOf/0/allOf/0'
+                                    - type: object
+                                      title: payment sources card
+                                      description: use for card responses
+                                      properties:
+                                        last4:
+                                          type: string
+                                          example: '6410'
+                                        bin:
+                                          type: string
+                                          example: '40276657'
+                                        card_type:
+                                          type: string
+                                          example: debit
+                                        exp_month:
+                                          type: string
+                                          example: '10'
+                                        exp_year:
+                                          type: string
+                                          example: '25'
+                                        brand:
+                                          type: string
+                                          example: visa
+                                        name:
+                                          type: string
+                                          example: Fulano Perez"
+                                        default:
+                                          type: boolean
+                                        visible_on_checkout:
+                                          type: boolean
+                                        payment_source_status:
+                                          type: string
+                                          example: active
+                                - allOf:
+                                    - $ref: '#/paths/~1customers/post/responses/200/content/application~1vnd.conekta-v2.0.0%2Bjson/schema/properties/payment_sources/allOf/1/properties/data/items/oneOf/0/allOf/0'
+                                    - type: object
+                                      title: payment sources spei recurrent
+                                      description: use for spei responses
+                                      properties:
+                                        reference:
+                                          type: string
+                                          example: '93000262276908'
+                                        expires_at:
+                                          type: string
+                                          example: none
                   phone:
                     type: string
+                    example: '+5215555555555'
                   shipping_contacts:
+                    title: customer_shipping_contacts_response
                     allOf:
                       - $ref: '#/paths/~1customers/post/responses/200/content/application~1vnd.conekta-v2.0.0%2Bjson/schema/properties/payment_sources/allOf/0'
                       - type: object
                         properties:
                           data:
                             type: array
-                            items: {}
+                            items:
+                              title: customer_shipping_contacts_data_response
+                              allOf:
+                                - title: customer_shipping_contacts_request
+                                  description: Contains the detail of the shipping addresses that the client has active or has used in Conekta
+                                  properties:
+                                    phone:
+                                      type: string
+                                      example: '+525511223344'
+                                    receiver:
+                                      type: string
+                                      example: Marvin Fuller
+                                    between_streets:
+                                      type: string
+                                      example: Ackerman Crescent
+                                    address:
+                                      type: object
+                                      properties:
+                                        street1:
+                                          type: string
+                                          example: avenida siempre viva
+                                        street2:
+                                          type: string
+                                          example: fake street
+                                        postal_code:
+                                          type: string
+                                          example: '06100'
+                                        city:
+                                          type: string
+                                          example: Ciudad de Mexico
+                                        state:
+                                          type: string
+                                          example: Ciudad de Mexico
+                                        country:
+                                          type: string
+                                          example: MX
+                                        residential:
+                                          type: boolean
+                                          example: true
+                                    parent_id:
+                                      type: string
+                                    default:
+                                      type: boolean
+                                      example: false
+                                    deleted:
+                                      type: boolean
+                                      example: false
+                                - type: object
+                                  required:
+                                    - id
+                                    - object
+                                    - created_at
+                                  properties:
+                                    id:
+                                      type: string
+                                      example: ship_cont_2tKZsTYcsryyu7Ah8
+                                    object:
+                                      type: string
+                                      example: shipping_contact
+                                    created_at:
+                                      type: integer
+                                      format: int64
+                                      example: 1675715413
+          headers:
+            Date:
+              description: The date and time that the response was sent
+              schema:
+                type: string
+                example: 'Fri, 03 Feb 2023 16:57:48 GMT'
+            Content-Type:
+              description: The format of the response body
+              schema:
+                type: string
+                example: application/json; charset=utf-8
+            Content-Length:
+              description: The length of the response body in bytes
+              schema:
+                type: string
+                example: '2737'
+            Connection:
+              description: The type of connection used to transfer the response
+              schema:
+                type: string
+                example: keep-alive
+            Conekta-Media-Type:
+              schema:
+                type: string
+                example: conekta-v2.0.0; format=application/json
         '401':
           $ref: '#/paths/~1logs/get/responses/401'
+        '402':
+          description: payment required error
+          content:
+            application/vnd.conekta-v2.0.0+json:
+              schema:
+                $ref: '#/paths/~1logs/get/responses/401/content/application~1vnd.conekta-v2.0.0%2Bjson/schema'
         '422':
           $ref: '#/paths/~1logs/get/responses/422'
         '500':
@@ -163,10 +312,11 @@ paths:
         - bearerAuth: []
       requestBody:
         description: requested field for customer
+        title: customer_request
         content:
           application/json:
             schema:
-              title: a customer
+              title: customer request
               description: a customer
               type: object
               required:
@@ -184,6 +334,7 @@ paths:
                   example: miguel@gmail.com
                 phone:
                   type: string
+                  description: Is the customer's phone number
                   example: '+5215555555555'
                 plan_id:
                   type: string
@@ -191,12 +342,16 @@ paths:
                   description: 'Contains the ID of a plan, which could together with name, email and phone create a client directly to a subscription'
                 default_shipping_contact_id:
                   type: string
+                  description: 'It is a parameter that allows to identify in the response, the Conekta ID of the shipping address (shipping_contact)'
                   example: ship_cont_1a2b3c4d5e6f7g8h
                 corporate:
                   type: boolean
+                  description: It is a value that allows identifying if the email is corporate or not.
                   example: false
+                  default: false
                 custom_reference:
                   type: string
+                  description: It is an undefined value.
                   nullable: true
                 payment_sources:
                   type: array
@@ -215,51 +370,7 @@ paths:
                 shipping_contacts:
                   type: array
                   items:
-                    title: Contains the detail of the shipping addresses that the client has active or has used in Conekta
-                    properties:
-                      phone:
-                        type: string
-                        example: '+525511223344'
-                      receiver:
-                        type: string
-                        example: Marvin Fuller
-                      between_streets:
-                        type: string
-                        example: Ackerman Crescent
-                      address:
-                        type: object
-                        properties:
-                          street1:
-                            type: string
-                            example: avenida siempre viva
-                          street2:
-                            type: string
-                            example: fake street
-                          postal_code:
-                            type: string
-                            example: '06100'
-                          city:
-                            type: string
-                            example: Ciudad de Mexico
-                          state:
-                            type: string
-                            example: Ciudad de Mexico
-                          country:
-                            type: string
-                            example: MX
-                          residential:
-                            type: boolean
-                            example: true
-                      created_at:
-                        type: integer
-                      parent_id:
-                        type: string
-                      is_default:
-                        type: boolean
-                        example: false
-                      deleted:
-                        type: boolean
-                        example: false
+                    $ref: '#/paths/~1customers/post/responses/200/content/application~1vnd.conekta-v2.0.0%2Bjson/schema/properties/shipping_contacts/allOf/1/properties/data/items/allOf/0'
                 antifraud_info:
                   type: object
                   nullable: true
