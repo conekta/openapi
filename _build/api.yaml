@@ -25,9 +25,6 @@ paths:
           content:
             application/vnd.conekta-v2.0.0+json:
               schema:
-                $ref: '#/paths/~1customers/post/responses/200/content/application~1json%3B%20charset%3Dutf-8/schema'
-            application/json; charset=utf-8:
-              schema:
                 title: customer response
                 description: customer response
                 type: object
@@ -132,7 +129,7 @@ paths:
                                           type: string
                                           example: payment_source
                                 - allOf:
-                                    - $ref: '#/paths/~1customers/post/responses/200/content/application~1json%3B%20charset%3Dutf-8/schema/properties/payment_sources/allOf/1/properties/data/items/oneOf/0/allOf/0'
+                                    - $ref: '#/paths/~1customers/post/responses/200/content/application~1vnd.conekta-v2.0.0%2Bjson/schema/properties/payment_sources/allOf/1/properties/data/items/oneOf/0/allOf/0'
                                     - type: object
                                       title: payment sources card
                                       description: use for car responses
@@ -150,7 +147,7 @@ paths:
                     type: string
                   shipping_contacts:
                     allOf:
-                      - $ref: '#/paths/~1customers/post/responses/200/content/application~1json%3B%20charset%3Dutf-8/schema/properties/payment_sources/allOf/0'
+                      - $ref: '#/paths/~1customers/post/responses/200/content/application~1vnd.conekta-v2.0.0%2Bjson/schema/properties/payment_sources/allOf/0'
                       - type: object
                         properties:
                           data:
@@ -291,10 +288,7 @@ paths:
           content:
             application/vnd.conekta-v2.0.0+json:
               schema:
-                $ref: '#/paths/~1customers/post/responses/200/content/application~1json%3B%20charset%3Dutf-8/schema'
-            application/json; charset=utf-8:
-              schema:
-                $ref: '#/paths/~1customers/post/responses/200/content/application~1json%3B%20charset%3Dutf-8/schema'
+                $ref: '#/paths/~1customers/post/responses/200/content/application~1vnd.conekta-v2.0.0%2Bjson/schema'
         '401':
           $ref: '#/paths/~1logs/get/responses/401'
         '422':
@@ -315,9 +309,6 @@ paths:
           description: successful
           content:
             application/vnd.conekta-v2.0.0+json:
-              schema:
-                $ref: '#/paths/~1logs/get/responses/200/content/application~1json%3B%20charset%3Dutf-8/schema'
-            application/json; charset=utf-8:
               schema:
                 title: log response for v2 request
                 description: logs model
@@ -354,9 +345,6 @@ paths:
           description: authentication error
           content:
             application/vnd.conekta-v2.0.0+json:
-              schema:
-                $ref: '#/paths/~1logs/get/responses/401/content/application~1json%3B%20charset%3Dutf-8/schema'
-            application/json; charset=utf-8:
               schema:
                 title: authentication error
                 description: err model
@@ -400,19 +388,13 @@ paths:
           content:
             application/vnd.conekta-v2.0.0+json:
               schema:
-                $ref: '#/paths/~1logs/get/responses/401/content/application~1json%3B%20charset%3Dutf-8/schema'
-            application/json; charset=utf-8:
-              schema:
-                $ref: '#/paths/~1logs/get/responses/401/content/application~1json%3B%20charset%3Dutf-8/schema'
+                $ref: '#/paths/~1logs/get/responses/401/content/application~1vnd.conekta-v2.0.0%2Bjson/schema'
         '500':
           description: internal server error
           content:
             application/vnd.conekta-v2.0.0+json:
               schema:
-                $ref: '#/paths/~1logs/get/responses/401/content/application~1json%3B%20charset%3Dutf-8/schema'
-            application/json; charset=utf-8:
-              schema:
-                $ref: '#/paths/~1logs/get/responses/401/content/application~1json%3B%20charset%3Dutf-8/schema'
+                $ref: '#/paths/~1logs/get/responses/401/content/application~1vnd.conekta-v2.0.0%2Bjson/schema'
       security:
         - bearerAuth: []
       parameters:
@@ -441,9 +423,6 @@ paths:
           description: successful
           content:
             application/vnd.conekta-v2.0.0+json:
-              schema:
-                $ref: '#/paths/~1logs~1%7Bid%7D/get/responses/200/content/application~1json%3B%20charset%3Dutf-8/schema'
-            application/json; charset=utf-8:
               schema:
                 title: log response for v2 request
                 description: log model
@@ -591,18 +570,6 @@ paths:
             application/vnd.conekta-v2.0.0+json:
               schema:
                 oneOf:
-                  - $ref: '#/paths/~1orders/post/responses/200/content/application~1json%3B%20charset%3Dutf-8/schema/oneOf/0'
-                  - $ref: '#/paths/~1orders/post/responses/200/content/application~1json%3B%20charset%3Dutf-8/schema/oneOf/1'
-                discriminator:
-                  propertyName: object
-              examples:
-                cash:
-                  $ref: '#/paths/~1orders/post/responses/200/content/application~1json%3B%20charset%3Dutf-8/examples/cash'
-                card:
-                  $ref: '#/paths/~1orders/post/responses/200/content/application~1json%3B%20charset%3Dutf-8/examples/card'
-            application/json; charset=utf-8:
-              schema:
-                oneOf:
                   - title: order response for cash
                     description: order response for cash
                     allOf:
@@ -636,7 +603,7 @@ paths:
                   - title: order response for card
                     description: order response for cards
                     allOf:
-                      - $ref: '#/paths/~1orders/post/responses/200/content/application~1json%3B%20charset%3Dutf-8/schema/oneOf/0/allOf/0'
+                      - $ref: '#/paths/~1orders/post/responses/200/content/application~1vnd.conekta-v2.0.0%2Bjson/schema/oneOf/0/allOf/0'
                       - type: object
                         properties:
                           payment_method:

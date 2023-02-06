@@ -11,3 +11,7 @@ java:
 
 go:
 	npx @openapitools/openapi-generator-cli generate -i  api.yaml -g go -o conekta-go  -c config-go.json   --global-property apiTests=false
+
+ruby:
+	npx @openapitools/openapi-generator-cli generate -i  api.yaml -g ruby -o conekta-ruby  -c config-ruby.json 
+	
