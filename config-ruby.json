@@ -12,5 +12,7 @@
   "library": "faraday",
   "httpUserAgent": "Conekta/v2 RubyBindings/4.0.0",
   "gemRequiredRubyVersion" : ">= 2.6",
-  "templateDir": "templates/ruby"
+  "templateDir": "templates/ruby",
+  "gitUserId" : "conekta",
+  "gitRepoId" : "conekta-ruby"
 }

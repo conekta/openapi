@@ -17,8 +17,6 @@ require 'faraday/multipart' if Gem::Version.new(Faraday::VERSION) >= Gem::Versio
 
 module {{moduleName}}
   class ApiClient
-    require 'sys/uname'
-    include Sys
     # The Configuration object holding settings to be used in the API client.
     attr_accessor :config
 
@@ -276,11 +274,8 @@ module {{moduleName}}
         bindings_version: Conekta::VERSION,
         lang: 'ruby',
         lang_version: RUBY_VERSION,
-        publisher: 'conekta',
-        uname: Uname.uname
+        publisher: 'conekta'
       }
-
-      params.merge!(plugin: Conekta.plugin) if Conekta.plugin.to_s.length > 0
 
       @conekta_headers ||= params
     end
