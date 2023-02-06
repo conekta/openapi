@@ -1,16 +1,16 @@
 {
-  "packageVersion" : "4.0.0",
-  "packageName" : "conekta",
+  "packageVersion": "4.0.0",
+  "packageName": "conekta",
   "hideGenerationTimestamp": false,
-  "generateInterfaces" : true,
-  "disallowAdditionalPropertiesIfNotPresent" : true,
-  "gitUserId" : "conekta",
-  "gitRepoId" : "conekta-go",
+  "generateInterfaces": true,
+  "disallowAdditionalPropertiesIfNotPresent": true,
+  "gitUserId": "conekta",
+  "gitRepoId": "conekta-go",
   "httpUserAgent": "Conekta/v2 GoBindings/4.0.0",
   "files": {
-    "AUTHORS.md" : {},
-    "LICENSE.txt" : {}
-  }
-  ,"templateDir": "templates/go",
+    "AUTHORS.md": {},
+    "LICENSE.txt": {}
+  },
+  "templateDir": "templates/go",
   "useOneOfDiscriminatorLookup": true
 }

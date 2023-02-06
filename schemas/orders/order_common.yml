@@ -1,6 +1,8 @@
 title: orders fields common
 description: orders fields common
 type: object
+required:
+ - object
 properties:
   "object":
     type: string
