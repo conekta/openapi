@@ -8,5 +8,9 @@
   "hasBearerMethods" : true,
   "useOneOfDiscriminatorLookup" : true,
   "nonCompliantUseDiscriminatorIfCompositionFails" : false,
-  "httpUserAgent": "Conekta/v2 PythonBindings/4.0.0"
+  "httpUserAgent": "Conekta/v2 PythonBindings/4.0.0",
+  "files": {
+    "AUTHORS.md" : {},
+    "LICENSE.txt" : {}
+  }
 }

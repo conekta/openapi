@@ -14,5 +14,9 @@
   "gemRequiredRubyVersion" : ">= 2.6",
   "templateDir": "templates/ruby",
   "gitUserId" : "conekta",
-  "gitRepoId" : "conekta-ruby"
+  "gitRepoId" : "conekta-ruby",
+  "files": {
+    "AUTHORS.md" : {},
+    "LICENSE.txt" : {}
+  }
 }

@@ -8,7 +8,8 @@
   "gitRepoId" : "conekta-go",
   "httpUserAgent": "Conekta/v2 GoBindings/4.0.0",
   "files": {
-    "AUTHORS.md" : {}
+    "AUTHORS.md" : {},
+    "LICENSE.txt" : {}
   }
   ,"templateDir": "templates/go",
   "useOneOfDiscriminatorLookup": true

@@ -20,14 +20,15 @@
     "scmUrl": "https://github.com/conekta/ct-conekta-java/tree/master",
     "library": "jersey3",
     "files": {
-        "AUTHORS.md" : {}
+        "AUTHORS.md": {},
+        "LICENSE.txt": {}
     },
-    "javaMinVersion" : 11,
+    "javaMinVersion": 11,
     "swagger1AnnotationLibrary": false,
-    "javaxPackage" : "javax",
+    "javaxPackage": "javax",
     "templateDir": "templates/java/jersey3",
-    "disallowAdditionalPropertiesIfNotPresent" : false,
-    "useOneOfDiscriminatorLookup" : true,
-    "serializationLibrary" : "jackson",
+    "disallowAdditionalPropertiesIfNotPresent": false,
+    "useOneOfDiscriminatorLookup": true,
+    "serializationLibrary": "jackson",
     "httpUserAgent": "Conekta/v2 JavaBindings/4.0.0"
 }
