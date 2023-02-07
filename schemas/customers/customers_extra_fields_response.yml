@@ -1,0 +1,149 @@
+title: customers_extra_fields_response
+description: customers response
+type: object
+required:
+  - data
+properties:
+  next_page_url: 
+    description: URL of the next page.
+    type: string
+    nullable: true
+    example: "https://api.conekta.io/customers?next=cus_2sagTU4GQR5e1i7A5"
+  previous_page_url:
+    description: Url of the previous page.
+    type: string
+    nullable: true
+    example: "https://api.conekta.io/customers?previous=cus_2sagTU4GQR5e1i7A5"
+  data:
+    type: array
+    items:
+      title: customers_data_response
+      properties:
+        antifraud_info:
+          title: customers_antifraud_info_response
+          type: object
+          nullable: true
+          properties:
+            first_paid_at:
+              type: integer
+              example: 1485151007
+            account_created_at:
+              type: integer
+              example: 1484040996
+        corporate:
+          type: boolean
+        created_at:
+          type: integer
+          format: int64
+          example: 1485151007
+        custom_reference:
+          type: string
+        default_shipping_contact_id:
+          type: string
+          example: "ship_cont_2tKZsTYcsryyu7Ah8"
+        default_payment_source_id:
+          type: string
+          nullable: true
+          example: src_2tHJfJ79KyUwpxTio
+        email:
+          type: string
+          example: Felipe@gmail.com
+          format: email
+        id:
+          type: string
+          example:  "cus_2tHJfJ79KyUwpxTik"
+        livemode:
+          type: boolean
+          example: true
+        name: 
+          type: string
+          example: Felipe
+        object: 
+          type: string
+          example: "customer"
+        payment_sources:
+          title: customer_payment_sources_response
+          allOf:
+            - $ref: ../../schemas/pagination/pagination.yml
+            - type: object
+              title: customerPaymentSources
+              properties:
+                data:
+                  type: array
+                  items:
+                    title: customerPaymentSourcesData
+                    discriminator:
+                      propertyName: type
+                      mapping:
+                        cash: payment_source_cash
+                        card: payment_source_card
+                        oxxo_recurrent: payment_source_cash
+                        spei_recurrent: payment_source_spei_recurrent
+                    oneOf:
+                      - $ref: 'customer_payment_source_cash_response.yml#/payment_source_cash'
+                      - $ref: 'customer_payment_source_card_response.yml#/payment_source_card'
+                      - $ref: 'customer_payment_source_spei_recurrent_response.yml#/payment_source_spei_recurrent'
+        phone:
+          type: string
+          example: "+5215555555555"
+        fiscal_entities:
+          title: customer_fiscal_entities_response
+          allOf:
+            - $ref: ../../schemas/pagination/pagination.yml
+            - type: object
+              properties:
+                data:
+                  type: array
+                  items:
+                    title: customer_fiscal_entities_data_response
+                    allOf: 
+                    - $ref: './customer_fiscal_entities_request.yml'
+                    - type: object
+                      required:
+                        - id
+                        - object
+                        - created_at
+                      properties:
+                        id:
+                          type: string
+                          example: "ship_cont_2tKZsTYcsryyu7Ah8"
+                        object:
+                          type: string
+                          example: "shipping_contact"
+                        created_at:
+                          type: integer
+                          format: int64
+                          example: 1675715413
+                        parent_id:
+                          type: string
+                          example: "cus_2tKcHxhTz7xU5SymF"
+                        default:
+                          type: boolean
+        shipping_contacts:
+          title: customer_shipping_contacts_response
+          allOf:
+            - $ref: ../../schemas/pagination/pagination.yml
+            - type: object
+              properties:
+                data:
+                  type: array
+                  items:
+                    title: customer_shipping_contacts_data_response
+                    allOf: 
+                      - $ref: './customer_shipping_contacts.yml'
+                      - type: object
+                        required:
+                          - id
+                          - object
+                          - created_at
+                        properties:
+                          id:
+                            type: string
+                            example: "ship_cont_2tKZsTYcsryyu7Ah8"
+                          object:
+                            type: string
+                            example: "shipping_contact"
+                          created_at:
+                            type: integer
+                            format: int64
+                            example: 1675715413

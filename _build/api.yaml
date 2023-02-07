@@ -79,23 +79,7 @@ paths:
                   payment_sources:
                     title: customer_payment_sources_response
                     allOf:
-                      - title: pagination metadata
-                        description: pagination metadata
-                        type: object
-                        required:
-                          - object
-                          - has_more
-                          - total
-                        properties:
-                          object:
-                            type: string
-                            example: list
-                          has_more:
-                            type: boolean
-                            example: false
-                          total:
-                            type: integer
-                            format: int32
+                      - $ref: '#/paths/~1customers/get/responses/200/content/application~1vnd.conekta-v2.0.0%2Bjson/schema/allOf/1'
                       - type: object
                         title: customerPaymentSources
                         properties:
@@ -203,7 +187,7 @@ paths:
                   fiscal_entities:
                     title: customer_fiscal_entities_response
                     allOf:
-                      - $ref: '#/paths/~1customers/post/responses/200/content/application~1vnd.conekta-v2.0.0%2Bjson/schema/properties/payment_sources/allOf/0'
+                      - $ref: '#/paths/~1customers/get/responses/200/content/application~1vnd.conekta-v2.0.0%2Bjson/schema/allOf/1'
                       - type: object
                         properties:
                           data:
@@ -283,7 +267,7 @@ paths:
                   shipping_contacts:
                     title: customer_shipping_contacts_response
                     allOf:
-                      - $ref: '#/paths/~1customers/post/responses/200/content/application~1vnd.conekta-v2.0.0%2Bjson/schema/properties/payment_sources/allOf/0'
+                      - $ref: '#/paths/~1customers/get/responses/200/content/application~1vnd.conekta-v2.0.0%2Bjson/schema/allOf/1'
                       - type: object
                         properties:
                           data:
@@ -379,11 +363,7 @@ paths:
         '401':
           $ref: '#/paths/~1logs/get/responses/401'
         '402':
-          description: payment required error
-          content:
-            application/vnd.conekta-v2.0.0+json:
-              schema:
-                $ref: '#/paths/~1logs/get/responses/401/content/application~1vnd.conekta-v2.0.0%2Bjson/schema'
+          $ref: '#/paths/~1customers/get/responses/402'
         '422':
           $ref: '#/paths/~1logs/get/responses/422'
         '500':
@@ -471,6 +451,225 @@ paths:
         required: true
       parameters:
         - $ref: '#/paths/~1logs/get/parameters/0'
+    get:
+      operationId: getCustomers
+      summary: returns curtomers
+      description: 'The purpose of business is to create and maintain a client, you will learn what elements you need to obtain a list of clients, which can be paged.'
+      responses:
+        '200':
+          description: successful operation
+          content:
+            application/vnd.conekta-v2.0.0+json:
+              schema:
+                title: customers_response
+                allOf:
+                  - title: customers_extra_fields_response
+                    description: customers response
+                    type: object
+                    required:
+                      - data
+                    properties:
+                      next_page_url:
+                        description: URL of the next page.
+                        type: string
+                        nullable: true
+                        example: 'https://api.conekta.io/customers?next=cus_2sagTU4GQR5e1i7A5'
+                      previous_page_url:
+                        description: Url of the previous page.
+                        type: string
+                        nullable: true
+                        example: 'https://api.conekta.io/customers?previous=cus_2sagTU4GQR5e1i7A5'
+                      data:
+                        type: array
+                        items:
+                          title: customers_data_response
+                          properties:
+                            antifraud_info:
+                              title: customers_antifraud_info_response
+                              type: object
+                              nullable: true
+                              properties:
+                                first_paid_at:
+                                  type: integer
+                                  example: 1485151007
+                                account_created_at:
+                                  type: integer
+                                  example: 1484040996
+                            corporate:
+                              type: boolean
+                            created_at:
+                              type: integer
+                              format: int64
+                              example: 1485151007
+                            custom_reference:
+                              type: string
+                            default_shipping_contact_id:
+                              type: string
+                              example: ship_cont_2tKZsTYcsryyu7Ah8
+                            default_payment_source_id:
+                              type: string
+                              nullable: true
+                              example: src_2tHJfJ79KyUwpxTio
+                            email:
+                              type: string
+                              example: Felipe@gmail.com
+                              format: email
+                            id:
+                              type: string
+                              example: cus_2tHJfJ79KyUwpxTik
+                            livemode:
+                              type: boolean
+                              example: true
+                            name:
+                              type: string
+                              example: Felipe
+                            object:
+                              type: string
+                              example: customer
+                            payment_sources:
+                              title: customer_payment_sources_response
+                              allOf:
+                                - $ref: '#/paths/~1customers/get/responses/200/content/application~1vnd.conekta-v2.0.0%2Bjson/schema/allOf/1'
+                                - type: object
+                                  title: customerPaymentSources
+                                  properties:
+                                    data:
+                                      type: array
+                                      items:
+                                        title: customerPaymentSourcesData
+                                        discriminator:
+                                          propertyName: type
+                                          mapping:
+                                            cash: payment_source_cash
+                                            card: payment_source_card
+                                            oxxo_recurrent: payment_source_cash
+                                            spei_recurrent: payment_source_spei_recurrent
+                                        oneOf:
+                                          - $ref: '#/paths/~1customers/post/responses/200/content/application~1vnd.conekta-v2.0.0%2Bjson/schema/properties/payment_sources/allOf/1/properties/data/items/oneOf/0'
+                                          - $ref: '#/paths/~1customers/post/responses/200/content/application~1vnd.conekta-v2.0.0%2Bjson/schema/properties/payment_sources/allOf/1/properties/data/items/oneOf/1'
+                                          - $ref: '#/paths/~1customers/post/responses/200/content/application~1vnd.conekta-v2.0.0%2Bjson/schema/properties/payment_sources/allOf/1/properties/data/items/oneOf/2'
+                            phone:
+                              type: string
+                              example: '+5215555555555'
+                            fiscal_entities:
+                              title: customer_fiscal_entities_response
+                              allOf:
+                                - $ref: '#/paths/~1customers/get/responses/200/content/application~1vnd.conekta-v2.0.0%2Bjson/schema/allOf/1'
+                                - type: object
+                                  properties:
+                                    data:
+                                      type: array
+                                      items:
+                                        title: customer_fiscal_entities_data_response
+                                        allOf:
+                                          - $ref: '#/paths/~1customers/post/responses/200/content/application~1vnd.conekta-v2.0.0%2Bjson/schema/properties/fiscal_entities/allOf/1/properties/data/items/allOf/0'
+                                          - type: object
+                                            required:
+                                              - id
+                                              - object
+                                              - created_at
+                                            properties:
+                                              id:
+                                                type: string
+                                                example: ship_cont_2tKZsTYcsryyu7Ah8
+                                              object:
+                                                type: string
+                                                example: shipping_contact
+                                              created_at:
+                                                type: integer
+                                                format: int64
+                                                example: 1675715413
+                                              parent_id:
+                                                type: string
+                                                example: cus_2tKcHxhTz7xU5SymF
+                                              default:
+                                                type: boolean
+                            shipping_contacts:
+                              title: customer_shipping_contacts_response
+                              allOf:
+                                - $ref: '#/paths/~1customers/get/responses/200/content/application~1vnd.conekta-v2.0.0%2Bjson/schema/allOf/1'
+                                - type: object
+                                  properties:
+                                    data:
+                                      type: array
+                                      items:
+                                        title: customer_shipping_contacts_data_response
+                                        allOf:
+                                          - $ref: '#/paths/~1customers/post/responses/200/content/application~1vnd.conekta-v2.0.0%2Bjson/schema/properties/shipping_contacts/allOf/1/properties/data/items/allOf/0'
+                                          - type: object
+                                            required:
+                                              - id
+                                              - object
+                                              - created_at
+                                            properties:
+                                              id:
+                                                type: string
+                                                example: ship_cont_2tKZsTYcsryyu7Ah8
+                                              object:
+                                                type: string
+                                                example: shipping_contact
+                                              created_at:
+                                                type: integer
+                                                format: int64
+                                                example: 1675715413
+                  - title: pagination metadata
+                    description: pagination metadata
+                    type: object
+                    required:
+                      - object
+                      - has_more
+                      - total
+                    properties:
+                      object:
+                        type: string
+                        example: list
+                      has_more:
+                        type: boolean
+                        example: false
+                      total:
+                        type: integer
+                        format: int32
+          headers:
+            Date:
+              description: The date and time that the response was sent
+              schema:
+                type: string
+                example: 'Fri, 03 Feb 2023 16:57:48 GMT'
+            Content-Type:
+              description: The format of the response body
+              schema:
+                type: string
+                example: application/json; charset=utf-8
+            Content-Length:
+              description: The length of the response body in bytes
+              schema:
+                type: string
+                example: '2737'
+            Connection:
+              description: The type of connection used to transfer the response
+              schema:
+                type: string
+                example: keep-alive
+            Conekta-Media-Type:
+              schema:
+                type: string
+                example: conekta-v2.0.0; format=application/json
+        '401':
+          $ref: '#/paths/~1logs/get/responses/401'
+        '402':
+          description: payment required error
+          content:
+            application/vnd.conekta-v2.0.0+json:
+              schema:
+                $ref: '#/paths/~1logs/get/responses/401/content/application~1vnd.conekta-v2.0.0%2Bjson/schema'
+        '422':
+          $ref: '#/paths/~1logs/get/responses/422'
+        '500':
+          $ref: '#/paths/~1logs/get/responses/500'
+      security:
+        - bearerAuth: []
+      parameters:
+        - $ref: '#/paths/~1logs/get/parameters/0'
   '/customers/{id}':
     get:
       operationId: getCustomerById
@@ -508,7 +707,7 @@ paths:
         '401':
           $ref: '#/paths/~1logs/get/responses/401'
         '402':
-          $ref: '#/paths/~1customers/post/responses/402'
+          $ref: '#/paths/~1customers/get/responses/402'
         '422':
           $ref: '#/paths/~1logs/get/responses/422'
         '500':
