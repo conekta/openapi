@@ -28,13 +28,17 @@ properties:
     example: ship_cont_1a2b3c4d5e6f7g8h
   corporate:
     type: boolean
-    description: It is a value that allows identifying if the email is corporate or not.
+    description: "It is a value that allows identifying if the email is corporate or not."
     example: false
     default: false
   custom_reference:
     type: string
     description: It is an undefined value.
     nullable: true
+  fiscal_entities:
+    type: array
+    items:
+      $ref: './customer_fiscal_entities_request.yml'
   payment_sources:
     type: array
     items:

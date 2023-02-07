@@ -2,5 +2,5 @@ description: requested field for customer
 content:
   application/json:
     schema:  
-      $ref: '../../schemas/customers/customer.yml'
+      $ref: '../../schemas/customers/update_customer.yml'
 required: true

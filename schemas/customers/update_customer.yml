@@ -1,0 +1,17 @@
+title: updates customer request
+description: updates a customer
+type: object
+properties:
+  name:
+    type: string
+    description: client's name
+    example:  miguel
+  email:
+    type: string
+    description: "An email address is a series of customizable characters followed by a universal Internet symbol, the at symbol (@), the name of a host server, and a web domain ending (.mx, .com, .org, . net, etc)."
+    example:  miguel@gmail.com
+  phone:
+    type: string
+    description: Is the customer's phone number
+    example: "+5215555555555"
+  

@@ -22,3 +22,29 @@ get:
   parameters:
     - $ref: '../../parameters/commons/path_param/id.yml'
     - $ref: '../../parameters/commons/headers/accept_language.yml'
+put:
+  operationId: updateCustomer
+  summary: updates a customer
+  description: 'You can update customer-related data'
+  responses:
+    '200':
+      description: successful operation
+      content:
+        application/vnd.conekta-v2.0.0+json:
+          schema:
+            $ref: '../../schemas/customers/customer_response.yml'
+    401:
+     $ref: '../errors/401.yml'
+    402: 
+      $ref: '../errors/402.yml'
+    422:
+     $ref: '../errors/422.yml'
+    500:
+     $ref: '../errors/500.yml'
+  security:
+    - bearerAuth: []
+  requestBody:
+   $ref: '../../requestBodies/customers/update_customer.yml'
+  parameters:
+    - $ref: '../../parameters/commons/path_param/id.yml'
+    - $ref: '../../parameters/commons/headers/accept_language.yml'

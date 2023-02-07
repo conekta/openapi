@@ -1,0 +1,32 @@
+type: object
+required:
+  - street1
+  - city
+  - country
+  - postal_code
+  - external_number
+properties:
+  street1:
+    type: string
+    example: avenida siempre viva
+  street2: 
+    type: string
+    example: fake street
+  postal_code:
+    type: string
+    example: "06100"
+  city: 
+    type: string
+    example: "Ciudad de Mexico"
+  state:
+    type: string
+    example: "Ciudad de Mexico"
+  country:
+    type: string
+    example: MX
+  residential:
+    type: boolean
+    example: true
+  external_number:
+    type: string
+    

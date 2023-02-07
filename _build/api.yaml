@@ -200,6 +200,86 @@ paths:
                   phone:
                     type: string
                     example: '+5215555555555'
+                  fiscal_entities:
+                    title: customer_fiscal_entities_response
+                    allOf:
+                      - $ref: '#/paths/~1customers/post/responses/200/content/application~1vnd.conekta-v2.0.0%2Bjson/schema/properties/payment_sources/allOf/0'
+                      - type: object
+                        properties:
+                          data:
+                            type: array
+                            items:
+                              title: customer_fiscal_entities_data_response
+                              allOf:
+                                - title: fiscal entity request
+                                  required:
+                                    - address
+                                  properties:
+                                    address:
+                                      allOf:
+                                        - type: object
+                                          required:
+                                            - street1
+                                            - city
+                                            - country
+                                            - postal_code
+                                            - external_number
+                                          properties:
+                                            street1:
+                                              type: string
+                                              example: avenida siempre viva
+                                            street2:
+                                              type: string
+                                              example: fake street
+                                            postal_code:
+                                              type: string
+                                              example: '06100'
+                                            city:
+                                              type: string
+                                              example: Ciudad de Mexico
+                                            state:
+                                              type: string
+                                              example: Ciudad de Mexico
+                                            country:
+                                              type: string
+                                              example: MX
+                                            residential:
+                                              type: boolean
+                                              example: true
+                                            external_number:
+                                              type: string
+                                    tax_id:
+                                      type: string
+                                    email:
+                                      type: string
+                                    phone:
+                                      type: string
+                                    contextual_data:
+                                      type: object
+                                    company_name:
+                                      type: string
+                                      example: conekta
+                                - type: object
+                                  required:
+                                    - id
+                                    - object
+                                    - created_at
+                                  properties:
+                                    id:
+                                      type: string
+                                      example: ship_cont_2tKZsTYcsryyu7Ah8
+                                    object:
+                                      type: string
+                                      example: shipping_contact
+                                    created_at:
+                                      type: integer
+                                      format: int64
+                                      example: 1675715413
+                                    parent_id:
+                                      type: string
+                                      example: cus_2tKcHxhTz7xU5SymF
+                                    default:
+                                      type: boolean
                   shipping_contacts:
                     title: customer_shipping_contacts_response
                     allOf:
@@ -312,7 +392,6 @@ paths:
         - bearerAuth: []
       requestBody:
         description: requested field for customer
-        title: customer_request
         content:
           application/json:
             schema:
@@ -353,6 +432,10 @@ paths:
                   type: string
                   description: It is an undefined value.
                   nullable: true
+                fiscal_entities:
+                  type: array
+                  items:
+                    $ref: '#/paths/~1customers/post/responses/200/content/application~1vnd.conekta-v2.0.0%2Bjson/schema/properties/fiscal_entities/allOf/1/properties/data/items/allOf/0'
                 payment_sources:
                   type: array
                   items:
@@ -408,6 +491,52 @@ paths:
           $ref: '#/paths/~1logs/get/responses/500'
       security:
         - bearerAuth: []
+      parameters:
+        - $ref: '#/paths/~1logs~1%7Bid%7D/get/parameters/0'
+        - $ref: '#/paths/~1logs/get/parameters/0'
+    put:
+      operationId: updateCustomer
+      summary: updates a customer
+      description: You can update customer-related data
+      responses:
+        '200':
+          description: successful operation
+          content:
+            application/vnd.conekta-v2.0.0+json:
+              schema:
+                $ref: '#/paths/~1customers/post/responses/200/content/application~1vnd.conekta-v2.0.0%2Bjson/schema'
+        '401':
+          $ref: '#/paths/~1logs/get/responses/401'
+        '402':
+          $ref: '#/paths/~1customers/post/responses/402'
+        '422':
+          $ref: '#/paths/~1logs/get/responses/422'
+        '500':
+          $ref: '#/paths/~1logs/get/responses/500'
+      security:
+        - bearerAuth: []
+      requestBody:
+        description: requested field for customer
+        content:
+          application/json:
+            schema:
+              title: updates customer request
+              description: updates a customer
+              type: object
+              properties:
+                name:
+                  type: string
+                  description: client's name
+                  example: miguel
+                email:
+                  type: string
+                  description: 'An email address is a series of customizable characters followed by a universal Internet symbol, the at symbol (@), the name of a host server, and a web domain ending (.mx, .com, .org, . net, etc).'
+                  example: miguel@gmail.com
+                phone:
+                  type: string
+                  description: Is the customer's phone number
+                  example: '+5215555555555'
+        required: true
       parameters:
         - $ref: '#/paths/~1logs~1%7Bid%7D/get/parameters/0'
         - $ref: '#/paths/~1logs/get/parameters/0'
