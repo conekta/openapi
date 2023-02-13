@@ -18,4 +18,3 @@ ruby:
 
 csharp:
 	npx @openapitools/openapi-generator-cli generate -i  api.yaml -g csharp-netcore -o conekta-dotnet  -c config-dotnet.json 
-	

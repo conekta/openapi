@@ -53,6 +53,10 @@ paths:
                     example: 1485151007
                   custom_reference:
                     type: string
+                  default_fiscal_entity_id:
+                    type: string
+                    nullable: true
+                    example: fis_ent_2tKqqAfqPi21oCmEJ
                   default_shipping_contact_id:
                     type: string
                     example: ship_cont_2tKZsTYcsryyu7Ah8
@@ -503,6 +507,10 @@ paths:
                               example: 1485151007
                             custom_reference:
                               type: string
+                            default_fiscal_entity_id:
+                              type: string
+                              nullable: true
+                              example: fis_ent_2tKqqAfqPi21oCmEJ
                             default_shipping_contact_id:
                               type: string
                               example: ship_cont_2tKZsTYcsryyu7Ah8
@@ -670,6 +678,26 @@ paths:
         - bearerAuth: []
       parameters:
         - $ref: '#/paths/~1logs/get/parameters/0'
+        - in: query
+          name: limit
+          description: 'The numbers of items to return, the maximum value is 250'
+          required: false
+          schema:
+            type: integer
+            format: int32
+            default: 20
+        - in: query
+          name: next
+          description: next page
+          required: false
+          schema:
+            type: string
+        - in: query
+          name: previous
+          description: previous page
+          required: false
+          schema:
+            type: string
   '/customers/{id}':
     get:
       operationId: getCustomerById

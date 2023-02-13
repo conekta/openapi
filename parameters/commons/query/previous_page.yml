@@ -1,0 +1,6 @@
+in: query
+name: "previous"
+description: "previous page"
+required: false
+schema:
+  type: string

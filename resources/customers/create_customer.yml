@@ -101,3 +101,6 @@ get:
     - bearerAuth: []
   parameters:
     - $ref: '../../parameters/commons/headers/accept_language.yml'
+    - $ref: '../../parameters/commons/query/limit.yml'
+    - $ref: '../../parameters/commons/query/next_page.yml'
+    - $ref: '../../parameters/commons/query/previous_page.yml'

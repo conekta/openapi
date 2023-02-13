@@ -11,6 +11,6 @@
   "httpUserAgent": "Conekta/v2 PythonBindings/4.0.0",
   "files": {
     "AUTHORS.md" : {},
-    "LICENSE.txt" : {}
+    "LICENSE" : {}
   }
 }
