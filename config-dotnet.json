@@ -1,0 +1,22 @@
+{
+  "targetFramework" : "net47",
+  "files": {
+    "AUTHORS.md" : {},
+    "LICENSE" : {},
+    "conekta.png" : {}
+  },
+  "apiName" : "conekta",
+  "packageName" : "Conekta.net",
+  "packageVersion" : "4.0.0",
+  "netCoreProjectFile" : true,
+  "packageDescription" : "This is a .net library that allows interaction with https://api.conekta.io API.",
+  "packageTitle" : "Conekta Library",
+  "gitUserId": "conekta",
+  "gitRepoId": "conekta-.net",
+  "httpUserAgent": "Conekta/v2 net/4.0.0",
+  "packageAuthors" : "engineering@conekta.com",
+  "packageCompany" : "Conekta",
+  "useGenericHost" : true,
+  "templateDir": "templates/netcore",
+  "useOneOfDiscriminatorLookup" : true
+}

@@ -15,4 +15,7 @@ go:
 ruby:
 	mkdir -p conekta-ruby && cp .openapi-generator-ignore conekta-ruby/.openapi-generator-ignore &&   \
 	npx @openapitools/openapi-generator-cli generate -i  api.yaml -g ruby -o conekta-ruby  -c config-ruby.json 
+
+csharp:
+	npx @openapitools/openapi-generator-cli generate -i  api.yaml -g csharp-netcore -o conekta-dotnet  -c config-dotnet.json 
 	

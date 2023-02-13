@@ -1,0 +1,12 @@
+{{! if needed users can add this file to their templates folder to append to the csproj }}
+  <PropertyGroup>
+    <PackageLicenseFile>LICENSE</PackageLicenseFile>
+    <PackageTags>conekta;payment;credit;cards;money;gateway;</PackageTags>
+    <PackageIcon>conekta.png</PackageIcon>
+  </PropertyGroup>
+  <ItemGroup>
+    <None Include="../../LICENSE" Pack="true" PackagePath="" />
+    <None Include="../../conekta.png" Pack="true" Visible="false" PackagePath="" />
+    <PackageReference Include="JsonSubTypes" Version="1.9.0" />
+    <PackageReference Include="Newtonsoft.Json" Version="13.0.2" />
+  </ItemGroup>

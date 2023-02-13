@@ -38,6 +38,10 @@ properties:
           example: 1485151007
         custom_reference:
           type: string
+        default_fiscal_entity_id:
+          type: string
+          nullable: true
+          example: "fis_ent_2tKqqAfqPi21oCmEJ"
         default_shipping_contact_id:
           type: string
           example: "ship_cont_2tKZsTYcsryyu7Ah8"

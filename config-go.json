@@ -9,7 +9,8 @@
   "httpUserAgent": "Conekta/v2 GoBindings/4.0.0",
   "files": {
     "AUTHORS.md": {},
-    "LICENSE.txt": {}
+    "LICENSE": {},
+    "conekta.png" : {}
   },
   "templateDir": "templates/go",
   "useOneOfDiscriminatorLookup": true
