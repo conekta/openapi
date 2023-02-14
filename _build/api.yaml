@@ -1107,7 +1107,7 @@ paths:
                                                   type: string
                                                   example: payment_source
                                             - type: object
-                                              title: charge_data__payment_method_cash_response
+                                              title: charge_data_payment_method_cash_response
                                               description: use for cash responses
                                               properties:
                                                 reference:
@@ -1129,7 +1129,7 @@ paths:
                                         - allOf:
                                             - $ref: '#/paths/~1orders/post/responses/200/content/application~1vnd.conekta-v2.0.0%2Bjson/schema/properties/charges/allOf/1/properties/data/items/allOf/0/properties/payment_method/oneOf/0/allOf/0'
                                             - type: object
-                                              title: charge_data__payment_method_card_response
+                                              title: charge_data_payment_method_card_response
                                               description: use for card responses
                                               properties:
                                                 account_type:
@@ -1162,11 +1162,36 @@ paths:
                                                 name:
                                                   type: string
                                                   example: Fulanito Perez
+                                        - allOf:
+                                            - $ref: '#/paths/~1orders/post/responses/200/content/application~1vnd.conekta-v2.0.0%2Bjson/schema/properties/charges/allOf/1/properties/data/items/allOf/0/properties/payment_method/oneOf/0/allOf/0'
+                                            - type: object
+                                              title: charge_data_payment_method_bank_transfer_response
+                                              description: use for bank transfer responses
+                                              properties:
+                                                bank:
+                                                  type: string
+                                                  example: STP
+                                                clabe:
+                                                  type: string
+                                                  example: '646180111805034237'
+                                                expires_at:
+                                                  type: integer
+                                                  example: 1683053729
+                                                payment_attempts:
+                                                  type: array
+                                                  items: {}
+                                                receiving_account_number:
+                                                  type: string
+                                                  example: '646180111805034237'
+                                                receiving_account_bank:
+                                                  type: string
+                                                  example: STP
                                       discriminator:
                                         propertyName: object
                                         mapping:
                                           cash_payment: payment_method_cash
                                           card_payment: payment_method_card
+                                          bank_transfer_payment: payment_method_bank_transfer
                                     status:
                                       type: string
                                       example: pending_payment
