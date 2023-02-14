@@ -4,7 +4,14 @@ type: object
 required:
   - currency
   - customer_info
+  - line_items
 properties:
+  charges:
+    type: array
+    items:
+      $ref: ../../schemas/charges/charge_request.yml
+  checkout:
+    $ref: ../../schemas/checkouts/checkout_request.yml
   currency:
     type: string
     description: >-
@@ -12,7 +19,13 @@ properties:
     example:  "MXN"
     maxLength: 3
   customer_info:
-    $ref: ../customers/customer_info.yml
+    oneOf:
+      - $ref: ../customers/customer_info.yml
+      - $ref: ../customers/customer_info_just_customer_id.yml
+  discount_lines:
+    type: array
+    items:
+      $ref: order_discount_lines_request.yml
   line_items:
     type: array
     items:
@@ -49,7 +62,24 @@ properties:
           type: object
           additionalProperties:
             type: string
-
+  metadata:
+    type: object
+    additionalProperties:
+      type: string
+  pre_authorize:
+    type: boolean
+    description: "Indicates whether the order charges must be preauthorized"
+    default: false
+  shipping_contact:
+    $ref: ../../schemas/customers/customer_shipping_contacts.yml
+  shipping_lines:
+    type: array
+    items:
+      $ref: ../../schemas/orders/shipping_lines_request.yml
+  tax_lines:
+    type: array
+    items:
+      $ref: order_tax_lines_request.yml
 
 
 

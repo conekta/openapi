@@ -13,7 +13,7 @@
   "packageTitle" : "Conekta Library",
   "gitUserId": "conekta",
   "gitRepoId": "conekta-.net",
-  "httpUserAgent": "Conekta/v2 net/4.0.0",
+  "httpUserAgent": "Conekta/v2 .NetBindings/4.0.0",
   "packageAuthors" : "engineering@conekta.com",
   "packageCompany" : "Conekta",
   "useGenericHost" : true,

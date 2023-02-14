@@ -1,0 +1,8 @@
+title: shipping_lines_request
+properties:
+  amount:
+    type: integer
+    example: 0
+  carrier: 
+    type: string
+    example: FEDEX

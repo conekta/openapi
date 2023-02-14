@@ -1,0 +1,25 @@
+title: charges
+description: "The charges to be made"
+required:
+  - payment_method
+properties:
+  expires_at:
+    type: integer
+    format: int64
+    description: "Method expiration date as unix timestamp"
+    example: 1677196303
+  monthly_installments:
+    type: integer
+    format: int32
+    description: "How many months without interest to apply, it can be 3, 6, 9, 12 or 18"
+  payment_method:
+    type: string
+    example: "card"
+    description: |
+      Payment method used in the charge. Go to the [payment methods](https://developers.conekta.com/reference/m%C3%A9todos-de-pago) section for more details
+  reference_id:
+    description: "Custom reference to add to the charge"
+    type: string
+  token_id:
+    type: string
+    example: "tok_2897348234"

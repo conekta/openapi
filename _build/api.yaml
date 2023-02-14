@@ -678,26 +678,9 @@ paths:
         - bearerAuth: []
       parameters:
         - $ref: '#/paths/~1logs/get/parameters/0'
-        - in: query
-          name: limit
-          description: 'The numbers of items to return, the maximum value is 250'
-          required: false
-          schema:
-            type: integer
-            format: int32
-            default: 20
-        - in: query
-          name: next
-          description: next page
-          required: false
-          schema:
-            type: string
-        - in: query
-          name: previous
-          description: previous page
-          required: false
-          schema:
-            type: string
+        - $ref: '#/paths/~1logs/get/parameters/1'
+        - $ref: '#/paths/~1logs/get/parameters/2'
+        - $ref: '#/paths/~1logs/get/parameters/3'
   '/customers/{id}':
     get:
       operationId: getCustomerById
@@ -906,6 +889,26 @@ paths:
             en:
               summary: for english request/response
               value: en
+        - in: query
+          name: limit
+          description: 'The numbers of items to return, the maximum value is 250'
+          required: false
+          schema:
+            type: integer
+            format: int32
+            default: 20
+        - in: query
+          name: next
+          description: next page
+          required: false
+          schema:
+            type: string
+        - in: query
+          name: previous
+          description: previous page
+          required: false
+          schema:
+            type: string
   '/logs/{id}':
     get:
       operationId: getLogById
@@ -1145,37 +1148,117 @@ paths:
               required:
                 - currency
                 - customer_info
+                - line_items
               properties:
+                charges:
+                  type: array
+                  items:
+                    title: charges
+                    description: The charges to be made
+                    required:
+                      - payment_method
+                    properties:
+                      expires_at:
+                        type: integer
+                        format: int64
+                        description: Method expiration date as unix timestamp
+                      monthly_installments:
+                        type: integer
+                        format: int32
+                        description: 'How many months without interest to apply, it can be 3, 6, 9, 12 or 18'
+                      payment_method:
+                        type: string
+                        example: card
+                        description: |
+                          Payment method used in the charge. Go to the [payment methods](https://developers.conekta.com/reference/m%C3%A9todos-de-pago) section for more details
+                      reference_id:
+                        description: Custom reference to add to the charge
+                        type: string
+                      token_id:
+                        type: string
+                        example: tok_2897348234
+                checkout:
+                  title: checkout_request
+                  description: |
+                    [Checkout](https://developers.conekta.com/reference/checkout) details
+                  required:
+                    - type
+                    - allowed_payment_methods
+                  properties:
+                    allowed_payment_methods:
+                      type: string
+                      description: Are the payment methods available for this link
+                      enum:
+                        - card
+                        - cash
+                        - bank_transfer
+                    expires_at:
+                      type: integer
+                      format: int64
+                      description: Unix timestamp of checkout expiration
+                    failure_url:
+                      type: string
+                      description: 'Redirection url back to the site in case of failed payment, applies only to HostedPayment.'
+                    name:
+                      type: string
+                      description: Reason for payment
+                    success_url:
+                      type: string
+                      description: 'Redirection url back to the site in case of successful payment, applies only to HostedPayment'
                 currency:
                   type: string
                   description: 'Currency with which the payment will be made. It uses the 3-letter code of the [International Standard ISO 4217.](https://es.wikipedia.org/wiki/ISO_4217)'
                   example: MXN
                   maxLength: 3
                 customer_info:
-                  title: customer_info
-                  type: object
-                  required:
-                    - corporate
-                  properties:
-                    customer_id:
-                      type: string
-                      example: cus_23874283647
-                    name:
-                      type: string
-                      example: DevTest
-                    email:
-                      type: string
-                      format: email
-                      example: test@conekta.com
-                    phone:
-                      type: string
-                      example: '5522997233'
-                    corporate:
-                      default: false
-                      type: boolean
-                    object:
-                      type: string
-                      example: customer_info
+                  oneOf:
+                    - title: customer_info
+                      type: object
+                      required:
+                        - corporate
+                        - name
+                        - phone
+                        - email
+                      properties:
+                        name:
+                          type: string
+                          example: DevTest
+                        email:
+                          type: string
+                          format: email
+                          example: test@conekta.com
+                        phone:
+                          type: string
+                          example: '5522997233'
+                        corporate:
+                          default: false
+                          type: boolean
+                        object:
+                          type: string
+                          example: customer_info
+                    - title: customer_info
+                      type: object
+                      required:
+                        - customer_id
+                      properties:
+                        customer_id:
+                          type: string
+                          example: cus_23874283647
+                discount_lines:
+                  type: array
+                  items:
+                    title: order_discount_lines_request
+                    description: List of discounts that apply to the order.
+                    properties:
+                      code:
+                        type: string
+                        description: Discount code.
+                      type:
+                        type: string
+                        example: loyalty
+                      amount:
+                        type: integer
+                        format: int32
                 line_items:
                   type: array
                   items:
@@ -1212,6 +1295,27 @@ paths:
                         type: object
                         additionalProperties:
                           type: string
+                pre_authorize:
+                  type: boolean
+                  description: Indicates whether the order charges must be preauthorized
+                  default: false
+                shipping_contact:
+                  $ref: '#/paths/~1customers/post/responses/200/content/application~1vnd.conekta-v2.0.0%2Bjson/schema/properties/shipping_contacts/allOf/1/properties/data/items/allOf/0'
+                tax_lines:
+                  type: array
+                  items:
+                    title: order_tax_lines_request
+                    description: List of taxes paid.
+                    properties:
+                      code:
+                        type: string
+                        description: Discount code.
+                      type:
+                        type: string
+                        example: loyalty
+                      amount:
+                        type: integer
+                        format: int32
         required: true
       parameters:
         - $ref: '#/paths/~1logs/get/parameters/0'

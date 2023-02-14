@@ -1,0 +1,26 @@
+title: checkout_request
+description: |
+  [Checkout](https://developers.conekta.com/reference/checkout) details
+required:
+  - type
+  - allowed_payment_methods
+properties:
+  allowed_payment_methods:
+    type: string
+    description: "Are the payment methods available for this link"
+  expires_at:
+    type: integer
+    format: int64
+    description: "Unix timestamp of checkout expiration"
+  failure_url: 
+    type: string
+    description: "Redirection url back to the site in case of failed payment, applies only to HostedPayment."
+  name:
+    type: string
+    description: "Reason for payment"
+  success_url:
+    type: string
+    description: "Redirection url back to the site in case of successful payment, applies only to HostedPayment"
+  type:
+    type: string
+    description: "This field represents the type of checkout"

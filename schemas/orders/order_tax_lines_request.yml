@@ -1,0 +1,12 @@
+title: order_tax_lines_request
+description: "List of taxes paid."
+properties:
+  code:
+    type: string
+    description: "Discount code."
+  type:
+    type: string
+    example: "loyalty"
+  amount:
+    type: integer
+    format: int32
