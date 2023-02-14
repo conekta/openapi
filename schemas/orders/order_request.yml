@@ -29,39 +29,7 @@ properties:
   line_items:
     type: array
     items:
-      type: object
-      title: line_items
-      required:
-        - name
-        - unit_price
-        - quantity
-      properties:
-        description:
-          type: string
-          maxLength: 250
-        sku:
-          type: string
-        name:
-          type: string
-          example: "Box of Cohiba S1s"
-        unit_price: 
-          type: integer
-          format: int32
-          example: 20000
-        quantity:
-          type: integer
-          format: int32
-          example: 1
-        tags:
-          type: array
-          items:
-            type: string
-        brand:
-          type: string
-        metadata:
-          type: object
-          additionalProperties:
-            type: string
+       $ref: line_items.yml
   metadata:
     type: object
     additionalProperties:

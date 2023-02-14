@@ -1,0 +1,47 @@
+title: customer_shipping_contacts_response
+description: Contains the detail of the shipping addresses that the client has active or has used in Conekta
+properties:
+  phone:
+    type: string
+    example:  "+525511223344"
+  receiver:
+    type: string
+    example:   "Marvin Fuller"
+  between_streets: 
+    type: string
+    example: "Ackerman Crescent"
+  address: 
+    type: object
+    properties:
+      object:
+        type: string
+        example: "shipping_address"
+      street1:
+        type: string
+        example: avenida siempre viva
+      street2: 
+        type: string
+        example: fake street
+      postal_code:
+        type: string
+        example: "06100"
+      city: 
+        type: string
+        example: "Ciudad de Mexico"
+      state:
+        type: string
+        example: "Ciudad de Mexico"
+      country:
+        type: string
+        example: MX
+      residential:
+        type: boolean
+        example: true
+  parent_id:
+    type: string
+  default:
+    type: boolean
+    example: false
+  deleted:
+    type: boolean
+    example: false

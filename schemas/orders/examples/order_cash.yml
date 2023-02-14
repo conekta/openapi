@@ -1,6 +1,21 @@
 value:
-  id: "62bce95741de276186407e41"
-  livemode: true
-  payment_method:
-    service_name: OxxoPay
+  id: 62bce95741de276186407e41
+  livemode: false
+  created_at: 1656547671
+  currency: MXN
+  payment_method: 
+    service_name: "OxxoPay"
     barcode_url: "https://s3.amazonaws.com/cash_payment_barcodes/sandbox_reference.png"
+    object: cash_payment
+    type: oxxo
+    expires_at: 1656634070
+    store_name: OXXO
+    reference: 98000013217610
+  object: charge
+  description: Payment from order
+  status: paid
+  amount: 13500
+  paid_at: 1656547702
+  fee: 537
+  customer_id: 
+  order_id: ord_2s53K99C8GXVmCfPm

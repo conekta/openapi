@@ -13,13 +13,19 @@ properties:
     format: int32
     description: "How many months without interest to apply, it can be 3, 6, 9, 12 or 18"
   payment_method:
-    type: string
-    example: "card"
+    required:
+      - type
+    type: object
     description: |
-      Payment method used in the charge. Go to the [payment methods](https://developers.conekta.com/reference/m%C3%A9todos-de-pago) section for more details
+          Payment method used in the charge. Go to the [payment methods](https://developers.conekta.com/reference/m%C3%A9todos-de-pago) section for more details
+    properties:
+      type:
+        type: string
+        example: "card"
+      token_id:
+        type: string
+        example: "tok_2897348234"
   reference_id:
     description: "Custom reference to add to the charge"
     type: string
-  token_id:
-    type: string
-    example: "tok_2897348234"
+  

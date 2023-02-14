@@ -1,0 +1,11 @@
+payment_method:
+  type: object
+  required:
+    - object
+  properties:
+    type: 
+      type: string
+    object: 
+      type: string
+      example: "payment_source"
+   

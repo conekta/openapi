@@ -1,0 +1,38 @@
+payment_method_card:
+  allOf:
+    - $ref: charge_payment_method_response.yml#/payment_method
+    - type: object
+      title: charge_data_payment_method_card_response
+      description: use for card responses
+      properties:
+        account_type:
+          type: string
+          example: "Credit"
+        auth_code:
+          type: string
+          example: "867372"
+        brand:
+          type: string
+          example: "visa"
+        country:
+          type: string
+          example: "MX"
+        exp_month:
+          type: string
+          example: "02"
+        exp_year:
+          type: string
+          example: "30"
+        fraud_indicators:
+          type: array
+          items: {}
+        issuer:
+          type: string
+          example: "BANAMEX"
+        last4:
+          type: string
+          example: "4242"
+        name:
+          type: string
+          example: "Fulanito Perez"
+        

@@ -1,0 +1,102 @@
+title: order_response
+description: "order response"
+properties:
+  amount:
+    type: integer
+    example: 21605
+  amount_refunded:
+    type: integer
+    example: 0
+  charges:
+    allOf:
+      - $ref: ../pagination/pagination.yml
+      - type: object
+        properties:
+          data:
+            type: array
+            items:
+              title: charges_data_response
+              allOf:
+                - $ref: ../../schemas/charges/charge_response.yml
+  created_at:
+    type: integer
+    example: 1676328434
+  currency:
+    type: string
+    example: "MXN"
+  customer_info:
+    allOf:
+      - type: object
+        properties:
+          object:
+            type: string
+            example: "customer_info"
+      - $ref: ../customers/customer_info.yml
+      - $ref: ../customers/customer_info_just_customer_id.yml
+  fiscal_entity:
+    type: object
+    properties:
+      address:
+        $ref: ../customers/customer_address.yml
+      tax_id:
+        type: string
+        example: "324234234"
+      id:
+        type: string
+        example: "fis_ent_2tN85VYaSMyDvjB3M"
+      object:
+        type: string
+        example: "fiscal_entity"
+  id:
+    type: string
+    example: "ord_2tMtQQpDvfnNjiuFG"
+  is_refundable:
+    type: boolean
+    example: false
+  line_items:
+    allOf:
+      - $ref: ../pagination/pagination.yml
+      - type: object
+        properties:
+          data:
+            type: array
+            items:
+              title: line_items_data_response
+              allOf:
+                - $ref: line_items.yml
+                - type: object
+                  properties:
+                    id: 
+                      type: string
+                    object:
+                      type: string
+                    parent_id:
+                      type: string
+  livemode:
+    type: boolean
+  metadata:
+    type: object
+    additionalProperties:
+      type: object
+  object:
+    type: string
+    example: "order"
+  payment_status:
+    type: string
+    example: "paid"
+  shipping_contact:
+     allOf:
+      - type: object
+        properties:
+          created_at:
+            type: integer
+          id:
+            type: string
+          object:
+            type: string
+      - $ref: ../../schemas/customers/customer_shipping_contacts_response.yml
+  updated_at:
+    type: integer
+    example: 1676328434
+
+  

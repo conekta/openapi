@@ -205,37 +205,7 @@ paths:
                                   properties:
                                     address:
                                       allOf:
-                                        - type: object
-                                          required:
-                                            - street1
-                                            - city
-                                            - country
-                                            - postal_code
-                                            - external_number
-                                          properties:
-                                            street1:
-                                              type: string
-                                              example: avenida siempre viva
-                                            street2:
-                                              type: string
-                                              example: fake street
-                                            postal_code:
-                                              type: string
-                                              example: '06100'
-                                            city:
-                                              type: string
-                                              example: Ciudad de Mexico
-                                            state:
-                                              type: string
-                                              example: Ciudad de Mexico
-                                            country:
-                                              type: string
-                                              example: MX
-                                            residential:
-                                              type: boolean
-                                              example: true
-                                            external_number:
-                                              type: string
+                                        - $ref: '#/paths/~1orders/post/responses/200/content/application~1vnd.conekta-v2.0.0%2Bjson/schema/properties/fiscal_entity/properties/address'
                                     tax_id:
                                       type: string
                                     email:
@@ -1064,71 +1034,418 @@ paths:
           content:
             application/vnd.conekta-v2.0.0+json:
               schema:
-                oneOf:
-                  - title: order response for cash
-                    description: order response for cash
+                title: order_response
+                description: order response
+                properties:
+                  amount:
+                    type: integer
+                    example: 21605
+                  amount_refunded:
+                    type: integer
+                    example: 0
+                  charges:
                     allOf:
-                      - title: orders fields common
-                        description: orders fields common
-                        type: object
-                        required:
-                          - object
+                      - $ref: '#/paths/~1customers/get/responses/200/content/application~1vnd.conekta-v2.0.0%2Bjson/schema/allOf/1'
+                      - type: object
+                        properties:
+                          data:
+                            type: array
+                            items:
+                              title: charges_data_response
+                              allOf:
+                                - title: charges_data_response
+                                  type: object
+                                  properties:
+                                    amount:
+                                      type: integer
+                                      example: 4321
+                                    created_at:
+                                      type: integer
+                                      example: 1676386026
+                                    currency:
+                                      type: string
+                                      example: MXN
+                                    customer_id:
+                                      type: string
+                                    description:
+                                      type: string
+                                      example: Payment from order
+                                    device_fingerprint:
+                                      type: string
+                                      example: 6FR3chaU4Y1nGAW5NAGd1rcjAKa142Ba
+                                    failure_code:
+                                      type: string
+                                      example: suspected_fraud
+                                    failure_message:
+                                      type: string
+                                      example: Este cargo ha sido declinado porque el comportamiento del comprador es sospechoso.
+                                    fee:
+                                      type: integer
+                                      example: 1160
+                                    id:
+                                      type: string
+                                    livemode:
+                                      type: boolean
+                                    object:
+                                      type: string
+                                    order_id:
+                                      type: string
+                                      example: ord_2tN73UdUSNrYRPD9r
+                                    paid_at:
+                                      type: integer
+                                      example: 1676390742
+                                    payment_method:
+                                      oneOf:
+                                        - allOf:
+                                            - type: object
+                                              required:
+                                                - object
+                                              properties:
+                                                type:
+                                                  type: string
+                                                object:
+                                                  type: string
+                                                  example: payment_source
+                                            - type: object
+                                              title: charge_data__payment_method_cash_response
+                                              description: use for cash responses
+                                              properties:
+                                                reference:
+                                                  type: string
+                                                  example: '93000262276908'
+                                                barcode_url:
+                                                  type: string
+                                                  example: 'https://pt-common-s3-stg.s3.amazonaws.com/644ebf80f2243197aad6cd8810375b905b613dbe.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=ASIA3UN6375MP4SLLCWV%2F20230203%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20230203T215750Z&X-Amz-Expires=604800&X-Amz-Security-Token=IQoJb3JpZ2luX2VjEH4aCXVzLWVhc3QtMSJGMEQCICd79cu7DYu%2F4%2B3HnVVswydgU9yHcE9kmQIIk2TLoZJrAiBVZ0HxVSeboK5lhdQSqADjwQF62XX35jhC%2F2riB0M8uCqQBAj2%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F8BEAIaDDc5OTgwMTA4MTY4OCIMXWZds9ZI5hzUdbeGKuQDFreMyeWnWWPqDuGZ2%2BHk6usCr%2Fl096%2FNJh9xtf8htLu56K%2FhWUTx%2BjiqFWM2O%2FF5zTS%2BIV6TqkLDZ%2BQ5Jo1miQrRmR57YDz6uP2Yd1mNZ1ouq5ipnNjUuu5UWCCBAmqyZQsrVmeMQpSV2IB%2BTERCCcW2SukFEYU%2F20%2Fzy5orsoZ8DxOW460IymR3cWBk5u3Xh2cV6Y1RdPEwDEThhqYEF5w%2ByKbLENloMsI%2FUm6sG5PPrO3yQOAP9aK2muLJs9lXQRU%2FL%2FSsmS4FKSUFOqlN6YU%2Bi2Y%2FyGIKAJT2VDkngvz5Sl%2Fadj0j%2BPKftVRV5FcEhySB6Rl%2BSkPN7kVQMJp6pS8hMJ6JCyEA%2BA3eWYdIfKgQhWVXAR4oCBfJ62DH8FU3a7WfSjjpTwfVkiReWen3GGCYfUWETTVKp46MKnJ9PG0CD3KzxKV8VfmEGc5krK%2FI%2F%2BDV2wtSa%2F9qf1%2BK1YYJIK9qZGb25ljUiGhTB4T%2BMUOSQFjetiWUoOJc5Q3Jz%2FXJbiTAMTST39MhdbCgiMgfrc8OGKN5DOVbex33Z7dn0xf%2FOCkSqurhLaG08efKQBdhLNS0RlE9hbg9yZ2ywwtQIF39fI6A7eeH0T11a5HMlvm51u4rAffPHRuEJfwJoIuj%2F2s3QzDg7%2FWeBjqmAbnPOlGfysjrDdvHyG7HVnaX02kdG%2BI3Q4PFOO4Mjaa3ocpjcfPT70%2BZ5a%2FSv5vP0jDLGrLToeM9%2BAUlNepptICRu23a1tLGW4ri0twPA%2FZ4JDTtUUUgdblyG8bKpcUTNp4oOsdmLLBz3FVyr4c2xQbDZSu2zYOtoOxB18W0AC6kIbsMWVU55Bf0mBhPeBWxGrtM4Kw1SgHHlt%2F8vetQi2OwtUcg08c%3D&X-Amz-SignedHeaders=host&X-Amz-Signature=d06dfa41550003359f2aabc8006063a80dfd806a13a54d244024946a76aa9abc'
+                                                expires_at:
+                                                  type: integer
+                                                  format: int64
+                                                  example: 0
+                                                service_name:
+                                                  type: string
+                                                  example: OxxoPay
+                                                store_name:
+                                                  type: string
+                                                  example: OXXO
+                                        - allOf:
+                                            - $ref: '#/paths/~1orders/post/responses/200/content/application~1vnd.conekta-v2.0.0%2Bjson/schema/properties/charges/allOf/1/properties/data/items/allOf/0/properties/payment_method/oneOf/0/allOf/0'
+                                            - type: object
+                                              title: charge_data__payment_method_card_response
+                                              description: use for card responses
+                                              properties:
+                                                account_type:
+                                                  type: string
+                                                  example: Credit
+                                                auth_code:
+                                                  type: string
+                                                  example: '867372'
+                                                brand:
+                                                  type: string
+                                                  example: visa
+                                                country:
+                                                  type: string
+                                                  example: MX
+                                                exp_month:
+                                                  type: string
+                                                  example: '02'
+                                                exp_year:
+                                                  type: string
+                                                  example: '30'
+                                                fraud_indicators:
+                                                  type: array
+                                                  items: {}
+                                                issuer:
+                                                  type: string
+                                                  example: BANAMEX
+                                                last4:
+                                                  type: string
+                                                  example: '4242'
+                                                name:
+                                                  type: string
+                                                  example: Fulanito Perez
+                                      discriminator:
+                                        propertyName: object
+                                        mapping:
+                                          cash_payment: payment_method_cash
+                                          card_payment: payment_method_card
+                                    status:
+                                      type: string
+                                      example: pending_payment
+                  created_at:
+                    type: integer
+                    example: 1676328434
+                  currency:
+                    type: string
+                    example: MXN
+                  customer_info:
+                    allOf:
+                      - type: object
                         properties:
                           object:
                             type: string
-                            example: charge
-                          id:
+                            example: customer_info
+                      - title: customer_info
+                        type: object
+                        required:
+                          - corporate
+                          - name
+                          - phone
+                          - email
+                        properties:
+                          name:
                             type: string
-                            example: 62bce95741de276186407e41
-                          livemode:
+                            example: DevTest
+                          email:
+                            type: string
+                            format: email
+                            example: test@conekta.com
+                          phone:
+                            type: string
+                            example: '5522997233'
+                          corporate:
+                            default: false
                             type: boolean
+                          object:
+                            type: string
+                            example: customer_info
+                      - title: customer_info
+                        type: object
+                        required:
+                          - customer_id
+                        properties:
+                          customer_id:
+                            type: string
+                            example: cus_23874283647
+                  fiscal_entity:
+                    type: object
+                    properties:
+                      address:
+                        type: object
+                        required:
+                          - street1
+                          - city
+                          - country
+                          - postal_code
+                          - external_number
+                        properties:
+                          street1:
+                            type: string
+                            example: avenida siempre viva
+                          street2:
+                            type: string
+                            example: fake street
+                          postal_code:
+                            type: string
+                            example: '06100'
+                          city:
+                            type: string
+                            example: Ciudad de Mexico
+                          state:
+                            type: string
+                            example: Ciudad de Mexico
+                          country:
+                            type: string
+                            example: MX
+                          residential:
+                            type: boolean
+                            example: true
+                          external_number:
+                            type: string
+                      tax_id:
+                        type: string
+                        example: '324234234'
+                      id:
+                        type: string
+                        example: fis_ent_2tN85VYaSMyDvjB3M
+                      object:
+                        type: string
+                        example: fiscal_entity
+                  id:
+                    type: string
+                    example: ord_2tMtQQpDvfnNjiuFG
+                  is_refundable:
+                    type: boolean
+                    example: false
+                  line_items:
+                    allOf:
+                      - $ref: '#/paths/~1customers/get/responses/200/content/application~1vnd.conekta-v2.0.0%2Bjson/schema/allOf/1'
+                      - type: object
+                        properties:
+                          data:
+                            type: array
+                            items:
+                              title: line_items_data_response
+                              allOf:
+                                - type: object
+                                  title: line_items
+                                  required:
+                                    - name
+                                    - unit_price
+                                    - quantity
+                                  properties:
+                                    antifraud_info:
+                                      type: object
+                                      additionalProperties:
+                                        type: object
+                                    description:
+                                      type: string
+                                      maxLength: 250
+                                    sku:
+                                      type: string
+                                    name:
+                                      type: string
+                                      example: Box of Cohiba S1s
+                                    unit_price:
+                                      type: integer
+                                      format: int32
+                                      example: 20000
+                                    quantity:
+                                      type: integer
+                                      format: int32
+                                      example: 1
+                                    tags:
+                                      type: array
+                                      items:
+                                        type: string
+                                    brand:
+                                      type: string
+                                    metadata:
+                                      type: object
+                                      additionalProperties:
+                                        type: string
+                                - type: object
+                                  properties:
+                                    id:
+                                      type: string
+                                    object:
+                                      type: string
+                                    parent_id:
+                                      type: string
+                  livemode:
+                    type: boolean
+                  metadata:
+                    type: object
+                    additionalProperties:
+                      type: object
+                  object:
+                    type: string
+                    example: order
+                  payment_status:
+                    type: string
+                    example: paid
+                  shipping_contact:
+                    allOf:
+                      - type: object
+                        properties:
                           created_at:
                             type: integer
-                            format: int64
-                            example: '1656547671'
-                      - type: object
+                          id:
+                            type: string
+                          object:
+                            type: string
+                      - title: customer_shipping_contacts_response
+                        description: Contains the detail of the shipping addresses that the client has active or has used in Conekta
                         properties:
-                          payment_method:
+                          phone:
+                            type: string
+                            example: '+525511223344'
+                          receiver:
+                            type: string
+                            example: Marvin Fuller
+                          between_streets:
+                            type: string
+                            example: Ackerman Crescent
+                          address:
                             type: object
                             properties:
-                              service_name:
+                              object:
                                 type: string
-                                example: OxxoPay
-                              barcode_url:
+                                example: shipping_address
+                              street1:
                                 type: string
-                                example: 'https://s3.amazonaws.com/cash_payment_barcodes/sandbox_reference.png'
-                  - title: order response for card
-                    description: order response for cards
-                    allOf:
-                      - $ref: '#/paths/~1orders/post/responses/200/content/application~1vnd.conekta-v2.0.0%2Bjson/schema/oneOf/0/allOf/0'
-                      - type: object
-                        properties:
-                          payment_method:
-                            type: object
-                            properties:
-                              name:
+                                example: avenida siempre viva
+                              street2:
                                 type: string
-                                example: Fulanito Perez
-                              exp_month:
+                                example: fake street
+                              postal_code:
                                 type: string
-                                example: '02'
-                              exp_year:
+                                example: '06100'
+                              city:
                                 type: string
-                                example: '30'
-                discriminator:
-                  propertyName: object
+                                example: Ciudad de Mexico
+                              state:
+                                type: string
+                                example: Ciudad de Mexico
+                              country:
+                                type: string
+                                example: MX
+                              residential:
+                                type: boolean
+                                example: true
+                          parent_id:
+                            type: string
+                          default:
+                            type: boolean
+                            example: false
+                          deleted:
+                            type: boolean
+                            example: false
+                  updated_at:
+                    type: integer
+                    example: 1676328434
               examples:
                 cash:
                   value:
                     id: 62bce95741de276186407e41
-                    livemode: true
+                    livemode: false
+                    created_at: 1656547671
+                    currency: MXN
                     payment_method:
                       service_name: OxxoPay
                       barcode_url: 'https://s3.amazonaws.com/cash_payment_barcodes/sandbox_reference.png'
+                      object: cash_payment
+                      type: oxxo
+                      expires_at: 1656634070
+                      store_name: OXXO
+                      reference: 98000013217610
+                    object: charge
+                    description: Payment from order
+                    status: paid
+                    amount: 13500
+                    paid_at: 1656547702
+                    fee: 537
+                    customer_id: null
+                    order_id: ord_2s53K99C8GXVmCfPm
                 card:
                   value:
                     id: 63dab7d00558720001bb3c7d
-                    livemode: true
+                    livemode: 'true,'
+                    created_at: '1675278289,'
+                    currency: MXN
+                    failure_code: suspected_fraud
+                    failure_message: Este cargo ha sido declinado porque el comportamiento del comprador es sospechoso.
+                    device_fingerprint: 6FR3chaU4Y1nGAW5NAGd1rcjAKa142Ba
+                    payment_method:
+                      name: Fulanito Perez
+                      exp_month: 2
+                      exp_year: 30
+                      object: card_payment
+                      type: credit
+                      last4: 4242
+                      brand: visa
+                      issuer: BANAMEX
+                      account_type: Credit
+                      country: MX
+                      fraud_indicators:
+                        - description: El usuario está utilizando una tarjeta de crédito o débito de prueba en modo producción.
+                          weight: null
+                          value: null
+                    object: charge
+                    description: Payment from order
+                    status: declined
+                    amount: '20001,'
+                    fee: '116,'
+                    customer_id: null
+                    order_id: ord_2tHuwPhgSwq6Gt7Rg
         '401':
           $ref: '#/paths/~1logs/get/responses/401'
         '422':
@@ -1162,21 +1479,27 @@ paths:
                         type: integer
                         format: int64
                         description: Method expiration date as unix timestamp
+                        example: 1677196303
                       monthly_installments:
                         type: integer
                         format: int32
                         description: 'How many months without interest to apply, it can be 3, 6, 9, 12 or 18'
                       payment_method:
-                        type: string
-                        example: card
+                        required:
+                          - type
+                        type: object
                         description: |
                           Payment method used in the charge. Go to the [payment methods](https://developers.conekta.com/reference/m%C3%A9todos-de-pago) section for more details
+                        properties:
+                          type:
+                            type: string
+                            example: card
+                          token_id:
+                            type: string
+                            example: tok_2897348234
                       reference_id:
                         description: Custom reference to add to the charge
                         type: string
-                      token_id:
-                        type: string
-                        example: tok_2897348234
                 checkout:
                   title: checkout_request
                   description: |
@@ -1188,10 +1511,6 @@ paths:
                     allowed_payment_methods:
                       type: string
                       description: Are the payment methods available for this link
-                      enum:
-                        - card
-                        - cash
-                        - bank_transfer
                     expires_at:
                       type: integer
                       format: int64
@@ -1205,6 +1524,9 @@ paths:
                     success_url:
                       type: string
                       description: 'Redirection url back to the site in case of successful payment, applies only to HostedPayment'
+                    type:
+                      type: string
+                      description: This field represents the type of checkout
                 currency:
                   type: string
                   description: 'Currency with which the payment will be made. It uses the 3-letter code of the [International Standard ISO 4217.](https://es.wikipedia.org/wiki/ISO_4217)'
@@ -1212,38 +1534,8 @@ paths:
                   maxLength: 3
                 customer_info:
                   oneOf:
-                    - title: customer_info
-                      type: object
-                      required:
-                        - corporate
-                        - name
-                        - phone
-                        - email
-                      properties:
-                        name:
-                          type: string
-                          example: DevTest
-                        email:
-                          type: string
-                          format: email
-                          example: test@conekta.com
-                        phone:
-                          type: string
-                          example: '5522997233'
-                        corporate:
-                          default: false
-                          type: boolean
-                        object:
-                          type: string
-                          example: customer_info
-                    - title: customer_info
-                      type: object
-                      required:
-                        - customer_id
-                      properties:
-                        customer_id:
-                          type: string
-                          example: cus_23874283647
+                    - $ref: '#/paths/~1orders/post/responses/200/content/application~1vnd.conekta-v2.0.0%2Bjson/schema/properties/customer_info/allOf/1'
+                    - $ref: '#/paths/~1orders/post/responses/200/content/application~1vnd.conekta-v2.0.0%2Bjson/schema/properties/customer_info/allOf/2'
                 discount_lines:
                   type: array
                   items:
@@ -1262,45 +1554,28 @@ paths:
                 line_items:
                   type: array
                   items:
-                    type: object
-                    title: line_items
-                    required:
-                      - name
-                      - unit_price
-                      - quantity
-                    properties:
-                      description:
-                        type: string
-                        maxLength: 250
-                      sku:
-                        type: string
-                      name:
-                        type: string
-                        example: Box of Cohiba S1s
-                      unit_price:
-                        type: integer
-                        format: int32
-                        example: 20000
-                      quantity:
-                        type: integer
-                        format: int32
-                        example: 1
-                      tags:
-                        type: array
-                        items:
-                          type: string
-                      brand:
-                        type: string
-                      metadata:
-                        type: object
-                        additionalProperties:
-                          type: string
+                    $ref: '#/paths/~1orders/post/responses/200/content/application~1vnd.conekta-v2.0.0%2Bjson/schema/properties/line_items/allOf/1/properties/data/items/allOf/0'
+                metadata:
+                  type: object
+                  additionalProperties:
+                    type: string
                 pre_authorize:
                   type: boolean
                   description: Indicates whether the order charges must be preauthorized
                   default: false
                 shipping_contact:
                   $ref: '#/paths/~1customers/post/responses/200/content/application~1vnd.conekta-v2.0.0%2Bjson/schema/properties/shipping_contacts/allOf/1/properties/data/items/allOf/0'
+                shipping_lines:
+                  type: array
+                  items:
+                    title: shipping_lines_request
+                    properties:
+                      amount:
+                        type: integer
+                        example: 0
+                      carrier:
+                        type: string
+                        example: FEDEX
                 tax_lines:
                   type: array
                   items:

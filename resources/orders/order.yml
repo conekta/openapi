@@ -8,11 +8,7 @@ post:
       content:
         application/vnd.conekta-v2.0.0+json:
           schema:
-            oneOf:
-              - $ref: '../../schemas/orders/order_cash_response.yml#/cash'
-              - $ref: '../../schemas/orders/order_card_response.yml#/card'
-            discriminator:
-              propertyName: object
+             $ref: ../../schemas/orders/order_response.yml
           examples:
             cash:
               $ref: ../../schemas/orders/examples/order_cash.yml

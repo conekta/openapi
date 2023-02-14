@@ -1,3 +1,32 @@
 value:
-  id: "63dab7d00558720001bb3c7d"
-  livemode: true
+  id: 63dab7d00558720001bb3c7d
+  livemode: true,
+  created_at: 1675278289,
+  currency: MXN
+  failure_code: suspected_fraud
+  failure_message: Este cargo ha sido declinado porque el comportamiento del comprador es sospechoso.
+  device_fingerprint: 6FR3chaU4Y1nGAW5NAGd1rcjAKa142Ba
+  payment_method: 
+    name: Fulanito Perez
+    exp_month: 02
+    exp_year: 30
+    object: card_payment
+    type: credit
+    last4: 4242
+    brand: visa
+    issuer: BANAMEX
+    account_type: Credit
+    country: MX
+    fraud_indicators: [{
+      description: El usuario está utilizando una tarjeta de crédito o débito de prueba en modo producción.,
+      weight: null,
+      value: null
+      }
+    ]
+  object: charge
+  description: Payment from order
+  status: declined
+  amount: 20001,
+  fee: 116,
+  customer_id: 
+  order_id: ord_2tHuwPhgSwq6Gt7Rg

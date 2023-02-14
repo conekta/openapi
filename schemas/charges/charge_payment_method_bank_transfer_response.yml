@@ -1,0 +1,27 @@
+payment_method_bank_transfer:
+  allOf:
+    - $ref: charge_payment_method_response.yml#/payment_method
+    - type: object
+      title: charge_data_payment_method_bank_transfer_response
+      description: use for bank transfer responses
+      properties:
+        bank:
+          type: string
+          example: "STP"
+        clabe:
+          type: string
+          example: "646180111805034237"
+        expires_at:
+          type: integer
+          example: 1683053729
+        payment_attempts:
+          type: array
+          items: {}
+        receiving_account_number:
+          type: string
+          example: "646180111805034237"
+        receiving_account_bank:
+          type: string
+          example: "STP"
+        
+        
