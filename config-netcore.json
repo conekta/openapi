@@ -3,7 +3,12 @@
   "files": {
     "AUTHORS.md" : {},
     "LICENSE" : {},
-    "conekta.png" : {}
+    "conekta.png" : {},
+    "RuntimeInformation.mustache" : {
+      "templateType": "SupportingFiles",
+      "destinationFilename": "RuntimeInformation.cs",
+      "folder": "src/Conekta.net/Utils"
+    }
   },
   "apiName" : "conekta",
   "packageName" : "Conekta.net",
