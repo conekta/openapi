@@ -25,7 +25,6 @@ post:
     - bearerAuth: []
   requestBody:
     $ref: '../../requestBodies/orders/order.yml'
-
   parameters:
     - $ref: '../../parameters/commons/headers/accept_language.yml'
 get:

@@ -25,6 +25,8 @@ paths:
     $ref: "./resources/logs/log_by_id.yml"
   /orders:
     $ref: "./resources/orders/order.yml"
+  /orders/{id}:
+    $ref: "./resources/orders/order_param.yml"
 security:
   - bearerAuth: []
 components:
