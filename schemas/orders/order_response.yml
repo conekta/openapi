@@ -31,13 +31,19 @@ properties:
           object:
             type: string
             example: "customer_info"
-      - $ref: ../customers/customer_info.yml
-      - $ref: ../customers/customer_info_just_customer_id.yml
+      - $ref: ../customers/customer_info_response.yml
+      - $ref: ../customers/customer_info_just_customer_id_response.yml
   fiscal_entity:
     type: object
     properties:
       address:
-        $ref: ../customers/customer_address.yml
+        allOf:
+          - type: object
+            properties:
+              object:
+                type: string
+                example: "fiscal_entity_address"
+          - $ref: ../customers/customer_address.yml
       tax_id:
         type: string
         example: "324234234"

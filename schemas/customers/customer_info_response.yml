@@ -1,9 +1,5 @@
 title:  customer_info
 type: object
-required:
-  - name
-  - phone
-  - email
 properties:
   name:
     type: string

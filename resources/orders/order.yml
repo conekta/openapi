@@ -28,3 +28,27 @@ post:
 
   parameters:
     - $ref: '../../parameters/commons/headers/accept_language.yml'
+get:
+  operationId: getOrders
+  summary: returns a set of /orders
+  description: 'returns a set of /orders.'
+  responses:
+    '200':
+      description: successful operation
+      content:
+        application/vnd.conekta-v2.0.0+json:
+          schema:
+            allOf:
+             - $ref: ../../schemas/orders/orders_response.yml
+             - $ref: ../../schemas/pagination/pagination.yml
+             - $ref: ../../schemas/pagination/page.yml
+    401:
+     $ref: '../errors/401.yml'
+    500:
+     $ref: '../errors/500.yml'
+
+  security:
+    - bearerAuth: []
+  parameters:
+    - $ref: '../../parameters/commons/headers/accept_language.yml'
+    - $ref: '../../parameters/commons/query/limit.yml'

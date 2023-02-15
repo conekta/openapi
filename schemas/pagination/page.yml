@@ -1,0 +1,12 @@
+title: page metadata
+description: page metadata
+type: object
+properties:
+  next_page_url: 
+    description: URL of the next page.
+    type: string
+    nullable: true
+  previous_page_url:
+    description: Url of the previous page.
+    type: string
+    nullable: true
