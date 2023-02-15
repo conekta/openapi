@@ -12,6 +12,21 @@ properties:
         amount_refunded:
           type: integer
           example: 0
+        channel:
+          type: object
+          properties:
+            segment:
+              type: string
+              example: "Checkout"
+            checkout_request_id:
+              type: string
+              example: "6fca054a-8519-4c43-971e-cea35cc519bb"
+            checkout_request_type:
+              type: string
+              example: "HostedPayment"
+            id:
+              type: string
+              example: "channel_2tNDzhA4Akmzj11AU"
         charges:
           allOf:
             - $ref: ../pagination/pagination.yml
@@ -23,6 +38,87 @@ properties:
                     title: charges_data_response
                     allOf:
                       - $ref: ../../schemas/charges/charge_response.yml
+        checkout:
+          type: object
+          properties:
+            allowed_payment_methods:
+              type: array
+              items:
+                type: string
+            can_not_expire:
+              type: boolean
+              example: false
+            emails_sent:
+              type: integer
+              example: 0
+            exclude_card_networks:
+              type: array
+              items: {}
+            expires_at:
+              type: integer
+              example: 1676613599
+            failure_url:
+              type: string
+              example: "http://187.216.228.66:2222/SysVentasPagos/Acceso.aspx"
+            force_3ds_flow:
+              type: boolean
+              example: false
+            id:
+              type: string
+              example:  "6fca054a-8519-4c43-971e-cea35cc519bb"
+            is_redirect_on_failure:
+              type: boolean
+              example: false
+            livemode:
+              type: boolean
+              example: false
+            metadata:
+              type: object
+              additionalProperties:
+                type: object
+            monthly_installments_enabled:
+              type: boolean
+              example: false
+            monthly_installments_options:
+              type: array
+              items:
+                type: integer
+            name:
+              type: string
+              example: "ord-2tNDzhA4Akmzj11AS"
+            needs_shipping_contact:
+              type: boolean
+              example: false
+            object:
+              type: string
+              example: "checkout"
+            paid_payments_count:
+              type: integer
+              example: 0
+            recurrent:
+              type: boolean
+              example: false
+            slug:
+              type: string
+              example:  "6fca054a85194c43971ecea35cc519bb"
+            sms_sent: 
+              type: integer
+              example: 0
+            success_url:
+              type: string
+              example: "http://187.216.228.66:2222/SysVentasPagos/Acceso.aspx"
+            starts_at:
+              type: integer
+              example: 1676354400
+            status:
+              type: string
+              example: "Issued"
+            type:
+              type: string
+              example: "HostedPayment"
+            url:
+              type: string
+              example: "https://pay.stg.conekta.io/checkout/6fca054a85194c43971ecea35cc519bb"
         created_at:
           type: integer
           example: 1676328434

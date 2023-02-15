@@ -39,6 +39,7 @@ properties:
   paid_at:
     type: integer
     example: 1676390742
+    nullable: true
   payment_method:
     oneOf:
       - $ref: 'charge_payment_method_cash_response.yml#/payment_method_cash'
