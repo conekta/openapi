@@ -15,6 +15,19 @@ namespace {{packageName}}.Utils
     /// </summary>
     internal static class RuntimeInformation
     {
+        public const string ConektaNetTargetFramework =
+        #if NET6_0
+                    "net6.0"
+        #elif NETSTANDARD2_0
+                    "netstandard2.0"
+        #elif NET47
+                    "net47"
+        #elif NET462
+                    "net462"
+        #else
+                    "unknown"
+        #endif
+                ;
         private const string Unknown = "?";
 
         private static bool IsMono { get; } = Type.GetType("Mono.Runtime") != null;

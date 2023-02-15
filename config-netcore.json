@@ -1,6 +1,7 @@
 {
   "targetFramework" : "net47",
   "files": {
+    "CODE_OF_CONDUCT.md" : {},
     "AUTHORS.md" : {},
     "LICENSE" : {},
     "conekta.png" : {},

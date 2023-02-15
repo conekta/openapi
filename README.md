@@ -36,3 +36,8 @@ swagger-cli bundle api.yaml --outfile _build/api.yaml --type yaml
 ```
 
 ![distribution](split.png?raw=true "distribution")
+
+## dotnet target framwework
+```xml
+"targetFramework" : "netstandard2.0;net6.0"
+```

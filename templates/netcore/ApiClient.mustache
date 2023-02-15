@@ -171,7 +171,7 @@ namespace {{packageName}}.Client
     /// encapsulating general REST accessor use cases.
     /// </summary>
     {{>visibility}} partial class ApiClient : ISynchronousClient{{#supportsAsync}}, IAsynchronousClient{{/supportsAsync}}
-    {
+    {   
         private readonly string _baseUrl;
         private readonly string _conektaUserAgent;
 
@@ -212,7 +212,7 @@ namespace {{packageName}}.Client
                 { "bindings_version", "{{packageVersion}}" },
                 { "lang", ".net" },
                 { "publisher", "conekta" },
-                { "conekta_net_target_framework", "{{targetFramework}}" },
+                { "conekta_net_target_framework", RuntimeInformation.ConektaNetTargetFramework },
             };
 
             // The following values are in try/catch blocks on the off chance that the
