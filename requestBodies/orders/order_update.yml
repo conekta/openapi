@@ -1,0 +1,6 @@
+description: requested field for an order        
+content:
+  application/json:
+    schema:  
+      $ref: '../../schemas/orders/order_update_request.yml'
+required: true

@@ -2013,6 +2013,80 @@ paths:
       parameters:
         - $ref: '#/paths/~1logs~1%7Bid%7D/get/parameters/0'
         - $ref: '#/paths/~1logs/get/parameters/0'
+    put:
+      operationId: updateOrder
+      summary: Update an existing Order.
+      responses:
+        '200':
+          description: successful
+          content:
+            application/vnd.conekta-v2.0.0+json:
+              schema:
+                $ref: '#/paths/~1orders/post/responses/200/content/application~1vnd.conekta-v2.0.0%2Bjson/schema'
+        '401':
+          $ref: '#/paths/~1logs/get/responses/401'
+        '404':
+          $ref: '#/paths/~1orders~1%7Bid%7D/get/responses/404'
+        '422':
+          $ref: '#/paths/~1logs/get/responses/422'
+        '500':
+          $ref: '#/paths/~1logs/get/responses/500'
+      security:
+        - bearerAuth: []
+      requestBody:
+        description: requested field for an order
+        content:
+          application/json:
+            schema:
+              title: order_update
+              description: a order
+              type: object
+              properties:
+                charges:
+                  type: array
+                  items:
+                    $ref: '#/paths/~1orders/post/requestBody/content/application~1json/schema/properties/charges/items'
+                checkout:
+                  $ref: '#/paths/~1orders/post/requestBody/content/application~1json/schema/properties/checkout'
+                currency:
+                  type: string
+                  description: 'Currency with which the payment will be made. It uses the 3-letter code of the [International Standard ISO 4217.](https://es.wikipedia.org/wiki/ISO_4217)'
+                  example: MXN
+                  maxLength: 3
+                customer_info:
+                  oneOf:
+                    - $ref: '#/paths/~1orders/post/requestBody/content/application~1json/schema/properties/customer_info/oneOf/0'
+                    - $ref: '#/paths/~1orders/post/requestBody/content/application~1json/schema/properties/customer_info/oneOf/1'
+                discount_lines:
+                  type: array
+                  items:
+                    $ref: '#/paths/~1orders/post/requestBody/content/application~1json/schema/properties/discount_lines/items'
+                line_items:
+                  type: array
+                  items:
+                    $ref: '#/paths/~1orders/post/responses/200/content/application~1vnd.conekta-v2.0.0%2Bjson/schema/properties/line_items/allOf/1/properties/data/items/allOf/0'
+                metadata:
+                  type: object
+                  additionalProperties:
+                    type: string
+                pre_authorize:
+                  type: boolean
+                  description: Indicates whether the order charges must be preauthorized
+                  default: false
+                shipping_contact:
+                  $ref: '#/paths/~1customers/post/responses/200/content/application~1vnd.conekta-v2.0.0%2Bjson/schema/properties/shipping_contacts/allOf/1/properties/data/items/allOf/0'
+                shipping_lines:
+                  type: array
+                  items:
+                    $ref: '#/paths/~1orders/post/requestBody/content/application~1json/schema/properties/shipping_lines/items'
+                tax_lines:
+                  type: array
+                  items:
+                    $ref: '#/paths/~1orders/post/requestBody/content/application~1json/schema/properties/tax_lines/items'
+        required: true
+      parameters:
+        - $ref: '#/paths/~1logs~1%7Bid%7D/get/parameters/0'
+        - $ref: '#/paths/~1logs/get/parameters/0'
 security:
   - bearerAuth: []
 components:
