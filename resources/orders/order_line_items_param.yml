@@ -1,0 +1,23 @@
+post:
+  operationId: ordersCreateLineItems
+  summary: creates a new line items for an existing orden
+  responses:
+    200:
+      description: successful
+      content:
+        application/vnd.conekta-v2.0.0+json:
+          schema:
+            $ref: ../../schemas/charges/line_items_order_response.yml
+    401:
+     $ref: '../errors/401.yml'
+    404:
+     $ref: '../errors/404.yml'
+    500:
+     $ref: '../errors/500.yml'
+  security:
+    - bearerAuth: []
+  requestBody:
+    $ref: '../../requestBodies/line_items/line_items_create.yml'
+  parameters:
+    - $ref: '../../parameters/commons/path_param/id.yml'
+    - $ref: '../../parameters/commons/headers/accept_language.yml'

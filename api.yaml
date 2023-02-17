@@ -29,6 +29,8 @@ paths:
     $ref: "./resources/orders/order_param.yml"
   /orders/{id}/charges:
     $ref: "./resources/orders/order_charge_param.yml"
+  /orders/{id}/line_items:
+    $ref: "./resources/orders/order_line_items_param.yml"
 security:
   - bearerAuth: []
 components:

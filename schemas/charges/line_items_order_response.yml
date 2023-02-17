@@ -1,0 +1,11 @@
+title: line_items_order_response
+allOf:
+  - $ref: '../../schemas/orders/line_items.yml'
+  - type: object
+    properties:
+      id: 
+        type: string
+      object:
+        type: string
+      parent_id:
+        type: string

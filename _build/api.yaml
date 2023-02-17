@@ -1300,43 +1300,7 @@ paths:
                             items:
                               title: line_items_data_response
                               allOf:
-                                - type: object
-                                  title: line_items
-                                  required:
-                                    - name
-                                    - unit_price
-                                    - quantity
-                                  properties:
-                                    antifraud_info:
-                                      type: object
-                                      additionalProperties:
-                                        type: object
-                                    description:
-                                      type: string
-                                      maxLength: 250
-                                    sku:
-                                      type: string
-                                    name:
-                                      type: string
-                                      example: Box of Cohiba S1s
-                                    unit_price:
-                                      type: integer
-                                      format: int32
-                                      example: 20000
-                                    quantity:
-                                      type: integer
-                                      format: int32
-                                      example: 1
-                                    tags:
-                                      type: array
-                                      items:
-                                        type: string
-                                    brand:
-                                      type: string
-                                    metadata:
-                                      type: object
-                                      additionalProperties:
-                                        type: string
+                                - $ref: '#/paths/~1orders~1%7Bid%7D~1line_items/post/requestBody/content/application~1json/schema'
                                 - type: object
                                   properties:
                                     id:
@@ -1579,7 +1543,7 @@ paths:
                 line_items:
                   type: array
                   items:
-                    $ref: '#/paths/~1orders/post/responses/200/content/application~1vnd.conekta-v2.0.0%2Bjson/schema/properties/line_items/allOf/1/properties/data/items/allOf/0'
+                    $ref: '#/paths/~1orders~1%7Bid%7D~1line_items/post/requestBody/content/application~1json/schema'
                 metadata:
                   type: object
                   additionalProperties:
@@ -1802,7 +1766,7 @@ paths:
                                       items:
                                         title: line_items_data_response
                                         allOf:
-                                          - $ref: '#/paths/~1orders/post/responses/200/content/application~1vnd.conekta-v2.0.0%2Bjson/schema/properties/line_items/allOf/1/properties/data/items/allOf/0'
+                                          - $ref: '#/paths/~1orders~1%7Bid%7D~1line_items/post/requestBody/content/application~1json/schema'
                                           - type: object
                                             properties:
                                               id:
@@ -1958,7 +1922,7 @@ paths:
                 line_items:
                   type: array
                   items:
-                    $ref: '#/paths/~1orders/post/responses/200/content/application~1vnd.conekta-v2.0.0%2Bjson/schema/properties/line_items/allOf/1/properties/data/items/allOf/0'
+                    $ref: '#/paths/~1orders~1%7Bid%7D~1line_items/post/requestBody/content/application~1json/schema'
                 metadata:
                   type: object
                   additionalProperties:
@@ -2207,6 +2171,81 @@ paths:
                 reference_id:
                   description: Custom reference to add to the charge
                   type: string
+        required: true
+      parameters:
+        - $ref: '#/paths/~1logs~1%7Bid%7D/get/parameters/0'
+        - $ref: '#/paths/~1logs/get/parameters/0'
+  '/orders/{id}/line_items':
+    post:
+      operationId: ordersCreateLineItems
+      summary: creates a new line items for an existing orden
+      responses:
+        '200':
+          description: successful
+          content:
+            application/vnd.conekta-v2.0.0+json:
+              schema:
+                title: line_items_order_response
+                allOf:
+                  - $ref: '#/paths/~1orders~1%7Bid%7D~1line_items/post/requestBody/content/application~1json/schema'
+                  - type: object
+                    properties:
+                      id:
+                        type: string
+                      object:
+                        type: string
+                      parent_id:
+                        type: string
+        '401':
+          $ref: '#/paths/~1logs/get/responses/401'
+        '404':
+          $ref: '#/paths/~1orders~1%7Bid%7D/get/responses/404'
+        '500':
+          $ref: '#/paths/~1logs/get/responses/500'
+      security:
+        - bearerAuth: []
+      requestBody:
+        description: requested field for a line items
+        content:
+          application/json:
+            schema:
+              type: object
+              title: line_items
+              required:
+                - name
+                - unit_price
+                - quantity
+              properties:
+                antifraud_info:
+                  type: object
+                  additionalProperties:
+                    type: object
+                description:
+                  type: string
+                  maxLength: 250
+                sku:
+                  type: string
+                name:
+                  type: string
+                  example: Box of Cohiba S1s
+                unit_price:
+                  type: integer
+                  format: int32
+                  example: 20000
+                quantity:
+                  type: integer
+                  format: int32
+                  example: 1
+                tags:
+                  type: array
+                  items:
+                    type: string
+                brand:
+                  type: string
+                metadata:
+                  type: object
+                  additionalProperties:
+                    type: string
         required: true
       parameters:
         - $ref: '#/paths/~1logs~1%7Bid%7D/get/parameters/0'
