@@ -4,6 +4,21 @@ properties:
   amount: 
     type: integer
     example: 4321
+  channel:
+    type: object
+    properties:
+      segment:
+        type: string
+        example: "Checkout"
+      checkout_request_id:
+        type: string
+        example: "6fca054a-8519-4c43-971e-cea35cc519bb"
+      checkout_request_type:
+        type: string
+        example: "HostedPayment"
+      id:
+        type: string
+        example: "channel_2tNDzhA4Akmzj11AU"
   created_at:
     type: integer
     example: 1676386026
@@ -18,6 +33,7 @@ properties:
   device_fingerprint:
     type: string
     example: "6FR3chaU4Y1nGAW5NAGd1rcjAKa142Ba"
+    nullable: true
   failure_code: 
     type: string
     example: "suspected_fraud"
@@ -32,6 +48,10 @@ properties:
     example: "63efa757cf65380001aec040"
   livemode:
     type: boolean
+    example: true
+  monthly_installments:
+    type: integer
+    nullable: true
   object:
     type: string
   order_id:
@@ -52,6 +72,12 @@ properties:
         cash_payment: payment_method_cash
         card_payment: payment_method_card
         bank_transfer_payment: payment_method_bank_transfer
+  reference_id:
+    type: string
+    nullable: true
+  refunds:
+    type: array
+    items: {}
   status:
     type: string
     example: "pending_payment"

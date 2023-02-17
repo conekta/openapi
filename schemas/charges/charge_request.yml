@@ -3,6 +3,9 @@ description: "The charges to be made"
 required:
   - payment_method
 properties:
+  amount:
+    type: integer
+    example: 40000
   expires_at:
     type: integer
     format: int64

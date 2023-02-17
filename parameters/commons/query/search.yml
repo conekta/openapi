@@ -1,0 +1,6 @@
+in: query
+name: "search"
+description: "General order search, e.g. by mail, reference etc."
+required: false
+schema:
+  type: string
