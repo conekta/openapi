@@ -1,18 +1,20 @@
 {
   "packageName": "conekta",
   "generateSourceCodeOnly": "false",
-  "packageVersion": "2.6.2",
+  "artifactVersion": "4.0.0",
   "packageUrl": "https://developers.conekta.com/",
-  "projectName": "conekta-python",
-  "templateDir": "templates/python",
-  "hasBearerMethods" : true,
+  "projectName": "conekta-php",
+  "appDescription" : "Conekta PHP Library",
   "useOneOfDiscriminatorLookup" : true,
   "nonCompliantUseDiscriminatorIfCompositionFails" : false,
-  "httpUserAgent": "Conekta/v2 PythonBindings/4.0.0",
+  "httpUserAgent": "Conekta/v2 PhpBindings/4.0.0",
   "files": {
     "AUTHORS.md" : {},
     "LICENSE" : {}
   },
   "gitUserId": "conekta",
-  "gitRepoId": "conekta-python"
+  "gitRepoId": "conekta-php",
+  "modern" : true,
+  "disallowAdditionalPropertiesIfNotPresent" : true,
+  "invokerPackage" : "Conekta"
 }
