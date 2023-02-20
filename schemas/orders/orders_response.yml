@@ -1,5 +1,7 @@
 title: orders_response
 type: object
+required:
+  - data
 properties:
   data:
     type: array
