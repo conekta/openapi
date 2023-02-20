@@ -31,6 +31,8 @@ paths:
     $ref: "./resources/orders/order_charge_param.yml"
   /orders/{id}/line_items:
     $ref: "./resources/orders/order_line_items_param.yml"
+  /orders/{id}/tax_lines:
+    $ref: "./resources/orders/order_tax_lines_param.yml"
   /orders/{id}/line_items/{line_item_id}:
     $ref: "./resources/orders/update_order_line_items_param.yml"
 security:

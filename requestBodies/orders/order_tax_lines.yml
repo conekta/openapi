@@ -1,0 +1,6 @@
+description: requested field for an tax lines        
+content:
+  application/json:
+    schema:  
+      $ref: '../../schemas/orders/update_order_tax_lines_request.yml'
+required: true
