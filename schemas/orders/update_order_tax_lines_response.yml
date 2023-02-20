@@ -8,6 +8,9 @@ allOf:
       id: 
         type: string
         example: "tax_lin_2tQ8dC5mg1UADmVPo"
+      object:
+        type: string
+        example: "tax_line"
       parent_id:
         type: string
         example: "ord_2tPAmKCEJqh8RE6nY"

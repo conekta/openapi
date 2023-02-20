@@ -1,0 +1,7 @@
+in: path
+name: "tax_lines_id"
+description:  identifier
+required: true
+schema:
+  type: string
+example: "tax_lin_2tQ974hSHcsdeSZHG"

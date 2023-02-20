@@ -2250,6 +2250,96 @@ paths:
       parameters:
         - $ref: '#/paths/~1logs~1%7Bid%7D/get/parameters/0'
         - $ref: '#/paths/~1logs/get/parameters/0'
+  '/orders/{id}/tax_lines':
+    post:
+      operationId: ordersCreateTaxLines
+      summary: creates a new tax lines for an existing orden
+      responses:
+        '200':
+          description: successful
+          content:
+            application/vnd.conekta-v2.0.0+json:
+              schema:
+                description: create a new tax lines for an existing order response
+                required:
+                  - id
+                allOf:
+                  - $ref: '#/paths/~1orders~1%7Bid%7D~1tax_lines/post/requestBody/content/application~1json/schema'
+                  - type: object
+                    properties:
+                      id:
+                        type: string
+                        example: tax_lin_2tQ8dC5mg1UADmVPo
+                      object:
+                        type: string
+                        example: tax_line
+                      parent_id:
+                        type: string
+                        example: ord_2tPAmKCEJqh8RE6nY
+        '401':
+          $ref: '#/paths/~1logs/get/responses/401'
+        '404':
+          $ref: '#/paths/~1orders~1%7Bid%7D/get/responses/404'
+        '422':
+          $ref: '#/paths/~1logs/get/responses/422'
+        '500':
+          $ref: '#/paths/~1logs/get/responses/500'
+      security:
+        - bearerAuth: []
+      requestBody:
+        description: requested field for an tax lines
+        content:
+          application/json:
+            schema:
+              description: create a new tax lines for an existing order
+              type: object
+              required:
+                - amount
+                - description
+              properties:
+                amount:
+                  type: integer
+                  example: '100'
+                description:
+                  type: string
+                  example: testing
+        required: true
+      parameters:
+        - $ref: '#/paths/~1logs~1%7Bid%7D/get/parameters/0'
+        - $ref: '#/paths/~1logs/get/parameters/0'
+  '/orders/{id}/tax_lines/{tax_lines_id}':
+    put:
+      operationId: ordersUpdateTaxLines
+      summary: updates a new tax lines for an existing orden
+      responses:
+        '200':
+          description: successful
+          content:
+            application/vnd.conekta-v2.0.0+json:
+              schema:
+                $ref: '#/paths/~1orders~1%7Bid%7D~1tax_lines/post/responses/200/content/application~1vnd.conekta-v2.0.0%2Bjson/schema'
+        '401':
+          $ref: '#/paths/~1logs/get/responses/401'
+        '404':
+          $ref: '#/paths/~1orders~1%7Bid%7D/get/responses/404'
+        '422':
+          $ref: '#/paths/~1logs/get/responses/422'
+        '500':
+          $ref: '#/paths/~1logs/get/responses/500'
+      security:
+        - bearerAuth: []
+      requestBody:
+        $ref: '#/paths/~1orders~1%7Bid%7D~1tax_lines/post/requestBody'
+      parameters:
+        - $ref: '#/paths/~1logs~1%7Bid%7D/get/parameters/0'
+        - in: path
+          name: tax_lines_id
+          description: identifier
+          required: true
+          schema:
+            type: string
+          example: tax_lin_2tQ974hSHcsdeSZHG
+        - $ref: '#/paths/~1logs/get/parameters/0'
   '/orders/{id}/line_items/{line_item_id}':
     put:
       operationId: ordersUpdateLineItems
