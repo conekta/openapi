@@ -1,4 +1,4 @@
-description: requested field for an tax lines        
+description: requested field for a tax lines        
 content:
   application/json:
     schema:  
