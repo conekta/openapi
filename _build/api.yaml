@@ -1807,6 +1807,28 @@ paths:
       parameters:
         - $ref: '#/paths/~1logs~1%7Bid%7D/get/parameters/0'
         - $ref: '#/paths/~1logs/get/parameters/0'
+  '/orders/{id}/capture':
+    post:
+      operationId: ordersCreateCapture
+      summary: Processes an order that has been previously authorized.
+      responses:
+        '200':
+          description: successful
+          content:
+            application/vnd.conekta-v2.0.0+json:
+              schema:
+                $ref: '#/paths/~1orders/post/responses/200/content/application~1vnd.conekta-v2.0.0%2Bjson/schema'
+        '401':
+          $ref: '#/paths/~1logs/get/responses/401'
+        '404':
+          $ref: '#/paths/~1orders~1%7Bid%7D/get/responses/404'
+        '500':
+          $ref: '#/paths/~1logs/get/responses/500'
+      security:
+        - bearerAuth: []
+      parameters:
+        - $ref: '#/paths/~1logs~1%7Bid%7D/get/parameters/0'
+        - $ref: '#/paths/~1logs/get/parameters/0'
   '/orders/{id}/charges':
     post:
       operationId: ordersCreateCharge
