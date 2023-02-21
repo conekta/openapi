@@ -2,7 +2,7 @@ title: shipping_lines_request
 properties:
   amount:
     type: integer
-    example: 0
+    example: 100
   carrier: 
     type: string
     example: FEDEX
@@ -16,3 +16,5 @@ properties:
     type: object
     additionalProperties:
       type: object
+    example:
+      key: value
