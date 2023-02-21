@@ -384,7 +384,6 @@ paths:
                 custom_reference:
                   type: string
                   description: It is an undefined value.
-                  nullable: true
                 fiscal_entities:
                   type: array
                   items:
@@ -657,6 +656,30 @@ paths:
       parameters:
         - $ref: '#/paths/~1logs~1%7Bid%7D/get/parameters/0'
         - $ref: '#/paths/~1logs/get/parameters/0'
+    delete:
+      operationId: deleteCustomerById
+      summary: returns a deleted customer
+      description: Deleted a customer resource that corresponds to a customer ID.
+      responses:
+        '200':
+          description: successful operation
+          content:
+            application/vnd.conekta-v2.0.0+json:
+              schema:
+                $ref: '#/paths/~1customers/post/responses/200/content/application~1vnd.conekta-v2.0.0%2Bjson/schema'
+        '401':
+          $ref: '#/paths/~1logs/get/responses/401'
+        '404':
+          $ref: '#/paths/~1orders~1%7Bid%7D/get/responses/404'
+        '422':
+          $ref: '#/paths/~1logs/get/responses/422'
+        '500':
+          $ref: '#/paths/~1logs/get/responses/500'
+      security:
+        - bearerAuth: []
+      parameters:
+        - $ref: '#/paths/~1logs~1%7Bid%7D/get/parameters/0'
+        - $ref: '#/paths/~1logs/get/parameters/0'
     put:
       operationId: updateCustomer
       summary: updates a customer
@@ -699,6 +722,52 @@ paths:
                   type: string
                   description: Is the customer's phone number
                   example: '+5215555555555'
+                plan_id:
+                  type: string
+                  example: plan_987234823
+                  description: 'Contains the ID of a plan, which could together with name, email and phone create a client directly to a subscription'
+                default_shipping_contact_id:
+                  type: string
+                  description: 'It is a parameter that allows to identify in the response, the Conekta ID of the shipping address (shipping_contact)'
+                  example: ship_cont_1a2b3c4d5e6f7g8h
+                corporate:
+                  type: boolean
+                  description: It is a value that allows identifying if the email is corporate or not.
+                  example: false
+                  default: false
+                custom_reference:
+                  type: string
+                  description: It is an undefined value.
+                fiscal_entities:
+                  type: array
+                  items:
+                    $ref: '#/paths/~1customers/post/responses/200/content/application~1vnd.conekta-v2.0.0%2Bjson/schema/properties/fiscal_entities/allOf/1/properties/data/items/allOf/0'
+                payment_sources:
+                  type: array
+                  items:
+                    $ref: '#/paths/~1customers/post/requestBody/content/application~1json/schema/properties/payment_sources/items'
+                  example:
+                    - type: card
+                      token_id: tok_76238476234
+                    - type: oxxo_recurrent
+                shipping_contacts:
+                  type: array
+                  items:
+                    $ref: '#/paths/~1customers/post/responses/200/content/application~1vnd.conekta-v2.0.0%2Bjson/schema/properties/shipping_contacts/allOf/1/properties/data/items/allOf/0'
+                antifraud_info:
+                  type: object
+                  nullable: true
+                  properties:
+                    account_created_at:
+                      type: integer
+                      example: 1484040996
+                    first_paid_at:
+                      type: integer
+                      example: 1485151007
+                default_payment_source_id:
+                  type: string
+                  description: 'It is a parameter that allows to identify in the response, the Conekta ID of a payment method (payment_id)'
+                  example: src_1a2b3c4d5e6f7g8h
         required: true
       parameters:
         - $ref: '#/paths/~1logs~1%7Bid%7D/get/parameters/0'

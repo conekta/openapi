@@ -34,7 +34,6 @@ properties:
   custom_reference:
     type: string
     description: It is an undefined value.
-    nullable: true
   fiscal_entities:
     type: array
     items:
