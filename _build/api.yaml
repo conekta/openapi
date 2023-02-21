@@ -1233,6 +1233,17 @@ paths:
                           customer_id:
                             type: string
                             example: cus_23874283647
+                  discount_lines:
+                    allOf:
+                      - $ref: '#/paths/~1orders/get/responses/200/content/application~1vnd.conekta-v2.0.0%2Bjson/schema/allOf/1'
+                      - type: object
+                        properties:
+                          data:
+                            type: array
+                            items:
+                              title: discount_lines_data_response
+                              allOf:
+                                - $ref: '#/paths/~1orders~1%7Bid%7D~1discount_lines/post/responses/200/content/application~1vnd.conekta-v2.0.0%2Bjson/schema'
                   fiscal_entity:
                     type: object
                     properties:
@@ -1526,18 +1537,7 @@ paths:
                 discount_lines:
                   type: array
                   items:
-                    title: order_discount_lines_request
-                    description: List of discounts that apply to the order.
-                    properties:
-                      code:
-                        type: string
-                        description: Discount code.
-                      type:
-                        type: string
-                        example: loyalty
-                      amount:
-                        type: integer
-                        format: int32
+                    $ref: '#/paths/~1orders~1%7Bid%7D~1discount_lines/post/requestBody/content/application~1json/schema'
                 line_items:
                   type: array
                   items:
@@ -1911,7 +1911,7 @@ paths:
                 discount_lines:
                   type: array
                   items:
-                    $ref: '#/paths/~1orders/post/requestBody/content/application~1json/schema/properties/discount_lines/items'
+                    $ref: '#/paths/~1orders~1%7Bid%7D~1discount_lines/post/requestBody/content/application~1json/schema'
                 line_items:
                   type: array
                   items:
@@ -2164,6 +2164,60 @@ paths:
                 reference_id:
                   description: Custom reference to add to the charge
                   type: string
+        required: true
+      parameters:
+        - $ref: '#/paths/~1logs~1%7Bid%7D/get/parameters/0'
+        - $ref: '#/paths/~1logs/get/parameters/0'
+  '/orders/{id}/discount_lines':
+    post:
+      operationId: ordersCreateDiscountLine
+      summary: creates a new discount lines for an existing orden
+      responses:
+        '200':
+          description: successful
+          content:
+            application/vnd.conekta-v2.0.0+json:
+              schema:
+                title: discount_lines_order_response
+                allOf:
+                  - $ref: '#/paths/~1orders~1%7Bid%7D~1discount_lines/post/requestBody/content/application~1json/schema'
+                  - type: object
+                    properties:
+                      id:
+                        type: string
+                        example: dis_lin_2tQQ58HPgPw7StE8z
+                      object:
+                        type: string
+                        example: discount_line
+                      parent_id:
+                        type: string
+                        example: ord_2tPAmKCEJqh8RE6nY
+        '401':
+          $ref: '#/paths/~1logs/get/responses/401'
+        '404':
+          $ref: '#/paths/~1orders~1%7Bid%7D/get/responses/404'
+        '500':
+          $ref: '#/paths/~1logs/get/responses/500'
+      security:
+        - bearerAuth: []
+      requestBody:
+        description: requested field for a discount lines
+        content:
+          application/json:
+            schema:
+              title: order_discount_lines_request
+              description: List of discounts that apply to the order.
+              properties:
+                code:
+                  type: string
+                  description: Discount code.
+                  example: '123'
+                type:
+                  type: string
+                  example: loyalty
+                amount:
+                  type: integer
+                  example: 500
         required: true
       parameters:
         - $ref: '#/paths/~1logs~1%7Bid%7D/get/parameters/0'

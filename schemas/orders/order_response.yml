@@ -129,6 +129,17 @@ properties:
             example: "customer_info"
       - $ref: ../customers/customer_info_response.yml
       - $ref: ../customers/customer_info_just_customer_id_response.yml
+  discount_lines:
+    allOf:
+      - $ref: ../pagination/pagination.yml
+      - type: object
+        properties:
+          data:
+            type: array
+            items:
+              title: discount_lines_data_response
+              allOf:
+                - $ref: ../../schemas/orders/discount_lines_response.yml
   fiscal_entity:
     type: object
     properties:

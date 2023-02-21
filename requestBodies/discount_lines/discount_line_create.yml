@@ -1,0 +1,6 @@
+description: requested field for a discount lines      
+content:
+  application/json:
+    schema:  
+      $ref: '../../schemas/orders/order_discount_lines_request.yml'
+required: true

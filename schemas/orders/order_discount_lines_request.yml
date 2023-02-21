@@ -4,9 +4,10 @@ properties:
   code:
     type: string
     description: "Discount code."
+    example: "123"
   type:
     type: string
     example: "loyalty"
   amount:
     type: integer
-    format: int32
+    example: 500    
