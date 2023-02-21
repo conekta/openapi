@@ -1,0 +1,7 @@
+in: path
+name: "discount_lines_id"
+description:  identifier
+required: true
+schema:
+  type: string
+example: "dis_lin_2tQ974hSHcsdeSZHG"

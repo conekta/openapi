@@ -31,6 +31,8 @@ paths:
     $ref: "./resources/orders/order_charge_param.yml"
   /orders/{id}/discount_lines:
     $ref: "./resources/orders/discount_lines_param.yml"
+  /orders/{id}/discount_lines/{discount_lines_id}:
+    $ref: "./resources/orders/update_order_discount_lines_param.yml"
   /orders/{id}/line_items:
     $ref: "./resources/orders/order_line_items_param.yml"
   /orders/{id}/shipping_lines:
