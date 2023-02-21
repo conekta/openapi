@@ -6,3 +6,13 @@ properties:
   carrier: 
     type: string
     example: FEDEX
+  tracking_number:
+    type: string
+    example: "TRACK123"
+  method:
+    type: string
+    example: "TRAING"
+  metadata:
+    type: object
+    additionalProperties:
+      type: object

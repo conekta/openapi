@@ -1555,14 +1555,7 @@ paths:
                 shipping_lines:
                   type: array
                   items:
-                    title: shipping_lines_request
-                    properties:
-                      amount:
-                        type: integer
-                        example: 0
-                      carrier:
-                        type: string
-                        example: FEDEX
+                    $ref: '#/paths/~1orders~1%7Bid%7D~1shipping_lines/post/requestBody/content/application~1json/schema'
                 tax_lines:
                   type: array
                   items:
@@ -1936,7 +1929,7 @@ paths:
                 shipping_lines:
                   type: array
                   items:
-                    $ref: '#/paths/~1orders/post/requestBody/content/application~1json/schema/properties/shipping_lines/items'
+                    $ref: '#/paths/~1orders~1%7Bid%7D~1shipping_lines/post/requestBody/content/application~1json/schema'
                 tax_lines:
                   type: array
                   items:
@@ -2246,6 +2239,62 @@ paths:
                   type: object
                   additionalProperties:
                     type: string
+        required: true
+      parameters:
+        - $ref: '#/paths/~1logs~1%7Bid%7D/get/parameters/0'
+        - $ref: '#/paths/~1logs/get/parameters/0'
+  '/orders/{id}/shipping_lines':
+    post:
+      operationId: ordersCreateShippingLines
+      summary: creates a new shipping lines for an existing orden
+      responses:
+        '200':
+          description: successful
+          content:
+            application/vnd.conekta-v2.0.0+json:
+              schema:
+                title: shipping_lines_order_response
+                allOf:
+                  - $ref: '#/paths/~1orders~1%7Bid%7D~1shipping_lines/post/requestBody/content/application~1json/schema'
+                  - type: object
+                    properties:
+                      id:
+                        type: string
+                      object:
+                        type: string
+                      parent_id:
+                        type: string
+        '401':
+          $ref: '#/paths/~1logs/get/responses/401'
+        '404':
+          $ref: '#/paths/~1orders~1%7Bid%7D/get/responses/404'
+        '500':
+          $ref: '#/paths/~1logs/get/responses/500'
+      security:
+        - bearerAuth: []
+      requestBody:
+        description: requested field for a shipping lines
+        content:
+          application/json:
+            schema:
+              title: shipping_lines_request
+              properties:
+                amount:
+                  type: integer
+                  example: 0
+                carrier:
+                  type: string
+                  example: FEDEX
+                tracking_number:
+                  type: string
+                  example: TRACK123
+                method:
+                  type: string
+                  example: TRAING
+                metadata:
+                  type: object
+                  additionalProperties:
+                    type: object
         required: true
       parameters:
         - $ref: '#/paths/~1logs~1%7Bid%7D/get/parameters/0'
