@@ -23,6 +23,8 @@ paths:
     $ref: "./resources/customers/create_customer_payment_sources.yml"
   /customers/{id}/payment_sources/{payment_sources_id}:
     $ref: "./resources/customers/update_customer_payment_sources.yml"
+  /customers/{id}/shipping_contacts:
+    $ref: "./resources/customers/create_customer_shipping_contacts.yml"
   /logs:
      $ref: "./resources/logs/log.yml"
   /logs/{id}:

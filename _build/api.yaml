@@ -165,50 +165,7 @@ paths:
                             items:
                               title: customer_shipping_contacts_data_response
                               allOf:
-                                - title: customer_shipping_contacts_request
-                                  description: Contains the detail of the shipping addresses that the client has active or has used in Conekta
-                                  properties:
-                                    phone:
-                                      type: string
-                                      example: '+525511223344'
-                                    receiver:
-                                      type: string
-                                      example: Marvin Fuller
-                                    between_streets:
-                                      type: string
-                                      example: Ackerman Crescent
-                                    address:
-                                      type: object
-                                      properties:
-                                        street1:
-                                          type: string
-                                          example: avenida siempre viva
-                                        street2:
-                                          type: string
-                                          example: fake street
-                                        postal_code:
-                                          type: string
-                                          example: '06100'
-                                        city:
-                                          type: string
-                                          example: Ciudad de Mexico
-                                        state:
-                                          type: string
-                                          example: Ciudad de Mexico
-                                        country:
-                                          type: string
-                                          example: MX
-                                        residential:
-                                          type: boolean
-                                          example: true
-                                    parent_id:
-                                      type: string
-                                    default:
-                                      type: boolean
-                                      example: false
-                                    deleted:
-                                      type: boolean
-                                      example: false
+                                - $ref: '#/paths/~1customers~1%7Bid%7D~1shipping_contacts/post/requestBody/content/application~1json/schema'
                                 - type: object
                                   required:
                                     - id
@@ -323,7 +280,7 @@ paths:
                 shipping_contacts:
                   type: array
                   items:
-                    $ref: '#/paths/~1customers/post/responses/200/content/application~1vnd.conekta-v2.0.0%2Bjson/schema/properties/shipping_contacts/allOf/1/properties/data/items/allOf/0'
+                    $ref: '#/paths/~1customers~1%7Bid%7D~1shipping_contacts/post/requestBody/content/application~1json/schema'
                 antifraud_info:
                   type: object
                   nullable: true
@@ -489,7 +446,7 @@ paths:
                                       items:
                                         title: customers_shipping_contacts_data_response
                                         allOf:
-                                          - $ref: '#/paths/~1customers/post/responses/200/content/application~1vnd.conekta-v2.0.0%2Bjson/schema/properties/shipping_contacts/allOf/1/properties/data/items/allOf/0'
+                                          - $ref: '#/paths/~1customers~1%7Bid%7D~1shipping_contacts/post/requestBody/content/application~1json/schema'
                                           - type: object
                                             required:
                                               - id
@@ -677,7 +634,7 @@ paths:
                 shipping_contacts:
                   type: array
                   items:
-                    $ref: '#/paths/~1customers/post/responses/200/content/application~1vnd.conekta-v2.0.0%2Bjson/schema/properties/shipping_contacts/allOf/1/properties/data/items/allOf/0'
+                    $ref: '#/paths/~1customers~1%7Bid%7D~1shipping_contacts/post/requestBody/content/application~1json/schema'
                 antifraud_info:
                   type: object
                   nullable: true
@@ -899,6 +856,126 @@ paths:
           schema:
             type: string
           example: tax_lin_2tQ974hSHcsdeSZHG
+        - $ref: '#/paths/~1logs/get/parameters/0'
+  '/customers/{id}/shipping_contacts':
+    post:
+      operationId: CreateCustomerShippingContacts
+      summary: returns a shipping shipping contacts
+      description: Gets a customer resource that corresponds to a customer ID.
+      responses:
+        '200':
+          description: successful operation
+          content:
+            application/vnd.conekta-v2.0.0+json:
+              schema:
+                description: Contains the detail of the shipping addresses that the client has active or has used in Conekta
+                properties:
+                  phone:
+                    type: string
+                    example: '+525511223344'
+                  receiver:
+                    type: string
+                    example: Marvin Fuller
+                  between_streets:
+                    type: string
+                    example: Ackerman Crescent
+                  address:
+                    type: object
+                    properties:
+                      object:
+                        type: string
+                        example: shipping_address
+                      street1:
+                        type: string
+                        example: avenida siempre viva
+                      street2:
+                        type: string
+                        example: fake street
+                      postal_code:
+                        type: string
+                        example: '06100'
+                      city:
+                        type: string
+                        example: Ciudad de Mexico
+                      state:
+                        type: string
+                        example: Ciudad de Mexico
+                      country:
+                        type: string
+                        example: MX
+                      residential:
+                        type: boolean
+                        example: true
+                  parent_id:
+                    type: string
+                  default:
+                    type: boolean
+                    example: false
+                  deleted:
+                    type: boolean
+                    example: false
+        '401':
+          $ref: '#/paths/~1logs/get/responses/401'
+        '404':
+          $ref: '#/paths/~1orders~1%7Bid%7D/get/responses/404'
+        '422':
+          $ref: '#/paths/~1logs/get/responses/422'
+        '500':
+          $ref: '#/paths/~1logs/get/responses/500'
+      security:
+        - bearerAuth: []
+      requestBody:
+        description: requested field for customer shippings contacts
+        content:
+          application/json:
+            schema:
+              title: customer_shipping_contacts_request
+              description: Contains the detail of the shipping addresses that the client has active or has used in Conekta
+              properties:
+                phone:
+                  type: string
+                  example: '+525511223344'
+                receiver:
+                  type: string
+                  example: Marvin Fuller
+                between_streets:
+                  type: string
+                  example: Ackerman Crescent
+                address:
+                  type: object
+                  properties:
+                    street1:
+                      type: string
+                      example: avenida siempre viva
+                    street2:
+                      type: string
+                      example: fake street
+                    postal_code:
+                      type: string
+                      example: '06100'
+                    city:
+                      type: string
+                      example: Ciudad de Mexico
+                    state:
+                      type: string
+                      example: Ciudad de Mexico
+                    country:
+                      type: string
+                      example: MX
+                    residential:
+                      type: boolean
+                      example: true
+                parent_id:
+                  type: string
+                default:
+                  type: boolean
+                  example: false
+                deleted:
+                  type: boolean
+                  example: false
+        required: true
+      parameters:
+        - $ref: '#/paths/~1logs~1%7Bid%7D/get/parameters/0'
         - $ref: '#/paths/~1logs/get/parameters/0'
   /logs:
     get:
@@ -1538,52 +1615,7 @@ paths:
                             type: string
                           object:
                             type: string
-                      - description: Contains the detail of the shipping addresses that the client has active or has used in Conekta
-                        properties:
-                          phone:
-                            type: string
-                            example: '+525511223344'
-                          receiver:
-                            type: string
-                            example: Marvin Fuller
-                          between_streets:
-                            type: string
-                            example: Ackerman Crescent
-                          address:
-                            type: object
-                            properties:
-                              object:
-                                type: string
-                                example: shipping_address
-                              street1:
-                                type: string
-                                example: avenida siempre viva
-                              street2:
-                                type: string
-                                example: fake street
-                              postal_code:
-                                type: string
-                                example: '06100'
-                              city:
-                                type: string
-                                example: Ciudad de Mexico
-                              state:
-                                type: string
-                                example: Ciudad de Mexico
-                              country:
-                                type: string
-                                example: MX
-                              residential:
-                                type: boolean
-                                example: true
-                          parent_id:
-                            type: string
-                          default:
-                            type: boolean
-                            example: false
-                          deleted:
-                            type: boolean
-                            example: false
+                      - $ref: '#/paths/~1customers~1%7Bid%7D~1shipping_contacts/post/responses/200/content/application~1vnd.conekta-v2.0.0%2Bjson/schema'
                   updated_at:
                     type: integer
                     example: 1676328434
@@ -1748,7 +1780,7 @@ paths:
                   description: Indicates whether the order charges must be preauthorized
                   default: false
                 shipping_contact:
-                  $ref: '#/paths/~1customers/post/responses/200/content/application~1vnd.conekta-v2.0.0%2Bjson/schema/properties/shipping_contacts/allOf/1/properties/data/items/allOf/0'
+                  $ref: '#/paths/~1customers~1%7Bid%7D~1shipping_contacts/post/requestBody/content/application~1json/schema'
                 shipping_lines:
                   type: array
                   items:
@@ -1922,7 +1954,7 @@ paths:
                   description: Indicates whether the order charges must be preauthorized
                   default: false
                 shipping_contact:
-                  $ref: '#/paths/~1customers/post/responses/200/content/application~1vnd.conekta-v2.0.0%2Bjson/schema/properties/shipping_contacts/allOf/1/properties/data/items/allOf/0'
+                  $ref: '#/paths/~1customers~1%7Bid%7D~1shipping_contacts/post/requestBody/content/application~1json/schema'
                 shipping_lines:
                   type: array
                   items:
