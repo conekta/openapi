@@ -1,5 +1,5 @@
 tags:
-  - WhiteList
+  - Whitelists
 operationId: delete requested rule
 responses:
   '200':

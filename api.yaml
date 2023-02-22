@@ -17,11 +17,11 @@ info:
 paths:
   /antifraud/whitelists:
     get:
-      $ref: "./resources/antifraud/whitelists/get_whitelists.yml"
+      $ref: "./resources/antifraud/whitelists/get.yml"
     post:
-      $ref: "./resources/antifraud/whitelists/create_whitelists.yml"
+      $ref: "./resources/antifraud/whitelists/post.yml"
     delete:
-      $ref: "./resources/antifraud/whitelists/delete_whitelists.yml"
+      $ref: "./resources/antifraud/whitelists/delete.yml"
   /antifraud/blacklists:
     get:
       $ref: "./resources/antifraud/blacklists/get.yml"

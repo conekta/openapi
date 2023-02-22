@@ -82,7 +82,7 @@ paths:
                   exampole: value
     delete:
       tags:
-        - WhiteList
+        - Whitelists
       operationId: delete requested rule
       responses:
         '200':
