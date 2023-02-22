@@ -14,6 +14,88 @@ info:
     name: MIT-LICENSE
     url: 'https://www.apache.org/licenses/LICENSE-2.0.html'
 paths:
+  /antifraud/whitelists:
+    get:
+      tags:
+        - Whitelists
+      description: returns all rules
+      responses:
+        '200':
+          description: All the rules
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  has_more:
+                    type: boolean
+                    value: true
+                  total:
+                    type: integer
+                    format: int32
+                    minimum: 0
+                    maximum: 100
+                  object:
+                    type: string
+                    example: list
+                  data:
+                    type: array
+                    items:
+                      type: object
+                      properties:
+                        id:
+                          type: string
+                          example: 2fw8EWJusiRrxdPzT
+                        type:
+                          type: string
+                          example: email
+                        value:
+                          type: string
+                          example: email@example.com
+                        description:
+                          type: string
+                          example: secure customer example@example.com
+    post:
+      tags:
+        - Whitelists
+      operationId: create new rule
+      responses:
+        '200':
+          description: successfully registered rule
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                description:
+                  type: string
+                  format: string
+                  example: description
+                type:
+                  type: string
+                  format: string
+                  example: email | phone | card_token
+                value:
+                  type: string
+                  format: string
+                  exampole: value
+    delete:
+      tags:
+        - WhiteList
+      operationId: delete requested rule
+      responses:
+        '200':
+          description: successfully deleted rule
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                id:
+                  type: string
+                  example: 2fw8EWJusiRrxdPzT
   /customers:
     post:
       operationId: createCustomer

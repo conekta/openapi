@@ -1,0 +1,14 @@
+type: object
+properties:
+  description:
+    type: string
+    format: string
+    example: 'description'
+  type:
+    type: string
+    format: string
+    example: 'email | phone | card_token'
+  value:
+    type: string
+    format: string
+    exampole: 'value'
