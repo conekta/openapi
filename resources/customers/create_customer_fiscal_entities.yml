@@ -1,0 +1,49 @@
+post:
+  operationId: CreateCustomerFiscalEntities
+  summary: returns a fiscal entities
+  description: 'creates a customer resource that corresponds to a customer ID.'
+  responses:
+    '200':
+      description: successful operation
+      content:
+        application/vnd.conekta-v2.0.0+json:
+          schema:
+            allOf: 
+              - $ref: '../../schemas/customers/customer_fiscal_entities_request.yml'
+              - type: object
+                required:
+                  - id
+                  - object
+                  - created_at
+                properties:
+                  id:
+                    type: string
+                    example: "ship_cont_2tKZsTYcsryyu7Ah8"
+                  object:
+                    type: string
+                    example: "shipping_contact"
+                  created_at:
+                    type: integer
+                    format: int64
+                    example: 1675715413
+                  parent_id:
+                    type: string
+                    example: "cus_2tKcHxhTz7xU5SymF"
+                  default:
+                    type: boolean
+            
+    401:
+     $ref: '../errors/401.yml'
+    404:
+     $ref: '../errors/404.yml'
+    422:
+     $ref: '../errors/422.yml'
+    500:
+     $ref: '../errors/500.yml'
+  security:
+    - bearerAuth: []
+  requestBody:
+    $ref: ../../requestBodies/customers/customer_fiscal_entities.yml
+  parameters:
+    - $ref: '../../parameters/commons/path_param/id.yml'
+    - $ref: '../../parameters/commons/headers/accept_language.yml'

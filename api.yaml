@@ -19,6 +19,10 @@ paths:
     $ref: "./resources/customers/create_customer.yml"
   /customers/{id}:
     $ref: "./resources/customers/get_customer.yml"
+  /customers/{id}/fiscal_entities:
+    $ref: "./resources/customers/create_customer_fiscal_entities.yml"
+  /customers/{id}/fiscal_entities/{fiscal_entities_id}:
+    $ref: "./resources/customers/update_customer_fiscal_entities.yml"
   /customers/{id}/payment_sources:
     $ref: "./resources/customers/create_customer_payment_sources.yml"
   /customers/{id}/payment_sources/{payment_sources_id}:
