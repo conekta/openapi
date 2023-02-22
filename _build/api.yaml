@@ -99,92 +99,9 @@ paths:
                                   oxxo_recurrent: payment_source_cash
                                   spei_recurrent: payment_source_spei_recurrent
                               oneOf:
-                                - allOf:
-                                    - type: object
-                                      required:
-                                        - type
-                                        - id
-                                        - object
-                                        - created_at
-                                      properties:
-                                        type:
-                                          type: string
-                                        id:
-                                          type: string
-                                          example: src_2s8K1B3PBKDontpi9
-                                        object:
-                                          type: string
-                                          example: payment_source
-                                        created_at:
-                                          type: integer
-                                          format: int64
-                                          example: 1675715413
-                                        parent_id:
-                                          type: string
-                                          example: cus_2s8K1B3PBKDontpi8
-                                    - type: object
-                                      title: payment sources cash
-                                      description: use for cash responses
-                                      properties:
-                                        reference:
-                                          type: string
-                                          example: '93000262276908'
-                                        barcode:
-                                          type: string
-                                          example: '93000262276908'
-                                        barcode_url:
-                                          type: string
-                                          example: 'https://pt-common-s3-stg.s3.amazonaws.com/644ebf80f2243197aad6cd8810375b905b613dbe.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=ASIA3UN6375MP4SLLCWV%2F20230203%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20230203T215750Z&X-Amz-Expires=604800&X-Amz-Security-Token=IQoJb3JpZ2luX2VjEH4aCXVzLWVhc3QtMSJGMEQCICd79cu7DYu%2F4%2B3HnVVswydgU9yHcE9kmQIIk2TLoZJrAiBVZ0HxVSeboK5lhdQSqADjwQF62XX35jhC%2F2riB0M8uCqQBAj2%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F8BEAIaDDc5OTgwMTA4MTY4OCIMXWZds9ZI5hzUdbeGKuQDFreMyeWnWWPqDuGZ2%2BHk6usCr%2Fl096%2FNJh9xtf8htLu56K%2FhWUTx%2BjiqFWM2O%2FF5zTS%2BIV6TqkLDZ%2BQ5Jo1miQrRmR57YDz6uP2Yd1mNZ1ouq5ipnNjUuu5UWCCBAmqyZQsrVmeMQpSV2IB%2BTERCCcW2SukFEYU%2F20%2Fzy5orsoZ8DxOW460IymR3cWBk5u3Xh2cV6Y1RdPEwDEThhqYEF5w%2ByKbLENloMsI%2FUm6sG5PPrO3yQOAP9aK2muLJs9lXQRU%2FL%2FSsmS4FKSUFOqlN6YU%2Bi2Y%2FyGIKAJT2VDkngvz5Sl%2Fadj0j%2BPKftVRV5FcEhySB6Rl%2BSkPN7kVQMJp6pS8hMJ6JCyEA%2BA3eWYdIfKgQhWVXAR4oCBfJ62DH8FU3a7WfSjjpTwfVkiReWen3GGCYfUWETTVKp46MKnJ9PG0CD3KzxKV8VfmEGc5krK%2FI%2F%2BDV2wtSa%2F9qf1%2BK1YYJIK9qZGb25ljUiGhTB4T%2BMUOSQFjetiWUoOJc5Q3Jz%2FXJbiTAMTST39MhdbCgiMgfrc8OGKN5DOVbex33Z7dn0xf%2FOCkSqurhLaG08efKQBdhLNS0RlE9hbg9yZ2ywwtQIF39fI6A7eeH0T11a5HMlvm51u4rAffPHRuEJfwJoIuj%2F2s3QzDg7%2FWeBjqmAbnPOlGfysjrDdvHyG7HVnaX02kdG%2BI3Q4PFOO4Mjaa3ocpjcfPT70%2BZ5a%2FSv5vP0jDLGrLToeM9%2BAUlNepptICRu23a1tLGW4ri0twPA%2FZ4JDTtUUUgdblyG8bKpcUTNp4oOsdmLLBz3FVyr4c2xQbDZSu2zYOtoOxB18W0AC6kIbsMWVU55Bf0mBhPeBWxGrtM4Kw1SgHHlt%2F8vetQi2OwtUcg08c%3D&X-Amz-SignedHeaders=host&X-Amz-Signature=d06dfa41550003359f2aabc8006063a80dfd806a13a54d244024946a76aa9abc'
-                                        expires_at:
-                                          type: integer
-                                          format: int64
-                                          example: 0
-                                - allOf:
-                                    - $ref: '#/paths/~1customers/post/responses/200/content/application~1vnd.conekta-v2.0.0%2Bjson/schema/properties/payment_sources/allOf/1/properties/data/items/oneOf/0/allOf/0'
-                                    - type: object
-                                      title: payment sources card
-                                      description: use for card responses
-                                      properties:
-                                        last4:
-                                          type: string
-                                          example: '6410'
-                                        bin:
-                                          type: string
-                                          example: '40276657'
-                                        card_type:
-                                          type: string
-                                          example: debit
-                                        exp_month:
-                                          type: string
-                                          example: '10'
-                                        exp_year:
-                                          type: string
-                                          example: '25'
-                                        brand:
-                                          type: string
-                                          example: visa
-                                        name:
-                                          type: string
-                                          example: Fulano Perez"
-                                        default:
-                                          type: boolean
-                                        visible_on_checkout:
-                                          type: boolean
-                                        payment_source_status:
-                                          type: string
-                                          example: active
-                                - allOf:
-                                    - $ref: '#/paths/~1customers/post/responses/200/content/application~1vnd.conekta-v2.0.0%2Bjson/schema/properties/payment_sources/allOf/1/properties/data/items/oneOf/0/allOf/0'
-                                    - type: object
-                                      title: payment sources spei recurrent
-                                      description: use for spei responses
-                                      properties:
-                                        reference:
-                                          type: string
-                                          example: '93000262276908'
-                                        expires_at:
-                                          type: string
-                                          example: none
+                                - $ref: '#/paths/~1customers~1%7Bid%7D~1payment_sources/post/responses/200/content/application~1vnd.conekta-v2.0.0%2Bjson/schema/oneOf/0'
+                                - $ref: '#/paths/~1customers~1%7Bid%7D~1payment_sources/post/responses/200/content/application~1vnd.conekta-v2.0.0%2Bjson/schema/oneOf/1'
+                                - $ref: '#/paths/~1customers~1%7Bid%7D~1payment_sources/post/responses/200/content/application~1vnd.conekta-v2.0.0%2Bjson/schema/oneOf/2'
                   phone:
                     type: string
                     example: '+5215555555555'
@@ -391,17 +308,18 @@ paths:
                 payment_sources:
                   type: array
                   items:
-                    title: Contains details of the payment methods that the customer has active or has used in Conekta
-                    required:
-                      - type
-                    properties:
-                      type:
-                        type: string
-                        example: card
-                  example:
-                    - type: card
-                      token_id: tok_76238476234
-                    - type: oxxo_recurrent
+                    title: consumer_payment_sources_request
+                    oneOf:
+                      - $ref: '#/paths/~1customers~1%7Bid%7D~1payment_sources/post/requestBody/content/application~1json/schema/oneOf/0'
+                      - $ref: '#/paths/~1customers~1%7Bid%7D~1payment_sources/post/requestBody/content/application~1json/schema/oneOf/1'
+                      - $ref: '#/paths/~1customers~1%7Bid%7D~1payment_sources/post/requestBody/content/application~1json/schema/oneOf/2'
+                    discriminator:
+                      propertyName: type
+                      mapping:
+                        card: payment_sources_card
+                        cash: payment_sources_cash
+                        oxxo_cash: payment_sources_cash
+                        spei: payment_sources_spei
                 shipping_contacts:
                   type: array
                   items:
@@ -521,9 +439,9 @@ paths:
                                             oxxo_recurrent: payment_source_cash
                                             spei_recurrent: payment_source_spei_recurrent
                                         oneOf:
-                                          - $ref: '#/paths/~1customers/post/responses/200/content/application~1vnd.conekta-v2.0.0%2Bjson/schema/properties/payment_sources/allOf/1/properties/data/items/oneOf/0'
-                                          - $ref: '#/paths/~1customers/post/responses/200/content/application~1vnd.conekta-v2.0.0%2Bjson/schema/properties/payment_sources/allOf/1/properties/data/items/oneOf/1'
-                                          - $ref: '#/paths/~1customers/post/responses/200/content/application~1vnd.conekta-v2.0.0%2Bjson/schema/properties/payment_sources/allOf/1/properties/data/items/oneOf/2'
+                                          - $ref: '#/paths/~1customers~1%7Bid%7D~1payment_sources/post/responses/200/content/application~1vnd.conekta-v2.0.0%2Bjson/schema/oneOf/0'
+                                          - $ref: '#/paths/~1customers~1%7Bid%7D~1payment_sources/post/responses/200/content/application~1vnd.conekta-v2.0.0%2Bjson/schema/oneOf/1'
+                                          - $ref: '#/paths/~1customers~1%7Bid%7D~1payment_sources/post/responses/200/content/application~1vnd.conekta-v2.0.0%2Bjson/schema/oneOf/2'
                             phone:
                               type: string
                               example: '+5215555555555'
@@ -745,7 +663,13 @@ paths:
                 payment_sources:
                   type: array
                   items:
-                    $ref: '#/paths/~1customers/post/requestBody/content/application~1json/schema/properties/payment_sources/items'
+                    title: Contains details of the payment methods that the customer has active or has used in Conekta
+                    required:
+                      - type
+                    properties:
+                      type:
+                        type: string
+                        example: card
                   example:
                     - type: card
                       token_id: tok_76238476234
@@ -768,6 +692,168 @@ paths:
                   type: string
                   description: 'It is a parameter that allows to identify in the response, the Conekta ID of a payment method (payment_id)'
                   example: src_1a2b3c4d5e6f7g8h
+        required: true
+      parameters:
+        - $ref: '#/paths/~1logs~1%7Bid%7D/get/parameters/0'
+        - $ref: '#/paths/~1logs/get/parameters/0'
+  '/customers/{id}/payment_sources':
+    post:
+      operationId: CreateCustomerPaymentSources
+      summary: returns a payment source
+      description: Gets a customer resource that corresponds to a customer ID.
+      responses:
+        '200':
+          description: successful operation
+          content:
+            application/vnd.conekta-v2.0.0+json:
+              schema:
+                title: customer_payment_sources_response
+                discriminator:
+                  propertyName: type
+                  mapping:
+                    cash: payment_source_cash
+                    card: payment_source_card
+                    oxxo_recurrent: payment_source_cash
+                    spei_recurrent: payment_source_spei_recurrent
+                oneOf:
+                  - allOf:
+                      - type: object
+                        required:
+                          - type
+                          - id
+                          - object
+                          - created_at
+                        properties:
+                          type:
+                            type: string
+                          id:
+                            type: string
+                            example: src_2s8K1B3PBKDontpi9
+                          object:
+                            type: string
+                            example: payment_source
+                          created_at:
+                            type: integer
+                            format: int64
+                            example: 1675715413
+                          parent_id:
+                            type: string
+                            example: cus_2s8K1B3PBKDontpi8
+                      - type: object
+                        title: payment sources cash
+                        description: use for cash responses
+                        properties:
+                          reference:
+                            type: string
+                            example: '93000262276908'
+                          barcode:
+                            type: string
+                            example: '93000262276908'
+                          barcode_url:
+                            type: string
+                            example: 'https://pt-common-s3-stg.s3.amazonaws.com/644ebf80f2243197aad6cd8810375b905b613dbe.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=ASIA3UN6375MP4SLLCWV%2F20230203%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20230203T215750Z&X-Amz-Expires=604800&X-Amz-Security-Token=IQoJb3JpZ2luX2VjEH4aCXVzLWVhc3QtMSJGMEQCICd79cu7DYu%2F4%2B3HnVVswydgU9yHcE9kmQIIk2TLoZJrAiBVZ0HxVSeboK5lhdQSqADjwQF62XX35jhC%2F2riB0M8uCqQBAj2%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F8BEAIaDDc5OTgwMTA4MTY4OCIMXWZds9ZI5hzUdbeGKuQDFreMyeWnWWPqDuGZ2%2BHk6usCr%2Fl096%2FNJh9xtf8htLu56K%2FhWUTx%2BjiqFWM2O%2FF5zTS%2BIV6TqkLDZ%2BQ5Jo1miQrRmR57YDz6uP2Yd1mNZ1ouq5ipnNjUuu5UWCCBAmqyZQsrVmeMQpSV2IB%2BTERCCcW2SukFEYU%2F20%2Fzy5orsoZ8DxOW460IymR3cWBk5u3Xh2cV6Y1RdPEwDEThhqYEF5w%2ByKbLENloMsI%2FUm6sG5PPrO3yQOAP9aK2muLJs9lXQRU%2FL%2FSsmS4FKSUFOqlN6YU%2Bi2Y%2FyGIKAJT2VDkngvz5Sl%2Fadj0j%2BPKftVRV5FcEhySB6Rl%2BSkPN7kVQMJp6pS8hMJ6JCyEA%2BA3eWYdIfKgQhWVXAR4oCBfJ62DH8FU3a7WfSjjpTwfVkiReWen3GGCYfUWETTVKp46MKnJ9PG0CD3KzxKV8VfmEGc5krK%2FI%2F%2BDV2wtSa%2F9qf1%2BK1YYJIK9qZGb25ljUiGhTB4T%2BMUOSQFjetiWUoOJc5Q3Jz%2FXJbiTAMTST39MhdbCgiMgfrc8OGKN5DOVbex33Z7dn0xf%2FOCkSqurhLaG08efKQBdhLNS0RlE9hbg9yZ2ywwtQIF39fI6A7eeH0T11a5HMlvm51u4rAffPHRuEJfwJoIuj%2F2s3QzDg7%2FWeBjqmAbnPOlGfysjrDdvHyG7HVnaX02kdG%2BI3Q4PFOO4Mjaa3ocpjcfPT70%2BZ5a%2FSv5vP0jDLGrLToeM9%2BAUlNepptICRu23a1tLGW4ri0twPA%2FZ4JDTtUUUgdblyG8bKpcUTNp4oOsdmLLBz3FVyr4c2xQbDZSu2zYOtoOxB18W0AC6kIbsMWVU55Bf0mBhPeBWxGrtM4Kw1SgHHlt%2F8vetQi2OwtUcg08c%3D&X-Amz-SignedHeaders=host&X-Amz-Signature=d06dfa41550003359f2aabc8006063a80dfd806a13a54d244024946a76aa9abc'
+                          expires_at:
+                            type: integer
+                            format: int64
+                            example: 0
+                  - allOf:
+                      - $ref: '#/paths/~1customers~1%7Bid%7D~1payment_sources/post/responses/200/content/application~1vnd.conekta-v2.0.0%2Bjson/schema/oneOf/0/allOf/0'
+                      - type: object
+                        title: payment sources card
+                        description: use for card responses
+                        properties:
+                          last4:
+                            type: string
+                            example: '6410'
+                          bin:
+                            type: string
+                            example: '40276657'
+                          card_type:
+                            type: string
+                            example: debit
+                          exp_month:
+                            type: string
+                            example: '10'
+                          exp_year:
+                            type: string
+                            example: '25'
+                          brand:
+                            type: string
+                            example: visa
+                          name:
+                            type: string
+                            example: Fulano Perez"
+                          default:
+                            type: boolean
+                          visible_on_checkout:
+                            type: boolean
+                          payment_source_status:
+                            type: string
+                            example: active
+                  - allOf:
+                      - $ref: '#/paths/~1customers~1%7Bid%7D~1payment_sources/post/responses/200/content/application~1vnd.conekta-v2.0.0%2Bjson/schema/oneOf/0/allOf/0'
+                      - type: object
+                        title: payment sources spei recurrent
+                        description: use for spei responses
+                        properties:
+                          reference:
+                            type: string
+                            example: '93000262276908'
+                          expires_at:
+                            type: string
+                            example: none
+        '401':
+          $ref: '#/paths/~1logs/get/responses/401'
+        '404':
+          $ref: '#/paths/~1orders~1%7Bid%7D/get/responses/404'
+        '422':
+          $ref: '#/paths/~1logs/get/responses/422'
+        '500':
+          $ref: '#/paths/~1logs/get/responses/500'
+      security:
+        - bearerAuth: []
+      requestBody:
+        description: requested field for customer payment sources
+        content:
+          application/json:
+            schema:
+              oneOf:
+                - title: payment_sources_card
+                  required:
+                    - token_id
+                  allOf:
+                    - $ref: '#/paths/~1customers~1%7Bid%7D/put/requestBody/content/application~1json/schema/properties/payment_sources/items'
+                    - type: object
+                      properties:
+                        token_id:
+                          type: string
+                          example: tok_32hj4g234as
+                - title: payment_sources_card
+                  required:
+                    - expires_at
+                  allOf:
+                    - $ref: '#/paths/~1customers~1%7Bid%7D/put/requestBody/content/application~1json/schema/properties/payment_sources/items'
+                    - type: object
+                      properties:
+                        expires_at:
+                          type: integer
+                          example: 1553273553
+                - title: payment_sources_card
+                  allOf:
+                    - $ref: '#/paths/~1customers~1%7Bid%7D/put/requestBody/content/application~1json/schema/properties/payment_sources/items'
+                    - type: object
+                      properties:
+                        expires_at:
+                          type: integer
+                          example: 1553273553
+              discriminator:
+                propertyName: type
+                mapping:
+                  card: payment_sources_card
+                  cash: payment_sources_cash
+                  oxxo_recurrent: payment_sources_cash
+                  spei: payment_sources_spei
+                  spei_recurrent: payment_sources_spei
         required: true
       parameters:
         - $ref: '#/paths/~1logs~1%7Bid%7D/get/parameters/0'
@@ -2052,6 +2138,9 @@ paths:
                     token_id:
                       type: string
                       example: tok_2897348234
+                    payment_source_id:
+                      type: string
+                      example: src_2tLkkyfMPh6v7pFry
                 reference_id:
                   description: Custom reference to add to the charge
                   type: string
@@ -2269,6 +2358,8 @@ paths:
           $ref: '#/paths/~1logs/get/responses/401'
         '404':
           $ref: '#/paths/~1orders~1%7Bid%7D/get/responses/404'
+        '422':
+          $ref: '#/paths/~1logs/get/responses/422'
         '500':
           $ref: '#/paths/~1logs/get/responses/500'
       security:

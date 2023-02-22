@@ -19,6 +19,8 @@ paths:
     $ref: "./resources/customers/create_customer.yml"
   /customers/{id}:
     $ref: "./resources/customers/get_customer.yml"
+  /customers/{id}/payment_sources:
+    $ref: "./resources/customers/create_customer_payment_sources.yml"
   /logs:
      $ref: "./resources/logs/log.yml"
   /logs/{id}:

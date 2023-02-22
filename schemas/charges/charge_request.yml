@@ -28,6 +28,9 @@ properties:
       token_id:
         type: string
         example: "tok_2897348234"
+      payment_source_id:
+        type: string
+        example: "src_2tLkkyfMPh6v7pFry"
   reference_id:
     description: "Custom reference to add to the charge"
     type: string

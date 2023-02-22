@@ -46,7 +46,6 @@ post:
     - bearerAuth: []
   requestBody:
    $ref: '../../requestBodies/customers/customer.yml'
-
   parameters:
     - $ref: '../../parameters/commons/headers/accept_language.yml'
 

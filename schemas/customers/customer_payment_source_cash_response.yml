@@ -2,7 +2,6 @@ payment_source_cash:
   allOf:
     - $ref: customer_payment_source_response.yml#/payment_source
     - type: object
-      title: payment sources cash
       description: use for cash responses
       properties:
         reference:
