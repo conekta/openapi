@@ -96,6 +96,42 @@ paths:
                 id:
                   type: string
                   example: 2fw8EWJusiRrxdPzT
+  /antifraud/blacklists:
+    get:
+      tags:
+        - Blacklist
+      description: returns all rules
+      responses:
+        '200':
+          description: All the rules
+          content:
+            application/json:
+              schema:
+                $ref: '#/paths/~1antifraud~1whitelists/get/responses/200/content/application~1json/schema'
+    post:
+      tags:
+        - Blacklist
+      operationId: create new rule
+      responses:
+        '200':
+          description: successfully registered rule
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/paths/~1antifraud~1whitelists/post/requestBody/content/application~1json/schema'
+    delete:
+      tags:
+        - Blacklist
+      operationId: delete requested rule
+      responses:
+        '200':
+          description: successfully deleted rule
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/paths/~1antifraud~1whitelists/delete/requestBody/content/application~1json/schema'
   /customers:
     post:
       operationId: createCustomer

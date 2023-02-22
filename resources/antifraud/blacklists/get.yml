@@ -1,0 +1,10 @@
+tags:
+  - Blacklist
+description: returns all rules
+responses:
+  '200':
+    description: All the rules
+    content:
+      application/json:
+        schema:
+            $ref: '../../../schemas/antifraud/risk_rules_list.yml'
