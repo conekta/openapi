@@ -740,7 +740,6 @@ paths:
                             type: string
                             example: cus_2s8K1B3PBKDontpi8
                       - type: object
-                        title: payment sources cash
                         description: use for cash responses
                         properties:
                           reference:
@@ -759,7 +758,6 @@ paths:
                   - allOf:
                       - $ref: '#/paths/~1customers~1%7Bid%7D~1payment_sources/post/responses/200/content/application~1vnd.conekta-v2.0.0%2Bjson/schema/oneOf/0/allOf/0'
                       - type: object
-                        title: payment sources card
                         description: use for card responses
                         properties:
                           last4:
@@ -793,7 +791,6 @@ paths:
                   - allOf:
                       - $ref: '#/paths/~1customers~1%7Bid%7D~1payment_sources/post/responses/200/content/application~1vnd.conekta-v2.0.0%2Bjson/schema/oneOf/0/allOf/0'
                       - type: object
-                        title: payment sources spei recurrent
                         description: use for spei responses
                         properties:
                           reference:
@@ -857,6 +854,51 @@ paths:
         required: true
       parameters:
         - $ref: '#/paths/~1logs~1%7Bid%7D/get/parameters/0'
+        - $ref: '#/paths/~1logs/get/parameters/0'
+  '/customers/{id}/payment_sources/{payment_sources_id}':
+    put:
+      operationId: UpdateCustomerPaymentSources
+      summary: returns an updated payment source
+      description: Gets a customer resource that corresponds to a customer ID.
+      responses:
+        '200':
+          description: successful operation
+          content:
+            application/vnd.conekta-v2.0.0+json:
+              schema:
+                title: update_customer_payment_sources_response
+                discriminator:
+                  propertyName: type
+                  mapping:
+                    cash: payment_source_cash
+                    card: payment_source_card
+                    oxxo_recurrent: payment_source_cash
+                    spei_recurrent: payment_source_spei_recurrent
+                oneOf:
+                  - $ref: '#/paths/~1customers~1%7Bid%7D~1payment_sources/post/responses/200/content/application~1vnd.conekta-v2.0.0%2Bjson/schema/oneOf/0'
+                  - $ref: '#/paths/~1customers~1%7Bid%7D~1payment_sources/post/responses/200/content/application~1vnd.conekta-v2.0.0%2Bjson/schema/oneOf/1'
+                  - $ref: '#/paths/~1customers~1%7Bid%7D~1payment_sources/post/responses/200/content/application~1vnd.conekta-v2.0.0%2Bjson/schema/oneOf/2'
+        '401':
+          $ref: '#/paths/~1logs/get/responses/401'
+        '404':
+          $ref: '#/paths/~1orders~1%7Bid%7D/get/responses/404'
+        '422':
+          $ref: '#/paths/~1logs/get/responses/422'
+        '500':
+          $ref: '#/paths/~1logs/get/responses/500'
+      security:
+        - bearerAuth: []
+      requestBody:
+        $ref: '#/paths/~1customers~1%7Bid%7D~1payment_sources/post/requestBody'
+      parameters:
+        - $ref: '#/paths/~1logs~1%7Bid%7D/get/parameters/0'
+        - in: path
+          name: payment_sources_id
+          description: identifier
+          required: true
+          schema:
+            type: string
+          example: tax_lin_2tQ974hSHcsdeSZHG
         - $ref: '#/paths/~1logs/get/parameters/0'
   /logs:
     get:

@@ -1,0 +1,7 @@
+in: path
+name: "payment_sources_id"
+description:  identifier
+required: true
+schema:
+  type: string
+example: "tax_lin_2tQ974hSHcsdeSZHG"
