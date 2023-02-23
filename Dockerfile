@@ -1,5 +1,12 @@
-FROM openapitools/openapi-generator-cli:v6.4.0 as builder
+FROM node:14 as builder
 
+# Install OpenJDK-11
+RUN apt-get update && \
+    apt-get install -y openjdk-11-jre-headless && \
+    apt-get clean;
+
+RUN npm install @openapitools/openapi-generator-cli -g
+RUN openapi-generator-cli version-manager set 6.3.0
 WORKDIR /app
 
 COPY parameters/ parameters/

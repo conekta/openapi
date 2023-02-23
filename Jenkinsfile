@@ -25,7 +25,7 @@ node('sre-slave') {
                 buildDockerImage(this, repo_name, env.GITHUB_SSH_CREDENTIAL_ID, DEFAULT_DOCKERFILE, CI_DOCKER_TARGET_STAGE)
             }
             stage('validate') {
-                 runCommand(this, repo_name, " validate -i api.yaml")
+                 runCommand(this, repo_name, "openapi-generator-cli validate -i api.yaml")
             }
            
            
