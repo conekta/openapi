@@ -15,6 +15,22 @@ info:
     url: 'https://www.apache.org/licenses/LICENSE-2.0.html'
 paths:
   /antifraud/whitelists:
+    delete:
+      tags:
+        - Whitelists
+      operationId: delete requested rule
+      responses:
+        '200':
+          description: successfully deleted rule
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                id:
+                  type: string
+                  example: 2fw8EWJusiRrxdPzT
     get:
       tags:
         - Whitelists
@@ -24,37 +40,37 @@ paths:
           description: All the rules
           content:
             application/json:
-              schema:
-                type: object
-                properties:
-                  has_more:
-                    type: boolean
-                    value: true
-                  total:
-                    type: integer
-                    format: int32
-                    minimum: 0
-                    maximum: 100
-                  object:
-                    type: string
-                    example: list
-                  data:
-                    type: array
-                    items:
-                      type: object
-                      properties:
-                        id:
-                          type: string
-                          example: 2fw8EWJusiRrxdPzT
-                        type:
-                          type: string
-                          example: email
-                        value:
-                          type: string
-                          example: email@example.com
-                        description:
-                          type: string
-                          example: secure customer example@example.com
+              schema: null
+              type: object
+              properties:
+                has_more:
+                  type: boolean
+                  value: true
+                total:
+                  type: integer
+                  format: int32
+                  minimum: 0
+                  maximum: 100
+                object:
+                  type: string
+                  example: list
+                data:
+                  type: array
+                  items:
+                    type: object
+                    properties:
+                      id:
+                        type: string
+                        example: 2fw8EWJusiRrxdPzT
+                      type:
+                        type: string
+                        example: email
+                      value:
+                        type: string
+                        example: email@example.com
+                      description:
+                        type: string
+                        example: secure customer example@example.com
     post:
       tags:
         - Whitelists
@@ -80,58 +96,7 @@ paths:
                   type: string
                   format: string
                   exampole: value
-    delete:
-      tags:
-        - Whitelists
-      operationId: delete requested rule
-      responses:
-        '200':
-          description: successfully deleted rule
-      requestBody:
-        content:
-          application/json:
-            schema:
-              type: object
-              properties:
-                id:
-                  type: string
-                  example: 2fw8EWJusiRrxdPzT
-  /antifraud/blacklists:
-    get:
-      tags:
-        - Blacklist
-      description: returns all rules
-      responses:
-        '200':
-          description: All the rules
-          content:
-            application/json:
-              schema:
-                $ref: '#/paths/~1antifraud~1whitelists/get/responses/200/content/application~1json/schema'
-    post:
-      tags:
-        - Blacklist
-      operationId: create new rule
-      responses:
-        '200':
-          description: successfully registered rule
-      requestBody:
-        content:
-          application/json:
-            schema:
-              $ref: '#/paths/~1antifraud~1whitelists/post/requestBody/content/application~1json/schema'
-    delete:
-      tags:
-        - Blacklist
-      operationId: delete requested rule
-      responses:
-        '200':
-          description: successfully deleted rule
-      requestBody:
-        content:
-          application/json:
-            schema:
-              $ref: '#/paths/~1antifraud~1whitelists/delete/requestBody/content/application~1json/schema'
+  /antifraud/blacklists: !<tag:yaml.org,2002:js/undefined> ''
   /customers:
     post:
       operationId: createCustomer

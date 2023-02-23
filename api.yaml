@@ -16,19 +16,9 @@ info:
 
 paths:
   /antifraud/whitelists:
-    get:
-      $ref: "./resources/antifraud/whitelists/get.yml"
-    post:
-      $ref: "./resources/antifraud/whitelists/post.yml"
-    delete:
-      $ref: "./resources/antifraud/whitelists/delete.yml"
+    $ref: "./resources/antifraud/whitelists/get_create_delete.yml"
   /antifraud/blacklists:
-    get:
-      $ref: "./resources/antifraud/blacklists/get.yml"
-    post:
-      $ref: "./resources/antifraud/blacklists/post.yml"
-    delete:
-      $ref: "./resources/antifraud/blacklists/delete.yml"
+    $ref: "./resources/antifraud/blacklists/get_create_delete.yml"
   /customers:
     $ref: "./resources/customers/create_customer.yml"
   /customers/{id}:
