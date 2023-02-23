@@ -1,0 +1,7 @@
+in: path
+name: "line_item_id"
+description:  identifier
+required: true
+schema:
+  type: string
+example: "line_item_2tQ8HkkfbauaKP9Ho"

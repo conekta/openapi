@@ -124,7 +124,7 @@ properties:
                         default:
                           type: boolean
         shipping_contacts:
-          title: customer_shipping_contacts_response
+          title: customers_shipping_contacts_response
           allOf:
             - $ref: ../../schemas/pagination/pagination.yml
             - type: object
@@ -132,7 +132,7 @@ properties:
                 data:
                   type: array
                   items:
-                    title: customer_shipping_contacts_data_response
+                    title: customers_shipping_contacts_data_response
                     allOf: 
                       - $ref: './customer_shipping_contacts.yml'
                       - type: object

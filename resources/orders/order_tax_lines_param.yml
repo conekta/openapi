@@ -1,0 +1,25 @@
+post:
+  operationId: ordersCreateTaxLines
+  summary: creates a new tax lines for an existing orden
+  responses:
+    200:
+      description: successful
+      content:
+        application/vnd.conekta-v2.0.0+json:
+          schema:
+            $ref: ../../schemas/orders/update_order_tax_lines_response.yml
+    401:
+     $ref: '../errors/401.yml'
+    422:
+     $ref: '../errors/422.yml'
+    404:
+     $ref: '../errors/404.yml'
+    500:
+     $ref: '../errors/500.yml'
+  security:
+    - bearerAuth: []
+  requestBody:
+    $ref: '../../requestBodies/orders/order_tax_lines.yml'
+  parameters:
+    - $ref: '../../parameters/commons/path_param/id.yml'
+    - $ref: '../../parameters/commons/headers/accept_language.yml'

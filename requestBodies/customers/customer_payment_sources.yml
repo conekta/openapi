@@ -1,0 +1,17 @@
+description: requested field for customer payment sources    
+content:
+  application/json:
+    schema:  
+      oneOf:
+        - $ref: ../../schemas/customers/payment_sources_card.yml
+        - $ref: ../../schemas/customers/payment_sources_cash.yml
+        - $ref: ../../schemas/customers/payment_sources_spei.yml
+      discriminator:
+        propertyName: type
+        mapping:
+          card: payment_sources_card
+          cash: payment_sources_cash
+          oxxo_recurrent: payment_sources_cash
+          spei: payment_sources_spei
+          spei_recurrent: payment_sources_spei
+required: true

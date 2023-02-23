@@ -18,3 +18,9 @@ ruby:
 
 csharp:
 	npx @openapitools/openapi-generator-cli generate -i  api.yaml -g csharp-netcore -o conekta-netcore  -c config-netcore.json
+
+php:
+	npx @openapitools/openapi-generator-cli generate -i  api.yaml -g php -o conekta-php  -c config-php.json
+
+node:
+	npx @openapitools/openapi-generator-cli generate -i  api.yaml -g typescript-fetch -o conekta-node -c config-node.json

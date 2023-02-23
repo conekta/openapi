@@ -217,92 +217,9 @@ paths:
                                   oxxo_recurrent: payment_source_cash
                                   spei_recurrent: payment_source_spei_recurrent
                               oneOf:
-                                - allOf:
-                                    - type: object
-                                      required:
-                                        - type
-                                        - id
-                                        - object
-                                        - created_at
-                                      properties:
-                                        type:
-                                          type: string
-                                        id:
-                                          type: string
-                                          example: src_2s8K1B3PBKDontpi9
-                                        object:
-                                          type: string
-                                          example: payment_source
-                                        created_at:
-                                          type: integer
-                                          format: int64
-                                          example: 1675715413
-                                        parent_id:
-                                          type: string
-                                          example: cus_2s8K1B3PBKDontpi8
-                                    - type: object
-                                      title: payment sources cash
-                                      description: use for cash responses
-                                      properties:
-                                        reference:
-                                          type: string
-                                          example: '93000262276908'
-                                        barcode:
-                                          type: string
-                                          example: '93000262276908'
-                                        barcode_url:
-                                          type: string
-                                          example: 'https://pt-common-s3-stg.s3.amazonaws.com/644ebf80f2243197aad6cd8810375b905b613dbe.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=ASIA3UN6375MP4SLLCWV%2F20230203%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20230203T215750Z&X-Amz-Expires=604800&X-Amz-Security-Token=IQoJb3JpZ2luX2VjEH4aCXVzLWVhc3QtMSJGMEQCICd79cu7DYu%2F4%2B3HnVVswydgU9yHcE9kmQIIk2TLoZJrAiBVZ0HxVSeboK5lhdQSqADjwQF62XX35jhC%2F2riB0M8uCqQBAj2%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F8BEAIaDDc5OTgwMTA4MTY4OCIMXWZds9ZI5hzUdbeGKuQDFreMyeWnWWPqDuGZ2%2BHk6usCr%2Fl096%2FNJh9xtf8htLu56K%2FhWUTx%2BjiqFWM2O%2FF5zTS%2BIV6TqkLDZ%2BQ5Jo1miQrRmR57YDz6uP2Yd1mNZ1ouq5ipnNjUuu5UWCCBAmqyZQsrVmeMQpSV2IB%2BTERCCcW2SukFEYU%2F20%2Fzy5orsoZ8DxOW460IymR3cWBk5u3Xh2cV6Y1RdPEwDEThhqYEF5w%2ByKbLENloMsI%2FUm6sG5PPrO3yQOAP9aK2muLJs9lXQRU%2FL%2FSsmS4FKSUFOqlN6YU%2Bi2Y%2FyGIKAJT2VDkngvz5Sl%2Fadj0j%2BPKftVRV5FcEhySB6Rl%2BSkPN7kVQMJp6pS8hMJ6JCyEA%2BA3eWYdIfKgQhWVXAR4oCBfJ62DH8FU3a7WfSjjpTwfVkiReWen3GGCYfUWETTVKp46MKnJ9PG0CD3KzxKV8VfmEGc5krK%2FI%2F%2BDV2wtSa%2F9qf1%2BK1YYJIK9qZGb25ljUiGhTB4T%2BMUOSQFjetiWUoOJc5Q3Jz%2FXJbiTAMTST39MhdbCgiMgfrc8OGKN5DOVbex33Z7dn0xf%2FOCkSqurhLaG08efKQBdhLNS0RlE9hbg9yZ2ywwtQIF39fI6A7eeH0T11a5HMlvm51u4rAffPHRuEJfwJoIuj%2F2s3QzDg7%2FWeBjqmAbnPOlGfysjrDdvHyG7HVnaX02kdG%2BI3Q4PFOO4Mjaa3ocpjcfPT70%2BZ5a%2FSv5vP0jDLGrLToeM9%2BAUlNepptICRu23a1tLGW4ri0twPA%2FZ4JDTtUUUgdblyG8bKpcUTNp4oOsdmLLBz3FVyr4c2xQbDZSu2zYOtoOxB18W0AC6kIbsMWVU55Bf0mBhPeBWxGrtM4Kw1SgHHlt%2F8vetQi2OwtUcg08c%3D&X-Amz-SignedHeaders=host&X-Amz-Signature=d06dfa41550003359f2aabc8006063a80dfd806a13a54d244024946a76aa9abc'
-                                        expires_at:
-                                          type: integer
-                                          format: int64
-                                          example: 0
-                                - allOf:
-                                    - $ref: '#/paths/~1customers/post/responses/200/content/application~1vnd.conekta-v2.0.0%2Bjson/schema/properties/payment_sources/allOf/1/properties/data/items/oneOf/0/allOf/0'
-                                    - type: object
-                                      title: payment sources card
-                                      description: use for card responses
-                                      properties:
-                                        last4:
-                                          type: string
-                                          example: '6410'
-                                        bin:
-                                          type: string
-                                          example: '40276657'
-                                        card_type:
-                                          type: string
-                                          example: debit
-                                        exp_month:
-                                          type: string
-                                          example: '10'
-                                        exp_year:
-                                          type: string
-                                          example: '25'
-                                        brand:
-                                          type: string
-                                          example: visa
-                                        name:
-                                          type: string
-                                          example: Fulano Perez"
-                                        default:
-                                          type: boolean
-                                        visible_on_checkout:
-                                          type: boolean
-                                        payment_source_status:
-                                          type: string
-                                          example: active
-                                - allOf:
-                                    - $ref: '#/paths/~1customers/post/responses/200/content/application~1vnd.conekta-v2.0.0%2Bjson/schema/properties/payment_sources/allOf/1/properties/data/items/oneOf/0/allOf/0'
-                                    - type: object
-                                      title: payment sources spei recurrent
-                                      description: use for spei responses
-                                      properties:
-                                        reference:
-                                          type: string
-                                          example: '93000262276908'
-                                        expires_at:
-                                          type: string
-                                          example: none
+                                - $ref: '#/paths/~1customers~1%7Bid%7D~1payment_sources/post/responses/200/content/application~1vnd.conekta-v2.0.0%2Bjson/schema/oneOf/0'
+                                - $ref: '#/paths/~1customers~1%7Bid%7D~1payment_sources/post/responses/200/content/application~1vnd.conekta-v2.0.0%2Bjson/schema/oneOf/1'
+                                - $ref: '#/paths/~1customers~1%7Bid%7D~1payment_sources/post/responses/200/content/application~1vnd.conekta-v2.0.0%2Bjson/schema/oneOf/2'
                   phone:
                     type: string
                     example: '+5215555555555'
@@ -317,24 +234,7 @@ paths:
                             items:
                               title: customer_fiscal_entities_data_response
                               allOf:
-                                - title: fiscal entity request
-                                  required:
-                                    - address
-                                  properties:
-                                    address:
-                                      allOf:
-                                        - $ref: '#/paths/~1orders/post/responses/200/content/application~1vnd.conekta-v2.0.0%2Bjson/schema/properties/fiscal_entity/properties/address/allOf/0'
-                                    tax_id:
-                                      type: string
-                                    email:
-                                      type: string
-                                    phone:
-                                      type: string
-                                    contextual_data:
-                                      type: object
-                                    company_name:
-                                      type: string
-                                      example: conekta
+                                - $ref: '#/paths/~1customers~1%7Bid%7D~1fiscal_entities/post/responses/200/content/application~1vnd.conekta-v2.0.0%2Bjson/schema/allOf/0'
                                 - type: object
                                   required:
                                     - id
@@ -357,7 +257,6 @@ paths:
                                     default:
                                       type: boolean
                   shipping_contacts:
-                    title: customer_shipping_contacts_response
                     allOf:
                       - $ref: '#/paths/~1orders/get/responses/200/content/application~1vnd.conekta-v2.0.0%2Bjson/schema/allOf/1'
                       - type: object
@@ -367,50 +266,7 @@ paths:
                             items:
                               title: customer_shipping_contacts_data_response
                               allOf:
-                                - title: customer_shipping_contacts_request
-                                  description: Contains the detail of the shipping addresses that the client has active or has used in Conekta
-                                  properties:
-                                    phone:
-                                      type: string
-                                      example: '+525511223344'
-                                    receiver:
-                                      type: string
-                                      example: Marvin Fuller
-                                    between_streets:
-                                      type: string
-                                      example: Ackerman Crescent
-                                    address:
-                                      type: object
-                                      properties:
-                                        street1:
-                                          type: string
-                                          example: avenida siempre viva
-                                        street2:
-                                          type: string
-                                          example: fake street
-                                        postal_code:
-                                          type: string
-                                          example: '06100'
-                                        city:
-                                          type: string
-                                          example: Ciudad de Mexico
-                                        state:
-                                          type: string
-                                          example: Ciudad de Mexico
-                                        country:
-                                          type: string
-                                          example: MX
-                                        residential:
-                                          type: boolean
-                                          example: true
-                                    parent_id:
-                                      type: string
-                                    default:
-                                      type: boolean
-                                      example: false
-                                    deleted:
-                                      type: boolean
-                                      example: false
+                                - $ref: '#/paths/~1customers~1%7Bid%7D~1shipping_contacts/post/requestBody/content/application~1json/schema'
                                 - type: object
                                   required:
                                     - id
@@ -503,29 +359,29 @@ paths:
                 custom_reference:
                   type: string
                   description: It is an undefined value.
-                  nullable: true
                 fiscal_entities:
                   type: array
                   items:
-                    $ref: '#/paths/~1customers/post/responses/200/content/application~1vnd.conekta-v2.0.0%2Bjson/schema/properties/fiscal_entities/allOf/1/properties/data/items/allOf/0'
+                    $ref: '#/paths/~1customers~1%7Bid%7D~1fiscal_entities/post/responses/200/content/application~1vnd.conekta-v2.0.0%2Bjson/schema/allOf/0'
                 payment_sources:
                   type: array
                   items:
-                    title: Contains details of the payment methods that the customer has active or has used in Conekta
-                    required:
-                      - type
-                    properties:
-                      type:
-                        type: string
-                        example: card
-                  example:
-                    - type: card
-                      token_id: tok_76238476234
-                    - type: oxxo_recurrent
+                    title: consumer_payment_sources_request
+                    oneOf:
+                      - $ref: '#/paths/~1customers~1%7Bid%7D~1payment_sources/post/requestBody/content/application~1json/schema/oneOf/0'
+                      - $ref: '#/paths/~1customers~1%7Bid%7D~1payment_sources/post/requestBody/content/application~1json/schema/oneOf/1'
+                      - $ref: '#/paths/~1customers~1%7Bid%7D~1payment_sources/post/requestBody/content/application~1json/schema/oneOf/2'
+                    discriminator:
+                      propertyName: type
+                      mapping:
+                        card: payment_sources_card
+                        cash: payment_sources_cash
+                        oxxo_cash: payment_sources_cash
+                        spei: payment_sources_spei
                 shipping_contacts:
                   type: array
                   items:
-                    $ref: '#/paths/~1customers/post/responses/200/content/application~1vnd.conekta-v2.0.0%2Bjson/schema/properties/shipping_contacts/allOf/1/properties/data/items/allOf/0'
+                    $ref: '#/paths/~1customers~1%7Bid%7D~1shipping_contacts/post/requestBody/content/application~1json/schema'
                 antifraud_info:
                   type: object
                   nullable: true
@@ -641,9 +497,9 @@ paths:
                                             oxxo_recurrent: payment_source_cash
                                             spei_recurrent: payment_source_spei_recurrent
                                         oneOf:
-                                          - $ref: '#/paths/~1customers/post/responses/200/content/application~1vnd.conekta-v2.0.0%2Bjson/schema/properties/payment_sources/allOf/1/properties/data/items/oneOf/0'
-                                          - $ref: '#/paths/~1customers/post/responses/200/content/application~1vnd.conekta-v2.0.0%2Bjson/schema/properties/payment_sources/allOf/1/properties/data/items/oneOf/1'
-                                          - $ref: '#/paths/~1customers/post/responses/200/content/application~1vnd.conekta-v2.0.0%2Bjson/schema/properties/payment_sources/allOf/1/properties/data/items/oneOf/2'
+                                          - $ref: '#/paths/~1customers~1%7Bid%7D~1payment_sources/post/responses/200/content/application~1vnd.conekta-v2.0.0%2Bjson/schema/oneOf/0'
+                                          - $ref: '#/paths/~1customers~1%7Bid%7D~1payment_sources/post/responses/200/content/application~1vnd.conekta-v2.0.0%2Bjson/schema/oneOf/1'
+                                          - $ref: '#/paths/~1customers~1%7Bid%7D~1payment_sources/post/responses/200/content/application~1vnd.conekta-v2.0.0%2Bjson/schema/oneOf/2'
                             phone:
                               type: string
                               example: '+5215555555555'
@@ -658,7 +514,7 @@ paths:
                                       items:
                                         title: customer_fiscal_entities_data_response
                                         allOf:
-                                          - $ref: '#/paths/~1customers/post/responses/200/content/application~1vnd.conekta-v2.0.0%2Bjson/schema/properties/fiscal_entities/allOf/1/properties/data/items/allOf/0'
+                                          - $ref: '#/paths/~1customers~1%7Bid%7D~1fiscal_entities/post/responses/200/content/application~1vnd.conekta-v2.0.0%2Bjson/schema/allOf/0'
                                           - type: object
                                             required:
                                               - id
@@ -681,7 +537,7 @@ paths:
                                               default:
                                                 type: boolean
                             shipping_contacts:
-                              title: customer_shipping_contacts_response
+                              title: customers_shipping_contacts_response
                               allOf:
                                 - $ref: '#/paths/~1orders/get/responses/200/content/application~1vnd.conekta-v2.0.0%2Bjson/schema/allOf/1'
                                 - type: object
@@ -689,9 +545,9 @@ paths:
                                     data:
                                       type: array
                                       items:
-                                        title: customer_shipping_contacts_data_response
+                                        title: customers_shipping_contacts_data_response
                                         allOf:
-                                          - $ref: '#/paths/~1customers/post/responses/200/content/application~1vnd.conekta-v2.0.0%2Bjson/schema/properties/shipping_contacts/allOf/1/properties/data/items/allOf/0'
+                                          - $ref: '#/paths/~1customers~1%7Bid%7D~1shipping_contacts/post/requestBody/content/application~1json/schema'
                                           - type: object
                                             required:
                                               - id
@@ -751,8 +607,8 @@ paths:
       parameters:
         - $ref: '#/paths/~1logs/get/parameters/0'
         - $ref: '#/paths/~1logs/get/parameters/1'
-        - $ref: '#/paths/~1logs/get/parameters/2'
         - $ref: '#/paths/~1logs/get/parameters/3'
+        - $ref: '#/paths/~1logs/get/parameters/4'
   '/customers/{id}':
     get:
       operationId: getCustomerById
@@ -767,6 +623,30 @@ paths:
                 $ref: '#/paths/~1customers/post/responses/200/content/application~1vnd.conekta-v2.0.0%2Bjson/schema'
         '401':
           $ref: '#/paths/~1logs/get/responses/401'
+        '422':
+          $ref: '#/paths/~1logs/get/responses/422'
+        '500':
+          $ref: '#/paths/~1logs/get/responses/500'
+      security:
+        - bearerAuth: []
+      parameters:
+        - $ref: '#/paths/~1logs~1%7Bid%7D/get/parameters/0'
+        - $ref: '#/paths/~1logs/get/parameters/0'
+    delete:
+      operationId: deleteCustomerById
+      summary: returns a deleted customer
+      description: Deleted a customer resource that corresponds to a customer ID.
+      responses:
+        '200':
+          description: successful operation
+          content:
+            application/vnd.conekta-v2.0.0+json:
+              schema:
+                $ref: '#/paths/~1customers/post/responses/200/content/application~1vnd.conekta-v2.0.0%2Bjson/schema'
+        '401':
+          $ref: '#/paths/~1logs/get/responses/401'
+        '404':
+          $ref: '#/paths/~1orders~1%7Bid%7D/get/responses/404'
         '422':
           $ref: '#/paths/~1logs/get/responses/422'
         '500':
@@ -818,9 +698,546 @@ paths:
                   type: string
                   description: Is the customer's phone number
                   example: '+5215555555555'
+                plan_id:
+                  type: string
+                  example: plan_987234823
+                  description: 'Contains the ID of a plan, which could together with name, email and phone create a client directly to a subscription'
+                default_shipping_contact_id:
+                  type: string
+                  description: 'It is a parameter that allows to identify in the response, the Conekta ID of the shipping address (shipping_contact)'
+                  example: ship_cont_1a2b3c4d5e6f7g8h
+                corporate:
+                  type: boolean
+                  description: It is a value that allows identifying if the email is corporate or not.
+                  example: false
+                  default: false
+                custom_reference:
+                  type: string
+                  description: It is an undefined value.
+                fiscal_entities:
+                  type: array
+                  items:
+                    $ref: '#/paths/~1customers~1%7Bid%7D~1fiscal_entities/post/responses/200/content/application~1vnd.conekta-v2.0.0%2Bjson/schema/allOf/0'
+                payment_sources:
+                  type: array
+                  items:
+                    title: Contains details of the payment methods that the customer has active or has used in Conekta
+                    required:
+                      - type
+                    properties:
+                      type:
+                        type: string
+                        example: card
+                  example:
+                    - type: card
+                      token_id: tok_76238476234
+                    - type: oxxo_recurrent
+                shipping_contacts:
+                  type: array
+                  items:
+                    $ref: '#/paths/~1customers~1%7Bid%7D~1shipping_contacts/post/requestBody/content/application~1json/schema'
+                antifraud_info:
+                  type: object
+                  nullable: true
+                  properties:
+                    account_created_at:
+                      type: integer
+                      example: 1484040996
+                    first_paid_at:
+                      type: integer
+                      example: 1485151007
+                default_payment_source_id:
+                  type: string
+                  description: 'It is a parameter that allows to identify in the response, the Conekta ID of a payment method (payment_id)'
+                  example: src_1a2b3c4d5e6f7g8h
         required: true
       parameters:
         - $ref: '#/paths/~1logs~1%7Bid%7D/get/parameters/0'
+        - $ref: '#/paths/~1logs/get/parameters/0'
+  '/customers/{id}/fiscal_entities':
+    post:
+      operationId: CreateCustomerFiscalEntities
+      summary: returns a fiscal entities
+      description: creates a customer resource that corresponds to a customer ID.
+      responses:
+        '200':
+          description: successful operation
+          content:
+            application/vnd.conekta-v2.0.0+json:
+              schema:
+                allOf:
+                  - title: fiscal_entity_request
+                    required:
+                      - address
+                    properties:
+                      address:
+                        allOf:
+                          - $ref: '#/paths/~1orders/post/responses/200/content/application~1vnd.conekta-v2.0.0%2Bjson/schema/properties/fiscal_entity/properties/address/allOf/0'
+                      tax_id:
+                        type: string
+                      email:
+                        type: string
+                      phone:
+                        type: string
+                      metadata:
+                        type: object
+                      company_name:
+                        type: string
+                        example: conekta
+                  - type: object
+                    required:
+                      - id
+                      - object
+                      - created_at
+                    properties:
+                      id:
+                        type: string
+                        example: ship_cont_2tKZsTYcsryyu7Ah8
+                      object:
+                        type: string
+                        example: shipping_contact
+                      created_at:
+                        type: integer
+                        format: int64
+                        example: 1675715413
+                      parent_id:
+                        type: string
+                        example: cus_2tKcHxhTz7xU5SymF
+                      default:
+                        type: boolean
+        '401':
+          $ref: '#/paths/~1logs/get/responses/401'
+        '404':
+          $ref: '#/paths/~1orders~1%7Bid%7D/get/responses/404'
+        '422':
+          $ref: '#/paths/~1logs/get/responses/422'
+        '500':
+          $ref: '#/paths/~1logs/get/responses/500'
+      security:
+        - bearerAuth: []
+      requestBody:
+        description: requested field for customer fiscal entities
+        content:
+          application/json:
+            schema:
+              $ref: '#/paths/~1customers~1%7Bid%7D~1fiscal_entities/post/responses/200/content/application~1vnd.conekta-v2.0.0%2Bjson/schema/allOf/0'
+        required: true
+      parameters:
+        - $ref: '#/paths/~1logs~1%7Bid%7D/get/parameters/0'
+        - $ref: '#/paths/~1logs/get/parameters/0'
+  '/customers/{id}/fiscal_entities/{fiscal_entities_id}':
+    put:
+      operationId: UpdateCustomerFiscalEntities
+      summary: returns a fiscal entities
+      description: updates a customer resource that corresponds to a customer ID.
+      responses:
+        '200':
+          description: successful operation
+          content:
+            application/vnd.conekta-v2.0.0+json:
+              schema:
+                allOf:
+                  - $ref: '#/paths/~1customers~1%7Bid%7D~1fiscal_entities/post/responses/200/content/application~1vnd.conekta-v2.0.0%2Bjson/schema/allOf/0'
+                  - type: object
+                    required:
+                      - id
+                      - object
+                      - created_at
+                    properties:
+                      id:
+                        type: string
+                        example: fis_ent_2tKZsTYcsryyu7Ah8
+                      object:
+                        type: string
+                        example: fiscal_entities
+                      created_at:
+                        type: integer
+                        format: int64
+                        example: 1675715413
+                      parent_id:
+                        type: string
+                        example: cus_2tKcHxhTz7xU5SymF
+                      default:
+                        type: boolean
+        '401':
+          $ref: '#/paths/~1logs/get/responses/401'
+        '404':
+          $ref: '#/paths/~1orders~1%7Bid%7D/get/responses/404'
+        '422':
+          $ref: '#/paths/~1logs/get/responses/422'
+        '500':
+          $ref: '#/paths/~1logs/get/responses/500'
+      security:
+        - bearerAuth: []
+      requestBody:
+        $ref: '#/paths/~1customers~1%7Bid%7D~1fiscal_entities/post/requestBody'
+      parameters:
+        - $ref: '#/paths/~1logs~1%7Bid%7D/get/parameters/0'
+        - in: path
+          name: fiscal_entities_id
+          description: identifier
+          required: true
+          schema:
+            type: string
+          example: line_item_2tQ8HkkfbauaKP9Ho
+        - $ref: '#/paths/~1logs/get/parameters/0'
+  '/customers/{id}/payment_sources':
+    post:
+      operationId: CreateCustomerPaymentSources
+      summary: returns a payment source
+      description: Gets a customer resource that corresponds to a customer ID.
+      responses:
+        '200':
+          description: successful operation
+          content:
+            application/vnd.conekta-v2.0.0+json:
+              schema:
+                title: customer_payment_sources_response
+                discriminator:
+                  propertyName: type
+                  mapping:
+                    cash: payment_source_cash
+                    card: payment_source_card
+                    oxxo_recurrent: payment_source_cash
+                    spei_recurrent: payment_source_spei_recurrent
+                oneOf:
+                  - allOf:
+                      - type: object
+                        required:
+                          - type
+                          - id
+                          - object
+                          - created_at
+                        properties:
+                          type:
+                            type: string
+                          id:
+                            type: string
+                            example: src_2s8K1B3PBKDontpi9
+                          object:
+                            type: string
+                            example: payment_source
+                          created_at:
+                            type: integer
+                            format: int64
+                            example: 1675715413
+                          parent_id:
+                            type: string
+                            example: cus_2s8K1B3PBKDontpi8
+                      - type: object
+                        description: use for cash responses
+                        properties:
+                          reference:
+                            type: string
+                            example: '93000262276908'
+                          barcode:
+                            type: string
+                            example: '93000262276908'
+                          barcode_url:
+                            type: string
+                            example: 'https://pt-common-s3-stg.s3.amazonaws.com/644ebf80f2243197aad6cd8810375b905b613dbe.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=ASIA3UN6375MP4SLLCWV%2F20230203%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20230203T215750Z&X-Amz-Expires=604800&X-Amz-Security-Token=IQoJb3JpZ2luX2VjEH4aCXVzLWVhc3QtMSJGMEQCICd79cu7DYu%2F4%2B3HnVVswydgU9yHcE9kmQIIk2TLoZJrAiBVZ0HxVSeboK5lhdQSqADjwQF62XX35jhC%2F2riB0M8uCqQBAj2%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F8BEAIaDDc5OTgwMTA4MTY4OCIMXWZds9ZI5hzUdbeGKuQDFreMyeWnWWPqDuGZ2%2BHk6usCr%2Fl096%2FNJh9xtf8htLu56K%2FhWUTx%2BjiqFWM2O%2FF5zTS%2BIV6TqkLDZ%2BQ5Jo1miQrRmR57YDz6uP2Yd1mNZ1ouq5ipnNjUuu5UWCCBAmqyZQsrVmeMQpSV2IB%2BTERCCcW2SukFEYU%2F20%2Fzy5orsoZ8DxOW460IymR3cWBk5u3Xh2cV6Y1RdPEwDEThhqYEF5w%2ByKbLENloMsI%2FUm6sG5PPrO3yQOAP9aK2muLJs9lXQRU%2FL%2FSsmS4FKSUFOqlN6YU%2Bi2Y%2FyGIKAJT2VDkngvz5Sl%2Fadj0j%2BPKftVRV5FcEhySB6Rl%2BSkPN7kVQMJp6pS8hMJ6JCyEA%2BA3eWYdIfKgQhWVXAR4oCBfJ62DH8FU3a7WfSjjpTwfVkiReWen3GGCYfUWETTVKp46MKnJ9PG0CD3KzxKV8VfmEGc5krK%2FI%2F%2BDV2wtSa%2F9qf1%2BK1YYJIK9qZGb25ljUiGhTB4T%2BMUOSQFjetiWUoOJc5Q3Jz%2FXJbiTAMTST39MhdbCgiMgfrc8OGKN5DOVbex33Z7dn0xf%2FOCkSqurhLaG08efKQBdhLNS0RlE9hbg9yZ2ywwtQIF39fI6A7eeH0T11a5HMlvm51u4rAffPHRuEJfwJoIuj%2F2s3QzDg7%2FWeBjqmAbnPOlGfysjrDdvHyG7HVnaX02kdG%2BI3Q4PFOO4Mjaa3ocpjcfPT70%2BZ5a%2FSv5vP0jDLGrLToeM9%2BAUlNepptICRu23a1tLGW4ri0twPA%2FZ4JDTtUUUgdblyG8bKpcUTNp4oOsdmLLBz3FVyr4c2xQbDZSu2zYOtoOxB18W0AC6kIbsMWVU55Bf0mBhPeBWxGrtM4Kw1SgHHlt%2F8vetQi2OwtUcg08c%3D&X-Amz-SignedHeaders=host&X-Amz-Signature=d06dfa41550003359f2aabc8006063a80dfd806a13a54d244024946a76aa9abc'
+                          expires_at:
+                            type: integer
+                            format: int64
+                            example: 0
+                  - allOf:
+                      - $ref: '#/paths/~1customers~1%7Bid%7D~1payment_sources/post/responses/200/content/application~1vnd.conekta-v2.0.0%2Bjson/schema/oneOf/0/allOf/0'
+                      - type: object
+                        description: use for card responses
+                        properties:
+                          last4:
+                            type: string
+                            example: '6410'
+                          bin:
+                            type: string
+                            example: '40276657'
+                          card_type:
+                            type: string
+                            example: debit
+                          exp_month:
+                            type: string
+                            example: '10'
+                          exp_year:
+                            type: string
+                            example: '25'
+                          brand:
+                            type: string
+                            example: visa
+                          name:
+                            type: string
+                            example: Fulano Perez"
+                          default:
+                            type: boolean
+                          visible_on_checkout:
+                            type: boolean
+                          payment_source_status:
+                            type: string
+                            example: active
+                  - allOf:
+                      - $ref: '#/paths/~1customers~1%7Bid%7D~1payment_sources/post/responses/200/content/application~1vnd.conekta-v2.0.0%2Bjson/schema/oneOf/0/allOf/0'
+                      - type: object
+                        description: use for spei responses
+                        properties:
+                          reference:
+                            type: string
+                            example: '93000262276908'
+                          expires_at:
+                            type: string
+                            example: none
+        '401':
+          $ref: '#/paths/~1logs/get/responses/401'
+        '404':
+          $ref: '#/paths/~1orders~1%7Bid%7D/get/responses/404'
+        '422':
+          $ref: '#/paths/~1logs/get/responses/422'
+        '500':
+          $ref: '#/paths/~1logs/get/responses/500'
+      security:
+        - bearerAuth: []
+      requestBody:
+        description: requested field for customer payment sources
+        content:
+          application/json:
+            schema:
+              oneOf:
+                - title: payment_sources_card
+                  required:
+                    - token_id
+                  allOf:
+                    - $ref: '#/paths/~1customers~1%7Bid%7D/put/requestBody/content/application~1json/schema/properties/payment_sources/items'
+                    - type: object
+                      properties:
+                        token_id:
+                          type: string
+                          example: tok_32hj4g234as
+                - title: payment_sources_card
+                  required:
+                    - expires_at
+                  allOf:
+                    - $ref: '#/paths/~1customers~1%7Bid%7D/put/requestBody/content/application~1json/schema/properties/payment_sources/items'
+                    - type: object
+                      properties:
+                        expires_at:
+                          type: integer
+                          example: 1553273553
+                - title: payment_sources_card
+                  allOf:
+                    - $ref: '#/paths/~1customers~1%7Bid%7D/put/requestBody/content/application~1json/schema/properties/payment_sources/items'
+                    - type: object
+                      properties:
+                        expires_at:
+                          type: integer
+                          example: 1553273553
+              discriminator:
+                propertyName: type
+                mapping:
+                  card: payment_sources_card
+                  cash: payment_sources_cash
+                  oxxo_recurrent: payment_sources_cash
+                  spei: payment_sources_spei
+                  spei_recurrent: payment_sources_spei
+        required: true
+      parameters:
+        - $ref: '#/paths/~1logs~1%7Bid%7D/get/parameters/0'
+        - $ref: '#/paths/~1logs/get/parameters/0'
+  '/customers/{id}/payment_sources/{payment_sources_id}':
+    put:
+      operationId: UpdateCustomerPaymentSources
+      summary: returns an updated payment source
+      description: Gets a customer resource that corresponds to a customer ID.
+      responses:
+        '200':
+          description: successful operation
+          content:
+            application/vnd.conekta-v2.0.0+json:
+              schema:
+                title: update_customer_payment_sources_response
+                discriminator:
+                  propertyName: type
+                  mapping:
+                    cash: payment_source_cash
+                    card: payment_source_card
+                    oxxo_recurrent: payment_source_cash
+                    spei_recurrent: payment_source_spei_recurrent
+                oneOf:
+                  - $ref: '#/paths/~1customers~1%7Bid%7D~1payment_sources/post/responses/200/content/application~1vnd.conekta-v2.0.0%2Bjson/schema/oneOf/0'
+                  - $ref: '#/paths/~1customers~1%7Bid%7D~1payment_sources/post/responses/200/content/application~1vnd.conekta-v2.0.0%2Bjson/schema/oneOf/1'
+                  - $ref: '#/paths/~1customers~1%7Bid%7D~1payment_sources/post/responses/200/content/application~1vnd.conekta-v2.0.0%2Bjson/schema/oneOf/2'
+        '401':
+          $ref: '#/paths/~1logs/get/responses/401'
+        '404':
+          $ref: '#/paths/~1orders~1%7Bid%7D/get/responses/404'
+        '422':
+          $ref: '#/paths/~1logs/get/responses/422'
+        '500':
+          $ref: '#/paths/~1logs/get/responses/500'
+      security:
+        - bearerAuth: []
+      requestBody:
+        $ref: '#/paths/~1customers~1%7Bid%7D~1payment_sources/post/requestBody'
+      parameters:
+        - $ref: '#/paths/~1logs~1%7Bid%7D/get/parameters/0'
+        - in: path
+          name: payment_sources_id
+          description: identifier
+          required: true
+          schema:
+            type: string
+          example: tax_lin_2tQ974hSHcsdeSZHG
+        - $ref: '#/paths/~1logs/get/parameters/0'
+  '/customers/{id}/shipping_contacts':
+    post:
+      operationId: CreateCustomerShippingContacts
+      summary: returns a shipping contacts
+      description: Gets a customer resource that corresponds to a customer ID.
+      responses:
+        '200':
+          description: successful operation
+          content:
+            application/vnd.conekta-v2.0.0+json:
+              schema:
+                description: Contains the detail of the shipping addresses that the client has active or has used in Conekta
+                properties:
+                  phone:
+                    type: string
+                    example: '+525511223344'
+                  receiver:
+                    type: string
+                    example: Marvin Fuller
+                  between_streets:
+                    type: string
+                    example: Ackerman Crescent
+                  address:
+                    type: object
+                    properties:
+                      object:
+                        type: string
+                        example: shipping_address
+                      street1:
+                        type: string
+                        example: avenida siempre viva
+                      street2:
+                        type: string
+                        example: fake street
+                      postal_code:
+                        type: string
+                        example: '06100'
+                      city:
+                        type: string
+                        example: Ciudad de Mexico
+                      state:
+                        type: string
+                        example: Ciudad de Mexico
+                      country:
+                        type: string
+                        example: MX
+                      residential:
+                        type: boolean
+                        example: true
+                  parent_id:
+                    type: string
+                  default:
+                    type: boolean
+                    example: false
+                  deleted:
+                    type: boolean
+                    example: false
+        '401':
+          $ref: '#/paths/~1logs/get/responses/401'
+        '404':
+          $ref: '#/paths/~1orders~1%7Bid%7D/get/responses/404'
+        '422':
+          $ref: '#/paths/~1logs/get/responses/422'
+        '500':
+          $ref: '#/paths/~1logs/get/responses/500'
+      security:
+        - bearerAuth: []
+      requestBody:
+        description: requested field for customer shippings contacts
+        content:
+          application/json:
+            schema:
+              title: customer_shipping_contacts_request
+              description: Contains the detail of the shipping addresses that the client has active or has used in Conekta
+              properties:
+                phone:
+                  type: string
+                  example: '+525511223344'
+                receiver:
+                  type: string
+                  example: Marvin Fuller
+                between_streets:
+                  type: string
+                  example: Ackerman Crescent
+                address:
+                  type: object
+                  properties:
+                    street1:
+                      type: string
+                      example: avenida siempre viva
+                    street2:
+                      type: string
+                      example: fake street
+                    postal_code:
+                      type: string
+                      example: '06100'
+                    city:
+                      type: string
+                      example: Ciudad de Mexico
+                    state:
+                      type: string
+                      example: Ciudad de Mexico
+                    country:
+                      type: string
+                      example: MX
+                    residential:
+                      type: boolean
+                      example: true
+                parent_id:
+                  type: string
+                default:
+                  type: boolean
+                  example: false
+                deleted:
+                  type: boolean
+                  example: false
+        required: true
+      parameters:
+        - $ref: '#/paths/~1logs~1%7Bid%7D/get/parameters/0'
+        - $ref: '#/paths/~1logs/get/parameters/0'
+  '/customers/{id}/shipping_contacts/{shipping_contacts_id}':
+    put:
+      operationId: UpdateCustomerShippingContacts
+      summary: returns an updated shipping contacts
+      description: Gets a customer resource that corresponds to a customer ID.
+      responses:
+        '200':
+          description: successful operation
+          content:
+            application/vnd.conekta-v2.0.0+json:
+              schema:
+                $ref: '#/paths/~1customers~1%7Bid%7D~1shipping_contacts/post/responses/200/content/application~1vnd.conekta-v2.0.0%2Bjson/schema'
+        '401':
+          $ref: '#/paths/~1logs/get/responses/401'
+        '404':
+          $ref: '#/paths/~1orders~1%7Bid%7D/get/responses/404'
+        '422':
+          $ref: '#/paths/~1logs/get/responses/422'
+        '500':
+          $ref: '#/paths/~1logs/get/responses/500'
+      security:
+        - bearerAuth: []
+      requestBody:
+        $ref: '#/paths/~1customers~1%7Bid%7D~1shipping_contacts/post/requestBody'
+      parameters:
+        - $ref: '#/paths/~1logs~1%7Bid%7D/get/parameters/0'
+        - in: path
+          name: shipping_contacts_id
+          description: identifier
+          required: true
+          schema:
+            type: string
+          example: 6307a60c41de27127515a575
         - $ref: '#/paths/~1logs/get/parameters/0'
   /logs:
     get:
@@ -902,7 +1319,7 @@ paths:
                         type: array
                         items:
                           type: object
-                          title: Contains details of the error
+                          title: details_error
                           properties:
                             code:
                               type: string
@@ -969,6 +1386,12 @@ paths:
             type: integer
             format: int32
             default: 20
+        - in: query
+          name: search
+          description: 'General order search, e.g. by mail, reference etc.'
+          required: false
+          schema:
+            type: string
         - in: query
           name: next
           description: next page
@@ -1201,6 +1624,7 @@ paths:
                                       example: 1160
                                     id:
                                       type: string
+                                      example: 63efa757cf65380001aec040
                                     livemode:
                                       type: boolean
                                     object:
@@ -1214,96 +1638,9 @@ paths:
                                       nullable: true
                                     payment_method:
                                       oneOf:
-                                        - allOf:
-                                            - type: object
-                                              required:
-                                                - object
-                                              properties:
-                                                type:
-                                                  type: string
-                                                object:
-                                                  type: string
-                                                  example: payment_source
-                                            - type: object
-                                              title: charge_data_payment_method_cash_response
-                                              description: use for cash responses
-                                              properties:
-                                                reference:
-                                                  type: string
-                                                  example: '93000262276908'
-                                                barcode_url:
-                                                  type: string
-                                                  example: 'https://pt-common-s3-stg.s3.amazonaws.com/644ebf80f2243197aad6cd8810375b905b613dbe.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=ASIA3UN6375MP4SLLCWV%2F20230203%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20230203T215750Z&X-Amz-Expires=604800&X-Amz-Security-Token=IQoJb3JpZ2luX2VjEH4aCXVzLWVhc3QtMSJGMEQCICd79cu7DYu%2F4%2B3HnVVswydgU9yHcE9kmQIIk2TLoZJrAiBVZ0HxVSeboK5lhdQSqADjwQF62XX35jhC%2F2riB0M8uCqQBAj2%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F8BEAIaDDc5OTgwMTA4MTY4OCIMXWZds9ZI5hzUdbeGKuQDFreMyeWnWWPqDuGZ2%2BHk6usCr%2Fl096%2FNJh9xtf8htLu56K%2FhWUTx%2BjiqFWM2O%2FF5zTS%2BIV6TqkLDZ%2BQ5Jo1miQrRmR57YDz6uP2Yd1mNZ1ouq5ipnNjUuu5UWCCBAmqyZQsrVmeMQpSV2IB%2BTERCCcW2SukFEYU%2F20%2Fzy5orsoZ8DxOW460IymR3cWBk5u3Xh2cV6Y1RdPEwDEThhqYEF5w%2ByKbLENloMsI%2FUm6sG5PPrO3yQOAP9aK2muLJs9lXQRU%2FL%2FSsmS4FKSUFOqlN6YU%2Bi2Y%2FyGIKAJT2VDkngvz5Sl%2Fadj0j%2BPKftVRV5FcEhySB6Rl%2BSkPN7kVQMJp6pS8hMJ6JCyEA%2BA3eWYdIfKgQhWVXAR4oCBfJ62DH8FU3a7WfSjjpTwfVkiReWen3GGCYfUWETTVKp46MKnJ9PG0CD3KzxKV8VfmEGc5krK%2FI%2F%2BDV2wtSa%2F9qf1%2BK1YYJIK9qZGb25ljUiGhTB4T%2BMUOSQFjetiWUoOJc5Q3Jz%2FXJbiTAMTST39MhdbCgiMgfrc8OGKN5DOVbex33Z7dn0xf%2FOCkSqurhLaG08efKQBdhLNS0RlE9hbg9yZ2ywwtQIF39fI6A7eeH0T11a5HMlvm51u4rAffPHRuEJfwJoIuj%2F2s3QzDg7%2FWeBjqmAbnPOlGfysjrDdvHyG7HVnaX02kdG%2BI3Q4PFOO4Mjaa3ocpjcfPT70%2BZ5a%2FSv5vP0jDLGrLToeM9%2BAUlNepptICRu23a1tLGW4ri0twPA%2FZ4JDTtUUUgdblyG8bKpcUTNp4oOsdmLLBz3FVyr4c2xQbDZSu2zYOtoOxB18W0AC6kIbsMWVU55Bf0mBhPeBWxGrtM4Kw1SgHHlt%2F8vetQi2OwtUcg08c%3D&X-Amz-SignedHeaders=host&X-Amz-Signature=d06dfa41550003359f2aabc8006063a80dfd806a13a54d244024946a76aa9abc'
-                                                expires_at:
-                                                  type: integer
-                                                  format: int64
-                                                  example: 0
-                                                service_name:
-                                                  type: string
-                                                  example: OxxoPay
-                                                store_name:
-                                                  type: string
-                                                  example: OXXO
-                                        - allOf:
-                                            - $ref: '#/paths/~1orders/get/responses/200/content/application~1vnd.conekta-v2.0.0%2Bjson/schema/allOf/0/properties/data/items/properties/charges/allOf/1/properties/data/items/allOf/0/properties/payment_method/oneOf/0/allOf/0'
-                                            - type: object
-                                              title: charge_data_payment_method_card_response
-                                              description: use for card responses
-                                              properties:
-                                                account_type:
-                                                  type: string
-                                                  example: Credit
-                                                auth_code:
-                                                  type: string
-                                                  example: '867372'
-                                                brand:
-                                                  type: string
-                                                  example: visa
-                                                country:
-                                                  type: string
-                                                  example: MX
-                                                exp_month:
-                                                  type: string
-                                                  example: '02'
-                                                exp_year:
-                                                  type: string
-                                                  example: '30'
-                                                fraud_indicators:
-                                                  type: array
-                                                  items: {}
-                                                issuer:
-                                                  type: string
-                                                  example: BANAMEX
-                                                last4:
-                                                  type: string
-                                                  example: '4242'
-                                                name:
-                                                  type: string
-                                                  example: Fulanito Perez
-                                        - allOf:
-                                            - $ref: '#/paths/~1orders/get/responses/200/content/application~1vnd.conekta-v2.0.0%2Bjson/schema/allOf/0/properties/data/items/properties/charges/allOf/1/properties/data/items/allOf/0/properties/payment_method/oneOf/0/allOf/0'
-                                            - type: object
-                                              title: charge_data_payment_method_bank_transfer_response
-                                              description: use for bank transfer responses
-                                              properties:
-                                                bank:
-                                                  type: string
-                                                  example: STP
-                                                clabe:
-                                                  type: string
-                                                  example: '646180111805034237'
-                                                expires_at:
-                                                  type: integer
-                                                  example: 1683053729
-                                                payment_attempts:
-                                                  type: array
-                                                  items: {}
-                                                receiving_account_number:
-                                                  type: string
-                                                  example: '646180111805034237'
-                                                receiving_account_bank:
-                                                  type: string
-                                                  example: STP
+                                        - $ref: '#/paths/~1orders~1%7Bid%7D~1charges/post/responses/200/content/application~1vnd.conekta-v2.0.0%2Bjson/schema/properties/payment_method/oneOf/0'
+                                        - $ref: '#/paths/~1orders~1%7Bid%7D~1charges/post/responses/200/content/application~1vnd.conekta-v2.0.0%2Bjson/schema/properties/payment_method/oneOf/1'
+                                        - $ref: '#/paths/~1orders~1%7Bid%7D~1charges/post/responses/200/content/application~1vnd.conekta-v2.0.0%2Bjson/schema/properties/payment_method/oneOf/2'
                                       discriminator:
                                         propertyName: object
                                         mapping:
@@ -1432,6 +1769,17 @@ paths:
                           customer_id:
                             type: string
                             example: cus_23874283647
+                  discount_lines:
+                    allOf:
+                      - $ref: '#/paths/~1orders/get/responses/200/content/application~1vnd.conekta-v2.0.0%2Bjson/schema/allOf/1'
+                      - type: object
+                        properties:
+                          data:
+                            type: array
+                            items:
+                              title: discount_lines_data_response
+                              allOf:
+                                - $ref: '#/paths/~1orders~1%7Bid%7D~1discount_lines/post/responses/200/content/application~1vnd.conekta-v2.0.0%2Bjson/schema'
                   fiscal_entity:
                     type: object
                     properties:
@@ -1498,43 +1846,7 @@ paths:
                             items:
                               title: line_items_data_response
                               allOf:
-                                - type: object
-                                  title: line_items
-                                  required:
-                                    - name
-                                    - unit_price
-                                    - quantity
-                                  properties:
-                                    antifraud_info:
-                                      type: object
-                                      additionalProperties:
-                                        type: object
-                                    description:
-                                      type: string
-                                      maxLength: 250
-                                    sku:
-                                      type: string
-                                    name:
-                                      type: string
-                                      example: Box of Cohiba S1s
-                                    unit_price:
-                                      type: integer
-                                      format: int32
-                                      example: 20000
-                                    quantity:
-                                      type: integer
-                                      format: int32
-                                      example: 1
-                                    tags:
-                                      type: array
-                                      items:
-                                        type: string
-                                    brand:
-                                      type: string
-                                    metadata:
-                                      type: object
-                                      additionalProperties:
-                                        type: string
+                                - $ref: '#/paths/~1orders~1%7Bid%7D~1line_items/post/requestBody/content/application~1json/schema'
                                 - type: object
                                   properties:
                                     id:
@@ -1565,53 +1877,7 @@ paths:
                             type: string
                           object:
                             type: string
-                      - title: customer_shipping_contacts_response
-                        description: Contains the detail of the shipping addresses that the client has active or has used in Conekta
-                        properties:
-                          phone:
-                            type: string
-                            example: '+525511223344'
-                          receiver:
-                            type: string
-                            example: Marvin Fuller
-                          between_streets:
-                            type: string
-                            example: Ackerman Crescent
-                          address:
-                            type: object
-                            properties:
-                              object:
-                                type: string
-                                example: shipping_address
-                              street1:
-                                type: string
-                                example: avenida siempre viva
-                              street2:
-                                type: string
-                                example: fake street
-                              postal_code:
-                                type: string
-                                example: '06100'
-                              city:
-                                type: string
-                                example: Ciudad de Mexico
-                              state:
-                                type: string
-                                example: Ciudad de Mexico
-                              country:
-                                type: string
-                                example: MX
-                              residential:
-                                type: boolean
-                                example: true
-                          parent_id:
-                            type: string
-                          default:
-                            type: boolean
-                            example: false
-                          deleted:
-                            type: boolean
-                            example: false
+                      - $ref: '#/paths/~1customers~1%7Bid%7D~1shipping_contacts/post/responses/200/content/application~1vnd.conekta-v2.0.0%2Bjson/schema'
                   updated_at:
                     type: integer
                     example: 1676328434
@@ -1693,36 +1959,7 @@ paths:
                 charges:
                   type: array
                   items:
-                    title: charges
-                    description: The charges to be made
-                    required:
-                      - payment_method
-                    properties:
-                      expires_at:
-                        type: integer
-                        format: int64
-                        description: Method expiration date as unix timestamp
-                        example: 1677196303
-                      monthly_installments:
-                        type: integer
-                        format: int32
-                        description: 'How many months without interest to apply, it can be 3, 6, 9, 12 or 18'
-                      payment_method:
-                        required:
-                          - type
-                        type: object
-                        description: |
-                          Payment method used in the charge. Go to the [payment methods](https://developers.conekta.com/reference/m%C3%A9todos-de-pago) section for more details
-                        properties:
-                          type:
-                            type: string
-                            example: card
-                          token_id:
-                            type: string
-                            example: tok_2897348234
-                      reference_id:
-                        description: Custom reference to add to the charge
-                        type: string
+                    $ref: '#/paths/~1orders~1%7Bid%7D~1charges/post/requestBody/content/application~1json/schema'
                 checkout:
                   title: checkout_request
                   description: |
@@ -1791,22 +2028,11 @@ paths:
                 discount_lines:
                   type: array
                   items:
-                    title: order_discount_lines_request
-                    description: List of discounts that apply to the order.
-                    properties:
-                      code:
-                        type: string
-                        description: Discount code.
-                      type:
-                        type: string
-                        example: loyalty
-                      amount:
-                        type: integer
-                        format: int32
+                    $ref: '#/paths/~1orders~1%7Bid%7D~1discount_lines/post/requestBody/content/application~1json/schema'
                 line_items:
                   type: array
                   items:
-                    $ref: '#/paths/~1orders/post/responses/200/content/application~1vnd.conekta-v2.0.0%2Bjson/schema/properties/line_items/allOf/1/properties/data/items/allOf/0'
+                    $ref: '#/paths/~1orders~1%7Bid%7D~1line_items/post/requestBody/content/application~1json/schema'
                 metadata:
                   type: object
                   additionalProperties:
@@ -1816,18 +2042,11 @@ paths:
                   description: Indicates whether the order charges must be preauthorized
                   default: false
                 shipping_contact:
-                  $ref: '#/paths/~1customers/post/responses/200/content/application~1vnd.conekta-v2.0.0%2Bjson/schema/properties/shipping_contacts/allOf/1/properties/data/items/allOf/0'
+                  $ref: '#/paths/~1customers~1%7Bid%7D~1shipping_contacts/post/requestBody/content/application~1json/schema'
                 shipping_lines:
                   type: array
                   items:
-                    title: shipping_lines_request
-                    properties:
-                      amount:
-                        type: integer
-                        example: 0
-                      carrier:
-                        type: string
-                        example: FEDEX
+                    $ref: '#/paths/~1orders~1%7Bid%7D~1shipping_lines/post/requestBody/content/application~1json/schema'
                 tax_lines:
                   type: array
                   items:
@@ -1859,211 +2078,13 @@ paths:
                 allOf:
                   - title: orders_response
                     type: object
+                    required:
+                      - data
                     properties:
                       data:
                         type: array
                         items:
-                          title: orders_data_response
-                          properties:
-                            amount:
-                              type: integer
-                              example: 21605
-                            amount_refunded:
-                              type: integer
-                              example: 0
-                            channel:
-                              type: object
-                              properties:
-                                segment:
-                                  type: string
-                                  example: Checkout
-                                checkout_request_id:
-                                  type: string
-                                  example: 6fca054a-8519-4c43-971e-cea35cc519bb
-                                checkout_request_type:
-                                  type: string
-                                  example: HostedPayment
-                                id:
-                                  type: string
-                                  example: channel_2tNDzhA4Akmzj11AU
-                            charges:
-                              allOf:
-                                - $ref: '#/paths/~1orders/get/responses/200/content/application~1vnd.conekta-v2.0.0%2Bjson/schema/allOf/1'
-                                - type: object
-                                  properties:
-                                    data:
-                                      type: array
-                                      items:
-                                        title: charges_data_response
-                                        allOf:
-                                          - $ref: '#/paths/~1orders/post/responses/200/content/application~1vnd.conekta-v2.0.0%2Bjson/schema/properties/charges/allOf/1/properties/data/items/allOf/0'
-                            checkout:
-                              type: object
-                              properties:
-                                allowed_payment_methods:
-                                  type: array
-                                  items:
-                                    type: string
-                                can_not_expire:
-                                  type: boolean
-                                  example: false
-                                emails_sent:
-                                  type: integer
-                                  example: 0
-                                exclude_card_networks:
-                                  type: array
-                                  items: {}
-                                expires_at:
-                                  type: integer
-                                  example: 1676613599
-                                failure_url:
-                                  type: string
-                                  example: 'http://187.216.228.66:2222/SysVentasPagos/Acceso.aspx'
-                                force_3ds_flow:
-                                  type: boolean
-                                  example: false
-                                id:
-                                  type: string
-                                  example: 6fca054a-8519-4c43-971e-cea35cc519bb
-                                is_redirect_on_failure:
-                                  type: boolean
-                                  example: false
-                                livemode:
-                                  type: boolean
-                                  example: false
-                                metadata:
-                                  type: object
-                                  additionalProperties:
-                                    type: object
-                                monthly_installments_enabled:
-                                  type: boolean
-                                  example: false
-                                monthly_installments_options:
-                                  type: array
-                                  items:
-                                    type: integer
-                                name:
-                                  type: string
-                                  example: ord-2tNDzhA4Akmzj11AS
-                                needs_shipping_contact:
-                                  type: boolean
-                                  example: false
-                                object:
-                                  type: string
-                                  example: checkout
-                                paid_payments_count:
-                                  type: integer
-                                  example: 0
-                                recurrent:
-                                  type: boolean
-                                  example: false
-                                slug:
-                                  type: string
-                                  example: 6fca054a85194c43971ecea35cc519bb
-                                sms_sent:
-                                  type: integer
-                                  example: 0
-                                success_url:
-                                  type: string
-                                  example: 'http://187.216.228.66:2222/SysVentasPagos/Acceso.aspx'
-                                starts_at:
-                                  type: integer
-                                  example: 1676354400
-                                status:
-                                  type: string
-                                  example: Issued
-                                type:
-                                  type: string
-                                  example: HostedPayment
-                                url:
-                                  type: string
-                                  example: 'https://pay.stg.conekta.io/checkout/6fca054a85194c43971ecea35cc519bb'
-                            created_at:
-                              type: integer
-                              example: 1676328434
-                            currency:
-                              type: string
-                              example: MXN
-                            customer_info:
-                              allOf:
-                                - type: object
-                                  properties:
-                                    object:
-                                      type: string
-                                      example: customer_info
-                                - $ref: '#/paths/~1orders/post/responses/200/content/application~1vnd.conekta-v2.0.0%2Bjson/schema/properties/customer_info/allOf/1'
-                                - $ref: '#/paths/~1orders/post/responses/200/content/application~1vnd.conekta-v2.0.0%2Bjson/schema/properties/customer_info/allOf/2'
-                            fiscal_entity:
-                              type: object
-                              properties:
-                                address:
-                                  allOf:
-                                    - $ref: '#/paths/~1orders/post/responses/200/content/application~1vnd.conekta-v2.0.0%2Bjson/schema/properties/fiscal_entity/properties/address/allOf/0'
-                                    - type: object
-                                      properties:
-                                        object:
-                                          type: string
-                                          example: fiscal_entity_address
-                                tax_id:
-                                  type: string
-                                  example: '324234234'
-                                id:
-                                  type: string
-                                  example: fis_ent_2tN85VYaSMyDvjB3M
-                                object:
-                                  type: string
-                                  example: fiscal_entity
-                            id:
-                              type: string
-                              example: ord_2tMtQQpDvfnNjiuFG
-                            is_refundable:
-                              type: boolean
-                              example: false
-                            line_items:
-                              allOf:
-                                - $ref: '#/paths/~1orders/get/responses/200/content/application~1vnd.conekta-v2.0.0%2Bjson/schema/allOf/1'
-                                - type: object
-                                  properties:
-                                    data:
-                                      type: array
-                                      items:
-                                        title: line_items_data_response
-                                        allOf:
-                                          - $ref: '#/paths/~1orders/post/responses/200/content/application~1vnd.conekta-v2.0.0%2Bjson/schema/properties/line_items/allOf/1/properties/data/items/allOf/0'
-                                          - type: object
-                                            properties:
-                                              id:
-                                                type: string
-                                              object:
-                                                type: string
-                                              parent_id:
-                                                type: string
-                            livemode:
-                              type: boolean
-                            metadata:
-                              type: object
-                              additionalProperties:
-                                type: object
-                            object:
-                              type: string
-                              example: order
-                            payment_status:
-                              type: string
-                              example: paid
-                            shipping_contact:
-                              allOf:
-                                - type: object
-                                  properties:
-                                    created_at:
-                                      type: integer
-                                    id:
-                                      type: string
-                                    object:
-                                      type: string
-                                - $ref: '#/paths/~1orders/post/responses/200/content/application~1vnd.conekta-v2.0.0%2Bjson/schema/properties/shipping_contact/allOf/1'
-                            updated_at:
-                              type: integer
-                              example: 1676328434
+                          $ref: '#/paths/~1orders/post/responses/200/content/application~1vnd.conekta-v2.0.0%2Bjson/schema'
                   - title: pagination metadata
                     description: pagination metadata
                     type: object
@@ -2102,6 +2123,9 @@ paths:
       parameters:
         - $ref: '#/paths/~1logs/get/parameters/0'
         - $ref: '#/paths/~1logs/get/parameters/1'
+        - $ref: '#/paths/~1logs/get/parameters/2'
+        - $ref: '#/paths/~1logs/get/parameters/3'
+        - $ref: '#/paths/~1logs/get/parameters/4'
   '/orders/{id}':
     get:
       operationId: getOrderById
@@ -2163,7 +2187,7 @@ paths:
                 charges:
                   type: array
                   items:
-                    $ref: '#/paths/~1orders/post/requestBody/content/application~1json/schema/properties/charges/items'
+                    $ref: '#/paths/~1orders~1%7Bid%7D~1charges/post/requestBody/content/application~1json/schema'
                 checkout:
                   $ref: '#/paths/~1orders/post/requestBody/content/application~1json/schema/properties/checkout'
                 currency:
@@ -2178,11 +2202,11 @@ paths:
                 discount_lines:
                   type: array
                   items:
-                    $ref: '#/paths/~1orders/post/requestBody/content/application~1json/schema/properties/discount_lines/items'
+                    $ref: '#/paths/~1orders~1%7Bid%7D~1discount_lines/post/requestBody/content/application~1json/schema'
                 line_items:
                   type: array
                   items:
-                    $ref: '#/paths/~1orders/post/responses/200/content/application~1vnd.conekta-v2.0.0%2Bjson/schema/properties/line_items/allOf/1/properties/data/items/allOf/0'
+                    $ref: '#/paths/~1orders~1%7Bid%7D~1line_items/post/requestBody/content/application~1json/schema'
                 metadata:
                   type: object
                   additionalProperties:
@@ -2192,11 +2216,11 @@ paths:
                   description: Indicates whether the order charges must be preauthorized
                   default: false
                 shipping_contact:
-                  $ref: '#/paths/~1customers/post/responses/200/content/application~1vnd.conekta-v2.0.0%2Bjson/schema/properties/shipping_contacts/allOf/1/properties/data/items/allOf/0'
+                  $ref: '#/paths/~1customers~1%7Bid%7D~1shipping_contacts/post/requestBody/content/application~1json/schema'
                 shipping_lines:
                   type: array
                   items:
-                    $ref: '#/paths/~1orders/post/requestBody/content/application~1json/schema/properties/shipping_lines/items'
+                    $ref: '#/paths/~1orders~1%7Bid%7D~1shipping_lines/post/requestBody/content/application~1json/schema'
                 tax_lines:
                   type: array
                   items:
@@ -2204,6 +2228,677 @@ paths:
         required: true
       parameters:
         - $ref: '#/paths/~1logs~1%7Bid%7D/get/parameters/0'
+        - $ref: '#/paths/~1logs/get/parameters/0'
+  '/orders/{id}/capture':
+    post:
+      operationId: ordersCreateCapture
+      summary: Processes an order that has been previously authorized.
+      responses:
+        '200':
+          description: successful
+          content:
+            application/vnd.conekta-v2.0.0+json:
+              schema:
+                $ref: '#/paths/~1orders/post/responses/200/content/application~1vnd.conekta-v2.0.0%2Bjson/schema'
+        '401':
+          $ref: '#/paths/~1logs/get/responses/401'
+        '404':
+          $ref: '#/paths/~1orders~1%7Bid%7D/get/responses/404'
+        '500':
+          $ref: '#/paths/~1logs/get/responses/500'
+      security:
+        - bearerAuth: []
+      parameters:
+        - $ref: '#/paths/~1logs~1%7Bid%7D/get/parameters/0'
+        - $ref: '#/paths/~1logs/get/parameters/0'
+  '/orders/{id}/charges':
+    post:
+      operationId: ordersCreateCharge
+      summary: creates a new charge for an existing orden
+      responses:
+        '200':
+          description: successful
+          content:
+            application/vnd.conekta-v2.0.0+json:
+              schema:
+                title: charges_data_response
+                type: object
+                properties:
+                  amount:
+                    type: integer
+                    example: 4321
+                  channel:
+                    type: object
+                    properties:
+                      segment:
+                        type: string
+                        example: Checkout
+                      checkout_request_id:
+                        type: string
+                        example: 6fca054a-8519-4c43-971e-cea35cc519bb
+                      checkout_request_type:
+                        type: string
+                        example: HostedPayment
+                      id:
+                        type: string
+                        example: channel_2tNDzhA4Akmzj11AU
+                  created_at:
+                    type: integer
+                    example: 1676386026
+                  currency:
+                    type: string
+                    example: MXN
+                  customer_id:
+                    type: string
+                  description:
+                    type: string
+                    example: Payment from order
+                  device_fingerprint:
+                    type: string
+                    example: 6FR3chaU4Y1nGAW5NAGd1rcjAKa142Ba
+                    nullable: true
+                  failure_code:
+                    type: string
+                    example: suspected_fraud
+                  failure_message:
+                    type: string
+                    example: Este cargo ha sido declinado porque el comportamiento del comprador es sospechoso.
+                  fee:
+                    type: integer
+                    example: 1160
+                  id:
+                    type: string
+                    example: 63efa757cf65380001aec040
+                  livemode:
+                    type: boolean
+                    example: true
+                  monthly_installments:
+                    type: integer
+                    nullable: true
+                  object:
+                    type: string
+                  order_id:
+                    type: string
+                    example: ord_2tN73UdUSNrYRPD9r
+                  paid_at:
+                    type: integer
+                    example: 1676390742
+                    nullable: true
+                  payment_method:
+                    oneOf:
+                      - allOf:
+                          - type: object
+                            required:
+                              - object
+                            properties:
+                              type:
+                                type: string
+                              object:
+                                type: string
+                                example: payment_source
+                          - type: object
+                            title: charge_data_payment_method_cash_response
+                            description: use for cash responses
+                            properties:
+                              reference:
+                                type: string
+                                example: '93000262276908'
+                              barcode_url:
+                                type: string
+                                example: 'https://pt-common-s3-stg.s3.amazonaws.com/644ebf80f2243197aad6cd8810375b905b613dbe.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=ASIA3UN6375MP4SLLCWV%2F20230203%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20230203T215750Z&X-Amz-Expires=604800&X-Amz-Security-Token=IQoJb3JpZ2luX2VjEH4aCXVzLWVhc3QtMSJGMEQCICd79cu7DYu%2F4%2B3HnVVswydgU9yHcE9kmQIIk2TLoZJrAiBVZ0HxVSeboK5lhdQSqADjwQF62XX35jhC%2F2riB0M8uCqQBAj2%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F8BEAIaDDc5OTgwMTA4MTY4OCIMXWZds9ZI5hzUdbeGKuQDFreMyeWnWWPqDuGZ2%2BHk6usCr%2Fl096%2FNJh9xtf8htLu56K%2FhWUTx%2BjiqFWM2O%2FF5zTS%2BIV6TqkLDZ%2BQ5Jo1miQrRmR57YDz6uP2Yd1mNZ1ouq5ipnNjUuu5UWCCBAmqyZQsrVmeMQpSV2IB%2BTERCCcW2SukFEYU%2F20%2Fzy5orsoZ8DxOW460IymR3cWBk5u3Xh2cV6Y1RdPEwDEThhqYEF5w%2ByKbLENloMsI%2FUm6sG5PPrO3yQOAP9aK2muLJs9lXQRU%2FL%2FSsmS4FKSUFOqlN6YU%2Bi2Y%2FyGIKAJT2VDkngvz5Sl%2Fadj0j%2BPKftVRV5FcEhySB6Rl%2BSkPN7kVQMJp6pS8hMJ6JCyEA%2BA3eWYdIfKgQhWVXAR4oCBfJ62DH8FU3a7WfSjjpTwfVkiReWen3GGCYfUWETTVKp46MKnJ9PG0CD3KzxKV8VfmEGc5krK%2FI%2F%2BDV2wtSa%2F9qf1%2BK1YYJIK9qZGb25ljUiGhTB4T%2BMUOSQFjetiWUoOJc5Q3Jz%2FXJbiTAMTST39MhdbCgiMgfrc8OGKN5DOVbex33Z7dn0xf%2FOCkSqurhLaG08efKQBdhLNS0RlE9hbg9yZ2ywwtQIF39fI6A7eeH0T11a5HMlvm51u4rAffPHRuEJfwJoIuj%2F2s3QzDg7%2FWeBjqmAbnPOlGfysjrDdvHyG7HVnaX02kdG%2BI3Q4PFOO4Mjaa3ocpjcfPT70%2BZ5a%2FSv5vP0jDLGrLToeM9%2BAUlNepptICRu23a1tLGW4ri0twPA%2FZ4JDTtUUUgdblyG8bKpcUTNp4oOsdmLLBz3FVyr4c2xQbDZSu2zYOtoOxB18W0AC6kIbsMWVU55Bf0mBhPeBWxGrtM4Kw1SgHHlt%2F8vetQi2OwtUcg08c%3D&X-Amz-SignedHeaders=host&X-Amz-Signature=d06dfa41550003359f2aabc8006063a80dfd806a13a54d244024946a76aa9abc'
+                              expires_at:
+                                type: integer
+                                format: int64
+                                example: 0
+                              service_name:
+                                type: string
+                                example: OxxoPay
+                              store_name:
+                                type: string
+                                example: OXXO
+                      - allOf:
+                          - $ref: '#/paths/~1orders~1%7Bid%7D~1charges/post/responses/200/content/application~1vnd.conekta-v2.0.0%2Bjson/schema/properties/payment_method/oneOf/0/allOf/0'
+                          - type: object
+                            title: charge_data_payment_method_card_response
+                            description: use for card responses
+                            properties:
+                              account_type:
+                                type: string
+                                example: Credit
+                              auth_code:
+                                type: string
+                                example: '867372'
+                              brand:
+                                type: string
+                                example: visa
+                              country:
+                                type: string
+                                example: MX
+                              exp_month:
+                                type: string
+                                example: '02'
+                              exp_year:
+                                type: string
+                                example: '30'
+                              fraud_indicators:
+                                type: array
+                                items: {}
+                              issuer:
+                                type: string
+                                example: BANAMEX
+                              last4:
+                                type: string
+                                example: '4242'
+                              name:
+                                type: string
+                                example: Fulanito Perez
+                      - allOf:
+                          - $ref: '#/paths/~1orders~1%7Bid%7D~1charges/post/responses/200/content/application~1vnd.conekta-v2.0.0%2Bjson/schema/properties/payment_method/oneOf/0/allOf/0'
+                          - type: object
+                            title: charge_data_payment_method_bank_transfer_response
+                            description: use for bank transfer responses
+                            properties:
+                              bank:
+                                type: string
+                                example: STP
+                              clabe:
+                                type: string
+                                example: '646180111805034237'
+                              expires_at:
+                                type: integer
+                                example: 1683053729
+                              payment_attempts:
+                                type: array
+                                items: {}
+                              receiving_account_number:
+                                type: string
+                                example: '646180111805034237'
+                              receiving_account_bank:
+                                type: string
+                                example: STP
+                    discriminator:
+                      propertyName: object
+                      mapping:
+                        cash_payment: payment_method_cash
+                        card_payment: payment_method_card
+                        bank_transfer_payment: payment_method_bank_transfer
+                  reference_id:
+                    type: string
+                    nullable: true
+                  refunds:
+                    type: array
+                    items: {}
+                  status:
+                    type: string
+                    example: pending_payment
+        '401':
+          $ref: '#/paths/~1logs/get/responses/401'
+        '404':
+          $ref: '#/paths/~1orders~1%7Bid%7D/get/responses/404'
+        '500':
+          $ref: '#/paths/~1logs/get/responses/500'
+      security:
+        - bearerAuth: []
+      requestBody:
+        description: requested field for a charge
+        content:
+          application/json:
+            schema:
+              title: charges
+              description: The charges to be made
+              required:
+                - payment_method
+              properties:
+                amount:
+                  type: integer
+                  example: 40000
+                expires_at:
+                  type: integer
+                  format: int64
+                  description: Method expiration date as unix timestamp
+                  example: 1677196303
+                monthly_installments:
+                  type: integer
+                  format: int32
+                  description: 'How many months without interest to apply, it can be 3, 6, 9, 12 or 18'
+                payment_method:
+                  required:
+                    - type
+                  type: object
+                  description: |
+                    Payment method used in the charge. Go to the [payment methods](https://developers.conekta.com/reference/m%C3%A9todos-de-pago) section for more details
+                  properties:
+                    type:
+                      type: string
+                      example: card
+                    token_id:
+                      type: string
+                      example: tok_2897348234
+                    payment_source_id:
+                      type: string
+                      example: src_2tLkkyfMPh6v7pFry
+                reference_id:
+                  description: Custom reference to add to the charge
+                  type: string
+        required: true
+      parameters:
+        - $ref: '#/paths/~1logs~1%7Bid%7D/get/parameters/0'
+        - $ref: '#/paths/~1logs/get/parameters/0'
+  '/orders/{id}/discount_lines':
+    post:
+      operationId: ordersCreateDiscountLine
+      summary: creates a new discount lines for an existing orden
+      responses:
+        '200':
+          description: successful
+          content:
+            application/vnd.conekta-v2.0.0+json:
+              schema:
+                title: discount_lines_order_response
+                allOf:
+                  - $ref: '#/paths/~1orders~1%7Bid%7D~1discount_lines/post/requestBody/content/application~1json/schema'
+                  - type: object
+                    properties:
+                      id:
+                        type: string
+                        example: dis_lin_2tQQ58HPgPw7StE8z
+                      object:
+                        type: string
+                        example: discount_line
+                      parent_id:
+                        type: string
+                        example: ord_2tPAmKCEJqh8RE6nY
+        '401':
+          $ref: '#/paths/~1logs/get/responses/401'
+        '404':
+          $ref: '#/paths/~1orders~1%7Bid%7D/get/responses/404'
+        '500':
+          $ref: '#/paths/~1logs/get/responses/500'
+      security:
+        - bearerAuth: []
+      requestBody:
+        description: requested field for a discount lines
+        content:
+          application/json:
+            schema:
+              title: order_discount_lines_request
+              description: List of discounts that apply to the order.
+              properties:
+                code:
+                  type: string
+                  description: Discount code.
+                  example: '123'
+                type:
+                  type: string
+                  example: loyalty
+                amount:
+                  type: integer
+                  example: 500
+        required: true
+      parameters:
+        - $ref: '#/paths/~1logs~1%7Bid%7D/get/parameters/0'
+        - $ref: '#/paths/~1logs/get/parameters/0'
+  '/orders/{id}/discount_lines/{discount_lines_id}':
+    put:
+      operationId: ordersUpdateDiscountLines
+      summary: updates an existing discount lines for an existing orden
+      responses:
+        '200':
+          description: successful
+          content:
+            application/vnd.conekta-v2.0.0+json:
+              schema:
+                $ref: '#/paths/~1orders~1%7Bid%7D~1discount_lines/post/responses/200/content/application~1vnd.conekta-v2.0.0%2Bjson/schema'
+        '401':
+          $ref: '#/paths/~1logs/get/responses/401'
+        '404':
+          $ref: '#/paths/~1orders~1%7Bid%7D/get/responses/404'
+        '422':
+          $ref: '#/paths/~1logs/get/responses/422'
+        '500':
+          $ref: '#/paths/~1logs/get/responses/500'
+      security:
+        - bearerAuth: []
+      requestBody:
+        $ref: '#/paths/~1orders~1%7Bid%7D~1discount_lines/post/requestBody'
+      parameters:
+        - $ref: '#/paths/~1logs~1%7Bid%7D/get/parameters/0'
+        - in: path
+          name: discount_lines_id
+          description: identifier
+          required: true
+          schema:
+            type: string
+          example: dis_lin_2tQ974hSHcsdeSZHG
+        - $ref: '#/paths/~1logs/get/parameters/0'
+  '/orders/{id}/line_items':
+    post:
+      operationId: ordersCreateLineItems
+      summary: creates a new line items for an existing orden
+      responses:
+        '200':
+          description: successful
+          content:
+            application/vnd.conekta-v2.0.0+json:
+              schema:
+                title: line_items_order_response
+                allOf:
+                  - $ref: '#/paths/~1orders~1%7Bid%7D~1line_items/post/requestBody/content/application~1json/schema'
+                  - type: object
+                    properties:
+                      id:
+                        type: string
+                      object:
+                        type: string
+                      parent_id:
+                        type: string
+        '401':
+          $ref: '#/paths/~1logs/get/responses/401'
+        '404':
+          $ref: '#/paths/~1orders~1%7Bid%7D/get/responses/404'
+        '500':
+          $ref: '#/paths/~1logs/get/responses/500'
+      security:
+        - bearerAuth: []
+      requestBody:
+        description: requested field for a line items
+        content:
+          application/json:
+            schema:
+              type: object
+              title: line_items
+              required:
+                - name
+                - unit_price
+                - quantity
+              properties:
+                antifraud_info:
+                  type: object
+                  additionalProperties:
+                    type: object
+                description:
+                  type: string
+                  maxLength: 250
+                sku:
+                  type: string
+                name:
+                  type: string
+                  example: Box of Cohiba S1s
+                unit_price:
+                  type: integer
+                  format: int32
+                  example: 20000
+                quantity:
+                  type: integer
+                  format: int32
+                  example: 1
+                tags:
+                  type: array
+                  items:
+                    type: string
+                brand:
+                  type: string
+                metadata:
+                  type: object
+                  additionalProperties:
+                    type: string
+        required: true
+      parameters:
+        - $ref: '#/paths/~1logs~1%7Bid%7D/get/parameters/0'
+        - $ref: '#/paths/~1logs/get/parameters/0'
+  '/orders/{id}/line_items/{line_item_id}':
+    put:
+      operationId: ordersUpdateLineItems
+      summary: updates a existing line items for an existing orden
+      responses:
+        '200':
+          description: successful
+          content:
+            application/vnd.conekta-v2.0.0+json:
+              schema:
+                $ref: '#/paths/~1orders~1%7Bid%7D~1line_items/post/responses/200/content/application~1vnd.conekta-v2.0.0%2Bjson/schema'
+        '401':
+          $ref: '#/paths/~1logs/get/responses/401'
+        '404':
+          $ref: '#/paths/~1orders~1%7Bid%7D/get/responses/404'
+        '422':
+          $ref: '#/paths/~1logs/get/responses/422'
+        '500':
+          $ref: '#/paths/~1logs/get/responses/500'
+      security:
+        - bearerAuth: []
+      requestBody:
+        $ref: '#/paths/~1orders~1%7Bid%7D~1line_items/post/requestBody'
+      parameters:
+        - $ref: '#/paths/~1logs~1%7Bid%7D/get/parameters/0'
+        - in: path
+          name: line_item_id
+          description: identifier
+          required: true
+          schema:
+            type: string
+          example: line_item_2tQ8HkkfbauaKP9Ho
+        - $ref: '#/paths/~1logs/get/parameters/0'
+  '/orders/{id}/refunds':
+    post:
+      operationId: orderRefund
+      summary: 'A refunded order describes the items, amount, and reason an order is being refunded.'
+      responses:
+        '200':
+          description: successful
+          content:
+            application/vnd.conekta-v2.0.0+json:
+              schema:
+                $ref: '#/paths/~1orders/post/responses/200/content/application~1vnd.conekta-v2.0.0%2Bjson/schema'
+        '401':
+          $ref: '#/paths/~1logs/get/responses/401'
+        '404':
+          $ref: '#/paths/~1orders~1%7Bid%7D/get/responses/404'
+        '422':
+          $ref: '#/paths/~1logs/get/responses/422'
+        '500':
+          $ref: '#/paths/~1logs/get/responses/500'
+      security:
+        - bearerAuth: []
+      requestBody:
+        description: requested field for a refund
+        content:
+          application/json:
+            schema:
+              required:
+                - amount
+                - reason
+              properties:
+                amount:
+                  type: integer
+                  example: 500
+                reason:
+                  type: string
+                  example: suspected_fraud
+        required: true
+      parameters:
+        - $ref: '#/paths/~1logs~1%7Bid%7D/get/parameters/0'
+        - $ref: '#/paths/~1logs/get/parameters/0'
+  '/orders/{id}/shipping_lines':
+    post:
+      operationId: ordersCreateShippingLines
+      summary: creates a new shipping lines for an existing orden
+      responses:
+        '200':
+          description: successful
+          content:
+            application/vnd.conekta-v2.0.0+json:
+              schema:
+                title: shipping_lines_order_response
+                allOf:
+                  - $ref: '#/paths/~1orders~1%7Bid%7D~1shipping_lines/post/requestBody/content/application~1json/schema'
+                  - type: object
+                    properties:
+                      id:
+                        type: string
+                      object:
+                        type: string
+                      parent_id:
+                        type: string
+        '401':
+          $ref: '#/paths/~1logs/get/responses/401'
+        '404':
+          $ref: '#/paths/~1orders~1%7Bid%7D/get/responses/404'
+        '500':
+          $ref: '#/paths/~1logs/get/responses/500'
+      security:
+        - bearerAuth: []
+      requestBody:
+        description: requested field for a shipping lines
+        content:
+          application/json:
+            schema:
+              title: shipping_lines_request
+              properties:
+                amount:
+                  type: integer
+                  example: 100
+                carrier:
+                  type: string
+                  example: FEDEX
+                tracking_number:
+                  type: string
+                  example: TRACK123
+                method:
+                  type: string
+                  example: TRAING
+                metadata:
+                  type: object
+                  additionalProperties:
+                    type: object
+                  example:
+                    key: value
+        required: true
+      parameters:
+        - $ref: '#/paths/~1logs~1%7Bid%7D/get/parameters/0'
+        - $ref: '#/paths/~1logs/get/parameters/0'
+  '/orders/{id}/shipping_lines/{shipping_lines_id}':
+    put:
+      operationId: ordersUpdateShippingLines
+      summary: updates an existing shipping lines for an existing orden
+      responses:
+        '200':
+          description: successful
+          content:
+            application/vnd.conekta-v2.0.0+json:
+              schema:
+                $ref: '#/paths/~1orders~1%7Bid%7D~1shipping_lines/post/responses/200/content/application~1vnd.conekta-v2.0.0%2Bjson/schema'
+        '401':
+          $ref: '#/paths/~1logs/get/responses/401'
+        '404':
+          $ref: '#/paths/~1orders~1%7Bid%7D/get/responses/404'
+        '422':
+          $ref: '#/paths/~1logs/get/responses/422'
+        '500':
+          $ref: '#/paths/~1logs/get/responses/500'
+      security:
+        - bearerAuth: []
+      requestBody:
+        $ref: '#/paths/~1orders~1%7Bid%7D~1shipping_lines/post/requestBody'
+      parameters:
+        - $ref: '#/paths/~1logs~1%7Bid%7D/get/parameters/0'
+        - in: path
+          name: shipping_lines_id
+          description: identifier
+          required: true
+          schema:
+            type: string
+          example: ship_lin_2tQ974hSHcsdeSZHG
+        - $ref: '#/paths/~1logs/get/parameters/0'
+  '/orders/{id}/tax_lines':
+    post:
+      operationId: ordersCreateTaxLines
+      summary: creates a new tax lines for an existing orden
+      responses:
+        '200':
+          description: successful
+          content:
+            application/vnd.conekta-v2.0.0+json:
+              schema:
+                description: create a new tax lines for an existing order response
+                required:
+                  - id
+                allOf:
+                  - $ref: '#/paths/~1orders~1%7Bid%7D~1tax_lines/post/requestBody/content/application~1json/schema'
+                  - type: object
+                    properties:
+                      id:
+                        type: string
+                        example: tax_lin_2tQ8dC5mg1UADmVPo
+                      object:
+                        type: string
+                        example: tax_line
+                      parent_id:
+                        type: string
+                        example: ord_2tPAmKCEJqh8RE6nY
+        '401':
+          $ref: '#/paths/~1logs/get/responses/401'
+        '404':
+          $ref: '#/paths/~1orders~1%7Bid%7D/get/responses/404'
+        '422':
+          $ref: '#/paths/~1logs/get/responses/422'
+        '500':
+          $ref: '#/paths/~1logs/get/responses/500'
+      security:
+        - bearerAuth: []
+      requestBody:
+        description: requested field for a tax lines
+        content:
+          application/json:
+            schema:
+              description: create a new tax lines for an existing order
+              type: object
+              required:
+                - amount
+                - description
+              properties:
+                amount:
+                  type: integer
+                  example: '100'
+                description:
+                  type: string
+                  example: testing
+        required: true
+      parameters:
+        - $ref: '#/paths/~1logs~1%7Bid%7D/get/parameters/0'
+        - $ref: '#/paths/~1logs/get/parameters/0'
+  '/orders/{id}/tax_lines/{tax_lines_id}':
+    put:
+      operationId: ordersUpdateTaxLines
+      summary: updates a new tax lines for an existing orden
+      responses:
+        '200':
+          description: successful
+          content:
+            application/vnd.conekta-v2.0.0+json:
+              schema:
+                $ref: '#/paths/~1orders~1%7Bid%7D~1tax_lines/post/responses/200/content/application~1vnd.conekta-v2.0.0%2Bjson/schema'
+        '401':
+          $ref: '#/paths/~1logs/get/responses/401'
+        '404':
+          $ref: '#/paths/~1orders~1%7Bid%7D/get/responses/404'
+        '422':
+          $ref: '#/paths/~1logs/get/responses/422'
+        '500':
+          $ref: '#/paths/~1logs/get/responses/500'
+      security:
+        - bearerAuth: []
+      requestBody:
+        $ref: '#/paths/~1orders~1%7Bid%7D~1tax_lines/post/requestBody'
+      parameters:
+        - $ref: '#/paths/~1logs~1%7Bid%7D/get/parameters/0'
+        - in: path
+          name: tax_lines_id
+          description: identifier
+          required: true
+          schema:
+            type: string
+          example: tax_lin_2tQ974hSHcsdeSZHG
         - $ref: '#/paths/~1logs/get/parameters/0'
 security:
   - bearerAuth: []

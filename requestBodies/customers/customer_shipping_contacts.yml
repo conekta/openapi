@@ -1,0 +1,6 @@
+description: requested field for customer shippings contacts
+content:
+  application/json:
+    schema:  
+      $ref: ../../schemas/customers/customer_shipping_contacts.yml
+required: true

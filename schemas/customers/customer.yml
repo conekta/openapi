@@ -34,7 +34,6 @@ properties:
   custom_reference:
     type: string
     description: It is an undefined value.
-    nullable: true
   fiscal_entities:
     type: array
     items:
@@ -42,11 +41,18 @@ properties:
   payment_sources:
     type: array
     items:
-      $ref: './customer_payment_sources.yml'
-    example: 
-      - type: card
-        token_id: "tok_76238476234"
-      - type: oxxo_recurrent
+      title: consumer_payment_sources_request
+      oneOf:
+        - $ref: ../../schemas/customers/payment_sources_card.yml
+        - $ref: ../../schemas/customers/payment_sources_cash.yml
+        - $ref: ../../schemas/customers/payment_sources_spei.yml
+      discriminator:
+        propertyName: type
+        mapping:
+          card: payment_sources_card
+          cash: payment_sources_cash
+          oxxo_cash: payment_sources_cash
+          spei: payment_sources_spei
   shipping_contacts:
     type: array
     items:

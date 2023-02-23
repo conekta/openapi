@@ -112,7 +112,6 @@ properties:
                   default:
                     type: boolean
   shipping_contacts:
-    title: customer_shipping_contacts_response
     allOf:
        - $ref: ../../schemas/pagination/pagination.yml
        - type: object

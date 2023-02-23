@@ -209,7 +209,7 @@ namespace {{packageName}}.Client
         {
           var values = new Dictionary<string, object>
             {
-                { "bindings_version", "{{packageVersion}}" },
+                { "bindings_version", Configuration.Version  },
                 { "lang", ".net" },
                 { "publisher", "conekta" },
                 { "conekta_net_target_framework", RuntimeInformation.ConektaNetTargetFramework },

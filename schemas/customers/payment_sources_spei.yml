@@ -1,0 +1,8 @@
+title: payment_sources_card
+allOf:
+  - $ref: './customer_payment_sources.yml'
+  - type: object
+    properties:
+      expires_at:
+        type: integer
+        example: 1553273553

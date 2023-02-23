@@ -1,0 +1,24 @@
+{
+  "npmName": "conekta",
+  "generateSourceCodeOnly": "false",
+  "npmVersion": "4.0.0",
+  "packageUrl": "https://developers.conekta.com/",
+  "projectName": "conekta-node",
+  "appDescription" : "Conekta Node Library",
+  "useOneOfDiscriminatorLookup" : true,
+  "nonCompliantUseDiscriminatorIfCompositionFails" : false,
+  "httpUserAgent": "Conekta/v2 NodeBindings/4.0.0",
+  "files": {
+    "AUTHORS.md" : {},
+    "LICENSE" : {}
+  },
+  "gitUserId": "conekta",
+  "gitRepoId": "conekta-node",
+  "modern" : true,
+  "disallowAdditionalPropertiesIfNotPresent" : true,
+  "invokerPackage" : "Conekta",
+  "useObjectParameters" : true,
+  "npmRepository"  : "https://www.npmjs.com/package/conekta",
+  "supportsES6" : true,
+  "templateDir": "templates/node/ts-fetch"
+}

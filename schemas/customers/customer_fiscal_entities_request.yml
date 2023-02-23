@@ -1,4 +1,4 @@
-title: fiscal entity request
+title: fiscal_entity_request
 required:
   - address
 properties:
@@ -11,7 +11,7 @@ properties:
     type: string
   phone:
     type: string
-  contextual_data:
+  metadata:
     type: object
   company_name:
     type: string

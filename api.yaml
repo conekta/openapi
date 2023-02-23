@@ -23,6 +23,18 @@ paths:
     $ref: "./resources/customers/create_customer.yml"
   /customers/{id}:
     $ref: "./resources/customers/get_customer.yml"
+  /customers/{id}/fiscal_entities:
+    $ref: "./resources/customers/create_customer_fiscal_entities.yml"
+  /customers/{id}/fiscal_entities/{fiscal_entities_id}:
+    $ref: "./resources/customers/update_customer_fiscal_entities.yml"
+  /customers/{id}/payment_sources:
+    $ref: "./resources/customers/create_customer_payment_sources.yml"
+  /customers/{id}/payment_sources/{payment_sources_id}:
+    $ref: "./resources/customers/update_customer_payment_sources.yml"
+  /customers/{id}/shipping_contacts:
+    $ref: "./resources/customers/create_customer_shipping_contacts.yml"
+  /customers/{id}/shipping_contacts/{shipping_contacts_id}:
+    $ref: "./resources/customers/update_customer_shipping_contacts.yml"
   /logs:
      $ref: "./resources/logs/log.yml"
   /logs/{id}:
@@ -31,6 +43,28 @@ paths:
     $ref: "./resources/orders/order.yml"
   /orders/{id}:
     $ref: "./resources/orders/order_param.yml"
+  /orders/{id}/capture:
+    $ref: "./resources/orders/order_capture_param.yml"
+  /orders/{id}/charges:
+    $ref: "./resources/orders/order_charge_param.yml"
+  /orders/{id}/discount_lines:
+    $ref: "./resources/orders/discount_lines_param.yml"
+  /orders/{id}/discount_lines/{discount_lines_id}:
+    $ref: "./resources/orders/update_order_discount_lines_param.yml"
+  /orders/{id}/line_items:
+    $ref: "./resources/orders/order_line_items_param.yml"
+  /orders/{id}/line_items/{line_item_id}:
+    $ref: "./resources/orders/update_order_line_items_param.yml"
+  /orders/{id}/refunds:
+    $ref: "./resources/orders/order_refunds_param.yml"
+  /orders/{id}/shipping_lines:
+    $ref: "./resources/orders/order_shipping_lines_param.yml"
+  /orders/{id}/shipping_lines/{shipping_lines_id}:
+    $ref: "./resources/orders/update_order_shipping_lines_param.yml"
+  /orders/{id}/tax_lines:
+    $ref: "./resources/orders/order_tax_lines_param.yml"
+  /orders/{id}/tax_lines/{tax_lines_id}:
+    $ref: "./resources/orders/update_order_tax_lines_param.yml"
 security:
   - bearerAuth: []
 components:

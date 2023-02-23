@@ -1,0 +1,7 @@
+in: path
+name: "shipping_lines_id"
+description:  identifier
+required: true
+schema:
+  type: string
+example: "ship_lin_2tQ974hSHcsdeSZHG"

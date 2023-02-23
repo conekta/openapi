@@ -1,0 +1,26 @@
+put:
+  operationId: ordersUpdateDiscountLines
+  summary: updates an existing discount lines for an existing orden
+  responses:
+    200:
+      description: successful
+      content:
+        application/vnd.conekta-v2.0.0+json:
+          schema:
+            $ref: ../../schemas/orders/discount_lines_response.yml
+    401:
+     $ref: '../errors/401.yml'
+    404:
+     $ref: '../errors/404.yml'
+    422:
+     $ref: '../errors/422.yml'
+    500:
+     $ref: '../errors/500.yml'
+  security:
+    - bearerAuth: []
+  requestBody:
+    $ref: '../../requestBodies/discount_lines/discount_line_create.yml'
+  parameters:
+    - $ref: '../../parameters/commons/path_param/id.yml'
+    - $ref: '../../parameters/commons/path_param/discount_lines_id.yml'
+    - $ref: '../../parameters/commons/headers/accept_language.yml'

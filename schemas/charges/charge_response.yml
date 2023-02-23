@@ -29,6 +29,7 @@ properties:
     example: 1160
   id: 
     type: string
+    example: "63efa757cf65380001aec040"
   livemode:
     type: boolean
   object:

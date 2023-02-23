@@ -5,7 +5,7 @@ details:
       type: array
       items:
         type: object
-        title:  Contains details of the error
+        title:  details_error
         properties:
           code:
             type: string

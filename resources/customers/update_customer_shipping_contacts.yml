@@ -1,0 +1,27 @@
+put:
+  operationId: UpdateCustomerShippingContacts
+  summary: returns an updated shipping contacts
+  description: 'Gets a customer resource that corresponds to a customer ID.'
+  responses:
+    '200':
+      description: successful operation
+      content:
+        application/vnd.conekta-v2.0.0+json:
+          schema:
+            $ref: ../../schemas/customers/customer_shipping_contacts_response.yml
+    401:
+     $ref: '../errors/401.yml'
+    404:
+     $ref: '../errors/404.yml'
+    422:
+     $ref: '../errors/422.yml'
+    500:
+     $ref: '../errors/500.yml'
+  security:
+    - bearerAuth: []
+  requestBody:
+    $ref: ../../requestBodies/customers/customer_shipping_contacts.yml
+  parameters:
+    - $ref: '../../parameters/commons/path_param/id.yml'
+    - $ref: '../../parameters/commons/path_param/shipping_contacts_id.yml'
+    - $ref: '../../parameters/commons/headers/accept_language.yml'
