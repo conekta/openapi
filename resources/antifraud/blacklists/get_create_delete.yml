@@ -6,30 +6,30 @@ get:
     '200':
       description: All the rules
       content:
-        application/json:
+        application/vnd.conekta-v2.0.0+json:
           schema:
               $ref: '../../../schemas/antifraud/risk_rules_list.yml'
 post:
   tags:
     - Blacklist
-  operationId: create new rule
+  operationId: createNewRule
   responses:
     '200':
       description: successfully registered rule
   requestBody:
     content:
-      application/json:
+      application/vnd.conekta-v2.0.0+json:
         schema:
           $ref: '../../../schemas/antifraud/create_risk_rules_data.yml'
 delete:
   tags:
     - Blacklist
-  operationId: delete requested rule
+  operationId: deleteRequestedRule
   responses:
     '200':
       description: successfully deleted rule
   requestBody:
     content:
-      application/json:
+      application/vnd.conekta-v2.0.0+json:
         schema:
           $ref: '../../../schemas/antifraud/delete_risk_rules_data.yml'

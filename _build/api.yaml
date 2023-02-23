@@ -86,16 +86,13 @@ paths:
               properties:
                 description:
                   type: string
-                  format: string
-                  example: description
+                  example: this client's email was verified at 20/09/22 by internal process
                 type:
                   type: string
-                  format: string
                   example: email | phone | card_token
                 value:
                   type: string
-                  format: string
-                  example: value
+                  example: email@example.com | 818081808180 | src_2qUCNd5AyQqfPMBuV
   /antifraud/blacklists:
     get:
       tags:
@@ -105,31 +102,31 @@ paths:
         '200':
           description: All the rules
           content:
-            application/json:
+            application/vnd.conekta-v2.0.0+json:
               schema:
                 $ref: '#/paths/~1antifraud~1whitelists/get/responses/200/content/application~1json/schema'
     post:
       tags:
         - Blacklist
-      operationId: create new rule
+      operationId: createNewRule
       responses:
         '200':
           description: successfully registered rule
       requestBody:
         content:
-          application/json:
+          application/vnd.conekta-v2.0.0+json:
             schema:
               $ref: '#/paths/~1antifraud~1whitelists/post/requestBody/content/application~1json/schema'
     delete:
       tags:
         - Blacklist
-      operationId: delete requested rule
+      operationId: deleteRequestedRule
       responses:
         '200':
           description: successfully deleted rule
       requestBody:
         content:
-          application/json:
+          application/vnd.conekta-v2.0.0+json:
             schema:
               $ref: '#/paths/~1antifraud~1whitelists/delete/requestBody/content/application~1json/schema'
   /customers:
