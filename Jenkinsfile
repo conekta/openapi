@@ -27,7 +27,9 @@ node('sre-slave') {
             stage('validate') {
                  runCommand(this, repo_name, "openapi-generator-cli validate -i api.yaml")
             }
-           
+            stage('dummy generator') {
+                 runCommand(this, repo_name, "openapi-generator-cli generate -i api.yml -g openapi-yaml")
+            }
            
             notifyPRStatus(this, env.GITHUB_TOKEN_CREDENTIAL_ID, "success", statuses_url, "${BUILD_URL}")
         } catch (Exception e) {
