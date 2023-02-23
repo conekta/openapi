@@ -1,7 +1,7 @@
 delete:
   tags:
     - Whitelists
-  operationId: delete requested rule
+  operationId: DeleteRequestedRuleWhitelist
   responses:
     '200':
       description: successfully deleted rule
@@ -13,6 +13,7 @@ delete:
 get:
   tags:
     - Whitelists
+  operationId: GetWhiteList
   description: returns all rules
   responses:
     '200':
@@ -24,7 +25,7 @@ get:
 post:
   tags:
     - Whitelists
-  operationId: create new rule
+  operationId: CreateNewRuleWhitelist
   responses:
     '200':
       description: successfully registered rule

@@ -18,7 +18,7 @@ paths:
     delete:
       tags:
         - Whitelists
-      operationId: delete requested rule
+      operationId: DeleteRequestedRuleWhitelist
       responses:
         '200':
           description: successfully deleted rule
@@ -34,6 +34,7 @@ paths:
     get:
       tags:
         - Whitelists
+      operationId: GetWhiteList
       description: returns all rules
       responses:
         '200':
@@ -74,7 +75,7 @@ paths:
     post:
       tags:
         - Whitelists
-      operationId: create new rule
+      operationId: CreateNewRuleWhitelist
       responses:
         '200':
           description: successfully registered rule
@@ -97,6 +98,7 @@ paths:
     get:
       tags:
         - Blacklist
+      operationId: GetBlackList
       description: returns all rules
       responses:
         '200':
@@ -108,7 +110,7 @@ paths:
     post:
       tags:
         - Blacklist
-      operationId: createNewRule
+      operationId: CreateNewBlackListRule
       responses:
         '200':
           description: successfully registered rule
@@ -120,7 +122,7 @@ paths:
     delete:
       tags:
         - Blacklist
-      operationId: deleteRequestedRule
+      operationId: DeleteRequestedBlackListRule
       responses:
         '200':
           description: successfully deleted rule
