@@ -40,43 +40,6 @@ paths:
           description: All the rules
           content:
             application/json:
-              schema: null
-              $ref: '#/paths/~1antifraud~1blacklists/get/responses/200/content/application~1json/schema'
-    post:
-      tags:
-        - Whitelists
-      operationId: create new rule
-      responses:
-        '200':
-          description: successfully registered rule
-      requestBody:
-        content:
-          application/json:
-            schema:
-              type: object
-              properties:
-                description:
-                  type: string
-                  format: string
-                  example: description
-                type:
-                  type: string
-                  format: string
-                  example: email | phone | card_token
-                value:
-                  type: string
-                  format: string
-                  exampole: value
-  /antifraud/blacklists:
-    get:
-      tags:
-        - Blacklist
-      description: returns all rules
-      responses:
-        '200':
-          description: All the rules
-          content:
-            application/json:
               schema:
                 type: object
                 properties:
@@ -108,6 +71,43 @@ paths:
                         description:
                           type: string
                           example: secure customer example@example.com
+    post:
+      tags:
+        - Whitelists
+      operationId: create new rule
+      responses:
+        '200':
+          description: successfully registered rule
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                description:
+                  type: string
+                  format: string
+                  example: description
+                type:
+                  type: string
+                  format: string
+                  example: email | phone | card_token
+                value:
+                  type: string
+                  format: string
+                  example: value
+  /antifraud/blacklists:
+    get:
+      tags:
+        - Blacklist
+      description: returns all rules
+      responses:
+        '200':
+          description: All the rules
+          content:
+            application/json:
+              schema:
+                $ref: '#/paths/~1antifraud~1whitelists/get/responses/200/content/application~1json/schema'
     post:
       tags:
         - Blacklist

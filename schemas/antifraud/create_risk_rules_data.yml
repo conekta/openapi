@@ -11,4 +11,4 @@ properties:
   value:
     type: string
     format: string
-    exampole: 'value'
+    example: 'value'

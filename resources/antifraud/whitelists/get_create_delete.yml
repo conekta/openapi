@@ -20,7 +20,7 @@ get:
       content:
         application/json:
           schema:
-          $ref: '../../../schemas/antifraud/risk_rules_list.yml'
+            $ref: '../../../schemas/antifraud/risk_rules_list.yml'
 post:
   tags:
     - Whitelists
