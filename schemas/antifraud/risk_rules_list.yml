@@ -1,0 +1,30 @@
+type: object
+properties:
+  has_more:
+    type: boolean
+    value: true
+  total:
+    type: integer
+    format: int32
+    minimum: 0
+    maximum: 100
+  object:
+    type: string
+    example: 'list'
+  data:
+    type: array
+    items:
+      type: object
+      properties:
+        id:
+          type: string
+          example: '2fw8EWJusiRrxdPzT'
+        type:
+          type: string
+          example: 'email'
+        value:
+          type: string
+          example: 'email@example.com'
+        description:
+          type: string
+          example: 'secure customer example@example.com'

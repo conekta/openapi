@@ -1,0 +1,36 @@
+get:
+  tags:
+    - Blacklist
+  operationId: GetBlackList
+  description: returns all rules
+  responses:
+    '200':
+      description: All the rules
+      content:
+        application/vnd.conekta-v2.0.0+json:
+          schema:
+              $ref: '../../../schemas/antifraud/risk_rules_list.yml'
+post:
+  tags:
+    - Blacklist
+  operationId: CreateNewBlackListRule
+  responses:
+    '200':
+      description: successfully registered rule
+  requestBody:
+    content:
+      application/vnd.conekta-v2.0.0+json:
+        schema:
+          $ref: '../../../schemas/antifraud/create_risk_rules_data.yml'
+delete:
+  tags:
+    - Blacklist
+  operationId: DeleteRequestedBlackListRule
+  responses:
+    '200':
+      description: successfully deleted rule
+  requestBody:
+    content:
+      application/vnd.conekta-v2.0.0+json:
+        schema:
+          $ref: '../../../schemas/antifraud/delete_risk_rules_data.yml'

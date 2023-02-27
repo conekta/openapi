@@ -1,0 +1,11 @@
+type: object
+properties:
+  description:
+    type: string
+    example: "this client's email was verified at 20/09/22 by internal process"
+  type:
+    type: string
+    example: 'email | phone | card_token'
+  value:
+    type: string
+    example: 'email@example.com | 818081808180 | src_2qUCNd5AyQqfPMBuV'

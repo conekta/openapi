@@ -15,6 +15,10 @@ info:
     url: 'https://www.apache.org/licenses/LICENSE-2.0.html'
 
 paths:
+  /antifraud/whitelists:
+    $ref: "./resources/antifraud/whitelists/get_create_delete.yml"
+  /antifraud/blacklists:
+    $ref: "./resources/antifraud/blacklists/get_create_delete.yml"
   /customers:
     $ref: "./resources/customers/create_customer.yml"
   /customers/{id}:
