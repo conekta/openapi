@@ -1,0 +1,6 @@
+description: requested field for webhook        
+content:
+  application/json:
+    schema:  
+      $ref: '../../schemas/webhooks/webhook_request.yml'
+required: true

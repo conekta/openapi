@@ -1,6 +1,6 @@
 get:
   operationId: getEvent
-  summary: returns an events
+  summary: returns an event
   responses:
     200:
       description: successful

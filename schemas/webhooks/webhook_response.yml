@@ -1,0 +1,43 @@
+title: webhook_response
+description: webhooks model
+type: object
+properties:
+  development_enabled:
+    type: boolean
+    example: false
+  id:
+    type: string
+    example: "6307a60c41de27127515a575"
+  livemode:
+    type: boolean
+    example: true
+  object:
+    type: string
+    example: "event"
+  production_enabled:
+    type: boolean
+    example: true
+  status:
+    type: string
+    example: "listening"
+  subscribed_events:
+    type: array
+    items:
+      type: string
+    example: ["charge.created",
+                "charge.paid",
+                "charge.under_fraud_review",
+                "charge.fraudulent",
+                "charge.refunded",
+                "charge.preauthorized",
+                "charge.declined",
+                "charge.canceled",
+                "charge.reversed",
+                "charge.pending_confirmation"]
+  synchronous:
+    type: boolean
+    example: false
+  url:
+    type: string
+    example: "https://username:password@mockoon.stg.conekta.io/payments-api/cash/merchant_approval"
+    

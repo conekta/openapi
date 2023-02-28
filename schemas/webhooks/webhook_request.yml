@@ -1,0 +1,14 @@
+title: a webhook
+description: a webhook
+type: object
+required:
+  - url
+  - synchronous
+properties:
+  url:
+    type: string
+    format: url
+    example: "https://webhook.site/89277eaa-a8e4-4306-8dc5-f55c80703dc8"
+  synchronous:
+    type: boolean
+    example: false

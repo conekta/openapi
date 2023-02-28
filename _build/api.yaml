@@ -1327,7 +1327,7 @@ paths:
   '/events/{id}':
     get:
       operationId: getEvent
-      summary: returns an events
+      summary: returns an event
       responses:
         '200':
           description: successful
@@ -3067,6 +3067,279 @@ paths:
             type: string
           example: tax_lin_2tQ974hSHcsdeSZHG
         - $ref: '#/paths/~1logs/get/parameters/0'
+  /webhooks:
+    get:
+      tags:
+        - webhooks
+      operationId: getWebhooks
+      summary: returns a set of /webhooks
+      responses:
+        '200':
+          description: successful
+          content:
+            application/vnd.conekta-v2.0.0+json:
+              schema:
+                title: get_webhooks_response
+                allOf:
+                  - $ref: '#/paths/~1events/get/responses/200/content/application~1vnd.conekta-v2.0.0%2Bjson/schema/allOf/0'
+                  - $ref: '#/paths/~1events/get/responses/200/content/application~1vnd.conekta-v2.0.0%2Bjson/schema/allOf/1'
+                  - type: object
+                    properties:
+                      data:
+                        type: array
+                        items:
+                          $ref: '#/paths/~1webhooks/post/responses/200/content/application~1vnd.conekta-v2.0.0%2Bjson/schema'
+          headers:
+            Date:
+              description: The date and time that the response was sent
+              schema:
+                type: string
+                example: 'Fri, 03 Feb 2023 16:57:48 GMT'
+            Content-Type:
+              description: The format of the response body
+              schema:
+                type: string
+                example: application/json; charset=utf-8
+            Content-Length:
+              description: The length of the response body in bytes
+              schema:
+                type: string
+                example: '2737'
+            Connection:
+              description: The type of connection used to transfer the response
+              schema:
+                type: string
+                example: keep-alive
+            Conekta-Media-Type:
+              schema:
+                type: string
+                example: conekta-v2.0.0; format=application/json
+        '401':
+          $ref: '#/paths/~1logs/get/responses/401'
+        '422':
+          $ref: '#/paths/~1logs/get/responses/422'
+        '500':
+          $ref: '#/paths/~1logs/get/responses/500'
+      security:
+        - bearerAuth: []
+      parameters:
+        - $ref: '#/paths/~1logs/get/parameters/0'
+        - $ref: '#/paths/~1logs/get/parameters/1'
+        - $ref: '#/paths/~1logs/get/parameters/2'
+        - $ref: '#/paths/~1logs/get/parameters/3'
+        - $ref: '#/paths/~1logs/get/parameters/4'
+    post:
+      tags:
+        - webhooks
+      operationId: createWebhook
+      summary: creates a new webhook
+      description: Create a new webhook.
+      responses:
+        '200':
+          description: successful operation
+          content:
+            application/vnd.conekta-v2.0.0+json:
+              schema:
+                title: webhook_response
+                description: webhooks model
+                type: object
+                properties:
+                  development_enabled:
+                    type: boolean
+                    example: false
+                  id:
+                    type: string
+                    example: 6307a60c41de27127515a575
+                  livemode:
+                    type: boolean
+                    example: true
+                  object:
+                    type: string
+                    example: event
+                  production_enabled:
+                    type: boolean
+                    example: true
+                  status:
+                    type: string
+                    example: listening
+                  subscribed_events:
+                    type: array
+                    items:
+                      type: string
+                    example:
+                      - charge.created
+                      - charge.paid
+                      - charge.under_fraud_review
+                      - charge.fraudulent
+                      - charge.refunded
+                      - charge.preauthorized
+                      - charge.declined
+                      - charge.canceled
+                      - charge.reversed
+                      - charge.pending_confirmation
+                  synchronous:
+                    type: boolean
+                    example: false
+                  url:
+                    type: string
+                    example: 'https://username:password@mockoon.stg.conekta.io/payments-api/cash/merchant_approval'
+        '401':
+          $ref: '#/paths/~1logs/get/responses/401'
+        '422':
+          $ref: '#/paths/~1logs/get/responses/422'
+        '500':
+          $ref: '#/paths/~1logs/get/responses/500'
+      security:
+        - bearerAuth: []
+      requestBody:
+        description: requested field for webhook
+        content:
+          application/json:
+            schema:
+              title: a webhook
+              description: a webhook
+              type: object
+              required:
+                - url
+                - synchronous
+              properties:
+                url:
+                  type: string
+                  format: url
+                  example: 'https://webhook.site/89277eaa-a8e4-4306-8dc5-f55c80703dc8'
+                synchronous:
+                  type: boolean
+                  example: false
+        required: true
+      parameters:
+        - $ref: '#/paths/~1logs/get/parameters/0'
+  '/webhooks/{id}':
+    get:
+      tags:
+        - webhooks
+      operationId: getWebhook
+      summary: returns a webhook
+      responses:
+        '200':
+          description: successful
+          content:
+            application/vnd.conekta-v2.0.0+json:
+              schema:
+                $ref: '#/paths/~1webhooks/post/responses/200/content/application~1vnd.conekta-v2.0.0%2Bjson/schema'
+          headers:
+            Date:
+              description: The date and time that the response was sent
+              schema:
+                type: string
+                example: 'Fri, 03 Feb 2023 16:57:48 GMT'
+            Content-Type:
+              description: The format of the response body
+              schema:
+                type: string
+                example: application/json; charset=utf-8
+            Content-Length:
+              description: The length of the response body in bytes
+              schema:
+                type: string
+                example: '2737'
+            Connection:
+              description: The type of connection used to transfer the response
+              schema:
+                type: string
+                example: keep-alive
+            Conekta-Media-Type:
+              schema:
+                type: string
+                example: conekta-v2.0.0; format=application/json
+        '401':
+          $ref: '#/paths/~1logs/get/responses/401'
+        '404':
+          $ref: '#/paths/~1orders~1%7Bid%7D/get/responses/404'
+        '422':
+          $ref: '#/paths/~1logs/get/responses/422'
+        '500':
+          $ref: '#/paths/~1logs/get/responses/500'
+      security:
+        - bearerAuth: []
+      parameters:
+        - $ref: '#/paths/~1logs/get/parameters/0'
+        - $ref: '#/paths/~1logs~1%7Bid%7D/get/parameters/0'
+    put:
+      tags:
+        - webhooks
+      operationId: updateWebhook
+      summary: updates an existing webhook
+      description: updates an existing webhook
+      responses:
+        '200':
+          description: successful operation
+          content:
+            application/vnd.conekta-v2.0.0+json:
+              schema:
+                $ref: '#/paths/~1webhooks/post/responses/200/content/application~1vnd.conekta-v2.0.0%2Bjson/schema'
+        '401':
+          $ref: '#/paths/~1logs/get/responses/401'
+        '422':
+          $ref: '#/paths/~1logs/get/responses/422'
+        '500':
+          $ref: '#/paths/~1logs/get/responses/500'
+      security:
+        - bearerAuth: []
+      requestBody:
+        $ref: '#/paths/~1webhooks/post/requestBody'
+      parameters:
+        - $ref: '#/paths/~1logs/get/parameters/0'
+        - $ref: '#/paths/~1logs~1%7Bid%7D/get/parameters/0'
+    delete:
+      tags:
+        - webhooks
+      operationId: deleteWebhook
+      summary: returns a deleted webhook
+      responses:
+        '200':
+          description: successful
+          content:
+            application/vnd.conekta-v2.0.0+json:
+              schema:
+                $ref: '#/paths/~1webhooks/post/responses/200/content/application~1vnd.conekta-v2.0.0%2Bjson/schema'
+          headers:
+            Date:
+              description: The date and time that the response was sent
+              schema:
+                type: string
+                example: 'Fri, 03 Feb 2023 16:57:48 GMT'
+            Content-Type:
+              description: The format of the response body
+              schema:
+                type: string
+                example: application/json; charset=utf-8
+            Content-Length:
+              description: The length of the response body in bytes
+              schema:
+                type: string
+                example: '2737'
+            Connection:
+              description: The type of connection used to transfer the response
+              schema:
+                type: string
+                example: keep-alive
+            Conekta-Media-Type:
+              schema:
+                type: string
+                example: conekta-v2.0.0; format=application/json
+        '401':
+          $ref: '#/paths/~1logs/get/responses/401'
+        '404':
+          $ref: '#/paths/~1orders~1%7Bid%7D/get/responses/404'
+        '422':
+          $ref: '#/paths/~1logs/get/responses/422'
+        '500':
+          $ref: '#/paths/~1logs/get/responses/500'
+      security:
+        - bearerAuth: []
+      parameters:
+        - $ref: '#/paths/~1logs/get/parameters/0'
+        - $ref: '#/paths/~1logs~1%7Bid%7D/get/parameters/0'
 security:
   - bearerAuth: []
 components:

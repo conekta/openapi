@@ -69,6 +69,10 @@ paths:
     $ref: "./resources/orders/order_tax_lines_param.yml"
   /orders/{id}/tax_lines/{tax_lines_id}:
     $ref: "./resources/orders/update_order_tax_lines_param.yml"
+  /webhooks:
+     $ref: "./resources/webhooks/webhooks.yml"
+  /webhooks/{id}:
+     $ref: "./resources/webhooks/webhook.yml"
 security:
   - bearerAuth: []
 components:
