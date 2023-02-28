@@ -35,6 +35,10 @@ paths:
     $ref: "./resources/customers/create_customer_shipping_contacts.yml"
   /customers/{id}/shipping_contacts/{shipping_contacts_id}:
     $ref: "./resources/customers/update_customer_shipping_contacts.yml"
+  /events:
+    $ref: "./resources/events/events.yml"
+  /events/{id}:
+    $ref: "./resources/events/event.yml"
   /logs:
      $ref: "./resources/logs/log.yml"
   /logs/{id}:

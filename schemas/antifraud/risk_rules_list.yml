@@ -2,7 +2,7 @@ type: object
 properties:
   has_more:
     type: boolean
-    value: true
+    example: true
   total:
     type: integer
     format: int32

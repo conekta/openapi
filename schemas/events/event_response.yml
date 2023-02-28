@@ -1,0 +1,64 @@
+title: event_response
+description: event model
+type: object
+properties:
+  created_at:
+    type: integer
+    format: int64
+    example: 1661445644
+  data:
+    type: object
+    additionalProperties:
+      type: object
+    example:
+      action: 'ping'
+      livemode: true
+  id:
+    type: string
+    example: "6307a60c41de27127515a575"
+  livemode:
+    type: boolean
+    example: true
+  object:
+    type: string
+    example: "event"
+  type:
+    type: string
+    example: "webhook_ping"
+  webhook_logs:
+    type: array
+    items:
+      type: object
+      title: WebhookLog
+      properties:
+        failed_attempts:
+          type: integer
+          example: 10
+        id:
+          type: string
+          example: "webhl_2svd2sh6GbqzyWBNZ"
+        last_attempted_at:
+          type: integer
+          example: 1669651274
+        last_http_response_status:
+          type: integer
+          format: int32
+          example: 200
+        object:
+          type: string
+          example: "webhook_log"
+        response_data:
+          type: object
+          additionalProperties:
+            type: object
+          example:
+            amount: 3000
+            payable: true
+        url:
+          type: string
+          example: "https://username:password@mockoon.stg.conekta.io/payments-api/cash/merchant_approval"
+          format: uri
+  webhook_status:
+    type: string
+    example: "successful"
+    
