@@ -22,7 +22,7 @@
   "httpUserAgent": "Conekta/v2 .NetBindings/4.0.0",
   "packageAuthors" : "engineering@conekta.com",
   "packageCompany" : "Conekta",
-  "useGenericHost" : true,
+  "useGenericHost" : false,
   "templateDir": "templates/netcore",
   "useOneOfDiscriminatorLookup" : true
 }

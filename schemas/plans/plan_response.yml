@@ -1,0 +1,40 @@
+title: plan_response
+description: plans model
+type: object
+properties:
+  amount:
+    type: integer
+    example: 10000
+  created_at:
+    type: integer
+    example: 1666900846
+  currency:
+    type: string
+    example: "MXN"
+    maxLength: 3
+  expiry_count:
+    type: integer
+    example: 12
+    nullable: true
+  frequency:
+    type: integer
+    example: 1
+  id:
+    type: string
+    example: "gold-plan"
+  interval:
+    type: string
+    example: "month"
+  livemode:
+    type: boolean
+    example: true
+  name:
+    type: string
+    example: "Extra Plan3"
+  object:
+    type: string
+    example: "plan"
+  trial_period_days:
+    type: integer
+    example: 0
+    nullable: true

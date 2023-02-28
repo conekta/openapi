@@ -1,0 +1,6 @@
+description: requested field for plan        
+content:
+  application/json:
+    schema:  
+      $ref: '../../schemas/plans/plan_request.yml'
+required: true

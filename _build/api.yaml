@@ -200,7 +200,7 @@ paths:
                   payment_sources:
                     title: customer_payment_sources_response
                     allOf:
-                      - $ref: '#/paths/~1events/get/responses/200/content/application~1vnd.conekta-v2.0.0%2Bjson/schema/allOf/0'
+                      - $ref: '#/paths/~1plans/get/responses/200/content/application~1vnd.conekta-v2.0.0%2Bjson/schema/allOf/0'
                       - type: object
                         title: customerPaymentSources
                         properties:
@@ -225,7 +225,7 @@ paths:
                   fiscal_entities:
                     title: customer_fiscal_entities_response
                     allOf:
-                      - $ref: '#/paths/~1events/get/responses/200/content/application~1vnd.conekta-v2.0.0%2Bjson/schema/allOf/0'
+                      - $ref: '#/paths/~1plans/get/responses/200/content/application~1vnd.conekta-v2.0.0%2Bjson/schema/allOf/0'
                       - type: object
                         properties:
                           data:
@@ -257,7 +257,7 @@ paths:
                                       type: boolean
                   shipping_contacts:
                     allOf:
-                      - $ref: '#/paths/~1events/get/responses/200/content/application~1vnd.conekta-v2.0.0%2Bjson/schema/allOf/0'
+                      - $ref: '#/paths/~1plans/get/responses/200/content/application~1vnd.conekta-v2.0.0%2Bjson/schema/allOf/0'
                       - type: object
                         properties:
                           data:
@@ -480,7 +480,7 @@ paths:
                             payment_sources:
                               title: customer_payment_sources_response
                               allOf:
-                                - $ref: '#/paths/~1events/get/responses/200/content/application~1vnd.conekta-v2.0.0%2Bjson/schema/allOf/0'
+                                - $ref: '#/paths/~1plans/get/responses/200/content/application~1vnd.conekta-v2.0.0%2Bjson/schema/allOf/0'
                                 - type: object
                                   title: customerPaymentSources
                                   properties:
@@ -505,7 +505,7 @@ paths:
                             fiscal_entities:
                               title: customer_fiscal_entities_response
                               allOf:
-                                - $ref: '#/paths/~1events/get/responses/200/content/application~1vnd.conekta-v2.0.0%2Bjson/schema/allOf/0'
+                                - $ref: '#/paths/~1plans/get/responses/200/content/application~1vnd.conekta-v2.0.0%2Bjson/schema/allOf/0'
                                 - type: object
                                   properties:
                                     data:
@@ -538,7 +538,7 @@ paths:
                             shipping_contacts:
                               title: customers_shipping_contacts_response
                               allOf:
-                                - $ref: '#/paths/~1events/get/responses/200/content/application~1vnd.conekta-v2.0.0%2Bjson/schema/allOf/0'
+                                - $ref: '#/paths/~1plans/get/responses/200/content/application~1vnd.conekta-v2.0.0%2Bjson/schema/allOf/0'
                                 - type: object
                                   properties:
                                     data:
@@ -563,7 +563,7 @@ paths:
                                                 type: integer
                                                 format: int64
                                                 example: 1675715413
-                  - $ref: '#/paths/~1events/get/responses/200/content/application~1vnd.conekta-v2.0.0%2Bjson/schema/allOf/0'
+                  - $ref: '#/paths/~1plans/get/responses/200/content/application~1vnd.conekta-v2.0.0%2Bjson/schema/allOf/0'
           headers:
             Date:
               description: The date and time that the response was sent
@@ -645,7 +645,7 @@ paths:
         '401':
           $ref: '#/paths/~1logs/get/responses/401'
         '404':
-          $ref: '#/paths/~1orders~1%7Bid%7D/get/responses/404'
+          $ref: '#/paths/~1plans~1%7Bid%7D/get/responses/404'
         '422':
           $ref: '#/paths/~1logs/get/responses/422'
         '500':
@@ -807,7 +807,7 @@ paths:
         '401':
           $ref: '#/paths/~1logs/get/responses/401'
         '404':
-          $ref: '#/paths/~1orders~1%7Bid%7D/get/responses/404'
+          $ref: '#/paths/~1plans~1%7Bid%7D/get/responses/404'
         '422':
           $ref: '#/paths/~1logs/get/responses/422'
         '500':
@@ -861,7 +861,7 @@ paths:
         '401':
           $ref: '#/paths/~1logs/get/responses/401'
         '404':
-          $ref: '#/paths/~1orders~1%7Bid%7D/get/responses/404'
+          $ref: '#/paths/~1plans~1%7Bid%7D/get/responses/404'
         '422':
           $ref: '#/paths/~1logs/get/responses/422'
         '500':
@@ -986,7 +986,7 @@ paths:
         '401':
           $ref: '#/paths/~1logs/get/responses/401'
         '404':
-          $ref: '#/paths/~1orders~1%7Bid%7D/get/responses/404'
+          $ref: '#/paths/~1plans~1%7Bid%7D/get/responses/404'
         '422':
           $ref: '#/paths/~1logs/get/responses/422'
         '500':
@@ -1065,7 +1065,7 @@ paths:
         '401':
           $ref: '#/paths/~1logs/get/responses/401'
         '404':
-          $ref: '#/paths/~1orders~1%7Bid%7D/get/responses/404'
+          $ref: '#/paths/~1plans~1%7Bid%7D/get/responses/404'
         '422':
           $ref: '#/paths/~1logs/get/responses/422'
         '500':
@@ -1144,7 +1144,7 @@ paths:
         '401':
           $ref: '#/paths/~1logs/get/responses/401'
         '404':
-          $ref: '#/paths/~1orders~1%7Bid%7D/get/responses/404'
+          $ref: '#/paths/~1plans~1%7Bid%7D/get/responses/404'
         '422':
           $ref: '#/paths/~1logs/get/responses/422'
         '500':
@@ -1219,7 +1219,7 @@ paths:
         '401':
           $ref: '#/paths/~1logs/get/responses/401'
         '404':
-          $ref: '#/paths/~1orders~1%7Bid%7D/get/responses/404'
+          $ref: '#/paths/~1plans~1%7Bid%7D/get/responses/404'
         '422':
           $ref: '#/paths/~1logs/get/responses/422'
         '500':
@@ -1250,35 +1250,8 @@ paths:
               schema:
                 title: get_events_response
                 allOf:
-                  - title: pagination metadata
-                    description: pagination metadata
-                    type: object
-                    required:
-                      - object
-                      - has_more
-                      - total
-                    properties:
-                      object:
-                        type: string
-                        example: list
-                      has_more:
-                        type: boolean
-                        example: false
-                      total:
-                        type: integer
-                        format: int32
-                  - title: page metadata
-                    description: page metadata
-                    type: object
-                    properties:
-                      next_page_url:
-                        description: URL of the next page.
-                        type: string
-                        nullable: true
-                      previous_page_url:
-                        description: Url of the previous page.
-                        type: string
-                        nullable: true
+                  - $ref: '#/paths/~1plans/get/responses/200/content/application~1vnd.conekta-v2.0.0%2Bjson/schema/allOf/0'
+                  - $ref: '#/paths/~1plans/get/responses/200/content/application~1vnd.conekta-v2.0.0%2Bjson/schema/allOf/1'
                   - type: object
                     properties:
                       data:
@@ -1779,7 +1752,7 @@ paths:
                         example: channel_2tNDzhA4Akmzj11AU
                   charges:
                     allOf:
-                      - $ref: '#/paths/~1events/get/responses/200/content/application~1vnd.conekta-v2.0.0%2Bjson/schema/allOf/0'
+                      - $ref: '#/paths/~1plans/get/responses/200/content/application~1vnd.conekta-v2.0.0%2Bjson/schema/allOf/0'
                       - type: object
                         properties:
                           data:
@@ -1965,7 +1938,7 @@ paths:
                             example: cus_23874283647
                   discount_lines:
                     allOf:
-                      - $ref: '#/paths/~1events/get/responses/200/content/application~1vnd.conekta-v2.0.0%2Bjson/schema/allOf/0'
+                      - $ref: '#/paths/~1plans/get/responses/200/content/application~1vnd.conekta-v2.0.0%2Bjson/schema/allOf/0'
                       - type: object
                         properties:
                           data:
@@ -2032,7 +2005,7 @@ paths:
                     example: false
                   line_items:
                     allOf:
-                      - $ref: '#/paths/~1events/get/responses/200/content/application~1vnd.conekta-v2.0.0%2Bjson/schema/allOf/0'
+                      - $ref: '#/paths/~1plans/get/responses/200/content/application~1vnd.conekta-v2.0.0%2Bjson/schema/allOf/0'
                       - type: object
                         properties:
                           data:
@@ -2279,8 +2252,8 @@ paths:
                         type: array
                         items:
                           $ref: '#/paths/~1orders/post/responses/200/content/application~1vnd.conekta-v2.0.0%2Bjson/schema'
-                  - $ref: '#/paths/~1events/get/responses/200/content/application~1vnd.conekta-v2.0.0%2Bjson/schema/allOf/0'
-                  - $ref: '#/paths/~1events/get/responses/200/content/application~1vnd.conekta-v2.0.0%2Bjson/schema/allOf/1'
+                  - $ref: '#/paths/~1plans/get/responses/200/content/application~1vnd.conekta-v2.0.0%2Bjson/schema/allOf/0'
+                  - $ref: '#/paths/~1plans/get/responses/200/content/application~1vnd.conekta-v2.0.0%2Bjson/schema/allOf/1'
         '401':
           $ref: '#/paths/~1logs/get/responses/401'
         '500':
@@ -2307,14 +2280,7 @@ paths:
         '401':
           $ref: '#/paths/~1logs/get/responses/401'
         '404':
-          description: not found entity
-          content:
-            application/vnd.conekta-v2.0.0+json:
-              schema:
-                $ref: '#/paths/~1logs/get/responses/401/content/application~1vnd.conekta-v2.0.0%2Bjson/schema'
-            application/json; charset=utf-8:
-              schema:
-                $ref: '#/paths/~1logs/get/responses/401/content/application~1vnd.conekta-v2.0.0%2Bjson/schema'
+          $ref: '#/paths/~1plans~1%7Bid%7D/get/responses/404'
         '500':
           $ref: '#/paths/~1logs/get/responses/500'
       security:
@@ -2335,7 +2301,7 @@ paths:
         '401':
           $ref: '#/paths/~1logs/get/responses/401'
         '404':
-          $ref: '#/paths/~1orders~1%7Bid%7D/get/responses/404'
+          $ref: '#/paths/~1plans~1%7Bid%7D/get/responses/404'
         '422':
           $ref: '#/paths/~1logs/get/responses/422'
         '500':
@@ -2410,7 +2376,7 @@ paths:
         '401':
           $ref: '#/paths/~1logs/get/responses/401'
         '404':
-          $ref: '#/paths/~1orders~1%7Bid%7D/get/responses/404'
+          $ref: '#/paths/~1plans~1%7Bid%7D/get/responses/404'
         '500':
           $ref: '#/paths/~1logs/get/responses/500'
       security:
@@ -2601,7 +2567,7 @@ paths:
         '401':
           $ref: '#/paths/~1logs/get/responses/401'
         '404':
-          $ref: '#/paths/~1orders~1%7Bid%7D/get/responses/404'
+          $ref: '#/paths/~1plans~1%7Bid%7D/get/responses/404'
         '500':
           $ref: '#/paths/~1logs/get/responses/500'
       security:
@@ -2678,7 +2644,7 @@ paths:
         '401':
           $ref: '#/paths/~1logs/get/responses/401'
         '404':
-          $ref: '#/paths/~1orders~1%7Bid%7D/get/responses/404'
+          $ref: '#/paths/~1plans~1%7Bid%7D/get/responses/404'
         '500':
           $ref: '#/paths/~1logs/get/responses/500'
       security:
@@ -2719,7 +2685,7 @@ paths:
         '401':
           $ref: '#/paths/~1logs/get/responses/401'
         '404':
-          $ref: '#/paths/~1orders~1%7Bid%7D/get/responses/404'
+          $ref: '#/paths/~1plans~1%7Bid%7D/get/responses/404'
         '422':
           $ref: '#/paths/~1logs/get/responses/422'
         '500':
@@ -2762,7 +2728,7 @@ paths:
         '401':
           $ref: '#/paths/~1logs/get/responses/401'
         '404':
-          $ref: '#/paths/~1orders~1%7Bid%7D/get/responses/404'
+          $ref: '#/paths/~1plans~1%7Bid%7D/get/responses/404'
         '500':
           $ref: '#/paths/~1logs/get/responses/500'
       security:
@@ -2827,7 +2793,7 @@ paths:
         '401':
           $ref: '#/paths/~1logs/get/responses/401'
         '404':
-          $ref: '#/paths/~1orders~1%7Bid%7D/get/responses/404'
+          $ref: '#/paths/~1plans~1%7Bid%7D/get/responses/404'
         '422':
           $ref: '#/paths/~1logs/get/responses/422'
         '500':
@@ -2860,7 +2826,7 @@ paths:
         '401':
           $ref: '#/paths/~1logs/get/responses/401'
         '404':
-          $ref: '#/paths/~1orders~1%7Bid%7D/get/responses/404'
+          $ref: '#/paths/~1plans~1%7Bid%7D/get/responses/404'
         '422':
           $ref: '#/paths/~1logs/get/responses/422'
         '500':
@@ -2910,7 +2876,7 @@ paths:
         '401':
           $ref: '#/paths/~1logs/get/responses/401'
         '404':
-          $ref: '#/paths/~1orders~1%7Bid%7D/get/responses/404'
+          $ref: '#/paths/~1plans~1%7Bid%7D/get/responses/404'
         '500':
           $ref: '#/paths/~1logs/get/responses/500'
       security:
@@ -2958,7 +2924,7 @@ paths:
         '401':
           $ref: '#/paths/~1logs/get/responses/401'
         '404':
-          $ref: '#/paths/~1orders~1%7Bid%7D/get/responses/404'
+          $ref: '#/paths/~1plans~1%7Bid%7D/get/responses/404'
         '422':
           $ref: '#/paths/~1logs/get/responses/422'
         '500':
@@ -3006,7 +2972,7 @@ paths:
         '401':
           $ref: '#/paths/~1logs/get/responses/401'
         '404':
-          $ref: '#/paths/~1orders~1%7Bid%7D/get/responses/404'
+          $ref: '#/paths/~1plans~1%7Bid%7D/get/responses/404'
         '422':
           $ref: '#/paths/~1logs/get/responses/422'
         '500':
@@ -3048,7 +3014,7 @@ paths:
         '401':
           $ref: '#/paths/~1logs/get/responses/401'
         '404':
-          $ref: '#/paths/~1orders~1%7Bid%7D/get/responses/404'
+          $ref: '#/paths/~1plans~1%7Bid%7D/get/responses/404'
         '422':
           $ref: '#/paths/~1logs/get/responses/422'
         '500':
@@ -3067,6 +3033,427 @@ paths:
             type: string
           example: tax_lin_2tQ974hSHcsdeSZHG
         - $ref: '#/paths/~1logs/get/parameters/0'
+  /plans:
+    get:
+      tags:
+        - plans
+      operationId: getPlans
+      summary: returns a set of /plans
+      responses:
+        '200':
+          description: successful
+          content:
+            application/vnd.conekta-v2.0.0+json:
+              schema:
+                title: get_plans_response
+                allOf:
+                  - title: pagination metadata
+                    description: pagination metadata
+                    type: object
+                    required:
+                      - object
+                      - has_more
+                      - total
+                    properties:
+                      object:
+                        type: string
+                        example: list
+                      has_more:
+                        type: boolean
+                        example: false
+                      total:
+                        type: integer
+                        format: int32
+                  - title: page metadata
+                    description: page metadata
+                    type: object
+                    properties:
+                      next_page_url:
+                        description: URL of the next page.
+                        type: string
+                        nullable: true
+                      previous_page_url:
+                        description: Url of the previous page.
+                        type: string
+                        nullable: true
+                  - type: object
+                    properties:
+                      data:
+                        type: array
+                        items:
+                          $ref: '#/paths/~1plans/post/responses/200/content/application~1vnd.conekta-v2.0.0%2Bjson/schema'
+          headers:
+            Date:
+              description: The date and time that the response was sent
+              schema:
+                type: string
+                example: 'Fri, 03 Feb 2023 16:57:48 GMT'
+            Content-Type:
+              description: The format of the response body
+              schema:
+                type: string
+                example: application/json; charset=utf-8
+            Content-Length:
+              description: The length of the response body in bytes
+              schema:
+                type: string
+                example: '2737'
+            Connection:
+              description: The type of connection used to transfer the response
+              schema:
+                type: string
+                example: keep-alive
+            Conekta-Media-Type:
+              schema:
+                type: string
+                example: conekta-v2.0.0; format=application/json
+        '401':
+          $ref: '#/paths/~1logs/get/responses/401'
+        '422':
+          $ref: '#/paths/~1logs/get/responses/422'
+        '500':
+          $ref: '#/paths/~1logs/get/responses/500'
+      security:
+        - bearerAuth: []
+      parameters:
+        - $ref: '#/paths/~1logs/get/parameters/0'
+        - $ref: '#/paths/~1logs/get/parameters/1'
+        - $ref: '#/paths/~1logs/get/parameters/2'
+        - $ref: '#/paths/~1logs/get/parameters/3'
+        - $ref: '#/paths/~1logs/get/parameters/4'
+    post:
+      tags:
+        - plans
+      operationId: createPlan
+      summary: returns a plan
+      responses:
+        '200':
+          description: successful
+          content:
+            application/vnd.conekta-v2.0.0+json:
+              schema:
+                title: plan_response
+                description: plans model
+                type: object
+                properties:
+                  amount:
+                    type: integer
+                    example: 10000
+                  created_at:
+                    type: integer
+                    example: 1666900846
+                  currency:
+                    type: string
+                    example: MXN
+                    maxLength: 3
+                  expiry_count:
+                    type: integer
+                    example: 12
+                    nullable: true
+                  frequency:
+                    type: integer
+                    example: 1
+                  id:
+                    type: string
+                    example: gold-plan
+                  interval:
+                    type: string
+                    example: month
+                  livemode:
+                    type: boolean
+                    example: true
+                  name:
+                    type: string
+                    example: Extra Plan3
+                  object:
+                    type: string
+                    example: plan
+                  trial_period_days:
+                    type: integer
+                    example: 0
+                    nullable: true
+          headers:
+            Date:
+              description: The date and time that the response was sent
+              schema:
+                type: string
+                example: 'Fri, 03 Feb 2023 16:57:48 GMT'
+            Content-Type:
+              description: The format of the response body
+              schema:
+                type: string
+                example: application/json; charset=utf-8
+            Content-Length:
+              description: The length of the response body in bytes
+              schema:
+                type: string
+                example: '2737'
+            Connection:
+              description: The type of connection used to transfer the response
+              schema:
+                type: string
+                example: keep-alive
+            Conekta-Media-Type:
+              schema:
+                type: string
+                example: conekta-v2.0.0; format=application/json
+        '401':
+          $ref: '#/paths/~1logs/get/responses/401'
+        '422':
+          $ref: '#/paths/~1logs/get/responses/422'
+        '500':
+          $ref: '#/paths/~1logs/get/responses/500'
+      security:
+        - bearerAuth: []
+      requestBody:
+        description: requested field for plan
+        content:
+          application/json:
+            schema:
+              title: a plan
+              description: a plan
+              type: object
+              required:
+                - amount
+                - frequency
+                - interval
+                - name
+              properties:
+                amount:
+                  type: integer
+                  example: 10000
+                  minimum: 1
+                currency:
+                  type: string
+                  example: MXN
+                  maxLength: 3
+                expiry_count:
+                  type: integer
+                  example: 12
+                id:
+                  type: string
+                  example: plan_24234
+                interval:
+                  type: string
+                  enum:
+                    - week
+                    - half_month
+                    - month
+                    - year
+                  x-enumDescriptions:
+                    week: webb
+                frequency:
+                  type: integer
+                  example: 1
+                name:
+                  type: string
+                  example: Extra Plan3
+                trial_period_days:
+                  type: integer
+                  example: 0
+        required: true
+      parameters:
+        - $ref: '#/paths/~1logs/get/parameters/0'
+  '/plans/{id}':
+    get:
+      tags:
+        - plans
+      operationId: getPlan
+      summary: returns a plan
+      responses:
+        '200':
+          description: successful
+          content:
+            application/vnd.conekta-v2.0.0+json:
+              schema:
+                $ref: '#/paths/~1plans/post/responses/200/content/application~1vnd.conekta-v2.0.0%2Bjson/schema'
+          headers:
+            Date:
+              description: The date and time that the response was sent
+              schema:
+                type: string
+                example: 'Fri, 03 Feb 2023 16:57:48 GMT'
+            Content-Type:
+              description: The format of the response body
+              schema:
+                type: string
+                example: application/json; charset=utf-8
+            Content-Length:
+              description: The length of the response body in bytes
+              schema:
+                type: string
+                example: '2737'
+            Connection:
+              description: The type of connection used to transfer the response
+              schema:
+                type: string
+                example: keep-alive
+            Conekta-Media-Type:
+              schema:
+                type: string
+                example: conekta-v2.0.0; format=application/json
+        '401':
+          $ref: '#/paths/~1logs/get/responses/401'
+        '404':
+          description: not found entity
+          content:
+            application/vnd.conekta-v2.0.0+json:
+              schema:
+                $ref: '#/paths/~1logs/get/responses/401/content/application~1vnd.conekta-v2.0.0%2Bjson/schema'
+            application/json; charset=utf-8:
+              schema:
+                $ref: '#/paths/~1logs/get/responses/401/content/application~1vnd.conekta-v2.0.0%2Bjson/schema'
+        '422':
+          $ref: '#/paths/~1logs/get/responses/422'
+        '500':
+          $ref: '#/paths/~1logs/get/responses/500'
+      security:
+        - bearerAuth: []
+      parameters:
+        - $ref: '#/paths/~1logs/get/parameters/0'
+        - $ref: '#/paths/~1logs~1%7Bid%7D/get/parameters/0'
+    put:
+      tags:
+        - plans
+      operationId: updatePlan
+      summary: returns an updated plan
+      responses:
+        '200':
+          description: successful
+          content:
+            application/vnd.conekta-v2.0.0+json:
+              schema:
+                $ref: '#/paths/~1plans/post/responses/200/content/application~1vnd.conekta-v2.0.0%2Bjson/schema'
+          headers:
+            Date:
+              description: The date and time that the response was sent
+              schema:
+                type: string
+                example: 'Fri, 03 Feb 2023 16:57:48 GMT'
+            Content-Type:
+              description: The format of the response body
+              schema:
+                type: string
+                example: application/json; charset=utf-8
+            Content-Length:
+              description: The length of the response body in bytes
+              schema:
+                type: string
+                example: '2737'
+            Connection:
+              description: The type of connection used to transfer the response
+              schema:
+                type: string
+                example: keep-alive
+            Conekta-Media-Type:
+              schema:
+                type: string
+                example: conekta-v2.0.0; format=application/json
+        '401':
+          $ref: '#/paths/~1logs/get/responses/401'
+        '404':
+          $ref: '#/paths/~1plans~1%7Bid%7D/get/responses/404'
+        '422':
+          $ref: '#/paths/~1logs/get/responses/422'
+        '500':
+          $ref: '#/paths/~1logs/get/responses/500'
+      security:
+        - bearerAuth: []
+      requestBody:
+        description: requested field for plan
+        content:
+          application/json:
+            schema:
+              title: update_plan
+              description: a plan
+              type: object
+              properties:
+                amount:
+                  type: integer
+                  example: 10000
+                  minimum: 1
+                currency:
+                  type: string
+                  example: MXN
+                  maxLength: 3
+                expiry_count:
+                  type: integer
+                  example: 12
+                id:
+                  type: string
+                  example: plan_24234
+                interval:
+                  type: string
+                  enum:
+                    - week
+                    - half_month
+                    - month
+                    - year
+                  x-enumDescriptions:
+                    week: webb
+                frequency:
+                  type: integer
+                  example: 1
+                name:
+                  type: string
+                  example: Extra Plan3
+                trial_period_days:
+                  type: integer
+                  example: 0
+        required: true
+      parameters:
+        - $ref: '#/paths/~1logs/get/parameters/0'
+        - $ref: '#/paths/~1logs~1%7Bid%7D/get/parameters/0'
+    delete:
+      tags:
+        - plans
+      operationId: deletePlan
+      summary: returns a plan
+      responses:
+        '200':
+          description: successful
+          content:
+            application/vnd.conekta-v2.0.0+json:
+              schema:
+                $ref: '#/paths/~1plans/post/responses/200/content/application~1vnd.conekta-v2.0.0%2Bjson/schema'
+          headers:
+            Date:
+              description: The date and time that the response was sent
+              schema:
+                type: string
+                example: 'Fri, 03 Feb 2023 16:57:48 GMT'
+            Content-Type:
+              description: The format of the response body
+              schema:
+                type: string
+                example: application/json; charset=utf-8
+            Content-Length:
+              description: The length of the response body in bytes
+              schema:
+                type: string
+                example: '2737'
+            Connection:
+              description: The type of connection used to transfer the response
+              schema:
+                type: string
+                example: keep-alive
+            Conekta-Media-Type:
+              schema:
+                type: string
+                example: conekta-v2.0.0; format=application/json
+        '401':
+          $ref: '#/paths/~1logs/get/responses/401'
+        '404':
+          $ref: '#/paths/~1plans~1%7Bid%7D/get/responses/404'
+        '422':
+          $ref: '#/paths/~1logs/get/responses/422'
+        '500':
+          $ref: '#/paths/~1logs/get/responses/500'
+      security:
+        - bearerAuth: []
+      parameters:
+        - $ref: '#/paths/~1logs/get/parameters/0'
+        - $ref: '#/paths/~1logs~1%7Bid%7D/get/parameters/0'
   /webhooks:
     get:
       tags:
@@ -3081,8 +3468,8 @@ paths:
               schema:
                 title: get_webhooks_response
                 allOf:
-                  - $ref: '#/paths/~1events/get/responses/200/content/application~1vnd.conekta-v2.0.0%2Bjson/schema/allOf/0'
-                  - $ref: '#/paths/~1events/get/responses/200/content/application~1vnd.conekta-v2.0.0%2Bjson/schema/allOf/1'
+                  - $ref: '#/paths/~1plans/get/responses/200/content/application~1vnd.conekta-v2.0.0%2Bjson/schema/allOf/0'
+                  - $ref: '#/paths/~1plans/get/responses/200/content/application~1vnd.conekta-v2.0.0%2Bjson/schema/allOf/1'
                   - type: object
                     properties:
                       data:
@@ -3254,7 +3641,7 @@ paths:
         '401':
           $ref: '#/paths/~1logs/get/responses/401'
         '404':
-          $ref: '#/paths/~1orders~1%7Bid%7D/get/responses/404'
+          $ref: '#/paths/~1plans~1%7Bid%7D/get/responses/404'
         '422':
           $ref: '#/paths/~1logs/get/responses/422'
         '500':
@@ -3330,7 +3717,7 @@ paths:
         '401':
           $ref: '#/paths/~1logs/get/responses/401'
         '404':
-          $ref: '#/paths/~1orders~1%7Bid%7D/get/responses/404'
+          $ref: '#/paths/~1plans~1%7Bid%7D/get/responses/404'
         '422':
           $ref: '#/paths/~1logs/get/responses/422'
         '500':
