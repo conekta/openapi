@@ -55,7 +55,7 @@ get:
   tags:
     - customers
   operationId: getCustomers
-  summary: returns customer
+  summary: returns customers
   description: 'The purpose of business is to create and maintain a client, you will learn what elements you need to obtain a list of clients, which can be paged.'
   responses:
     '200':

@@ -2,7 +2,7 @@ post:
   tags:
     - subscriptions
   operationId: createSubscription
-  summary: returns a subscription
+  summary: crates a subscription
   responses:
     200:
       description: successful
@@ -54,7 +54,7 @@ put:
   tags:
     - subscriptions
   operationId: updateSubscription
-  summary: returns an updated subscription
+  summary: updates a subscription
   responses:
     200:
       description: successful

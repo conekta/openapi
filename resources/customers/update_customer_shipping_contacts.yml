@@ -2,7 +2,7 @@ put:
   tags:
     - customers
   operationId: UpdateCustomerShippingContacts
-  summary: returns an updated shipping contacts
+  summary: updates a shipping contacts
   description: 'Gets a customer resource that corresponds to a customer ID.'
   responses:
     '200':

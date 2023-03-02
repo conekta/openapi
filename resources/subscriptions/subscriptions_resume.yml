@@ -2,7 +2,7 @@ post:
   tags:
     - subscriptions
   operationId: resumeSubscription
-  summary: returns a subscription
+  summary: resumes a subscription
   responses:
     200:
       description: successful

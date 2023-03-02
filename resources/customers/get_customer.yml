@@ -29,7 +29,7 @@ delete:
   tags:
     - customers
   operationId: deleteCustomerById
-  summary: returns a deleted customer
+  summary: deletes a customer
   description: 'Deleted a customer resource that corresponds to a customer ID.'
   responses:
     '200':

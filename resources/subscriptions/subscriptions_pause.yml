@@ -2,7 +2,7 @@ post:
   tags:
     - subscriptions
   operationId: pauseSubscription
-  summary: returns a subscription
+  summary: pauses a subscription
   responses:
     200:
       description: successful

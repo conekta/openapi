@@ -2,7 +2,7 @@ put:
   tags:
     - checkouts
   operationId: cancelCheckout
-  summary: returns a checkout
+  summary: cancels a checkout
   responses:
     '200':
       description: successful operation

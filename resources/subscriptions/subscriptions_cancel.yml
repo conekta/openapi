@@ -2,7 +2,7 @@ post:
   tags:
     - subscriptions
   operationId: cancelSubscription
-  summary: returns a subscription
+  summary: cancels a subscription
   responses:
     200:
       description: successful

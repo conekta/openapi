@@ -2,7 +2,7 @@ post:
   tags:
     - checkouts
   operationId: smsCheckout
-  summary: returns a checkout
+  summary: sends an sms
   responses:
     '200':
       description: successful operation

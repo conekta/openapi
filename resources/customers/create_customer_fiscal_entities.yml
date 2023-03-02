@@ -2,7 +2,7 @@ post:
   tags:
     - customers
   operationId: CreateCustomerFiscalEntities
-  summary: returns a fiscal entities
+  summary: creates a fiscal entities
   description: 'creates a customer resource that corresponds to a customer ID.'
   responses:
     '200':

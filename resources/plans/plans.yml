@@ -62,7 +62,7 @@ post:
   tags:
     - plans
   operationId: createPlan
-  summary: returns a plan
+  summary: creates a plan
   responses:
     200:
       description: successful

@@ -2,7 +2,7 @@ post:
   tags:
     - customers
   operationId: CreateCustomerPaymentSources
-  summary: returns a payment source
+  summary: creates a payment source
   description: 'Gets a customer resource that corresponds to a customer ID.'
   responses:
     '200':

@@ -452,7 +452,7 @@ paths:
       tags:
         - checkouts
       operationId: cancelCheckout
-      summary: returns a checkout
+      summary: cancels a checkout
       responses:
         '200':
           description: successful operation
@@ -505,7 +505,7 @@ paths:
       tags:
         - checkouts
       operationId: emailCheckout
-      summary: returns a checkout
+      summary: sends an email
       responses:
         '200':
           description: successful operation
@@ -570,7 +570,7 @@ paths:
       tags:
         - checkouts
       operationId: smsCheckout
-      summary: returns a checkout
+      summary: sends an sms
       responses:
         '200':
           description: successful operation
@@ -902,7 +902,7 @@ paths:
       tags:
         - customers
       operationId: getCustomers
-      summary: returns customer
+      summary: returns customers
       description: 'The purpose of business is to create and maintain a client, you will learn what elements you need to obtain a list of clients, which can be paged.'
       responses:
         '200':
@@ -1135,7 +1135,7 @@ paths:
       tags:
         - customers
       operationId: deleteCustomerById
-      summary: returns a deleted customer
+      summary: deletes a customer
       description: Deleted a customer resource that corresponds to a customer ID.
       responses:
         '200':
@@ -1262,7 +1262,7 @@ paths:
       tags:
         - customers
       operationId: CreateCustomerFiscalEntities
-      summary: returns a fiscal entities
+      summary: creates a fiscal entities
       description: creates a customer resource that corresponds to a customer ID.
       responses:
         '200':
@@ -1335,7 +1335,7 @@ paths:
       tags:
         - customers
       operationId: UpdateCustomerFiscalEntities
-      summary: returns a fiscal entities
+      summary: updates a  fiscal entities
       description: updates a customer resource that corresponds to a customer ID.
       responses:
         '200':
@@ -1393,7 +1393,7 @@ paths:
       tags:
         - customers
       operationId: CreateCustomerPaymentSources
-      summary: returns a payment source
+      summary: creates a payment source
       description: Gets a customer resource that corresponds to a customer ID.
       responses:
         '200':
@@ -1554,7 +1554,7 @@ paths:
       tags:
         - customers
       operationId: UpdateCustomerPaymentSources
-      summary: returns an updated payment source
+      summary: updates a payment source
       description: Gets a customer resource that corresponds to a customer ID.
       responses:
         '200':
@@ -1601,7 +1601,7 @@ paths:
       tags:
         - customers
       operationId: CreateCustomerShippingContacts
-      summary: returns a shipping contacts
+      summary: creates a shipping contacts
       description: Gets a customer resource that corresponds to a customer ID.
       responses:
         '200':
@@ -1723,7 +1723,7 @@ paths:
       tags:
         - customers
       operationId: UpdateCustomerShippingContacts
-      summary: returns an updated shipping contacts
+      summary: updates a shipping contacts
       description: Gets a customer resource that corresponds to a customer ID.
       responses:
         '200':
@@ -1759,7 +1759,7 @@ paths:
       tags:
         - subscriptions
       operationId: createSubscription
-      summary: returns a subscription
+      summary: crates a subscription
       responses:
         '200':
           description: successful
@@ -1811,7 +1811,7 @@ paths:
       tags:
         - subscriptions
       operationId: updateSubscription
-      summary: returns an updated subscription
+      summary: updates a subscription
       responses:
         '200':
           description: successful
@@ -1969,7 +1969,7 @@ paths:
       tags:
         - subscriptions
       operationId: cancelSubscription
-      summary: returns a subscription
+      summary: cancels a subscription
       responses:
         '200':
           description: successful
@@ -2022,7 +2022,7 @@ paths:
       tags:
         - subscriptions
       operationId: pauseSubscription
-      summary: returns a subscription
+      summary: pauses a subscription
       responses:
         '200':
           description: successful
@@ -2075,7 +2075,7 @@ paths:
       tags:
         - subscriptions
       operationId: resumeSubscription
-      summary: returns a subscription
+      summary: resumes a subscription
       responses:
         '200':
           description: successful
@@ -4048,7 +4048,7 @@ paths:
       tags:
         - plans
       operationId: createPlan
-      summary: returns a plan
+      summary: creates a plan
       responses:
         '200':
           description: successful
@@ -4237,7 +4237,7 @@ paths:
       tags:
         - plans
       operationId: updatePlan
-      summary: returns an updated plan
+      summary: updates a plan
       responses:
         '200':
           description: successful
@@ -4327,7 +4327,7 @@ paths:
       tags:
         - plans
       operationId: deletePlan
-      summary: returns a plan
+      summary: deletes a plan
       responses:
         '200':
           description: successful
