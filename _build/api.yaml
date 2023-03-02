@@ -1238,6 +1238,375 @@ paths:
             type: string
           example: 6307a60c41de27127515a575
         - $ref: '#/paths/~1logs/get/parameters/0'
+  '/customers/{id}/subscription':
+    post:
+      tags:
+        - subscriptions
+      operationId: createSubscription
+      summary: returns a subscription
+      responses:
+        '200':
+          description: successful
+          content:
+            application/vnd.conekta-v2.0.0+json:
+              schema:
+                $ref: '#/paths/~1customers~1%7Bid%7D~1subscription/put/responses/200/content/application~1vnd.conekta-v2.0.0%2Bjson/schema'
+          headers:
+            Date:
+              description: The date and time that the response was sent
+              schema:
+                type: string
+                example: 'Fri, 03 Feb 2023 16:57:48 GMT'
+            Content-Type:
+              description: The format of the response body
+              schema:
+                type: string
+                example: application/json; charset=utf-8
+            Content-Length:
+              description: The length of the response body in bytes
+              schema:
+                type: string
+                example: '2737'
+            Connection:
+              description: The type of connection used to transfer the response
+              schema:
+                type: string
+                example: keep-alive
+            Conekta-Media-Type:
+              schema:
+                type: string
+                example: conekta-v2.0.0; format=application/json
+        '401':
+          $ref: '#/paths/~1logs/get/responses/401'
+        '404':
+          $ref: '#/paths/~1plans~1%7Bid%7D/get/responses/404'
+        '422':
+          $ref: '#/paths/~1logs/get/responses/422'
+        '500':
+          $ref: '#/paths/~1logs/get/responses/500'
+      security:
+        - bearerAuth: []
+      requestBody:
+        $ref: '#/paths/~1customers~1%7Bid%7D~1subscription/put/requestBody'
+      parameters:
+        - $ref: '#/paths/~1logs/get/parameters/0'
+        - $ref: '#/paths/~1logs~1%7Bid%7D/get/parameters/0'
+    put:
+      tags:
+        - subscriptions
+      operationId: updateSubscription
+      summary: returns an updated subscription
+      responses:
+        '200':
+          description: successful
+          content:
+            application/vnd.conekta-v2.0.0+json:
+              schema:
+                title: subscription_response
+                description: subscription model
+                type: object
+                properties:
+                  billing_cycle_end:
+                    type: string
+                    example: 1677626827
+                  card_id:
+                    type: string
+                    example: src_2tKcHxhTz7xU5SymL
+                  created_at:
+                    type: integer
+                    example: 1677626837
+                  customer_id:
+                    type: string
+                    example: cus_2tKcHxhTz7xU5SymF
+                  id:
+                    type: string
+                    example: gold-plan
+                  last_billing_cycle_order_id:
+                    type: string
+                    example: ord_2tSoMP7bZJbLiq4z8
+                  object:
+                    type: string
+                    example: subscription
+                  plan_id:
+                    type: string
+                    example: gold-plan
+                  status:
+                    type: string
+                    example: past_due
+                  subscription_start:
+                    type: integer
+                    example: 1677626837
+                  trial_end:
+                    type: integer
+                    example: 1677626837
+          headers:
+            Date:
+              description: The date and time that the response was sent
+              schema:
+                type: string
+                example: 'Fri, 03 Feb 2023 16:57:48 GMT'
+            Content-Type:
+              description: The format of the response body
+              schema:
+                type: string
+                example: application/json; charset=utf-8
+            Content-Length:
+              description: The length of the response body in bytes
+              schema:
+                type: string
+                example: '2737'
+            Connection:
+              description: The type of connection used to transfer the response
+              schema:
+                type: string
+                example: keep-alive
+            Conekta-Media-Type:
+              schema:
+                type: string
+                example: conekta-v2.0.0; format=application/json
+        '401':
+          $ref: '#/paths/~1logs/get/responses/401'
+        '404':
+          $ref: '#/paths/~1plans~1%7Bid%7D/get/responses/404'
+        '422':
+          $ref: '#/paths/~1logs/get/responses/422'
+        '500':
+          $ref: '#/paths/~1logs/get/responses/500'
+      security:
+        - bearerAuth: []
+      requestBody:
+        description: requested field for subscriptions
+        content:
+          application/json:
+            schema:
+              title: a subscription
+              description: a subscriptions
+              type: object
+              required:
+                - plan_id
+              properties:
+                plan_id:
+                  type: string
+                  example: f84gdgf5g48r15fd21g8w424fd1
+                card_id:
+                  type: string
+                  example: src_2qUCNd5AyQqfPMBuV
+                trial_end:
+                  type: integer
+                  example: 1484040996
+        required: true
+      parameters:
+        - $ref: '#/paths/~1logs/get/parameters/0'
+        - $ref: '#/paths/~1logs~1%7Bid%7D/get/parameters/0'
+    get:
+      tags:
+        - subscriptions
+      operationId: getSubscription
+      summary: returns a subscription
+      responses:
+        '200':
+          description: successful
+          content:
+            application/vnd.conekta-v2.0.0+json:
+              schema:
+                $ref: '#/paths/~1customers~1%7Bid%7D~1subscription/put/responses/200/content/application~1vnd.conekta-v2.0.0%2Bjson/schema'
+          headers:
+            Date:
+              description: The date and time that the response was sent
+              schema:
+                type: string
+                example: 'Fri, 03 Feb 2023 16:57:48 GMT'
+            Content-Type:
+              description: The format of the response body
+              schema:
+                type: string
+                example: application/json; charset=utf-8
+            Content-Length:
+              description: The length of the response body in bytes
+              schema:
+                type: string
+                example: '2737'
+            Connection:
+              description: The type of connection used to transfer the response
+              schema:
+                type: string
+                example: keep-alive
+            Conekta-Media-Type:
+              schema:
+                type: string
+                example: conekta-v2.0.0; format=application/json
+        '401':
+          $ref: '#/paths/~1logs/get/responses/401'
+        '404':
+          $ref: '#/paths/~1plans~1%7Bid%7D/get/responses/404'
+        '422':
+          $ref: '#/paths/~1logs/get/responses/422'
+        '500':
+          $ref: '#/paths/~1logs/get/responses/500'
+      security:
+        - bearerAuth: []
+      parameters:
+        - $ref: '#/paths/~1logs/get/parameters/0'
+        - $ref: '#/paths/~1logs~1%7Bid%7D/get/parameters/0'
+  '/customers/{id}/subscription/cancel':
+    post:
+      tags:
+        - subscriptions
+      operationId: cancelSubscription
+      summary: returns a subscription
+      responses:
+        '200':
+          description: successful
+          content:
+            application/vnd.conekta-v2.0.0+json:
+              schema:
+                $ref: '#/paths/~1customers~1%7Bid%7D~1subscription/put/responses/200/content/application~1vnd.conekta-v2.0.0%2Bjson/schema'
+          headers:
+            Date:
+              description: The date and time that the response was sent
+              schema:
+                type: string
+                example: 'Fri, 03 Feb 2023 16:57:48 GMT'
+            Content-Type:
+              description: The format of the response body
+              schema:
+                type: string
+                example: application/json; charset=utf-8
+            Content-Length:
+              description: The length of the response body in bytes
+              schema:
+                type: string
+                example: '2737'
+            Connection:
+              description: The type of connection used to transfer the response
+              schema:
+                type: string
+                example: keep-alive
+            Conekta-Media-Type:
+              schema:
+                type: string
+                example: conekta-v2.0.0; format=application/json
+        '401':
+          $ref: '#/paths/~1logs/get/responses/401'
+        '402':
+          $ref: '#/paths/~1customers/get/responses/402'
+        '404':
+          $ref: '#/paths/~1plans~1%7Bid%7D/get/responses/404'
+        '422':
+          $ref: '#/paths/~1logs/get/responses/422'
+        '500':
+          $ref: '#/paths/~1logs/get/responses/500'
+      security:
+        - bearerAuth: []
+      parameters:
+        - $ref: '#/paths/~1logs/get/parameters/0'
+        - $ref: '#/paths/~1logs~1%7Bid%7D/get/parameters/0'
+  '/customers/{id}/subscription/pause':
+    post:
+      tags:
+        - subscriptions
+      operationId: pauseSubscription
+      summary: returns a subscription
+      responses:
+        '200':
+          description: successful
+          content:
+            application/vnd.conekta-v2.0.0+json:
+              schema:
+                $ref: '#/paths/~1customers~1%7Bid%7D~1subscription/put/responses/200/content/application~1vnd.conekta-v2.0.0%2Bjson/schema'
+          headers:
+            Date:
+              description: The date and time that the response was sent
+              schema:
+                type: string
+                example: 'Fri, 03 Feb 2023 16:57:48 GMT'
+            Content-Type:
+              description: The format of the response body
+              schema:
+                type: string
+                example: application/json; charset=utf-8
+            Content-Length:
+              description: The length of the response body in bytes
+              schema:
+                type: string
+                example: '2737'
+            Connection:
+              description: The type of connection used to transfer the response
+              schema:
+                type: string
+                example: keep-alive
+            Conekta-Media-Type:
+              schema:
+                type: string
+                example: conekta-v2.0.0; format=application/json
+        '401':
+          $ref: '#/paths/~1logs/get/responses/401'
+        '402':
+          $ref: '#/paths/~1customers/get/responses/402'
+        '404':
+          $ref: '#/paths/~1plans~1%7Bid%7D/get/responses/404'
+        '422':
+          $ref: '#/paths/~1logs/get/responses/422'
+        '500':
+          $ref: '#/paths/~1logs/get/responses/500'
+      security:
+        - bearerAuth: []
+      parameters:
+        - $ref: '#/paths/~1logs/get/parameters/0'
+        - $ref: '#/paths/~1logs~1%7Bid%7D/get/parameters/0'
+  '/customers/{id}/subscription/resume':
+    post:
+      tags:
+        - subscriptions
+      operationId: resumeSubscription
+      summary: returns a subscription
+      responses:
+        '200':
+          description: successful
+          content:
+            application/vnd.conekta-v2.0.0+json:
+              schema:
+                $ref: '#/paths/~1customers~1%7Bid%7D~1subscription/put/responses/200/content/application~1vnd.conekta-v2.0.0%2Bjson/schema'
+          headers:
+            Date:
+              description: The date and time that the response was sent
+              schema:
+                type: string
+                example: 'Fri, 03 Feb 2023 16:57:48 GMT'
+            Content-Type:
+              description: The format of the response body
+              schema:
+                type: string
+                example: application/json; charset=utf-8
+            Content-Length:
+              description: The length of the response body in bytes
+              schema:
+                type: string
+                example: '2737'
+            Connection:
+              description: The type of connection used to transfer the response
+              schema:
+                type: string
+                example: keep-alive
+            Conekta-Media-Type:
+              schema:
+                type: string
+                example: conekta-v2.0.0; format=application/json
+        '401':
+          $ref: '#/paths/~1logs/get/responses/401'
+        '402':
+          $ref: '#/paths/~1customers/get/responses/402'
+        '404':
+          $ref: '#/paths/~1plans~1%7Bid%7D/get/responses/404'
+        '422':
+          $ref: '#/paths/~1logs/get/responses/422'
+        '500':
+          $ref: '#/paths/~1logs/get/responses/500'
+      security:
+        - bearerAuth: []
+      parameters:
+        - $ref: '#/paths/~1logs/get/parameters/0'
+        - $ref: '#/paths/~1logs~1%7Bid%7D/get/parameters/0'
   /events:
     get:
       operationId: getEvents

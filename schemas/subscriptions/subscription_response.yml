@@ -1,0 +1,37 @@
+title: subscription_response
+description: subscription model
+type: object
+properties:
+  billing_cycle_end:
+    type: string
+    example: 1677626827
+  card_id:
+    type: string
+    example: "src_2tKcHxhTz7xU5SymL"
+  created_at:
+    type: integer
+    example: 1677626837
+  customer_id:
+    type: string
+    example: "cus_2tKcHxhTz7xU5SymF"
+  id:
+    type: string
+    example: "gold-plan"
+  last_billing_cycle_order_id:
+    type: string
+    example: "ord_2tSoMP7bZJbLiq4z8"
+  object:
+    type: string
+    example: "subscription"
+  plan_id:
+    type: string
+    example: "gold-plan"
+  status:
+    type: string
+    example: "past_due"
+  subscription_start:
+    type: integer
+    example: 1677626837
+  trial_end:
+    type: integer
+    example: 1677626837

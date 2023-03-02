@@ -1,0 +1,6 @@
+description: requested field for subscriptions        
+content:
+  application/json:
+    schema:  
+      $ref: '../../schemas/subscriptions/subscription_request.yml'
+required: true

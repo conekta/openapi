@@ -1,0 +1,15 @@
+title: a subscription
+description: a subscriptions
+type: object
+required:
+  - plan_id
+properties:
+  plan_id:
+    type: string
+    example: "f84gdgf5g48r15fd21g8w424fd1"
+  card_id:
+    type: string
+    example: "src_2qUCNd5AyQqfPMBuV"
+  trial_end:
+    type: integer
+    example: 1484040996
