@@ -9,7 +9,7 @@ get:
       content:
         application/vnd.conekta-v2.0.0+json:
           schema:
-              $ref: '../../schemas/logs/log_response_v2.yml'
+              $ref: '../../schemas/logs/log_response.yml'
     422:
      $ref: '../errors/422.yml'
     401:

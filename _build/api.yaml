@@ -2307,7 +2307,7 @@ paths:
           content:
             application/vnd.conekta-v2.0.0+json:
               schema:
-                title: log response for v2 request
+                title: log response for request
                 description: logs model
                 type: object
                 properties:
@@ -2474,7 +2474,7 @@ paths:
           content:
             application/vnd.conekta-v2.0.0+json:
               schema:
-                title: log response for v2 request
+                title: log response for request
                 description: log model
                 type: object
                 required:
