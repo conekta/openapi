@@ -1,0 +1,55 @@
+post:
+  tags:
+    - checkouts
+  operationId: emailCheckout
+  summary: returns a checkout
+  responses:
+    '200':
+      description: successful operation
+      content:
+        application/vnd.conekta-v2.0.0+json:
+          schema:
+            $ref: '../../schemas/checkouts/checkout_response.yml'
+      headers:
+        Date:
+          description: The date and time that the response was sent
+          schema:
+            type: string
+            example: "Fri, 03 Feb 2023 16:57:48 GMT"
+        Content-Type:
+          description: The format of the response body
+          schema:
+            type: string
+            example: "application/json; charset=utf-8"
+        Content-Length:
+          description: The length of the response body in bytes
+          schema:
+            type: string
+            example: "2737"
+        Connection:
+          description: The type of connection used to transfer the response
+          schema:
+            type: string
+            example: "keep-alive"
+        Conekta-Media-Type:
+          schema:
+            type: string
+            example: conekta-v2.0.0; format=application/json
+    401:
+     $ref: '../errors/401.yml'
+    402: 
+      $ref: '../errors/402.yml'
+    404: 
+      $ref: '../errors/404.yml'
+    422:
+     $ref: '../errors/422.yml'
+    500:
+     $ref: '../errors/500.yml'
+  security:
+    - bearerAuth: []
+  requestBody:
+    $ref: '../../requestBodies/checkouts/checkout_email.yml'
+  parameters:
+    - $ref: '../../parameters/commons/headers/accept_language.yml'
+    - $ref: '../../parameters/commons/path_param/id.yml'
+  

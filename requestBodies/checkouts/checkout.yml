@@ -1,0 +1,6 @@
+description: requested field for checkout        
+content:
+  application/json:
+    schema:  
+      $ref: '../../schemas/checkouts/checkout.yml'
+required: true

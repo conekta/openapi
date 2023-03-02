@@ -19,6 +19,16 @@ paths:
     $ref: "./resources/antifraud/whitelists/get_create_delete.yml"
   /antifraud/blacklists:
     $ref: "./resources/antifraud/blacklists/get_create_delete.yml"
+  /checkouts:
+    $ref: "./resources/checkouts/checkouts.yml"
+  /checkouts/{id}:
+    $ref: "./resources/checkouts/checkout.yml"
+  /checkouts/{id}/cancel:
+    $ref: "./resources/checkouts/checkout_cancel.yml"
+  /checkouts/{id}/email:
+    $ref: "./resources/checkouts/checkout_email.yml"
+  /checkouts/{id}/sms:
+    $ref: "./resources/checkouts/checkout_sms.yml"
   /customers:
     $ref: "./resources/customers/create_customer.yml"
   /customers/{id}:

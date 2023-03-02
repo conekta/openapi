@@ -131,6 +131,504 @@ paths:
           application/vnd.conekta-v2.0.0+json:
             schema:
               $ref: '#/paths/~1antifraud~1whitelists/delete/requestBody/content/application~1json/schema'
+  /checkouts:
+    get:
+      tags:
+        - checkouts
+      operationId: getCheckouts
+      summary: returns a set of checkouts
+      responses:
+        '200':
+          description: successful operation
+          content:
+            application/vnd.conekta-v2.0.0+json:
+              schema:
+                title: checkouts_response
+                allOf:
+                  - $ref: '#/paths/~1plans/get/responses/200/content/application~1vnd.conekta-v2.0.0%2Bjson/schema/allOf/0'
+                  - $ref: '#/paths/~1plans/get/responses/200/content/application~1vnd.conekta-v2.0.0%2Bjson/schema/allOf/1'
+                  - type: object
+                    properties:
+                      data:
+                        type: array
+                        items:
+                          $ref: '#/paths/~1checkouts/post/responses/200/content/application~1vnd.conekta-v2.0.0%2Bjson/schema'
+          headers:
+            Date:
+              description: The date and time that the response was sent
+              schema:
+                type: string
+                example: 'Fri, 03 Feb 2023 16:57:48 GMT'
+            Content-Type:
+              description: The format of the response body
+              schema:
+                type: string
+                example: application/json; charset=utf-8
+            Content-Length:
+              description: The length of the response body in bytes
+              schema:
+                type: string
+                example: '2737'
+            Connection:
+              description: The type of connection used to transfer the response
+              schema:
+                type: string
+                example: keep-alive
+            Conekta-Media-Type:
+              schema:
+                type: string
+                example: conekta-v2.0.0; format=application/json
+        '401':
+          $ref: '#/paths/~1logs/get/responses/401'
+        '402':
+          description: payment required error
+          content:
+            application/vnd.conekta-v2.0.0+json:
+              schema:
+                $ref: '#/paths/~1logs/get/responses/401/content/application~1vnd.conekta-v2.0.0%2Bjson/schema'
+        '422':
+          $ref: '#/paths/~1logs/get/responses/422'
+        '500':
+          $ref: '#/paths/~1logs/get/responses/500'
+      security:
+        - bearerAuth: []
+      parameters:
+        - $ref: '#/paths/~1logs/get/parameters/0'
+        - $ref: '#/paths/~1logs/get/parameters/1'
+        - $ref: '#/paths/~1logs/get/parameters/2'
+        - $ref: '#/paths/~1logs/get/parameters/3'
+        - $ref: '#/paths/~1logs/get/parameters/4'
+    post:
+      tags:
+        - checkouts
+      operationId: createCheckout
+      summary: creates a new checkout
+      responses:
+        '200':
+          description: successful operation
+          content:
+            application/vnd.conekta-v2.0.0+json:
+              schema:
+                title: checkout_response
+                description: checkout response
+                type: object
+                required:
+                  - id
+                  - livemode
+                  - object
+                  - name
+                properties:
+                  allowed_payment_methods:
+                    type: array
+                    items:
+                      type: string
+                      example:
+                        - cash
+                        - card
+                        - bank_transfer
+                  can_not_expire:
+                    type: boolean
+                    example: false
+                  emails_sent:
+                    type: integer
+                    example: 0
+                  exclude_card_networks:
+                    type: array
+                    items: {}
+                  expires_at:
+                    type: integer
+                    example: 1680397724
+                  failure_url:
+                    type: string
+                    example: 'https://pay.conekta.com/failure'
+                  force_3ds_flow:
+                    type: boolean
+                    example: false
+                  id:
+                    type: string
+                    example: b0bf16c4-18b9-445e-ba24-01604f329dbf
+                  livemode:
+                    type: boolean
+                    example: true
+                  metadata:
+                    type: object
+                    additionalProperties:
+                      type: object
+                  monthly_installments_enabled:
+                    type: boolean
+                    example: false
+                  monthly_installments_options:
+                    type: array
+                    items: {}
+                  name:
+                    type: string
+                    description: checkout's name
+                    example: Payment Link Name 1594138857
+                  needs_shipping_contact:
+                    type: boolean
+                    example: false
+                  object:
+                    type: string
+                    example: checkout
+                  paid_payments_count:
+                    type: integer
+                    example: 0
+                  recurrent:
+                    type: boolean
+                    example: false
+                  slug:
+                    type: string
+                    example: b0bf16c418b9445eba2401604f329dbf
+                  sms_sent:
+                    type: integer
+                    example: 0
+                  starts_at:
+                    type: integer
+                    example: 1677650400
+                  status:
+                    type: string
+                    example: Issued
+                  success_url:
+                    type: string
+                    example: 'https://pay.conekta.com/success'
+                  type:
+                    type: string
+                    example: PaymentLink
+                  url:
+                    type: string
+                    format: uri
+                    example: 'https://pay.conekta.com/link/b0bf16c418b9445eba2401604f329dbf'
+          headers:
+            Date:
+              description: The date and time that the response was sent
+              schema:
+                type: string
+                example: 'Fri, 03 Feb 2023 16:57:48 GMT'
+            Content-Type:
+              description: The format of the response body
+              schema:
+                type: string
+                example: application/json; charset=utf-8
+            Content-Length:
+              description: The length of the response body in bytes
+              schema:
+                type: string
+                example: '2737'
+            Connection:
+              description: The type of connection used to transfer the response
+              schema:
+                type: string
+                example: keep-alive
+            Conekta-Media-Type:
+              schema:
+                type: string
+                example: conekta-v2.0.0; format=application/json
+        '401':
+          $ref: '#/paths/~1logs/get/responses/401'
+        '402':
+          $ref: '#/paths/~1checkouts/get/responses/402'
+        '422':
+          $ref: '#/paths/~1logs/get/responses/422'
+        '500':
+          $ref: '#/paths/~1logs/get/responses/500'
+      security:
+        - bearerAuth: []
+      requestBody:
+        description: requested field for checkout
+        content:
+          application/json:
+            schema:
+              title: checkout_request
+              description: It is a sub-resource of the Order model that can be stipulated in order to configure its corresponding checkout
+              type: object
+              required:
+                - allowed_payment_methods
+                - name
+                - type
+                - order_template
+                - recurrent
+                - expires_at
+              properties:
+                allowed_payment_methods:
+                  type: array
+                  items:
+                    type: string
+                    example:
+                      - cash
+                      - card
+                      - bank_transfer
+                expires_at:
+                  type: integer
+                  example: 1680397724
+                name:
+                  type: string
+                  description: checkout's name
+                  example: Payment Link Name 1594138857
+                needs_shipping_contact:
+                  type: boolean
+                  example: false
+                order_template:
+                  type: object
+                  required:
+                    - currency
+                    - line_items
+                  properties:
+                    currency:
+                      type: string
+                      example: MXN
+                      maxLength: 3
+                    line_items:
+                      type: array
+                      items:
+                        $ref: '#/paths/~1orders~1%7Bid%7D~1line_items/post/requestBody/content/application~1json/schema'
+                    metadata:
+                      type: object
+                      additionalProperties:
+                        type: object
+                recurrent:
+                  type: boolean
+                  example: false
+                type:
+                  type: string
+                  example: PaymentLink
+        required: true
+      parameters:
+        - $ref: '#/paths/~1logs/get/parameters/0'
+  '/checkouts/{id}':
+    get:
+      tags:
+        - checkouts
+      operationId: getCheckout
+      summary: returns a checkout
+      responses:
+        '200':
+          description: successful operation
+          content:
+            application/vnd.conekta-v2.0.0+json:
+              schema:
+                $ref: '#/paths/~1checkouts/post/responses/200/content/application~1vnd.conekta-v2.0.0%2Bjson/schema'
+          headers:
+            Date:
+              description: The date and time that the response was sent
+              schema:
+                type: string
+                example: 'Fri, 03 Feb 2023 16:57:48 GMT'
+            Content-Type:
+              description: The format of the response body
+              schema:
+                type: string
+                example: application/json; charset=utf-8
+            Content-Length:
+              description: The length of the response body in bytes
+              schema:
+                type: string
+                example: '2737'
+            Connection:
+              description: The type of connection used to transfer the response
+              schema:
+                type: string
+                example: keep-alive
+            Conekta-Media-Type:
+              schema:
+                type: string
+                example: conekta-v2.0.0; format=application/json
+        '401':
+          $ref: '#/paths/~1logs/get/responses/401'
+        '402':
+          $ref: '#/paths/~1checkouts/get/responses/402'
+        '404':
+          $ref: '#/paths/~1plans~1%7Bid%7D/get/responses/404'
+        '422':
+          $ref: '#/paths/~1logs/get/responses/422'
+        '500':
+          $ref: '#/paths/~1logs/get/responses/500'
+      security:
+        - bearerAuth: []
+      parameters:
+        - $ref: '#/paths/~1logs/get/parameters/0'
+        - $ref: '#/paths/~1logs~1%7Bid%7D/get/parameters/0'
+  '/checkouts/{id}/cancel':
+    post:
+      tags:
+        - checkouts
+      operationId: cancelCheckout
+      summary: returns a checkout
+      responses:
+        '200':
+          description: successful operation
+          content:
+            application/vnd.conekta-v2.0.0+json:
+              schema:
+                $ref: '#/paths/~1checkouts/post/responses/200/content/application~1vnd.conekta-v2.0.0%2Bjson/schema'
+          headers:
+            Date:
+              description: The date and time that the response was sent
+              schema:
+                type: string
+                example: 'Fri, 03 Feb 2023 16:57:48 GMT'
+            Content-Type:
+              description: The format of the response body
+              schema:
+                type: string
+                example: application/json; charset=utf-8
+            Content-Length:
+              description: The length of the response body in bytes
+              schema:
+                type: string
+                example: '2737'
+            Connection:
+              description: The type of connection used to transfer the response
+              schema:
+                type: string
+                example: keep-alive
+            Conekta-Media-Type:
+              schema:
+                type: string
+                example: conekta-v2.0.0; format=application/json
+        '401':
+          $ref: '#/paths/~1logs/get/responses/401'
+        '402':
+          $ref: '#/paths/~1checkouts/get/responses/402'
+        '404':
+          $ref: '#/paths/~1plans~1%7Bid%7D/get/responses/404'
+        '422':
+          $ref: '#/paths/~1logs/get/responses/422'
+        '500':
+          $ref: '#/paths/~1logs/get/responses/500'
+      security:
+        - bearerAuth: []
+      parameters:
+        - $ref: '#/paths/~1logs/get/parameters/0'
+        - $ref: '#/paths/~1logs~1%7Bid%7D/get/parameters/0'
+  '/checkouts/{id}/email':
+    post:
+      tags:
+        - checkouts
+      operationId: emailCheckout
+      summary: returns a checkout
+      responses:
+        '200':
+          description: successful operation
+          content:
+            application/vnd.conekta-v2.0.0+json:
+              schema:
+                $ref: '#/paths/~1checkouts/post/responses/200/content/application~1vnd.conekta-v2.0.0%2Bjson/schema'
+          headers:
+            Date:
+              description: The date and time that the response was sent
+              schema:
+                type: string
+                example: 'Fri, 03 Feb 2023 16:57:48 GMT'
+            Content-Type:
+              description: The format of the response body
+              schema:
+                type: string
+                example: application/json; charset=utf-8
+            Content-Length:
+              description: The length of the response body in bytes
+              schema:
+                type: string
+                example: '2737'
+            Connection:
+              description: The type of connection used to transfer the response
+              schema:
+                type: string
+                example: keep-alive
+            Conekta-Media-Type:
+              schema:
+                type: string
+                example: conekta-v2.0.0; format=application/json
+        '401':
+          $ref: '#/paths/~1logs/get/responses/401'
+        '402':
+          $ref: '#/paths/~1checkouts/get/responses/402'
+        '404':
+          $ref: '#/paths/~1plans~1%7Bid%7D/get/responses/404'
+        '422':
+          $ref: '#/paths/~1logs/get/responses/422'
+        '500':
+          $ref: '#/paths/~1logs/get/responses/500'
+      security:
+        - bearerAuth: []
+      requestBody:
+        description: requested field for sms checkout
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                email:
+                  type: string
+                  example: example@conekta.com
+                  format: email
+        required: true
+      parameters:
+        - $ref: '#/paths/~1logs/get/parameters/0'
+        - $ref: '#/paths/~1logs~1%7Bid%7D/get/parameters/0'
+  '/checkouts/{id}/sms':
+    post:
+      tags:
+        - checkouts
+      operationId: smsCheckout
+      summary: returns a checkout
+      responses:
+        '200':
+          description: successful operation
+          content:
+            application/vnd.conekta-v2.0.0+json:
+              schema:
+                $ref: '#/paths/~1checkouts/post/responses/200/content/application~1vnd.conekta-v2.0.0%2Bjson/schema'
+          headers:
+            Date:
+              description: The date and time that the response was sent
+              schema:
+                type: string
+                example: 'Fri, 03 Feb 2023 16:57:48 GMT'
+            Content-Type:
+              description: The format of the response body
+              schema:
+                type: string
+                example: application/json; charset=utf-8
+            Content-Length:
+              description: The length of the response body in bytes
+              schema:
+                type: string
+                example: '2737'
+            Connection:
+              description: The type of connection used to transfer the response
+              schema:
+                type: string
+                example: keep-alive
+            Conekta-Media-Type:
+              schema:
+                type: string
+                example: conekta-v2.0.0; format=application/json
+        '401':
+          $ref: '#/paths/~1logs/get/responses/401'
+        '402':
+          $ref: '#/paths/~1checkouts/get/responses/402'
+        '404':
+          $ref: '#/paths/~1plans~1%7Bid%7D/get/responses/404'
+        '422':
+          $ref: '#/paths/~1logs/get/responses/422'
+        '500':
+          $ref: '#/paths/~1logs/get/responses/500'
+      security:
+        - bearerAuth: []
+      requestBody:
+        description: requested field for sms checkout
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                phonenumber:
+                  type: string
+                  example: '5566982090'
+        required: true
+      parameters:
+        - $ref: '#/paths/~1logs/get/parameters/0'
+        - $ref: '#/paths/~1logs~1%7Bid%7D/get/parameters/0'
   /customers:
     post:
       operationId: createCustomer
@@ -310,7 +808,7 @@ paths:
         '401':
           $ref: '#/paths/~1logs/get/responses/401'
         '402':
-          $ref: '#/paths/~1customers/get/responses/402'
+          $ref: '#/paths/~1checkouts/get/responses/402'
         '422':
           $ref: '#/paths/~1logs/get/responses/422'
         '500':
@@ -592,11 +1090,7 @@ paths:
         '401':
           $ref: '#/paths/~1logs/get/responses/401'
         '402':
-          description: payment required error
-          content:
-            application/vnd.conekta-v2.0.0+json:
-              schema:
-                $ref: '#/paths/~1logs/get/responses/401/content/application~1vnd.conekta-v2.0.0%2Bjson/schema'
+          $ref: '#/paths/~1checkouts/get/responses/402'
         '422':
           $ref: '#/paths/~1logs/get/responses/422'
         '500':
@@ -669,7 +1163,7 @@ paths:
         '401':
           $ref: '#/paths/~1logs/get/responses/401'
         '402':
-          $ref: '#/paths/~1customers/get/responses/402'
+          $ref: '#/paths/~1checkouts/get/responses/402'
         '422':
           $ref: '#/paths/~1logs/get/responses/422'
         '500':
@@ -1489,7 +1983,7 @@ paths:
         '401':
           $ref: '#/paths/~1logs/get/responses/401'
         '402':
-          $ref: '#/paths/~1customers/get/responses/402'
+          $ref: '#/paths/~1checkouts/get/responses/402'
         '404':
           $ref: '#/paths/~1plans~1%7Bid%7D/get/responses/404'
         '422':
@@ -1542,7 +2036,7 @@ paths:
         '401':
           $ref: '#/paths/~1logs/get/responses/401'
         '402':
-          $ref: '#/paths/~1customers/get/responses/402'
+          $ref: '#/paths/~1checkouts/get/responses/402'
         '404':
           $ref: '#/paths/~1plans~1%7Bid%7D/get/responses/404'
         '422':
@@ -1595,7 +2089,7 @@ paths:
         '401':
           $ref: '#/paths/~1logs/get/responses/401'
         '402':
-          $ref: '#/paths/~1customers/get/responses/402'
+          $ref: '#/paths/~1checkouts/get/responses/402'
         '404':
           $ref: '#/paths/~1plans~1%7Bid%7D/get/responses/404'
         '422':
@@ -2497,7 +2991,7 @@ paths:
                   items:
                     $ref: '#/paths/~1orders~1%7Bid%7D~1charges/post/requestBody/content/application~1json/schema'
                 checkout:
-                  title: checkout_request
+                  title: order_checkout_request
                   description: |
                     [Checkout](https://developers.conekta.com/reference/checkout) details
                   required:

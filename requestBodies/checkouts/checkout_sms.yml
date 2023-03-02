@@ -1,0 +1,10 @@
+description: requested field for sms checkout        
+content:
+  application/json:
+    schema:  
+      type: object
+      properties:
+        phonenumber: 
+          type: string
+          example: "5566982090"
+required: true

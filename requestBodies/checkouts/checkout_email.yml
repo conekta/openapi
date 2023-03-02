@@ -1,0 +1,11 @@
+description: requested field for sms checkout        
+content:
+  application/json:
+    schema:  
+      type: object
+      properties:
+        email: 
+          type: string
+          example: "example@conekta.com"
+          format: email
+required: true

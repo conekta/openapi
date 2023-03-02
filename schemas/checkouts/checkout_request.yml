@@ -1,4 +1,4 @@
-title: checkout_request
+title: order_checkout_request
 description: |
   [Checkout](https://developers.conekta.com/reference/checkout) details
 required:

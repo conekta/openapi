@@ -1,0 +1,86 @@
+title: checkout_response
+description: checkout response
+type: object
+required:
+  - id
+  - livemode
+  - object
+  - name
+properties:
+  allowed_payment_methods:
+    type: array
+    items:
+      type: string
+      example: [ "cash", "card", "bank_transfer"]
+  can_not_expire:
+    type: boolean
+    example: false
+  emails_sent:
+    type: integer
+    example: 0
+  exclude_card_networks:
+    type: array
+    items: {}
+  expires_at:
+    type: integer
+    example: 1680397724
+  failure_url:
+    type: string
+    example: "https://pay.conekta.com/failure"
+  force_3ds_flow:
+    type: boolean
+    example: false
+  id:
+    type: string
+    example: "b0bf16c4-18b9-445e-ba24-01604f329dbf"
+  livemode: 
+    type: boolean
+    example: true
+  metadata:
+    type: object
+    additionalProperties:
+      type: object
+  monthly_installments_enabled:
+    type: boolean
+    example: false
+  monthly_installments_options:
+    type: array
+    items: {}
+  name:
+    type: string
+    description: checkout's name
+    example:  Payment Link Name 1594138857
+  needs_shipping_contact:
+    type: boolean
+    example: false
+  object:
+    type: string
+    example: "checkout"
+  paid_payments_count:
+    type: integer
+    example: 0
+  recurrent:
+    type: boolean
+    example: false
+  slug:
+    type: string
+    example: "b0bf16c418b9445eba2401604f329dbf"
+  sms_sent:
+    type: integer
+    example: 0
+  starts_at:
+    type: integer
+    example: 1677650400
+  status:
+    type: string
+    example:  "Issued"
+  success_url:
+    type: string
+    example: "https://pay.conekta.com/success"
+  type:
+    type: string
+    example: "PaymentLink"
+  url:
+    type: string
+    format: uri
+    example: "https://pay.conekta.com/link/b0bf16c418b9445eba2401604f329dbf"

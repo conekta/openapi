@@ -1,0 +1,51 @@
+title: checkout_request
+description: "It is a sub-resource of the Order model that can be stipulated in order to configure its corresponding checkout"
+type: object
+required:
+  - allowed_payment_methods
+  - name
+  - type
+  - order_template
+  - recurrent
+  - expires_at
+properties:
+  allowed_payment_methods:
+    type: array
+    items:
+      type: string
+      example: [ "cash", "card", "bank_transfer"]
+  expires_at:
+    type: integer
+    example: 1680397724
+  name:
+    type: string
+    description: checkout's name
+    example:  Payment Link Name 1594138857
+  needs_shipping_contact:
+    type: boolean
+    example: false
+  order_template:
+    type: object
+    required:
+      - currency
+      - line_items
+    properties:
+      currency:
+        type: string
+        example: "MXN"
+        maxLength: 3
+      line_items:
+        type: array
+        items:
+          $ref: ../../schemas/orders/line_items.yml
+      metadata:
+        type: object
+        additionalProperties:
+          type: object
+  recurrent:
+    type: boolean
+    example: false
+  type:
+    type: string
+    example: "PaymentLink"
+  
