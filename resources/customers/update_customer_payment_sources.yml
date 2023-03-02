@@ -1,4 +1,6 @@
 put:
+  tags:
+    - customers
   operationId: UpdateCustomerPaymentSources
   summary: returns an updated payment source
   description: 'Gets a customer resource that corresponds to a customer ID.'

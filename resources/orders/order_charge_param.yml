@@ -1,4 +1,6 @@
 post:
+  tags:
+    - orders
   operationId: ordersCreateCharge
   summary: creates a new charge for an existing orden
   responses:

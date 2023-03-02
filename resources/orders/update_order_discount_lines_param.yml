@@ -1,4 +1,6 @@
 put:
+  tags:
+    - orders
   operationId: ordersUpdateDiscountLines
   summary: updates an existing discount lines for an existing orden
   responses:

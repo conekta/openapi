@@ -1,4 +1,6 @@
 post:
+  tags:
+    - orders
   operationId: createOrder
   summary: creates a new order
   description: 'Create a new order.'
@@ -28,6 +30,8 @@ post:
   parameters:
     - $ref: '../../parameters/commons/headers/accept_language.yml'
 get:
+  tags:
+    - orders
   operationId: getOrders
   summary: returns a set of /orders
   description: 'returns a set of /orders.'

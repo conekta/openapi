@@ -1,4 +1,6 @@
 post:
+  tags:
+    - orders
   operationId: ordersCreateCapture
   summary: Processes an order that has been previously authorized.
   responses:

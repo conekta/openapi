@@ -1,4 +1,6 @@
 put:
+  tags:
+    - orders
   operationId: ordersUpdateLineItems
   summary: updates a existing line items for an existing orden
   responses:

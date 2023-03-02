@@ -1,4 +1,6 @@
 get:
+  tags:
+    - orders
   operationId: getOrderById
   summary: Info for a specific order
   responses:
@@ -20,6 +22,8 @@ get:
     - $ref: '../../parameters/commons/path_param/id.yml'
     - $ref: '../../parameters/commons/headers/accept_language.yml'
 put:
+  tags:
+    - orders
   operationId: updateOrder
   summary: Update an existing Order.
   responses:

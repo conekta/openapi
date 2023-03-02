@@ -1,4 +1,6 @@
 post:
+  tags:
+    - customers
   operationId: createCustomer
   summary: creates a new customer
   description: 'The purpose of business is to create and keep a customer, you will learn what elements you need to create a customer.'
@@ -50,6 +52,8 @@ post:
     - $ref: '../../parameters/commons/headers/accept_language.yml'
 
 get:
+  tags:
+    - customers
   operationId: getCustomers
   summary: returns customer
   description: 'The purpose of business is to create and maintain a client, you will learn what elements you need to obtain a list of clients, which can be paged.'

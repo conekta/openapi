@@ -1,4 +1,6 @@
 put:
+  tags:
+    - orders
   operationId: ordersUpdateTaxLines
   summary: updates a new tax lines for an existing orden
   responses:

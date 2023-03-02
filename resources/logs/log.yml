@@ -1,4 +1,6 @@
 get:
+  tags:
+    - logs
   operationId: getLogs
   summary: returns a set of /logs
   responses:

@@ -1,4 +1,6 @@
 get:
+  tags:
+    - logs
   operationId: getLogById
   summary: Info for a specific log
   responses:

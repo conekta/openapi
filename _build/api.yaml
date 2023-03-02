@@ -448,7 +448,7 @@ paths:
         - $ref: '#/paths/~1logs/get/parameters/0'
         - $ref: '#/paths/~1logs~1%7Bid%7D/get/parameters/0'
   '/checkouts/{id}/cancel':
-    post:
+    put:
       tags:
         - checkouts
       operationId: cancelCheckout
@@ -631,6 +631,8 @@ paths:
         - $ref: '#/paths/~1logs~1%7Bid%7D/get/parameters/0'
   /customers:
     post:
+      tags:
+        - customers
       operationId: createCustomer
       summary: creates a new customer
       description: 'The purpose of business is to create and keep a customer, you will learn what elements you need to create a customer.'
@@ -897,6 +899,8 @@ paths:
       parameters:
         - $ref: '#/paths/~1logs/get/parameters/0'
     get:
+      tags:
+        - customers
       operationId: getCustomers
       summary: returns customer
       description: 'The purpose of business is to create and maintain a client, you will learn what elements you need to obtain a list of clients, which can be paged.'
@@ -1104,6 +1108,8 @@ paths:
         - $ref: '#/paths/~1logs/get/parameters/4'
   '/customers/{id}':
     get:
+      tags:
+        - customers
       operationId: getCustomerById
       summary: returns a customer
       description: Gets a customer resource that corresponds to a customer ID.
@@ -1126,6 +1132,8 @@ paths:
         - $ref: '#/paths/~1logs~1%7Bid%7D/get/parameters/0'
         - $ref: '#/paths/~1logs/get/parameters/0'
     delete:
+      tags:
+        - customers
       operationId: deleteCustomerById
       summary: returns a deleted customer
       description: Deleted a customer resource that corresponds to a customer ID.
@@ -1150,6 +1158,8 @@ paths:
         - $ref: '#/paths/~1logs~1%7Bid%7D/get/parameters/0'
         - $ref: '#/paths/~1logs/get/parameters/0'
     put:
+      tags:
+        - customers
       operationId: updateCustomer
       summary: updates a customer
       description: You can update customer-related data
@@ -1249,6 +1259,8 @@ paths:
         - $ref: '#/paths/~1logs/get/parameters/0'
   '/customers/{id}/fiscal_entities':
     post:
+      tags:
+        - customers
       operationId: CreateCustomerFiscalEntities
       summary: returns a fiscal entities
       description: creates a customer resource that corresponds to a customer ID.
@@ -1320,6 +1332,8 @@ paths:
         - $ref: '#/paths/~1logs/get/parameters/0'
   '/customers/{id}/fiscal_entities/{fiscal_entities_id}':
     put:
+      tags:
+        - customers
       operationId: UpdateCustomerFiscalEntities
       summary: returns a fiscal entities
       description: updates a customer resource that corresponds to a customer ID.
@@ -1376,6 +1390,8 @@ paths:
         - $ref: '#/paths/~1logs/get/parameters/0'
   '/customers/{id}/payment_sources':
     post:
+      tags:
+        - customers
       operationId: CreateCustomerPaymentSources
       summary: returns a payment source
       description: Gets a customer resource that corresponds to a customer ID.
@@ -1535,6 +1551,8 @@ paths:
         - $ref: '#/paths/~1logs/get/parameters/0'
   '/customers/{id}/payment_sources/{payment_sources_id}':
     put:
+      tags:
+        - customers
       operationId: UpdateCustomerPaymentSources
       summary: returns an updated payment source
       description: Gets a customer resource that corresponds to a customer ID.
@@ -1580,6 +1598,8 @@ paths:
         - $ref: '#/paths/~1logs/get/parameters/0'
   '/customers/{id}/shipping_contacts':
     post:
+      tags:
+        - customers
       operationId: CreateCustomerShippingContacts
       summary: returns a shipping contacts
       description: Gets a customer resource that corresponds to a customer ID.
@@ -1700,6 +1720,8 @@ paths:
         - $ref: '#/paths/~1logs/get/parameters/0'
   '/customers/{id}/shipping_contacts/{shipping_contacts_id}':
     put:
+      tags:
+        - customers
       operationId: UpdateCustomerShippingContacts
       summary: returns an updated shipping contacts
       description: Gets a customer resource that corresponds to a customer ID.
@@ -2103,6 +2125,8 @@ paths:
         - $ref: '#/paths/~1logs~1%7Bid%7D/get/parameters/0'
   /events:
     get:
+      tags:
+        - events
       operationId: getEvents
       summary: returns a set of /events
       responses:
@@ -2162,6 +2186,8 @@ paths:
         - $ref: '#/paths/~1logs/get/parameters/4'
   '/events/{id}':
     get:
+      tags:
+        - events
       operationId: getEvent
       summary: returns an event
       responses:
@@ -2271,6 +2297,8 @@ paths:
         - $ref: '#/paths/~1logs~1%7Bid%7D/get/parameters/0'
   /logs:
     get:
+      tags:
+        - logs
       operationId: getLogs
       summary: returns a set of /logs
       responses:
@@ -2436,6 +2464,8 @@ paths:
             type: string
   '/logs/{id}':
     get:
+      tags:
+        - logs
       operationId: getLogById
       summary: Info for a specific log
       responses:
@@ -2580,6 +2610,8 @@ paths:
         - $ref: '#/paths/~1logs/get/parameters/0'
   /orders:
     post:
+      tags:
+        - orders
       operationId: createOrder
       summary: creates a new order
       description: Create a new order.
@@ -3096,6 +3128,8 @@ paths:
       parameters:
         - $ref: '#/paths/~1logs/get/parameters/0'
     get:
+      tags:
+        - orders
       operationId: getOrders
       summary: returns a set of /orders
       description: returns a set of /orders.
@@ -3131,6 +3165,8 @@ paths:
         - $ref: '#/paths/~1logs/get/parameters/4'
   '/orders/{id}':
     get:
+      tags:
+        - orders
       operationId: getOrderById
       summary: Info for a specific order
       responses:
@@ -3152,6 +3188,8 @@ paths:
         - $ref: '#/paths/~1logs~1%7Bid%7D/get/parameters/0'
         - $ref: '#/paths/~1logs/get/parameters/0'
     put:
+      tags:
+        - orders
       operationId: updateOrder
       summary: Update an existing Order.
       responses:
@@ -3227,6 +3265,8 @@ paths:
         - $ref: '#/paths/~1logs/get/parameters/0'
   '/orders/{id}/capture':
     post:
+      tags:
+        - orders
       operationId: ordersCreateCapture
       summary: Processes an order that has been previously authorized.
       responses:
@@ -3249,6 +3289,8 @@ paths:
         - $ref: '#/paths/~1logs/get/parameters/0'
   '/orders/{id}/charges':
     post:
+      tags:
+        - orders
       operationId: ordersCreateCharge
       summary: creates a new charge for an existing orden
       responses:
@@ -3482,6 +3524,8 @@ paths:
         - $ref: '#/paths/~1logs/get/parameters/0'
   '/orders/{id}/discount_lines':
     post:
+      tags:
+        - orders
       operationId: ordersCreateDiscountLine
       summary: creates a new discount lines for an existing orden
       responses:
@@ -3536,6 +3580,8 @@ paths:
         - $ref: '#/paths/~1logs/get/parameters/0'
   '/orders/{id}/discount_lines/{discount_lines_id}':
     put:
+      tags:
+        - orders
       operationId: ordersUpdateDiscountLines
       summary: updates an existing discount lines for an existing orden
       responses:
@@ -3569,6 +3615,8 @@ paths:
         - $ref: '#/paths/~1logs/get/parameters/0'
   '/orders/{id}/line_items':
     post:
+      tags:
+        - orders
       operationId: ordersCreateLineItems
       summary: creates a new line items for an existing orden
       responses:
@@ -3644,6 +3692,8 @@ paths:
         - $ref: '#/paths/~1logs/get/parameters/0'
   '/orders/{id}/line_items/{line_item_id}':
     put:
+      tags:
+        - orders
       operationId: ordersUpdateLineItems
       summary: updates a existing line items for an existing orden
       responses:
@@ -3677,6 +3727,8 @@ paths:
         - $ref: '#/paths/~1logs/get/parameters/0'
   '/orders/{id}/refunds':
     post:
+      tags:
+        - orders
       operationId: orderRefund
       summary: 'A refunded order describes the items, amount, and reason an order is being refunded.'
       responses:
@@ -3717,6 +3769,8 @@ paths:
         - $ref: '#/paths/~1logs/get/parameters/0'
   '/orders/{id}/shipping_lines':
     post:
+      tags:
+        - orders
       operationId: ordersCreateShippingLines
       summary: creates a new shipping lines for an existing orden
       responses:
@@ -3775,6 +3829,8 @@ paths:
         - $ref: '#/paths/~1logs/get/parameters/0'
   '/orders/{id}/shipping_lines/{shipping_lines_id}':
     put:
+      tags:
+        - orders
       operationId: ordersUpdateShippingLines
       summary: updates an existing shipping lines for an existing orden
       responses:
@@ -3808,6 +3864,8 @@ paths:
         - $ref: '#/paths/~1logs/get/parameters/0'
   '/orders/{id}/tax_lines':
     post:
+      tags:
+        - orders
       operationId: ordersCreateTaxLines
       summary: creates a new tax lines for an existing orden
       responses:
@@ -3865,6 +3923,8 @@ paths:
         - $ref: '#/paths/~1logs/get/parameters/0'
   '/orders/{id}/tax_lines/{tax_lines_id}':
     put:
+      tags:
+        - orders
       operationId: ordersUpdateTaxLines
       summary: updates a new tax lines for an existing orden
       responses:

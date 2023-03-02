@@ -1,4 +1,6 @@
 get:
+  tags:
+    - events
   operationId: getEvent
   summary: returns an event
   responses:

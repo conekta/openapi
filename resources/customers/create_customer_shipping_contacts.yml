@@ -1,4 +1,6 @@
-post:
+post: 
+  tags:
+    - customers
   operationId: CreateCustomerShippingContacts
   summary: returns a shipping contacts
   description: 'Gets a customer resource that corresponds to a customer ID.'

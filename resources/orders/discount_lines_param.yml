@@ -1,4 +1,6 @@
 post:
+  tags:
+    - orders
   operationId: ordersCreateDiscountLine
   summary: creates a new discount lines for an existing orden
   responses:
