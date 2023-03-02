@@ -23,8 +23,6 @@ properties:
       - half_month
       - month
       - year
-    x-enumDescriptions:
-      week: "webb"
   frequency: 
     type: integer
     example: 1
