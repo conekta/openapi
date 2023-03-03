@@ -1,5 +1,6 @@
 {
-  "targetFramework" : "net47",
+  "targetFramework" : "netstandard2.0;net6.0",
+  "testTargetFramework" : "net6.0",
   "files": {
     "CODE_OF_CONDUCT.md" : {},
     "AUTHORS.md" : {},
@@ -9,20 +10,26 @@
       "templateType": "SupportingFiles",
       "destinationFilename": "RuntimeInformation.cs",
       "folder": "src/Conekta.net/Utils"
+    },
+    "VERSION.mustache" : {
+      "templateType": "SupportingFiles",
+      "destinationFilename": "VERSION"
     }
   },
   "apiName" : "conekta",
   "packageName" : "Conekta.net",
-  "packageVersion" : "4.0.0",
+  "packageVersion" : "6.0.0",
   "netCoreProjectFile" : true,
   "packageDescription" : "This is a .net library that allows interaction with https://api.conekta.io API.",
   "packageTitle" : "Conekta Library",
   "gitUserId": "conekta",
   "gitRepoId": "conekta-.net",
-  "httpUserAgent": "Conekta/v2 .NetBindings/4.0.0",
+  "httpUserAgent": "Conekta/v2 .NetBindings/6.0.0",
   "packageAuthors" : "engineering@conekta.com",
   "packageCompany" : "Conekta",
   "useGenericHost" : false,
   "templateDir": "templates/netcore",
-  "useOneOfDiscriminatorLookup" : true
+  "useOneOfDiscriminatorLookup" : true,
+  "packageCopyright" : "Conekta",
+  "PackageReleaseNotes" : ""
 }

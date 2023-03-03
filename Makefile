@@ -17,7 +17,8 @@ ruby:
 	npx @openapitools/openapi-generator-cli generate -i  api.yaml -g ruby -o conekta-ruby  -c config-ruby.json 
 
 csharp:
-	npx @openapitools/openapi-generator-cli generate -i  api.yaml -g csharp-netcore -o conekta-netcore  -c config-netcore.json
+	mkdir -p conekta-.net && cp .openapi-generator-ignore conekta-.net/.openapi-generator-ignore &&   \
+	npx @openapitools/openapi-generator-cli generate -i  api.yaml -g csharp-netcore -o conekta-.net  -c config-netcore.json --global-property modelTests=false
 
 php:
 	npx @openapitools/openapi-generator-cli generate -i  api.yaml -g php -o conekta-php  -c config-php.json
