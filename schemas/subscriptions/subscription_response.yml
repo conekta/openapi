@@ -11,6 +11,7 @@ properties:
   created_at:
     type: integer
     example: 1677626837
+    format: int64
   customer_id:
     type: string
     example: "cus_2tKcHxhTz7xU5SymF"

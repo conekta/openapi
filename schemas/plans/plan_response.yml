@@ -8,6 +8,7 @@ properties:
   created_at:
     type: integer
     example: 1666900846
+    format: int64
   currency:
     type: string
     example: "MXN"

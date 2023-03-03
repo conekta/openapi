@@ -52,6 +52,7 @@ properties:
       expires_at:
         type: integer
         example: 1676613599
+        format: int64
       failure_url:
         type: string
         example: "http://187.216.228.66:2222/SysVentasPagos/Acceso.aspx"
@@ -117,6 +118,7 @@ properties:
   created_at:
     type: integer
     example: 1676328434
+    format: int64
   currency:
     type: string
     example: "MXN"
@@ -203,6 +205,7 @@ properties:
         properties:
           created_at:
             type: integer
+            format: int64
           id:
             type: string
           object:
@@ -211,3 +214,4 @@ properties:
   updated_at:
     type: integer
     example: 1676328434
+    format: int64

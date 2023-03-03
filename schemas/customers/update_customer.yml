@@ -53,6 +53,7 @@ properties:
       account_created_at:
         type: integer
         example: 1484040996
+        format: int64
       first_paid_at:
         type: integer
         example: 1485151007

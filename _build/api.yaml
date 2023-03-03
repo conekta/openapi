@@ -238,6 +238,7 @@ paths:
                   expires_at:
                     type: integer
                     example: 1680397724
+                    format: int64
                   failure_url:
                     type: string
                     example: 'https://pay.conekta.com/failure'
@@ -273,6 +274,11 @@ paths:
                   paid_payments_count:
                     type: integer
                     example: 0
+                  payments_limit_count:
+                    type: integer
+                    format: int8
+                    example: 5
+                    nullable: true
                   recurrent:
                     type: boolean
                     example: false
@@ -360,6 +366,7 @@ paths:
                 expires_at:
                   type: integer
                   example: 1680397724
+                  format: int64
                 name:
                   type: string
                   description: checkout's name
@@ -385,6 +392,10 @@ paths:
                       type: object
                       additionalProperties:
                         type: object
+                payments_limit_count:
+                  type: integer
+                  format: int8
+                  example: 5
                 recurrent:
                   type: boolean
                   example: false
@@ -556,6 +567,8 @@ paths:
           application/json:
             schema:
               type: object
+              required:
+                - email
               properties:
                 email:
                   type: string
@@ -621,6 +634,8 @@ paths:
           application/json:
             schema:
               type: object
+              required:
+                - phonenumber
               properties:
                 phonenumber:
                   type: string
@@ -662,6 +677,7 @@ paths:
                       account_created_at:
                         type: integer
                         example: 1484040996
+                        format: int64
                   corporate:
                     type: boolean
                   created_at:
@@ -888,6 +904,7 @@ paths:
                     account_created_at:
                       type: integer
                       example: 1484040996
+                      format: int64
                     first_paid_at:
                       type: integer
                       example: 1485151007
@@ -944,6 +961,7 @@ paths:
                                 account_created_at:
                                   type: integer
                                   example: 1484040996
+                                  format: int64
                             corporate:
                               type: boolean
                             created_at:
@@ -1246,6 +1264,7 @@ paths:
                     account_created_at:
                       type: integer
                       example: 1484040996
+                      format: int64
                     first_paid_at:
                       type: integer
                       example: 1485151007
@@ -1529,6 +1548,7 @@ paths:
                         expires_at:
                           type: integer
                           example: 1553273553
+                          format: int64
                 - title: payment_sources_card
                   allOf:
                     - $ref: '#/paths/~1customers~1%7Bid%7D/put/requestBody/content/application~1json/schema/properties/payment_sources/items'
@@ -1537,6 +1557,7 @@ paths:
                         expires_at:
                           type: integer
                           example: 1553273553
+                          format: int64
               discriminator:
                 propertyName: type
                 mapping:
@@ -1831,6 +1852,7 @@ paths:
                   created_at:
                     type: integer
                     example: 1677626837
+                    format: int64
                   customer_id:
                     type: string
                     example: cus_2tKcHxhTz7xU5SymF
@@ -2664,6 +2686,7 @@ paths:
                                     created_at:
                                       type: integer
                                       example: 1676386026
+                                      format: int64
                                     currency:
                                       type: string
                                       example: MXN
@@ -2731,6 +2754,7 @@ paths:
                       expires_at:
                         type: integer
                         example: 1676613599
+                        format: int64
                       failure_url:
                         type: string
                         example: 'http://187.216.228.66:2222/SysVentasPagos/Acceso.aspx'
@@ -2796,6 +2820,7 @@ paths:
                   created_at:
                     type: integer
                     example: 1676328434
+                    format: int64
                   currency:
                     type: string
                     example: MXN
@@ -2935,6 +2960,7 @@ paths:
                         properties:
                           created_at:
                             type: integer
+                            format: int64
                           id:
                             type: string
                           object:
@@ -2943,6 +2969,7 @@ paths:
                   updated_at:
                     type: integer
                     example: 1676328434
+                    format: int64
               examples:
                 cash:
                   value:
@@ -3323,6 +3350,7 @@ paths:
                   created_at:
                     type: integer
                     example: 1676386026
+                    format: int64
                   currency:
                     type: string
                     example: MXN
@@ -3445,6 +3473,7 @@ paths:
                               expires_at:
                                 type: integer
                                 example: 1683053729
+                                format: int64
                               payment_attempts:
                                 type: array
                                 items: {}
@@ -4065,6 +4094,7 @@ paths:
                   created_at:
                     type: integer
                     example: 1666900846
+                    format: int64
                   currency:
                     type: string
                     example: MXN

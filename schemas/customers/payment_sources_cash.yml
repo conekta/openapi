@@ -8,3 +8,4 @@ allOf:
       expires_at:
         type: integer
         example: 1553273553
+        format: int64

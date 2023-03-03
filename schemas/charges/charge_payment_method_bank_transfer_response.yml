@@ -14,6 +14,7 @@ payment_method_bank_transfer:
         expires_at:
           type: integer
           example: 1683053729
+          format: int64
         payment_attempts:
           type: array
           items: {}

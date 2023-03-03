@@ -22,6 +22,7 @@ properties:
   created_at:
     type: integer
     example: 1676386026
+    format: int64
   currency:
     type: string
     example: MXN

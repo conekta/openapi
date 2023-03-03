@@ -18,6 +18,7 @@ properties:
       account_created_at:
         type: integer
         example: 1484040996
+        format: int64
   corporate:
     type: boolean
   created_at:
