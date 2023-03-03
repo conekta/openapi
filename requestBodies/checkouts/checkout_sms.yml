@@ -3,6 +3,8 @@ content:
   application/json:
     schema:  
       type: object
+      required:
+        - phonenumber
       properties:
         phonenumber: 
           type: string

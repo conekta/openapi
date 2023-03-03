@@ -448,10 +448,10 @@
       "responses": [
         {
           "uuid": "d89bffb2-f418-4f6b-b086-257ae1ed37e8",
-          "body": "",
+          "body": "{\n    \"id\": \"e4bcbed2-194c-4540-a922-b6d7531925a3\",\n    \"name\": \"{{body 'name' }}\",\n    \"livemode\": true,\n    \"emails_sent\": 0,\n    \"success_url\": \"\",\n    \"failure_url\": \"\",\n    \"paid_payments_count\": 0,\n    \"sms_sent\": 0,\n    \"status\": \"Issued\",\n    \"type\": \"{{body 'type' }}\",\n    \"recurrent\": false,\n    \"starts_at\": 1677823200,\n    \"expires_at\": {{body 'expires_at' }} ,\n    \"allowed_payment_methods\": {{body 'allowed_payment_methods' }},\n    \"exclude_card_networks\": [],\n    \"needs_shipping_contact\": false,\n    \"monthly_installments_options\": [],\n    \"monthly_installments_enabled\": false,\n    \"force_3ds_flow\": false,\n    \"metadata\": {\n        \"key\": \"value\"\n    },\n    \"can_not_expire\": false,\n    \"object\": \"checkout\",\n    \"slug\": \"e4bcbed2194c4540a922b6d7531925a3\",\n    \"url\": \"https://pay.stg.conekta.io/link/e4bcbed2194c4540a922b6d7531925a3\"\n}",
           "latency": 0,
           "statusCode": 200,
-          "label": "successful operation",
+          "label": "successful operation PaymentLink",
           "headers": [
             {
               "key": "Content-Type",
@@ -482,7 +482,15 @@
           "filePath": "",
           "databucketID": "",
           "sendFileAsBody": false,
-          "rules": [],
+          "rules": [
+            {
+              "target": "body",
+              "modifier": "type",
+              "value": "PaymentLink",
+              "invert": false,
+              "operator": "equals"
+            }
+          ],
           "rulesOperator": "OR",
           "disableTemplating": false,
           "fallbackTo404": false,
@@ -588,7 +596,7 @@
       "responses": [
         {
           "uuid": "f15b6cd6-c33b-407d-a83c-dea7be463a81",
-          "body": "",
+          "body": "{\n    \"id\": \"{{urlParam 'id'}}\",\n    \"name\": \"Refined Concrete Chair\",\n    \"livemode\": true,\n    \"emails_sent\": 0,\n    \"success_url\": \"https://aortegag0501.wixsite.com/artesublimacion/success\",\n    \"failure_url\": \"https://aortegag0501.wixsite.com/artesublimacion/failure\",\n    \"paid_payments_count\": 0,\n    \"sms_sent\": 0,\n    \"status\": \"Expired\",\n    \"type\": \"HostedPayment\",\n    \"recurrent\": false,\n    \"starts_at\": 1669788000,\n    \"expires_at\": 1670047199,\n    \"allowed_payment_methods\": [\n        \"card\",\n        \"cash\",\n        \"bank_transfer\"\n    ],\n    \"exclude_card_networks\": [],\n    \"needs_shipping_contact\": false,\n    \"monthly_installments_options\": [\n        3,\n        6,\n        9,\n        12\n    ],\n    \"monthly_installments_enabled\": true,\n    \"is_redirect_on_failure\": true,\n    \"redirection_time\": 10,\n    \"force_3ds_flow\": false,\n    \"metadata\": {},\n    \"can_not_expire\": false,\n    \"object\": \"checkout\",\n    \"slug\": \"bac0ed1468884d1d927ac80d3f55c009\",\n    \"url\": \"https://pay.stg.conekta.io/checkout/bac0ed1468884d1d927ac80d3f55c009\"\n}",
           "latency": 0,
           "statusCode": 200,
           "label": "successful operation",
@@ -622,7 +630,15 @@
           "filePath": "",
           "databucketID": "",
           "sendFileAsBody": false,
-          "rules": [],
+          "rules": [
+            {
+              "target": "params",
+              "modifier": "id",
+              "value": "bac0ed14-6888-4d1d-927a-c80d3f55c009",
+              "invert": false,
+              "operator": "equals"
+            }
+          ],
           "rulesOperator": "OR",
           "disableTemplating": false,
           "fallbackTo404": false,
@@ -750,7 +766,7 @@
       "responses": [
         {
           "uuid": "6ffffc7a-b1fb-46c7-b049-b37777a33cb4",
-          "body": "",
+          "body": "{\n    \"id\": \"{{urlParam 'id'}}\",\n    \"name\": \"Payment Link Name 1594138857\",\n    \"livemode\": true,\n    \"emails_sent\": 0,\n    \"success_url\": \"\",\n    \"failure_url\": \"\",\n    \"payments_limit_count\": 5,\n    \"paid_payments_count\": 0,\n    \"sms_sent\": 0,\n    \"status\": \"Cancelled\",\n    \"type\": \"PaymentLink\",\n    \"recurrent\": true,\n    \"starts_at\": 1677823200,\n    \"expires_at\": 1680397724,\n    \"allowed_payment_methods\": [\n        \"card\",\n        \"cash\",\n        \"bank_transfer\"\n    ],\n    \"exclude_card_networks\": [],\n    \"needs_shipping_contact\": false,\n    \"monthly_installments_options\": [],\n    \"monthly_installments_enabled\": false,\n    \"force_3ds_flow\": false,\n    \"metadata\": {\n        \"key\": \"value\"\n    },\n    \"can_not_expire\": false,\n    \"object\": \"checkout\",\n    \"slug\": \"c7734adae1e94b2290f6b80a1b2006d4\",\n    \"url\": \"https://pay.stg.conekta.io/link/c7734adae1e94b2290f6b80a1b2006d4\"\n}",
           "latency": 0,
           "statusCode": 200,
           "label": "successful operation",
@@ -784,7 +800,15 @@
           "filePath": "",
           "databucketID": "",
           "sendFileAsBody": false,
-          "rules": [],
+          "rules": [
+            {
+              "target": "params",
+              "modifier": "id",
+              "value": "c7734ada-e1e9-4b22-90f6-b80a1b2006d4",
+              "invert": false,
+              "operator": "equals"
+            }
+          ],
           "rulesOperator": "OR",
           "disableTemplating": false,
           "fallbackTo404": false,
@@ -912,7 +936,7 @@
       "responses": [
         {
           "uuid": "202a0171-9aae-42ea-acbf-2b0683b9ff09",
-          "body": "",
+          "body": "{\n    \"id\": \"{{urlParam 'id'}}\",\n    \"name\": \"Payment Link Name 1594138857\",\n    \"livemode\": true,\n    \"emails_sent\": 1,\n    \"success_url\": \"\",\n    \"failure_url\": \"\",\n    \"payments_limit_count\": 5,\n    \"paid_payments_count\": 0,\n    \"sms_sent\": 0,\n    \"status\": \"Issued\",\n    \"type\": \"PaymentLink\",\n    \"recurrent\": true,\n    \"starts_at\": 1677823200,\n    \"expires_at\": 1680397724,\n    \"allowed_payment_methods\": [\n        \"card\",\n        \"cash\",\n        \"bank_transfer\"\n    ],\n    \"exclude_card_networks\": [],\n    \"needs_shipping_contact\": false,\n    \"monthly_installments_options\": [],\n    \"monthly_installments_enabled\": false,\n    \"force_3ds_flow\": false,\n    \"metadata\": {\n        \"key\": \"value\"\n    },\n    \"can_not_expire\": false,\n    \"object\": \"checkout\",\n    \"slug\": \"102bdf5c3ee648eca9ff40ec6f5f054b\",\n    \"url\": \"https://pay.stg.conekta.io/link/102bdf5c3ee648eca9ff40ec6f5f054b\"\n}",
           "latency": 0,
           "statusCode": 200,
           "label": "successful operation",
@@ -946,7 +970,15 @@
           "filePath": "",
           "databucketID": "",
           "sendFileAsBody": false,
-          "rules": [],
+          "rules": [
+            {
+              "target": "params",
+              "modifier": "id",
+              "value": "102bdf5c-3ee6-48ec-a9ff-40ec6f5f054b",
+              "invert": false,
+              "operator": "equals"
+            }
+          ],
           "rulesOperator": "OR",
           "disableTemplating": false,
           "fallbackTo404": false,
@@ -1074,7 +1106,7 @@
       "responses": [
         {
           "uuid": "3453cdba-8ce2-450e-99d6-f4aeefcc7202",
-          "body": "",
+          "body": "{\n    \"id\": \"{{urlParam 'id'}}\",\n    \"name\": \"Payment Link Name 1594138857\",\n    \"livemode\": true,\n    \"emails_sent\": 0,\n    \"success_url\": \"\",\n    \"failure_url\": \"\",\n    \"payments_limit_count\": 5,\n    \"paid_payments_count\": 0,\n    \"sms_sent\": 1,\n    \"status\": \"Issued\",\n    \"type\": \"PaymentLink\",\n    \"recurrent\": true,\n    \"starts_at\": 1677823200,\n    \"expires_at\": 1680397724,\n    \"allowed_payment_methods\": [\n        \"card\",\n        \"cash\",\n        \"bank_transfer\"\n    ],\n    \"exclude_card_networks\": [],\n    \"needs_shipping_contact\": false,\n    \"monthly_installments_options\": [],\n    \"monthly_installments_enabled\": false,\n    \"force_3ds_flow\": false,\n    \"metadata\": {\n        \"key\": \"value\"\n    },\n    \"can_not_expire\": false,\n    \"object\": \"checkout\",\n    \"slug\": \"102bdf5c3ee648eca9ff40ec6f5f054b\",\n    \"url\": \"https://pay.stg.conekta.io/link/102bdf5c3ee648eca9ff40ec6f5f054b\"\n}",
           "latency": 0,
           "statusCode": 200,
           "label": "successful operation",
@@ -1108,7 +1140,15 @@
           "filePath": "",
           "databucketID": "",
           "sendFileAsBody": false,
-          "rules": [],
+          "rules": [
+            {
+              "target": "params",
+              "modifier": "id",
+              "value": "ce1076bb-5ee6-4d08-a0e2-ec0bfbc49883",
+              "invert": false,
+              "operator": "equals"
+            }
+          ],
           "rulesOperator": "OR",
           "disableTemplating": false,
           "fallbackTo404": false,

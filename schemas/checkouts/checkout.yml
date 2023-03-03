@@ -17,6 +17,7 @@ properties:
   expires_at:
     type: integer
     example: 1680397724
+    format: int64
   name:
     type: string
     description: checkout's name
@@ -42,6 +43,10 @@ properties:
         type: object
         additionalProperties:
           type: object
+  payments_limit_count:
+    type: integer
+    format: int8
+    example: 5
   recurrent:
     type: boolean
     example: false

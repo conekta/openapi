@@ -24,6 +24,7 @@ properties:
   expires_at:
     type: integer
     example: 1680397724
+    format: int64
   failure_url:
     type: string
     example: "https://pay.conekta.com/failure"
@@ -59,6 +60,11 @@ properties:
   paid_payments_count:
     type: integer
     example: 0
+  payments_limit_count:
+    type: integer
+    format: int8
+    example: 5
+    nullable: true
   recurrent:
     type: boolean
     example: false
