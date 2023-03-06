@@ -6823,6 +6823,38 @@
       ],
       "enabled": true,
       "responseMode": null
+    },
+    {
+      "uuid": "e57d0c07-95ef-4c0a-bc56-0f5b0c7cbee2",
+      "documentation": "health check endpoint",
+      "method": "get",
+      "endpoint": "ping",
+      "responses": [
+        {
+          "uuid": "96361d4e-b0ff-40bb-941c-97aa775e36a3",
+          "body": "{\n  \"status\": 200\n}",
+          "latency": 0,
+          "statusCode": 200,
+          "label": "health check endpoint",
+          "headers": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            }
+          ],
+          "bodyType": "INLINE",
+          "filePath": "",
+          "databucketID": "",
+          "sendFileAsBody": false,
+          "rules": [],
+          "rulesOperator": "OR",
+          "disableTemplating": false,
+          "fallbackTo404": false,
+          "default": true
+        }
+      ],
+      "enabled": true,
+      "responseMode": null
     }
   ],
   "rootChildren": [
@@ -7057,6 +7089,10 @@
     {
       "type": "route",
       "uuid": "ae217eb4-599a-4eb5-b874-4cb2da1bd709"
+    },
+    {
+      "type": "route",
+      "uuid": "e57d0c07-95ef-4c0a-bc56-0f5b0c7cbee2"
     }
   ],
   "proxyMode": false,
