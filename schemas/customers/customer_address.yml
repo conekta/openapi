@@ -4,7 +4,6 @@ required:
   - city
   - country
   - postal_code
-  - external_number
 properties:
   street1:
     type: string
