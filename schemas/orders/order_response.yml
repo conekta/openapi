@@ -79,6 +79,7 @@ properties:
         type: array
         items:
           type: integer
+          format: int8
       name:
         type: string
         example: "ord-2tNDzhA4Akmzj11AS"
@@ -88,6 +89,10 @@ properties:
       object:
         type: string
         example: "checkout"
+      on_demand_enabled:
+        type: boolean
+        example: true
+        nullable: true
       paid_payments_count:
         type: integer
         example: 0

@@ -25,6 +25,10 @@ properties:
   needs_shipping_contact:
     type: boolean
     example: false
+  on_demand_enabled:
+    type: boolean
+    example: true
+    nullable: true
   order_template:
     type: object
     required:
