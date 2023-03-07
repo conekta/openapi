@@ -181,11 +181,7 @@ paths:
         '401':
           $ref: '#/paths/~1logs/get/responses/401'
         '402':
-          description: payment required error
-          content:
-            application/vnd.conekta-v2.0.0+json:
-              schema:
-                $ref: '#/paths/~1logs/get/responses/401/content/application~1vnd.conekta-v2.0.0%2Bjson/schema'
+          $ref: '#/paths/~1orders/post/responses/402'
         '422':
           $ref: '#/paths/~1logs/get/responses/422'
         '500':
@@ -260,7 +256,13 @@ paths:
                     example: false
                   monthly_installments_options:
                     type: array
-                    items: {}
+                    items:
+                      type: integer
+                      format: int8
+                      example:
+                        - 3
+                        - 6
+                        - 12
                   name:
                     type: string
                     description: checkout's name
@@ -332,7 +334,7 @@ paths:
         '401':
           $ref: '#/paths/~1logs/get/responses/401'
         '402':
-          $ref: '#/paths/~1checkouts/get/responses/402'
+          $ref: '#/paths/~1orders/post/responses/402'
         '422':
           $ref: '#/paths/~1logs/get/responses/422'
         '500':
@@ -374,6 +376,10 @@ paths:
                 needs_shipping_contact:
                   type: boolean
                   example: false
+                on_demand_enabled:
+                  type: boolean
+                  example: true
+                  nullable: true
                 order_template:
                   type: object
                   required:
@@ -446,7 +452,7 @@ paths:
         '401':
           $ref: '#/paths/~1logs/get/responses/401'
         '402':
-          $ref: '#/paths/~1checkouts/get/responses/402'
+          $ref: '#/paths/~1orders/post/responses/402'
         '404':
           $ref: '#/paths/~1plans~1%7Bid%7D/get/responses/404'
         '422':
@@ -499,7 +505,7 @@ paths:
         '401':
           $ref: '#/paths/~1logs/get/responses/401'
         '402':
-          $ref: '#/paths/~1checkouts/get/responses/402'
+          $ref: '#/paths/~1orders/post/responses/402'
         '404':
           $ref: '#/paths/~1plans~1%7Bid%7D/get/responses/404'
         '422':
@@ -552,7 +558,7 @@ paths:
         '401':
           $ref: '#/paths/~1logs/get/responses/401'
         '402':
-          $ref: '#/paths/~1checkouts/get/responses/402'
+          $ref: '#/paths/~1orders/post/responses/402'
         '404':
           $ref: '#/paths/~1plans~1%7Bid%7D/get/responses/404'
         '422':
@@ -619,7 +625,7 @@ paths:
         '401':
           $ref: '#/paths/~1logs/get/responses/401'
         '402':
-          $ref: '#/paths/~1checkouts/get/responses/402'
+          $ref: '#/paths/~1orders/post/responses/402'
         '404':
           $ref: '#/paths/~1plans~1%7Bid%7D/get/responses/404'
         '422':
@@ -826,7 +832,7 @@ paths:
         '401':
           $ref: '#/paths/~1logs/get/responses/401'
         '402':
-          $ref: '#/paths/~1checkouts/get/responses/402'
+          $ref: '#/paths/~1orders/post/responses/402'
         '422':
           $ref: '#/paths/~1logs/get/responses/422'
         '500':
@@ -1112,7 +1118,7 @@ paths:
         '401':
           $ref: '#/paths/~1logs/get/responses/401'
         '402':
-          $ref: '#/paths/~1checkouts/get/responses/402'
+          $ref: '#/paths/~1orders/post/responses/402'
         '422':
           $ref: '#/paths/~1logs/get/responses/422'
         '500':
@@ -1191,7 +1197,7 @@ paths:
         '401':
           $ref: '#/paths/~1logs/get/responses/401'
         '402':
-          $ref: '#/paths/~1checkouts/get/responses/402'
+          $ref: '#/paths/~1orders/post/responses/402'
         '422':
           $ref: '#/paths/~1logs/get/responses/422'
         '500':
@@ -2027,7 +2033,7 @@ paths:
         '401':
           $ref: '#/paths/~1logs/get/responses/401'
         '402':
-          $ref: '#/paths/~1checkouts/get/responses/402'
+          $ref: '#/paths/~1orders/post/responses/402'
         '404':
           $ref: '#/paths/~1plans~1%7Bid%7D/get/responses/404'
         '422':
@@ -2080,7 +2086,7 @@ paths:
         '401':
           $ref: '#/paths/~1logs/get/responses/401'
         '402':
-          $ref: '#/paths/~1checkouts/get/responses/402'
+          $ref: '#/paths/~1orders/post/responses/402'
         '404':
           $ref: '#/paths/~1plans~1%7Bid%7D/get/responses/404'
         '422':
@@ -2133,7 +2139,7 @@ paths:
         '401':
           $ref: '#/paths/~1logs/get/responses/401'
         '402':
-          $ref: '#/paths/~1checkouts/get/responses/402'
+          $ref: '#/paths/~1orders/post/responses/402'
         '404':
           $ref: '#/paths/~1plans~1%7Bid%7D/get/responses/404'
         '422':
@@ -2732,6 +2738,42 @@ paths:
                                           cash_payment: payment_method_cash
                                           card_payment: payment_method_card
                                           bank_transfer_payment: payment_method_bank_transfer
+                                    refunds:
+                                      type: object
+                                      title: charge_response_refunds
+                                      allOf:
+                                        - $ref: '#/paths/~1plans/get/responses/200/content/application~1vnd.conekta-v2.0.0%2Bjson/schema/allOf/0'
+                                        - $ref: '#/paths/~1plans/get/responses/200/content/application~1vnd.conekta-v2.0.0%2Bjson/schema/allOf/1'
+                                        - type: object
+                                          properties:
+                                            data:
+                                              type: array
+                                              items:
+                                                title: charge_response_refunds_data
+                                                required:
+                                                  - object
+                                                  - id
+                                                  - amount
+                                                  - created_at
+                                                properties:
+                                                  object:
+                                                    type: string
+                                                    example: refund
+                                                  amount:
+                                                    type: integer
+                                                    format: int64
+                                                    example: -15000
+                                                  id:
+                                                    type: string
+                                                    example: 6407b5bee1329a000175ba11
+                                                  created_at:
+                                                    type: integer
+                                                    example: 1678226878
+                                                    format: int64
+                                                  auth_code:
+                                                    type: string
+                                                    example: '867372'
+                                      nullable: true
                                     status:
                                       type: string
                                       example: pending_payment
@@ -2781,6 +2823,7 @@ paths:
                         type: array
                         items:
                           type: integer
+                          format: int8
                       name:
                         type: string
                         example: ord-2tNDzhA4Akmzj11AS
@@ -2790,6 +2833,10 @@ paths:
                       object:
                         type: string
                         example: checkout
+                      on_demand_enabled:
+                        type: boolean
+                        example: true
+                        nullable: true
                       paid_payments_count:
                         type: integer
                         example: 0
@@ -2878,7 +2925,6 @@ paths:
                               - city
                               - country
                               - postal_code
-                              - external_number
                             properties:
                               street1:
                                 type: string
@@ -3026,6 +3072,12 @@ paths:
                     order_id: ord_2tHuwPhgSwq6Gt7Rg
         '401':
           $ref: '#/paths/~1logs/get/responses/401'
+        '402':
+          description: payment required error
+          content:
+            application/vnd.conekta-v2.0.0+json:
+              schema:
+                $ref: '#/paths/~1logs/get/responses/401/content/application~1vnd.conekta-v2.0.0%2Bjson/schema'
         '422':
           $ref: '#/paths/~1logs/get/responses/422'
         '500':
@@ -3054,12 +3106,17 @@ paths:
                   description: |
                     [Checkout](https://developers.conekta.com/reference/checkout) details
                   required:
-                    - type
                     - allowed_payment_methods
                   properties:
                     allowed_payment_methods:
-                      type: string
+                      type: array
                       description: Are the payment methods available for this link
+                      items:
+                        type: string
+                        example:
+                          - cash
+                          - card
+                          - bank_transfer
                     expires_at:
                       type: integer
                       format: int64
@@ -3067,15 +3124,31 @@ paths:
                     failure_url:
                       type: string
                       description: 'Redirection url back to the site in case of failed payment, applies only to HostedPayment.'
+                    monthly_installments_enabled:
+                      type: boolean
+                      example: false
+                    monthly_installments_options:
+                      type: array
+                      items:
+                        type: integer
+                        format: int8
+                        example:
+                          - 3
+                          - 6
+                          - 12
                     name:
                       type: string
                       description: Reason for payment
+                    on_demand_enabled:
+                      type: boolean
+                      example: true
                     success_url:
                       type: string
                       description: 'Redirection url back to the site in case of successful payment, applies only to HostedPayment'
                     type:
                       type: string
                       description: This field represents the type of checkout
+                      example: Integration
                 currency:
                   type: string
                   description: 'Currency with which the payment will be made. It uses the 3-letter code of the [International Standard ISO 4217.](https://es.wikipedia.org/wiki/ISO_4217)'

@@ -20,6 +20,8 @@ post:
      $ref: '../errors/422.yml'
     401:
      $ref: '../errors/401.yml'
+    402:
+     $ref: '../errors/402.yml'
     500:
      $ref: '../errors/500.yml'
 
