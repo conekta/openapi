@@ -4075,6 +4075,43 @@
           "default": false
         },
         {
+          "uuid": "52800c97-e785-4dd4-a681-0a5c2a192ccf",
+          "body": "{\n    \"has_more\": false,\n    \"total\": 1,\n    \"object\": \"list\",\n    \"data\": [\n        {\n            \"livemode\": true,\n            \"amount\": 460,\n            \"currency\": \"MXN\",\n            \"payment_status\": \"pending_payment\",\n            \"amount_refunded\": 0,\n            \"customer_info\": {\n                \"email\": \"Alec_Fay59@yahoo.com\",\n                \"phone\": \"+5215555555555\",\n                \"name\": \"Elio Rincon\",\n                \"corporate\": true,\n                \"customer_id\": \"cus_2tKcHxhTz7xU5SymF\",\n                \"object\": \"customer_info\"\n            },\n            \"shipping_contact\": {\n                \"receiver\": \"Marvin Fuller\",\n                \"phone\": \"+5215555555555\",\n                \"between_streets\": \"Morelos Campeche\",\n                \"address\": {\n                    \"street1\": \"Nuevo Leon 4\",\n                    \"street2\": \"fake street\",\n                    \"city\": \"Ciudad de Mexico\",\n                    \"state\": \"Ciudad de Mexico\",\n                    \"country\": \"mx\",\n                    \"residential\": true,\n                    \"object\": \"shipping_address\",\n                    \"postal_code\": \"06100\"\n                },\n                \"id\": \"ship_cont_2tNDzhA4Akmzj11AQ\",\n                \"object\": \"shipping_contact\",\n                \"created_at\": 0\n            },\n            \"channel\": {\n                \"segment\": \"Checkout\",\n                \"checkout_request_id\": \"6fca054a-8519-4c43-971e-cea35cc519bb\",\n                \"checkout_request_type\": \"HostedPayment\",\n                \"id\": \"channel_2tNDzhA4Akmzj11AU\"\n            },\n            \"fiscal_entity\": {\n                \"tax_id\": \"324234234\",\n                \"address\": {\n                    \"street1\": \"avenida siempre viva\",\n                    \"street2\": \"fake street\",\n                    \"external_number\": \"string\",\n                    \"city\": \"Ciudad de Mexico\",\n                    \"state\": \"Ciudad de Mexico\",\n                    \"country\": \"mx\",\n                    \"object\": \"fiscal_entity_address\",\n                    \"postal_code\": \"06100\"\n                },\n                \"id\": \"fis_ent_2tNDzhA4Akmzj11AR\",\n                \"object\": \"fiscal_entity\",\n                \"created_at\": 0\n            },\n            \"checkout\": {\n                \"id\": \"6fca054a-8519-4c43-971e-cea35cc519bb\",\n                \"name\": \"ord-2tNDzhA4Akmzj11AS\",\n                \"livemode\": true,\n                \"emails_sent\": 0,\n                \"success_url\": \"http://187.216.228.66:2222/SysVentasPagos/Acceso.aspx\",\n                \"failure_url\": \"http://187.216.228.66:2222/SysVentasPagos/Acceso.aspx\",\n                \"paid_payments_count\": 0,\n                \"sms_sent\": 0,\n                \"status\": \"Issued\",\n                \"type\": \"HostedPayment\",\n                \"recurrent\": false,\n                \"starts_at\": 1676354400,\n                \"expires_at\": 1676613599,\n                \"allowed_payment_methods\": [\n                    \"card\"\n                ],\n                \"exclude_card_networks\": [],\n                \"needs_shipping_contact\": false,\n                \"monthly_installments_options\": [],\n                \"monthly_installments_enabled\": false,\n                \"is_redirect_on_failure\": true,\n                \"force_3ds_flow\": false,\n                \"metadata\": {},\n                \"can_not_expire\": false,\n                \"object\": \"checkout\",\n                \"slug\": \"6fca054a85194c43971ecea35cc519bb\",\n                \"url\": \"https://pay.stg.conekta.io/checkout/6fca054a85194c43971ecea35cc519bb\"\n            },\n            \"object\": \"order\",\n            \"id\": \"ord_2tNDzhA4Akmzj11AS\",\n            \"metadata\": {},\n            \"is_refundable\": false,\n            \"created_at\": 1676417703,\n            \"updated_at\": 1676663383,\n            \"line_items\": {\n                \"object\": \"list\",\n                \"has_more\": false,\n                \"total\": 1,\n                \"data\": [\n                    {\n                        \"name\": \"Pago Mensualidad\",\n                        \"description\": \"Mes de Febrero.\",\n                        \"unit_price\": 460,\n                        \"quantity\": 1,\n                        \"tags\": [\n                            \"Pago\",\n                            \"Pago mensualidad\"\n                        ],\n                        \"object\": \"line_item\",\n                        \"id\": \"line_item_2tNDzhA4Akmzj11AN\",\n                        \"parent_id\": \"ord_2tNDzhA4Akmzj11AS\",\n                        \"metadata\": {},\n                        \"antifraud_info\": {}\n                    }\n                ]\n            },\n            \"charges\": {\n                \"object\": \"list\",\n                \"has_more\": false,\n                \"total\": 1,\n                \"data\": [\n                    {\n                        \"id\": \"63efda57cf65380001aec1a9\",\n                        \"livemode\": true,\n                        \"created_at\": 1676663383,\n                        \"currency\": \"MXN\",\n                        \"channel\": {\n                            \"segment\": \"Checkout\",\n                            \"checkout_request_id\": \"6fca054a-8519-4c43-971e-cea35cc519bb\",\n                            \"checkout_request_type\": \"HostedPayment\",\n                            \"id\": \"channel_2tP9usmyzXMXaJc2F\"\n                        },\n                        \"payment_method\": {\n                            \"service_name\": \"OxxoPay\",\n                            \"barcode_url\": \"https://pt-common-s3-stg.s3.amazonaws.com/0f0f98272185c8060bb812ad1c790f4247360512.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=ASIA3UN6375MOQYX2SEM%2F20230217%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20230217T194943Z&X-Amz-Expires=604800&X-Amz-Security-Token=IQoJb3JpZ2luX2VjEMr%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FwEaCXVzLWVhc3QtMSJHMEUCIQDzzIB7Wi7vELmx9iGedGGem1vsg%2FYnCWsECQ%2Fx%2BdQ%2FqgIgVqINLKl2CQF2OgpWBZw7bnEl5Pp6KY49%2FOQ56LM5ylYqhwQIYxACGgw3OTk4MDEwODE2ODgiDB4G%2F22RR5G7uGaExyrkA0IuptcoulAGRSziLp59vcR1%2BbSL8pY64k84b%2B%2FIgGnf1XSJek2wOALC3WbJ%2Fs1zrT6iRoJHAmQ%2B%2BtjVJgF1XxujQZiGiQVHThsePVtFVEGSZfjNWzldUaFKQLhn%2BZfls9JTb3pddbIHA%2BRQwjOJ1K8NKf7EQGn5gMMZQKaC%2FAWTlXwWnZfM2u03JVvJaioRZm3S7lnM89ICjHTxOxTk0m51Vm9ZVVARhb38w%2FPw%2F194Ah4JU7NrYai5rdkALbVP%2FAE0QYP0micI9Whj8OQDlptB53rsDzlZatcSjYK%2Frod9bzMJXv5b6dWezTCwO4ryGV24N0Q3Pmdg9U9cUOPvHVsjiq4HKx6l8Gc70WI61F77HNq0MnYXMR1ozJSHtPLTbFXZcyFGnPXbEy7t78gCnpjAPQCaMCnrWBur43mcNRG80sYPo%2FJLDD2jZ9glhzlSzSHik%2FI6ozQC13kBHL8PHVAw6OAwaSXbU%2BPI5nMtEUOOiPwQpsqcFErN8YVvHH1JqWdjNiiPTMqNNMxPRdAOcrLmGHwWDswOwhg0HMW0bKY3JjClAhSb1JxD5wNIvcZiMLxva6pMwJiQlv%2FFbLvQcN%2BMDEz3Ophf1u%2BWA8IPg08%2B29rk78AIFMotIFB7QVQ8kqacbVcw4IC%2FnwY6pQH8BNCZY%2Bp0ngsfYTZ%2BuNMr0%2B50E3HhXzQIRXajTNtNg4pAxoSHccoeEQGBGy6TTeblpCT%2Bet8unkDeOyHrqJwQLFOwj0wXdSnLEkE6iNdHBhUgSWtD5RwRcquS3VPH7v5S3zY2k2GecLxjWuhDA1Wrammgjgk4cz7XsjBBrk1e7Rte2W4gNKq1oYX4SaZBSfAV7QkFb6SYxEKgv4C5VfBmXRGAOJc%3D&X-Amz-SignedHeaders=host&X-Amz-Signature=4a0673cb5d996dc426a9e749a2c00894ee1c58b68f29a9fd12a311974d178fed\",\n                            \"object\": \"cash_payment\",\n                            \"type\": \"oxxo\",\n                            \"expires_at\": 1679011200,\n                            \"store_name\": \"OXXO\",\n                            \"reference\": \"93000262277955\"\n                        },\n                        \"object\": \"charge\",\n                        \"description\": \"Payment from order\",\n                        \"status\": \"pending_payment\",\n                        \"amount\": 460,\n                        \"fee\": 1160,\n                        \"customer_id\": \"\",\n                        \"order_id\": \"ord_2tNDzhA4Akmzj11AS\"\n                    }\n                ]\n            }\n        }\n    ]\n}",
+          "latency": 0,
+          "statusCode": 200,
+          "label": "successful operation with search",
+          "headers": [
+            {
+              "key": "Content-Type",
+              "value": "application/vnd.conekta-v2.0.0+json"
+            }
+          ],
+          "bodyType": "INLINE",
+          "filePath": "",
+          "databucketID": "",
+          "sendFileAsBody": false,
+          "rules": [
+            {
+              "target": "query",
+              "modifier": "limit",
+              "value": "22",
+              "invert": false,
+              "operator": "equals"
+            },
+            {
+              "target": "query",
+              "modifier": "search",
+              "value": "ord_2tNDzhA4Akmzj11AS",
+              "invert": false,
+              "operator": "equals"
+            }
+          ],
+          "rulesOperator": "AND",
+          "disableTemplating": false,
+          "fallbackTo404": false,
+          "default": false
+        },
+        {
           "uuid": "b6c68be5-8533-44c0-95de-c08b35dc68ff",
           "body": "",
           "latency": 0,
@@ -4341,6 +4378,36 @@
           "disableTemplating": false,
           "fallbackTo404": false,
           "default": false
+        },
+        {
+          "uuid": "54fa9569-b476-4f83-bab2-7db49a3ee090",
+          "body": "{\n  \"details\": [\n    {\n      \"debug_message\": \"This charge has been declined due to the users suspicious behavior.\",\n      \"message\": \"Tu método de pago ha sido rechazado, intenta con otro método.\",\n      \"code\": \"conekta.errors.processing.charge.card_payment.suspicious_behaviour\"\n    }\n  ],\n  \"object\": \"error\",\n  \"type\": \"processing_error\",\n  \"log_id\": \"640751978bb237000129ebc5\",\n  \"data\": {\n    \"livemode\": true,\n    \"amount\": 2000,\n    \"currency\": \"MXN\",\n    \"amount_refunded\": 0,\n    \"customer_info\": {\n      \"email\": \"Alec_Fay59@yahoo.com\",\n      \"phone\": \"+5215555555555\",\n      \"name\": \"Elio Rincon\",\n      \"corporate\": false,\n      \"customer_id\": \"cus_2tKcHxhTz7xU5SymF2\",\n      \"object\": \"customer_info\"\n    },\n    \"shipping_contact\": {\n      \"receiver\": \"Marvin Fuller\",\n      \"phone\": \"+5215555555555\",\n      \"between_streets\": \"Morelos Campeche\",\n      \"address\": {\n        \"street1\": \"Nuevo Leon 4\",\n        \"street2\": \"fake street\",\n        \"city\": \"Ciudad de Mexico\",\n        \"state\": \"Ciudad de Mexico\",\n        \"country\": \"mx\",\n        \"residential\": true,\n        \"object\": \"shipping_address\",\n        \"postal_code\": \"06100\"\n      },\n      \"id\": \"ship_cont_2tUyQmZyykejbbw8j\",\n      \"object\": \"shipping_contact\",\n      \"created_at\": 0\n    },\n    \"fiscal_entity\": {\n      \"tax_id\": \"324234234\",\n      \"address\": {\n        \"street1\": \"avenida siempre viva\",\n        \"street2\": \"fake street\",\n        \"external_number\": \"string\",\n        \"city\": \"Ciudad de Mexico\",\n        \"state\": \"Ciudad de Mexico\",\n        \"country\": \"mx\",\n        \"object\": \"fiscal_entity_address\",\n        \"postal_code\": \"06100\"\n      },\n      \"id\": \"fis_ent_2tUyQmZyykejbbw8k\",\n      \"object\": \"fiscal_entity\",\n      \"created_at\": 0\n    },\n    \"object\": \"order\",\n    \"id\": \"ord_2tUyQmZyykejbbw8m\",\n    \"metadata\": {},\n    \"is_refundable\": true,\n    \"created_at\": 1678201239,\n    \"updated_at\": 1678201239,\n    \"line_items\": {\n      \"object\": \"list\",\n      \"has_more\": false,\n      \"total\": 1,\n      \"data\": [\n        {\n          \"name\": \"Pago Mensualidad\",\n          \"description\": \"Mes de Febrero.\",\n          \"unit_price\": 2000,\n          \"quantity\": 1,\n          \"tags\": [\n            \"Pago\",\n            \"Pago mensualidad\"\n          ],\n          \"object\": \"line_item\",\n          \"id\": \"line_item_2tUyQmZyykejbbw8h\",\n          \"parent_id\": \"ord_2tUyQmZyykejbbw8m\",\n          \"metadata\": {},\n          \"antifraud_info\": {}\n        }\n      ]\n    },\n    \"charges\": {\n      \"object\": \"list\",\n      \"has_more\": false,\n      \"total\": 1,\n      \"data\": [\n        {\n          \"id\": \"640751978bb237000129ebd1\",\n          \"livemode\": true,\n          \"created_at\": 1678201239,\n          \"currency\": \"MXN\",\n          \"failure_code\": \"suspected_fraud\",\n          \"failure_message\": \"Este cargo ha sido declinado porque el comportamiento del comprador es sospechoso.\",\n          \"device_fingerprint\": \"WRKJYmobwd6AN8sevmKTe5Fo8usdCocq\",\n          \"payment_method\": {\n            \"name\": \"erererere ererere \",\n            \"exp_month\": \"06\",\n            \"exp_year\": \"24\",\n            \"object\": \"card_payment\",\n            \"type\": \"credit\",\n            \"last4\": \"4607\",\n            \"brand\": \"mastercard\",\n            \"issuer\": \"JOINT STOCK SAVINGS BANK BELARUSBANK\",\n            \"account_type\": \"BUSINESS\",\n            \"country\": \"BY\",\n            \"fraud_indicators\": []\n          },\n          \"object\": \"charge\",\n          \"description\": \"Payment from order\",\n          \"status\": \"declined\",\n          \"amount\": 2000,\n          \"fee\": 209,\n          \"customer_id\": \"cus_2tKcHxhTz7xU5SymF\",\n          \"order_id\": \"ord_2tUyQmZyykejbbw8m\"\n        }\n      ]\n    }\n  }\n}",
+          "latency": 0,
+          "statusCode": 402,
+          "label": "payment required",
+          "headers": [
+            {
+              "key": "Content-Type",
+              "value": "application/json; charset=utf-8"
+            }
+          ],
+          "bodyType": "INLINE",
+          "filePath": "",
+          "databucketID": "",
+          "sendFileAsBody": false,
+          "rules": [
+            {
+              "target": "body",
+              "modifier": "customer_info.customer_id",
+              "value": "cus_2tKcHxhTz7xU5SymF2",
+              "invert": false,
+              "operator": "equals"
+            }
+          ],
+          "rulesOperator": "OR",
+          "disableTemplating": false,
+          "fallbackTo404": false,
+          "default": false
         }
       ],
       "enabled": true,
@@ -4354,7 +4421,7 @@
       "responses": [
         {
           "uuid": "16e8239d-e8ae-4581-8522-4dc0d64e6a84",
-          "body": "",
+          "body": "{\n    \"livemode\": true,\n    \"amount\": 2000,\n    \"currency\": \"MXN\",\n    \"payment_status\": \"pending_payment\",\n    \"amount_refunded\": 0,\n    \"customer_info\": {\n        \"email\": \"Alec_Fay59@yahoo.com\",\n        \"phone\": \"+5215555555555\",\n        \"name\": \"Elio Rincon\",\n        \"corporate\": false,\n        \"customer_id\": \"cus_2tKcHxhTz7xU5SymF\",\n        \"object\": \"customer_info\"\n    },\n    \"shipping_contact\": {\n        \"receiver\": \"Marvin Fuller\",\n        \"phone\": \"+5215555555555\",\n        \"between_streets\": \"Morelos Campeche\",\n        \"address\": {\n            \"street1\": \"Nuevo Leon 4\",\n            \"street2\": \"fake street\",\n            \"city\": \"Ciudad de Mexico\",\n            \"state\": \"Ciudad de Mexico\",\n            \"country\": \"mx\",\n            \"residential\": true,\n            \"object\": \"shipping_address\",\n            \"postal_code\": \"06100\"\n        },\n        \"id\": \"ship_cont_2tUyGSk9TNWUcyvjk\",\n        \"object\": \"shipping_contact\",\n        \"created_at\": 0\n    },\n    \"fiscal_entity\": {\n        \"tax_id\": \"324234234\",\n        \"address\": {\n            \"street1\": \"avenida siempre viva\",\n            \"street2\": \"fake street\",\n            \"external_number\": \"string\",\n            \"city\": \"Ciudad de Mexico\",\n            \"state\": \"Ciudad de Mexico\",\n            \"country\": \"mx\",\n            \"object\": \"fiscal_entity_address\",\n            \"postal_code\": \"06100\"\n        },\n        \"id\": \"fis_ent_2tUyGSk9TNWUcyvjm\",\n        \"object\": \"fiscal_entity\",\n        \"created_at\": 0\n    },\n    \"object\": \"order\",\n    \"id\": \"ord_2tUyGSk9TNWUcyvjn\",\n    \"metadata\": {},\n    \"is_refundable\": false,\n    \"created_at\": 1678200585,\n    \"updated_at\": 1678200586,\n    \"line_items\": {\n        \"object\": \"list\",\n        \"has_more\": false,\n        \"total\": 1,\n        \"data\": [\n            {\n                \"name\": \"Pago Mensualidad\",\n                \"description\": \"Mes de Febrero.\",\n                \"unit_price\": 2000,\n                \"quantity\": 1,\n                \"tags\": [\n                    \"Pago\",\n                    \"Pago mensualidad\"\n                ],\n                \"object\": \"line_item\",\n                \"id\": \"line_item_2tUyGSk9TNWUcyvji\",\n                \"parent_id\": \"ord_2tUyGSk9TNWUcyvjn\",\n                \"metadata\": {},\n                \"antifraud_info\": {}\n            }\n        ]\n    },\n    \"charges\": {\n        \"object\": \"list\",\n        \"has_more\": false,\n        \"total\": 1,\n        \"data\": [\n            {\n                \"id\": \"64074f0a8bb237000129ebbc\",\n                \"livemode\": true,\n                \"created_at\": 1678200586,\n                \"currency\": \"MXN\",\n                \"payment_method\": {\n                    \"clabe\": \"646180111805035430\",\n                    \"bank\": \"STP\",\n                    \"receiving_account_number\": \"646180111805035430\",\n                    \"receiving_account_bank\": \"STP\",\n                    \"payment_attempts\": [],\n                    \"object\": \"bank_transfer_payment\",\n                    \"type\": \"spei\",\n                    \"expires_at\": 1685885063\n                },\n                \"object\": \"charge\",\n                \"description\": \"Payment from order\",\n                \"status\": \"pending_payment\",\n                \"amount\": 2000,\n                \"fee\": 103,\n                \"customer_id\": \"\",\n                \"order_id\": \"ord_2tUyGSk9TNWUcyvjn\"\n            }\n        ]\n    }\n}",
           "latency": 0,
           "statusCode": 200,
           "label": "successful",
@@ -4368,7 +4435,15 @@
           "filePath": "",
           "databucketID": "",
           "sendFileAsBody": false,
-          "rules": [],
+          "rules": [
+            {
+              "target": "params",
+              "modifier": "id",
+              "value": "ord_2tUyGSk9TNWUcyvjn",
+              "invert": false,
+              "operator": "equals"
+            }
+          ],
           "rulesOperator": "OR",
           "disableTemplating": false,
           "fallbackTo404": false,
@@ -4398,7 +4473,7 @@
         },
         {
           "uuid": "b7f16b0a-65d7-4f06-bd48-bdeb47bb4395",
-          "body": "{\n  \"details\": [\n    {\n      \"code\": \"conekta.errors.authentication.missing_key\",\n      \"param\": \"\",\n      \"message\": \"Acceso no autorizado.\",\n      \"debug_message\": \"Please include your access key in your request.\"\n    }\n  ]\n}",
+          "body": "{\n    \"details\": [\n        {\n            \"debug_message\": \"The object Order \\\"ord_2tUhuyzqLi6UJE9D12\\\" could not be found.\",\n            \"message\": \"The resource was not found.\",\n            \"code\": \"conekta.errors.resource_not_found.entity\"\n        }\n    ],\n    \"object\": \"error\",\n    \"type\": \"resource_not_found_error\",\n    \"log_id\": \"6407b2dde1329a000175b9ce\"\n}",
           "latency": 0,
           "statusCode": 404,
           "label": "not found entity",
@@ -4412,7 +4487,15 @@
           "filePath": "",
           "databucketID": "",
           "sendFileAsBody": false,
-          "rules": [],
+          "rules": [
+            {
+              "target": "params",
+              "modifier": "id",
+              "value": "ord_2tUhuyzqLi6UJE9D12",
+              "invert": false,
+              "operator": "equals"
+            }
+          ],
           "rulesOperator": "OR",
           "disableTemplating": false,
           "fallbackTo404": false,
@@ -5204,7 +5287,7 @@
       "responses": [
         {
           "uuid": "908aa1a8-a959-42d5-9dfb-e82f6611c794",
-          "body": "",
+          "body": "{\n    \"livemode\": true,\n    \"amount\": 40000,\n    \"currency\": \"MXN\",\n    \"payment_status\": \"partially_refunded\",\n    \"amount_refunded\": 15000,\n    \"customer_info\": {\n        \"email\": \"Miles_Price@gmail.com\",\n        \"phone\": \"+5215555555555\",\n        \"name\": \"Elio Rincon\",\n        \"corporate\": true,\n        \"customer_id\": \"cus_2tKZmA749BLsMRgBY\",\n        \"object\": \"customer_info\"\n    },\n    \"shipping_contact\": {\n        \"receiver\": \"Marvin Fuller\",\n        \"phone\": \"+5215555555555\",\n        \"between_streets\": \"Morelos Campeche\",\n        \"address\": {\n            \"street1\": \"Nuevo Leon 4\",\n            \"street2\": \"fake street\",\n            \"city\": \"Ciudad de Mexico\",\n            \"state\": \"Ciudad de Mexico\",\n            \"country\": \"mx\",\n            \"residential\": true,\n            \"object\": \"shipping_address\",\n            \"postal_code\": \"06100\"\n        },\n        \"id\": \"ship_cont_2tV52JvSom2w3E8bW\",\n        \"object\": \"shipping_contact\",\n        \"created_at\": 0\n    },\n    \"object\": \"order\",\n    \"id\": \"ord_2tV52JvSom2w3E8bX\",\n    \"metadata\": {},\n    \"is_refundable\": true,\n    \"created_at\": 1678226814,\n    \"updated_at\": 1678226878,\n    \"line_items\": {\n        \"object\": \"list\",\n        \"has_more\": false,\n        \"total\": 1,\n        \"data\": [\n            {\n                \"name\": \"Pago Mensualidad\",\n                \"description\": \"Mes de Febrero.\",\n                \"unit_price\": 40000,\n                \"quantity\": 1,\n                \"tags\": [\n                    \"Pago\",\n                    \"Pago mensualidad\"\n                ],\n                \"object\": \"line_item\",\n                \"id\": \"line_item_2tV52JvSom2w3E8bU\",\n                \"parent_id\": \"ord_2tV52JvSom2w3E8bX\",\n                \"metadata\": {},\n                \"antifraud_info\": {}\n            }\n        ]\n    },\n    \"charges\": {\n        \"object\": \"list\",\n        \"has_more\": false,\n        \"total\": 1,\n        \"data\": [\n            {\n                \"id\": \"6407b57ee1329a000175b9fc\",\n                \"livemode\": true,\n                \"created_at\": 1678226815,\n                \"currency\": \"MXN\",\n                \"device_fingerprint\": \"zptcxk4p6w1ijwz85snf1l3bqe5g09ie\",\n                \"payment_method\": {\n                    \"name\": \"erererere ererere \",\n                    \"exp_month\": \"06\",\n                    \"exp_year\": \"24\",\n                    \"auth_code\": \"867372\",\n                    \"object\": \"card_payment\",\n                    \"type\": \"credit\",\n                    \"last4\": \"4607\",\n                    \"brand\": \"mastercard\",\n                    \"issuer\": \"JOINT STOCK SAVINGS BANK BELARUSBANK\",\n                    \"account_type\": \"BUSINESS\",\n                    \"country\": \"BY\",\n                    \"fraud_indicators\": []\n                },\n                \"object\": \"charge\",\n                \"description\": \"Payment from order\",\n                \"status\": \"partially_refunded\",\n                \"amount\": 40000,\n                \"paid_at\": 1678226816,\n                \"fee\": 1972,\n                \"customer_id\": \"cus_2tKZmA749BLsMRgBY\",\n                \"order_id\": \"ord_2tV52JvSom2w3E8bX\",\n                \"refunds\": {\n                    \"object\": \"list\",\n                    \"has_more\": false,\n                    \"total\": 1,\n                    \"data\": [\n                        {\n                            \"object\": \"refund\",\n                            \"amount\": -15000,\n                            \"id\": \"6407b5bee1329a000175ba11\",\n                            \"created_at\": 1678226878,\n                            \"auth_code\": \"867372\"\n                        }\n                    ]\n                }\n            }\n        ]\n    }\n}",
           "latency": 0,
           "statusCode": 200,
           "label": "successful",
@@ -5218,7 +5301,15 @@
           "filePath": "",
           "databucketID": "",
           "sendFileAsBody": false,
-          "rules": [],
+          "rules": [
+            {
+              "target": "params",
+              "modifier": "id",
+              "value": "ord_2tV52JvSom2w3E8bX",
+              "invert": false,
+              "operator": "equals"
+            }
+          ],
           "rulesOperator": "OR",
           "disableTemplating": false,
           "fallbackTo404": false,

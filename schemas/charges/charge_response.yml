@@ -53,6 +53,42 @@ properties:
         cash_payment: payment_method_cash
         card_payment: payment_method_card
         bank_transfer_payment: payment_method_bank_transfer
+  refunds:
+    type: object
+    title: charge_response_refunds
+    allOf:
+      - $ref: ../pagination/pagination.yml
+      - $ref: ../pagination/page.yml
+      - type: object
+        properties:
+          data:
+            type: array
+            items:
+              title: charge_response_refunds_data
+              required:
+                - object
+                - id
+                - amount
+                - created_at
+              properties:
+                object:
+                  type: string
+                  example: "refund"
+                amount:
+                  type: integer
+                  format: int64
+                  example: -15000
+                id:
+                  type: string
+                  example: "6407b5bee1329a000175ba11"
+                created_at:
+                  type: integer
+                  example: 1678226878
+                  format: int64
+                auth_code:
+                  type: string
+                  example: "867372"
+    nullable: true
   status:
     type: string
     example: "pending_payment"
