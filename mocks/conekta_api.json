@@ -4535,7 +4535,7 @@
       "responses": [
         {
           "uuid": "64e884e5-27f5-4a9a-84e9-67030f658a13",
-          "body": "",
+          "body": "{\n    \"livemode\": true,\n    \"amount\": 82000,\n    \"currency\": \"MXN\",\n    \"amount_refunded\": 0,\n    \"customer_info\": {\n        \"email\": \"Miles_Price@gmail.com\",\n        \"phone\": \"+5215555555555\",\n        \"name\": \"demo demo\",\n        \"corporate\": true,\n        \"customer_id\": \"cus_2tKZmA749BLsMRgBY\",\n        \"object\": \"customer_info\"\n    },\n    \"shipping_contact\": {\n        \"receiver\": \"Marvin Fuller\",\n        \"phone\": \"+5215555555555\",\n        \"between_streets\": \"Morelos Campeche\",\n        \"address\": {\n            \"street1\": \"Nuevo Leon 4\",\n            \"street2\": \"fake street\",\n            \"city\": \"Ciudad de Mexico\",\n            \"state\": \"Ciudad de Mexico\",\n            \"country\": \"mx\",\n            \"residential\": true,\n            \"object\": \"shipping_address\",\n            \"postal_code\": \"06100\"\n        },\n        \"id\": \"ship_cont_2tVPCGRXnMXKdvcsi\",\n        \"object\": \"shipping_contact\",\n        \"created_at\": 0\n    },\n    \"object\": \"order\",\n    \"id\": \"ord_2tVPCGRXnMXKdvcsj\",\n    \"metadata\": {},\n    \"is_refundable\": false,\n    \"created_at\": 1678309616,\n    \"updated_at\": 1678311558,\n    \"line_items\": {\n        \"object\": \"list\",\n        \"has_more\": false,\n        \"total\": 1,\n        \"data\": [\n            {\n                \"name\": \"Pago Mensualidad enero\",\n                \"description\": \"Mes de enero.\",\n                \"unit_price\": 41000,\n                \"quantity\": 2,\n                \"tags\": [\n                    \"Pago\",\n                    \"Pago mensualidad\"\n                ],\n                \"object\": \"line_item\",\n                \"id\": \"line_item_2tVPcyX4iSNd6eH39\",\n                \"parent_id\": \"ord_2tVPCGRXnMXKdvcsj\",\n                \"metadata\": {},\n                \"antifraud_info\": {}\n            }\n        ]\n    }\n}",
           "latency": 0,
           "statusCode": 200,
           "label": "successful",
@@ -4549,7 +4549,15 @@
           "filePath": "",
           "databucketID": "",
           "sendFileAsBody": false,
-          "rules": [],
+          "rules": [
+            {
+              "target": "params",
+              "modifier": "id",
+              "value": "ord_2tVPCGRXnMXKdvcsj",
+              "invert": false,
+              "operator": "equals"
+            }
+          ],
           "rulesOperator": "OR",
           "disableTemplating": false,
           "fallbackTo404": false,
@@ -4655,7 +4663,7 @@
       "responses": [
         {
           "uuid": "04495db1-8262-429b-8664-9bed458a9c46",
-          "body": "",
+          "body": "{\n    \"livemode\": true,\n    \"amount\": 40000,\n    \"currency\": \"MXN\",\n    \"payment_status\": \"paid\",\n    \"amount_refunded\": 0,\n    \"customer_info\": {\n        \"email\": \"Miles_Price@gmail.com\",\n        \"phone\": \"+5215555555555\",\n        \"name\": \"Elio Rincon\",\n        \"corporate\": true,\n        \"customer_id\": \"cus_2tKZmA749BLsMRgBY\",\n        \"object\": \"customer_info\"\n    },\n    \"shipping_contact\": {\n        \"receiver\": \"Marvin Fuller\",\n        \"phone\": \"+5215555555555\",\n        \"between_streets\": \"Morelos Campeche\",\n        \"address\": {\n            \"street1\": \"Nuevo Leon 4\",\n            \"street2\": \"fake street\",\n            \"city\": \"Ciudad de Mexico\",\n            \"state\": \"Ciudad de Mexico\",\n            \"country\": \"mx\",\n            \"residential\": true,\n            \"object\": \"shipping_address\",\n            \"postal_code\": \"06100\"\n        },\n        \"id\": \"ship_cont_2tVKoTd79XK1GqJmd\",\n        \"object\": \"shipping_contact\",\n        \"created_at\": 0\n    },\n    \"object\": \"order\",\n    \"id\": \"ord_2tVKoTd79XK1GqJme\",\n    \"metadata\": {},\n    \"is_refundable\": true,\n    \"created_at\": 1678294154,\n    \"updated_at\": 1678294173,\n    \"line_items\": {\n        \"object\": \"list\",\n        \"has_more\": false,\n        \"total\": 1,\n        \"data\": [\n            {\n                \"name\": \"Pago Mensualidad\",\n                \"description\": \"Mes de Febrero.\",\n                \"unit_price\": 40000,\n                \"quantity\": 1,\n                \"tags\": [\n                    \"Pago\",\n                    \"Pago mensualidad\"\n                ],\n                \"object\": \"line_item\",\n                \"id\": \"line_item_2tVKoTd79XK1GqJmb\",\n                \"parent_id\": \"ord_2tVKoTd79XK1GqJme\",\n                \"metadata\": {},\n                \"antifraud_info\": {}\n            }\n        ]\n    },\n    \"charges\": {\n        \"object\": \"list\",\n        \"has_more\": false,\n        \"total\": 1,\n        \"data\": [\n            {\n                \"id\": \"6408bc8ade4b8e0001074477\",\n                \"livemode\": true,\n                \"created_at\": 1678294154,\n                \"currency\": \"MXN\",\n                \"device_fingerprint\": \"zptcxk4p6w1ijwz85snf1l3bqe5g09ie\",\n                \"payment_method\": {\n                    \"name\": \"erererere ererere \",\n                    \"exp_month\": \"06\",\n                    \"exp_year\": \"24\",\n                    \"auth_code\": \"867372\",\n                    \"object\": \"card_payment\",\n                    \"type\": \"credit\",\n                    \"last4\": \"4607\",\n                    \"brand\": \"mastercard\",\n                    \"issuer\": \"JOINT STOCK SAVINGS BANK BELARUSBANK\",\n                    \"account_type\": \"BUSINESS\",\n                    \"country\": \"BY\",\n                    \"fraud_indicators\": []\n                },\n                \"object\": \"charge\",\n                \"description\": \"Payment from order\",\n                \"status\": \"paid\",\n                \"amount\": 40000,\n                \"paid_at\": 1678294173,\n                \"fee\": 1972,\n                \"customer_id\": \"cus_2tKZmA749BLsMRgBY\",\n                \"order_id\": \"ord_2tVKoTd79XK1GqJme\"\n            }\n        ]\n    }\n}",
           "latency": 0,
           "statusCode": 200,
           "label": "successful",
@@ -4669,7 +4677,15 @@
           "filePath": "",
           "databucketID": "",
           "sendFileAsBody": false,
-          "rules": [],
+          "rules": [
+            {
+              "target": "params",
+              "modifier": "id",
+              "value": "ord_2tVKoTd79XK1GqJme",
+              "invert": false,
+              "operator": "equals"
+            }
+          ],
           "rulesOperator": "OR",
           "disableTemplating": false,
           "fallbackTo404": false,
@@ -4753,10 +4769,10 @@
       "responses": [
         {
           "uuid": "8110075d-5f84-4fff-88da-cb40ec4e7821",
-          "body": "",
+          "body": "{\n    \"id\": \"6408bf90de4b8e000107449a\",\n    \"livemode\": true,\n    \"created_at\": 1678294928,\n    \"currency\": \"MXN\",\n    \"failure_code\": null,\n    \"failure_message\": null,\n    \"monthly_installments\": null,\n    \"device_fingerprint\": \"zptcxk4p6w1ijwz85snf1l3bqe5g09ie\",\n    \"channel\": null,\n    \"payment_method\": {\n        \"name\": \"erererere ererere \",\n        \"exp_month\": \"06\",\n        \"exp_year\": \"24\",\n        \"auth_code\": \"867372\",\n        \"object\": \"card_payment\",\n        \"type\": \"credit\",\n        \"normalized_device_fingerprint\": null,\n        \"last4\": \"4607\",\n        \"brand\": \"mastercard\",\n        \"issuer\": \"JOINT STOCK SAVINGS BANK BELARUSBANK\",\n        \"account_type\": \"BUSINESS\",\n        \"country\": \"BY\",\n        \"fraud_score\": null,\n        \"fraud_indicators\": []\n    },\n    \"object\": \"charge\",\n    \"description\": \"Payment from order\",\n    \"reference_id\": null,\n    \"status\": \"pre_authorized\",\n    \"amount\": {{body 'amount' }},\n    \"paid_at\": null,\n    \"customer_id\": \"cus_2tKZmA749BLsMRgBY\",\n    \"order_id\": \"ord_2tVKxbhNzfUnGjnXG\",\n    \"customer_custom_reference\": null,\n    \"refunds\": null\n}",
           "latency": 0,
           "statusCode": 200,
-          "label": "successful",
+          "label": "successful card",
           "headers": [
             {
               "key": "Content-Type",
@@ -4767,11 +4783,79 @@
           "filePath": "",
           "databucketID": "",
           "sendFileAsBody": false,
-          "rules": [],
+          "rules": [
+            {
+              "target": "params",
+              "modifier": "id",
+              "value": "ord_2tVKxbhNzfUnGjnXG",
+              "invert": false,
+              "operator": "equals"
+            }
+          ],
           "rulesOperator": "OR",
           "disableTemplating": false,
           "fallbackTo404": false,
           "default": true
+        },
+        {
+          "uuid": "fa095f68-aaf4-4340-aa07-6b06c6cc1492",
+          "body": "{\n    \"id\": \"6408c87bde4b8e00010744e3\",\n    \"livemode\": true,\n    \"created_at\": 1678297211,\n    \"currency\": \"MXN\",\n    \"failure_code\": null,\n    \"failure_message\": null,\n    \"monthly_installments\": null,\n    \"device_fingerprint\": null,\n    \"channel\": null,\n    \"payment_method\": {\n        \"clabe\": \"646180111805035472\",\n        \"bank\": \"STP\",\n        \"issuing_account_holder_name\": null,\n        \"issuing_account_tax_id\": null,\n        \"issuing_account_bank\": null,\n        \"issuing_account_number\": null,\n        \"receiving_account_holder_name\": null,\n        \"receiving_account_tax_id\": null,\n        \"receiving_account_number\": \"646180111805035472\",\n        \"receiving_account_bank\": \"STP\",\n        \"reference_number\": null,\n        \"description\": null,\n        \"tracking_code\": null,\n        \"executed_at\": null,\n        \"payment_attempts\": [],\n        \"object\": \"bank_transfer_payment\",\n        \"type\": \"spei\",\n        \"expires_at\": 1686057163\n    },\n    \"object\": \"charge\",\n    \"description\": \"Payment from order\",\n    \"reference_id\": null,\n    \"status\": \"pending_payment\",\n    \"amount\": {{body 'amount' }},\n    \"paid_at\": null,\n    \"customer_id\": \"\",\n    \"order_id\": \"ord_2tVLUFrQBB4HKz1zj\",\n    \"refunds\": null\n}",
+          "latency": 0,
+          "statusCode": 200,
+          "label": "successful spei",
+          "headers": [
+            {
+              "key": "Content-Type",
+              "value": "application/vnd.conekta-v2.0.0+json"
+            }
+          ],
+          "bodyType": "INLINE",
+          "filePath": "",
+          "databucketID": "",
+          "sendFileAsBody": false,
+          "rules": [
+            {
+              "target": "params",
+              "modifier": "id",
+              "value": "ord_2tVLUFrQBB4HKz1zj",
+              "invert": false,
+              "operator": "equals"
+            }
+          ],
+          "rulesOperator": "OR",
+          "disableTemplating": false,
+          "fallbackTo404": false,
+          "default": false
+        },
+        {
+          "uuid": "7433ab86-feed-4a65-aef4-31b4b3dc0422",
+          "body": "{\n    \"id\": \"6408c296de4b8e00010744d2\",\n    \"livemode\": true,\n    \"created_at\": 1678295702,\n    \"currency\": \"MXN\",\n    \"failure_code\": null,\n    \"failure_message\": null,\n    \"monthly_installments\": null,\n    \"device_fingerprint\": null,\n    \"channel\": null,\n    \"payment_method\": {\n        \"service_name\": \"OxxoPay\",\n        \"barcode_url\": \"https://pt-common-s3-stg.s3.amazonaws.com/81be09473aa801b1cebfe033126f8bdf957d38a5.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=ASIA3UN6375MLPPELML6%2F20230308%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20230308T171502Z&X-Amz-Expires=604800&X-Amz-Security-Token=IQoJb3JpZ2luX2VjEJH%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FwEaCXVzLWVhc3QtMSJHMEUCIGD1riDCaWeet%2BpkiE%2BWhhfnnJ8IXpGAjWhfd4YpUsUmAiEAsMpD1teauQrxSPM%2BxtgTJLZHyf2Q8rtwRk%2F6QuvglJ8qhwQISRACGgw3OTk4MDEwODE2ODgiDDjZv8d7fy8Jpvp7gyrkA0JltRVcObiZSwI49ZHdcVFpjrijgLlVZbWqchpbh3cTBa2n%2FqE%2FwRGJp0tG5j%2Fvw05GK4yXeLZWqDwN6t%2BsP6A4yshALl7IUjKMi%2Bq1DS5RF0gZ%2FUVoXZAGJWP5RkdN9M9vpmdmIo7WdvzSobbL5iRq1aEzGwe5agMZkxlSrZgQuBVxSi4n6cYoY7Ke3vAaqf00VQgt9GJBWnY94cCpes3KnmakypRXxxsC1Tv1Vsewpv%2Beh%2BO9e8XE8zCsXDnS%2FLi7o%2FEhyA0yISpV6p8kKU14DLJ3MZFfOo0%2FCiiiXTDt8UxwBZ2%2BTq4OOgm9MNzhvIFFEroVWPlw09oM03eW4YBFQr%2Fd3HsWGelTcDxsJAog7145jIaTsn2tw4XkoufuN5RTFy7IBB9RuOqR2rWRN%2FrO3ctAGjp7orosTk2DYi2NgqNTFeln%2BIZvdgAq%2F%2BgxJyVyo7HEULKOJb%2FoKc9k7PRGdxADz0l2thdErCnoLMNRBRppJ4EBQ67zuwACciM0BZHqhV67nLLu942lLoLvoJ%2BUvATOtA5B7ALKTn9HKdGyRFD2EYaRseXmZefKlPWfZTAxs1HcfopLdZFTc25AcvaAHGWYvVLJlfsJeQAwgaBHatvUjkXeZoYj7sWzZOuOWucJTu8w7uaioAY6pQGOVhhbPNbPMlR84ONIvFcspL0yM6bJT8KWXdgWEtBhlsmMKkERpVvp9sUz3tfgKe9g8u4vTzPgLf0HXry961QeEIQraot0WTsxud%2B599nvquiwNn3jzxN6LRQC4OpDPYpjENgRGj834OQNPreqDcCzZ2K1MtRowsn1EzmeopEm3lwYyq299T9FPRiDji8BZJTOeid7bEhAXOWXlmffEIhutSmrrkM%3D&X-Amz-SignedHeaders=host&X-Amz-Signature=b0beaae8283c59301af7cbe6f90204a449224be159b837b9fd637826dabc89a4\",\n        \"store\": null,\n        \"auth_code\": null,\n        \"object\": \"cash_payment\",\n        \"type\": \"oxxo\",\n        \"expires_at\": 1680912000,\n        \"store_name\": \"OXXO\",\n        \"reference\": \"93000262280900\",\n        \"cashier_id\": null\n    },\n    \"object\": \"charge\",\n    \"description\": \"Payment from order\",\n    \"reference_id\": null,\n    \"status\": \"pending_payment\",\n    \"amount\": 40000,\n    \"paid_at\": null,\n    \"customer_id\": \"\",\n    \"order_id\": \"ord_2tVL8dT1Hm3y3YiaN\",\n    \"refunds\": null\n}",
+          "latency": 0,
+          "statusCode": 200,
+          "label": "successful cash",
+          "headers": [
+            {
+              "key": "Content-Type",
+              "value": "application/vnd.conekta-v2.0.0+json"
+            }
+          ],
+          "bodyType": "INLINE",
+          "filePath": "",
+          "databucketID": "",
+          "sendFileAsBody": false,
+          "rules": [
+            {
+              "target": "params",
+              "modifier": "id",
+              "value": "ord_2tVL8dT1Hm3y3YiaN",
+              "invert": false,
+              "operator": "equals"
+            }
+          ],
+          "rulesOperator": "OR",
+          "disableTemplating": false,
+          "fallbackTo404": false,
+          "default": false
         },
         {
           "uuid": "8c54a12d-9074-42d7-857f-9aa322271f16",

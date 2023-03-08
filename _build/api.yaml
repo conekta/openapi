@@ -3380,6 +3380,15 @@ paths:
           $ref: '#/paths/~1logs/get/responses/401'
         '404':
           $ref: '#/paths/~1plans~1%7Bid%7D/get/responses/404'
+        '428':
+          description: Precondition Required
+          content:
+            application/vnd.conekta-v2.0.0+json:
+              schema:
+                $ref: '#/paths/~1logs/get/responses/401/content/application~1vnd.conekta-v2.0.0%2Bjson/schema'
+            application/json; charset=utf-8:
+              schema:
+                $ref: '#/paths/~1logs/get/responses/401/content/application~1vnd.conekta-v2.0.0%2Bjson/schema'
         '500':
           $ref: '#/paths/~1logs/get/responses/500'
       security:
@@ -3479,6 +3488,14 @@ paths:
                             title: charge_data_payment_method_cash_response
                             description: use for cash responses
                             properties:
+                              auth_code:
+                                type: integer
+                                example: 542563
+                                nullable: true
+                              cashier_id:
+                                type: string
+                                nullable: true
+                                example: OINM01010
                               reference:
                                 type: string
                                 example: '93000262276908'
@@ -3492,6 +3509,10 @@ paths:
                               service_name:
                                 type: string
                                 example: OxxoPay
+                              store:
+                                type: string
+                                nullable: true
+                                example: 10MON50EDI
                               store_name:
                                 type: string
                                 example: OXXO
@@ -3543,19 +3564,49 @@ paths:
                               clabe:
                                 type: string
                                 example: '646180111805034237'
+                              description:
+                                type: string
+                                nullable: true
+                              executed_at:
+                                type: integer
+                                nullable: true
                               expires_at:
                                 type: integer
                                 example: 1683053729
                                 format: int64
+                              issuing_account_bank:
+                                type: string
+                                nullable: true
+                              issuing_account_number:
+                                type: string
+                                nullable: true
+                              issuing_account_holder_name:
+                                type: string
+                                nullable: true
+                              issuing_account_tax_id:
+                                type: string
+                                nullable: true
                               payment_attempts:
                                 type: array
                                 items: {}
+                              receiving_account_holder_name:
+                                type: string
+                                nullable: true
                               receiving_account_number:
                                 type: string
                                 example: '646180111805034237'
                               receiving_account_bank:
                                 type: string
                                 example: STP
+                              receiving_account_tax_id:
+                                type: string
+                                nullable: true
+                              reference_number:
+                                type: string
+                                nullable: true
+                              tracking_code:
+                                type: string
+                                nullable: true
                     discriminator:
                       propertyName: object
                       mapping:

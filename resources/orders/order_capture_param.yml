@@ -14,6 +14,8 @@ post:
      $ref: '../errors/401.yml'
     404:
      $ref: '../errors/404.yml'
+    428:
+     $ref: '../errors/428.yml'
     500:
      $ref: '../errors/500.yml'
   security:
