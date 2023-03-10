@@ -4935,7 +4935,7 @@
       "responses": [
         {
           "uuid": "aacaad9c-2025-4f85-afc7-9dfa6267fa8f",
-          "body": "",
+          "body": "{\n    \"code\": \"{{body 'code' }}\",\n    \"amount\": {{body 'amount' }},\n    \"type\":  \"{{body 'type' }}\",\n    \"object\": \"discount_line\",\n    \"id\": \"dis_lin_2tVyahK8Nts7rKRMZ\",\n    \"parent_id\":  \"{{urlParam 'id'}}\"\n}",
           "latency": 0,
           "statusCode": 200,
           "label": "successful",
@@ -4949,7 +4949,15 @@
           "filePath": "",
           "databucketID": "",
           "sendFileAsBody": false,
-          "rules": [],
+          "rules": [
+            {
+              "target": "params",
+              "modifier": "id",
+              "value": "ord_2tVyWPnCPWbrV37mW",
+              "invert": false,
+              "operator": "equals"
+            }
+          ],
           "rulesOperator": "OR",
           "disableTemplating": false,
           "fallbackTo404": false,
@@ -5033,7 +5041,7 @@
       "responses": [
         {
           "uuid": "3f696740-f4fa-47e0-9c9f-744ed9b2f8e1",
-          "body": "",
+          "body": "{\n    \"code\": \"trac\",\n    \"amount\": 100,\n    \"type\": \"loyalty\",\n    \"object\": \"discount_line\",\n    \"id\": \"dis_lin_2tVyahK8Nts7rKRMZ\",\n    \"parent_id\": \"ord_2tVyWPnCPWbrV37mW\"\n}",
           "latency": 0,
           "statusCode": 200,
           "label": "successful",
@@ -5047,8 +5055,23 @@
           "filePath": "",
           "databucketID": "",
           "sendFileAsBody": false,
-          "rules": [],
-          "rulesOperator": "OR",
+          "rules": [
+            {
+              "target": "params",
+              "modifier": "id",
+              "value": "ord_2tVyWPnCPWbrV37mW",
+              "invert": false,
+              "operator": "equals"
+            },
+            {
+              "target": "params",
+              "modifier": "discount_lines_id",
+              "value": "dis_lin_2tVyahK8Nts7rKRMZ",
+              "invert": false,
+              "operator": "equals"
+            }
+          ],
+          "rulesOperator": "AND",
           "disableTemplating": false,
           "fallbackTo404": false,
           "default": true
@@ -5153,7 +5176,7 @@
       "responses": [
         {
           "uuid": "796d38af-1289-4e18-a6ef-3ab092e84cf0",
-          "body": "",
+          "body": "{\n    \"name\": \"Pago Mensualidad test\",\n    \"description\": \"Mes de marz.\",\n    \"unit_price\": 1000,\n    \"quantity\": 1,\n    \"tags\": [\n        \"Pago 2\",\n        \"Pago mensualidad 2\"\n    ],\n    \"object\": \"line_item\",\n    \"id\": \"line_item_2tVz8UkyWhSxLfUd7\",\n    \"parent_id\": \"{{urlParam 'id'}}\",\n    \"metadata\": {},\n    \"antifraud_info\": {}\n}",
           "latency": 0,
           "statusCode": 200,
           "label": "successful",
@@ -5167,7 +5190,15 @@
           "filePath": "",
           "databucketID": "",
           "sendFileAsBody": false,
-          "rules": [],
+          "rules": [
+            {
+              "target": "params",
+              "modifier": "id",
+              "value": "ord_2tVyWPnCPWbrV37mW",
+              "invert": false,
+              "operator": "equals"
+            }
+          ],
           "rulesOperator": "OR",
           "disableTemplating": false,
           "fallbackTo404": false,
@@ -5251,7 +5282,7 @@
       "responses": [
         {
           "uuid": "431c300e-4876-4749-b11a-635594fa4791",
-          "body": "",
+          "body": "{\n    \"name\": \"Pago Mensualidad\",\n    \"description\": \"Mes de marz.\",\n    \"unit_price\": 1000,\n    \"quantity\": 1,\n    \"tags\": [\n        \"Pago 2\",\n        \"Pago mensualidad 2\"\n    ],\n    \"object\": \"line_item\",\n    \"id\": \"line_item_2tVz8UkyWhSxLfUd7\",\n    \"parent_id\": \"ord_2tVyWPnCPWbrV37mW\",\n    \"metadata\": {},\n    \"antifraud_info\": {}\n}",
           "latency": 0,
           "statusCode": 200,
           "label": "successful",
@@ -5265,8 +5296,23 @@
           "filePath": "",
           "databucketID": "",
           "sendFileAsBody": false,
-          "rules": [],
-          "rulesOperator": "OR",
+          "rules": [
+            {
+              "target": "params",
+              "modifier": "id",
+              "value": "ord_2tVyWPnCPWbrV37mW",
+              "invert": false,
+              "operator": "equals"
+            },
+            {
+              "target": "params",
+              "modifier": "line_item_id",
+              "value": "line_item_2tVz8UkyWhSxLfUd7",
+              "invert": false,
+              "operator": "equals"
+            }
+          ],
+          "rulesOperator": "AND",
           "disableTemplating": false,
           "fallbackTo404": false,
           "default": true
@@ -5499,7 +5545,7 @@
       "responses": [
         {
           "uuid": "99a11cd4-bcaa-45a1-a333-b24ffca08a36",
-          "body": "",
+          "body": "{\n    \"amount\": {{body 'amount'}},\n    \"object\": \"shipping_line\",\n    \"id\": \"ship_lin_2tVzNuDGSaDwreMg6\",\n    \"parent_id\": \"{{urlParam 'id'}}\"\n}",
           "latency": 0,
           "statusCode": 200,
           "label": "successful",
@@ -5513,7 +5559,15 @@
           "filePath": "",
           "databucketID": "",
           "sendFileAsBody": false,
-          "rules": [],
+          "rules": [
+            {
+              "target": "params",
+              "modifier": "id",
+              "value": "ord_2tVyWPnCPWbrV37mW",
+              "invert": false,
+              "operator": "equals"
+            }
+          ],
           "rulesOperator": "OR",
           "disableTemplating": false,
           "fallbackTo404": false,
@@ -5597,7 +5651,7 @@
       "responses": [
         {
           "uuid": "a184e18a-b3d0-4eeb-a886-e0cfc9a3d2be",
-          "body": "",
+          "body": "{\n    \"amount\": 540,\n    \"object\": \"shipping_line\",\n    \"id\": \"ship_lin_2tVzNuDGSaDwreMg6\",\n    \"parent_id\": \"ord_2tVyWPnCPWbrV37mW\"\n}",
           "latency": 0,
           "statusCode": 200,
           "label": "successful",
@@ -5611,8 +5665,23 @@
           "filePath": "",
           "databucketID": "",
           "sendFileAsBody": false,
-          "rules": [],
-          "rulesOperator": "OR",
+          "rules": [
+            {
+              "target": "params",
+              "modifier": "id",
+              "value": "ord_2tVyWPnCPWbrV37mW",
+              "invert": false,
+              "operator": "equals"
+            },
+            {
+              "target": "params",
+              "modifier": "shipping_lines_id",
+              "value": "ship_lin_2tVzNuDGSaDwreMg6",
+              "invert": false,
+              "operator": "equals"
+            }
+          ],
+          "rulesOperator": "AND",
           "disableTemplating": false,
           "fallbackTo404": false,
           "default": true
@@ -5717,7 +5786,7 @@
       "responses": [
         {
           "uuid": "6be3fa95-804a-4df6-a44f-7d6b1776129a",
-          "body": "",
+          "body": "{\n    \"description\": \"test postman\",\n    \"amount\": 100,\n    \"object\": \"tax_line\",\n    \"id\": \"tax_lin_2tVzVp6AAptCRHhgt\",\n    \"parent_id\":\"{{urlParam 'id'}}\",\n    \"metadata\": {\n        \"key\": \"value\"\n    }\n}",
           "latency": 0,
           "statusCode": 200,
           "label": "successful",
@@ -5731,7 +5800,15 @@
           "filePath": "",
           "databucketID": "",
           "sendFileAsBody": false,
-          "rules": [],
+          "rules": [
+            {
+              "target": "params",
+              "modifier": "id",
+              "value": "ord_2tVyWPnCPWbrV37mW",
+              "invert": false,
+              "operator": "equals"
+            }
+          ],
           "rulesOperator": "OR",
           "disableTemplating": false,
           "fallbackTo404": false,
@@ -5837,7 +5914,7 @@
       "responses": [
         {
           "uuid": "3846e5de-d9cb-420e-bc65-365d4022b702",
-          "body": "",
+          "body": "{\n    \"description\": \"test postman\",\n    \"amount\": 99,\n    \"object\": \"tax_line\",\n    \"id\": \"tax_lin_2tVzVp6AAptCRHhgt\",\n    \"parent_id\": \"ord_2tVyWPnCPWbrV37mW\",\n    \"metadata\": {\n        \"key\": \"value\"\n    }\n}",
           "latency": 0,
           "statusCode": 200,
           "label": "successful",
@@ -5851,8 +5928,23 @@
           "filePath": "",
           "databucketID": "",
           "sendFileAsBody": false,
-          "rules": [],
-          "rulesOperator": "OR",
+          "rules": [
+            {
+              "target": "params",
+              "modifier": "id",
+              "value": "ord_2tVyWPnCPWbrV37mW",
+              "invert": false,
+              "operator": "equals"
+            },
+            {
+              "target": "params",
+              "modifier": "tax_lines_id",
+              "value": "tax_lin_2tVzVp6AAptCRHhgt",
+              "invert": false,
+              "operator": "equals"
+            }
+          ],
+          "rulesOperator": "AND",
           "disableTemplating": false,
           "fallbackTo404": false,
           "default": true

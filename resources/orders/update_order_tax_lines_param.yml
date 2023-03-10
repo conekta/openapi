@@ -21,7 +21,7 @@ put:
   security:
     - bearerAuth: []
   requestBody:
-    $ref: '../../requestBodies/orders/order_tax_lines.yml'
+    $ref: '../../requestBodies/orders/order_tax_lines_update.yml'
   parameters:
     - $ref: '../../parameters/commons/path_param/id.yml'
     - $ref: '../../parameters/commons/path_param/tax_lines_id.yml'

@@ -21,7 +21,7 @@ put:
   security:
     - bearerAuth: []
   requestBody:
-    $ref: '../../requestBodies/line_items/line_items_create.yml'
+    $ref: '../../requestBodies/line_items/line_items_update.yml'
   parameters:
     - $ref: '../../parameters/commons/path_param/id.yml'
     - $ref: '../../parameters/commons/path_param/line_items_id.yml'

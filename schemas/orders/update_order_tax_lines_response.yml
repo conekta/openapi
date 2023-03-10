@@ -2,7 +2,7 @@ description: "create a new tax lines for an existing order response"
 required:
   - id
 allOf:
-  - $ref: update_order_tax_lines_request.yml
+  - $ref: order_tax_lines_request.yml
   - type: object
     properties:
       id: 

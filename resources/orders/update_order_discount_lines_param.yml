@@ -21,7 +21,7 @@ put:
   security:
     - bearerAuth: []
   requestBody:
-    $ref: '../../requestBodies/discount_lines/discount_line_create.yml'
+    $ref: '../../requestBodies/discount_lines/discount_line_update.yml'
   parameters:
     - $ref: '../../parameters/commons/path_param/id.yml'
     - $ref: '../../parameters/commons/path_param/discount_lines_id.yml'

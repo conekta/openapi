@@ -3212,18 +3212,7 @@ paths:
                 tax_lines:
                   type: array
                   items:
-                    title: order_tax_lines_request
-                    description: List of taxes paid.
-                    properties:
-                      code:
-                        type: string
-                        description: Discount code.
-                      type:
-                        type: string
-                        example: loyalty
-                      amount:
-                        type: integer
-                        format: int32
+                    $ref: '#/paths/~1orders~1%7Bid%7D~1tax_lines/post/requestBody/content/application~1json/schema'
         required: true
       parameters:
         - $ref: '#/paths/~1logs/get/parameters/0'
@@ -3358,7 +3347,7 @@ paths:
                 tax_lines:
                   type: array
                   items:
-                    $ref: '#/paths/~1orders/post/requestBody/content/application~1json/schema/properties/tax_lines/items'
+                    $ref: '#/paths/~1orders~1%7Bid%7D~1tax_lines/post/requestBody/content/application~1json/schema'
         required: true
       parameters:
         - $ref: '#/paths/~1logs~1%7Bid%7D/get/parameters/0'
@@ -3716,7 +3705,16 @@ paths:
             schema:
               title: order_discount_lines_request
               description: List of discounts that apply to the order.
+              required:
+                - amount
+                - code
+                - type
               properties:
+                amount:
+                  type: integer
+                  format: int64
+                  example: 500
+                  minimum: 0
                 code:
                   type: string
                   description: Discount code.
@@ -3724,9 +3722,6 @@ paths:
                 type:
                   type: string
                   example: loyalty
-                amount:
-                  type: integer
-                  example: 500
         required: true
       parameters:
         - $ref: '#/paths/~1logs~1%7Bid%7D/get/parameters/0'
@@ -3755,7 +3750,26 @@ paths:
       security:
         - bearerAuth: []
       requestBody:
-        $ref: '#/paths/~1orders~1%7Bid%7D~1discount_lines/post/requestBody'
+        description: requested field for a discount lines
+        content:
+          application/json:
+            schema:
+              title: update_order_discount_lines_request
+              description: List of discounts that apply to the order.
+              properties:
+                amount:
+                  type: integer
+                  format: int64
+                  example: 500
+                  minimum: 0
+                code:
+                  type: string
+                  description: Discount code.
+                  example: '123'
+                type:
+                  type: string
+                  example: loyalty
+        required: true
       parameters:
         - $ref: '#/paths/~1logs~1%7Bid%7D/get/parameters/0'
         - in: path
@@ -3825,10 +3839,12 @@ paths:
                   type: integer
                   format: int32
                   example: 20000
+                  minimum: 0
                 quantity:
                   type: integer
                   format: int32
                   example: 1
+                  minimum: 1
                 tags:
                   type: array
                   items:
@@ -3867,7 +3883,46 @@ paths:
       security:
         - bearerAuth: []
       requestBody:
-        $ref: '#/paths/~1orders~1%7Bid%7D~1line_items/post/requestBody'
+        description: requested field for a line items
+        content:
+          application/json:
+            schema:
+              type: object
+              title: update_line_items
+              properties:
+                antifraud_info:
+                  type: object
+                  additionalProperties:
+                    type: object
+                description:
+                  type: string
+                  maxLength: 250
+                sku:
+                  type: string
+                name:
+                  type: string
+                  example: Box of Cohiba S1s
+                unit_price:
+                  type: integer
+                  format: int64
+                  example: 20000
+                  minimum: 0
+                quantity:
+                  type: integer
+                  format: int32
+                  example: 1
+                  minimum: 1
+                tags:
+                  type: array
+                  items:
+                    type: string
+                brand:
+                  type: string
+                metadata:
+                  type: object
+                  additionalProperties:
+                    type: string
+        required: true
       parameters:
         - $ref: '#/paths/~1logs~1%7Bid%7D/get/parameters/0'
         - in: path
@@ -3960,7 +4015,9 @@ paths:
               properties:
                 amount:
                   type: integer
+                  format: int64
                   example: 100
+                  minimum: 0
                 carrier:
                   type: string
                   example: FEDEX
@@ -4067,9 +4124,16 @@ paths:
                 amount:
                   type: integer
                   example: '100'
+                  format: int64
+                  minimum: 0
                 description:
                   type: string
                   example: testing
+                  minLength: 2
+                metadata:
+                  type: object
+                  additionalProperties:
+                    type: object
         required: true
       parameters:
         - $ref: '#/paths/~1logs~1%7Bid%7D/get/parameters/0'
@@ -4098,7 +4162,27 @@ paths:
       security:
         - bearerAuth: []
       requestBody:
-        $ref: '#/paths/~1orders~1%7Bid%7D~1tax_lines/post/requestBody'
+        description: requested field for a tax lines
+        content:
+          application/json:
+            schema:
+              description: create a new tax lines for an existing order
+              type: object
+              properties:
+                amount:
+                  type: integer
+                  example: '100'
+                  format: int64
+                  minimum: 0
+                description:
+                  type: string
+                  example: testing
+                  minLength: 2
+                metadata:
+                  type: object
+                  additionalProperties:
+                    type: object
+        required: true
       parameters:
         - $ref: '#/paths/~1logs~1%7Bid%7D/get/parameters/0'
         - in: path

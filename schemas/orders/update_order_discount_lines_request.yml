@@ -1,9 +1,5 @@
-title: order_discount_lines_request
+title: update_order_discount_lines_request
 description: "List of discounts that apply to the order."
-required:
-  - amount
-  - code
-  - type
 properties:
   amount:
     type: integer

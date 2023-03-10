@@ -2,7 +2,9 @@ title: shipping_lines_request
 properties:
   amount:
     type: integer
+    format: int64
     example: 100
+    minimum: 0
   carrier: 
     type: string
     example: FEDEX

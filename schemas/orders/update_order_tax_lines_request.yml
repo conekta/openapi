@@ -1,13 +1,16 @@
 description: "create a new tax lines for an existing order"
 type: object
-required:
-  - amount
-  - description
 properties:
   amount:
     type: integer
     example: "100"
+    format: int64
+    minimum: 0
   description:
     type: string
     example: "testing"
-  
+    minLength: 2
+  metadata:
+    type: object
+    additionalProperties:
+      type: object
