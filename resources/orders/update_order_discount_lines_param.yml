@@ -7,7 +7,7 @@ put:
     200:
       description: successful
       content:
-        application/vnd.conekta-v2.0.0+json:
+        application/vnd.conekta-v2.1.0+json:
           schema:
             $ref: ../../schemas/orders/discount_lines_response.yml
     401:
