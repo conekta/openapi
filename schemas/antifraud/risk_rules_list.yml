@@ -3,11 +3,6 @@ properties:
   has_more:
     type: boolean
     example: true
-  total:
-    type: integer
-    format: int32
-    minimum: 0
-    maximum: 100
   object:
     type: string
     example: 'list'

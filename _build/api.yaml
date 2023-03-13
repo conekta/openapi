@@ -47,11 +47,6 @@ paths:
                   has_more:
                     type: boolean
                     example: true
-                  total:
-                    type: integer
-                    format: int32
-                    minimum: 0
-                    maximum: 100
                   object:
                     type: string
                     example: list
@@ -2339,12 +2334,6 @@ paths:
                 description: logs model
                 type: object
                 properties:
-                  total:
-                    description: Number of the number of records in the list
-                    type: integer
-                    format: int32
-                    example: 250
-                    readOnly: true
                   has_more:
                     description: 'True, if there are more pages.'
                     type: boolean
@@ -4213,7 +4202,6 @@ paths:
                     required:
                       - object
                       - has_more
-                      - total
                     properties:
                       object:
                         type: string
@@ -4221,9 +4209,6 @@ paths:
                       has_more:
                         type: boolean
                         example: false
-                      total:
-                        type: integer
-                        format: int32
                   - title: page metadata
                     description: page metadata
                     type: object

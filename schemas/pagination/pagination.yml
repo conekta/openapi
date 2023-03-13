@@ -4,7 +4,6 @@ type: object
 required:
   - object
   - has_more
-  - total
 properties:
   "object":
     type: string
@@ -12,6 +11,3 @@ properties:
   has_more: 
     type: boolean
     example: false
-  total:  
-    type: integer
-    format: int32
