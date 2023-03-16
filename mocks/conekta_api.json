@@ -2405,7 +2405,7 @@
       "responses": [
         {
           "uuid": "50932c6c-064d-483c-af90-f2bea74e6af0",
-          "body": "",
+          "body": "{\n    \"receiver\": \"receiver\",\n    \"phone\": \"1234567890\",\n    \"address\": {\n        \"street1\": \"av siem\",\n        \"city\": \"mexico\",\n        \"country\": \"mx\",\n        \"residential\": true,\n        \"object\": \"shipping_address\",\n        \"postal_code\": \"11000\"\n    },\n    \"id\": \"ship_cont_2tY2ncFSBLUaohto2\",\n    \"object\": \"shipping_contact\",\n    \"created_at\": 1679009479,\n    \"parent_id\": \"cus_2tXyF9BwPG14UMkkg\",\n    \"default\": false\n}",
           "latency": 0,
           "statusCode": 200,
           "label": "successful operation",
@@ -2426,9 +2426,16 @@
               "value": "cus_2tXyF9BwPG14UMkkg",
               "invert": false,
               "operator": "equals"
+            },
+            {
+              "target": "body",
+              "modifier": "phone",
+              "value": "1234567890",
+              "invert": false,
+              "operator": "equals"
             }
           ],
-          "rulesOperator": "OR",
+          "rulesOperator": "AND",
           "disableTemplating": false,
           "fallbackTo404": false,
           "default": true

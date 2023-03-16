@@ -1675,6 +1675,16 @@ paths:
                   default:
                     type: boolean
                     example: false
+                  id:
+                    type: string
+                    example: adr_1234567890
+                  created_at:
+                    type: integer
+                    format: int64
+                    example: 1675715413
+                  object:
+                    type: string
+                    example: shipping_contact
                   deleted:
                     type: boolean
                     example: false
@@ -2443,7 +2453,6 @@ paths:
           name: Accept-Language
           description: use for knowing which language to use
           required: true
-          default: es
           schema:
             type: string
             enum:
