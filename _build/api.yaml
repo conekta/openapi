@@ -1306,6 +1306,8 @@ paths:
                         type: string
                       metadata:
                         type: object
+                        additionalProperties:
+                          type: object
                       company_name:
                         type: string
                         example: conekta
@@ -1421,7 +1423,7 @@ paths:
           content:
             application/vnd.conekta-v2.1.0+json:
               schema:
-                title: customer_payment_sources_response
+                title: create_customer_payment_sources_response
                 discriminator:
                   propertyName: type
                   mapping:

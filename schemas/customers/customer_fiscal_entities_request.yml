@@ -13,6 +13,8 @@ properties:
     type: string
   metadata:
     type: object
+    additionalProperties:
+      type: object
   company_name:
     type: string
     example: "conekta"
