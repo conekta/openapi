@@ -1,6 +1,4 @@
-title: payment_sources_card
-required:
-  - expires_at
+title: payment_sources_cash
 allOf:
   - $ref: './customer_payment_sources.yml'
   - type: object

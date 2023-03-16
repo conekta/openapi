@@ -2,7 +2,6 @@ type: object
 required:
   - street1
   - city
-  - country
   - postal_code
 properties:
   street1:

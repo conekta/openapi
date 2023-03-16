@@ -1,4 +1,4 @@
-title: payment_sources_card
+title: payment_sources_spei
 allOf:
   - $ref: './customer_payment_sources.yml'
   - type: object

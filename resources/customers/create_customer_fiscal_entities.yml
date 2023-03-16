@@ -10,6 +10,7 @@ post:
       content:
         application/vnd.conekta-v2.1.0+json:
           schema:
+            title: create_customer_fiscal_entities_response
             allOf: 
               - $ref: '../../schemas/customers/customer_fiscal_entities_request.yml'
               - type: object

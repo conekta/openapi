@@ -1416,7 +1416,7 @@
       "responses": [
         {
           "uuid": "e7a469bf-0a2f-4aa6-8e32-a12b77eeb7ed",
-          "body": "",
+          "body": "{\"livemode\":true,\"name\":\"test dot\",\"email\":\"test@conekta.com\",\"phone\":\"+573143159063\",\"default_shipping_contact_id\":\"ship_cont_2tXyF9BwPG14UMkkf\",\"default_fiscal_entity_id\":\"fis_ent_2tXyF9BwPG14UMkke\",\"subscription\":{\"id\":\"sub_2tXyF9BwPG14UMkkk\",\"status\":\"past_due\",\"object\":\"subscription\",\"created_at\":1678993337,\"subscription_start\":1678993337,\"billing_cycle_end\":1678993327,\"plan_id\":\"plan_2tXx672QLQ68CkmMn\",\"last_billing_cycle_order_id\":\"ord_2tXyF9BwPG14UMkkq\",\"customer_id\":\"cus_2tXyF9BwPG14UMkkg\",\"customer_custom_reference\":\"dotnet_12345678\",\"card_id\":\"src_2tXyF9BwPG14UMkkj\"},\"id\":\"cus_2tXyF9BwPG14UMkkg\",\"object\":\"customer\",\"created_at\":1678993337,\"corporate\":true,\"custom_reference\":\"dotnet_12345678\",\"default_payment_source_id\":\"src_2tXyF9BwPG14UMkkj\",\"payment_sources\":{\"object\":\"list\",\"has_more\":false,\"total\":1,\"data\":[{\"id\":\"src_2tXyF9BwPG14UMkkj\",\"object\":\"payment_source\",\"type\":\"card\",\"created_at\":1678993337,\"last4\":\"4607\",\"bin\":\"547504\",\"card_type\":\"credit\",\"exp_month\":\"06\",\"exp_year\":\"24\",\"brand\":\"mastercard\",\"name\":\"erererere ererere \",\"parent_id\":\"cus_2tXyF9BwPG14UMkkg\",\"default\":true,\"payment_source_status\":\"active\",\"visible_on_checkout\":false}]},\"fiscal_entities\":{\"object\":\"list\",\"has_more\":false,\"total\":1,\"data\":[{\"tax_id\":\"tax_23432\",\"address\":{\"street1\":\"av siempre viva\",\"street2\":\"condensa\",\"external_number\":\"avas3\",\"city\":\"cdmx mexico\",\"state\":\"cdmx mexico\",\"object\":\"fiscal_entity_address\",\"postal_code\":\"11011\"},\"id\":\"fis_ent_2tXyF9BwPG14UMkke\",\"object\":\"fiscal_entity\",\"created_at\":1678993337,\"parent_id\":\"cus_2tXyF9BwPG14UMkkg\",\"default\":true}]},\"shipping_contacts\":{\"object\":\"list\",\"has_more\":false,\"total\":1,\"data\":[{\"phone\":\"+54874122144\",\"address\":{\"street1\":\"avenida siempre viva\",\"residential\":false,\"object\":\"shipping_address\",\"postal_code\":\"11011\"},\"id\":\"ship_cont_2tXyF9BwPG14UMkkf\",\"object\":\"shipping_contact\",\"created_at\":1678993337,\"parent_id\":\"cus_2tXyF9BwPG14UMkkg\",\"default\":true}]}}",
           "latency": 0,
           "statusCode": 200,
           "label": "successful operation",
@@ -1450,7 +1450,15 @@
           "filePath": "",
           "databucketID": "",
           "sendFileAsBody": false,
-          "rules": [],
+          "rules": [
+            {
+              "target": "body",
+              "modifier": "custom_reference",
+              "value": "dotnet_12345678",
+              "invert": false,
+              "operator": "equals"
+            }
+          ],
           "rulesOperator": "OR",
           "disableTemplating": false,
           "fallbackTo404": false,
@@ -1894,7 +1902,7 @@
       "responses": [
         {
           "uuid": "f64d04ae-1ee1-4402-85fa-782204392ba1",
-          "body": "",
+          "body": "{\n    \"address\": {\n        \"street1\": \"av siem\",\n        \"external_number\": \"11544\",\n        \"city\": \"mexico\",\n        \"country\": \"mx\",\n        \"object\": \"fiscal_entity_address\",\n        \"postal_code\": \"11000\"\n    },\n    \"id\": \"fis_ent_2tXyba6x5EUF9os4z\",\n    \"object\": \"fiscal_entity\",\n    \"created_at\": 1678994942,\n    \"parent_id\": \"cus_2tXyF9BwPG14UMkkg\",\n    \"default\": false\n}",
           "latency": 0,
           "statusCode": 200,
           "label": "successful operation",
@@ -1908,7 +1916,15 @@
           "filePath": "",
           "databucketID": "",
           "sendFileAsBody": false,
-          "rules": [],
+          "rules": [
+            {
+              "target": "params",
+              "modifier": "id",
+              "value": "cus_2tXyF9BwPG14UMkkg",
+              "invert": false,
+              "operator": "equals"
+            }
+          ],
           "rulesOperator": "OR",
           "disableTemplating": false,
           "fallbackTo404": false,
@@ -2134,7 +2150,7 @@
       "responses": [
         {
           "uuid": "3957cbe6-2f94-4d27-88e1-1c00b2530579",
-          "body": "",
+          "body": "{\n    \"id\": \"off_ref_2tXyk3ncr1NHdfqMS\",\n    \"object\": \"payment_source\",\n    \"provider\": \"Oxxo\",\n    \"type\": \"oxxo_recurrent\",\n    \"reference\": \"93000262281395\",\n    \"barcode\": \"93000262281395\",\n    \"barcode_url\": \"https://pt-common-s3-stg.s3.amazonaws.com/1676eb062341669c487b6f7074a3307d748e5f34.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=ASIA3UN6375MBCBU37MF%2F20230316%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20230316T194008Z&X-Amz-Expires=604800&X-Amz-Security-Token=IQoJb3JpZ2luX2VjEFMaCXVzLWVhc3QtMSJGMEQCIERt0ZCmFQKkTL7kunfBi5wakpHFtWX%2Fgz3zIuL%2BpERYAiBoW%2FClqli0nR8WqVTH82bWg2ZwFqM5Qo1qSkLYcj53ZyqHBAgcEAIaDDc5OTgwMTA4MTY4OCIMzI0A2WAQC0V21v0KKuQDsrXjZk%2Blmai04YVFnmXv4dfJDQ3Xhu%2BJs3B%2FAlcW6OoQgKTIXfBawb49ckIPUGWAA7Kv6BruJ00VvzOwjJOjGHwIcB7GzPajkb5JwzSsOKQd1jXdgZcvouQav4%2FRB5Sm5ZFfHChIko2LlHXPH0Cr%2FxMwbrds72KKkS%2BDMj9uHTU6VwB5W5%2BOcyJ%2BoZhFxqigrsTvyKAd77FGawnGxuNbfGmIbwYEUY1%2FAa4tCt6x8FELpe9Bm%2BtuO%2BNbXcrCdj%2Bmchl9Ely7jF4CjUzydpSBySH4WVQHRRU%2BRyH%2FJAH4bZBJGv%2FmbxDClmHv1292GSYbXouZ3y%2BLwMlULHjPNrMZpeRKzSr0MhtLeS%2F%2FbS1RUmgCwucwATEawdFrS8KcY9pmZJxl4bfSfCMJqdt6DY9qys176z9U1TIGHkN2f6MFqf18htJFfQ59KlJbPgeHM9h4idaTcZOgDnxh2uEhh9LDEmhNTN4OCji6fhpuWt4rlexJg2Bz7fha2zOmJrLSI3BLadXn%2FoySHWxis7aP9FHpCx%2FINyg5WLJQThOw4bInFrytXSskyxPlw6TPBOmjcoI6R879NIywUezILMUOpufMvAjim%2FdkL%2Ff2newfKv9XvLcAuUlZMa1HAkpQch6BWR5t2vegKTDlzM2gBjqmAVZH9%2BXeOSjyHyc5QCYZzecrNopJ%2F21mjkOCy%2BsvO1hwcEVfwYdntB3Nr17XTvpH9aP%2FIPZruq6GdGHGsBZhnL9oNXnsqTQdjUO7gtyib1z%2Buk7eWOsVOaqqZrs56pFudJX33AHGxkv3qo2qW1MUqi%2FXVJ1jXTEmL35gcnPvblmhlqBG0A%2FTAWK%2FVBLQRHcQZk2rW0W%2BUmpabfyUBFgx4giRmZlDjVI%3D&X-Amz-SignedHeaders=host&X-Amz-Signature=2dcb73228e3de91a9a3cf71457d0476fd9c31d2b68a26b7b5884a9a42ea1e5c8\",\n    \"expires_at\": 0,\n    \"created_at\": 1678995608,\n    \"parent_id\": \"cus_2tXyF9BwPG14UMkkg\"\n}",
           "latency": 0,
           "statusCode": 200,
           "label": "successful operation",
@@ -2148,8 +2164,23 @@
           "filePath": "",
           "databucketID": "",
           "sendFileAsBody": false,
-          "rules": [],
-          "rulesOperator": "OR",
+          "rules": [
+            {
+              "target": "params",
+              "modifier": "id",
+              "value": "cus_2tXyF9BwPG14UMkkg",
+              "invert": false,
+              "operator": "equals"
+            },
+            {
+              "target": "body",
+              "modifier": "type",
+              "value": "oxxo_recurrent",
+              "invert": false,
+              "operator": "equals"
+            }
+          ],
+          "rulesOperator": "AND",
           "disableTemplating": false,
           "fallbackTo404": false,
           "default": true
@@ -2388,7 +2419,15 @@
           "filePath": "",
           "databucketID": "",
           "sendFileAsBody": false,
-          "rules": [],
+          "rules": [
+            {
+              "target": "params",
+              "modifier": "id",
+              "value": "cus_2tXyF9BwPG14UMkkg",
+              "invert": false,
+              "operator": "equals"
+            }
+          ],
           "rulesOperator": "OR",
           "disableTemplating": false,
           "fallbackTo404": false,

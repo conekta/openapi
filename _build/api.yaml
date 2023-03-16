@@ -1290,6 +1290,7 @@ paths:
           content:
             application/vnd.conekta-v2.1.0+json:
               schema:
+                title: create_customer_fiscal_entities_response
                 allOf:
                   - title: fiscal_entity_request
                     required:
@@ -1541,9 +1542,7 @@ paths:
                         token_id:
                           type: string
                           example: tok_32hj4g234as
-                - title: payment_sources_card
-                  required:
-                    - expires_at
+                - title: payment_sources_cash
                   allOf:
                     - $ref: '#/paths/~1customers~1%7Bid%7D/put/requestBody/content/application~1json/schema/properties/payment_sources/items'
                     - type: object
@@ -1552,7 +1551,7 @@ paths:
                           type: integer
                           example: 1553273553
                           format: int64
-                - title: payment_sources_card
+                - title: payment_sources_spei
                   allOf:
                     - $ref: '#/paths/~1customers~1%7Bid%7D/put/requestBody/content/application~1json/schema/properties/payment_sources/items'
                     - type: object
@@ -1730,14 +1729,15 @@ paths:
                     residential:
                       type: boolean
                       example: true
+                      nullable: true
                 parent_id:
                   type: string
                 default:
                   type: boolean
-                  example: false
+                  nullable: true
                 deleted:
                   type: boolean
-                  example: false
+                  nullable: true
         required: true
       parameters:
         - $ref: '#/paths/~1logs~1%7Bid%7D/get/parameters/0'
@@ -2443,6 +2443,7 @@ paths:
           name: Accept-Language
           description: use for knowing which language to use
           required: true
+          default: es
           schema:
             type: string
             enum:
@@ -2914,7 +2915,6 @@ paths:
                             required:
                               - street1
                               - city
-                              - country
                               - postal_code
                             properties:
                               street1:
