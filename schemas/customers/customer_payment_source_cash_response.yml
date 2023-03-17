@@ -17,4 +17,7 @@ payment_source_cash:
           type: integer
           format: int64
           example: 0
+        provider:
+          type: string
+          example: "Oxxo"
         

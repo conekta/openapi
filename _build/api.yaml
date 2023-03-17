@@ -1472,6 +1472,9 @@ paths:
                             type: integer
                             format: int64
                             example: 0
+                          provider:
+                            type: string
+                            example: Oxxo
                   - allOf:
                       - $ref: '#/paths/~1customers~1%7Bid%7D~1payment_sources/post/responses/200/content/application~1vnd.conekta-v2.1.0%2Bjson/schema/oneOf/0/allOf/0'
                       - type: object
@@ -1643,6 +1646,7 @@ paths:
                   between_streets:
                     type: string
                     example: Ackerman Crescent
+                    nullable: true
                   address:
                     type: object
                     properties:

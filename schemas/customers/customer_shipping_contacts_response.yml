@@ -9,6 +9,7 @@ properties:
   between_streets: 
     type: string
     example: "Ackerman Crescent"
+    nullable: true
   address: 
     type: object
     properties:
