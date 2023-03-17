@@ -1,5 +1,5 @@
 merge:
-	swagger-cli bundle api.yaml --outfile _build/api.yaml --type yaml
+	npx @openapitools/openapi-generator-cli  generate -g openapi-yaml -i api.yaml -p outputFile=_build/api.yaml --skip-validate-spec
 	
 python:
 	npx @openapitools/openapi-generator-cli generate -i  api.yaml -g python-nextgen -o conekta-python -c config-python.json   

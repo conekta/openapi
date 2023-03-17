@@ -15,3 +15,5 @@ AndroidManifest.xml
 src/main/AndroidManifest.xml
 git_push.sh
 appveyor.yml
+.openapi-generator/
+.openapi-generator
