@@ -1153,13 +1153,13 @@ paths:
           - en
           type: string
       requestBody:
-        $ref: '#/components/requestBodies/customer_fiscal_entities'
+        $ref: '#/components/requestBodies/customer_update_fiscal_entities'
       responses:
         "200":
           content:
             application/vnd.conekta-v2.1.0+json:
               schema:
-                $ref: '#/components/schemas/UpdateCustomerFiscalEntities_200_response'
+                $ref: '#/components/schemas/update_customer_fiscal_entities_response'
           description: successful operation
         "401":
           content:
@@ -2442,7 +2442,7 @@ paths:
           content:
             application/vnd.conekta-v2.1.0+json:
               schema:
-                $ref: '#/components/schemas/getOrders_200_response'
+                $ref: '#/components/schemas/get_orders_response'
           description: successful operation
         "401":
           content:
@@ -4462,6 +4462,13 @@ components:
             $ref: '#/components/schemas/customer_fiscal_entities_request'
       description: requested field for customer fiscal entities
       required: true
+    customer_update_fiscal_entities:
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/customer_update_fiscal_entities_request'
+      description: requested field for customer update fiscal entities
+      required: true
     customer_payment_sources:
       content:
         application/json:
@@ -5839,6 +5846,25 @@ components:
           type: string
       title: updates customer request
       type: object
+    customer_update_fiscal_entities_request:
+      properties:
+        address:
+          $ref: '#/components/schemas/customer_fiscal_entities_request_address'
+        tax_id:
+          type: string
+        email:
+          type: string
+        phone:
+          type: string
+        metadata:
+          additionalProperties:
+            type: object
+          type: object
+        company_name:
+          example: conekta
+          type: string
+      title: update_fiscal_entity_request
+      type: object
     payment_sources_card:
       allOf:
       - $ref: '#/components/schemas/customer_payment_sources'
@@ -6592,7 +6618,7 @@ components:
       - $ref: '#/components/schemas/customer_fiscal_entities_request'
       - $ref: '#/components/schemas/create_customer_fiscal_entities_response_allOf'
       title: create_customer_fiscal_entities_response
-    UpdateCustomerFiscalEntities_200_response_allOf:
+    update_customer_fiscal_entities_response_allOf:
       properties:
         id:
           example: fis_ent_2tKZsTYcsryyu7Ah8
@@ -6614,10 +6640,11 @@ components:
       - id
       - object
       type: object
-    UpdateCustomerFiscalEntities_200_response:
+    update_customer_fiscal_entities_response:
       allOf:
       - $ref: '#/components/schemas/customer_fiscal_entities_request'
-      - $ref: '#/components/schemas/UpdateCustomerFiscalEntities_200_response_allOf'
+      - $ref: '#/components/schemas/update_customer_fiscal_entities_response_allOf'
+      title: update_customer_fiscal_entities_response
     CreateCustomerPaymentSources_request:
       discriminator:
         mapping:
@@ -6670,11 +6697,12 @@ components:
       - $ref: '#/components/schemas/page'
       - $ref: '#/components/schemas/get_events_response_allOf'
       title: get_events_response
-    getOrders_200_response:
+    get_orders_response:
       allOf:
       - $ref: '#/components/schemas/orders_response'
       - $ref: '#/components/schemas/pagination'
       - $ref: '#/components/schemas/page'
+      title: get_orders_response
     orderRefund_request:
       properties:
         amount:

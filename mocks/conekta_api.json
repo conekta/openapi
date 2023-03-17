@@ -1980,7 +1980,7 @@
       "responses": [
         {
           "uuid": "71ed4dd4-1a6c-4761-a46d-17995b80b7a8",
-          "body": "{\n    \"livemode\": true,\n    \"name\": \"test dotnet\",\n    \"email\": \"test@conekta.com\",\n    \"phone\": \"+573143159063\",\n    \"default_shipping_contact_id\": \"ship_cont_2tXx8KUxw6311kEbr\",\n    \"default_fiscal_entity_id\": \"fis_ent_2tXx8KUxw6311kEbq\",\n    \"subscription\": {\n        \"id\": \"sub_2tXx8KUxw6311kEbw\",\n        \"status\": \"past_due\",\n        \"object\": \"subscription\",\n        \"created_at\": 1678988244,\n        \"subscription_start\": 1678988244,\n        \"billing_cycle_end\": 1678988234,\n        \"plan_id\": \"plan_2tXx672QLQ68CkmMn\",\n        \"last_billing_cycle_order_id\": \"ord_2tXx8KUxw6311kEc2\",\n        \"customer_id\": \"cus_2tXx8KUxw6311kEbs\",\n        \"customer_custom_reference\": \"dotnet_123456\",\n        \"card_id\": \"src_2tXx8KUxw6311kEbv\"\n    },\n    \"id\": \"cus_2tXx8KUxw6311kEbs\",\n    \"object\": \"customer\",\n    \"created_at\": 1678988244,\n    \"corporate\": true,\n    \"custom_reference\": \"dotnet_123456\",\n    \"default_payment_source_id\": \"src_2tXx8KUxw6311kEbv\",\n    \"payment_sources\": {\n        \"object\": \"list\",\n        \"has_more\": false,\n        \"total\": 1,\n        \"data\": [\n            {\n                \"id\": \"src_2tXx8KUxw6311kEbv\",\n                \"object\": \"payment_source\",\n                \"type\": \"card\",\n                \"created_at\": 1678988244,\n                \"last4\": \"4607\",\n                \"bin\": \"547504\",\n                \"card_type\": \"credit\",\n                \"exp_month\": \"06\",\n                \"exp_year\": \"24\",\n                \"brand\": \"mastercard\",\n                \"name\": \"erererere ererere \",\n                \"parent_id\": \"cus_2tXx8KUxw6311kEbs\",\n                \"default\": true,\n                \"payment_source_status\": \"active\",\n                \"visible_on_checkout\": false\n            }\n        ]\n    },\n    \"fiscal_entities\": {\n        \"object\": \"list\",\n        \"has_more\": false,\n        \"total\": 1,\n        \"data\": [\n            {\n                \"tax_id\": \"tax_23432\",\n                \"address\": {\n                    \"street1\": \"av siempre viva\",\n                    \"street2\": \"condensa\",\n                    \"external_number\": \"avas3\",\n                    \"city\": \"cdmx mexico\",\n                    \"state\": \"cdmx mexico\",\n                    \"object\": \"fiscal_entity_address\",\n                    \"postal_code\": \"11011\"\n                },\n                \"id\": \"fis_ent_2tXx8KUxw6311kEbq\",\n                \"object\": \"fiscal_entity\",\n                \"created_at\": 1678988244,\n                \"parent_id\": \"cus_2tXx8KUxw6311kEbs\",\n                \"default\": true\n            }\n        ]\n    },\n    \"shipping_contacts\": {\n        \"object\": \"list\",\n        \"has_more\": false,\n        \"total\": 1,\n        \"data\": [\n            {\n                \"phone\": \"+54874122144\",\n                \"address\": {\n                    \"street1\": \"avenida siempre viva\",\n                    \"residential\": false,\n                    \"object\": \"shipping_address\",\n                    \"postal_code\": \"11011\"\n                },\n                \"id\": \"ship_cont_2tXx8KUxw6311kEbr\",\n                \"object\": \"shipping_contact\",\n                \"created_at\": 1678988244,\n                \"parent_id\": \"cus_2tXx8KUxw6311kEbs\",\n                \"default\": true\n            }\n        ]\n    }\n}",
+          "body": "{\n    \"livemode\": true,\n    \"name\": \"Elio Rincon\",\n    \"email\": \"dotnet@test.com\",\n    \"phone\": \"+5215555555555\",\n    \"default_shipping_contact_id\": \"ship_cont_2tYENskzTjjgkGQLs\",\n    \"default_fiscal_entity_id\": \"fis_ent_2tYENskzTjjgkGQLr\",\n    \"id\": \"cus_2tYENskzTjjgkGQLt\",\n    \"object\": \"customer\",\n    \"created_at\": 1679062294,\n    \"corporate\": true,\n    \"custom_reference\": \"\",\n    \"payment_sources\": {\n        \"object\": \"list\",\n        \"has_more\": false,\n        \"total\": 1,\n        \"data\": [\n            {\n                \"id\": \"off_ref_2tYENskzTjjgkGQLw\",\n                \"object\": \"payment_source\",\n                \"type\": \"spei_recurrent\",\n                \"reference\": \"646180111805035883\",\n                \"expires_at\": \"2023-03-20T14:11:08+00:00\",\n                \"created_at\": 1679062294,\n                \"parent_id\": \"cus_2tYENskzTjjgkGQLt\"\n            }\n        ]\n    },\n    \"fiscal_entities\": {\n        \"object\": \"list\",\n        \"has_more\": false,\n        \"total\": 1,\n        \"data\": [\n            {\n                \"tax_id\": \"324234234\",\n                \"address\": {\n                    \"street1\": \"avenida siempre viva\",\n                    \"street2\": \"fake street\",\n                    \"external_number\": \"string\",\n                    \"city\": \"Ciudad de Mexico\",\n                    \"state\": \"Ciudad de Mexico\",\n                    \"country\": \"mx\",\n                    \"object\": \"fiscal_entity_address\",\n                    \"postal_code\": \"06100\"\n                },\n                \"id\": \"fis_ent_2tYENskzTjjgkGQLr\",\n                \"object\": \"fiscal_entity\",\n                \"created_at\": 1679062294,\n                \"parent_id\": \"cus_2tYENskzTjjgkGQLt\",\n                \"default\": true\n            }\n        ]\n    },\n    \"shipping_contacts\": {\n        \"object\": \"list\",\n        \"has_more\": false,\n        \"total\": 1,\n        \"data\": [\n            {\n                \"receiver\": \"Marvin Fuller\",\n                \"phone\": \"+5215555555555\",\n                \"between_streets\": \"Morelos Campeche\",\n                \"address\": {\n                    \"street1\": \"Nuevo Leon 4\",\n                    \"street2\": \"fake street\",\n                    \"city\": \"Ciudad de Mexico\",\n                    \"state\": \"Ciudad de Mexico\",\n                    \"country\": \"mx\",\n                    \"residential\": true,\n                    \"object\": \"shipping_address\",\n                    \"postal_code\": \"06100\"\n                },\n                \"id\": \"ship_cont_2tYENskzTjjgkGQLs\",\n                \"object\": \"shipping_contact\",\n                \"created_at\": 1679062294,\n                \"parent_id\": \"cus_2tYENskzTjjgkGQLt\",\n                \"default\": true\n            }\n        ]\n    }\n}",
           "latency": 0,
           "statusCode": 200,
           "label": "successful operation",
@@ -1994,7 +1994,15 @@
           "filePath": "",
           "databucketID": "",
           "sendFileAsBody": false,
-          "rules": [],
+          "rules": [
+            {
+              "target": "params",
+              "modifier": "id",
+              "value": "cus_2tYENskzTjjgkGQLt",
+              "invert": false,
+              "operator": "equals"
+            }
+          ],
           "rulesOperator": "OR",
           "disableTemplating": false,
           "fallbackTo404": false,
@@ -2228,7 +2236,7 @@
       "responses": [
         {
           "uuid": "2442bd66-8db9-4c8f-af73-7e22532002ca",
-          "body": "",
+          "body": "{\n    \"tax_id\": \"tax_28764234\",\n    \"address\": {\n        \"street1\": \"avenida siempre viva\",\n        \"street2\": \"fake street\",\n        \"external_number\": \"string\",\n        \"city\": \"Ciudad de Mexico\",\n        \"state\": \"Ciudad de Mexico\",\n        \"country\": \"mx\",\n        \"object\": \"fiscal_entity_address\",\n        \"postal_code\": \"06100\"\n    },\n    \"id\": \"fis_ent_2tYENskzTjjgkGQLr\",\n    \"object\": \"fiscal_entity\",\n    \"created_at\": 1679062294,\n    \"parent_id\": \"cus_2tYENskzTjjgkGQLt\",\n    \"default\": true\n}",
           "latency": 0,
           "statusCode": 200,
           "label": "successful operation",
@@ -2242,8 +2250,23 @@
           "filePath": "",
           "databucketID": "",
           "sendFileAsBody": false,
-          "rules": [],
-          "rulesOperator": "OR",
+          "rules": [
+            {
+              "target": "params",
+              "modifier": "id",
+              "value": "cus_2tYENskzTjjgkGQLt",
+              "invert": false,
+              "operator": "equals"
+            },
+            {
+              "target": "params",
+              "modifier": "fiscal_entities_id",
+              "value": "fis_ent_2tYENskzTjjgkGQLr",
+              "invert": false,
+              "operator": "equals"
+            }
+          ],
+          "rulesOperator": "AND",
           "disableTemplating": false,
           "fallbackTo404": false,
           "default": true
