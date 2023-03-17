@@ -4,7 +4,7 @@ servers:
     description: conekta main server
 info:
   description: Conekta sdk 
-  version: 1.0.0
+  version: 2.1.0
   contact:
     name: api support client
     url:  https://github.com/conekta/openapi/issues
@@ -13,7 +13,6 @@ info:
   license:
     name: MIT-LICENSE
     url: 'https://www.apache.org/licenses/LICENSE-2.0.html'
-
 paths:
   /antifraud/whitelists:
     $ref: "./resources/antifraud/whitelists/get_create_delete.yml"

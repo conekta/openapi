@@ -9,7 +9,7 @@ info:
     name: MIT-LICENSE
     url: https://www.apache.org/licenses/LICENSE-2.0.html
   title: Conekta API
-  version: 1.0.0
+  version: 2.1.0
 servers:
 - description: conekta main server
   url: https://api.conekta.io
