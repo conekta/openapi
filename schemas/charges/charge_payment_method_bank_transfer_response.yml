@@ -11,18 +11,47 @@ payment_method_bank_transfer:
         clabe:
           type: string
           example: "646180111805034237"
+        description:
+          type: string
+          nullable: true
+        executed_at:
+          type: integer
+          nullable: true
         expires_at:
           type: integer
           example: 1683053729
           format: int64
+        issuing_account_bank:
+          type: string
+          nullable: true
+        issuing_account_number:
+          type: string
+          nullable: true
+        issuing_account_holder_name:
+          type: string
+          nullable: true
+        issuing_account_tax_id:
+          type: string
+          nullable: true
         payment_attempts:
           type: array
           items: {}
+        receiving_account_holder_name:
+          type: string
+          nullable: true
         receiving_account_number:
           type: string
           example: "646180111805034237"
         receiving_account_bank:
           type: string
           example: "STP"
-        
+        receiving_account_tax_id:
+          type: string
+          nullable: true
+        reference_number:
+          type: string
+          nullable: true
+        tracking_code:
+          type: string
+          nullable: true
         

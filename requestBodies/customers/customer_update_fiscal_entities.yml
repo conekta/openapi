@@ -1,0 +1,6 @@
+description: requested field for customer update fiscal entities
+content:
+  application/json:
+    schema:  
+      $ref: ../../schemas/customers/customer_update_fiscal_entities_request.yml
+required: true

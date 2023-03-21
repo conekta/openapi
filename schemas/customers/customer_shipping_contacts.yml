@@ -34,11 +34,13 @@ properties:
       residential:
         type: boolean
         example: true
+        nullable: true
   parent_id:
     type: string
   default:
     type: boolean
-    example: false
+    nullable: true
   deleted:
     type: boolean
-    example: false
+    nullable: true
+    

@@ -42,6 +42,39 @@ properties:
     type: string
     example: Felipe@gmail.com
     format: email
+  fiscal_entities:
+    title: customer_fiscal_entities_response
+    allOf:
+       - $ref: ../../schemas/pagination/pagination.yml
+       - type: object
+         properties:
+          data:
+            type: array
+            items:
+              title: customer_fiscal_entities_data_response
+              allOf: 
+              - $ref: './customer_fiscal_entities_request.yml'
+              - type: object
+                required:
+                  - id
+                  - object
+                  - created_at
+                properties:
+                  id:
+                    type: string
+                    example: "ship_cont_2tKZsTYcsryyu7Ah8"
+                  object:
+                    type: string
+                    example: "shipping_contact"
+                  created_at:
+                    type: integer
+                    format: int64
+                    example: 1675715413
+                  parent_id:
+                    type: string
+                    example: "cus_2tKcHxhTz7xU5SymF"
+                  default:
+                    type: boolean
   id:
     type: string
     example:  "cus_2tHJfJ79KyUwpxTik"
@@ -79,39 +112,6 @@ properties:
   phone:
     type: string
     example: "+5215555555555"
-  fiscal_entities:
-    title: customer_fiscal_entities_response
-    allOf:
-       - $ref: ../../schemas/pagination/pagination.yml
-       - type: object
-         properties:
-          data:
-            type: array
-            items:
-              title: customer_fiscal_entities_data_response
-              allOf: 
-              - $ref: './customer_fiscal_entities_request.yml'
-              - type: object
-                required:
-                  - id
-                  - object
-                  - created_at
-                properties:
-                  id:
-                    type: string
-                    example: "ship_cont_2tKZsTYcsryyu7Ah8"
-                  object:
-                    type: string
-                    example: "shipping_contact"
-                  created_at:
-                    type: integer
-                    format: int64
-                    example: 1675715413
-                  parent_id:
-                    type: string
-                    example: "cus_2tKcHxhTz7xU5SymF"
-                  default:
-                    type: boolean
   shipping_contacts:
     allOf:
        - $ref: ../../schemas/pagination/pagination.yml
@@ -139,5 +139,6 @@ properties:
                       type: integer
                       format: int64
                       example: 1675715413
-
-             
+  subscription:
+     $ref: '.././../schemas/subscriptions/subscription_response.yml'
+     nullable: true

@@ -14,4 +14,13 @@ content:
           oxxo_recurrent: payment_sources_cash
           spei: payment_sources_spei
           spei_recurrent: payment_sources_spei
+    examples:
+      card:
+        value:
+          type: card
+          token_id: tok_test_visa_4242
+      cash:
+        value:
+          type: spei_recurrent
+          expires_at: 1553273553
 required: true

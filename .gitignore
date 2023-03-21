@@ -2,3 +2,4 @@ conekta-*/
 openapitools.json
 test-node/
 .DS_Store
+.openapi-generator/

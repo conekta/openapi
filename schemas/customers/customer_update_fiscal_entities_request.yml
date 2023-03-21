@@ -1,6 +1,4 @@
-title: fiscal_entity_request
-required:
-  - address
+title: update_fiscal_entity_request
 properties:
   address:
     allOf:

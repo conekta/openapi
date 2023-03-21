@@ -7,7 +7,7 @@ get:
     200:
       description: successful
       content:
-        application/vnd.conekta-v2.0.0+json:
+        application/vnd.conekta-v2.1.0+json:
           schema:
             $ref: '../../schemas/events/event_response.yml'
       headers:
@@ -34,7 +34,7 @@ get:
         Conekta-Media-Type:
           schema:
             type: string
-            example: conekta-v2.0.0; format=application/json
+            example: conekta-v2.1.0; format=application/json
     422:
      $ref: '../errors/422.yml'
     401:

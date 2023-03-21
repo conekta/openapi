@@ -7,7 +7,7 @@ put:
     200:
       description: successful
       content:
-        application/vnd.conekta-v2.0.0+json:
+        application/vnd.conekta-v2.1.0+json:
           schema:
             $ref: ../../schemas/charges/line_items_order_response.yml
     401:
@@ -21,7 +21,7 @@ put:
   security:
     - bearerAuth: []
   requestBody:
-    $ref: '../../requestBodies/line_items/line_items_create.yml'
+    $ref: '../../requestBodies/line_items/line_items_update.yml'
   parameters:
     - $ref: '../../parameters/commons/path_param/id.yml'
     - $ref: '../../parameters/commons/path_param/line_items_id.yml'

@@ -3,12 +3,6 @@ title: log response for request
 description: logs model
 type: object
 properties:
-  total:
-    description: Number of the number of records in the list
-    type: integer
-    format: int32
-    example:  250
-    readOnly: true
   has_more: 
     description: True, if there are more pages.
     type: boolean
