@@ -1195,7 +1195,7 @@ paths:
       - customers
   /customers/{id}/payment_sources:
     post:
-      description: Gets a customer resource that corresponds to a customer ID.
+      description: Gets a payment source that corresponds to a customer ID.
       operationId: CreateCustomerPaymentSources
       parameters:
       - description: identifier
@@ -1263,8 +1263,81 @@ paths:
       tags:
       - customers
   /customers/{id}/payment_sources/{payment_sources_id}:
+    delete:
+      description: deletes a payment  source that corresponds to a customer ID.
+      operationId: DeleteCustomerPaymentSources
+      parameters:
+      - description: identifier
+        example: 6307a60c41de27127515a575
+        in: path
+        name: id
+        required: true
+        schema:
+          type: string
+      - description: identifier
+        example: tax_lin_2tQ974hSHcsdeSZHG
+        in: path
+        name: payment_sources_id
+        required: true
+        schema:
+          type: string
+      - description: use for knowing which language to use
+        examples:
+          es:
+            summary: for spanish request/response
+            value: es
+          en:
+            summary: for english request/response
+            value: en
+        in: header
+        name: Accept-Language
+        required: true
+        schema:
+          enum:
+          - es
+          - en
+          type: string
+      responses:
+        "200":
+          content:
+            application/vnd.conekta-v2.1.0+json:
+              schema:
+                $ref: '#/components/schemas/update_customer_payment_sources_response'
+          description: successful operation
+        "401":
+          content:
+            application/vnd.conekta-v2.1.0+json:
+              schema:
+                $ref: '#/components/schemas/error_2_x_x'
+          description: authentication error
+        "404":
+          content:
+            application/vnd.conekta-v2.1.0+json:
+              schema:
+                $ref: '#/components/schemas/error_2_x_x'
+            application/json; charset=utf-8:
+              schema:
+                $ref: '#/components/schemas/error_2_x_x'
+          description: not found entity
+        "422":
+          content:
+            application/vnd.conekta-v2.1.0+json:
+              schema:
+                $ref: '#/components/schemas/error_2_x_x'
+          description: parameter validation error
+        "500":
+          content:
+            application/vnd.conekta-v2.1.0+json:
+              schema:
+                $ref: '#/components/schemas/error_2_x_x'
+          description: internal server error
+      security:
+      - bearerAuth: []
+      summary: Deletes a payment source
+      tags:
+      - customers
     put:
-      description: Gets a customer resource that corresponds to a customer ID.
+      description: Gets a payment source that corresponds to a customer ID.
       operationId: UpdateCustomerPaymentSources
       parameters:
       - description: identifier
@@ -4472,6 +4545,15 @@ components:
     customer_payment_sources:
       content:
         application/json:
+          examples:
+            card:
+              value:
+                type: card
+                token_id: tok_test_visa_4242
+            cash:
+              value:
+                type: spei_recurrent
+                expires_at: 1553273553
           schema:
             $ref: '#/components/schemas/CreateCustomerPaymentSources_request'
       description: requested field for customer payment sources

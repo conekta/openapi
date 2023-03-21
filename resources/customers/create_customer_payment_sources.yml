@@ -3,7 +3,7 @@ post:
     - customers
   operationId: CreateCustomerPaymentSources
   summary: creates a payment source
-  description: 'Gets a customer resource that corresponds to a customer ID.'
+  description: 'Gets a payment source that corresponds to a customer ID.'
   responses:
     '200':
       description: successful operation
@@ -22,7 +22,6 @@ post:
               - $ref: '../../schemas/customers/customer_payment_source_cash_response.yml#/payment_source_cash' 
               - $ref: '../../schemas/customers/customer_payment_source_card_response.yml#/payment_source_card'
               - $ref: '../../schemas/customers/customer_payment_source_spei_recurrent_response.yml#/payment_source_spei_recurrent'
-            
     401:
      $ref: '../errors/401.yml'
     404:
