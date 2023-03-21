@@ -4,8 +4,57 @@ package {{packageName}}
 import (
 	"encoding/json"
 	"reflect"
+	"runtime"
 	"time"
+   	"os/exec"
+	"bytes"
 )
+
+const (
+	// UnknownPlatform is the string returned as the system name if we couldn't get
+	// one from `uname`.
+	UnknownPlatform string = "unknown platform"
+)
+
+var encodedConektaUserAgent string
+
+func init() {
+	initUserAgent()
+}
+
+func initUserAgent() {
+	data := map[string]string{
+		"bindings_version": "{{{packageVersion}}}",
+		"lang":             "go",
+		"lang_version":     runtime.Version(),
+		"publisher":        "conekta",
+		"uname":            getUname(),
+	}
+
+	r, _ := json.Marshal(data)
+	encodedConektaUserAgent = string(r)
+}
+
+// getUname tries to get an uname from the system, but not that hard. It tries
+// to execute `uname -a`, but swallows any errors in case that didn't work
+// (i.e. non-Unix non-Mac system or some other reason).
+func getUname() string {
+	path, err := exec.LookPath("uname")
+	if err != nil {
+		return UnknownPlatform
+	}
+
+	cmd := exec.Command(path, "-a")
+	var out bytes.Buffer
+	cmd.Stderr = nil // goes to os.DevNull
+	cmd.Stdout = &out
+	err = cmd.Run()
+	if err != nil {
+		return UnknownPlatform
+	}
+
+	return out.String()
+}
 
 // PtrBool is a helper routine that returns a pointer to given boolean value.
 func PtrBool(v bool) *bool { return &v }
@@ -319,8 +368,8 @@ func (v *NullableTime) UnmarshalJSON(src []byte) error {
 	return json.Unmarshal(src, &v.value)
 }
 
-// isNil checks if an input is nil
-func isNil(i interface{}) bool {
+// IsNil checks if an input is nil
+func IsNil(i interface{}) bool {
 	if i == nil {
 		return true
 	}
