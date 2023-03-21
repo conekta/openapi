@@ -23,6 +23,7 @@ properties:
     example: "plan_24234"
   interval:
     type: string
+    nullable: false
     enum:
       - week
       - half_month
@@ -31,6 +32,7 @@ properties:
   frequency: 
     type: integer
     example: 1
+    minimum: 1
   name:
     type: string
     example: "Extra Plan3"

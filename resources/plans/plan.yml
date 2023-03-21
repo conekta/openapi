@@ -46,8 +46,8 @@ get:
   security:
     - bearerAuth: []
   parameters:
-    - $ref: '../../parameters/commons/headers/accept_language.yml'
     - $ref: '../../parameters/commons/path_param/id.yml'
+    - $ref: '../../parameters/commons/headers/accept_language.yml'
 put:
   tags:
     - plans
@@ -98,8 +98,8 @@ put:
   requestBody:
     $ref: '../../requestBodies/plans/plan_update.yml'
   parameters:
-    - $ref: '../../parameters/commons/headers/accept_language.yml'
     - $ref: '../../parameters/commons/path_param/id.yml'
+    - $ref: '../../parameters/commons/headers/accept_language.yml'
 delete:
   tags:
     - plans
@@ -148,5 +148,5 @@ delete:
   security:
     - bearerAuth: []
   parameters:
-    - $ref: '../../parameters/commons/headers/accept_language.yml'
     - $ref: '../../parameters/commons/path_param/id.yml'
+    - $ref: '../../parameters/commons/headers/accept_language.yml'

@@ -2,7 +2,7 @@ post:
   tags:
     - subscriptions
   operationId: createSubscription
-  summary: crates a subscription
+  summary: creates a subscription
   responses:
     200:
       description: successful
@@ -48,8 +48,8 @@ post:
   requestBody:
     $ref: '../../requestBodies/subscriptions/subscription.yml'
   parameters:
-    - $ref: '../../parameters/commons/headers/accept_language.yml'
     - $ref: '../../parameters/commons/path_param/id.yml'
+    - $ref: '../../parameters/commons/headers/accept_language.yml'
 put:
   tags:
     - subscriptions
@@ -98,10 +98,10 @@ put:
   security:
     - bearerAuth: []
   requestBody:
-    $ref: '../../requestBodies/subscriptions/subscription.yml'
+    $ref: '../../requestBodies/subscriptions/subscription_update.yml'
   parameters:
-    - $ref: '../../parameters/commons/headers/accept_language.yml'
     - $ref: '../../parameters/commons/path_param/id.yml'
+    - $ref: '../../parameters/commons/headers/accept_language.yml'
 get:
   tags:
     - subscriptions
@@ -150,5 +150,5 @@ get:
   security:
     - bearerAuth: []
   parameters:
-    - $ref: '../../parameters/commons/headers/accept_language.yml'
     - $ref: '../../parameters/commons/path_param/id.yml'
+    - $ref: '../../parameters/commons/headers/accept_language.yml'

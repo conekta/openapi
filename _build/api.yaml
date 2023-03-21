@@ -1560,6 +1560,13 @@ paths:
     get:
       operationId: getSubscription
       parameters:
+      - description: identifier
+        example: 6307a60c41de27127515a575
+        in: path
+        name: id
+        required: true
+        schema:
+          type: string
       - description: use for knowing which language to use
         examples:
           es:
@@ -1575,13 +1582,6 @@ paths:
           enum:
           - es
           - en
-          type: string
-      - description: identifier
-        example: 6307a60c41de27127515a575
-        in: path
-        name: id
-        required: true
-        schema:
           type: string
       responses:
         "200":
@@ -1650,6 +1650,13 @@ paths:
     post:
       operationId: createSubscription
       parameters:
+      - description: identifier
+        example: 6307a60c41de27127515a575
+        in: path
+        name: id
+        required: true
+        schema:
+          type: string
       - description: use for knowing which language to use
         examples:
           es:
@@ -1665,13 +1672,6 @@ paths:
           enum:
           - es
           - en
-          type: string
-      - description: identifier
-        example: 6307a60c41de27127515a575
-        in: path
-        name: id
-        required: true
-        schema:
           type: string
       requestBody:
         $ref: '#/components/requestBodies/subscription'
@@ -1736,12 +1736,19 @@ paths:
           description: internal server error
       security:
       - bearerAuth: []
-      summary: crates a subscription
+      summary: creates a subscription
       tags:
       - subscriptions
     put:
       operationId: updateSubscription
       parameters:
+      - description: identifier
+        example: 6307a60c41de27127515a575
+        in: path
+        name: id
+        required: true
+        schema:
+          type: string
       - description: use for knowing which language to use
         examples:
           es:
@@ -1758,15 +1765,8 @@ paths:
           - es
           - en
           type: string
-      - description: identifier
-        example: 6307a60c41de27127515a575
-        in: path
-        name: id
-        required: true
-        schema:
-          type: string
       requestBody:
-        $ref: '#/components/requestBodies/subscription'
+        $ref: '#/components/requestBodies/subscription_update'
       responses:
         "200":
           content:
@@ -1835,6 +1835,13 @@ paths:
     post:
       operationId: cancelSubscription
       parameters:
+      - description: identifier
+        example: 6307a60c41de27127515a575
+        in: path
+        name: id
+        required: true
+        schema:
+          type: string
       - description: use for knowing which language to use
         examples:
           es:
@@ -1850,13 +1857,6 @@ paths:
           enum:
           - es
           - en
-          type: string
-      - description: identifier
-        example: 6307a60c41de27127515a575
-        in: path
-        name: id
-        required: true
-        schema:
           type: string
       responses:
         "200":
@@ -1932,6 +1932,13 @@ paths:
     post:
       operationId: pauseSubscription
       parameters:
+      - description: identifier
+        example: 6307a60c41de27127515a575
+        in: path
+        name: id
+        required: true
+        schema:
+          type: string
       - description: use for knowing which language to use
         examples:
           es:
@@ -1947,13 +1954,6 @@ paths:
           enum:
           - es
           - en
-          type: string
-      - description: identifier
-        example: 6307a60c41de27127515a575
-        in: path
-        name: id
-        required: true
-        schema:
           type: string
       responses:
         "200":
@@ -2029,6 +2029,13 @@ paths:
     post:
       operationId: resumeSubscription
       parameters:
+      - description: identifier
+        example: 6307a60c41de27127515a575
+        in: path
+        name: id
+        required: true
+        schema:
+          type: string
       - description: use for knowing which language to use
         examples:
           es:
@@ -2044,13 +2051,6 @@ paths:
           enum:
           - es
           - en
-          type: string
-      - description: identifier
-        example: 6307a60c41de27127515a575
-        in: path
-        name: id
-        required: true
-        schema:
           type: string
       responses:
         "200":
@@ -3661,6 +3661,13 @@ paths:
     delete:
       operationId: deletePlan
       parameters:
+      - description: identifier
+        example: 6307a60c41de27127515a575
+        in: path
+        name: id
+        required: true
+        schema:
+          type: string
       - description: use for knowing which language to use
         examples:
           es:
@@ -3676,13 +3683,6 @@ paths:
           enum:
           - es
           - en
-          type: string
-      - description: identifier
-        example: 6307a60c41de27127515a575
-        in: path
-        name: id
-        required: true
-        schema:
           type: string
       responses:
         "200":
@@ -3751,6 +3751,13 @@ paths:
     get:
       operationId: getPlan
       parameters:
+      - description: identifier
+        example: 6307a60c41de27127515a575
+        in: path
+        name: id
+        required: true
+        schema:
+          type: string
       - description: use for knowing which language to use
         examples:
           es:
@@ -3766,13 +3773,6 @@ paths:
           enum:
           - es
           - en
-          type: string
-      - description: identifier
-        example: 6307a60c41de27127515a575
-        in: path
-        name: id
-        required: true
-        schema:
           type: string
       responses:
         "200":
@@ -3841,6 +3841,13 @@ paths:
     put:
       operationId: updatePlan
       parameters:
+      - description: identifier
+        example: 6307a60c41de27127515a575
+        in: path
+        name: id
+        required: true
+        schema:
+          type: string
       - description: use for knowing which language to use
         examples:
           es:
@@ -3856,13 +3863,6 @@ paths:
           enum:
           - es
           - en
-          type: string
-      - description: identifier
-        example: 6307a60c41de27127515a575
-        in: path
-        name: id
-        required: true
-        schema:
           type: string
       requestBody:
         $ref: '#/components/requestBodies/plan_update'
@@ -4572,6 +4572,13 @@ components:
             $ref: '#/components/schemas/customer_shipping_contacts'
       description: requested field for customer shippings contacts
       required: true
+    subscription_update:
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/subscription_update_request'
+      description: requested field for update a subscription
+      required: true
     subscription:
       content:
         application/json:
@@ -5274,6 +5281,8 @@ components:
         data:
           description: set to page results.
           items:
+            additionalProperties:
+              type: object
             type: object
           nullable: true
           type: array
@@ -6003,6 +6012,21 @@ components:
           type: boolean
       title: customer_shipping_contacts_request
       type: object
+    subscription_update_request:
+      description: You can modify the subscription to change the plan used by your
+        customers.
+      properties:
+        plan_id:
+          example: f84gdgf5g48r15fd21g8w424fd1
+          type: string
+        card_id:
+          example: src_2qUCNd5AyQqfPMBuV
+          type: string
+        trial_end:
+          example: 1484040996
+          type: integer
+      title: updates a subscription
+      type: object
     subscription_request:
       description: a subscriptions
       properties:
@@ -6336,9 +6360,11 @@ components:
           - half_month
           - month
           - year
+          nullable: false
           type: string
         frequency:
           example: 1
+          minimum: 1
           type: integer
         name:
           example: Extra Plan3
@@ -6367,25 +6393,9 @@ components:
         expiry_count:
           example: 12
           type: integer
-        id:
-          example: plan_24234
-          type: string
-        interval:
-          enum:
-          - week
-          - half_month
-          - month
-          - year
-          type: string
-        frequency:
-          example: 1
-          type: integer
         name:
           example: Extra Plan3
           type: string
-        trial_period_days:
-          example: 0
-          type: integer
       title: update_plan
       type: object
     webhook_request:

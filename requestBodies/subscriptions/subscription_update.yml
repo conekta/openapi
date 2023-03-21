@@ -1,0 +1,6 @@
+description: requested field for update a subscription     
+content:
+  application/json:
+    schema:  
+      $ref: '../../schemas/subscriptions/subscription_update_request.yml'
+required: true
