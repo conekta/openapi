@@ -1298,7 +1298,7 @@ paths:
           - en
           type: string
       requestBody:
-        $ref: '#/components/requestBodies/customer_payment_sources'
+        $ref: '#/components/requestBodies/customer_update_payment_sources'
       responses:
         "200":
           content:
@@ -4476,6 +4476,13 @@ components:
             $ref: '#/components/schemas/CreateCustomerPaymentSources_request'
       description: requested field for customer payment sources
       required: true
+    customer_update_payment_sources:
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/update_payment_sources'
+      description: requested field for customer payment sources
+      required: true
     customer_shipping_contacts:
       content:
         application/json:
@@ -5882,6 +5889,13 @@ components:
       - $ref: '#/components/schemas/customer_payment_sources'
       - $ref: '#/components/schemas/payment_sources_cash_allOf'
       title: payment_sources_spei
+    update_payment_sources:
+      properties:
+        name:
+          example: name of person
+          type: string
+      title: update_payment_sources_card
+      type: object
     customer_shipping_contacts:
       description: Contains the detail of the shipping addresses that the client has
         active or has used in Conekta

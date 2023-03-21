@@ -2506,7 +2506,7 @@
       "responses": [
         {
           "uuid": "77fd9c6f-9d5c-458b-8ce0-6d0341c5bdbf",
-          "body": "",
+          "body": "{\n    \"id\": \"src_2tZWxbTPtQgGJGh8R\",\n    \"object\": \"payment_source\",\n    \"type\": \"card\",\n    \"created_at\": 1679402134,\n    \"last4\": \"3118\",\n    \"bin\": \"432122\",\n    \"card_type\": \"debit\",\n    \"exp_month\": \"11\",\n    \"exp_year\": \"25\",\n    \"brand\": \"visa\",\n    \"name\": \"name of person\",\n    \"parent_id\": \"cus_2tZWxbTPtQgGJGh8P\",\n    \"default\": true,\n    \"payment_source_status\": \"active\",\n    \"visible_on_checkout\": false\n}",
           "latency": 0,
           "statusCode": 200,
           "label": "successful operation",
@@ -2520,8 +2520,23 @@
           "filePath": "",
           "databucketID": "",
           "sendFileAsBody": false,
-          "rules": [],
-          "rulesOperator": "OR",
+          "rules": [
+            {
+              "target": "params",
+              "modifier": "id",
+              "value": "cus_2tZWxbTPtQgGJGh8P",
+              "invert": false,
+              "operator": "equals"
+            },
+            {
+              "target": "params",
+              "modifier": "payment_sources_id",
+              "value": "src_2tZWxbTPtQgGJGh8R",
+              "invert": false,
+              "operator": "equals"
+            }
+          ],
+          "rulesOperator": "AND",
           "disableTemplating": false,
           "fallbackTo404": false,
           "default": true
@@ -2761,7 +2776,7 @@
       "responses": [
         {
           "uuid": "510d7b99-45e5-4dd1-b1e1-d34516ce0aa2",
-          "body": "",
+          "body": "{\n    \"phone\": \"3143145050\",\n    \"address\": {\n        \"street1\": \"Calle 123, int 2\",\n        \"country\": \"mx\",\n        \"residential\": true,\n        \"object\": \"shipping_address\",\n        \"postal_code\": \"06100\"\n    },\n    \"id\": \"ship_cont_2tZWzJPBf87C6TcoQ\",\n    \"object\": \"shipping_contact\",\n    \"created_at\": 1679402268,\n    \"parent_id\": \"cus_2tZWxbTPtQgGJGh8P\",\n    \"default\": false\n}",
           "latency": 0,
           "statusCode": 200,
           "label": "successful operation",
@@ -2775,8 +2790,23 @@
           "filePath": "",
           "databucketID": "",
           "sendFileAsBody": false,
-          "rules": [],
-          "rulesOperator": "OR",
+          "rules": [
+            {
+              "target": "params",
+              "modifier": "id",
+              "value": "cus_2tZWxbTPtQgGJGh8P",
+              "invert": false,
+              "operator": "equals"
+            },
+            {
+              "target": "params",
+              "modifier": "shipping_contacts_id",
+              "value": "ship_cont_2tZWzJPBf87C6TcoQ",
+              "invert": false,
+              "operator": "equals"
+            }
+          ],
+          "rulesOperator": "AND",
           "disableTemplating": false,
           "fallbackTo404": false,
           "default": true

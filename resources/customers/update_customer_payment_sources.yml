@@ -34,7 +34,7 @@ put:
   security:
     - bearerAuth: []
   requestBody:
-    $ref: ../../requestBodies/customers/customer_payment_sources.yml
+    $ref: ../../requestBodies/customers/customer_update_payment_sources.yml
   parameters:
     - $ref: '../../parameters/commons/path_param/id.yml'
     - $ref: '../../parameters/commons/path_param/payment_sources_id.yml'

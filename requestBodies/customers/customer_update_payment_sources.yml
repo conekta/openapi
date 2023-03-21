@@ -1,0 +1,6 @@
+description: requested field for customer payment sources    
+content:
+  application/json:
+    schema:  
+      $ref: ../../schemas/customers/update_payment_sources.yml
+required: true
