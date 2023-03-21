@@ -1928,6 +1928,104 @@ paths:
       summary: cancels a subscription
       tags:
       - subscriptions
+  /customers/{id}/subscription/events:
+    get:
+      operationId: getAllEventsFromSubscription
+      parameters:
+      - description: identifier
+        example: 6307a60c41de27127515a575
+        in: path
+        name: id
+        required: true
+        schema:
+          type: string
+      - description: use for knowing which language to use
+        examples:
+          es:
+            summary: for spanish request/response
+            value: es
+          en:
+            summary: for english request/response
+            value: en
+        in: header
+        name: Accept-Language
+        required: true
+        schema:
+          enum:
+          - es
+          - en
+          type: string
+      responses:
+        "200":
+          content:
+            application/vnd.conekta-v2.1.0+json:
+              schema:
+                $ref: '#/components/schemas/subscription_events_response'
+          description: successful
+          headers:
+            Date:
+              description: The date and time that the response was sent
+              schema:
+                example: "Fri, 03 Feb 2023 16:57:48 GMT"
+                type: string
+            Content-Type:
+              description: The format of the response body
+              schema:
+                example: application/json; charset=utf-8
+                type: string
+            Content-Length:
+              description: The length of the response body in bytes
+              schema:
+                example: "2737"
+                type: string
+            Connection:
+              description: The type of connection used to transfer the response
+              schema:
+                example: keep-alive
+                type: string
+            Conekta-Media-Type:
+              schema:
+                example: conekta-v2.1.0; format=application/json
+                type: string
+        "401":
+          content:
+            application/vnd.conekta-v2.1.0+json:
+              schema:
+                $ref: '#/components/schemas/error_2_x_x'
+          description: authentication error
+        "402":
+          content:
+            application/vnd.conekta-v2.1.0+json:
+              schema:
+                $ref: '#/components/schemas/error_2_x_x'
+          description: payment required error
+        "404":
+          content:
+            application/vnd.conekta-v2.1.0+json:
+              schema:
+                $ref: '#/components/schemas/error_2_x_x'
+            application/json; charset=utf-8:
+              schema:
+                $ref: '#/components/schemas/error_2_x_x'
+          description: not found entity
+        "422":
+          content:
+            application/vnd.conekta-v2.1.0+json:
+              schema:
+                $ref: '#/components/schemas/error_2_x_x'
+          description: parameter validation error
+        "500":
+          content:
+            application/vnd.conekta-v2.1.0+json:
+              schema:
+                $ref: '#/components/schemas/error_2_x_x'
+          description: internal server error
+      security:
+      - bearerAuth: []
+      summary: "You can get the events of the subscription(s) of a client, with the\
+        \ customer id"
+      tags:
+      - subscriptions
   /customers/{id}/subscription/pause:
     post:
       operationId: pauseSubscription
@@ -6790,18 +6888,24 @@ components:
       - $ref: '#/components/schemas/payment_source_card'
       - $ref: '#/components/schemas/payment_source_spei_recurrent'
       title: update_customer_payment_sources_response
-    get_events_response_allOf:
+    subscription_events_response_allOf:
       properties:
         data:
           items:
             $ref: '#/components/schemas/event_response'
           type: array
       type: object
+    subscription_events_response:
+      allOf:
+      - $ref: '#/components/schemas/pagination'
+      - $ref: '#/components/schemas/page'
+      - $ref: '#/components/schemas/subscription_events_response_allOf'
+      title: subscription_events_response
     get_events_response:
       allOf:
       - $ref: '#/components/schemas/pagination'
       - $ref: '#/components/schemas/page'
-      - $ref: '#/components/schemas/get_events_response_allOf'
+      - $ref: '#/components/schemas/subscription_events_response_allOf'
       title: get_events_response
     get_orders_response:
       allOf:
