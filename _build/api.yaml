@@ -94,8 +94,9 @@ paths:
             value: en
         in: header
         name: Accept-Language
-        required: true
+        required: false
         schema:
+          default: es
           enum:
           - es
           - en
@@ -200,8 +201,9 @@ paths:
             value: en
         in: header
         name: Accept-Language
-        required: true
+        required: false
         schema:
+          default: es
           enum:
           - es
           - en
@@ -283,8 +285,9 @@ paths:
             value: en
         in: header
         name: Accept-Language
-        required: true
+        required: false
         schema:
+          default: es
           enum:
           - es
           - en
@@ -380,8 +383,9 @@ paths:
             value: en
         in: header
         name: Accept-Language
-        required: true
+        required: false
         schema:
+          default: es
           enum:
           - es
           - en
@@ -477,8 +481,9 @@ paths:
             value: en
         in: header
         name: Accept-Language
-        required: true
+        required: false
         schema:
+          default: es
           enum:
           - es
           - en
@@ -576,8 +581,9 @@ paths:
             value: en
         in: header
         name: Accept-Language
-        required: true
+        required: false
         schema:
+          default: es
           enum:
           - es
           - en
@@ -678,8 +684,9 @@ paths:
             value: en
         in: header
         name: Accept-Language
-        required: true
+        required: false
         schema:
+          default: es
           enum:
           - es
           - en
@@ -780,8 +787,9 @@ paths:
             value: en
         in: header
         name: Accept-Language
-        required: true
+        required: false
         schema:
+          default: es
           enum:
           - es
           - en
@@ -871,8 +879,9 @@ paths:
             value: en
         in: header
         name: Accept-Language
-        required: true
+        required: false
         schema:
+          default: es
           enum:
           - es
           - en
@@ -937,8 +946,9 @@ paths:
             value: en
         in: header
         name: Accept-Language
-        required: true
+        required: false
         schema:
+          default: es
           enum:
           - es
           - en
@@ -994,8 +1004,9 @@ paths:
             value: en
         in: header
         name: Accept-Language
-        required: true
+        required: false
         schema:
+          default: es
           enum:
           - es
           - en
@@ -1060,8 +1071,9 @@ paths:
             value: en
         in: header
         name: Accept-Language
-        required: true
+        required: false
         schema:
+          default: es
           enum:
           - es
           - en
@@ -1136,8 +1148,9 @@ paths:
             value: en
         in: header
         name: Accept-Language
-        required: true
+        required: false
         schema:
+          default: es
           enum:
           - es
           - en
@@ -1205,8 +1218,9 @@ paths:
             value: en
         in: header
         name: Accept-Language
-        required: true
+        required: false
         schema:
+          default: es
           enum:
           - es
           - en
@@ -1281,8 +1295,9 @@ paths:
             value: en
         in: header
         name: Accept-Language
-        required: true
+        required: false
         schema:
+          default: es
           enum:
           - es
           - en
@@ -1354,8 +1369,9 @@ paths:
             value: en
         in: header
         name: Accept-Language
-        required: true
+        required: false
         schema:
+          default: es
           enum:
           - es
           - en
@@ -1423,8 +1439,9 @@ paths:
             value: en
         in: header
         name: Accept-Language
-        required: true
+        required: false
         schema:
+          default: es
           enum:
           - es
           - en
@@ -1499,8 +1516,9 @@ paths:
             value: en
         in: header
         name: Accept-Language
-        required: true
+        required: false
         schema:
+          default: es
           enum:
           - es
           - en
@@ -1567,8 +1585,9 @@ paths:
             value: en
         in: header
         name: Accept-Language
-        required: true
+        required: false
         schema:
+          default: es
           enum:
           - es
           - en
@@ -1657,8 +1676,9 @@ paths:
             value: en
         in: header
         name: Accept-Language
-        required: true
+        required: false
         schema:
+          default: es
           enum:
           - es
           - en
@@ -1749,8 +1769,9 @@ paths:
             value: en
         in: header
         name: Accept-Language
-        required: true
+        required: false
         schema:
+          default: es
           enum:
           - es
           - en
@@ -1842,8 +1863,9 @@ paths:
             value: en
         in: header
         name: Accept-Language
-        required: true
+        required: false
         schema:
+          default: es
           enum:
           - es
           - en
@@ -1939,8 +1961,9 @@ paths:
             value: en
         in: header
         name: Accept-Language
-        required: true
+        required: false
         schema:
+          default: es
           enum:
           - es
           - en
@@ -2037,8 +2060,9 @@ paths:
             value: en
         in: header
         name: Accept-Language
-        required: true
+        required: false
         schema:
+          default: es
           enum:
           - es
           - en
@@ -2134,8 +2158,9 @@ paths:
             value: en
         in: header
         name: Accept-Language
-        required: true
+        required: false
         schema:
+          default: es
           enum:
           - es
           - en
@@ -2224,8 +2249,9 @@ paths:
             value: en
         in: header
         name: Accept-Language
-        required: true
+        required: false
         schema:
+          default: es
           enum:
           - es
           - en
@@ -2325,8 +2351,9 @@ paths:
             value: en
         in: header
         name: Accept-Language
-        required: true
+        required: false
         schema:
+          default: es
           enum:
           - es
           - en
@@ -2407,8 +2434,9 @@ paths:
             value: en
         in: header
         name: Accept-Language
-        required: true
+        required: false
         schema:
+          default: es
           enum:
           - es
           - en
@@ -2515,8 +2543,9 @@ paths:
             value: en
         in: header
         name: Accept-Language
-        required: true
+        required: false
         schema:
+          default: es
           enum:
           - es
           - en
@@ -2566,8 +2595,9 @@ paths:
             value: en
         in: header
         name: Accept-Language
-        required: true
+        required: false
         schema:
+          default: es
           enum:
           - es
           - en
@@ -2636,8 +2666,9 @@ paths:
             value: en
         in: header
         name: Accept-Language
-        required: true
+        required: false
         schema:
+          default: es
           enum:
           - es
           - en
@@ -2708,8 +2739,9 @@ paths:
             value: en
         in: header
         name: Accept-Language
-        required: true
+        required: false
         schema:
+          default: es
           enum:
           - es
           - en
@@ -2767,8 +2799,9 @@ paths:
             value: en
         in: header
         name: Accept-Language
-        required: true
+        required: false
         schema:
+          default: es
           enum:
           - es
           - en
@@ -2835,8 +2868,9 @@ paths:
             value: en
         in: header
         name: Accept-Language
-        required: true
+        required: false
         schema:
+          default: es
           enum:
           - es
           - en
@@ -2904,8 +2938,9 @@ paths:
             value: en
         in: header
         name: Accept-Language
-        required: true
+        required: false
         schema:
+          default: es
           enum:
           - es
           - en
@@ -2966,8 +3001,9 @@ paths:
             value: en
         in: header
         name: Accept-Language
-        required: true
+        required: false
         schema:
+          default: es
           enum:
           - es
           - en
@@ -3035,8 +3071,9 @@ paths:
             value: en
         in: header
         name: Accept-Language
-        required: true
+        required: false
         schema:
+          default: es
           enum:
           - es
           - en
@@ -3103,8 +3140,9 @@ paths:
             value: en
         in: header
         name: Accept-Language
-        required: true
+        required: false
         schema:
+          default: es
           enum:
           - es
           - en
@@ -3172,8 +3210,9 @@ paths:
             value: en
         in: header
         name: Accept-Language
-        required: true
+        required: false
         schema:
+          default: es
           enum:
           - es
           - en
@@ -3240,8 +3279,9 @@ paths:
             value: en
         in: header
         name: Accept-Language
-        required: true
+        required: false
         schema:
+          default: es
           enum:
           - es
           - en
@@ -3309,8 +3349,9 @@ paths:
             value: en
         in: header
         name: Accept-Language
-        required: true
+        required: false
         schema:
+          default: es
           enum:
           - es
           - en
@@ -3378,8 +3419,9 @@ paths:
             value: en
         in: header
         name: Accept-Language
-        required: true
+        required: false
         schema:
+          default: es
           enum:
           - es
           - en
@@ -3446,8 +3488,9 @@ paths:
             value: en
         in: header
         name: Accept-Language
-        required: true
+        required: false
         schema:
+          default: es
           enum:
           - es
           - en
@@ -3521,8 +3564,9 @@ paths:
             value: en
         in: header
         name: Accept-Language
-        required: true
+        required: false
         schema:
+          default: es
           enum:
           - es
           - en
@@ -3582,8 +3626,9 @@ paths:
             value: en
         in: header
         name: Accept-Language
-        required: true
+        required: false
         schema:
+          default: es
           enum:
           - es
           - en
@@ -3682,8 +3727,9 @@ paths:
             value: en
         in: header
         name: Accept-Language
-        required: true
+        required: false
         schema:
+          default: es
           enum:
           - es
           - en
@@ -3766,8 +3812,9 @@ paths:
             value: en
         in: header
         name: Accept-Language
-        required: true
+        required: false
         schema:
+          default: es
           enum:
           - es
           - en
@@ -3856,8 +3903,9 @@ paths:
             value: en
         in: header
         name: Accept-Language
-        required: true
+        required: false
         schema:
+          default: es
           enum:
           - es
           - en
@@ -3946,8 +3994,9 @@ paths:
             value: en
         in: header
         name: Accept-Language
-        required: true
+        required: false
         schema:
+          default: es
           enum:
           - es
           - en
@@ -4032,8 +4081,9 @@ paths:
             value: en
         in: header
         name: Accept-Language
-        required: true
+        required: false
         schema:
+          default: es
           enum:
           - es
           - en
@@ -4133,8 +4183,9 @@ paths:
             value: en
         in: header
         name: Accept-Language
-        required: true
+        required: false
         schema:
+          default: es
           enum:
           - es
           - en
@@ -4192,8 +4243,9 @@ paths:
             value: en
         in: header
         name: Accept-Language
-        required: true
+        required: false
         schema:
+          default: es
           enum:
           - es
           - en
@@ -4282,8 +4334,9 @@ paths:
             value: en
         in: header
         name: Accept-Language
-        required: true
+        required: false
         schema:
+          default: es
           enum:
           - es
           - en
@@ -4366,8 +4419,9 @@ paths:
             value: en
         in: header
         name: Accept-Language
-        required: true
+        required: false
         schema:
+          default: es
           enum:
           - es
           - en
@@ -4480,8 +4534,9 @@ components:
           value: en
       in: header
       name: Accept-Language
-      required: true
+      required: false
       schema:
+        default: es
         enum:
         - es
         - en

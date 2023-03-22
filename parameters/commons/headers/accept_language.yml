@@ -1,8 +1,9 @@
 in: header
 name: "Accept-Language"
 description: use for knowing which language to use
-required: true
+required: false
 schema:
+  default: "es"
   type: string
   enum: [ 
     "es", 
