@@ -1,6 +1,7 @@
 title: page metadata
 description: page metadata
 type: object
+x-parent: true
 properties:
   next_page_url: 
     description: URL of the next page.

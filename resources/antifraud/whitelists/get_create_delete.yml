@@ -5,11 +5,6 @@ delete:
   responses:
     '200':
       description: successfully deleted rule
-  requestBody:
-    content:
-      application/json:
-        schema:
-          $ref: '../../../schemas/antifraud/delete_risk_rules_data.yml'
 get:
   tags:
     - Whitelists

@@ -19,11 +19,6 @@ paths:
   /antifraud/whitelists:
     delete:
       operationId: DeleteRequestedRuleWhitelist
-      requestBody:
-        content:
-          application/json:
-            schema:
-              $ref: '#/components/schemas/delete_risk_rules_data'
       responses:
         "200":
           description: successfully deleted rule
@@ -56,11 +51,6 @@ paths:
   /antifraud/blacklists:
     delete:
       operationId: DeleteRequestedBlackListRule
-      requestBody:
-        content:
-          application/vnd.conekta-v2.1.0+json:
-            schema:
-              $ref: '#/components/schemas/delete_risk_rules_data'
       responses:
         "200":
           description: successfully deleted rule
@@ -4185,6 +4175,13 @@ paths:
     delete:
       operationId: deleteWebhook
       parameters:
+      - description: identifier
+        example: 6307a60c41de27127515a575
+        in: path
+        name: id
+        required: true
+        schema:
+          type: string
       - description: use for knowing which language to use
         examples:
           es:
@@ -4200,13 +4197,6 @@ paths:
           enum:
           - es
           - en
-          type: string
-      - description: identifier
-        example: 6307a60c41de27127515a575
-        in: path
-        name: id
-        required: true
-        schema:
           type: string
       responses:
         "200":
@@ -4275,6 +4265,13 @@ paths:
     get:
       operationId: getWebhook
       parameters:
+      - description: identifier
+        example: 6307a60c41de27127515a575
+        in: path
+        name: id
+        required: true
+        schema:
+          type: string
       - description: use for knowing which language to use
         examples:
           es:
@@ -4290,13 +4287,6 @@ paths:
           enum:
           - es
           - en
-          type: string
-      - description: identifier
-        example: 6307a60c41de27127515a575
-        in: path
-        name: id
-        required: true
-        schema:
           type: string
       responses:
         "200":
@@ -4863,12 +4853,6 @@ components:
           example: email@example.com | 818081808180 | src_2qUCNd5AyQqfPMBuV
           type: string
       type: object
-    delete_risk_rules_data:
-      properties:
-        id:
-          example: 2fw8EWJusiRrxdPzT
-          type: string
-      type: object
     pagination:
       description: pagination metadata
       properties:
@@ -4896,6 +4880,7 @@ components:
           type: string
       title: page metadata
       type: object
+      x-parent: true
     checkout_response:
       description: checkout response
       example:
@@ -5812,6 +5797,7 @@ components:
     webhook_response:
       description: webhooks model
       example:
+        deleted: false
         livemode: true
         subscribed_events:
         - charge.created
@@ -5832,6 +5818,10 @@ components:
         object: event
         status: listening
       properties:
+        deleted:
+          example: false
+          nullable: true
+          type: boolean
         development_enabled:
           example: false
           type: boolean
@@ -6504,6 +6494,7 @@ components:
           format: url
           type: string
         synchronous:
+          default: false
           example: false
           type: boolean
       required:
