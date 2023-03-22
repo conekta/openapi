@@ -4880,7 +4880,6 @@ components:
           type: string
       title: page metadata
       type: object
-      x-parent: true
     checkout_response:
       description: checkout response
       example:
