@@ -3,4 +3,15 @@ content:
   application/json:
     schema:  
       $ref: '../../schemas/orders/order_request.yml'
+    examples:
+      order_with_charges:
+        $ref: '../../schemas/orders/request_examples/order_with_charges.yml'
+      order_with_checkout:
+        $ref: '../../schemas/orders/request_examples/order_with_checkout.yml'
+      split_payment_with_2_card_charges:
+        $ref: '../../schemas/orders/request_examples/split_payment_with_2_cards.yml'
+      split_payment_with_3_cash_charges:
+        $ref: '../../schemas/orders/request_examples/split_payment_with_cash.yml'
+      split_payment_with_cash_card_charges:
+        $ref: '../../schemas/orders/request_examples/split_payment_with_cash_card.yml'
 required: true
