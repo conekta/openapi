@@ -13,22 +13,6 @@ properties:
   expiry_count:
     type: integer
     example: 12
-  id:
-    type: string
-    example: "plan_24234"
-  interval:
-    type: string
-    enum:
-      - week
-      - half_month
-      - month
-      - year
-  frequency: 
-    type: integer
-    example: 1
   name:
     type: string
     example: "Extra Plan3"
-  trial_period_days:
-    type: integer
-    example: 0

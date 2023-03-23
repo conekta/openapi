@@ -1,4 +1,4 @@
-title: authentication error
+title: error
 description: err model
 allOf:
   - $ref: './details.yml#/details'

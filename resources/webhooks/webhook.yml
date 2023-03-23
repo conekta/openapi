@@ -46,8 +46,8 @@ get:
   security:
     - bearerAuth: []
   parameters:
-    - $ref: '../../parameters/commons/headers/accept_language.yml'
     - $ref: '../../parameters/commons/path_param/id.yml'
+    - $ref: '../../parameters/commons/headers/accept_language.yml'
 put:
   tags:
     - webhooks
@@ -123,5 +123,5 @@ delete:
   security:
     - bearerAuth: []
   parameters:
-    - $ref: '../../parameters/commons/headers/accept_language.yml'
     - $ref: '../../parameters/commons/path_param/id.yml'
+    - $ref: '../../parameters/commons/headers/accept_language.yml'

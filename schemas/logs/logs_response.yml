@@ -23,4 +23,7 @@ properties:
     description: set to page results.
     nullable: true
     type: array
-    items: {}
+    items:
+      additionalProperties:
+        type: object
+      type: object

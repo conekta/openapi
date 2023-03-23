@@ -1,0 +1,13 @@
+title: updates a subscription
+description: You can modify the subscription to change the plan used by your customers.
+type: object
+properties:
+  plan_id:
+    type: string
+    example: "f84gdgf5g48r15fd21g8w424fd1"
+  card_id:
+    type: string
+    example: "src_2qUCNd5AyQqfPMBuV"
+  trial_end:
+    type: integer
+    example: 1484040996

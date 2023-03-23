@@ -19,11 +19,6 @@ paths:
   /antifraud/whitelists:
     delete:
       operationId: DeleteRequestedRuleWhitelist
-      requestBody:
-        content:
-          application/json:
-            schema:
-              $ref: '#/components/schemas/delete_risk_rules_data'
       responses:
         "200":
           description: successfully deleted rule
@@ -56,11 +51,6 @@ paths:
   /antifraud/blacklists:
     delete:
       operationId: DeleteRequestedBlackListRule
-      requestBody:
-        content:
-          application/vnd.conekta-v2.1.0+json:
-            schema:
-              $ref: '#/components/schemas/delete_risk_rules_data'
       responses:
         "200":
           description: successfully deleted rule
@@ -104,8 +94,9 @@ paths:
             value: en
         in: header
         name: Accept-Language
-        required: true
+        required: false
         schema:
+          default: es
           enum:
           - es
           - en
@@ -172,25 +163,25 @@ paths:
           content:
             application/vnd.conekta-v2.1.0+json:
               schema:
-                $ref: '#/components/schemas/error_2_x_x'
+                $ref: '#/components/schemas/error'
           description: authentication error
         "402":
           content:
             application/vnd.conekta-v2.1.0+json:
               schema:
-                $ref: '#/components/schemas/error_2_x_x'
+                $ref: '#/components/schemas/error'
           description: payment required error
         "422":
           content:
             application/vnd.conekta-v2.1.0+json:
               schema:
-                $ref: '#/components/schemas/error_2_x_x'
+                $ref: '#/components/schemas/error'
           description: parameter validation error
         "500":
           content:
             application/vnd.conekta-v2.1.0+json:
               schema:
-                $ref: '#/components/schemas/error_2_x_x'
+                $ref: '#/components/schemas/error'
           description: internal server error
       security:
       - bearerAuth: []
@@ -210,8 +201,9 @@ paths:
             value: en
         in: header
         name: Accept-Language
-        required: true
+        required: false
         schema:
+          default: es
           enum:
           - es
           - en
@@ -254,25 +246,25 @@ paths:
           content:
             application/vnd.conekta-v2.1.0+json:
               schema:
-                $ref: '#/components/schemas/error_2_x_x'
+                $ref: '#/components/schemas/error'
           description: authentication error
         "402":
           content:
             application/vnd.conekta-v2.1.0+json:
               schema:
-                $ref: '#/components/schemas/error_2_x_x'
+                $ref: '#/components/schemas/error'
           description: payment required error
         "422":
           content:
             application/vnd.conekta-v2.1.0+json:
               schema:
-                $ref: '#/components/schemas/error_2_x_x'
+                $ref: '#/components/schemas/error'
           description: parameter validation error
         "500":
           content:
             application/vnd.conekta-v2.1.0+json:
               schema:
-                $ref: '#/components/schemas/error_2_x_x'
+                $ref: '#/components/schemas/error'
           description: internal server error
       security:
       - bearerAuth: []
@@ -293,8 +285,9 @@ paths:
             value: en
         in: header
         name: Accept-Language
-        required: true
+        required: false
         schema:
+          default: es
           enum:
           - es
           - en
@@ -342,34 +335,34 @@ paths:
           content:
             application/vnd.conekta-v2.1.0+json:
               schema:
-                $ref: '#/components/schemas/error_2_x_x'
+                $ref: '#/components/schemas/error'
           description: authentication error
         "402":
           content:
             application/vnd.conekta-v2.1.0+json:
               schema:
-                $ref: '#/components/schemas/error_2_x_x'
+                $ref: '#/components/schemas/error'
           description: payment required error
         "404":
           content:
             application/vnd.conekta-v2.1.0+json:
               schema:
-                $ref: '#/components/schemas/error_2_x_x'
+                $ref: '#/components/schemas/error'
             application/json; charset=utf-8:
               schema:
-                $ref: '#/components/schemas/error_2_x_x'
+                $ref: '#/components/schemas/error'
           description: not found entity
         "422":
           content:
             application/vnd.conekta-v2.1.0+json:
               schema:
-                $ref: '#/components/schemas/error_2_x_x'
+                $ref: '#/components/schemas/error'
           description: parameter validation error
         "500":
           content:
             application/vnd.conekta-v2.1.0+json:
               schema:
-                $ref: '#/components/schemas/error_2_x_x'
+                $ref: '#/components/schemas/error'
           description: internal server error
       security:
       - bearerAuth: []
@@ -390,8 +383,9 @@ paths:
             value: en
         in: header
         name: Accept-Language
-        required: true
+        required: false
         schema:
+          default: es
           enum:
           - es
           - en
@@ -439,34 +433,34 @@ paths:
           content:
             application/vnd.conekta-v2.1.0+json:
               schema:
-                $ref: '#/components/schemas/error_2_x_x'
+                $ref: '#/components/schemas/error'
           description: authentication error
         "402":
           content:
             application/vnd.conekta-v2.1.0+json:
               schema:
-                $ref: '#/components/schemas/error_2_x_x'
+                $ref: '#/components/schemas/error'
           description: payment required error
         "404":
           content:
             application/vnd.conekta-v2.1.0+json:
               schema:
-                $ref: '#/components/schemas/error_2_x_x'
+                $ref: '#/components/schemas/error'
             application/json; charset=utf-8:
               schema:
-                $ref: '#/components/schemas/error_2_x_x'
+                $ref: '#/components/schemas/error'
           description: not found entity
         "422":
           content:
             application/vnd.conekta-v2.1.0+json:
               schema:
-                $ref: '#/components/schemas/error_2_x_x'
+                $ref: '#/components/schemas/error'
           description: parameter validation error
         "500":
           content:
             application/vnd.conekta-v2.1.0+json:
               schema:
-                $ref: '#/components/schemas/error_2_x_x'
+                $ref: '#/components/schemas/error'
           description: internal server error
       security:
       - bearerAuth: []
@@ -487,8 +481,9 @@ paths:
             value: en
         in: header
         name: Accept-Language
-        required: true
+        required: false
         schema:
+          default: es
           enum:
           - es
           - en
@@ -538,34 +533,34 @@ paths:
           content:
             application/vnd.conekta-v2.1.0+json:
               schema:
-                $ref: '#/components/schemas/error_2_x_x'
+                $ref: '#/components/schemas/error'
           description: authentication error
         "402":
           content:
             application/vnd.conekta-v2.1.0+json:
               schema:
-                $ref: '#/components/schemas/error_2_x_x'
+                $ref: '#/components/schemas/error'
           description: payment required error
         "404":
           content:
             application/vnd.conekta-v2.1.0+json:
               schema:
-                $ref: '#/components/schemas/error_2_x_x'
+                $ref: '#/components/schemas/error'
             application/json; charset=utf-8:
               schema:
-                $ref: '#/components/schemas/error_2_x_x'
+                $ref: '#/components/schemas/error'
           description: not found entity
         "422":
           content:
             application/vnd.conekta-v2.1.0+json:
               schema:
-                $ref: '#/components/schemas/error_2_x_x'
+                $ref: '#/components/schemas/error'
           description: parameter validation error
         "500":
           content:
             application/vnd.conekta-v2.1.0+json:
               schema:
-                $ref: '#/components/schemas/error_2_x_x'
+                $ref: '#/components/schemas/error'
           description: internal server error
       security:
       - bearerAuth: []
@@ -586,8 +581,9 @@ paths:
             value: en
         in: header
         name: Accept-Language
-        required: true
+        required: false
         schema:
+          default: es
           enum:
           - es
           - en
@@ -637,34 +633,34 @@ paths:
           content:
             application/vnd.conekta-v2.1.0+json:
               schema:
-                $ref: '#/components/schemas/error_2_x_x'
+                $ref: '#/components/schemas/error'
           description: authentication error
         "402":
           content:
             application/vnd.conekta-v2.1.0+json:
               schema:
-                $ref: '#/components/schemas/error_2_x_x'
+                $ref: '#/components/schemas/error'
           description: payment required error
         "404":
           content:
             application/vnd.conekta-v2.1.0+json:
               schema:
-                $ref: '#/components/schemas/error_2_x_x'
+                $ref: '#/components/schemas/error'
             application/json; charset=utf-8:
               schema:
-                $ref: '#/components/schemas/error_2_x_x'
+                $ref: '#/components/schemas/error'
           description: not found entity
         "422":
           content:
             application/vnd.conekta-v2.1.0+json:
               schema:
-                $ref: '#/components/schemas/error_2_x_x'
+                $ref: '#/components/schemas/error'
           description: parameter validation error
         "500":
           content:
             application/vnd.conekta-v2.1.0+json:
               schema:
-                $ref: '#/components/schemas/error_2_x_x'
+                $ref: '#/components/schemas/error'
           description: internal server error
       security:
       - bearerAuth: []
@@ -688,8 +684,9 @@ paths:
             value: en
         in: header
         name: Accept-Language
-        required: true
+        required: false
         schema:
+          default: es
           enum:
           - es
           - en
@@ -750,25 +747,25 @@ paths:
           content:
             application/vnd.conekta-v2.1.0+json:
               schema:
-                $ref: '#/components/schemas/error_2_x_x'
+                $ref: '#/components/schemas/error'
           description: authentication error
         "402":
           content:
             application/vnd.conekta-v2.1.0+json:
               schema:
-                $ref: '#/components/schemas/error_2_x_x'
+                $ref: '#/components/schemas/error'
           description: payment required error
         "422":
           content:
             application/vnd.conekta-v2.1.0+json:
               schema:
-                $ref: '#/components/schemas/error_2_x_x'
+                $ref: '#/components/schemas/error'
           description: parameter validation error
         "500":
           content:
             application/vnd.conekta-v2.1.0+json:
               schema:
-                $ref: '#/components/schemas/error_2_x_x'
+                $ref: '#/components/schemas/error'
           description: internal server error
       security:
       - bearerAuth: []
@@ -790,8 +787,9 @@ paths:
             value: en
         in: header
         name: Accept-Language
-        required: true
+        required: false
         schema:
+          default: es
           enum:
           - es
           - en
@@ -834,25 +832,25 @@ paths:
           content:
             application/vnd.conekta-v2.1.0+json:
               schema:
-                $ref: '#/components/schemas/error_2_x_x'
+                $ref: '#/components/schemas/error'
           description: authentication error
         "402":
           content:
             application/vnd.conekta-v2.1.0+json:
               schema:
-                $ref: '#/components/schemas/error_2_x_x'
+                $ref: '#/components/schemas/error'
           description: payment required error
         "422":
           content:
             application/vnd.conekta-v2.1.0+json:
               schema:
-                $ref: '#/components/schemas/error_2_x_x'
+                $ref: '#/components/schemas/error'
           description: parameter validation error
         "500":
           content:
             application/vnd.conekta-v2.1.0+json:
               schema:
-                $ref: '#/components/schemas/error_2_x_x'
+                $ref: '#/components/schemas/error'
           description: internal server error
       security:
       - bearerAuth: []
@@ -881,8 +879,9 @@ paths:
             value: en
         in: header
         name: Accept-Language
-        required: true
+        required: false
         schema:
+          default: es
           enum:
           - es
           - en
@@ -898,28 +897,28 @@ paths:
           content:
             application/vnd.conekta-v2.1.0+json:
               schema:
-                $ref: '#/components/schemas/error_2_x_x'
+                $ref: '#/components/schemas/error'
           description: parameter validation error
         "401":
           content:
             application/vnd.conekta-v2.1.0+json:
               schema:
-                $ref: '#/components/schemas/error_2_x_x'
+                $ref: '#/components/schemas/error'
           description: authentication error
         "404":
           content:
             application/vnd.conekta-v2.1.0+json:
               schema:
-                $ref: '#/components/schemas/error_2_x_x'
+                $ref: '#/components/schemas/error'
             application/json; charset=utf-8:
               schema:
-                $ref: '#/components/schemas/error_2_x_x'
+                $ref: '#/components/schemas/error'
           description: not found entity
         "500":
           content:
             application/vnd.conekta-v2.1.0+json:
               schema:
-                $ref: '#/components/schemas/error_2_x_x'
+                $ref: '#/components/schemas/error'
           description: internal server error
       security:
       - bearerAuth: []
@@ -947,8 +946,9 @@ paths:
             value: en
         in: header
         name: Accept-Language
-        required: true
+        required: false
         schema:
+          default: es
           enum:
           - es
           - en
@@ -964,19 +964,19 @@ paths:
           content:
             application/vnd.conekta-v2.1.0+json:
               schema:
-                $ref: '#/components/schemas/error_2_x_x'
+                $ref: '#/components/schemas/error'
           description: parameter validation error
         "401":
           content:
             application/vnd.conekta-v2.1.0+json:
               schema:
-                $ref: '#/components/schemas/error_2_x_x'
+                $ref: '#/components/schemas/error'
           description: authentication error
         "500":
           content:
             application/vnd.conekta-v2.1.0+json:
               schema:
-                $ref: '#/components/schemas/error_2_x_x'
+                $ref: '#/components/schemas/error'
           description: internal server error
       security:
       - bearerAuth: []
@@ -1004,8 +1004,9 @@ paths:
             value: en
         in: header
         name: Accept-Language
-        required: true
+        required: false
         schema:
+          default: es
           enum:
           - es
           - en
@@ -1023,25 +1024,25 @@ paths:
           content:
             application/vnd.conekta-v2.1.0+json:
               schema:
-                $ref: '#/components/schemas/error_2_x_x'
+                $ref: '#/components/schemas/error'
           description: authentication error
         "402":
           content:
             application/vnd.conekta-v2.1.0+json:
               schema:
-                $ref: '#/components/schemas/error_2_x_x'
+                $ref: '#/components/schemas/error'
           description: payment required error
         "422":
           content:
             application/vnd.conekta-v2.1.0+json:
               schema:
-                $ref: '#/components/schemas/error_2_x_x'
+                $ref: '#/components/schemas/error'
           description: parameter validation error
         "500":
           content:
             application/vnd.conekta-v2.1.0+json:
               schema:
-                $ref: '#/components/schemas/error_2_x_x'
+                $ref: '#/components/schemas/error'
           description: internal server error
       security:
       - bearerAuth: []
@@ -1070,8 +1071,9 @@ paths:
             value: en
         in: header
         name: Accept-Language
-        required: true
+        required: false
         schema:
+          default: es
           enum:
           - es
           - en
@@ -1089,28 +1091,28 @@ paths:
           content:
             application/vnd.conekta-v2.1.0+json:
               schema:
-                $ref: '#/components/schemas/error_2_x_x'
+                $ref: '#/components/schemas/error'
           description: authentication error
         "404":
           content:
             application/vnd.conekta-v2.1.0+json:
               schema:
-                $ref: '#/components/schemas/error_2_x_x'
+                $ref: '#/components/schemas/error'
             application/json; charset=utf-8:
               schema:
-                $ref: '#/components/schemas/error_2_x_x'
+                $ref: '#/components/schemas/error'
           description: not found entity
         "422":
           content:
             application/vnd.conekta-v2.1.0+json:
               schema:
-                $ref: '#/components/schemas/error_2_x_x'
+                $ref: '#/components/schemas/error'
           description: parameter validation error
         "500":
           content:
             application/vnd.conekta-v2.1.0+json:
               schema:
-                $ref: '#/components/schemas/error_2_x_x'
+                $ref: '#/components/schemas/error'
           description: internal server error
       security:
       - bearerAuth: []
@@ -1146,8 +1148,9 @@ paths:
             value: en
         in: header
         name: Accept-Language
-        required: true
+        required: false
         schema:
+          default: es
           enum:
           - es
           - en
@@ -1165,28 +1168,28 @@ paths:
           content:
             application/vnd.conekta-v2.1.0+json:
               schema:
-                $ref: '#/components/schemas/error_2_x_x'
+                $ref: '#/components/schemas/error'
           description: authentication error
         "404":
           content:
             application/vnd.conekta-v2.1.0+json:
               schema:
-                $ref: '#/components/schemas/error_2_x_x'
+                $ref: '#/components/schemas/error'
             application/json; charset=utf-8:
               schema:
-                $ref: '#/components/schemas/error_2_x_x'
+                $ref: '#/components/schemas/error'
           description: not found entity
         "422":
           content:
             application/vnd.conekta-v2.1.0+json:
               schema:
-                $ref: '#/components/schemas/error_2_x_x'
+                $ref: '#/components/schemas/error'
           description: parameter validation error
         "500":
           content:
             application/vnd.conekta-v2.1.0+json:
               schema:
-                $ref: '#/components/schemas/error_2_x_x'
+                $ref: '#/components/schemas/error'
           description: internal server error
       security:
       - bearerAuth: []
@@ -1215,8 +1218,9 @@ paths:
             value: en
         in: header
         name: Accept-Language
-        required: true
+        required: false
         schema:
+          default: es
           enum:
           - es
           - en
@@ -1234,28 +1238,28 @@ paths:
           content:
             application/vnd.conekta-v2.1.0+json:
               schema:
-                $ref: '#/components/schemas/error_2_x_x'
+                $ref: '#/components/schemas/error'
           description: authentication error
         "404":
           content:
             application/vnd.conekta-v2.1.0+json:
               schema:
-                $ref: '#/components/schemas/error_2_x_x'
+                $ref: '#/components/schemas/error'
             application/json; charset=utf-8:
               schema:
-                $ref: '#/components/schemas/error_2_x_x'
+                $ref: '#/components/schemas/error'
           description: not found entity
         "422":
           content:
             application/vnd.conekta-v2.1.0+json:
               schema:
-                $ref: '#/components/schemas/error_2_x_x'
+                $ref: '#/components/schemas/error'
           description: parameter validation error
         "500":
           content:
             application/vnd.conekta-v2.1.0+json:
               schema:
-                $ref: '#/components/schemas/error_2_x_x'
+                $ref: '#/components/schemas/error'
           description: internal server error
       security:
       - bearerAuth: []
@@ -1291,8 +1295,9 @@ paths:
             value: en
         in: header
         name: Accept-Language
-        required: true
+        required: false
         schema:
+          default: es
           enum:
           - es
           - en
@@ -1308,28 +1313,28 @@ paths:
           content:
             application/vnd.conekta-v2.1.0+json:
               schema:
-                $ref: '#/components/schemas/error_2_x_x'
+                $ref: '#/components/schemas/error'
           description: authentication error
         "404":
           content:
             application/vnd.conekta-v2.1.0+json:
               schema:
-                $ref: '#/components/schemas/error_2_x_x'
+                $ref: '#/components/schemas/error'
             application/json; charset=utf-8:
               schema:
-                $ref: '#/components/schemas/error_2_x_x'
+                $ref: '#/components/schemas/error'
           description: not found entity
         "422":
           content:
             application/vnd.conekta-v2.1.0+json:
               schema:
-                $ref: '#/components/schemas/error_2_x_x'
+                $ref: '#/components/schemas/error'
           description: parameter validation error
         "500":
           content:
             application/vnd.conekta-v2.1.0+json:
               schema:
-                $ref: '#/components/schemas/error_2_x_x'
+                $ref: '#/components/schemas/error'
           description: internal server error
       security:
       - bearerAuth: []
@@ -1364,8 +1369,9 @@ paths:
             value: en
         in: header
         name: Accept-Language
-        required: true
+        required: false
         schema:
+          default: es
           enum:
           - es
           - en
@@ -1383,28 +1389,28 @@ paths:
           content:
             application/vnd.conekta-v2.1.0+json:
               schema:
-                $ref: '#/components/schemas/error_2_x_x'
+                $ref: '#/components/schemas/error'
           description: authentication error
         "404":
           content:
             application/vnd.conekta-v2.1.0+json:
               schema:
-                $ref: '#/components/schemas/error_2_x_x'
+                $ref: '#/components/schemas/error'
             application/json; charset=utf-8:
               schema:
-                $ref: '#/components/schemas/error_2_x_x'
+                $ref: '#/components/schemas/error'
           description: not found entity
         "422":
           content:
             application/vnd.conekta-v2.1.0+json:
               schema:
-                $ref: '#/components/schemas/error_2_x_x'
+                $ref: '#/components/schemas/error'
           description: parameter validation error
         "500":
           content:
             application/vnd.conekta-v2.1.0+json:
               schema:
-                $ref: '#/components/schemas/error_2_x_x'
+                $ref: '#/components/schemas/error'
           description: internal server error
       security:
       - bearerAuth: []
@@ -1433,8 +1439,9 @@ paths:
             value: en
         in: header
         name: Accept-Language
-        required: true
+        required: false
         schema:
+          default: es
           enum:
           - es
           - en
@@ -1452,28 +1459,28 @@ paths:
           content:
             application/vnd.conekta-v2.1.0+json:
               schema:
-                $ref: '#/components/schemas/error_2_x_x'
+                $ref: '#/components/schemas/error'
           description: authentication error
         "404":
           content:
             application/vnd.conekta-v2.1.0+json:
               schema:
-                $ref: '#/components/schemas/error_2_x_x'
+                $ref: '#/components/schemas/error'
             application/json; charset=utf-8:
               schema:
-                $ref: '#/components/schemas/error_2_x_x'
+                $ref: '#/components/schemas/error'
           description: not found entity
         "422":
           content:
             application/vnd.conekta-v2.1.0+json:
               schema:
-                $ref: '#/components/schemas/error_2_x_x'
+                $ref: '#/components/schemas/error'
           description: parameter validation error
         "500":
           content:
             application/vnd.conekta-v2.1.0+json:
               schema:
-                $ref: '#/components/schemas/error_2_x_x'
+                $ref: '#/components/schemas/error'
           description: internal server error
       security:
       - bearerAuth: []
@@ -1509,8 +1516,9 @@ paths:
             value: en
         in: header
         name: Accept-Language
-        required: true
+        required: false
         schema:
+          default: es
           enum:
           - es
           - en
@@ -1528,28 +1536,28 @@ paths:
           content:
             application/vnd.conekta-v2.1.0+json:
               schema:
-                $ref: '#/components/schemas/error_2_x_x'
+                $ref: '#/components/schemas/error'
           description: authentication error
         "404":
           content:
             application/vnd.conekta-v2.1.0+json:
               schema:
-                $ref: '#/components/schemas/error_2_x_x'
+                $ref: '#/components/schemas/error'
             application/json; charset=utf-8:
               schema:
-                $ref: '#/components/schemas/error_2_x_x'
+                $ref: '#/components/schemas/error'
           description: not found entity
         "422":
           content:
             application/vnd.conekta-v2.1.0+json:
               schema:
-                $ref: '#/components/schemas/error_2_x_x'
+                $ref: '#/components/schemas/error'
           description: parameter validation error
         "500":
           content:
             application/vnd.conekta-v2.1.0+json:
               schema:
-                $ref: '#/components/schemas/error_2_x_x'
+                $ref: '#/components/schemas/error'
           description: internal server error
       security:
       - bearerAuth: []
@@ -1560,6 +1568,13 @@ paths:
     get:
       operationId: getSubscription
       parameters:
+      - description: identifier
+        example: 6307a60c41de27127515a575
+        in: path
+        name: id
+        required: true
+        schema:
+          type: string
       - description: use for knowing which language to use
         examples:
           es:
@@ -1570,18 +1585,12 @@ paths:
             value: en
         in: header
         name: Accept-Language
-        required: true
+        required: false
         schema:
+          default: es
           enum:
           - es
           - en
-          type: string
-      - description: identifier
-        example: 6307a60c41de27127515a575
-        in: path
-        name: id
-        required: true
-        schema:
           type: string
       responses:
         "200":
@@ -1619,28 +1628,28 @@ paths:
           content:
             application/vnd.conekta-v2.1.0+json:
               schema:
-                $ref: '#/components/schemas/error_2_x_x'
+                $ref: '#/components/schemas/error'
           description: parameter validation error
         "401":
           content:
             application/vnd.conekta-v2.1.0+json:
               schema:
-                $ref: '#/components/schemas/error_2_x_x'
+                $ref: '#/components/schemas/error'
           description: authentication error
         "404":
           content:
             application/vnd.conekta-v2.1.0+json:
               schema:
-                $ref: '#/components/schemas/error_2_x_x'
+                $ref: '#/components/schemas/error'
             application/json; charset=utf-8:
               schema:
-                $ref: '#/components/schemas/error_2_x_x'
+                $ref: '#/components/schemas/error'
           description: not found entity
         "500":
           content:
             application/vnd.conekta-v2.1.0+json:
               schema:
-                $ref: '#/components/schemas/error_2_x_x'
+                $ref: '#/components/schemas/error'
           description: internal server error
       security:
       - bearerAuth: []
@@ -1650,6 +1659,13 @@ paths:
     post:
       operationId: createSubscription
       parameters:
+      - description: identifier
+        example: 6307a60c41de27127515a575
+        in: path
+        name: id
+        required: true
+        schema:
+          type: string
       - description: use for knowing which language to use
         examples:
           es:
@@ -1660,18 +1676,12 @@ paths:
             value: en
         in: header
         name: Accept-Language
-        required: true
+        required: false
         schema:
+          default: es
           enum:
           - es
           - en
-          type: string
-      - description: identifier
-        example: 6307a60c41de27127515a575
-        in: path
-        name: id
-        required: true
-        schema:
           type: string
       requestBody:
         $ref: '#/components/requestBodies/subscription'
@@ -1711,37 +1721,44 @@ paths:
           content:
             application/vnd.conekta-v2.1.0+json:
               schema:
-                $ref: '#/components/schemas/error_2_x_x'
+                $ref: '#/components/schemas/error'
           description: parameter validation error
         "401":
           content:
             application/vnd.conekta-v2.1.0+json:
               schema:
-                $ref: '#/components/schemas/error_2_x_x'
+                $ref: '#/components/schemas/error'
           description: authentication error
         "404":
           content:
             application/vnd.conekta-v2.1.0+json:
               schema:
-                $ref: '#/components/schemas/error_2_x_x'
+                $ref: '#/components/schemas/error'
             application/json; charset=utf-8:
               schema:
-                $ref: '#/components/schemas/error_2_x_x'
+                $ref: '#/components/schemas/error'
           description: not found entity
         "500":
           content:
             application/vnd.conekta-v2.1.0+json:
               schema:
-                $ref: '#/components/schemas/error_2_x_x'
+                $ref: '#/components/schemas/error'
           description: internal server error
       security:
       - bearerAuth: []
-      summary: crates a subscription
+      summary: creates a subscription
       tags:
       - subscriptions
     put:
       operationId: updateSubscription
       parameters:
+      - description: identifier
+        example: 6307a60c41de27127515a575
+        in: path
+        name: id
+        required: true
+        schema:
+          type: string
       - description: use for knowing which language to use
         examples:
           es:
@@ -1752,21 +1769,15 @@ paths:
             value: en
         in: header
         name: Accept-Language
-        required: true
+        required: false
         schema:
+          default: es
           enum:
           - es
           - en
           type: string
-      - description: identifier
-        example: 6307a60c41de27127515a575
-        in: path
-        name: id
-        required: true
-        schema:
-          type: string
       requestBody:
-        $ref: '#/components/requestBodies/subscription'
+        $ref: '#/components/requestBodies/subscription_update'
       responses:
         "200":
           content:
@@ -1803,28 +1814,28 @@ paths:
           content:
             application/vnd.conekta-v2.1.0+json:
               schema:
-                $ref: '#/components/schemas/error_2_x_x'
+                $ref: '#/components/schemas/error'
           description: parameter validation error
         "401":
           content:
             application/vnd.conekta-v2.1.0+json:
               schema:
-                $ref: '#/components/schemas/error_2_x_x'
+                $ref: '#/components/schemas/error'
           description: authentication error
         "404":
           content:
             application/vnd.conekta-v2.1.0+json:
               schema:
-                $ref: '#/components/schemas/error_2_x_x'
+                $ref: '#/components/schemas/error'
             application/json; charset=utf-8:
               schema:
-                $ref: '#/components/schemas/error_2_x_x'
+                $ref: '#/components/schemas/error'
           description: not found entity
         "500":
           content:
             application/vnd.conekta-v2.1.0+json:
               schema:
-                $ref: '#/components/schemas/error_2_x_x'
+                $ref: '#/components/schemas/error'
           description: internal server error
       security:
       - bearerAuth: []
@@ -1835,6 +1846,13 @@ paths:
     post:
       operationId: cancelSubscription
       parameters:
+      - description: identifier
+        example: 6307a60c41de27127515a575
+        in: path
+        name: id
+        required: true
+        schema:
+          type: string
       - description: use for knowing which language to use
         examples:
           es:
@@ -1845,18 +1863,12 @@ paths:
             value: en
         in: header
         name: Accept-Language
-        required: true
+        required: false
         schema:
+          default: es
           enum:
           - es
           - en
-          type: string
-      - description: identifier
-        example: 6307a60c41de27127515a575
-        in: path
-        name: id
-        required: true
-        schema:
           type: string
       responses:
         "200":
@@ -1894,44 +1906,51 @@ paths:
           content:
             application/vnd.conekta-v2.1.0+json:
               schema:
-                $ref: '#/components/schemas/error_2_x_x'
+                $ref: '#/components/schemas/error'
           description: parameter validation error
         "401":
           content:
             application/vnd.conekta-v2.1.0+json:
               schema:
-                $ref: '#/components/schemas/error_2_x_x'
+                $ref: '#/components/schemas/error'
           description: authentication error
         "402":
           content:
             application/vnd.conekta-v2.1.0+json:
               schema:
-                $ref: '#/components/schemas/error_2_x_x'
+                $ref: '#/components/schemas/error'
           description: payment required error
         "404":
           content:
             application/vnd.conekta-v2.1.0+json:
               schema:
-                $ref: '#/components/schemas/error_2_x_x'
+                $ref: '#/components/schemas/error'
             application/json; charset=utf-8:
               schema:
-                $ref: '#/components/schemas/error_2_x_x'
+                $ref: '#/components/schemas/error'
           description: not found entity
         "500":
           content:
             application/vnd.conekta-v2.1.0+json:
               schema:
-                $ref: '#/components/schemas/error_2_x_x'
+                $ref: '#/components/schemas/error'
           description: internal server error
       security:
       - bearerAuth: []
       summary: cancels a subscription
       tags:
       - subscriptions
-  /customers/{id}/subscription/pause:
-    post:
-      operationId: pauseSubscription
+  /customers/{id}/subscription/events:
+    get:
+      operationId: getAllEventsFromSubscription
       parameters:
+      - description: identifier
+        example: 6307a60c41de27127515a575
+        in: path
+        name: id
+        required: true
+        schema:
+          type: string
       - description: use for knowing which language to use
         examples:
           es:
@@ -1942,18 +1961,111 @@ paths:
             value: en
         in: header
         name: Accept-Language
-        required: true
+        required: false
         schema:
+          default: es
           enum:
           - es
           - en
           type: string
+      responses:
+        "200":
+          content:
+            application/vnd.conekta-v2.1.0+json:
+              schema:
+                $ref: '#/components/schemas/subscription_events_response'
+          description: successful
+          headers:
+            Date:
+              description: The date and time that the response was sent
+              schema:
+                example: "Fri, 03 Feb 2023 16:57:48 GMT"
+                type: string
+            Content-Type:
+              description: The format of the response body
+              schema:
+                example: application/json; charset=utf-8
+                type: string
+            Content-Length:
+              description: The length of the response body in bytes
+              schema:
+                example: "2737"
+                type: string
+            Connection:
+              description: The type of connection used to transfer the response
+              schema:
+                example: keep-alive
+                type: string
+            Conekta-Media-Type:
+              schema:
+                example: conekta-v2.1.0; format=application/json
+                type: string
+        "401":
+          content:
+            application/vnd.conekta-v2.1.0+json:
+              schema:
+                $ref: '#/components/schemas/error'
+          description: authentication error
+        "402":
+          content:
+            application/vnd.conekta-v2.1.0+json:
+              schema:
+                $ref: '#/components/schemas/error'
+          description: payment required error
+        "404":
+          content:
+            application/vnd.conekta-v2.1.0+json:
+              schema:
+                $ref: '#/components/schemas/error'
+            application/json; charset=utf-8:
+              schema:
+                $ref: '#/components/schemas/error'
+          description: not found entity
+        "422":
+          content:
+            application/vnd.conekta-v2.1.0+json:
+              schema:
+                $ref: '#/components/schemas/error'
+          description: parameter validation error
+        "500":
+          content:
+            application/vnd.conekta-v2.1.0+json:
+              schema:
+                $ref: '#/components/schemas/error'
+          description: internal server error
+      security:
+      - bearerAuth: []
+      summary: "You can get the events of the subscription(s) of a client, with the\
+        \ customer id"
+      tags:
+      - subscriptions
+  /customers/{id}/subscription/pause:
+    post:
+      operationId: pauseSubscription
+      parameters:
       - description: identifier
         example: 6307a60c41de27127515a575
         in: path
         name: id
         required: true
         schema:
+          type: string
+      - description: use for knowing which language to use
+        examples:
+          es:
+            summary: for spanish request/response
+            value: es
+          en:
+            summary: for english request/response
+            value: en
+        in: header
+        name: Accept-Language
+        required: false
+        schema:
+          default: es
+          enum:
+          - es
+          - en
           type: string
       responses:
         "200":
@@ -1991,34 +2103,34 @@ paths:
           content:
             application/vnd.conekta-v2.1.0+json:
               schema:
-                $ref: '#/components/schemas/error_2_x_x'
+                $ref: '#/components/schemas/error'
           description: parameter validation error
         "401":
           content:
             application/vnd.conekta-v2.1.0+json:
               schema:
-                $ref: '#/components/schemas/error_2_x_x'
+                $ref: '#/components/schemas/error'
           description: authentication error
         "402":
           content:
             application/vnd.conekta-v2.1.0+json:
               schema:
-                $ref: '#/components/schemas/error_2_x_x'
+                $ref: '#/components/schemas/error'
           description: payment required error
         "404":
           content:
             application/vnd.conekta-v2.1.0+json:
               schema:
-                $ref: '#/components/schemas/error_2_x_x'
+                $ref: '#/components/schemas/error'
             application/json; charset=utf-8:
               schema:
-                $ref: '#/components/schemas/error_2_x_x'
+                $ref: '#/components/schemas/error'
           description: not found entity
         "500":
           content:
             application/vnd.conekta-v2.1.0+json:
               schema:
-                $ref: '#/components/schemas/error_2_x_x'
+                $ref: '#/components/schemas/error'
           description: internal server error
       security:
       - bearerAuth: []
@@ -2029,6 +2141,13 @@ paths:
     post:
       operationId: resumeSubscription
       parameters:
+      - description: identifier
+        example: 6307a60c41de27127515a575
+        in: path
+        name: id
+        required: true
+        schema:
+          type: string
       - description: use for knowing which language to use
         examples:
           es:
@@ -2039,18 +2158,12 @@ paths:
             value: en
         in: header
         name: Accept-Language
-        required: true
+        required: false
         schema:
+          default: es
           enum:
           - es
           - en
-          type: string
-      - description: identifier
-        example: 6307a60c41de27127515a575
-        in: path
-        name: id
-        required: true
-        schema:
           type: string
       responses:
         "200":
@@ -2088,34 +2201,34 @@ paths:
           content:
             application/vnd.conekta-v2.1.0+json:
               schema:
-                $ref: '#/components/schemas/error_2_x_x'
+                $ref: '#/components/schemas/error'
           description: authentication error
         "402":
           content:
             application/vnd.conekta-v2.1.0+json:
               schema:
-                $ref: '#/components/schemas/error_2_x_x'
+                $ref: '#/components/schemas/error'
           description: payment required error
         "404":
           content:
             application/vnd.conekta-v2.1.0+json:
               schema:
-                $ref: '#/components/schemas/error_2_x_x'
+                $ref: '#/components/schemas/error'
             application/json; charset=utf-8:
               schema:
-                $ref: '#/components/schemas/error_2_x_x'
+                $ref: '#/components/schemas/error'
           description: not found entity
         "422":
           content:
             application/vnd.conekta-v2.1.0+json:
               schema:
-                $ref: '#/components/schemas/error_2_x_x'
+                $ref: '#/components/schemas/error'
           description: parameter validation error
         "500":
           content:
             application/vnd.conekta-v2.1.0+json:
               schema:
-                $ref: '#/components/schemas/error_2_x_x'
+                $ref: '#/components/schemas/error'
           description: internal server error
       security:
       - bearerAuth: []
@@ -2136,8 +2249,9 @@ paths:
             value: en
         in: header
         name: Accept-Language
-        required: true
+        required: false
         schema:
+          default: es
           enum:
           - es
           - en
@@ -2204,19 +2318,19 @@ paths:
           content:
             application/vnd.conekta-v2.1.0+json:
               schema:
-                $ref: '#/components/schemas/error_2_x_x'
+                $ref: '#/components/schemas/error'
           description: parameter validation error
         "401":
           content:
             application/vnd.conekta-v2.1.0+json:
               schema:
-                $ref: '#/components/schemas/error_2_x_x'
+                $ref: '#/components/schemas/error'
           description: authentication error
         "500":
           content:
             application/vnd.conekta-v2.1.0+json:
               schema:
-                $ref: '#/components/schemas/error_2_x_x'
+                $ref: '#/components/schemas/error'
           description: internal server error
       security:
       - bearerAuth: []
@@ -2237,8 +2351,9 @@ paths:
             value: en
         in: header
         name: Accept-Language
-        required: true
+        required: false
         schema:
+          default: es
           enum:
           - es
           - en
@@ -2286,19 +2401,19 @@ paths:
           content:
             application/vnd.conekta-v2.1.0+json:
               schema:
-                $ref: '#/components/schemas/error_2_x_x'
+                $ref: '#/components/schemas/error'
           description: parameter validation error
         "401":
           content:
             application/vnd.conekta-v2.1.0+json:
               schema:
-                $ref: '#/components/schemas/error_2_x_x'
+                $ref: '#/components/schemas/error'
           description: authentication error
         "500":
           content:
             application/vnd.conekta-v2.1.0+json:
               schema:
-                $ref: '#/components/schemas/error_2_x_x'
+                $ref: '#/components/schemas/error'
           description: internal server error
       security:
       - bearerAuth: []
@@ -2319,8 +2434,9 @@ paths:
             value: en
         in: header
         name: Accept-Language
-        required: true
+        required: false
         schema:
+          default: es
           enum:
           - es
           - en
@@ -2387,19 +2503,19 @@ paths:
           content:
             application/vnd.conekta-v2.1.0+json:
               schema:
-                $ref: '#/components/schemas/error_2_x_x'
+                $ref: '#/components/schemas/error'
           description: parameter validation error
         "401":
           content:
             application/vnd.conekta-v2.1.0+json:
               schema:
-                $ref: '#/components/schemas/error_2_x_x'
+                $ref: '#/components/schemas/error'
           description: authentication error
         "500":
           content:
             application/vnd.conekta-v2.1.0+json:
               schema:
-                $ref: '#/components/schemas/error_2_x_x'
+                $ref: '#/components/schemas/error'
           description: internal server error
       security:
       - bearerAuth: []
@@ -2427,8 +2543,9 @@ paths:
             value: en
         in: header
         name: Accept-Language
-        required: true
+        required: false
         schema:
+          default: es
           enum:
           - es
           - en
@@ -2444,19 +2561,19 @@ paths:
           content:
             application/vnd.conekta-v2.1.0+json:
               schema:
-                $ref: '#/components/schemas/error_2_x_x'
+                $ref: '#/components/schemas/error'
           description: parameter validation error
         "401":
           content:
             application/vnd.conekta-v2.1.0+json:
               schema:
-                $ref: '#/components/schemas/error_2_x_x'
+                $ref: '#/components/schemas/error'
           description: authentication error
         "500":
           content:
             application/vnd.conekta-v2.1.0+json:
               schema:
-                $ref: '#/components/schemas/error_2_x_x'
+                $ref: '#/components/schemas/error'
           description: internal server error
       security:
       - bearerAuth: []
@@ -2478,8 +2595,9 @@ paths:
             value: en
         in: header
         name: Accept-Language
-        required: true
+        required: false
         schema:
+          default: es
           enum:
           - es
           - en
@@ -2521,13 +2639,13 @@ paths:
           content:
             application/vnd.conekta-v2.1.0+json:
               schema:
-                $ref: '#/components/schemas/error_2_x_x'
+                $ref: '#/components/schemas/error'
           description: authentication error
         "500":
           content:
             application/vnd.conekta-v2.1.0+json:
               schema:
-                $ref: '#/components/schemas/error_2_x_x'
+                $ref: '#/components/schemas/error'
           description: internal server error
       security:
       - bearerAuth: []
@@ -2548,8 +2666,9 @@ paths:
             value: en
         in: header
         name: Accept-Language
-        required: true
+        required: false
         schema:
+          default: es
           enum:
           - es
           - en
@@ -2574,25 +2693,25 @@ paths:
           content:
             application/vnd.conekta-v2.1.0+json:
               schema:
-                $ref: '#/components/schemas/error_2_x_x'
+                $ref: '#/components/schemas/error'
           description: parameter validation error
         "401":
           content:
             application/vnd.conekta-v2.1.0+json:
               schema:
-                $ref: '#/components/schemas/error_2_x_x'
+                $ref: '#/components/schemas/error'
           description: authentication error
         "402":
           content:
             application/vnd.conekta-v2.1.0+json:
               schema:
-                $ref: '#/components/schemas/error_2_x_x'
+                $ref: '#/components/schemas/error'
           description: payment required error
         "500":
           content:
             application/vnd.conekta-v2.1.0+json:
               schema:
-                $ref: '#/components/schemas/error_2_x_x'
+                $ref: '#/components/schemas/error'
           description: internal server error
       security:
       - bearerAuth: []
@@ -2620,8 +2739,9 @@ paths:
             value: en
         in: header
         name: Accept-Language
-        required: true
+        required: false
         schema:
+          default: es
           enum:
           - es
           - en
@@ -2637,22 +2757,22 @@ paths:
           content:
             application/vnd.conekta-v2.1.0+json:
               schema:
-                $ref: '#/components/schemas/error_2_x_x'
+                $ref: '#/components/schemas/error'
           description: authentication error
         "404":
           content:
             application/vnd.conekta-v2.1.0+json:
               schema:
-                $ref: '#/components/schemas/error_2_x_x'
+                $ref: '#/components/schemas/error'
             application/json; charset=utf-8:
               schema:
-                $ref: '#/components/schemas/error_2_x_x'
+                $ref: '#/components/schemas/error'
           description: not found entity
         "500":
           content:
             application/vnd.conekta-v2.1.0+json:
               schema:
-                $ref: '#/components/schemas/error_2_x_x'
+                $ref: '#/components/schemas/error'
           description: internal server error
       security:
       - bearerAuth: []
@@ -2679,8 +2799,9 @@ paths:
             value: en
         in: header
         name: Accept-Language
-        required: true
+        required: false
         schema:
+          default: es
           enum:
           - es
           - en
@@ -2698,28 +2819,28 @@ paths:
           content:
             application/vnd.conekta-v2.1.0+json:
               schema:
-                $ref: '#/components/schemas/error_2_x_x'
+                $ref: '#/components/schemas/error'
           description: authentication error
         "404":
           content:
             application/vnd.conekta-v2.1.0+json:
               schema:
-                $ref: '#/components/schemas/error_2_x_x'
+                $ref: '#/components/schemas/error'
             application/json; charset=utf-8:
               schema:
-                $ref: '#/components/schemas/error_2_x_x'
+                $ref: '#/components/schemas/error'
           description: not found entity
         "422":
           content:
             application/vnd.conekta-v2.1.0+json:
               schema:
-                $ref: '#/components/schemas/error_2_x_x'
+                $ref: '#/components/schemas/error'
           description: parameter validation error
         "500":
           content:
             application/vnd.conekta-v2.1.0+json:
               schema:
-                $ref: '#/components/schemas/error_2_x_x'
+                $ref: '#/components/schemas/error'
           description: internal server error
       security:
       - bearerAuth: []
@@ -2747,8 +2868,9 @@ paths:
             value: en
         in: header
         name: Accept-Language
-        required: true
+        required: false
         schema:
+          default: es
           enum:
           - es
           - en
@@ -2764,31 +2886,31 @@ paths:
           content:
             application/vnd.conekta-v2.1.0+json:
               schema:
-                $ref: '#/components/schemas/error_2_x_x'
+                $ref: '#/components/schemas/error'
           description: authentication error
         "404":
           content:
             application/vnd.conekta-v2.1.0+json:
               schema:
-                $ref: '#/components/schemas/error_2_x_x'
+                $ref: '#/components/schemas/error'
             application/json; charset=utf-8:
               schema:
-                $ref: '#/components/schemas/error_2_x_x'
+                $ref: '#/components/schemas/error'
           description: not found entity
         "428":
           content:
             application/vnd.conekta-v2.1.0+json:
               schema:
-                $ref: '#/components/schemas/error_2_x_x'
+                $ref: '#/components/schemas/error'
             application/json; charset=utf-8:
               schema:
-                $ref: '#/components/schemas/error_2_x_x'
+                $ref: '#/components/schemas/error'
           description: Precondition Required
         "500":
           content:
             application/vnd.conekta-v2.1.0+json:
               schema:
-                $ref: '#/components/schemas/error_2_x_x'
+                $ref: '#/components/schemas/error'
           description: internal server error
       security:
       - bearerAuth: []
@@ -2816,8 +2938,9 @@ paths:
             value: en
         in: header
         name: Accept-Language
-        required: true
+        required: false
         schema:
+          default: es
           enum:
           - es
           - en
@@ -2835,22 +2958,22 @@ paths:
           content:
             application/vnd.conekta-v2.1.0+json:
               schema:
-                $ref: '#/components/schemas/error_2_x_x'
+                $ref: '#/components/schemas/error'
           description: authentication error
         "404":
           content:
             application/vnd.conekta-v2.1.0+json:
               schema:
-                $ref: '#/components/schemas/error_2_x_x'
+                $ref: '#/components/schemas/error'
             application/json; charset=utf-8:
               schema:
-                $ref: '#/components/schemas/error_2_x_x'
+                $ref: '#/components/schemas/error'
           description: not found entity
         "500":
           content:
             application/vnd.conekta-v2.1.0+json:
               schema:
-                $ref: '#/components/schemas/error_2_x_x'
+                $ref: '#/components/schemas/error'
           description: internal server error
       security:
       - bearerAuth: []
@@ -2878,8 +3001,9 @@ paths:
             value: en
         in: header
         name: Accept-Language
-        required: true
+        required: false
         schema:
+          default: es
           enum:
           - es
           - en
@@ -2897,22 +3021,22 @@ paths:
           content:
             application/vnd.conekta-v2.1.0+json:
               schema:
-                $ref: '#/components/schemas/error_2_x_x'
+                $ref: '#/components/schemas/error'
           description: authentication error
         "404":
           content:
             application/vnd.conekta-v2.1.0+json:
               schema:
-                $ref: '#/components/schemas/error_2_x_x'
+                $ref: '#/components/schemas/error'
             application/json; charset=utf-8:
               schema:
-                $ref: '#/components/schemas/error_2_x_x'
+                $ref: '#/components/schemas/error'
           description: not found entity
         "500":
           content:
             application/vnd.conekta-v2.1.0+json:
               schema:
-                $ref: '#/components/schemas/error_2_x_x'
+                $ref: '#/components/schemas/error'
           description: internal server error
       security:
       - bearerAuth: []
@@ -2947,8 +3071,9 @@ paths:
             value: en
         in: header
         name: Accept-Language
-        required: true
+        required: false
         schema:
+          default: es
           enum:
           - es
           - en
@@ -2966,28 +3091,28 @@ paths:
           content:
             application/vnd.conekta-v2.1.0+json:
               schema:
-                $ref: '#/components/schemas/error_2_x_x'
+                $ref: '#/components/schemas/error'
           description: authentication error
         "404":
           content:
             application/vnd.conekta-v2.1.0+json:
               schema:
-                $ref: '#/components/schemas/error_2_x_x'
+                $ref: '#/components/schemas/error'
             application/json; charset=utf-8:
               schema:
-                $ref: '#/components/schemas/error_2_x_x'
+                $ref: '#/components/schemas/error'
           description: not found entity
         "422":
           content:
             application/vnd.conekta-v2.1.0+json:
               schema:
-                $ref: '#/components/schemas/error_2_x_x'
+                $ref: '#/components/schemas/error'
           description: parameter validation error
         "500":
           content:
             application/vnd.conekta-v2.1.0+json:
               schema:
-                $ref: '#/components/schemas/error_2_x_x'
+                $ref: '#/components/schemas/error'
           description: internal server error
       security:
       - bearerAuth: []
@@ -3015,8 +3140,9 @@ paths:
             value: en
         in: header
         name: Accept-Language
-        required: true
+        required: false
         schema:
+          default: es
           enum:
           - es
           - en
@@ -3034,22 +3160,22 @@ paths:
           content:
             application/vnd.conekta-v2.1.0+json:
               schema:
-                $ref: '#/components/schemas/error_2_x_x'
+                $ref: '#/components/schemas/error'
           description: authentication error
         "404":
           content:
             application/vnd.conekta-v2.1.0+json:
               schema:
-                $ref: '#/components/schemas/error_2_x_x'
+                $ref: '#/components/schemas/error'
             application/json; charset=utf-8:
               schema:
-                $ref: '#/components/schemas/error_2_x_x'
+                $ref: '#/components/schemas/error'
           description: not found entity
         "500":
           content:
             application/vnd.conekta-v2.1.0+json:
               schema:
-                $ref: '#/components/schemas/error_2_x_x'
+                $ref: '#/components/schemas/error'
           description: internal server error
       security:
       - bearerAuth: []
@@ -3084,8 +3210,9 @@ paths:
             value: en
         in: header
         name: Accept-Language
-        required: true
+        required: false
         schema:
+          default: es
           enum:
           - es
           - en
@@ -3103,28 +3230,28 @@ paths:
           content:
             application/vnd.conekta-v2.1.0+json:
               schema:
-                $ref: '#/components/schemas/error_2_x_x'
+                $ref: '#/components/schemas/error'
           description: authentication error
         "422":
           content:
             application/vnd.conekta-v2.1.0+json:
               schema:
-                $ref: '#/components/schemas/error_2_x_x'
+                $ref: '#/components/schemas/error'
           description: parameter validation error
         "404":
           content:
             application/vnd.conekta-v2.1.0+json:
               schema:
-                $ref: '#/components/schemas/error_2_x_x'
+                $ref: '#/components/schemas/error'
             application/json; charset=utf-8:
               schema:
-                $ref: '#/components/schemas/error_2_x_x'
+                $ref: '#/components/schemas/error'
           description: not found entity
         "500":
           content:
             application/vnd.conekta-v2.1.0+json:
               schema:
-                $ref: '#/components/schemas/error_2_x_x'
+                $ref: '#/components/schemas/error'
           description: internal server error
       security:
       - bearerAuth: []
@@ -3152,8 +3279,9 @@ paths:
             value: en
         in: header
         name: Accept-Language
-        required: true
+        required: false
         schema:
+          default: es
           enum:
           - es
           - en
@@ -3171,28 +3299,28 @@ paths:
           content:
             application/vnd.conekta-v2.1.0+json:
               schema:
-                $ref: '#/components/schemas/error_2_x_x'
+                $ref: '#/components/schemas/error'
           description: authentication error
         "404":
           content:
             application/vnd.conekta-v2.1.0+json:
               schema:
-                $ref: '#/components/schemas/error_2_x_x'
+                $ref: '#/components/schemas/error'
             application/json; charset=utf-8:
               schema:
-                $ref: '#/components/schemas/error_2_x_x'
+                $ref: '#/components/schemas/error'
           description: not found entity
         "422":
           content:
             application/vnd.conekta-v2.1.0+json:
               schema:
-                $ref: '#/components/schemas/error_2_x_x'
+                $ref: '#/components/schemas/error'
           description: parameter validation error
         "500":
           content:
             application/vnd.conekta-v2.1.0+json:
               schema:
-                $ref: '#/components/schemas/error_2_x_x'
+                $ref: '#/components/schemas/error'
           description: internal server error
       security:
       - bearerAuth: []
@@ -3221,8 +3349,9 @@ paths:
             value: en
         in: header
         name: Accept-Language
-        required: true
+        required: false
         schema:
+          default: es
           enum:
           - es
           - en
@@ -3240,22 +3369,22 @@ paths:
           content:
             application/vnd.conekta-v2.1.0+json:
               schema:
-                $ref: '#/components/schemas/error_2_x_x'
+                $ref: '#/components/schemas/error'
           description: authentication error
         "404":
           content:
             application/vnd.conekta-v2.1.0+json:
               schema:
-                $ref: '#/components/schemas/error_2_x_x'
+                $ref: '#/components/schemas/error'
             application/json; charset=utf-8:
               schema:
-                $ref: '#/components/schemas/error_2_x_x'
+                $ref: '#/components/schemas/error'
           description: not found entity
         "500":
           content:
             application/vnd.conekta-v2.1.0+json:
               schema:
-                $ref: '#/components/schemas/error_2_x_x'
+                $ref: '#/components/schemas/error'
           description: internal server error
       security:
       - bearerAuth: []
@@ -3290,8 +3419,9 @@ paths:
             value: en
         in: header
         name: Accept-Language
-        required: true
+        required: false
         schema:
+          default: es
           enum:
           - es
           - en
@@ -3309,28 +3439,28 @@ paths:
           content:
             application/vnd.conekta-v2.1.0+json:
               schema:
-                $ref: '#/components/schemas/error_2_x_x'
+                $ref: '#/components/schemas/error'
           description: authentication error
         "404":
           content:
             application/vnd.conekta-v2.1.0+json:
               schema:
-                $ref: '#/components/schemas/error_2_x_x'
+                $ref: '#/components/schemas/error'
             application/json; charset=utf-8:
               schema:
-                $ref: '#/components/schemas/error_2_x_x'
+                $ref: '#/components/schemas/error'
           description: not found entity
         "422":
           content:
             application/vnd.conekta-v2.1.0+json:
               schema:
-                $ref: '#/components/schemas/error_2_x_x'
+                $ref: '#/components/schemas/error'
           description: parameter validation error
         "500":
           content:
             application/vnd.conekta-v2.1.0+json:
               schema:
-                $ref: '#/components/schemas/error_2_x_x'
+                $ref: '#/components/schemas/error'
           description: internal server error
       security:
       - bearerAuth: []
@@ -3358,8 +3488,9 @@ paths:
             value: en
         in: header
         name: Accept-Language
-        required: true
+        required: false
         schema:
+          default: es
           enum:
           - es
           - en
@@ -3377,28 +3508,28 @@ paths:
           content:
             application/vnd.conekta-v2.1.0+json:
               schema:
-                $ref: '#/components/schemas/error_2_x_x'
+                $ref: '#/components/schemas/error'
           description: authentication error
         "422":
           content:
             application/vnd.conekta-v2.1.0+json:
               schema:
-                $ref: '#/components/schemas/error_2_x_x'
+                $ref: '#/components/schemas/error'
           description: parameter validation error
         "404":
           content:
             application/vnd.conekta-v2.1.0+json:
               schema:
-                $ref: '#/components/schemas/error_2_x_x'
+                $ref: '#/components/schemas/error'
             application/json; charset=utf-8:
               schema:
-                $ref: '#/components/schemas/error_2_x_x'
+                $ref: '#/components/schemas/error'
           description: not found entity
         "500":
           content:
             application/vnd.conekta-v2.1.0+json:
               schema:
-                $ref: '#/components/schemas/error_2_x_x'
+                $ref: '#/components/schemas/error'
           description: internal server error
       security:
       - bearerAuth: []
@@ -3433,8 +3564,9 @@ paths:
             value: en
         in: header
         name: Accept-Language
-        required: true
+        required: false
         schema:
+          default: es
           enum:
           - es
           - en
@@ -3452,28 +3584,28 @@ paths:
           content:
             application/vnd.conekta-v2.1.0+json:
               schema:
-                $ref: '#/components/schemas/error_2_x_x'
+                $ref: '#/components/schemas/error'
           description: authentication error
         "422":
           content:
             application/vnd.conekta-v2.1.0+json:
               schema:
-                $ref: '#/components/schemas/error_2_x_x'
+                $ref: '#/components/schemas/error'
           description: parameter validation error
         "404":
           content:
             application/vnd.conekta-v2.1.0+json:
               schema:
-                $ref: '#/components/schemas/error_2_x_x'
+                $ref: '#/components/schemas/error'
             application/json; charset=utf-8:
               schema:
-                $ref: '#/components/schemas/error_2_x_x'
+                $ref: '#/components/schemas/error'
           description: not found entity
         "500":
           content:
             application/vnd.conekta-v2.1.0+json:
               schema:
-                $ref: '#/components/schemas/error_2_x_x'
+                $ref: '#/components/schemas/error'
           description: internal server error
       security:
       - bearerAuth: []
@@ -3494,8 +3626,9 @@ paths:
             value: en
         in: header
         name: Accept-Language
-        required: true
+        required: false
         schema:
+          default: es
           enum:
           - es
           - en
@@ -3562,19 +3695,19 @@ paths:
           content:
             application/vnd.conekta-v2.1.0+json:
               schema:
-                $ref: '#/components/schemas/error_2_x_x'
+                $ref: '#/components/schemas/error'
           description: parameter validation error
         "401":
           content:
             application/vnd.conekta-v2.1.0+json:
               schema:
-                $ref: '#/components/schemas/error_2_x_x'
+                $ref: '#/components/schemas/error'
           description: authentication error
         "500":
           content:
             application/vnd.conekta-v2.1.0+json:
               schema:
-                $ref: '#/components/schemas/error_2_x_x'
+                $ref: '#/components/schemas/error'
           description: internal server error
       security:
       - bearerAuth: []
@@ -3594,8 +3727,9 @@ paths:
             value: en
         in: header
         name: Accept-Language
-        required: true
+        required: false
         schema:
+          default: es
           enum:
           - es
           - en
@@ -3638,19 +3772,19 @@ paths:
           content:
             application/vnd.conekta-v2.1.0+json:
               schema:
-                $ref: '#/components/schemas/error_2_x_x'
+                $ref: '#/components/schemas/error'
           description: parameter validation error
         "401":
           content:
             application/vnd.conekta-v2.1.0+json:
               schema:
-                $ref: '#/components/schemas/error_2_x_x'
+                $ref: '#/components/schemas/error'
           description: authentication error
         "500":
           content:
             application/vnd.conekta-v2.1.0+json:
               schema:
-                $ref: '#/components/schemas/error_2_x_x'
+                $ref: '#/components/schemas/error'
           description: internal server error
       security:
       - bearerAuth: []
@@ -3661,6 +3795,13 @@ paths:
     delete:
       operationId: deletePlan
       parameters:
+      - description: identifier
+        example: 6307a60c41de27127515a575
+        in: path
+        name: id
+        required: true
+        schema:
+          type: string
       - description: use for knowing which language to use
         examples:
           es:
@@ -3671,18 +3812,12 @@ paths:
             value: en
         in: header
         name: Accept-Language
-        required: true
+        required: false
         schema:
+          default: es
           enum:
           - es
           - en
-          type: string
-      - description: identifier
-        example: 6307a60c41de27127515a575
-        in: path
-        name: id
-        required: true
-        schema:
           type: string
       responses:
         "200":
@@ -3720,28 +3855,28 @@ paths:
           content:
             application/vnd.conekta-v2.1.0+json:
               schema:
-                $ref: '#/components/schemas/error_2_x_x'
+                $ref: '#/components/schemas/error'
           description: parameter validation error
         "401":
           content:
             application/vnd.conekta-v2.1.0+json:
               schema:
-                $ref: '#/components/schemas/error_2_x_x'
+                $ref: '#/components/schemas/error'
           description: authentication error
         "404":
           content:
             application/vnd.conekta-v2.1.0+json:
               schema:
-                $ref: '#/components/schemas/error_2_x_x'
+                $ref: '#/components/schemas/error'
             application/json; charset=utf-8:
               schema:
-                $ref: '#/components/schemas/error_2_x_x'
+                $ref: '#/components/schemas/error'
           description: not found entity
         "500":
           content:
             application/vnd.conekta-v2.1.0+json:
               schema:
-                $ref: '#/components/schemas/error_2_x_x'
+                $ref: '#/components/schemas/error'
           description: internal server error
       security:
       - bearerAuth: []
@@ -3751,6 +3886,13 @@ paths:
     get:
       operationId: getPlan
       parameters:
+      - description: identifier
+        example: 6307a60c41de27127515a575
+        in: path
+        name: id
+        required: true
+        schema:
+          type: string
       - description: use for knowing which language to use
         examples:
           es:
@@ -3761,18 +3903,12 @@ paths:
             value: en
         in: header
         name: Accept-Language
-        required: true
+        required: false
         schema:
+          default: es
           enum:
           - es
           - en
-          type: string
-      - description: identifier
-        example: 6307a60c41de27127515a575
-        in: path
-        name: id
-        required: true
-        schema:
           type: string
       responses:
         "200":
@@ -3810,28 +3946,28 @@ paths:
           content:
             application/vnd.conekta-v2.1.0+json:
               schema:
-                $ref: '#/components/schemas/error_2_x_x'
+                $ref: '#/components/schemas/error'
           description: parameter validation error
         "401":
           content:
             application/vnd.conekta-v2.1.0+json:
               schema:
-                $ref: '#/components/schemas/error_2_x_x'
+                $ref: '#/components/schemas/error'
           description: authentication error
         "404":
           content:
             application/vnd.conekta-v2.1.0+json:
               schema:
-                $ref: '#/components/schemas/error_2_x_x'
+                $ref: '#/components/schemas/error'
             application/json; charset=utf-8:
               schema:
-                $ref: '#/components/schemas/error_2_x_x'
+                $ref: '#/components/schemas/error'
           description: not found entity
         "500":
           content:
             application/vnd.conekta-v2.1.0+json:
               schema:
-                $ref: '#/components/schemas/error_2_x_x'
+                $ref: '#/components/schemas/error'
           description: internal server error
       security:
       - bearerAuth: []
@@ -3841,6 +3977,13 @@ paths:
     put:
       operationId: updatePlan
       parameters:
+      - description: identifier
+        example: 6307a60c41de27127515a575
+        in: path
+        name: id
+        required: true
+        schema:
+          type: string
       - description: use for knowing which language to use
         examples:
           es:
@@ -3851,18 +3994,12 @@ paths:
             value: en
         in: header
         name: Accept-Language
-        required: true
+        required: false
         schema:
+          default: es
           enum:
           - es
           - en
-          type: string
-      - description: identifier
-        example: 6307a60c41de27127515a575
-        in: path
-        name: id
-        required: true
-        schema:
           type: string
       requestBody:
         $ref: '#/components/requestBodies/plan_update'
@@ -3902,28 +4039,28 @@ paths:
           content:
             application/vnd.conekta-v2.1.0+json:
               schema:
-                $ref: '#/components/schemas/error_2_x_x'
+                $ref: '#/components/schemas/error'
           description: parameter validation error
         "401":
           content:
             application/vnd.conekta-v2.1.0+json:
               schema:
-                $ref: '#/components/schemas/error_2_x_x'
+                $ref: '#/components/schemas/error'
           description: authentication error
         "404":
           content:
             application/vnd.conekta-v2.1.0+json:
               schema:
-                $ref: '#/components/schemas/error_2_x_x'
+                $ref: '#/components/schemas/error'
             application/json; charset=utf-8:
               schema:
-                $ref: '#/components/schemas/error_2_x_x'
+                $ref: '#/components/schemas/error'
           description: not found entity
         "500":
           content:
             application/vnd.conekta-v2.1.0+json:
               schema:
-                $ref: '#/components/schemas/error_2_x_x'
+                $ref: '#/components/schemas/error'
           description: internal server error
       security:
       - bearerAuth: []
@@ -3944,8 +4081,9 @@ paths:
             value: en
         in: header
         name: Accept-Language
-        required: true
+        required: false
         schema:
+          default: es
           enum:
           - es
           - en
@@ -4012,19 +4150,19 @@ paths:
           content:
             application/vnd.conekta-v2.1.0+json:
               schema:
-                $ref: '#/components/schemas/error_2_x_x'
+                $ref: '#/components/schemas/error'
           description: parameter validation error
         "401":
           content:
             application/vnd.conekta-v2.1.0+json:
               schema:
-                $ref: '#/components/schemas/error_2_x_x'
+                $ref: '#/components/schemas/error'
           description: authentication error
         "500":
           content:
             application/vnd.conekta-v2.1.0+json:
               schema:
-                $ref: '#/components/schemas/error_2_x_x'
+                $ref: '#/components/schemas/error'
           description: internal server error
       security:
       - bearerAuth: []
@@ -4045,8 +4183,9 @@ paths:
             value: en
         in: header
         name: Accept-Language
-        required: true
+        required: false
         schema:
+          default: es
           enum:
           - es
           - en
@@ -4064,19 +4203,19 @@ paths:
           content:
             application/vnd.conekta-v2.1.0+json:
               schema:
-                $ref: '#/components/schemas/error_2_x_x'
+                $ref: '#/components/schemas/error'
           description: parameter validation error
         "401":
           content:
             application/vnd.conekta-v2.1.0+json:
               schema:
-                $ref: '#/components/schemas/error_2_x_x'
+                $ref: '#/components/schemas/error'
           description: authentication error
         "500":
           content:
             application/vnd.conekta-v2.1.0+json:
               schema:
-                $ref: '#/components/schemas/error_2_x_x'
+                $ref: '#/components/schemas/error'
           description: internal server error
       security:
       - bearerAuth: []
@@ -4087,6 +4226,13 @@ paths:
     delete:
       operationId: deleteWebhook
       parameters:
+      - description: identifier
+        example: 6307a60c41de27127515a575
+        in: path
+        name: id
+        required: true
+        schema:
+          type: string
       - description: use for knowing which language to use
         examples:
           es:
@@ -4097,18 +4243,12 @@ paths:
             value: en
         in: header
         name: Accept-Language
-        required: true
+        required: false
         schema:
+          default: es
           enum:
           - es
           - en
-          type: string
-      - description: identifier
-        example: 6307a60c41de27127515a575
-        in: path
-        name: id
-        required: true
-        schema:
           type: string
       responses:
         "200":
@@ -4146,28 +4286,28 @@ paths:
           content:
             application/vnd.conekta-v2.1.0+json:
               schema:
-                $ref: '#/components/schemas/error_2_x_x'
+                $ref: '#/components/schemas/error'
           description: parameter validation error
         "401":
           content:
             application/vnd.conekta-v2.1.0+json:
               schema:
-                $ref: '#/components/schemas/error_2_x_x'
+                $ref: '#/components/schemas/error'
           description: authentication error
         "404":
           content:
             application/vnd.conekta-v2.1.0+json:
               schema:
-                $ref: '#/components/schemas/error_2_x_x'
+                $ref: '#/components/schemas/error'
             application/json; charset=utf-8:
               schema:
-                $ref: '#/components/schemas/error_2_x_x'
+                $ref: '#/components/schemas/error'
           description: not found entity
         "500":
           content:
             application/vnd.conekta-v2.1.0+json:
               schema:
-                $ref: '#/components/schemas/error_2_x_x'
+                $ref: '#/components/schemas/error'
           description: internal server error
       security:
       - bearerAuth: []
@@ -4177,6 +4317,13 @@ paths:
     get:
       operationId: getWebhook
       parameters:
+      - description: identifier
+        example: 6307a60c41de27127515a575
+        in: path
+        name: id
+        required: true
+        schema:
+          type: string
       - description: use for knowing which language to use
         examples:
           es:
@@ -4187,18 +4334,12 @@ paths:
             value: en
         in: header
         name: Accept-Language
-        required: true
+        required: false
         schema:
+          default: es
           enum:
           - es
           - en
-          type: string
-      - description: identifier
-        example: 6307a60c41de27127515a575
-        in: path
-        name: id
-        required: true
-        schema:
           type: string
       responses:
         "200":
@@ -4236,28 +4377,28 @@ paths:
           content:
             application/vnd.conekta-v2.1.0+json:
               schema:
-                $ref: '#/components/schemas/error_2_x_x'
+                $ref: '#/components/schemas/error'
           description: parameter validation error
         "401":
           content:
             application/vnd.conekta-v2.1.0+json:
               schema:
-                $ref: '#/components/schemas/error_2_x_x'
+                $ref: '#/components/schemas/error'
           description: authentication error
         "404":
           content:
             application/vnd.conekta-v2.1.0+json:
               schema:
-                $ref: '#/components/schemas/error_2_x_x'
+                $ref: '#/components/schemas/error'
             application/json; charset=utf-8:
               schema:
-                $ref: '#/components/schemas/error_2_x_x'
+                $ref: '#/components/schemas/error'
           description: not found entity
         "500":
           content:
             application/vnd.conekta-v2.1.0+json:
               schema:
-                $ref: '#/components/schemas/error_2_x_x'
+                $ref: '#/components/schemas/error'
           description: internal server error
       security:
       - bearerAuth: []
@@ -4278,8 +4419,9 @@ paths:
             value: en
         in: header
         name: Accept-Language
-        required: true
+        required: false
         schema:
+          default: es
           enum:
           - es
           - en
@@ -4304,19 +4446,19 @@ paths:
           content:
             application/vnd.conekta-v2.1.0+json:
               schema:
-                $ref: '#/components/schemas/error_2_x_x'
+                $ref: '#/components/schemas/error'
           description: parameter validation error
         "401":
           content:
             application/vnd.conekta-v2.1.0+json:
               schema:
-                $ref: '#/components/schemas/error_2_x_x'
+                $ref: '#/components/schemas/error'
           description: authentication error
         "500":
           content:
             application/vnd.conekta-v2.1.0+json:
               schema:
-                $ref: '#/components/schemas/error_2_x_x'
+                $ref: '#/components/schemas/error'
           description: internal server error
       security:
       - bearerAuth: []
@@ -4392,8 +4534,9 @@ components:
           value: en
       in: header
       name: Accept-Language
-      required: true
+      required: false
       schema:
+        default: es
         enum:
         - es
         - en
@@ -4572,6 +4715,13 @@ components:
             $ref: '#/components/schemas/customer_shipping_contacts'
       description: requested field for customer shippings contacts
       required: true
+    subscription_update:
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/subscription_update_request'
+      description: requested field for update a subscription
+      required: true
     subscription:
       content:
         application/json:
@@ -4682,43 +4832,43 @@ components:
       content:
         application/vnd.conekta-v2.1.0+json:
           schema:
-            $ref: '#/components/schemas/error_2_x_x'
+            $ref: '#/components/schemas/error'
       description: authentication error
     "402":
       content:
         application/vnd.conekta-v2.1.0+json:
           schema:
-            $ref: '#/components/schemas/error_2_x_x'
+            $ref: '#/components/schemas/error'
       description: payment required error
     "422":
       content:
         application/vnd.conekta-v2.1.0+json:
           schema:
-            $ref: '#/components/schemas/error_2_x_x'
+            $ref: '#/components/schemas/error'
       description: parameter validation error
     "500":
       content:
         application/vnd.conekta-v2.1.0+json:
           schema:
-            $ref: '#/components/schemas/error_2_x_x'
+            $ref: '#/components/schemas/error'
       description: internal server error
     "404":
       content:
         application/vnd.conekta-v2.1.0+json:
           schema:
-            $ref: '#/components/schemas/error_2_x_x'
+            $ref: '#/components/schemas/error'
         application/json; charset=utf-8:
           schema:
-            $ref: '#/components/schemas/error_2_x_x'
+            $ref: '#/components/schemas/error'
       description: not found entity
     "428":
       content:
         application/vnd.conekta-v2.1.0+json:
           schema:
-            $ref: '#/components/schemas/error_2_x_x'
+            $ref: '#/components/schemas/error'
         application/json; charset=utf-8:
           schema:
-            $ref: '#/components/schemas/error_2_x_x'
+            $ref: '#/components/schemas/error'
       description: Precondition Required
   schemas:
     risk_rules_list:
@@ -4756,12 +4906,6 @@ components:
           type: string
         value:
           example: email@example.com | 818081808180 | src_2qUCNd5AyQqfPMBuV
-          type: string
-      type: object
-    delete_risk_rules_data:
-      properties:
-        id:
-          example: 2fw8EWJusiRrxdPzT
           type: string
       type: object
     pagination:
@@ -4920,12 +5064,12 @@ components:
       - object
       title: checkout_response
       type: object
-    error_2_x_x:
+    error:
       allOf:
       - $ref: '#/components/schemas/details'
-      - $ref: '#/components/schemas/error_2_x_x_allOf'
+      - $ref: '#/components/schemas/error_allOf'
       description: err model
-      title: authentication error
+      title: error
     customers_extra_fields_response:
       description: customers response
       properties:
@@ -5274,6 +5418,8 @@ components:
         data:
           description: set to page results.
           items:
+            additionalProperties:
+              type: object
             type: object
           nullable: true
           type: array
@@ -5705,6 +5851,7 @@ components:
     webhook_response:
       description: webhooks model
       example:
+        deleted: false
         livemode: true
         subscribed_events:
         - charge.created
@@ -5725,6 +5872,10 @@ components:
         object: event
         status: listening
       properties:
+        deleted:
+          example: false
+          nullable: true
+          type: boolean
         development_enabled:
           example: false
           type: boolean
@@ -6002,6 +6153,21 @@ components:
           nullable: true
           type: boolean
       title: customer_shipping_contacts_request
+      type: object
+    subscription_update_request:
+      description: You can modify the subscription to change the plan used by your
+        customers.
+      properties:
+        plan_id:
+          example: f84gdgf5g48r15fd21g8w424fd1
+          type: string
+        card_id:
+          example: src_2qUCNd5AyQqfPMBuV
+          type: string
+        trial_end:
+          example: 1484040996
+          type: integer
+      title: updates a subscription
       type: object
     subscription_request:
       description: a subscriptions
@@ -6336,9 +6502,11 @@ components:
           - half_month
           - month
           - year
+          nullable: false
           type: string
         frequency:
           example: 1
+          minimum: 1
           type: integer
         name:
           example: Extra Plan3
@@ -6367,25 +6535,9 @@ components:
         expiry_count:
           example: 12
           type: integer
-        id:
-          example: plan_24234
-          type: string
-        interval:
-          enum:
-          - week
-          - half_month
-          - month
-          - year
-          type: string
-        frequency:
-          example: 1
-          type: integer
         name:
           example: Extra Plan3
           type: string
-        trial_period_days:
-          example: 0
-          type: integer
       title: update_plan
       type: object
     webhook_request:
@@ -6396,6 +6548,7 @@ components:
           format: url
           type: string
         synchronous:
+          default: false
           example: false
           type: boolean
       required:
@@ -6780,18 +6933,24 @@ components:
       - $ref: '#/components/schemas/payment_source_card'
       - $ref: '#/components/schemas/payment_source_spei_recurrent'
       title: update_customer_payment_sources_response
-    get_events_response_allOf:
+    subscription_events_response_allOf:
       properties:
         data:
           items:
             $ref: '#/components/schemas/event_response'
           type: array
       type: object
+    subscription_events_response:
+      allOf:
+      - $ref: '#/components/schemas/pagination'
+      - $ref: '#/components/schemas/page'
+      - $ref: '#/components/schemas/subscription_events_response_allOf'
+      title: subscription_events_response
     get_events_response:
       allOf:
       - $ref: '#/components/schemas/pagination'
       - $ref: '#/components/schemas/page'
-      - $ref: '#/components/schemas/get_events_response_allOf'
+      - $ref: '#/components/schemas/subscription_events_response_allOf'
       title: get_events_response
     get_orders_response:
       allOf:
@@ -6857,7 +7016,7 @@ components:
           example: secure customer example@example.com
           type: string
       type: object
-    error_2_x_x_allOf:
+    error_allOf:
       properties:
         log_id:
           description: log id
