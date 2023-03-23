@@ -3,4 +3,15 @@ content:
   application/vnd.conekta-v2.1.0+json:
     schema:
       $ref: '../../schemas/errors/error.yml'
+    example:
+      details: [
+        {
+          message: "The card could not be processed.",
+          code: "conekta.errors.processing.tokenization.used",
+          debug_message: "The token has already been used.",
+        }
+      ]
+      log_id: "641b6d073cd9a50001515007"
+      object: "error"
+      type: "processing_error"
  

@@ -8,7 +8,6 @@ allOf:
         description: log id
         type: string
         example:  "507f1f77bcf86cd799439011"
-        format: hex
         nullable: true
       type:
         type: string
@@ -16,4 +15,3 @@ allOf:
       object:
         type: string
         example: error
-      

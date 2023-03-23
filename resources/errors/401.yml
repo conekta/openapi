@@ -3,4 +3,14 @@ content:
   application/vnd.conekta-v2.1.0+json:
     schema:
       $ref: '../../schemas/errors/error.yml'
- 
+    example:
+      details: [
+        {
+          message: "Please include your access key in your request.",
+          param:  null,
+          code:  "conekta.errors.authentication.missing_key"
+        }
+      ]
+      log_id: "507f1f77bcf86cd799439011"
+      object: "error"
+      type: "authentication_error"

@@ -14,6 +14,8 @@ get:
      $ref: '../errors/422.yml'
     401:
      $ref: '../errors/401.yml'
+    404:
+     $ref: '../errors/404.yml'
     500:
      $ref: '../errors/500.yml'
   security:

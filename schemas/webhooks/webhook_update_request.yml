@@ -1,0 +1,20 @@
+title: update_webhook
+description: an updated webhook
+type: object
+required:
+   - url
+properties:
+  url:
+    type: string
+    format: url
+    example: "https://webhook.site/89277eaa-a8e4-4306-8dc5-f55c80703dc8"
+    nullable: false
+  synchronous:
+    type: boolean
+    example: false
+    default: false
+  subscribed_events:
+    type: array
+    items:
+      type: string
+      example: "customer.created"

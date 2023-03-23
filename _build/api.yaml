@@ -162,24 +162,60 @@ paths:
         "401":
           content:
             application/vnd.conekta-v2.1.0+json:
+              example:
+                details:
+                - message: Please include your access key in your request.
+                  param: null
+                  code: conekta.errors.authentication.missing_key
+                log_id: 507f1f77bcf86cd799439011
+                object: error
+                type: authentication_error
               schema:
                 $ref: '#/components/schemas/error'
           description: authentication error
         "402":
           content:
             application/vnd.conekta-v2.1.0+json:
+              example:
+                details:
+                - message: The card could not be processed.
+                  code: conekta.errors.processing.tokenization.used
+                  debug_message: The token has already been used.
+                log_id: 641b6d073cd9a50001515007
+                object: error
+                type: processing_error
               schema:
                 $ref: '#/components/schemas/error'
           description: payment required error
         "422":
           content:
             application/vnd.conekta-v2.1.0+json:
+              example:
+                details:
+                - message: The token does not exist.
+                  param: payment_method.token_id
+                  code: conekta.errors.parameter_validation.payment_method.token_id.nonexistent_token
+                  debug_message: The token does not exist.
+                log_id: 641b6d813cd9a50001515017
+                object: error
+                type: parameter_validation_error
               schema:
                 $ref: '#/components/schemas/error'
           description: parameter validation error
         "500":
           content:
             application/vnd.conekta-v2.1.0+json:
+              example:
+                details:
+                - debug_message: There was a runtime error and Conekta engineers have
+                    been notified.
+                  message: There was a runtime error and Conekta engineers have been
+                    notified.
+                  param: null
+                  code: conekta.errors.api.system.general_failure
+                object: error
+                type: api_error
+                log_id: 641b6f2b3cd9a50001515098
               schema:
                 $ref: '#/components/schemas/error'
           description: internal server error
@@ -245,24 +281,60 @@ paths:
         "401":
           content:
             application/vnd.conekta-v2.1.0+json:
+              example:
+                details:
+                - message: Please include your access key in your request.
+                  param: null
+                  code: conekta.errors.authentication.missing_key
+                log_id: 507f1f77bcf86cd799439011
+                object: error
+                type: authentication_error
               schema:
                 $ref: '#/components/schemas/error'
           description: authentication error
         "402":
           content:
             application/vnd.conekta-v2.1.0+json:
+              example:
+                details:
+                - message: The card could not be processed.
+                  code: conekta.errors.processing.tokenization.used
+                  debug_message: The token has already been used.
+                log_id: 641b6d073cd9a50001515007
+                object: error
+                type: processing_error
               schema:
                 $ref: '#/components/schemas/error'
           description: payment required error
         "422":
           content:
             application/vnd.conekta-v2.1.0+json:
+              example:
+                details:
+                - message: The token does not exist.
+                  param: payment_method.token_id
+                  code: conekta.errors.parameter_validation.payment_method.token_id.nonexistent_token
+                  debug_message: The token does not exist.
+                log_id: 641b6d813cd9a50001515017
+                object: error
+                type: parameter_validation_error
               schema:
                 $ref: '#/components/schemas/error'
           description: parameter validation error
         "500":
           content:
             application/vnd.conekta-v2.1.0+json:
+              example:
+                details:
+                - debug_message: There was a runtime error and Conekta engineers have
+                    been notified.
+                  message: There was a runtime error and Conekta engineers have been
+                    notified.
+                  param: null
+                  code: conekta.errors.api.system.general_failure
+                object: error
+                type: api_error
+                log_id: 641b6f2b3cd9a50001515098
               schema:
                 $ref: '#/components/schemas/error'
           description: internal server error
@@ -334,33 +406,76 @@ paths:
         "401":
           content:
             application/vnd.conekta-v2.1.0+json:
+              example:
+                details:
+                - message: Please include your access key in your request.
+                  param: null
+                  code: conekta.errors.authentication.missing_key
+                log_id: 507f1f77bcf86cd799439011
+                object: error
+                type: authentication_error
               schema:
                 $ref: '#/components/schemas/error'
           description: authentication error
         "402":
           content:
             application/vnd.conekta-v2.1.0+json:
+              example:
+                details:
+                - message: The card could not be processed.
+                  code: conekta.errors.processing.tokenization.used
+                  debug_message: The token has already been used.
+                log_id: 641b6d073cd9a50001515007
+                object: error
+                type: processing_error
               schema:
                 $ref: '#/components/schemas/error'
           description: payment required error
         "404":
           content:
             application/vnd.conekta-v2.1.0+json:
-              schema:
-                $ref: '#/components/schemas/error'
-            application/json; charset=utf-8:
+              example:
+                details:
+                - message: The resource was not found.
+                  param: null
+                  code: conekta.errors.resource_not_found.entity
+                  debug_message: The object Webhook "641b1d5662d7e00001eaa46b" could
+                    not be found.
+                log_id: 641b6c253cd9a50001514fae
+                object: error
+                type: resource_not_found_error
               schema:
                 $ref: '#/components/schemas/error'
           description: not found entity
         "422":
           content:
             application/vnd.conekta-v2.1.0+json:
+              example:
+                details:
+                - message: The token does not exist.
+                  param: payment_method.token_id
+                  code: conekta.errors.parameter_validation.payment_method.token_id.nonexistent_token
+                  debug_message: The token does not exist.
+                log_id: 641b6d813cd9a50001515017
+                object: error
+                type: parameter_validation_error
               schema:
                 $ref: '#/components/schemas/error'
           description: parameter validation error
         "500":
           content:
             application/vnd.conekta-v2.1.0+json:
+              example:
+                details:
+                - debug_message: There was a runtime error and Conekta engineers have
+                    been notified.
+                  message: There was a runtime error and Conekta engineers have been
+                    notified.
+                  param: null
+                  code: conekta.errors.api.system.general_failure
+                object: error
+                type: api_error
+                log_id: 641b6f2b3cd9a50001515098
               schema:
                 $ref: '#/components/schemas/error'
           description: internal server error
@@ -432,33 +547,76 @@ paths:
         "401":
           content:
             application/vnd.conekta-v2.1.0+json:
+              example:
+                details:
+                - message: Please include your access key in your request.
+                  param: null
+                  code: conekta.errors.authentication.missing_key
+                log_id: 507f1f77bcf86cd799439011
+                object: error
+                type: authentication_error
               schema:
                 $ref: '#/components/schemas/error'
           description: authentication error
         "402":
           content:
             application/vnd.conekta-v2.1.0+json:
+              example:
+                details:
+                - message: The card could not be processed.
+                  code: conekta.errors.processing.tokenization.used
+                  debug_message: The token has already been used.
+                log_id: 641b6d073cd9a50001515007
+                object: error
+                type: processing_error
               schema:
                 $ref: '#/components/schemas/error'
           description: payment required error
         "404":
           content:
             application/vnd.conekta-v2.1.0+json:
-              schema:
-                $ref: '#/components/schemas/error'
-            application/json; charset=utf-8:
+              example:
+                details:
+                - message: The resource was not found.
+                  param: null
+                  code: conekta.errors.resource_not_found.entity
+                  debug_message: The object Webhook "641b1d5662d7e00001eaa46b" could
+                    not be found.
+                log_id: 641b6c253cd9a50001514fae
+                object: error
+                type: resource_not_found_error
               schema:
                 $ref: '#/components/schemas/error'
           description: not found entity
         "422":
           content:
             application/vnd.conekta-v2.1.0+json:
+              example:
+                details:
+                - message: The token does not exist.
+                  param: payment_method.token_id
+                  code: conekta.errors.parameter_validation.payment_method.token_id.nonexistent_token
+                  debug_message: The token does not exist.
+                log_id: 641b6d813cd9a50001515017
+                object: error
+                type: parameter_validation_error
               schema:
                 $ref: '#/components/schemas/error'
           description: parameter validation error
         "500":
           content:
             application/vnd.conekta-v2.1.0+json:
+              example:
+                details:
+                - debug_message: There was a runtime error and Conekta engineers have
+                    been notified.
+                  message: There was a runtime error and Conekta engineers have been
+                    notified.
+                  param: null
+                  code: conekta.errors.api.system.general_failure
+                object: error
+                type: api_error
+                log_id: 641b6f2b3cd9a50001515098
               schema:
                 $ref: '#/components/schemas/error'
           description: internal server error
@@ -532,33 +690,76 @@ paths:
         "401":
           content:
             application/vnd.conekta-v2.1.0+json:
+              example:
+                details:
+                - message: Please include your access key in your request.
+                  param: null
+                  code: conekta.errors.authentication.missing_key
+                log_id: 507f1f77bcf86cd799439011
+                object: error
+                type: authentication_error
               schema:
                 $ref: '#/components/schemas/error'
           description: authentication error
         "402":
           content:
             application/vnd.conekta-v2.1.0+json:
+              example:
+                details:
+                - message: The card could not be processed.
+                  code: conekta.errors.processing.tokenization.used
+                  debug_message: The token has already been used.
+                log_id: 641b6d073cd9a50001515007
+                object: error
+                type: processing_error
               schema:
                 $ref: '#/components/schemas/error'
           description: payment required error
         "404":
           content:
             application/vnd.conekta-v2.1.0+json:
-              schema:
-                $ref: '#/components/schemas/error'
-            application/json; charset=utf-8:
+              example:
+                details:
+                - message: The resource was not found.
+                  param: null
+                  code: conekta.errors.resource_not_found.entity
+                  debug_message: The object Webhook "641b1d5662d7e00001eaa46b" could
+                    not be found.
+                log_id: 641b6c253cd9a50001514fae
+                object: error
+                type: resource_not_found_error
               schema:
                 $ref: '#/components/schemas/error'
           description: not found entity
         "422":
           content:
             application/vnd.conekta-v2.1.0+json:
+              example:
+                details:
+                - message: The token does not exist.
+                  param: payment_method.token_id
+                  code: conekta.errors.parameter_validation.payment_method.token_id.nonexistent_token
+                  debug_message: The token does not exist.
+                log_id: 641b6d813cd9a50001515017
+                object: error
+                type: parameter_validation_error
               schema:
                 $ref: '#/components/schemas/error'
           description: parameter validation error
         "500":
           content:
             application/vnd.conekta-v2.1.0+json:
+              example:
+                details:
+                - debug_message: There was a runtime error and Conekta engineers have
+                    been notified.
+                  message: There was a runtime error and Conekta engineers have been
+                    notified.
+                  param: null
+                  code: conekta.errors.api.system.general_failure
+                object: error
+                type: api_error
+                log_id: 641b6f2b3cd9a50001515098
               schema:
                 $ref: '#/components/schemas/error'
           description: internal server error
@@ -632,33 +833,76 @@ paths:
         "401":
           content:
             application/vnd.conekta-v2.1.0+json:
+              example:
+                details:
+                - message: Please include your access key in your request.
+                  param: null
+                  code: conekta.errors.authentication.missing_key
+                log_id: 507f1f77bcf86cd799439011
+                object: error
+                type: authentication_error
               schema:
                 $ref: '#/components/schemas/error'
           description: authentication error
         "402":
           content:
             application/vnd.conekta-v2.1.0+json:
+              example:
+                details:
+                - message: The card could not be processed.
+                  code: conekta.errors.processing.tokenization.used
+                  debug_message: The token has already been used.
+                log_id: 641b6d073cd9a50001515007
+                object: error
+                type: processing_error
               schema:
                 $ref: '#/components/schemas/error'
           description: payment required error
         "404":
           content:
             application/vnd.conekta-v2.1.0+json:
-              schema:
-                $ref: '#/components/schemas/error'
-            application/json; charset=utf-8:
+              example:
+                details:
+                - message: The resource was not found.
+                  param: null
+                  code: conekta.errors.resource_not_found.entity
+                  debug_message: The object Webhook "641b1d5662d7e00001eaa46b" could
+                    not be found.
+                log_id: 641b6c253cd9a50001514fae
+                object: error
+                type: resource_not_found_error
               schema:
                 $ref: '#/components/schemas/error'
           description: not found entity
         "422":
           content:
             application/vnd.conekta-v2.1.0+json:
+              example:
+                details:
+                - message: The token does not exist.
+                  param: payment_method.token_id
+                  code: conekta.errors.parameter_validation.payment_method.token_id.nonexistent_token
+                  debug_message: The token does not exist.
+                log_id: 641b6d813cd9a50001515017
+                object: error
+                type: parameter_validation_error
               schema:
                 $ref: '#/components/schemas/error'
           description: parameter validation error
         "500":
           content:
             application/vnd.conekta-v2.1.0+json:
+              example:
+                details:
+                - debug_message: There was a runtime error and Conekta engineers have
+                    been notified.
+                  message: There was a runtime error and Conekta engineers have been
+                    notified.
+                  param: null
+                  code: conekta.errors.api.system.general_failure
+                object: error
+                type: api_error
+                log_id: 641b6f2b3cd9a50001515098
               schema:
                 $ref: '#/components/schemas/error'
           description: internal server error
@@ -746,24 +990,60 @@ paths:
         "401":
           content:
             application/vnd.conekta-v2.1.0+json:
+              example:
+                details:
+                - message: Please include your access key in your request.
+                  param: null
+                  code: conekta.errors.authentication.missing_key
+                log_id: 507f1f77bcf86cd799439011
+                object: error
+                type: authentication_error
               schema:
                 $ref: '#/components/schemas/error'
           description: authentication error
         "402":
           content:
             application/vnd.conekta-v2.1.0+json:
+              example:
+                details:
+                - message: The card could not be processed.
+                  code: conekta.errors.processing.tokenization.used
+                  debug_message: The token has already been used.
+                log_id: 641b6d073cd9a50001515007
+                object: error
+                type: processing_error
               schema:
                 $ref: '#/components/schemas/error'
           description: payment required error
         "422":
           content:
             application/vnd.conekta-v2.1.0+json:
+              example:
+                details:
+                - message: The token does not exist.
+                  param: payment_method.token_id
+                  code: conekta.errors.parameter_validation.payment_method.token_id.nonexistent_token
+                  debug_message: The token does not exist.
+                log_id: 641b6d813cd9a50001515017
+                object: error
+                type: parameter_validation_error
               schema:
                 $ref: '#/components/schemas/error'
           description: parameter validation error
         "500":
           content:
             application/vnd.conekta-v2.1.0+json:
+              example:
+                details:
+                - debug_message: There was a runtime error and Conekta engineers have
+                    been notified.
+                  message: There was a runtime error and Conekta engineers have been
+                    notified.
+                  param: null
+                  code: conekta.errors.api.system.general_failure
+                object: error
+                type: api_error
+                log_id: 641b6f2b3cd9a50001515098
               schema:
                 $ref: '#/components/schemas/error'
           description: internal server error
@@ -831,24 +1111,60 @@ paths:
         "401":
           content:
             application/vnd.conekta-v2.1.0+json:
+              example:
+                details:
+                - message: Please include your access key in your request.
+                  param: null
+                  code: conekta.errors.authentication.missing_key
+                log_id: 507f1f77bcf86cd799439011
+                object: error
+                type: authentication_error
               schema:
                 $ref: '#/components/schemas/error'
           description: authentication error
         "402":
           content:
             application/vnd.conekta-v2.1.0+json:
+              example:
+                details:
+                - message: The card could not be processed.
+                  code: conekta.errors.processing.tokenization.used
+                  debug_message: The token has already been used.
+                log_id: 641b6d073cd9a50001515007
+                object: error
+                type: processing_error
               schema:
                 $ref: '#/components/schemas/error'
           description: payment required error
         "422":
           content:
             application/vnd.conekta-v2.1.0+json:
+              example:
+                details:
+                - message: The token does not exist.
+                  param: payment_method.token_id
+                  code: conekta.errors.parameter_validation.payment_method.token_id.nonexistent_token
+                  debug_message: The token does not exist.
+                log_id: 641b6d813cd9a50001515017
+                object: error
+                type: parameter_validation_error
               schema:
                 $ref: '#/components/schemas/error'
           description: parameter validation error
         "500":
           content:
             application/vnd.conekta-v2.1.0+json:
+              example:
+                details:
+                - debug_message: There was a runtime error and Conekta engineers have
+                    been notified.
+                  message: There was a runtime error and Conekta engineers have been
+                    notified.
+                  param: null
+                  code: conekta.errors.api.system.general_failure
+                object: error
+                type: api_error
+                log_id: 641b6f2b3cd9a50001515098
               schema:
                 $ref: '#/components/schemas/error'
           description: internal server error
@@ -896,27 +1212,62 @@ paths:
         "422":
           content:
             application/vnd.conekta-v2.1.0+json:
+              example:
+                details:
+                - message: The token does not exist.
+                  param: payment_method.token_id
+                  code: conekta.errors.parameter_validation.payment_method.token_id.nonexistent_token
+                  debug_message: The token does not exist.
+                log_id: 641b6d813cd9a50001515017
+                object: error
+                type: parameter_validation_error
               schema:
                 $ref: '#/components/schemas/error'
           description: parameter validation error
         "401":
           content:
             application/vnd.conekta-v2.1.0+json:
+              example:
+                details:
+                - message: Please include your access key in your request.
+                  param: null
+                  code: conekta.errors.authentication.missing_key
+                log_id: 507f1f77bcf86cd799439011
+                object: error
+                type: authentication_error
               schema:
                 $ref: '#/components/schemas/error'
           description: authentication error
         "404":
           content:
             application/vnd.conekta-v2.1.0+json:
-              schema:
-                $ref: '#/components/schemas/error'
-            application/json; charset=utf-8:
+              example:
+                details:
+                - message: The resource was not found.
+                  param: null
+                  code: conekta.errors.resource_not_found.entity
+                  debug_message: The object Webhook "641b1d5662d7e00001eaa46b" could
+                    not be found.
+                log_id: 641b6c253cd9a50001514fae
+                object: error
+                type: resource_not_found_error
               schema:
                 $ref: '#/components/schemas/error'
           description: not found entity
         "500":
           content:
             application/vnd.conekta-v2.1.0+json:
+              example:
+                details:
+                - debug_message: There was a runtime error and Conekta engineers have
+                    been notified.
+                  message: There was a runtime error and Conekta engineers have been
+                    notified.
+                  param: null
+                  code: conekta.errors.api.system.general_failure
+                object: error
+                type: api_error
+                log_id: 641b6f2b3cd9a50001515098
               schema:
                 $ref: '#/components/schemas/error'
           description: internal server error
@@ -963,18 +1314,46 @@ paths:
         "422":
           content:
             application/vnd.conekta-v2.1.0+json:
+              example:
+                details:
+                - message: The token does not exist.
+                  param: payment_method.token_id
+                  code: conekta.errors.parameter_validation.payment_method.token_id.nonexistent_token
+                  debug_message: The token does not exist.
+                log_id: 641b6d813cd9a50001515017
+                object: error
+                type: parameter_validation_error
               schema:
                 $ref: '#/components/schemas/error'
           description: parameter validation error
         "401":
           content:
             application/vnd.conekta-v2.1.0+json:
+              example:
+                details:
+                - message: Please include your access key in your request.
+                  param: null
+                  code: conekta.errors.authentication.missing_key
+                log_id: 507f1f77bcf86cd799439011
+                object: error
+                type: authentication_error
               schema:
                 $ref: '#/components/schemas/error'
           description: authentication error
         "500":
           content:
             application/vnd.conekta-v2.1.0+json:
+              example:
+                details:
+                - debug_message: There was a runtime error and Conekta engineers have
+                    been notified.
+                  message: There was a runtime error and Conekta engineers have been
+                    notified.
+                  param: null
+                  code: conekta.errors.api.system.general_failure
+                object: error
+                type: api_error
+                log_id: 641b6f2b3cd9a50001515098
               schema:
                 $ref: '#/components/schemas/error'
           description: internal server error
@@ -1023,24 +1402,60 @@ paths:
         "401":
           content:
             application/vnd.conekta-v2.1.0+json:
+              example:
+                details:
+                - message: Please include your access key in your request.
+                  param: null
+                  code: conekta.errors.authentication.missing_key
+                log_id: 507f1f77bcf86cd799439011
+                object: error
+                type: authentication_error
               schema:
                 $ref: '#/components/schemas/error'
           description: authentication error
         "402":
           content:
             application/vnd.conekta-v2.1.0+json:
+              example:
+                details:
+                - message: The card could not be processed.
+                  code: conekta.errors.processing.tokenization.used
+                  debug_message: The token has already been used.
+                log_id: 641b6d073cd9a50001515007
+                object: error
+                type: processing_error
               schema:
                 $ref: '#/components/schemas/error'
           description: payment required error
         "422":
           content:
             application/vnd.conekta-v2.1.0+json:
+              example:
+                details:
+                - message: The token does not exist.
+                  param: payment_method.token_id
+                  code: conekta.errors.parameter_validation.payment_method.token_id.nonexistent_token
+                  debug_message: The token does not exist.
+                log_id: 641b6d813cd9a50001515017
+                object: error
+                type: parameter_validation_error
               schema:
                 $ref: '#/components/schemas/error'
           description: parameter validation error
         "500":
           content:
             application/vnd.conekta-v2.1.0+json:
+              example:
+                details:
+                - debug_message: There was a runtime error and Conekta engineers have
+                    been notified.
+                  message: There was a runtime error and Conekta engineers have been
+                    notified.
+                  param: null
+                  code: conekta.errors.api.system.general_failure
+                object: error
+                type: api_error
+                log_id: 641b6f2b3cd9a50001515098
               schema:
                 $ref: '#/components/schemas/error'
           description: internal server error
@@ -1090,27 +1505,62 @@ paths:
         "401":
           content:
             application/vnd.conekta-v2.1.0+json:
+              example:
+                details:
+                - message: Please include your access key in your request.
+                  param: null
+                  code: conekta.errors.authentication.missing_key
+                log_id: 507f1f77bcf86cd799439011
+                object: error
+                type: authentication_error
               schema:
                 $ref: '#/components/schemas/error'
           description: authentication error
         "404":
           content:
             application/vnd.conekta-v2.1.0+json:
-              schema:
-                $ref: '#/components/schemas/error'
-            application/json; charset=utf-8:
+              example:
+                details:
+                - message: The resource was not found.
+                  param: null
+                  code: conekta.errors.resource_not_found.entity
+                  debug_message: The object Webhook "641b1d5662d7e00001eaa46b" could
+                    not be found.
+                log_id: 641b6c253cd9a50001514fae
+                object: error
+                type: resource_not_found_error
               schema:
                 $ref: '#/components/schemas/error'
           description: not found entity
         "422":
           content:
             application/vnd.conekta-v2.1.0+json:
+              example:
+                details:
+                - message: The token does not exist.
+                  param: payment_method.token_id
+                  code: conekta.errors.parameter_validation.payment_method.token_id.nonexistent_token
+                  debug_message: The token does not exist.
+                log_id: 641b6d813cd9a50001515017
+                object: error
+                type: parameter_validation_error
               schema:
                 $ref: '#/components/schemas/error'
           description: parameter validation error
         "500":
           content:
             application/vnd.conekta-v2.1.0+json:
+              example:
+                details:
+                - debug_message: There was a runtime error and Conekta engineers have
+                    been notified.
+                  message: There was a runtime error and Conekta engineers have been
+                    notified.
+                  param: null
+                  code: conekta.errors.api.system.general_failure
+                object: error
+                type: api_error
+                log_id: 641b6f2b3cd9a50001515098
               schema:
                 $ref: '#/components/schemas/error'
           description: internal server error
@@ -1167,27 +1617,62 @@ paths:
         "401":
           content:
             application/vnd.conekta-v2.1.0+json:
+              example:
+                details:
+                - message: Please include your access key in your request.
+                  param: null
+                  code: conekta.errors.authentication.missing_key
+                log_id: 507f1f77bcf86cd799439011
+                object: error
+                type: authentication_error
               schema:
                 $ref: '#/components/schemas/error'
           description: authentication error
         "404":
           content:
             application/vnd.conekta-v2.1.0+json:
-              schema:
-                $ref: '#/components/schemas/error'
-            application/json; charset=utf-8:
+              example:
+                details:
+                - message: The resource was not found.
+                  param: null
+                  code: conekta.errors.resource_not_found.entity
+                  debug_message: The object Webhook "641b1d5662d7e00001eaa46b" could
+                    not be found.
+                log_id: 641b6c253cd9a50001514fae
+                object: error
+                type: resource_not_found_error
               schema:
                 $ref: '#/components/schemas/error'
           description: not found entity
         "422":
           content:
             application/vnd.conekta-v2.1.0+json:
+              example:
+                details:
+                - message: The token does not exist.
+                  param: payment_method.token_id
+                  code: conekta.errors.parameter_validation.payment_method.token_id.nonexistent_token
+                  debug_message: The token does not exist.
+                log_id: 641b6d813cd9a50001515017
+                object: error
+                type: parameter_validation_error
               schema:
                 $ref: '#/components/schemas/error'
           description: parameter validation error
         "500":
           content:
             application/vnd.conekta-v2.1.0+json:
+              example:
+                details:
+                - debug_message: There was a runtime error and Conekta engineers have
+                    been notified.
+                  message: There was a runtime error and Conekta engineers have been
+                    notified.
+                  param: null
+                  code: conekta.errors.api.system.general_failure
+                object: error
+                type: api_error
+                log_id: 641b6f2b3cd9a50001515098
               schema:
                 $ref: '#/components/schemas/error'
           description: internal server error
@@ -1237,27 +1722,62 @@ paths:
         "401":
           content:
             application/vnd.conekta-v2.1.0+json:
+              example:
+                details:
+                - message: Please include your access key in your request.
+                  param: null
+                  code: conekta.errors.authentication.missing_key
+                log_id: 507f1f77bcf86cd799439011
+                object: error
+                type: authentication_error
               schema:
                 $ref: '#/components/schemas/error'
           description: authentication error
         "404":
           content:
             application/vnd.conekta-v2.1.0+json:
-              schema:
-                $ref: '#/components/schemas/error'
-            application/json; charset=utf-8:
+              example:
+                details:
+                - message: The resource was not found.
+                  param: null
+                  code: conekta.errors.resource_not_found.entity
+                  debug_message: The object Webhook "641b1d5662d7e00001eaa46b" could
+                    not be found.
+                log_id: 641b6c253cd9a50001514fae
+                object: error
+                type: resource_not_found_error
               schema:
                 $ref: '#/components/schemas/error'
           description: not found entity
         "422":
           content:
             application/vnd.conekta-v2.1.0+json:
+              example:
+                details:
+                - message: The token does not exist.
+                  param: payment_method.token_id
+                  code: conekta.errors.parameter_validation.payment_method.token_id.nonexistent_token
+                  debug_message: The token does not exist.
+                log_id: 641b6d813cd9a50001515017
+                object: error
+                type: parameter_validation_error
               schema:
                 $ref: '#/components/schemas/error'
           description: parameter validation error
         "500":
           content:
             application/vnd.conekta-v2.1.0+json:
+              example:
+                details:
+                - debug_message: There was a runtime error and Conekta engineers have
+                    been notified.
+                  message: There was a runtime error and Conekta engineers have been
+                    notified.
+                  param: null
+                  code: conekta.errors.api.system.general_failure
+                object: error
+                type: api_error
+                log_id: 641b6f2b3cd9a50001515098
               schema:
                 $ref: '#/components/schemas/error'
           description: internal server error
@@ -1312,27 +1832,62 @@ paths:
         "401":
           content:
             application/vnd.conekta-v2.1.0+json:
+              example:
+                details:
+                - message: Please include your access key in your request.
+                  param: null
+                  code: conekta.errors.authentication.missing_key
+                log_id: 507f1f77bcf86cd799439011
+                object: error
+                type: authentication_error
               schema:
                 $ref: '#/components/schemas/error'
           description: authentication error
         "404":
           content:
             application/vnd.conekta-v2.1.0+json:
-              schema:
-                $ref: '#/components/schemas/error'
-            application/json; charset=utf-8:
+              example:
+                details:
+                - message: The resource was not found.
+                  param: null
+                  code: conekta.errors.resource_not_found.entity
+                  debug_message: The object Webhook "641b1d5662d7e00001eaa46b" could
+                    not be found.
+                log_id: 641b6c253cd9a50001514fae
+                object: error
+                type: resource_not_found_error
               schema:
                 $ref: '#/components/schemas/error'
           description: not found entity
         "422":
           content:
             application/vnd.conekta-v2.1.0+json:
+              example:
+                details:
+                - message: The token does not exist.
+                  param: payment_method.token_id
+                  code: conekta.errors.parameter_validation.payment_method.token_id.nonexistent_token
+                  debug_message: The token does not exist.
+                log_id: 641b6d813cd9a50001515017
+                object: error
+                type: parameter_validation_error
               schema:
                 $ref: '#/components/schemas/error'
           description: parameter validation error
         "500":
           content:
             application/vnd.conekta-v2.1.0+json:
+              example:
+                details:
+                - debug_message: There was a runtime error and Conekta engineers have
+                    been notified.
+                  message: There was a runtime error and Conekta engineers have been
+                    notified.
+                  param: null
+                  code: conekta.errors.api.system.general_failure
+                object: error
+                type: api_error
+                log_id: 641b6f2b3cd9a50001515098
               schema:
                 $ref: '#/components/schemas/error'
           description: internal server error
@@ -1388,27 +1943,62 @@ paths:
         "401":
           content:
             application/vnd.conekta-v2.1.0+json:
+              example:
+                details:
+                - message: Please include your access key in your request.
+                  param: null
+                  code: conekta.errors.authentication.missing_key
+                log_id: 507f1f77bcf86cd799439011
+                object: error
+                type: authentication_error
               schema:
                 $ref: '#/components/schemas/error'
           description: authentication error
         "404":
           content:
             application/vnd.conekta-v2.1.0+json:
-              schema:
-                $ref: '#/components/schemas/error'
-            application/json; charset=utf-8:
+              example:
+                details:
+                - message: The resource was not found.
+                  param: null
+                  code: conekta.errors.resource_not_found.entity
+                  debug_message: The object Webhook "641b1d5662d7e00001eaa46b" could
+                    not be found.
+                log_id: 641b6c253cd9a50001514fae
+                object: error
+                type: resource_not_found_error
               schema:
                 $ref: '#/components/schemas/error'
           description: not found entity
         "422":
           content:
             application/vnd.conekta-v2.1.0+json:
+              example:
+                details:
+                - message: The token does not exist.
+                  param: payment_method.token_id
+                  code: conekta.errors.parameter_validation.payment_method.token_id.nonexistent_token
+                  debug_message: The token does not exist.
+                log_id: 641b6d813cd9a50001515017
+                object: error
+                type: parameter_validation_error
               schema:
                 $ref: '#/components/schemas/error'
           description: parameter validation error
         "500":
           content:
             application/vnd.conekta-v2.1.0+json:
+              example:
+                details:
+                - debug_message: There was a runtime error and Conekta engineers have
+                    been notified.
+                  message: There was a runtime error and Conekta engineers have been
+                    notified.
+                  param: null
+                  code: conekta.errors.api.system.general_failure
+                object: error
+                type: api_error
+                log_id: 641b6f2b3cd9a50001515098
               schema:
                 $ref: '#/components/schemas/error'
           description: internal server error
@@ -1458,27 +2048,62 @@ paths:
         "401":
           content:
             application/vnd.conekta-v2.1.0+json:
+              example:
+                details:
+                - message: Please include your access key in your request.
+                  param: null
+                  code: conekta.errors.authentication.missing_key
+                log_id: 507f1f77bcf86cd799439011
+                object: error
+                type: authentication_error
               schema:
                 $ref: '#/components/schemas/error'
           description: authentication error
         "404":
           content:
             application/vnd.conekta-v2.1.0+json:
-              schema:
-                $ref: '#/components/schemas/error'
-            application/json; charset=utf-8:
+              example:
+                details:
+                - message: The resource was not found.
+                  param: null
+                  code: conekta.errors.resource_not_found.entity
+                  debug_message: The object Webhook "641b1d5662d7e00001eaa46b" could
+                    not be found.
+                log_id: 641b6c253cd9a50001514fae
+                object: error
+                type: resource_not_found_error
               schema:
                 $ref: '#/components/schemas/error'
           description: not found entity
         "422":
           content:
             application/vnd.conekta-v2.1.0+json:
+              example:
+                details:
+                - message: The token does not exist.
+                  param: payment_method.token_id
+                  code: conekta.errors.parameter_validation.payment_method.token_id.nonexistent_token
+                  debug_message: The token does not exist.
+                log_id: 641b6d813cd9a50001515017
+                object: error
+                type: parameter_validation_error
               schema:
                 $ref: '#/components/schemas/error'
           description: parameter validation error
         "500":
           content:
             application/vnd.conekta-v2.1.0+json:
+              example:
+                details:
+                - debug_message: There was a runtime error and Conekta engineers have
+                    been notified.
+                  message: There was a runtime error and Conekta engineers have been
+                    notified.
+                  param: null
+                  code: conekta.errors.api.system.general_failure
+                object: error
+                type: api_error
+                log_id: 641b6f2b3cd9a50001515098
               schema:
                 $ref: '#/components/schemas/error'
           description: internal server error
@@ -1535,27 +2160,62 @@ paths:
         "401":
           content:
             application/vnd.conekta-v2.1.0+json:
+              example:
+                details:
+                - message: Please include your access key in your request.
+                  param: null
+                  code: conekta.errors.authentication.missing_key
+                log_id: 507f1f77bcf86cd799439011
+                object: error
+                type: authentication_error
               schema:
                 $ref: '#/components/schemas/error'
           description: authentication error
         "404":
           content:
             application/vnd.conekta-v2.1.0+json:
-              schema:
-                $ref: '#/components/schemas/error'
-            application/json; charset=utf-8:
+              example:
+                details:
+                - message: The resource was not found.
+                  param: null
+                  code: conekta.errors.resource_not_found.entity
+                  debug_message: The object Webhook "641b1d5662d7e00001eaa46b" could
+                    not be found.
+                log_id: 641b6c253cd9a50001514fae
+                object: error
+                type: resource_not_found_error
               schema:
                 $ref: '#/components/schemas/error'
           description: not found entity
         "422":
           content:
             application/vnd.conekta-v2.1.0+json:
+              example:
+                details:
+                - message: The token does not exist.
+                  param: payment_method.token_id
+                  code: conekta.errors.parameter_validation.payment_method.token_id.nonexistent_token
+                  debug_message: The token does not exist.
+                log_id: 641b6d813cd9a50001515017
+                object: error
+                type: parameter_validation_error
               schema:
                 $ref: '#/components/schemas/error'
           description: parameter validation error
         "500":
           content:
             application/vnd.conekta-v2.1.0+json:
+              example:
+                details:
+                - debug_message: There was a runtime error and Conekta engineers have
+                    been notified.
+                  message: There was a runtime error and Conekta engineers have been
+                    notified.
+                  param: null
+                  code: conekta.errors.api.system.general_failure
+                object: error
+                type: api_error
+                log_id: 641b6f2b3cd9a50001515098
               schema:
                 $ref: '#/components/schemas/error'
           description: internal server error
@@ -1627,27 +2287,62 @@ paths:
         "422":
           content:
             application/vnd.conekta-v2.1.0+json:
+              example:
+                details:
+                - message: The token does not exist.
+                  param: payment_method.token_id
+                  code: conekta.errors.parameter_validation.payment_method.token_id.nonexistent_token
+                  debug_message: The token does not exist.
+                log_id: 641b6d813cd9a50001515017
+                object: error
+                type: parameter_validation_error
               schema:
                 $ref: '#/components/schemas/error'
           description: parameter validation error
         "401":
           content:
             application/vnd.conekta-v2.1.0+json:
+              example:
+                details:
+                - message: Please include your access key in your request.
+                  param: null
+                  code: conekta.errors.authentication.missing_key
+                log_id: 507f1f77bcf86cd799439011
+                object: error
+                type: authentication_error
               schema:
                 $ref: '#/components/schemas/error'
           description: authentication error
         "404":
           content:
             application/vnd.conekta-v2.1.0+json:
-              schema:
-                $ref: '#/components/schemas/error'
-            application/json; charset=utf-8:
+              example:
+                details:
+                - message: The resource was not found.
+                  param: null
+                  code: conekta.errors.resource_not_found.entity
+                  debug_message: The object Webhook "641b1d5662d7e00001eaa46b" could
+                    not be found.
+                log_id: 641b6c253cd9a50001514fae
+                object: error
+                type: resource_not_found_error
               schema:
                 $ref: '#/components/schemas/error'
           description: not found entity
         "500":
           content:
             application/vnd.conekta-v2.1.0+json:
+              example:
+                details:
+                - debug_message: There was a runtime error and Conekta engineers have
+                    been notified.
+                  message: There was a runtime error and Conekta engineers have been
+                    notified.
+                  param: null
+                  code: conekta.errors.api.system.general_failure
+                object: error
+                type: api_error
+                log_id: 641b6f2b3cd9a50001515098
               schema:
                 $ref: '#/components/schemas/error'
           description: internal server error
@@ -1720,27 +2415,62 @@ paths:
         "422":
           content:
             application/vnd.conekta-v2.1.0+json:
+              example:
+                details:
+                - message: The token does not exist.
+                  param: payment_method.token_id
+                  code: conekta.errors.parameter_validation.payment_method.token_id.nonexistent_token
+                  debug_message: The token does not exist.
+                log_id: 641b6d813cd9a50001515017
+                object: error
+                type: parameter_validation_error
               schema:
                 $ref: '#/components/schemas/error'
           description: parameter validation error
         "401":
           content:
             application/vnd.conekta-v2.1.0+json:
+              example:
+                details:
+                - message: Please include your access key in your request.
+                  param: null
+                  code: conekta.errors.authentication.missing_key
+                log_id: 507f1f77bcf86cd799439011
+                object: error
+                type: authentication_error
               schema:
                 $ref: '#/components/schemas/error'
           description: authentication error
         "404":
           content:
             application/vnd.conekta-v2.1.0+json:
-              schema:
-                $ref: '#/components/schemas/error'
-            application/json; charset=utf-8:
+              example:
+                details:
+                - message: The resource was not found.
+                  param: null
+                  code: conekta.errors.resource_not_found.entity
+                  debug_message: The object Webhook "641b1d5662d7e00001eaa46b" could
+                    not be found.
+                log_id: 641b6c253cd9a50001514fae
+                object: error
+                type: resource_not_found_error
               schema:
                 $ref: '#/components/schemas/error'
           description: not found entity
         "500":
           content:
             application/vnd.conekta-v2.1.0+json:
+              example:
+                details:
+                - debug_message: There was a runtime error and Conekta engineers have
+                    been notified.
+                  message: There was a runtime error and Conekta engineers have been
+                    notified.
+                  param: null
+                  code: conekta.errors.api.system.general_failure
+                object: error
+                type: api_error
+                log_id: 641b6f2b3cd9a50001515098
               schema:
                 $ref: '#/components/schemas/error'
           description: internal server error
@@ -1813,27 +2543,62 @@ paths:
         "422":
           content:
             application/vnd.conekta-v2.1.0+json:
+              example:
+                details:
+                - message: The token does not exist.
+                  param: payment_method.token_id
+                  code: conekta.errors.parameter_validation.payment_method.token_id.nonexistent_token
+                  debug_message: The token does not exist.
+                log_id: 641b6d813cd9a50001515017
+                object: error
+                type: parameter_validation_error
               schema:
                 $ref: '#/components/schemas/error'
           description: parameter validation error
         "401":
           content:
             application/vnd.conekta-v2.1.0+json:
+              example:
+                details:
+                - message: Please include your access key in your request.
+                  param: null
+                  code: conekta.errors.authentication.missing_key
+                log_id: 507f1f77bcf86cd799439011
+                object: error
+                type: authentication_error
               schema:
                 $ref: '#/components/schemas/error'
           description: authentication error
         "404":
           content:
             application/vnd.conekta-v2.1.0+json:
-              schema:
-                $ref: '#/components/schemas/error'
-            application/json; charset=utf-8:
+              example:
+                details:
+                - message: The resource was not found.
+                  param: null
+                  code: conekta.errors.resource_not_found.entity
+                  debug_message: The object Webhook "641b1d5662d7e00001eaa46b" could
+                    not be found.
+                log_id: 641b6c253cd9a50001514fae
+                object: error
+                type: resource_not_found_error
               schema:
                 $ref: '#/components/schemas/error'
           description: not found entity
         "500":
           content:
             application/vnd.conekta-v2.1.0+json:
+              example:
+                details:
+                - debug_message: There was a runtime error and Conekta engineers have
+                    been notified.
+                  message: There was a runtime error and Conekta engineers have been
+                    notified.
+                  param: null
+                  code: conekta.errors.api.system.general_failure
+                object: error
+                type: api_error
+                log_id: 641b6f2b3cd9a50001515098
               schema:
                 $ref: '#/components/schemas/error'
           description: internal server error
@@ -1905,33 +2670,76 @@ paths:
         "422":
           content:
             application/vnd.conekta-v2.1.0+json:
+              example:
+                details:
+                - message: The token does not exist.
+                  param: payment_method.token_id
+                  code: conekta.errors.parameter_validation.payment_method.token_id.nonexistent_token
+                  debug_message: The token does not exist.
+                log_id: 641b6d813cd9a50001515017
+                object: error
+                type: parameter_validation_error
               schema:
                 $ref: '#/components/schemas/error'
           description: parameter validation error
         "401":
           content:
             application/vnd.conekta-v2.1.0+json:
+              example:
+                details:
+                - message: Please include your access key in your request.
+                  param: null
+                  code: conekta.errors.authentication.missing_key
+                log_id: 507f1f77bcf86cd799439011
+                object: error
+                type: authentication_error
               schema:
                 $ref: '#/components/schemas/error'
           description: authentication error
         "402":
           content:
             application/vnd.conekta-v2.1.0+json:
+              example:
+                details:
+                - message: The card could not be processed.
+                  code: conekta.errors.processing.tokenization.used
+                  debug_message: The token has already been used.
+                log_id: 641b6d073cd9a50001515007
+                object: error
+                type: processing_error
               schema:
                 $ref: '#/components/schemas/error'
           description: payment required error
         "404":
           content:
             application/vnd.conekta-v2.1.0+json:
-              schema:
-                $ref: '#/components/schemas/error'
-            application/json; charset=utf-8:
+              example:
+                details:
+                - message: The resource was not found.
+                  param: null
+                  code: conekta.errors.resource_not_found.entity
+                  debug_message: The object Webhook "641b1d5662d7e00001eaa46b" could
+                    not be found.
+                log_id: 641b6c253cd9a50001514fae
+                object: error
+                type: resource_not_found_error
               schema:
                 $ref: '#/components/schemas/error'
           description: not found entity
         "500":
           content:
             application/vnd.conekta-v2.1.0+json:
+              example:
+                details:
+                - debug_message: There was a runtime error and Conekta engineers have
+                    been notified.
+                  message: There was a runtime error and Conekta engineers have been
+                    notified.
+                  param: null
+                  code: conekta.errors.api.system.general_failure
+                object: error
+                type: api_error
+                log_id: 641b6f2b3cd9a50001515098
               schema:
                 $ref: '#/components/schemas/error'
           description: internal server error
@@ -2003,33 +2811,76 @@ paths:
         "401":
           content:
             application/vnd.conekta-v2.1.0+json:
+              example:
+                details:
+                - message: Please include your access key in your request.
+                  param: null
+                  code: conekta.errors.authentication.missing_key
+                log_id: 507f1f77bcf86cd799439011
+                object: error
+                type: authentication_error
               schema:
                 $ref: '#/components/schemas/error'
           description: authentication error
         "402":
           content:
             application/vnd.conekta-v2.1.0+json:
+              example:
+                details:
+                - message: The card could not be processed.
+                  code: conekta.errors.processing.tokenization.used
+                  debug_message: The token has already been used.
+                log_id: 641b6d073cd9a50001515007
+                object: error
+                type: processing_error
               schema:
                 $ref: '#/components/schemas/error'
           description: payment required error
         "404":
           content:
             application/vnd.conekta-v2.1.0+json:
-              schema:
-                $ref: '#/components/schemas/error'
-            application/json; charset=utf-8:
+              example:
+                details:
+                - message: The resource was not found.
+                  param: null
+                  code: conekta.errors.resource_not_found.entity
+                  debug_message: The object Webhook "641b1d5662d7e00001eaa46b" could
+                    not be found.
+                log_id: 641b6c253cd9a50001514fae
+                object: error
+                type: resource_not_found_error
               schema:
                 $ref: '#/components/schemas/error'
           description: not found entity
         "422":
           content:
             application/vnd.conekta-v2.1.0+json:
+              example:
+                details:
+                - message: The token does not exist.
+                  param: payment_method.token_id
+                  code: conekta.errors.parameter_validation.payment_method.token_id.nonexistent_token
+                  debug_message: The token does not exist.
+                log_id: 641b6d813cd9a50001515017
+                object: error
+                type: parameter_validation_error
               schema:
                 $ref: '#/components/schemas/error'
           description: parameter validation error
         "500":
           content:
             application/vnd.conekta-v2.1.0+json:
+              example:
+                details:
+                - debug_message: There was a runtime error and Conekta engineers have
+                    been notified.
+                  message: There was a runtime error and Conekta engineers have been
+                    notified.
+                  param: null
+                  code: conekta.errors.api.system.general_failure
+                object: error
+                type: api_error
+                log_id: 641b6f2b3cd9a50001515098
               schema:
                 $ref: '#/components/schemas/error'
           description: internal server error
@@ -2102,33 +2953,76 @@ paths:
         "422":
           content:
             application/vnd.conekta-v2.1.0+json:
+              example:
+                details:
+                - message: The token does not exist.
+                  param: payment_method.token_id
+                  code: conekta.errors.parameter_validation.payment_method.token_id.nonexistent_token
+                  debug_message: The token does not exist.
+                log_id: 641b6d813cd9a50001515017
+                object: error
+                type: parameter_validation_error
               schema:
                 $ref: '#/components/schemas/error'
           description: parameter validation error
         "401":
           content:
             application/vnd.conekta-v2.1.0+json:
+              example:
+                details:
+                - message: Please include your access key in your request.
+                  param: null
+                  code: conekta.errors.authentication.missing_key
+                log_id: 507f1f77bcf86cd799439011
+                object: error
+                type: authentication_error
               schema:
                 $ref: '#/components/schemas/error'
           description: authentication error
         "402":
           content:
             application/vnd.conekta-v2.1.0+json:
+              example:
+                details:
+                - message: The card could not be processed.
+                  code: conekta.errors.processing.tokenization.used
+                  debug_message: The token has already been used.
+                log_id: 641b6d073cd9a50001515007
+                object: error
+                type: processing_error
               schema:
                 $ref: '#/components/schemas/error'
           description: payment required error
         "404":
           content:
             application/vnd.conekta-v2.1.0+json:
-              schema:
-                $ref: '#/components/schemas/error'
-            application/json; charset=utf-8:
+              example:
+                details:
+                - message: The resource was not found.
+                  param: null
+                  code: conekta.errors.resource_not_found.entity
+                  debug_message: The object Webhook "641b1d5662d7e00001eaa46b" could
+                    not be found.
+                log_id: 641b6c253cd9a50001514fae
+                object: error
+                type: resource_not_found_error
               schema:
                 $ref: '#/components/schemas/error'
           description: not found entity
         "500":
           content:
             application/vnd.conekta-v2.1.0+json:
+              example:
+                details:
+                - debug_message: There was a runtime error and Conekta engineers have
+                    been notified.
+                  message: There was a runtime error and Conekta engineers have been
+                    notified.
+                  param: null
+                  code: conekta.errors.api.system.general_failure
+                object: error
+                type: api_error
+                log_id: 641b6f2b3cd9a50001515098
               schema:
                 $ref: '#/components/schemas/error'
           description: internal server error
@@ -2200,33 +3094,76 @@ paths:
         "401":
           content:
             application/vnd.conekta-v2.1.0+json:
+              example:
+                details:
+                - message: Please include your access key in your request.
+                  param: null
+                  code: conekta.errors.authentication.missing_key
+                log_id: 507f1f77bcf86cd799439011
+                object: error
+                type: authentication_error
               schema:
                 $ref: '#/components/schemas/error'
           description: authentication error
         "402":
           content:
             application/vnd.conekta-v2.1.0+json:
+              example:
+                details:
+                - message: The card could not be processed.
+                  code: conekta.errors.processing.tokenization.used
+                  debug_message: The token has already been used.
+                log_id: 641b6d073cd9a50001515007
+                object: error
+                type: processing_error
               schema:
                 $ref: '#/components/schemas/error'
           description: payment required error
         "404":
           content:
             application/vnd.conekta-v2.1.0+json:
-              schema:
-                $ref: '#/components/schemas/error'
-            application/json; charset=utf-8:
+              example:
+                details:
+                - message: The resource was not found.
+                  param: null
+                  code: conekta.errors.resource_not_found.entity
+                  debug_message: The object Webhook "641b1d5662d7e00001eaa46b" could
+                    not be found.
+                log_id: 641b6c253cd9a50001514fae
+                object: error
+                type: resource_not_found_error
               schema:
                 $ref: '#/components/schemas/error'
           description: not found entity
         "422":
           content:
             application/vnd.conekta-v2.1.0+json:
+              example:
+                details:
+                - message: The token does not exist.
+                  param: payment_method.token_id
+                  code: conekta.errors.parameter_validation.payment_method.token_id.nonexistent_token
+                  debug_message: The token does not exist.
+                log_id: 641b6d813cd9a50001515017
+                object: error
+                type: parameter_validation_error
               schema:
                 $ref: '#/components/schemas/error'
           description: parameter validation error
         "500":
           content:
             application/vnd.conekta-v2.1.0+json:
+              example:
+                details:
+                - debug_message: There was a runtime error and Conekta engineers have
+                    been notified.
+                  message: There was a runtime error and Conekta engineers have been
+                    notified.
+                  param: null
+                  code: conekta.errors.api.system.general_failure
+                object: error
+                type: api_error
+                log_id: 641b6f2b3cd9a50001515098
               schema:
                 $ref: '#/components/schemas/error'
           description: internal server error
@@ -2317,18 +3254,46 @@ paths:
         "422":
           content:
             application/vnd.conekta-v2.1.0+json:
+              example:
+                details:
+                - message: The token does not exist.
+                  param: payment_method.token_id
+                  code: conekta.errors.parameter_validation.payment_method.token_id.nonexistent_token
+                  debug_message: The token does not exist.
+                log_id: 641b6d813cd9a50001515017
+                object: error
+                type: parameter_validation_error
               schema:
                 $ref: '#/components/schemas/error'
           description: parameter validation error
         "401":
           content:
             application/vnd.conekta-v2.1.0+json:
+              example:
+                details:
+                - message: Please include your access key in your request.
+                  param: null
+                  code: conekta.errors.authentication.missing_key
+                log_id: 507f1f77bcf86cd799439011
+                object: error
+                type: authentication_error
               schema:
                 $ref: '#/components/schemas/error'
           description: authentication error
         "500":
           content:
             application/vnd.conekta-v2.1.0+json:
+              example:
+                details:
+                - debug_message: There was a runtime error and Conekta engineers have
+                    been notified.
+                  message: There was a runtime error and Conekta engineers have been
+                    notified.
+                  param: null
+                  code: conekta.errors.api.system.general_failure
+                object: error
+                type: api_error
+                log_id: 641b6f2b3cd9a50001515098
               schema:
                 $ref: '#/components/schemas/error'
           description: internal server error
@@ -2397,21 +3362,50 @@ paths:
               schema:
                 example: conekta-v2.1.0; format=application/json
                 type: string
-        "422":
-          content:
-            application/vnd.conekta-v2.1.0+json:
-              schema:
-                $ref: '#/components/schemas/error'
-          description: parameter validation error
         "401":
           content:
             application/vnd.conekta-v2.1.0+json:
+              example:
+                details:
+                - message: Please include your access key in your request.
+                  param: null
+                  code: conekta.errors.authentication.missing_key
+                log_id: 507f1f77bcf86cd799439011
+                object: error
+                type: authentication_error
               schema:
                 $ref: '#/components/schemas/error'
           description: authentication error
+        "404":
+          content:
+            application/vnd.conekta-v2.1.0+json:
+              example:
+                details:
+                - message: The resource was not found.
+                  param: null
+                  code: conekta.errors.resource_not_found.entity
+                  debug_message: The object Webhook "641b1d5662d7e00001eaa46b" could
+                    not be found.
+                log_id: 641b6c253cd9a50001514fae
+                object: error
+                type: resource_not_found_error
+              schema:
+                $ref: '#/components/schemas/error'
+          description: not found entity
         "500":
           content:
             application/vnd.conekta-v2.1.0+json:
+              example:
+                details:
+                - debug_message: There was a runtime error and Conekta engineers have
+                    been notified.
+                  message: There was a runtime error and Conekta engineers have been
+                    notified.
+                  param: null
+                  code: conekta.errors.api.system.general_failure
+                object: error
+                type: api_error
+                log_id: 641b6f2b3cd9a50001515098
               schema:
                 $ref: '#/components/schemas/error'
           description: internal server error
@@ -2502,18 +3496,46 @@ paths:
         "422":
           content:
             application/vnd.conekta-v2.1.0+json:
+              example:
+                details:
+                - message: The token does not exist.
+                  param: payment_method.token_id
+                  code: conekta.errors.parameter_validation.payment_method.token_id.nonexistent_token
+                  debug_message: The token does not exist.
+                log_id: 641b6d813cd9a50001515017
+                object: error
+                type: parameter_validation_error
               schema:
                 $ref: '#/components/schemas/error'
           description: parameter validation error
         "401":
           content:
             application/vnd.conekta-v2.1.0+json:
+              example:
+                details:
+                - message: Please include your access key in your request.
+                  param: null
+                  code: conekta.errors.authentication.missing_key
+                log_id: 507f1f77bcf86cd799439011
+                object: error
+                type: authentication_error
               schema:
                 $ref: '#/components/schemas/error'
           description: authentication error
         "500":
           content:
             application/vnd.conekta-v2.1.0+json:
+              example:
+                details:
+                - debug_message: There was a runtime error and Conekta engineers have
+                    been notified.
+                  message: There was a runtime error and Conekta engineers have been
+                    notified.
+                  param: null
+                  code: conekta.errors.api.system.general_failure
+                object: error
+                type: api_error
+                log_id: 641b6f2b3cd9a50001515098
               schema:
                 $ref: '#/components/schemas/error'
           description: internal server error
@@ -2560,18 +3582,62 @@ paths:
         "422":
           content:
             application/vnd.conekta-v2.1.0+json:
+              example:
+                details:
+                - message: The token does not exist.
+                  param: payment_method.token_id
+                  code: conekta.errors.parameter_validation.payment_method.token_id.nonexistent_token
+                  debug_message: The token does not exist.
+                log_id: 641b6d813cd9a50001515017
+                object: error
+                type: parameter_validation_error
               schema:
                 $ref: '#/components/schemas/error'
           description: parameter validation error
         "401":
           content:
             application/vnd.conekta-v2.1.0+json:
+              example:
+                details:
+                - message: Please include your access key in your request.
+                  param: null
+                  code: conekta.errors.authentication.missing_key
+                log_id: 507f1f77bcf86cd799439011
+                object: error
+                type: authentication_error
               schema:
                 $ref: '#/components/schemas/error'
           description: authentication error
+        "404":
+          content:
+            application/vnd.conekta-v2.1.0+json:
+              example:
+                details:
+                - message: The resource was not found.
+                  param: null
+                  code: conekta.errors.resource_not_found.entity
+                  debug_message: The object Webhook "641b1d5662d7e00001eaa46b" could
+                    not be found.
+                log_id: 641b6c253cd9a50001514fae
+                object: error
+                type: resource_not_found_error
+              schema:
+                $ref: '#/components/schemas/error'
+          description: not found entity
         "500":
           content:
             application/vnd.conekta-v2.1.0+json:
+              example:
+                details:
+                - debug_message: There was a runtime error and Conekta engineers have
+                    been notified.
+                  message: There was a runtime error and Conekta engineers have been
+                    notified.
+                  param: null
+                  code: conekta.errors.api.system.general_failure
+                object: error
+                type: api_error
+                log_id: 641b6f2b3cd9a50001515098
               schema:
                 $ref: '#/components/schemas/error'
           description: internal server error
@@ -2638,12 +3704,31 @@ paths:
         "401":
           content:
             application/vnd.conekta-v2.1.0+json:
+              example:
+                details:
+                - message: Please include your access key in your request.
+                  param: null
+                  code: conekta.errors.authentication.missing_key
+                log_id: 507f1f77bcf86cd799439011
+                object: error
+                type: authentication_error
               schema:
                 $ref: '#/components/schemas/error'
           description: authentication error
         "500":
           content:
             application/vnd.conekta-v2.1.0+json:
+              example:
+                details:
+                - debug_message: There was a runtime error and Conekta engineers have
+                    been notified.
+                  message: There was a runtime error and Conekta engineers have been
+                    notified.
+                  param: null
+                  code: conekta.errors.api.system.general_failure
+                object: error
+                type: api_error
+                log_id: 641b6f2b3cd9a50001515098
               schema:
                 $ref: '#/components/schemas/error'
           description: internal server error
@@ -2692,24 +3777,60 @@ paths:
         "422":
           content:
             application/vnd.conekta-v2.1.0+json:
+              example:
+                details:
+                - message: The token does not exist.
+                  param: payment_method.token_id
+                  code: conekta.errors.parameter_validation.payment_method.token_id.nonexistent_token
+                  debug_message: The token does not exist.
+                log_id: 641b6d813cd9a50001515017
+                object: error
+                type: parameter_validation_error
               schema:
                 $ref: '#/components/schemas/error'
           description: parameter validation error
         "401":
           content:
             application/vnd.conekta-v2.1.0+json:
+              example:
+                details:
+                - message: Please include your access key in your request.
+                  param: null
+                  code: conekta.errors.authentication.missing_key
+                log_id: 507f1f77bcf86cd799439011
+                object: error
+                type: authentication_error
               schema:
                 $ref: '#/components/schemas/error'
           description: authentication error
         "402":
           content:
             application/vnd.conekta-v2.1.0+json:
+              example:
+                details:
+                - message: The card could not be processed.
+                  code: conekta.errors.processing.tokenization.used
+                  debug_message: The token has already been used.
+                log_id: 641b6d073cd9a50001515007
+                object: error
+                type: processing_error
               schema:
                 $ref: '#/components/schemas/error'
           description: payment required error
         "500":
           content:
             application/vnd.conekta-v2.1.0+json:
+              example:
+                details:
+                - debug_message: There was a runtime error and Conekta engineers have
+                    been notified.
+                  message: There was a runtime error and Conekta engineers have been
+                    notified.
+                  param: null
+                  code: conekta.errors.api.system.general_failure
+                object: error
+                type: api_error
+                log_id: 641b6f2b3cd9a50001515098
               schema:
                 $ref: '#/components/schemas/error'
           description: internal server error
@@ -2756,21 +3877,47 @@ paths:
         "401":
           content:
             application/vnd.conekta-v2.1.0+json:
+              example:
+                details:
+                - message: Please include your access key in your request.
+                  param: null
+                  code: conekta.errors.authentication.missing_key
+                log_id: 507f1f77bcf86cd799439011
+                object: error
+                type: authentication_error
               schema:
                 $ref: '#/components/schemas/error'
           description: authentication error
         "404":
           content:
             application/vnd.conekta-v2.1.0+json:
-              schema:
-                $ref: '#/components/schemas/error'
-            application/json; charset=utf-8:
+              example:
+                details:
+                - message: The resource was not found.
+                  param: null
+                  code: conekta.errors.resource_not_found.entity
+                  debug_message: The object Webhook "641b1d5662d7e00001eaa46b" could
+                    not be found.
+                log_id: 641b6c253cd9a50001514fae
+                object: error
+                type: resource_not_found_error
               schema:
                 $ref: '#/components/schemas/error'
           description: not found entity
         "500":
           content:
             application/vnd.conekta-v2.1.0+json:
+              example:
+                details:
+                - debug_message: There was a runtime error and Conekta engineers have
+                    been notified.
+                  message: There was a runtime error and Conekta engineers have been
+                    notified.
+                  param: null
+                  code: conekta.errors.api.system.general_failure
+                object: error
+                type: api_error
+                log_id: 641b6f2b3cd9a50001515098
               schema:
                 $ref: '#/components/schemas/error'
           description: internal server error
@@ -2818,27 +3965,62 @@ paths:
         "401":
           content:
             application/vnd.conekta-v2.1.0+json:
+              example:
+                details:
+                - message: Please include your access key in your request.
+                  param: null
+                  code: conekta.errors.authentication.missing_key
+                log_id: 507f1f77bcf86cd799439011
+                object: error
+                type: authentication_error
               schema:
                 $ref: '#/components/schemas/error'
           description: authentication error
         "404":
           content:
             application/vnd.conekta-v2.1.0+json:
-              schema:
-                $ref: '#/components/schemas/error'
-            application/json; charset=utf-8:
+              example:
+                details:
+                - message: The resource was not found.
+                  param: null
+                  code: conekta.errors.resource_not_found.entity
+                  debug_message: The object Webhook "641b1d5662d7e00001eaa46b" could
+                    not be found.
+                log_id: 641b6c253cd9a50001514fae
+                object: error
+                type: resource_not_found_error
               schema:
                 $ref: '#/components/schemas/error'
           description: not found entity
         "422":
           content:
             application/vnd.conekta-v2.1.0+json:
+              example:
+                details:
+                - message: The token does not exist.
+                  param: payment_method.token_id
+                  code: conekta.errors.parameter_validation.payment_method.token_id.nonexistent_token
+                  debug_message: The token does not exist.
+                log_id: 641b6d813cd9a50001515017
+                object: error
+                type: parameter_validation_error
               schema:
                 $ref: '#/components/schemas/error'
           description: parameter validation error
         "500":
           content:
             application/vnd.conekta-v2.1.0+json:
+              example:
+                details:
+                - debug_message: There was a runtime error and Conekta engineers have
+                    been notified.
+                  message: There was a runtime error and Conekta engineers have been
+                    notified.
+                  param: null
+                  code: conekta.errors.api.system.general_failure
+                object: error
+                type: api_error
+                log_id: 641b6f2b3cd9a50001515098
               schema:
                 $ref: '#/components/schemas/error'
           description: internal server error
@@ -2885,30 +4067,64 @@ paths:
         "401":
           content:
             application/vnd.conekta-v2.1.0+json:
+              example:
+                details:
+                - message: Please include your access key in your request.
+                  param: null
+                  code: conekta.errors.authentication.missing_key
+                log_id: 507f1f77bcf86cd799439011
+                object: error
+                type: authentication_error
               schema:
                 $ref: '#/components/schemas/error'
           description: authentication error
         "404":
           content:
             application/vnd.conekta-v2.1.0+json:
-              schema:
-                $ref: '#/components/schemas/error'
-            application/json; charset=utf-8:
+              example:
+                details:
+                - message: The resource was not found.
+                  param: null
+                  code: conekta.errors.resource_not_found.entity
+                  debug_message: The object Webhook "641b1d5662d7e00001eaa46b" could
+                    not be found.
+                log_id: 641b6c253cd9a50001514fae
+                object: error
+                type: resource_not_found_error
               schema:
                 $ref: '#/components/schemas/error'
           description: not found entity
         "428":
           content:
             application/vnd.conekta-v2.1.0+json:
-              schema:
-                $ref: '#/components/schemas/error'
-            application/json; charset=utf-8:
+              example:
+                details:
+                - debug_message: The order cannot be modified because it has already
+                    a charge which is pending payment.
+                  message: The order cannot be modified because it has already a charge
+                    which is pending payment.
+                  param: null
+                  code: conekta.errors.precondition_required.combo.order.cannot_be_updated_because_has_charge
+                log_id: 641b6e233cd9a50001515039
+                object: error
+                type: precondition_required_error
               schema:
                 $ref: '#/components/schemas/error'
           description: Precondition Required
         "500":
           content:
             application/vnd.conekta-v2.1.0+json:
+              example:
+                details:
+                - debug_message: There was a runtime error and Conekta engineers have
+                    been notified.
+                  message: There was a runtime error and Conekta engineers have been
+                    notified.
+                  param: null
+                  code: conekta.errors.api.system.general_failure
+                object: error
+                type: api_error
+                log_id: 641b6f2b3cd9a50001515098
               schema:
                 $ref: '#/components/schemas/error'
           description: internal server error
@@ -2957,21 +4173,64 @@ paths:
         "401":
           content:
             application/vnd.conekta-v2.1.0+json:
+              example:
+                details:
+                - message: Please include your access key in your request.
+                  param: null
+                  code: conekta.errors.authentication.missing_key
+                log_id: 507f1f77bcf86cd799439011
+                object: error
+                type: authentication_error
               schema:
                 $ref: '#/components/schemas/error'
           description: authentication error
         "404":
           content:
             application/vnd.conekta-v2.1.0+json:
-              schema:
-                $ref: '#/components/schemas/error'
-            application/json; charset=utf-8:
+              example:
+                details:
+                - message: The resource was not found.
+                  param: null
+                  code: conekta.errors.resource_not_found.entity
+                  debug_message: The object Webhook "641b1d5662d7e00001eaa46b" could
+                    not be found.
+                log_id: 641b6c253cd9a50001514fae
+                object: error
+                type: resource_not_found_error
               schema:
                 $ref: '#/components/schemas/error'
           description: not found entity
+        "428":
+          content:
+            application/vnd.conekta-v2.1.0+json:
+              example:
+                details:
+                - debug_message: The order cannot be modified because it has already
+                    a charge which is pending payment.
+                  message: The order cannot be modified because it has already a charge
+                    which is pending payment.
+                  param: null
+                  code: conekta.errors.precondition_required.combo.order.cannot_be_updated_because_has_charge
+                log_id: 641b6e233cd9a50001515039
+                object: error
+                type: precondition_required_error
+              schema:
+                $ref: '#/components/schemas/error'
+          description: Precondition Required
         "500":
           content:
             application/vnd.conekta-v2.1.0+json:
+              example:
+                details:
+                - debug_message: There was a runtime error and Conekta engineers have
+                    been notified.
+                  message: There was a runtime error and Conekta engineers have been
+                    notified.
+                  param: null
+                  code: conekta.errors.api.system.general_failure
+                object: error
+                type: api_error
+                log_id: 641b6f2b3cd9a50001515098
               schema:
                 $ref: '#/components/schemas/error'
           description: internal server error
@@ -3020,21 +4279,47 @@ paths:
         "401":
           content:
             application/vnd.conekta-v2.1.0+json:
+              example:
+                details:
+                - message: Please include your access key in your request.
+                  param: null
+                  code: conekta.errors.authentication.missing_key
+                log_id: 507f1f77bcf86cd799439011
+                object: error
+                type: authentication_error
               schema:
                 $ref: '#/components/schemas/error'
           description: authentication error
         "404":
           content:
             application/vnd.conekta-v2.1.0+json:
-              schema:
-                $ref: '#/components/schemas/error'
-            application/json; charset=utf-8:
+              example:
+                details:
+                - message: The resource was not found.
+                  param: null
+                  code: conekta.errors.resource_not_found.entity
+                  debug_message: The object Webhook "641b1d5662d7e00001eaa46b" could
+                    not be found.
+                log_id: 641b6c253cd9a50001514fae
+                object: error
+                type: resource_not_found_error
               schema:
                 $ref: '#/components/schemas/error'
           description: not found entity
         "500":
           content:
             application/vnd.conekta-v2.1.0+json:
+              example:
+                details:
+                - debug_message: There was a runtime error and Conekta engineers have
+                    been notified.
+                  message: There was a runtime error and Conekta engineers have been
+                    notified.
+                  param: null
+                  code: conekta.errors.api.system.general_failure
+                object: error
+                type: api_error
+                log_id: 641b6f2b3cd9a50001515098
               schema:
                 $ref: '#/components/schemas/error'
           description: internal server error
@@ -3090,27 +4375,62 @@ paths:
         "401":
           content:
             application/vnd.conekta-v2.1.0+json:
+              example:
+                details:
+                - message: Please include your access key in your request.
+                  param: null
+                  code: conekta.errors.authentication.missing_key
+                log_id: 507f1f77bcf86cd799439011
+                object: error
+                type: authentication_error
               schema:
                 $ref: '#/components/schemas/error'
           description: authentication error
         "404":
           content:
             application/vnd.conekta-v2.1.0+json:
-              schema:
-                $ref: '#/components/schemas/error'
-            application/json; charset=utf-8:
+              example:
+                details:
+                - message: The resource was not found.
+                  param: null
+                  code: conekta.errors.resource_not_found.entity
+                  debug_message: The object Webhook "641b1d5662d7e00001eaa46b" could
+                    not be found.
+                log_id: 641b6c253cd9a50001514fae
+                object: error
+                type: resource_not_found_error
               schema:
                 $ref: '#/components/schemas/error'
           description: not found entity
         "422":
           content:
             application/vnd.conekta-v2.1.0+json:
+              example:
+                details:
+                - message: The token does not exist.
+                  param: payment_method.token_id
+                  code: conekta.errors.parameter_validation.payment_method.token_id.nonexistent_token
+                  debug_message: The token does not exist.
+                log_id: 641b6d813cd9a50001515017
+                object: error
+                type: parameter_validation_error
               schema:
                 $ref: '#/components/schemas/error'
           description: parameter validation error
         "500":
           content:
             application/vnd.conekta-v2.1.0+json:
+              example:
+                details:
+                - debug_message: There was a runtime error and Conekta engineers have
+                    been notified.
+                  message: There was a runtime error and Conekta engineers have been
+                    notified.
+                  param: null
+                  code: conekta.errors.api.system.general_failure
+                object: error
+                type: api_error
+                log_id: 641b6f2b3cd9a50001515098
               schema:
                 $ref: '#/components/schemas/error'
           description: internal server error
@@ -3159,21 +4479,47 @@ paths:
         "401":
           content:
             application/vnd.conekta-v2.1.0+json:
+              example:
+                details:
+                - message: Please include your access key in your request.
+                  param: null
+                  code: conekta.errors.authentication.missing_key
+                log_id: 507f1f77bcf86cd799439011
+                object: error
+                type: authentication_error
               schema:
                 $ref: '#/components/schemas/error'
           description: authentication error
         "404":
           content:
             application/vnd.conekta-v2.1.0+json:
-              schema:
-                $ref: '#/components/schemas/error'
-            application/json; charset=utf-8:
+              example:
+                details:
+                - message: The resource was not found.
+                  param: null
+                  code: conekta.errors.resource_not_found.entity
+                  debug_message: The object Webhook "641b1d5662d7e00001eaa46b" could
+                    not be found.
+                log_id: 641b6c253cd9a50001514fae
+                object: error
+                type: resource_not_found_error
               schema:
                 $ref: '#/components/schemas/error'
           description: not found entity
         "500":
           content:
             application/vnd.conekta-v2.1.0+json:
+              example:
+                details:
+                - debug_message: There was a runtime error and Conekta engineers have
+                    been notified.
+                  message: There was a runtime error and Conekta engineers have been
+                    notified.
+                  param: null
+                  code: conekta.errors.api.system.general_failure
+                object: error
+                type: api_error
+                log_id: 641b6f2b3cd9a50001515098
               schema:
                 $ref: '#/components/schemas/error'
           description: internal server error
@@ -3229,27 +4575,62 @@ paths:
         "401":
           content:
             application/vnd.conekta-v2.1.0+json:
+              example:
+                details:
+                - message: Please include your access key in your request.
+                  param: null
+                  code: conekta.errors.authentication.missing_key
+                log_id: 507f1f77bcf86cd799439011
+                object: error
+                type: authentication_error
               schema:
                 $ref: '#/components/schemas/error'
           description: authentication error
         "422":
           content:
             application/vnd.conekta-v2.1.0+json:
+              example:
+                details:
+                - message: The token does not exist.
+                  param: payment_method.token_id
+                  code: conekta.errors.parameter_validation.payment_method.token_id.nonexistent_token
+                  debug_message: The token does not exist.
+                log_id: 641b6d813cd9a50001515017
+                object: error
+                type: parameter_validation_error
               schema:
                 $ref: '#/components/schemas/error'
           description: parameter validation error
         "404":
           content:
             application/vnd.conekta-v2.1.0+json:
-              schema:
-                $ref: '#/components/schemas/error'
-            application/json; charset=utf-8:
+              example:
+                details:
+                - message: The resource was not found.
+                  param: null
+                  code: conekta.errors.resource_not_found.entity
+                  debug_message: The object Webhook "641b1d5662d7e00001eaa46b" could
+                    not be found.
+                log_id: 641b6c253cd9a50001514fae
+                object: error
+                type: resource_not_found_error
               schema:
                 $ref: '#/components/schemas/error'
           description: not found entity
         "500":
           content:
             application/vnd.conekta-v2.1.0+json:
+              example:
+                details:
+                - debug_message: There was a runtime error and Conekta engineers have
+                    been notified.
+                  message: There was a runtime error and Conekta engineers have been
+                    notified.
+                  param: null
+                  code: conekta.errors.api.system.general_failure
+                object: error
+                type: api_error
+                log_id: 641b6f2b3cd9a50001515098
               schema:
                 $ref: '#/components/schemas/error'
           description: internal server error
@@ -3298,27 +4679,62 @@ paths:
         "401":
           content:
             application/vnd.conekta-v2.1.0+json:
+              example:
+                details:
+                - message: Please include your access key in your request.
+                  param: null
+                  code: conekta.errors.authentication.missing_key
+                log_id: 507f1f77bcf86cd799439011
+                object: error
+                type: authentication_error
               schema:
                 $ref: '#/components/schemas/error'
           description: authentication error
         "404":
           content:
             application/vnd.conekta-v2.1.0+json:
-              schema:
-                $ref: '#/components/schemas/error'
-            application/json; charset=utf-8:
+              example:
+                details:
+                - message: The resource was not found.
+                  param: null
+                  code: conekta.errors.resource_not_found.entity
+                  debug_message: The object Webhook "641b1d5662d7e00001eaa46b" could
+                    not be found.
+                log_id: 641b6c253cd9a50001514fae
+                object: error
+                type: resource_not_found_error
               schema:
                 $ref: '#/components/schemas/error'
           description: not found entity
         "422":
           content:
             application/vnd.conekta-v2.1.0+json:
+              example:
+                details:
+                - message: The token does not exist.
+                  param: payment_method.token_id
+                  code: conekta.errors.parameter_validation.payment_method.token_id.nonexistent_token
+                  debug_message: The token does not exist.
+                log_id: 641b6d813cd9a50001515017
+                object: error
+                type: parameter_validation_error
               schema:
                 $ref: '#/components/schemas/error'
           description: parameter validation error
         "500":
           content:
             application/vnd.conekta-v2.1.0+json:
+              example:
+                details:
+                - debug_message: There was a runtime error and Conekta engineers have
+                    been notified.
+                  message: There was a runtime error and Conekta engineers have been
+                    notified.
+                  param: null
+                  code: conekta.errors.api.system.general_failure
+                object: error
+                type: api_error
+                log_id: 641b6f2b3cd9a50001515098
               schema:
                 $ref: '#/components/schemas/error'
           description: internal server error
@@ -3368,21 +4784,47 @@ paths:
         "401":
           content:
             application/vnd.conekta-v2.1.0+json:
+              example:
+                details:
+                - message: Please include your access key in your request.
+                  param: null
+                  code: conekta.errors.authentication.missing_key
+                log_id: 507f1f77bcf86cd799439011
+                object: error
+                type: authentication_error
               schema:
                 $ref: '#/components/schemas/error'
           description: authentication error
         "404":
           content:
             application/vnd.conekta-v2.1.0+json:
-              schema:
-                $ref: '#/components/schemas/error'
-            application/json; charset=utf-8:
+              example:
+                details:
+                - message: The resource was not found.
+                  param: null
+                  code: conekta.errors.resource_not_found.entity
+                  debug_message: The object Webhook "641b1d5662d7e00001eaa46b" could
+                    not be found.
+                log_id: 641b6c253cd9a50001514fae
+                object: error
+                type: resource_not_found_error
               schema:
                 $ref: '#/components/schemas/error'
           description: not found entity
         "500":
           content:
             application/vnd.conekta-v2.1.0+json:
+              example:
+                details:
+                - debug_message: There was a runtime error and Conekta engineers have
+                    been notified.
+                  message: There was a runtime error and Conekta engineers have been
+                    notified.
+                  param: null
+                  code: conekta.errors.api.system.general_failure
+                object: error
+                type: api_error
+                log_id: 641b6f2b3cd9a50001515098
               schema:
                 $ref: '#/components/schemas/error'
           description: internal server error
@@ -3438,27 +4880,62 @@ paths:
         "401":
           content:
             application/vnd.conekta-v2.1.0+json:
+              example:
+                details:
+                - message: Please include your access key in your request.
+                  param: null
+                  code: conekta.errors.authentication.missing_key
+                log_id: 507f1f77bcf86cd799439011
+                object: error
+                type: authentication_error
               schema:
                 $ref: '#/components/schemas/error'
           description: authentication error
         "404":
           content:
             application/vnd.conekta-v2.1.0+json:
-              schema:
-                $ref: '#/components/schemas/error'
-            application/json; charset=utf-8:
+              example:
+                details:
+                - message: The resource was not found.
+                  param: null
+                  code: conekta.errors.resource_not_found.entity
+                  debug_message: The object Webhook "641b1d5662d7e00001eaa46b" could
+                    not be found.
+                log_id: 641b6c253cd9a50001514fae
+                object: error
+                type: resource_not_found_error
               schema:
                 $ref: '#/components/schemas/error'
           description: not found entity
         "422":
           content:
             application/vnd.conekta-v2.1.0+json:
+              example:
+                details:
+                - message: The token does not exist.
+                  param: payment_method.token_id
+                  code: conekta.errors.parameter_validation.payment_method.token_id.nonexistent_token
+                  debug_message: The token does not exist.
+                log_id: 641b6d813cd9a50001515017
+                object: error
+                type: parameter_validation_error
               schema:
                 $ref: '#/components/schemas/error'
           description: parameter validation error
         "500":
           content:
             application/vnd.conekta-v2.1.0+json:
+              example:
+                details:
+                - debug_message: There was a runtime error and Conekta engineers have
+                    been notified.
+                  message: There was a runtime error and Conekta engineers have been
+                    notified.
+                  param: null
+                  code: conekta.errors.api.system.general_failure
+                object: error
+                type: api_error
+                log_id: 641b6f2b3cd9a50001515098
               schema:
                 $ref: '#/components/schemas/error'
           description: internal server error
@@ -3507,27 +4984,62 @@ paths:
         "401":
           content:
             application/vnd.conekta-v2.1.0+json:
+              example:
+                details:
+                - message: Please include your access key in your request.
+                  param: null
+                  code: conekta.errors.authentication.missing_key
+                log_id: 507f1f77bcf86cd799439011
+                object: error
+                type: authentication_error
               schema:
                 $ref: '#/components/schemas/error'
           description: authentication error
         "422":
           content:
             application/vnd.conekta-v2.1.0+json:
+              example:
+                details:
+                - message: The token does not exist.
+                  param: payment_method.token_id
+                  code: conekta.errors.parameter_validation.payment_method.token_id.nonexistent_token
+                  debug_message: The token does not exist.
+                log_id: 641b6d813cd9a50001515017
+                object: error
+                type: parameter_validation_error
               schema:
                 $ref: '#/components/schemas/error'
           description: parameter validation error
         "404":
           content:
             application/vnd.conekta-v2.1.0+json:
-              schema:
-                $ref: '#/components/schemas/error'
-            application/json; charset=utf-8:
+              example:
+                details:
+                - message: The resource was not found.
+                  param: null
+                  code: conekta.errors.resource_not_found.entity
+                  debug_message: The object Webhook "641b1d5662d7e00001eaa46b" could
+                    not be found.
+                log_id: 641b6c253cd9a50001514fae
+                object: error
+                type: resource_not_found_error
               schema:
                 $ref: '#/components/schemas/error'
           description: not found entity
         "500":
           content:
             application/vnd.conekta-v2.1.0+json:
+              example:
+                details:
+                - debug_message: There was a runtime error and Conekta engineers have
+                    been notified.
+                  message: There was a runtime error and Conekta engineers have been
+                    notified.
+                  param: null
+                  code: conekta.errors.api.system.general_failure
+                object: error
+                type: api_error
+                log_id: 641b6f2b3cd9a50001515098
               schema:
                 $ref: '#/components/schemas/error'
           description: internal server error
@@ -3583,27 +5095,62 @@ paths:
         "401":
           content:
             application/vnd.conekta-v2.1.0+json:
+              example:
+                details:
+                - message: Please include your access key in your request.
+                  param: null
+                  code: conekta.errors.authentication.missing_key
+                log_id: 507f1f77bcf86cd799439011
+                object: error
+                type: authentication_error
               schema:
                 $ref: '#/components/schemas/error'
           description: authentication error
         "422":
           content:
             application/vnd.conekta-v2.1.0+json:
+              example:
+                details:
+                - message: The token does not exist.
+                  param: payment_method.token_id
+                  code: conekta.errors.parameter_validation.payment_method.token_id.nonexistent_token
+                  debug_message: The token does not exist.
+                log_id: 641b6d813cd9a50001515017
+                object: error
+                type: parameter_validation_error
               schema:
                 $ref: '#/components/schemas/error'
           description: parameter validation error
         "404":
           content:
             application/vnd.conekta-v2.1.0+json:
-              schema:
-                $ref: '#/components/schemas/error'
-            application/json; charset=utf-8:
+              example:
+                details:
+                - message: The resource was not found.
+                  param: null
+                  code: conekta.errors.resource_not_found.entity
+                  debug_message: The object Webhook "641b1d5662d7e00001eaa46b" could
+                    not be found.
+                log_id: 641b6c253cd9a50001514fae
+                object: error
+                type: resource_not_found_error
               schema:
                 $ref: '#/components/schemas/error'
           description: not found entity
         "500":
           content:
             application/vnd.conekta-v2.1.0+json:
+              example:
+                details:
+                - debug_message: There was a runtime error and Conekta engineers have
+                    been notified.
+                  message: There was a runtime error and Conekta engineers have been
+                    notified.
+                  param: null
+                  code: conekta.errors.api.system.general_failure
+                object: error
+                type: api_error
+                log_id: 641b6f2b3cd9a50001515098
               schema:
                 $ref: '#/components/schemas/error'
           description: internal server error
@@ -3694,18 +5241,46 @@ paths:
         "422":
           content:
             application/vnd.conekta-v2.1.0+json:
+              example:
+                details:
+                - message: The token does not exist.
+                  param: payment_method.token_id
+                  code: conekta.errors.parameter_validation.payment_method.token_id.nonexistent_token
+                  debug_message: The token does not exist.
+                log_id: 641b6d813cd9a50001515017
+                object: error
+                type: parameter_validation_error
               schema:
                 $ref: '#/components/schemas/error'
           description: parameter validation error
         "401":
           content:
             application/vnd.conekta-v2.1.0+json:
+              example:
+                details:
+                - message: Please include your access key in your request.
+                  param: null
+                  code: conekta.errors.authentication.missing_key
+                log_id: 507f1f77bcf86cd799439011
+                object: error
+                type: authentication_error
               schema:
                 $ref: '#/components/schemas/error'
           description: authentication error
         "500":
           content:
             application/vnd.conekta-v2.1.0+json:
+              example:
+                details:
+                - debug_message: There was a runtime error and Conekta engineers have
+                    been notified.
+                  message: There was a runtime error and Conekta engineers have been
+                    notified.
+                  param: null
+                  code: conekta.errors.api.system.general_failure
+                object: error
+                type: api_error
+                log_id: 641b6f2b3cd9a50001515098
               schema:
                 $ref: '#/components/schemas/error'
           description: internal server error
@@ -3771,18 +5346,46 @@ paths:
         "422":
           content:
             application/vnd.conekta-v2.1.0+json:
+              example:
+                details:
+                - message: The token does not exist.
+                  param: payment_method.token_id
+                  code: conekta.errors.parameter_validation.payment_method.token_id.nonexistent_token
+                  debug_message: The token does not exist.
+                log_id: 641b6d813cd9a50001515017
+                object: error
+                type: parameter_validation_error
               schema:
                 $ref: '#/components/schemas/error'
           description: parameter validation error
         "401":
           content:
             application/vnd.conekta-v2.1.0+json:
+              example:
+                details:
+                - message: Please include your access key in your request.
+                  param: null
+                  code: conekta.errors.authentication.missing_key
+                log_id: 507f1f77bcf86cd799439011
+                object: error
+                type: authentication_error
               schema:
                 $ref: '#/components/schemas/error'
           description: authentication error
         "500":
           content:
             application/vnd.conekta-v2.1.0+json:
+              example:
+                details:
+                - debug_message: There was a runtime error and Conekta engineers have
+                    been notified.
+                  message: There was a runtime error and Conekta engineers have been
+                    notified.
+                  param: null
+                  code: conekta.errors.api.system.general_failure
+                object: error
+                type: api_error
+                log_id: 641b6f2b3cd9a50001515098
               schema:
                 $ref: '#/components/schemas/error'
           description: internal server error
@@ -3854,27 +5457,62 @@ paths:
         "422":
           content:
             application/vnd.conekta-v2.1.0+json:
+              example:
+                details:
+                - message: The token does not exist.
+                  param: payment_method.token_id
+                  code: conekta.errors.parameter_validation.payment_method.token_id.nonexistent_token
+                  debug_message: The token does not exist.
+                log_id: 641b6d813cd9a50001515017
+                object: error
+                type: parameter_validation_error
               schema:
                 $ref: '#/components/schemas/error'
           description: parameter validation error
         "401":
           content:
             application/vnd.conekta-v2.1.0+json:
+              example:
+                details:
+                - message: Please include your access key in your request.
+                  param: null
+                  code: conekta.errors.authentication.missing_key
+                log_id: 507f1f77bcf86cd799439011
+                object: error
+                type: authentication_error
               schema:
                 $ref: '#/components/schemas/error'
           description: authentication error
         "404":
           content:
             application/vnd.conekta-v2.1.0+json:
-              schema:
-                $ref: '#/components/schemas/error'
-            application/json; charset=utf-8:
+              example:
+                details:
+                - message: The resource was not found.
+                  param: null
+                  code: conekta.errors.resource_not_found.entity
+                  debug_message: The object Webhook "641b1d5662d7e00001eaa46b" could
+                    not be found.
+                log_id: 641b6c253cd9a50001514fae
+                object: error
+                type: resource_not_found_error
               schema:
                 $ref: '#/components/schemas/error'
           description: not found entity
         "500":
           content:
             application/vnd.conekta-v2.1.0+json:
+              example:
+                details:
+                - debug_message: There was a runtime error and Conekta engineers have
+                    been notified.
+                  message: There was a runtime error and Conekta engineers have been
+                    notified.
+                  param: null
+                  code: conekta.errors.api.system.general_failure
+                object: error
+                type: api_error
+                log_id: 641b6f2b3cd9a50001515098
               schema:
                 $ref: '#/components/schemas/error'
           description: internal server error
@@ -3945,27 +5583,62 @@ paths:
         "422":
           content:
             application/vnd.conekta-v2.1.0+json:
+              example:
+                details:
+                - message: The token does not exist.
+                  param: payment_method.token_id
+                  code: conekta.errors.parameter_validation.payment_method.token_id.nonexistent_token
+                  debug_message: The token does not exist.
+                log_id: 641b6d813cd9a50001515017
+                object: error
+                type: parameter_validation_error
               schema:
                 $ref: '#/components/schemas/error'
           description: parameter validation error
         "401":
           content:
             application/vnd.conekta-v2.1.0+json:
+              example:
+                details:
+                - message: Please include your access key in your request.
+                  param: null
+                  code: conekta.errors.authentication.missing_key
+                log_id: 507f1f77bcf86cd799439011
+                object: error
+                type: authentication_error
               schema:
                 $ref: '#/components/schemas/error'
           description: authentication error
         "404":
           content:
             application/vnd.conekta-v2.1.0+json:
-              schema:
-                $ref: '#/components/schemas/error'
-            application/json; charset=utf-8:
+              example:
+                details:
+                - message: The resource was not found.
+                  param: null
+                  code: conekta.errors.resource_not_found.entity
+                  debug_message: The object Webhook "641b1d5662d7e00001eaa46b" could
+                    not be found.
+                log_id: 641b6c253cd9a50001514fae
+                object: error
+                type: resource_not_found_error
               schema:
                 $ref: '#/components/schemas/error'
           description: not found entity
         "500":
           content:
             application/vnd.conekta-v2.1.0+json:
+              example:
+                details:
+                - debug_message: There was a runtime error and Conekta engineers have
+                    been notified.
+                  message: There was a runtime error and Conekta engineers have been
+                    notified.
+                  param: null
+                  code: conekta.errors.api.system.general_failure
+                object: error
+                type: api_error
+                log_id: 641b6f2b3cd9a50001515098
               schema:
                 $ref: '#/components/schemas/error'
           description: internal server error
@@ -4038,27 +5711,62 @@ paths:
         "422":
           content:
             application/vnd.conekta-v2.1.0+json:
+              example:
+                details:
+                - message: The token does not exist.
+                  param: payment_method.token_id
+                  code: conekta.errors.parameter_validation.payment_method.token_id.nonexistent_token
+                  debug_message: The token does not exist.
+                log_id: 641b6d813cd9a50001515017
+                object: error
+                type: parameter_validation_error
               schema:
                 $ref: '#/components/schemas/error'
           description: parameter validation error
         "401":
           content:
             application/vnd.conekta-v2.1.0+json:
+              example:
+                details:
+                - message: Please include your access key in your request.
+                  param: null
+                  code: conekta.errors.authentication.missing_key
+                log_id: 507f1f77bcf86cd799439011
+                object: error
+                type: authentication_error
               schema:
                 $ref: '#/components/schemas/error'
           description: authentication error
         "404":
           content:
             application/vnd.conekta-v2.1.0+json:
-              schema:
-                $ref: '#/components/schemas/error'
-            application/json; charset=utf-8:
+              example:
+                details:
+                - message: The resource was not found.
+                  param: null
+                  code: conekta.errors.resource_not_found.entity
+                  debug_message: The object Webhook "641b1d5662d7e00001eaa46b" could
+                    not be found.
+                log_id: 641b6c253cd9a50001514fae
+                object: error
+                type: resource_not_found_error
               schema:
                 $ref: '#/components/schemas/error'
           description: not found entity
         "500":
           content:
             application/vnd.conekta-v2.1.0+json:
+              example:
+                details:
+                - debug_message: There was a runtime error and Conekta engineers have
+                    been notified.
+                  message: There was a runtime error and Conekta engineers have been
+                    notified.
+                  param: null
+                  code: conekta.errors.api.system.general_failure
+                object: error
+                type: api_error
+                log_id: 641b6f2b3cd9a50001515098
               schema:
                 $ref: '#/components/schemas/error'
           description: internal server error
@@ -4149,18 +5857,46 @@ paths:
         "422":
           content:
             application/vnd.conekta-v2.1.0+json:
+              example:
+                details:
+                - message: The token does not exist.
+                  param: payment_method.token_id
+                  code: conekta.errors.parameter_validation.payment_method.token_id.nonexistent_token
+                  debug_message: The token does not exist.
+                log_id: 641b6d813cd9a50001515017
+                object: error
+                type: parameter_validation_error
               schema:
                 $ref: '#/components/schemas/error'
           description: parameter validation error
         "401":
           content:
             application/vnd.conekta-v2.1.0+json:
+              example:
+                details:
+                - message: Please include your access key in your request.
+                  param: null
+                  code: conekta.errors.authentication.missing_key
+                log_id: 507f1f77bcf86cd799439011
+                object: error
+                type: authentication_error
               schema:
                 $ref: '#/components/schemas/error'
           description: authentication error
         "500":
           content:
             application/vnd.conekta-v2.1.0+json:
+              example:
+                details:
+                - debug_message: There was a runtime error and Conekta engineers have
+                    been notified.
+                  message: There was a runtime error and Conekta engineers have been
+                    notified.
+                  param: null
+                  code: conekta.errors.api.system.general_failure
+                object: error
+                type: api_error
+                log_id: 641b6f2b3cd9a50001515098
               schema:
                 $ref: '#/components/schemas/error'
           description: internal server error
@@ -4202,18 +5938,46 @@ paths:
         "422":
           content:
             application/vnd.conekta-v2.1.0+json:
+              example:
+                details:
+                - message: The token does not exist.
+                  param: payment_method.token_id
+                  code: conekta.errors.parameter_validation.payment_method.token_id.nonexistent_token
+                  debug_message: The token does not exist.
+                log_id: 641b6d813cd9a50001515017
+                object: error
+                type: parameter_validation_error
               schema:
                 $ref: '#/components/schemas/error'
           description: parameter validation error
         "401":
           content:
             application/vnd.conekta-v2.1.0+json:
+              example:
+                details:
+                - message: Please include your access key in your request.
+                  param: null
+                  code: conekta.errors.authentication.missing_key
+                log_id: 507f1f77bcf86cd799439011
+                object: error
+                type: authentication_error
               schema:
                 $ref: '#/components/schemas/error'
           description: authentication error
         "500":
           content:
             application/vnd.conekta-v2.1.0+json:
+              example:
+                details:
+                - debug_message: There was a runtime error and Conekta engineers have
+                    been notified.
+                  message: There was a runtime error and Conekta engineers have been
+                    notified.
+                  param: null
+                  code: conekta.errors.api.system.general_failure
+                object: error
+                type: api_error
+                log_id: 641b6f2b3cd9a50001515098
               schema:
                 $ref: '#/components/schemas/error'
           description: internal server error
@@ -4285,27 +6049,62 @@ paths:
         "422":
           content:
             application/vnd.conekta-v2.1.0+json:
+              example:
+                details:
+                - message: The token does not exist.
+                  param: payment_method.token_id
+                  code: conekta.errors.parameter_validation.payment_method.token_id.nonexistent_token
+                  debug_message: The token does not exist.
+                log_id: 641b6d813cd9a50001515017
+                object: error
+                type: parameter_validation_error
               schema:
                 $ref: '#/components/schemas/error'
           description: parameter validation error
         "401":
           content:
             application/vnd.conekta-v2.1.0+json:
+              example:
+                details:
+                - message: Please include your access key in your request.
+                  param: null
+                  code: conekta.errors.authentication.missing_key
+                log_id: 507f1f77bcf86cd799439011
+                object: error
+                type: authentication_error
               schema:
                 $ref: '#/components/schemas/error'
           description: authentication error
         "404":
           content:
             application/vnd.conekta-v2.1.0+json:
-              schema:
-                $ref: '#/components/schemas/error'
-            application/json; charset=utf-8:
+              example:
+                details:
+                - message: The resource was not found.
+                  param: null
+                  code: conekta.errors.resource_not_found.entity
+                  debug_message: The object Webhook "641b1d5662d7e00001eaa46b" could
+                    not be found.
+                log_id: 641b6c253cd9a50001514fae
+                object: error
+                type: resource_not_found_error
               schema:
                 $ref: '#/components/schemas/error'
           description: not found entity
         "500":
           content:
             application/vnd.conekta-v2.1.0+json:
+              example:
+                details:
+                - debug_message: There was a runtime error and Conekta engineers have
+                    been notified.
+                  message: There was a runtime error and Conekta engineers have been
+                    notified.
+                  param: null
+                  code: conekta.errors.api.system.general_failure
+                object: error
+                type: api_error
+                log_id: 641b6f2b3cd9a50001515098
               schema:
                 $ref: '#/components/schemas/error'
           description: internal server error
@@ -4376,27 +6175,62 @@ paths:
         "422":
           content:
             application/vnd.conekta-v2.1.0+json:
+              example:
+                details:
+                - message: The token does not exist.
+                  param: payment_method.token_id
+                  code: conekta.errors.parameter_validation.payment_method.token_id.nonexistent_token
+                  debug_message: The token does not exist.
+                log_id: 641b6d813cd9a50001515017
+                object: error
+                type: parameter_validation_error
               schema:
                 $ref: '#/components/schemas/error'
           description: parameter validation error
         "401":
           content:
             application/vnd.conekta-v2.1.0+json:
+              example:
+                details:
+                - message: Please include your access key in your request.
+                  param: null
+                  code: conekta.errors.authentication.missing_key
+                log_id: 507f1f77bcf86cd799439011
+                object: error
+                type: authentication_error
               schema:
                 $ref: '#/components/schemas/error'
           description: authentication error
         "404":
           content:
             application/vnd.conekta-v2.1.0+json:
-              schema:
-                $ref: '#/components/schemas/error'
-            application/json; charset=utf-8:
+              example:
+                details:
+                - message: The resource was not found.
+                  param: null
+                  code: conekta.errors.resource_not_found.entity
+                  debug_message: The object Webhook "641b1d5662d7e00001eaa46b" could
+                    not be found.
+                log_id: 641b6c253cd9a50001514fae
+                object: error
+                type: resource_not_found_error
               schema:
                 $ref: '#/components/schemas/error'
           description: not found entity
         "500":
           content:
             application/vnd.conekta-v2.1.0+json:
+              example:
+                details:
+                - debug_message: There was a runtime error and Conekta engineers have
+                    been notified.
+                  message: There was a runtime error and Conekta engineers have been
+                    notified.
+                  param: null
+                  code: conekta.errors.api.system.general_failure
+                object: error
+                type: api_error
+                log_id: 641b6f2b3cd9a50001515098
               schema:
                 $ref: '#/components/schemas/error'
           description: internal server error
@@ -4434,7 +6268,7 @@ paths:
         schema:
           type: string
       requestBody:
-        $ref: '#/components/requestBodies/webhook'
+        $ref: '#/components/requestBodies/webhook_update'
       responses:
         "200":
           content:
@@ -4445,18 +6279,46 @@ paths:
         "422":
           content:
             application/vnd.conekta-v2.1.0+json:
+              example:
+                details:
+                - message: The token does not exist.
+                  param: payment_method.token_id
+                  code: conekta.errors.parameter_validation.payment_method.token_id.nonexistent_token
+                  debug_message: The token does not exist.
+                log_id: 641b6d813cd9a50001515017
+                object: error
+                type: parameter_validation_error
               schema:
                 $ref: '#/components/schemas/error'
           description: parameter validation error
         "401":
           content:
             application/vnd.conekta-v2.1.0+json:
+              example:
+                details:
+                - message: Please include your access key in your request.
+                  param: null
+                  code: conekta.errors.authentication.missing_key
+                log_id: 507f1f77bcf86cd799439011
+                object: error
+                type: authentication_error
               schema:
                 $ref: '#/components/schemas/error'
           description: authentication error
         "500":
           content:
             application/vnd.conekta-v2.1.0+json:
+              example:
+                details:
+                - debug_message: There was a runtime error and Conekta engineers have
+                    been notified.
+                  message: There was a runtime error and Conekta engineers have been
+                    notified.
+                  param: null
+                  code: conekta.errors.api.system.general_failure
+                object: error
+                type: api_error
+                log_id: 641b6f2b3cd9a50001515098
               schema:
                 $ref: '#/components/schemas/error'
           description: internal server error
@@ -5079,46 +6941,103 @@ components:
             $ref: '#/components/schemas/webhook_request'
       description: requested field for webhook
       required: true
+    webhook_update:
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/webhook_update_request'
+      description: requested fields in order to update a webhook
+      required: true
   responses:
     "401":
       content:
         application/vnd.conekta-v2.1.0+json:
+          example:
+            details:
+            - message: Please include your access key in your request.
+              param: null
+              code: conekta.errors.authentication.missing_key
+            log_id: 507f1f77bcf86cd799439011
+            object: error
+            type: authentication_error
           schema:
             $ref: '#/components/schemas/error'
       description: authentication error
     "402":
       content:
         application/vnd.conekta-v2.1.0+json:
+          example:
+            details:
+            - message: The card could not be processed.
+              code: conekta.errors.processing.tokenization.used
+              debug_message: The token has already been used.
+            log_id: 641b6d073cd9a50001515007
+            object: error
+            type: processing_error
           schema:
             $ref: '#/components/schemas/error'
       description: payment required error
     "422":
       content:
         application/vnd.conekta-v2.1.0+json:
+          example:
+            details:
+            - message: The token does not exist.
+              param: payment_method.token_id
+              code: conekta.errors.parameter_validation.payment_method.token_id.nonexistent_token
+              debug_message: The token does not exist.
+            log_id: 641b6d813cd9a50001515017
+            object: error
+            type: parameter_validation_error
           schema:
             $ref: '#/components/schemas/error'
       description: parameter validation error
     "500":
       content:
         application/vnd.conekta-v2.1.0+json:
+          example:
+            details:
+            - debug_message: There was a runtime error and Conekta engineers have
+                been notified.
+              message: There was a runtime error and Conekta engineers have been notified.
+              param: null
+              code: conekta.errors.api.system.general_failure
+            object: error
+            type: api_error
+            log_id: 641b6f2b3cd9a50001515098
           schema:
             $ref: '#/components/schemas/error'
       description: internal server error
     "404":
       content:
         application/vnd.conekta-v2.1.0+json:
-          schema:
-            $ref: '#/components/schemas/error'
-        application/json; charset=utf-8:
+          example:
+            details:
+            - message: The resource was not found.
+              param: null
+              code: conekta.errors.resource_not_found.entity
+              debug_message: The object Webhook "641b1d5662d7e00001eaa46b" could not
+                be found.
+            log_id: 641b6c253cd9a50001514fae
+            object: error
+            type: resource_not_found_error
           schema:
             $ref: '#/components/schemas/error'
       description: not found entity
     "428":
       content:
         application/vnd.conekta-v2.1.0+json:
-          schema:
-            $ref: '#/components/schemas/error'
-        application/json; charset=utf-8:
+          example:
+            details:
+            - debug_message: The order cannot be modified because it has already a
+                charge which is pending payment.
+              message: The order cannot be modified because it has already a charge
+                which is pending payment.
+              param: null
+              code: conekta.errors.precondition_required.combo.order.cannot_be_updated_because_has_charge
+            log_id: 641b6e233cd9a50001515039
+            object: error
+            type: precondition_required_error
           schema:
             $ref: '#/components/schemas/error'
       description: Precondition Required
@@ -5189,39 +7108,6 @@ components:
       type: object
     checkout_response:
       description: checkout response
-      example:
-        metadata:
-          key: "{}"
-        starts_at: 1677650400
-        livemode: true
-        payments_limit_count: 5
-        type: PaymentLink
-        needs_shipping_contact: false
-        expires_at: 1680397724
-        force_3ds_flow: false
-        paid_payments_count: 0
-        emails_sent: 0
-        monthly_installments_options:
-        - 0
-        - 0
-        id: b0bf16c4-18b9-445e-ba24-01604f329dbf
-        recurrent: false
-        slug: b0bf16c418b9445eba2401604f329dbf
-        success_url: https://pay.conekta.com/success
-        sms_sent: 0
-        can_not_expire: false
-        allowed_payment_methods:
-        - "[cash, card, bank_transfer]"
-        - "[cash, card, bank_transfer]"
-        url: https://pay.conekta.com/link/b0bf16c418b9445eba2401604f329dbf
-        monthly_installments_enabled: false
-        name: Payment Link Name 1594138857
-        failure_url: https://pay.conekta.com/failure
-        exclude_card_networks:
-        - "{}"
-        - "{}"
-        object: checkout
-        status: Issued
       properties:
         allowed_payment_methods:
           items:
@@ -5345,43 +7231,6 @@ components:
       type: object
     customer_response:
       description: customer response
-      example:
-        default_shipping_contact_id: ship_cont_2tKZsTYcsryyu7Ah8
-        livemode: true
-        created_at: 1485151007
-        subscription:
-          last_billing_cycle_order_id: ord_2tSoMP7bZJbLiq4z8
-          canceled_at: 1678258162
-          created_at: 1677626837
-          trial_end: 1677626837
-          subscription_start: 1677626837
-          billing_cycle_start: 1677626827
-          card_id: src_2tKcHxhTz7xU5SymL
-          paused_at: 1678258162
-          customer_custom_reference: dotnet_123456
-          charge_id: 2tKcHxhTz7xU5SymL
-          billing_cycle_end: 1677626827
-          trial_start: 1677626837
-          id: gold-plan
-          customer_id: cus_2tKcHxhTz7xU5SymF
-          plan_id: plan_2tXx672QLQ68CkmMn
-          object: subscription
-          status: past_due
-        default_fiscal_entity_id: fis_ent_2tKqqAfqPi21oCmEJ
-        fiscal_entities: null
-        custom_reference: custom_reference
-        payment_sources: null
-        shipping_contacts: null
-        antifraud_info:
-          account_created_at: 1484040996
-          first_paid_at: 1485151007
-        corporate: true
-        phone: +5215555555555
-        name: Felipe
-        id: cus_2tHJfJ79KyUwpxTik
-        email: Felipe@gmail.com
-        default_payment_source_id: src_2tHJfJ79KyUwpxTio
-        object: customer
       properties:
         antifraud_info:
           $ref: '#/components/schemas/customer_antifraud_info_response'
@@ -5474,25 +7323,6 @@ components:
     customer_shipping_contacts_response:
       description: Contains the detail of the shipping addresses that the client has
         active or has used in Conekta
-      example:
-        default: false
-        address:
-          country: MX
-          residential: true
-          city: Ciudad de Mexico
-          street1: avenida siempre viva
-          street2: fake street
-          state: Ciudad de Mexico
-          postal_code: "06100"
-          object: shipping_address
-        deleted: false
-        receiver: Marvin Fuller
-        phone: +525511223344
-        parent_id: parent_id
-        created_at: 1675715413
-        between_streets: Ackerman Crescent
-        id: adr_1234567890
-        object: shipping_contact
       properties:
         phone:
           example: +525511223344
@@ -5527,24 +7357,6 @@ components:
       type: object
     subscription_response:
       description: subscription model
-      example:
-        last_billing_cycle_order_id: ord_2tSoMP7bZJbLiq4z8
-        canceled_at: 1678258162
-        created_at: 1677626837
-        trial_end: 1677626837
-        subscription_start: 1677626837
-        billing_cycle_start: 1677626827
-        card_id: src_2tKcHxhTz7xU5SymL
-        paused_at: 1678258162
-        customer_custom_reference: dotnet_123456
-        charge_id: 2tKcHxhTz7xU5SymL
-        billing_cycle_end: 1677626827
-        trial_start: 1677626837
-        id: gold-plan
-        customer_id: cus_2tKcHxhTz7xU5SymF
-        plan_id: plan_2tXx672QLQ68CkmMn
-        object: subscription
-        status: past_due
       properties:
         billing_cycle_start:
           example: 1677626827
@@ -5815,68 +7627,6 @@ components:
       type: object
     order_response:
       description: order response
-      example:
-        amount: 21605
-        metadata:
-          key: "{}"
-        livemode: true
-        payment_status: paid
-        channel:
-          segment: Checkout
-          id: channel_2tNDzhA4Akmzj11AU
-          checkout_request_id: 6fca054a-8519-4c43-971e-cea35cc519bb
-          checkout_request_type: HostedPayment
-        created_at: 1676328434
-        fiscal_entity:
-          address: null
-          id: fis_ent_2tN85VYaSMyDvjB3M
-          tax_id: "324234234"
-          object: fiscal_entity
-        line_items: null
-        amount_refunded: 0
-        discount_lines: null
-        charges: null
-        updated_at: 1676328434
-        is_refundable: false
-        shipping_contact: null
-        currency: MXN
-        customer_info: null
-        id: ord_2tMtQQpDvfnNjiuFG
-        checkout:
-          metadata:
-            key: "{}"
-          starts_at: 1676354400
-          livemode: false
-          type: HostedPayment
-          needs_shipping_contact: false
-          expires_at: 1676613599
-          force_3ds_flow: false
-          paid_payments_count: 0
-          emails_sent: 0
-          monthly_installments_options:
-          - 0
-          - 0
-          id: 6fca054a-8519-4c43-971e-cea35cc519bb
-          is_redirect_on_failure: false
-          recurrent: false
-          slug: 6fca054a85194c43971ecea35cc519bb
-          success_url: http://187.216.228.66:2222/SysVentasPagos/Acceso.aspx
-          sms_sent: 0
-          can_not_expire: false
-          on_demand_enabled: true
-          allowed_payment_methods:
-          - allowed_payment_methods
-          - allowed_payment_methods
-          url: https://pay.stg.conekta.io/checkout/6fca054a85194c43971ecea35cc519bb
-          monthly_installments_enabled: false
-          name: ord-2tNDzhA4Akmzj11AS
-          failure_url: http://187.216.228.66:2222/SysVentasPagos/Acceso.aspx
-          exclude_card_networks:
-          - "{}"
-          - "{}"
-          object: checkout
-          status: Issued
-        object: order
       properties:
         amount:
           example: 21605
@@ -5932,34 +7682,6 @@ components:
       title: order_response
       type: object
     charge_order_response:
-      example:
-        device_fingerprint: 6FR3chaU4Y1nGAW5NAGd1rcjAKa142Ba
-        amount: 4321
-        failure_code: suspected_fraud
-        livemode: true
-        reference_id: reference_id
-        fee: 1160
-        channel:
-          segment: Checkout
-          id: channel_2tNDzhA4Akmzj11AU
-          checkout_request_id: 6fca054a-8519-4c43-971e-cea35cc519bb
-          checkout_request_type: HostedPayment
-        created_at: 1676386026
-        description: Payment from order
-        monthly_installments: 0
-        failure_message: Este cargo ha sido declinado porque el comportamiento del
-          comprador es sospechoso.
-        refunds:
-        - "{}"
-        - "{}"
-        paid_at: 1676390742
-        currency: MXN
-        id: 63efa757cf65380001aec040
-        customer_id: customer_id
-        order_id: ord_2tN73UdUSNrYRPD9r
-        payment_method: null
-        object: object
-        status: pending_payment
       properties:
         amount:
           example: 4321
@@ -6048,18 +7770,6 @@ components:
       - id
     plan_response:
       description: plans model
-      example:
-        amount: 10000
-        livemode: true
-        name: Extra Plan3
-        created_at: 1666900846
-        currency: MXN
-        interval: month
-        expiry_count: 12
-        id: gold-plan
-        trial_period_days: 0
-        frequency: 1
-        object: plan
       properties:
         amount:
           example: 10000
@@ -6102,27 +7812,6 @@ components:
       type: object
     webhook_response:
       description: webhooks model
-      example:
-        deleted: false
-        livemode: true
-        subscribed_events:
-        - charge.created
-        - charge.paid
-        - charge.under_fraud_review
-        - charge.fraudulent
-        - charge.refunded
-        - charge.preauthorized
-        - charge.declined
-        - charge.canceled
-        - charge.reversed
-        - charge.pending_confirmation
-        synchronous: false
-        id: 6307a60c41de27127515a575
-        production_enabled: true
-        development_enabled: false
-        url: https://username:password@mockoon.stg.conekta.io/payments-api/cash/merchant_approval
-        object: event
-        status: listening
       properties:
         deleted:
           example: false
@@ -6808,6 +8497,27 @@ components:
       - url
       title: a webhook
       type: object
+    webhook_update_request:
+      description: an updated webhook
+      properties:
+        url:
+          example: https://webhook.site/89277eaa-a8e4-4306-8dc5-f55c80703dc8
+          format: url
+          nullable: false
+          type: string
+        synchronous:
+          default: false
+          example: false
+          type: boolean
+        subscribed_events:
+          items:
+            example: customer.created
+            type: string
+          type: array
+      required:
+      - url
+      title: update_webhook
+      type: object
     details:
       properties:
         details:
@@ -7273,7 +8983,6 @@ components:
         log_id:
           description: log id
           example: 507f1f77bcf86cd799439011
-          format: hex
           nullable: true
           type: string
         type:
@@ -7424,9 +9133,6 @@ components:
       title: customers_data_response
       type: object
     customer_antifraud_info_response:
-      example:
-        account_created_at: 1484040996
-        first_paid_at: 1485151007
       nullable: true
       properties:
         first_paid_at:
@@ -7523,15 +9229,6 @@ components:
       type: object
       example: null
     customer_shipping_contacts_response_address:
-      example:
-        country: MX
-        residential: true
-        city: Ciudad de Mexico
-        street1: avenida siempre viva
-        street2: fake street
-        state: Ciudad de Mexico
-        postal_code: "06100"
-        object: shipping_address
       properties:
         object:
           example: shipping_address
@@ -7590,11 +9287,6 @@ components:
       title: WebhookLog
       type: object
     order_response_channel:
-      example:
-        segment: Checkout
-        id: channel_2tNDzhA4Akmzj11AU
-        checkout_request_id: 6fca054a-8519-4c43-971e-cea35cc519bb
-        checkout_request_type: HostedPayment
       properties:
         segment:
           example: Checkout
@@ -7625,40 +9317,6 @@ components:
       - $ref: '#/components/schemas/pagination'
       - $ref: '#/components/schemas/order_response_charges_allOf'
     order_response_checkout:
-      example:
-        metadata:
-          key: "{}"
-        starts_at: 1676354400
-        livemode: false
-        type: HostedPayment
-        needs_shipping_contact: false
-        expires_at: 1676613599
-        force_3ds_flow: false
-        paid_payments_count: 0
-        emails_sent: 0
-        monthly_installments_options:
-        - 0
-        - 0
-        id: 6fca054a-8519-4c43-971e-cea35cc519bb
-        is_redirect_on_failure: false
-        recurrent: false
-        slug: 6fca054a85194c43971ecea35cc519bb
-        success_url: http://187.216.228.66:2222/SysVentasPagos/Acceso.aspx
-        sms_sent: 0
-        can_not_expire: false
-        on_demand_enabled: true
-        allowed_payment_methods:
-        - allowed_payment_methods
-        - allowed_payment_methods
-        url: https://pay.stg.conekta.io/checkout/6fca054a85194c43971ecea35cc519bb
-        monthly_installments_enabled: false
-        name: ord-2tNDzhA4Akmzj11AS
-        failure_url: http://187.216.228.66:2222/SysVentasPagos/Acceso.aspx
-        exclude_card_networks:
-        - "{}"
-        - "{}"
-        object: checkout
-        status: Issued
       properties:
         allowed_payment_methods:
           items:
@@ -7783,11 +9441,6 @@ components:
       - $ref: '#/components/schemas/customer_address'
       - $ref: '#/components/schemas/order_response_fiscal_entity_address_allOf'
     order_response_fiscal_entity:
-      example:
-        address: null
-        id: fis_ent_2tN85VYaSMyDvjB3M
-        tax_id: "324234234"
-        object: fiscal_entity
       properties:
         address:
           $ref: '#/components/schemas/order_response_fiscal_entity_address'

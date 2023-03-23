@@ -3,6 +3,15 @@ content:
   application/vnd.conekta-v2.1.0+json:
     schema:
       $ref: '../../schemas/errors/error.yml'
-  application/json; charset=utf-8:
-    schema:
-      $ref: '../../schemas/errors/error.yml'
+    example:
+      details: [
+        {
+          message: "The resource was not found.",
+          param:  null,
+          code:  "conekta.errors.resource_not_found.entity",
+          debug_message: "The object Webhook \"641b1d5662d7e00001eaa46b\" could not be found.",
+        }
+      ]
+      log_id: "641b6c253cd9a50001514fae"
+      object: "error"
+      type: "resource_not_found_error"

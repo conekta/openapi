@@ -71,7 +71,7 @@ put:
   security:
     - bearerAuth: []
   requestBody:
-    $ref: '../../requestBodies/webhooks/webhook.yml'
+    $ref: '../../requestBodies/webhooks/webhook_update.yml'
   parameters:
     - $ref: '../../parameters/commons/headers/accept_language.yml'
     - $ref: '../../parameters/commons/path_param/id.yml'
