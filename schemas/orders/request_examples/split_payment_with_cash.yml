@@ -1,0 +1,25 @@
+summary: Create an order with 3 cash charges
+value:
+  charges:
+  - amount: 10000
+    payment_method:
+      type: cash
+  - amount: 10000
+    payment_method:
+      type: cash
+  - amount: 10000
+    payment_method:
+      type: cash
+  currency: MXN
+  customer_info:
+    name: DevTest
+    email: test@conekta.com
+    phone: '5522997233'
+    corporate: false
+  line_items:
+    description: string
+    sku: string
+    name: Box of Cohiba S1s
+    unit_price: 10000
+    quantity: 3
+    brand: string

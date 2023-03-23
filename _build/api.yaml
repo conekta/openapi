@@ -4380,6 +4380,242 @@ components:
         fee: "116,"
         customer_id: null
         order_id: ord_2tHuwPhgSwq6Gt7Rg
+    order_with_charges:
+      summary: Create an order with charges
+      value:
+        charges:
+        - amount: 40000
+          expires_at: 1677196303
+          monthly_installments: 0
+          payment_method:
+            type: card
+            token_id: tok_2897348234
+            payment_source_id: src_2tLkkyfMPh6v7pFry
+          reference_id: string
+        currency: MXN
+        customer_info:
+          name: DevTest
+          email: test@conekta.com
+          phone: "5522997233"
+          corporate: false
+          object: customer_info
+        discount_lines:
+        - amount: 500
+          code: "123"
+          type: loyalty
+        line_items:
+        - antifraud_info:
+            additionalProp1: {}
+            additionalProp2: {}
+            additionalProp3: {}
+          description: string
+          sku: string
+          name: Box of Cohiba S1s
+          unit_price: 20000
+          quantity: 1
+          tags:
+          - string
+          brand: string
+          metadata:
+            additionalProp1: string
+            additionalProp2: string
+            additionalProp3: string
+        metadata:
+          additionalProp1: string
+          additionalProp2: string
+          additionalProp3: string
+        pre_authorize: false
+        shipping_contact:
+          phone: "525511223344"
+          receiver: Marvin Fuller
+          between_streets: Ackerman Crescent
+          address:
+            street1: avenida siempre viva
+            street2: fake street
+            postal_code: "06100"
+            city: Ciudad de Mexico
+            state: Ciudad de Mexico
+            country: MX
+            residential: true
+          parent_id: string
+          default: true
+          deleted: true
+        shipping_lines:
+        - amount: 100
+          carrier: FEDEX
+          tracking_number: TRACK123
+          method: TRAING
+          metadata:
+            key: value
+        tax_lines:
+        - amount: 100
+          description: testing
+          metadata:
+            additionalProp1: {}
+            additionalProp2: {}
+            additionalProp3: {}
+    order_with_checkout:
+      summary: Create an order with checkout
+      value:
+        checkout:
+          allowed_payment_methods:
+          - "[cash, card, bank_transfer]"
+          expires_at: 0
+          failure_url: string
+          monthly_installments_enabled: false
+          monthly_installments_options:
+          - 0
+          name: string
+          on_demand_enabled: true
+          success_url: string
+          type: Integration
+        currency: MXN
+        customer_info:
+          name: DevTest
+          email: test@conekta.com
+          phone: "5522997233"
+          corporate: false
+          object: customer_info
+        discount_lines:
+        - amount: 500
+          code: "123"
+          type: loyalty
+        line_items:
+        - antifraud_info:
+            additionalProp1: {}
+            additionalProp2: {}
+            additionalProp3: {}
+          description: string
+          sku: string
+          name: Box of Cohiba S1s
+          unit_price: 20000
+          quantity: 1
+          tags:
+          - string
+          brand: string
+          metadata:
+            additionalProp1: string
+            additionalProp2: string
+            additionalProp3: string
+        metadata:
+          additionalProp1: string
+          additionalProp2: string
+          additionalProp3: string
+        pre_authorize: false
+        shipping_contact:
+          phone: "525511223344"
+          receiver: Marvin Fuller
+          between_streets: Ackerman Crescent
+          address:
+            street1: avenida siempre viva
+            street2: fake street
+            postal_code: "06100"
+            city: Ciudad de Mexico
+            state: Ciudad de Mexico
+            country: MX
+            residential: true
+          parent_id: string
+          default: true
+          deleted: true
+        shipping_lines:
+        - amount: 100
+          carrier: FEDEX
+          tracking_number: TRACK123
+          method: TRAING
+          metadata:
+            key: value
+        tax_lines:
+        - amount: 100
+          description: testing
+          metadata:
+            additionalProp1: {}
+            additionalProp2: {}
+            additionalProp3: {}
+    split_payment_with_2_cards:
+      summary: Create an order with 2 card charges
+      value:
+        charges:
+        - amount: 40000
+          payment_method:
+            type: card
+            token_id: tok_2897348234
+        - amount: 40000
+          payment_method:
+            type: card
+            token_id: tok_2897348235
+        currency: MXN
+        customer_info:
+          name: DevTest
+          email: test@conekta.com
+          phone: "5522997233"
+          corporate: false
+        line_items:
+          description: string
+          sku: string
+          name: Box of Cohiba S1s
+          unit_price: 40000
+          quantity: 2
+          brand: string
+    split_payment_with_cash:
+      summary: Create an order with 3 cash charges
+      value:
+        charges:
+        - amount: 10000
+          payment_method:
+            type: cash
+        - amount: 10000
+          payment_method:
+            type: cash
+        - amount: 10000
+          payment_method:
+            type: cash
+        currency: MXN
+        customer_info:
+          name: DevTest
+          email: test@conekta.com
+          phone: "5522997233"
+          corporate: false
+        line_items:
+          description: string
+          sku: string
+          name: Box of Cohiba S1s
+          unit_price: 10000
+          quantity: 3
+          brand: string
+    split_payment_with_cash_card:
+      summary: Create an order with 3 cash and 2 card charges
+      value:
+        charges:
+        - amount: 10000
+          payment_method:
+            type: card
+            token_id: tok_2897348234
+        - amount: 10000
+          payment_method:
+            type: card
+            token_id: tok_2897348235
+        - amount: 10000
+          payment_method:
+            type: cash
+        - amount: 10000
+          payment_method:
+            type: cash
+        - amount: 10000
+          payment_method:
+            type: cash
+        currency: MXN
+        customer_info:
+          name: DevTest
+          email: test@conekta.com
+          phone: "5522997233"
+          corporate: false
+        line_items:
+          description: string
+          sku: string
+          name: Box of Cohiba S1s
+          unit_price: 50000
+          quantity: 1
+          brand: string
   parameters:
     accept_language:
       description: use for knowing which language to use
@@ -4589,6 +4825,22 @@ components:
     order:
       content:
         application/json:
+          examples:
+            order_with_charges:
+              $ref: '#/components/examples/order_with_charges'
+              value: null
+            order_with_checkout:
+              $ref: '#/components/examples/order_with_checkout'
+              value: null
+            split_payment_with_2_card_charges:
+              $ref: '#/components/examples/split_payment_with_2_cards'
+              value: null
+            split_payment_with_3_cash_charges:
+              $ref: '#/components/examples/split_payment_with_cash'
+              value: null
+            split_payment_with_cash_card_charges:
+              $ref: '#/components/examples/split_payment_with_cash_card'
+              value: null
           schema:
             $ref: '#/components/schemas/order_request'
       description: requested field for order
