@@ -2,5 +2,5 @@ description: parameter validation error
 content:
   application/vnd.conekta-v2.1.0+json:
     schema:
-      $ref: '../../schemas/errors/error_2_x_x.yml'
+      $ref: '../../schemas/errors/error.yml'
  

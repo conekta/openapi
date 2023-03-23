@@ -12,3 +12,4 @@ properties:
   synchronous:
     type: boolean
     example: false
+    default: false

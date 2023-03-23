@@ -7090,7 +7090,7 @@
       "responses": [
         {
           "uuid": "2e546973-635f-4c28-9587-e63ea33dfee1",
-          "body": "",
+          "body": "{\n    \"next_page_url\": null,\n    \"previous_page_url\": null,\n    \"has_more\": false,\n    \"object\": \"list\",\n    \"data\": [\n        {\n            \"url\": \"https://webhook.site/0b8c9fa8-92c3-4a04-beea-a7ec037f6466\",\n            \"status\": \"listening\",\n            \"subscribed_events\": [\n                \"charge.created\",\n                \"charge.paid\",\n                \"charge.under_fraud_review\",\n                \"charge.fraudulent\",\n                \"charge.refunded\",\n                \"charge.preauthorized\",\n                \"charge.declined\",\n                \"charge.canceled\",\n                \"charge.reversed\",\n                \"charge.pending_confirmation\",\n                \"charge.expired\",\n                \"customer.created\",\n                \"customer.updated\",\n                \"customer.deleted\",\n                \"webhook.created\",\n                \"webhook.updated\",\n                \"webhook.deleted\",\n                \"charge.chargeback.created\",\n                \"charge.chargeback.updated\",\n                \"charge.chargeback.under_review\",\n                \"charge.chargeback.lost\",\n                \"charge.chargeback.won\",\n                \"payout.created\",\n                \"payout.retrying\",\n                \"payout.paid_out\",\n                \"payout.failed\",\n                \"plan.created\",\n                \"plan.updated\",\n                \"plan.deleted\",\n                \"subscription.created\",\n                \"subscription.paused\",\n                \"subscription.resumed\",\n                \"subscription.canceled\",\n                \"subscription.expired\",\n                \"subscription.updated\",\n                \"subscription.paid\",\n                \"subscription.payment_failed\",\n                \"payee.created\",\n                \"payee.updated\",\n                \"payee.deleted\",\n                \"payee.payout_method.created\",\n                \"payee.payout_method.updated\",\n                \"payee.payout_method.deleted\",\n                \"charge.score_updated\",\n                \"receipt.created\",\n                \"order.canceled\",\n                \"order.charged_back\",\n                \"order.created\",\n                \"order.expired\",\n                \"order.fraudulent\",\n                \"order.under_fraud_review\",\n                \"order.paid\",\n                \"order.partially_refunded\",\n                \"order.pending_payment\",\n                \"order.pre_authorized\",\n                \"order.refunded\",\n                \"order.updated\",\n                \"order.voided\",\n                \"order.declined\",\n                \"cashout.canceled\",\n                \"cashout.confirmed\",\n                \"webhook_ping\",\n                \"customer.payment_source.card.blocked\",\n                \"cash_refund.created\",\n                \"cash_refund.canceled\",\n                \"cash_refund.refunded\",\n                \"cash_refund.expired\"\n            ],\n            \"synchronous\": false,\n            \"id\": \"641b1d5662d7e00001eaa46b\",\n            \"object\": \"webhook\",\n            \"production_enabled\": true,\n            \"development_enabled\": false\n        },\n        {\n            \"url\": \"https://username:password@mockoon.stg.conekta.io/payments-api/cash/merchant_approval\",\n            \"status\": \"listening\",\n            \"subscribed_events\": [\n                \"charge.created\",\n                \"charge.paid\",\n                \"charge.under_fraud_review\",\n                \"charge.fraudulent\",\n                \"charge.refunded\",\n                \"charge.preauthorized\",\n                \"charge.declined\",\n                \"charge.canceled\",\n                \"charge.reversed\",\n                \"charge.pending_confirmation\",\n                \"charge.expired\",\n                \"customer.created\",\n                \"customer.updated\",\n                \"customer.deleted\",\n                \"webhook.created\",\n                \"webhook.updated\",\n                \"webhook.deleted\",\n                \"charge.chargeback.created\",\n                \"charge.chargeback.updated\",\n                \"charge.chargeback.under_review\",\n                \"charge.chargeback.lost\",\n                \"charge.chargeback.won\",\n                \"payout.created\",\n                \"payout.retrying\",\n                \"payout.paid_out\",\n                \"payout.failed\",\n                \"plan.created\",\n                \"plan.updated\",\n                \"plan.deleted\",\n                \"subscription.created\",\n                \"subscription.paused\",\n                \"subscription.resumed\",\n                \"subscription.canceled\",\n                \"subscription.expired\",\n                \"subscription.updated\",\n                \"subscription.paid\",\n                \"subscription.payment_failed\",\n                \"payee.created\",\n                \"payee.updated\",\n                \"payee.deleted\",\n                \"payee.payout_method.created\",\n                \"payee.payout_method.updated\",\n                \"payee.payout_method.deleted\",\n                \"charge.score_updated\",\n                \"receipt.created\",\n                \"order.canceled\",\n                \"order.charged_back\",\n                \"order.created\",\n                \"order.expired\",\n                \"order.fraudulent\",\n                \"order.under_fraud_review\",\n                \"order.paid\",\n                \"order.partially_refunded\",\n                \"order.pending_payment\",\n                \"order.pre_authorized\",\n                \"order.refunded\",\n                \"order.updated\",\n                \"order.voided\",\n                \"order.declined\",\n                \"webhook_ping\"\n            ],\n            \"synchronous\": false,\n            \"id\": \"634a2badd7cb3c00015dae78\",\n            \"object\": \"webhook\",\n            \"production_enabled\": true,\n            \"development_enabled\": false\n        }\n    ]\n}",
           "latency": 0,
           "statusCode": 200,
           "label": "successful",
@@ -7208,7 +7208,7 @@
       "responses": [
         {
           "uuid": "d2003652-2e60-4bc0-afc7-9ef99356bae9",
-          "body": "",
+          "body": "{\n    \"url\": \"https://webhook.site/0b8c9fa8-92c3-4a04-beea-a7ec037f6466\",\n    \"status\": \"listening\",\n    \"subscribed_events\": [\n        \"charge.created\",\n        \"charge.paid\",\n        \"charge.under_fraud_review\",\n        \"charge.fraudulent\",\n        \"charge.refunded\",\n        \"charge.preauthorized\",\n        \"charge.declined\",\n        \"charge.canceled\",\n        \"charge.reversed\",\n        \"charge.pending_confirmation\",\n        \"charge.expired\",\n        \"customer.created\",\n        \"customer.updated\",\n        \"customer.deleted\",\n        \"webhook.created\",\n        \"webhook.updated\",\n        \"webhook.deleted\",\n        \"charge.chargeback.created\",\n        \"charge.chargeback.updated\",\n        \"charge.chargeback.under_review\",\n        \"charge.chargeback.lost\",\n        \"charge.chargeback.won\",\n        \"payout.created\",\n        \"payout.retrying\",\n        \"payout.paid_out\",\n        \"payout.failed\",\n        \"plan.created\",\n        \"plan.updated\",\n        \"plan.deleted\",\n        \"subscription.created\",\n        \"subscription.paused\",\n        \"subscription.resumed\",\n        \"subscription.canceled\",\n        \"subscription.expired\",\n        \"subscription.updated\",\n        \"subscription.paid\",\n        \"subscription.payment_failed\",\n        \"payee.created\",\n        \"payee.updated\",\n        \"payee.deleted\",\n        \"payee.payout_method.created\",\n        \"payee.payout_method.updated\",\n        \"payee.payout_method.deleted\",\n        \"charge.score_updated\",\n        \"receipt.created\",\n        \"order.canceled\",\n        \"order.charged_back\",\n        \"order.created\",\n        \"order.expired\",\n        \"order.fraudulent\",\n        \"order.under_fraud_review\",\n        \"order.paid\",\n        \"order.partially_refunded\",\n        \"order.pending_payment\",\n        \"order.pre_authorized\",\n        \"order.refunded\",\n        \"order.updated\",\n        \"order.voided\",\n        \"order.declined\",\n        \"cashout.canceled\",\n        \"cashout.confirmed\",\n        \"webhook_ping\",\n        \"customer.payment_source.card.blocked\",\n        \"cash_refund.created\",\n        \"cash_refund.canceled\",\n        \"cash_refund.refunded\",\n        \"cash_refund.expired\"\n    ],\n    \"synchronous\": false,\n    \"id\": \"641b1d5662d7e00001eaa46b\",\n    \"object\": \"webhook\",\n    \"production_enabled\": true,\n    \"development_enabled\": false\n}",
           "latency": 0,
           "statusCode": 200,
           "label": "successful operation",
@@ -7222,7 +7222,15 @@
           "filePath": "",
           "databucketID": "",
           "sendFileAsBody": false,
-          "rules": [],
+          "rules": [
+            {
+              "target": "body",
+              "modifier": "url",
+              "value": "https://webhook.site/0b8c9fa8-92c3-4a04-beea-a7ec037f6466",
+              "invert": false,
+              "operator": "equals"
+            }
+          ],
           "rulesOperator": "OR",
           "disableTemplating": false,
           "fallbackTo404": false,
@@ -7306,7 +7314,7 @@
       "responses": [
         {
           "uuid": "d3dffa11-7982-4238-bade-4cb9689a0fdd",
-          "body": "",
+          "body": "{\n    \"url\": \"https://updated.webhook.site/0b8c9fa8-92c3-4a04-beea-a7ec037f6466\",\n    \"status\": \"intermittent_errors\",\n    \"subscribed_events\": [\n        \"charge.created\",\n        \"charge.paid\",\n        \"charge.under_fraud_review\",\n        \"charge.fraudulent\",\n        \"charge.refunded\",\n        \"charge.preauthorized\",\n        \"charge.declined\",\n        \"charge.canceled\",\n        \"charge.reversed\",\n        \"charge.pending_confirmation\",\n        \"charge.expired\",\n        \"customer.created\",\n        \"customer.updated\",\n        \"customer.deleted\",\n        \"webhook.created\",\n        \"webhook.updated\",\n        \"webhook.deleted\",\n        \"charge.chargeback.created\",\n        \"charge.chargeback.updated\",\n        \"charge.chargeback.under_review\",\n        \"charge.chargeback.lost\",\n        \"charge.chargeback.won\",\n        \"payout.created\",\n        \"payout.retrying\",\n        \"payout.paid_out\",\n        \"payout.failed\",\n        \"plan.created\",\n        \"plan.updated\",\n        \"plan.deleted\",\n        \"subscription.created\",\n        \"subscription.paused\",\n        \"subscription.resumed\",\n        \"subscription.canceled\",\n        \"subscription.expired\",\n        \"subscription.updated\",\n        \"subscription.paid\",\n        \"subscription.payment_failed\",\n        \"payee.created\",\n        \"payee.updated\",\n        \"payee.deleted\",\n        \"payee.payout_method.created\",\n        \"payee.payout_method.updated\",\n        \"payee.payout_method.deleted\",\n        \"charge.score_updated\",\n        \"receipt.created\",\n        \"order.canceled\",\n        \"order.charged_back\",\n        \"order.created\",\n        \"order.expired\",\n        \"order.fraudulent\",\n        \"order.under_fraud_review\",\n        \"order.paid\",\n        \"order.partially_refunded\",\n        \"order.pending_payment\",\n        \"order.pre_authorized\",\n        \"order.refunded\",\n        \"order.updated\",\n        \"order.voided\",\n        \"order.declined\",\n        \"cashout.canceled\",\n        \"cashout.confirmed\",\n        \"webhook_ping\",\n        \"customer.payment_source.card.blocked\",\n        \"cash_refund.created\",\n        \"cash_refund.canceled\",\n        \"cash_refund.refunded\",\n        \"cash_refund.expired\"\n    ],\n    \"synchronous\": false,\n    \"id\": \"641b1d5662d7e00001eaa46b\",\n    \"object\": \"webhook\",\n    \"production_enabled\": true,\n    \"development_enabled\": false,\n    \"deleted\": true\n}",
           "latency": 0,
           "statusCode": 200,
           "label": "successful",
@@ -7340,7 +7348,15 @@
           "filePath": "",
           "databucketID": "",
           "sendFileAsBody": false,
-          "rules": [],
+          "rules": [
+            {
+              "target": "params",
+              "modifier": "id",
+              "value": "641b1d5662d7e00001eaa46b",
+              "invert": false,
+              "operator": "equals"
+            }
+          ],
           "rulesOperator": "OR",
           "disableTemplating": false,
           "fallbackTo404": false,
@@ -7446,7 +7462,7 @@
       "responses": [
         {
           "uuid": "ec11a67b-fcac-43a2-a324-ee42f97969ce",
-          "body": "",
+          "body": "{\n    \"url\": \"https://webhook.site/0b8c9fa8-92c3-4a04-beea-a7ec037f6466\",\n    \"status\": \"listening\",\n    \"subscribed_events\": [\n        \"charge.created\",\n        \"charge.paid\",\n        \"charge.under_fraud_review\",\n        \"charge.fraudulent\",\n        \"charge.refunded\",\n        \"charge.preauthorized\",\n        \"charge.declined\",\n        \"charge.canceled\",\n        \"charge.reversed\",\n        \"charge.pending_confirmation\",\n        \"charge.expired\",\n        \"customer.created\",\n        \"customer.updated\",\n        \"customer.deleted\",\n        \"webhook.created\",\n        \"webhook.updated\",\n        \"webhook.deleted\",\n        \"charge.chargeback.created\",\n        \"charge.chargeback.updated\",\n        \"charge.chargeback.under_review\",\n        \"charge.chargeback.lost\",\n        \"charge.chargeback.won\",\n        \"payout.created\",\n        \"payout.retrying\",\n        \"payout.paid_out\",\n        \"payout.failed\",\n        \"plan.created\",\n        \"plan.updated\",\n        \"plan.deleted\",\n        \"subscription.created\",\n        \"subscription.paused\",\n        \"subscription.resumed\",\n        \"subscription.canceled\",\n        \"subscription.expired\",\n        \"subscription.updated\",\n        \"subscription.paid\",\n        \"subscription.payment_failed\",\n        \"payee.created\",\n        \"payee.updated\",\n        \"payee.deleted\",\n        \"payee.payout_method.created\",\n        \"payee.payout_method.updated\",\n        \"payee.payout_method.deleted\",\n        \"charge.score_updated\",\n        \"receipt.created\",\n        \"order.canceled\",\n        \"order.charged_back\",\n        \"order.created\",\n        \"order.expired\",\n        \"order.fraudulent\",\n        \"order.under_fraud_review\",\n        \"order.paid\",\n        \"order.partially_refunded\",\n        \"order.pending_payment\",\n        \"order.pre_authorized\",\n        \"order.refunded\",\n        \"order.updated\",\n        \"order.voided\",\n        \"order.declined\",\n        \"cashout.canceled\",\n        \"cashout.confirmed\",\n        \"webhook_ping\",\n        \"customer.payment_source.card.blocked\",\n        \"cash_refund.created\",\n        \"cash_refund.canceled\",\n        \"cash_refund.refunded\",\n        \"cash_refund.expired\"\n    ],\n    \"synchronous\": false,\n    \"id\": \"641b1d5662d7e00001eaa46b\",\n    \"object\": \"webhook\",\n    \"production_enabled\": true,\n    \"development_enabled\": false\n}",
           "latency": 0,
           "statusCode": 200,
           "label": "successful",
@@ -7480,7 +7496,15 @@
           "filePath": "",
           "databucketID": "",
           "sendFileAsBody": false,
-          "rules": [],
+          "rules": [
+            {
+              "target": "params",
+              "modifier": "id",
+              "value": "641b1d5662d7e00001eaa46b",
+              "invert": false,
+              "operator": "equals"
+            }
+          ],
           "rulesOperator": "OR",
           "disableTemplating": false,
           "fallbackTo404": false,
@@ -7586,7 +7610,7 @@
       "responses": [
         {
           "uuid": "43688f76-e80b-46eb-b0e3-2f7c19767cb3",
-          "body": "",
+          "body": "{\n    \"url\": \"https://updated.webhook.site/0b8c9fa8-92c3-4a04-beea-a7ec037f6466\",\n    \"status\": \"intermittent_errors\",\n    \"subscribed_events\": [\n        \"charge.created\",\n        \"charge.paid\",\n        \"charge.under_fraud_review\",\n        \"charge.fraudulent\",\n        \"charge.refunded\",\n        \"charge.preauthorized\",\n        \"charge.declined\",\n        \"charge.canceled\",\n        \"charge.reversed\",\n        \"charge.pending_confirmation\",\n        \"charge.expired\",\n        \"customer.created\",\n        \"customer.updated\",\n        \"customer.deleted\",\n        \"webhook.created\",\n        \"webhook.updated\",\n        \"webhook.deleted\",\n        \"charge.chargeback.created\",\n        \"charge.chargeback.updated\",\n        \"charge.chargeback.under_review\",\n        \"charge.chargeback.lost\",\n        \"charge.chargeback.won\",\n        \"payout.created\",\n        \"payout.retrying\",\n        \"payout.paid_out\",\n        \"payout.failed\",\n        \"plan.created\",\n        \"plan.updated\",\n        \"plan.deleted\",\n        \"subscription.created\",\n        \"subscription.paused\",\n        \"subscription.resumed\",\n        \"subscription.canceled\",\n        \"subscription.expired\",\n        \"subscription.updated\",\n        \"subscription.paid\",\n        \"subscription.payment_failed\",\n        \"payee.created\",\n        \"payee.updated\",\n        \"payee.deleted\",\n        \"payee.payout_method.created\",\n        \"payee.payout_method.updated\",\n        \"payee.payout_method.deleted\",\n        \"charge.score_updated\",\n        \"receipt.created\",\n        \"order.canceled\",\n        \"order.charged_back\",\n        \"order.created\",\n        \"order.expired\",\n        \"order.fraudulent\",\n        \"order.under_fraud_review\",\n        \"order.paid\",\n        \"order.partially_refunded\",\n        \"order.pending_payment\",\n        \"order.pre_authorized\",\n        \"order.refunded\",\n        \"order.updated\",\n        \"order.voided\",\n        \"order.declined\",\n        \"cashout.canceled\",\n        \"cashout.confirmed\",\n        \"webhook_ping\",\n        \"customer.payment_source.card.blocked\",\n        \"cash_refund.created\",\n        \"cash_refund.canceled\",\n        \"cash_refund.refunded\",\n        \"cash_refund.expired\"\n    ],\n    \"synchronous\": false,\n    \"id\": \"641b1d5662d7e00001eaa46b\",\n    \"object\": \"webhook\",\n    \"production_enabled\": true,\n    \"development_enabled\": false\n}",
           "latency": 0,
           "statusCode": 200,
           "label": "successful operation",
@@ -7600,7 +7624,15 @@
           "filePath": "",
           "databucketID": "",
           "sendFileAsBody": false,
-          "rules": [],
+          "rules": [
+            {
+              "target": "params",
+              "modifier": "id",
+              "value": "641b1d5662d7e00001eaa46b",
+              "invert": false,
+              "operator": "equals"
+            }
+          ],
           "rulesOperator": "OR",
           "disableTemplating": false,
           "fallbackTo404": false,
@@ -7842,6 +7874,154 @@
       ],
       "enabled": true,
       "responseMode": null
+    },
+    {
+      "uuid": "41a08c4a-4045-4bdc-a193-f21a67d0972a",
+      "documentation": "returns events from a subscription",
+      "method": "get",
+      "endpoint": "customers/:id/subscription/events",
+      "responses": [
+        {
+          "uuid": "80cda80e-f988-464f-a119-6583fc28bf00",
+          "body": "{\n    \"next_page_url\": null,\n    \"previous_page_url\": null,\n    \"has_more\": false,\n    \"object\": \"list\",\n    \"data\": [\n        {\n            \"data\": {\n                \"object\": {\n                    \"id\": \"sub_2rKpeXQpapLonfVkh\",\n                    \"status\": \"past_due\",\n                    \"object\": \"subscription\",\n                    \"charge_id\": null,\n                    \"created_at\": 1645125710,\n                    \"subscription_start\": 1645125710,\n                    \"canceled_at\": null,\n                    \"paused_at\": null,\n                    \"billing_cycle_start\": null,\n                    \"billing_cycle_end\": 1645125700,\n                    \"trial_start\": null,\n                    \"trial_end\": 1645125710,\n                    \"plan_id\": \"gold-plan\",\n                    \"last_billing_cycle_order_id\": \"ord_2rKpeXQpapLonfVkm\",\n                    \"customer_id\": \"cus_2rKpeXQpapLonfVke\",\n                    \"customer_custom_reference\": null,\n                    \"card_id\": \"src_2rKpeXQpapLonfVkg\"\n                },\n                \"previous_attributes\": {}\n            },\n            \"livemode\": true,\n            \"webhook_status\": \"not_applicable\",\n            \"webhook_logs\": [],\n            \"id\": \"620ea04f6d41e80466f611a6\",\n            \"object\": \"event\",\n            \"type\": \"subscription.payment_failed\",\n            \"created_at\": 1645125711\n        },\n        {\n            \"data\": {\n                \"object\": {\n                    \"id\": \"sub_2rKpeXQpapLonfVkh\",\n                    \"status\": \"in_trial\",\n                    \"object\": \"subscription\",\n                    \"charge_id\": null,\n                    \"created_at\": 1645125710,\n                    \"subscription_start\": 1645125710,\n                    \"canceled_at\": null,\n                    \"paused_at\": null,\n                    \"billing_cycle_start\": null,\n                    \"billing_cycle_end\": null,\n                    \"trial_start\": null,\n                    \"trial_end\": 1645125710,\n                    \"plan_id\": \"gold-plan\",\n                    \"last_billing_cycle_order_id\": null,\n                    \"customer_id\": \"cus_2rKpeXQpapLonfVke\",\n                    \"customer_custom_reference\": null,\n                    \"card_id\": \"src_2rKpeXQpapLonfVkg\"\n                },\n                \"previous_attributes\": {}\n            },\n            \"livemode\": true,\n            \"webhook_status\": \"not_applicable\",\n            \"webhook_logs\": [],\n            \"id\": \"620ea04e6d41e80466f61197\",\n            \"object\": \"event\",\n            \"type\": \"subscription.created\",\n            \"created_at\": 1645125710\n        }\n    ]\n}",
+          "latency": 0,
+          "statusCode": 200,
+          "label": "successful",
+          "headers": [
+            {
+              "key": "Content-Type",
+              "value": "application/vnd.conekta-v2.1.0+json"
+            },
+            {
+              "key": "Date",
+              "value": ""
+            },
+            {
+              "key": "Content-Type",
+              "value": ""
+            },
+            {
+              "key": "Content-Length",
+              "value": ""
+            },
+            {
+              "key": "Connection",
+              "value": ""
+            },
+            {
+              "key": "Conekta-Media-Type",
+              "value": ""
+            }
+          ],
+          "bodyType": "INLINE",
+          "filePath": "",
+          "databucketID": "",
+          "sendFileAsBody": false,
+          "rules": [
+            {
+              "target": "params",
+              "modifier": "id",
+              "value": "cus_2rKpeXQpapLonfVke",
+              "invert": false,
+              "operator": "equals"
+            }
+          ],
+          "rulesOperator": "OR",
+          "disableTemplating": false,
+          "fallbackTo404": false,
+          "default": true
+        },
+        {
+          "uuid": "13fbe753-2f47-4765-af4f-fbea2a4176b7",
+          "body": "",
+          "latency": 0,
+          "statusCode": 401,
+          "label": "authentication error",
+          "headers": [
+            {
+              "key": "Content-Type",
+              "value": "application/vnd.conekta-v2.1.0+json"
+            }
+          ],
+          "bodyType": "INLINE",
+          "filePath": "",
+          "databucketID": "",
+          "sendFileAsBody": false,
+          "rules": [],
+          "rulesOperator": "OR",
+          "disableTemplating": false,
+          "fallbackTo404": false,
+          "default": false
+        },
+        {
+          "uuid": "190d3a2f-c45d-476d-88b8-33e5c72b61d1",
+          "body": "{\n  \"details\": [\n    {\n      \"code\": \"conekta.errors.authentication.missing_key\",\n      \"param\": \"\",\n      \"message\": \"Acceso no autorizado.\",\n      \"debug_message\": \"Please include your access key in your request.\"\n    }\n  ]\n}",
+          "latency": 0,
+          "statusCode": 404,
+          "label": "not found entity",
+          "headers": [
+            {
+              "key": "Content-Type",
+              "value": "application/vnd.conekta-v2.1.0+json"
+            }
+          ],
+          "bodyType": "INLINE",
+          "filePath": "",
+          "databucketID": "",
+          "sendFileAsBody": false,
+          "rules": [],
+          "rulesOperator": "OR",
+          "disableTemplating": false,
+          "fallbackTo404": false,
+          "default": false
+        },
+        {
+          "uuid": "f45d9f38-d2c0-4ee8-a2ac-562c7c663928",
+          "body": "",
+          "latency": 0,
+          "statusCode": 422,
+          "label": "parameter validation error",
+          "headers": [
+            {
+              "key": "Content-Type",
+              "value": "application/vnd.conekta-v2.1.0+json"
+            }
+          ],
+          "bodyType": "INLINE",
+          "filePath": "",
+          "databucketID": "",
+          "sendFileAsBody": false,
+          "rules": [],
+          "rulesOperator": "OR",
+          "disableTemplating": false,
+          "fallbackTo404": false,
+          "default": false
+        },
+        {
+          "uuid": "9b23c941-7ffe-4b1c-a38d-898ccd6fb3ad",
+          "body": "",
+          "latency": 0,
+          "statusCode": 500,
+          "label": "internal server error",
+          "headers": [
+            {
+              "key": "Content-Type",
+              "value": "application/vnd.conekta-v2.1.0+json"
+            }
+          ],
+          "bodyType": "INLINE",
+          "filePath": "",
+          "databucketID": "",
+          "sendFileAsBody": false,
+          "rules": [],
+          "rulesOperator": "OR",
+          "disableTemplating": false,
+          "fallbackTo404": false,
+          "default": false
+        }
+      ],
+      "enabled": true,
+      "responseMode": null
     }
   ],
   "rootChildren": [
@@ -7964,6 +8144,10 @@
     {
       "type": "route",
       "uuid": "fce45eb5-de70-44d5-bb99-6723a6fa2c43"
+    },
+    {
+      "type": "route",
+      "uuid": "41a08c4a-4045-4bdc-a193-f21a67d0972a"
     },
     {
       "type": "route",

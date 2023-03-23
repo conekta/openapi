@@ -48,6 +48,8 @@ paths:
     $ref: "./resources/subscriptions/subscriptions.yml"
   /customers/{id}/subscription/cancel:
     $ref: "./resources/subscriptions/subscriptions_cancel.yml"
+  /customers/{id}/subscription/events:
+    $ref: "./resources/subscriptions/subscriptions_events.yml"
   /customers/{id}/subscription/pause:
     $ref: "./resources/subscriptions/subscriptions_pause.yml"
   /customers/{id}/subscription/resume:

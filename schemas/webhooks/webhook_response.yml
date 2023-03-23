@@ -2,6 +2,10 @@ title: webhook_response
 description: webhooks model
 type: object
 properties:
+  deleted:
+    type: boolean
+    example: false
+    nullable: true
   development_enabled:
     type: boolean
     example: false
