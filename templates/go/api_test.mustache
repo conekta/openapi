@@ -1,0 +1,78 @@
+{{>partial_header}}
+package {{packageName}}_test
+
+import (
+	"context"
+	"encoding/json"
+	"fmt"
+	"testing"
+    "net/http"
+    "net/url"
+	"strings"
+
+	"github.com/conekta/conekta-go"
+    "github.com/jarcoal/httpmock"
+)
+
+{{#operations}}
+{{#operation}}
+func Test{{classname}}_{{operationId}}(t *testing.T) {
+	httpmock.Activate()
+	defer httpmock.DeactivateAndReset()
+    {{method}}
+    {{#responses}}
+    {{#is2xx}}
+    {{#vendorExtensions}}
+    {{#x-merge-sample-json}}
+	var responseBody conekta.{{{dataType}}}
+	if err := json.Unmarshal([]byte(`{{{.}}}`), &responseBody); err != nil {
+		panic(err)
+	}
+    {{/x-merge-sample-json}}
+    {{/vendorExtensions}}
+    {{/is2xx}}
+    {{/responses}}
+
+    basePath := "{{{path}}}"
+    {{#pathParams}}
+	basePath = strings.Replace(basePath, "{"+"{{baseName}}"+"}", url.PathEscape("{{example}}"), -1)
+    {{/pathParams}}
+
+	httpmock.RegisterResponder(strings.ToUpper("{{httpMethod}}"), "https://api.conekta.io" + basePath,
+		func(req *http.Request) (*http.Response, error) {
+			resp, err := httpmock.NewJsonResponse(200, responseBody)
+			if err != nil {
+				return httpmock.NewStringResponse(500, ""), nil
+			}
+			return resp, nil
+		})
+
+	cfg := conekta.NewConfiguration()
+	api := conekta.NewAPIClient(cfg)
+	ctx := context.WithValue(context.TODO(), conekta.ContextAccessToken, "key_eYvWV7gSDkNYXsmr")
+
+    {{#bodyParam}}
+    {{#vendorExtensions}}
+    {{#x-merge-sample-json}}
+	var requestBody conekta.{{{dataType}}}
+	if err := json.Unmarshal([]byte(`{{{.}}}`), &requestBody); err != nil {
+		panic(err)
+	}
+    {{/x-merge-sample-json}}
+    {{/vendorExtensions}}
+    {{/bodyParam}}
+
+	request := api.{{classname}}.{{operationId}}(ctx{{#pathParams}}, "{{example}}"{{/pathParams}}){{#allParams}}{{^isPathParam}}{{^isQueryParam}}.{{vendorExtensions.x-export-param-name}}({{#isBodyParam}}requestBody{{/isBodyParam}}{{^isBodyParam}}"{{example}}"{{/isBodyParam}}){{/isQueryParam}}{{/isPathParam}}{{/allParams}}
+
+	response, httpResponse, err := api.{{classname}}.{{operationId}}Execute(request)
+	if err != nil {
+		panic(err)
+	}
+
+	b, _ := json.Marshal(response)
+	fmt.Printf("%s", b)
+	fmt.Printf("%v", httpResponse)
+}
+
+{{/operation}}
+{{/operations}}

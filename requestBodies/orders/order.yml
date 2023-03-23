@@ -4,3 +4,4 @@ content:
     schema:  
       $ref: '../../schemas/orders/order_request.yml'
 required: true
+x-merge-sample-json: '{"s":"s"}'
