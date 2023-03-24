@@ -18,7 +18,7 @@ ruby:
 
 csharp:
 	mkdir -p conekta-.net && cp .openapi-generator-ignore conekta-.net/.openapi-generator-ignore &&   \
-	npx @openapitools/openapi-generator-cli generate -i  api.yaml -g csharp-netcore -o conekta-.net  -c config-netcore.json --global-property modelTests=false
+	npx @openapitools/openapi-generator-cli generate -i  api.yaml -g csharp-netcore -o ../conekta-.net  -c config-netcore.json --global-property modelTests=false
 
 php:
 	npx @openapitools/openapi-generator-cli generate -i  api.yaml -g php -o conekta-php  -c config-php.json

@@ -216,11 +216,6 @@ namespace {{packageName}}.Client
                 { "publisher", "conekta" },
                 { "conekta_net_target_framework", RuntimeInformation.ConektaNetTargetFramework },
             };
-
-            // The following values are in try/catch blocks on the off chance that the
-            // RuntimeInformation methods fail in an unexpected way. This should ~never happen, but
-            // if it does it should not prevent users from sending requests.
-            // See https://github.com/stripe/stripe-dotnet/issues/1986 for context.
             try
             {
                 values.Add("lang_version", RuntimeInformation.GetRuntimeVersion());
