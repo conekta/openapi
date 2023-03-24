@@ -31,5 +31,6 @@
   "templateDir": "templates/netcore",
   "useOneOfDiscriminatorLookup" : true,
   "packageCopyright" : "Conekta",
-  "PackageReleaseNotes" : ""
+  "PackageReleaseNotes" : "",
+  "releaseNote" : "Support new version based on Openapi"
 }
