@@ -8543,6 +8543,7 @@ components:
           example: Ciudad de Mexico
           type: string
         country:
+          description: "this field follows the [ISO 3166-1 alpha-2 standard](https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2)"
           example: MX
           type: string
         residential:
@@ -9615,6 +9616,7 @@ components:
           example: Ciudad de Mexico
           type: string
         country:
+          description: "this field follows the [ISO 3166-1 alpha-2 standard](https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2)"
           example: MX
           type: string
         residential:
