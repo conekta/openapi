@@ -3,7 +3,9 @@ post:
     - customers
   operationId: createCustomer
   summary: creates a new customer
-  description: 'The purpose of business is to create and keep a customer, you will learn what elements you need to create a customer.'
+  description: |
+     The purpose of business is to create and keep a customer, you will learn what elements you need to create a customer.
+     Remember the credit and debit card tokenization process: [Click here](https://developers.conekta.com/page/web-checkout-tokenizer)
   responses:
     '200':
       description: successful operation

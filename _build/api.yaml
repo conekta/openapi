@@ -1053,8 +1053,9 @@ paths:
       tags:
       - customers
     post:
-      description: "The purpose of business is to create and keep a customer, you\
-        \ will learn what elements you need to create a customer."
+      description: |
+        The purpose of business is to create and keep a customer, you will learn what elements you need to create a customer.
+        Remember the credit and debit card tokenization process: [Click here](https://developers.conekta.com/page/web-checkout-tokenizer)
       operationId: createCustomer
       parameters:
       - description: use for knowing which language to use
