@@ -49,7 +49,7 @@ properties:
     items:
       type: integer
       format: int8
-      example: [3,6,12]
+    example: [3,6,12]
   name:
     type: string
     description: checkout's name

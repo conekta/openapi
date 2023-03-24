@@ -1,6 +1,6 @@
 post:
   tags:
-    - customers
+    - Customers
   operationId: CreateCustomerPaymentSources
   summary: creates a payment source
   description: 'Gets a payment source that corresponds to a customer ID.'

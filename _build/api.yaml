@@ -223,7 +223,7 @@ paths:
       - bearerAuth: []
       summary: returns a set of checkouts
       tags:
-      - checkouts
+      - Payment Link
     post:
       operationId: createCheckout
       parameters:
@@ -275,6 +275,8 @@ paths:
                 example: keep-alive
                 type: string
             Conekta-Media-Type:
+              description: The version of the API used to process the request and
+                the format of the response body
               schema:
                 example: conekta-v2.1.0; format=application/json
                 type: string
@@ -340,9 +342,9 @@ paths:
           description: internal server error
       security:
       - bearerAuth: []
-      summary: creates a new checkout
+      summary: Create Unique Payment Link
       tags:
-      - checkouts
+      - Payment Link
   /checkouts/{id}:
     get:
       operationId: getCheckout
@@ -483,7 +485,7 @@ paths:
       - bearerAuth: []
       summary: returns a checkout
       tags:
-      - checkouts
+      - Payment Link
   /checkouts/{id}/cancel:
     put:
       operationId: cancelCheckout
@@ -624,7 +626,7 @@ paths:
       - bearerAuth: []
       summary: cancels a checkout
       tags:
-      - checkouts
+      - Payment Link
   /checkouts/{id}/email:
     post:
       operationId: emailCheckout
@@ -767,7 +769,7 @@ paths:
       - bearerAuth: []
       summary: sends an email
       tags:
-      - checkouts
+      - Payment Link
   /checkouts/{id}/sms:
     post:
       operationId: smsCheckout
@@ -910,7 +912,7 @@ paths:
       - bearerAuth: []
       summary: sends an sms
       tags:
-      - checkouts
+      - Payment Link
   /customers:
     get:
       description: "The purpose of business is to create and maintain a client, you\
@@ -943,6 +945,12 @@ paths:
           default: 20
           format: int32
           type: integer
+      - description: "General order search, e.g. by mail, reference etc."
+        in: query
+        name: search
+        required: false
+        schema:
+          type: string
       - description: next page
         in: query
         name: next
@@ -1001,35 +1009,6 @@ paths:
               schema:
                 $ref: '#/components/schemas/error'
           description: authentication error
-        "402":
-          content:
-            application/vnd.conekta-v2.1.0+json:
-              example:
-                details:
-                - message: The card could not be processed.
-                  code: conekta.errors.processing.tokenization.used
-                  debug_message: The token has already been used.
-                log_id: 641b6d073cd9a50001515007
-                object: error
-                type: processing_error
-              schema:
-                $ref: '#/components/schemas/error'
-          description: payment required error
-        "422":
-          content:
-            application/vnd.conekta-v2.1.0+json:
-              example:
-                details:
-                - message: The token does not exist.
-                  param: payment_method.token_id
-                  code: conekta.errors.parameter_validation.payment_method.token_id.nonexistent_token
-                  debug_message: The token does not exist.
-                log_id: 641b6d813cd9a50001515017
-                object: error
-                type: parameter_validation_error
-              schema:
-                $ref: '#/components/schemas/error'
-          description: parameter validation error
         "500":
           content:
             application/vnd.conekta-v2.1.0+json:
@@ -1049,9 +1028,9 @@ paths:
           description: internal server error
       security:
       - bearerAuth: []
-      summary: returns customers
+      summary: Get a list of customers
       tags:
-      - customers
+      - Customers
     post:
       description: |
         The purpose of business is to create and keep a customer, you will learn what elements you need to create a customer.
@@ -1171,9 +1150,9 @@ paths:
           description: internal server error
       security:
       - bearerAuth: []
-      summary: creates a new customer
+      summary: Create customer
       tags:
-      - customers
+      - Customers
   /customers/{id}:
     delete:
       description: Deleted a customer resource that corresponds to a customer ID.
@@ -1274,9 +1253,9 @@ paths:
           description: internal server error
       security:
       - bearerAuth: []
-      summary: deletes a customer
+      summary: Delete a customer
       tags:
-      - customers
+      - Customers
     get:
       description: Gets a customer resource that corresponds to a customer ID.
       operationId: getCustomerById
@@ -1360,9 +1339,9 @@ paths:
           description: internal server error
       security:
       - bearerAuth: []
-      summary: returns a customer
+      summary: Get a customer
       tags:
-      - customers
+      - Customers
     put:
       description: You can update customer-related data
       operationId: updateCustomer
@@ -1462,9 +1441,9 @@ paths:
           description: internal server error
       security:
       - bearerAuth: []
-      summary: updates a customer
+      summary: Update a customer
       tags:
-      - customers
+      - Customers
   /customers/{id}/fiscal_entities:
     post:
       description: creates a customer resource that corresponds to a customer ID.
@@ -1569,7 +1548,7 @@ paths:
       - bearerAuth: []
       summary: creates a fiscal entities
       tags:
-      - customers
+      - Customers
   /customers/{id}/fiscal_entities/{fiscal_entities_id}:
     put:
       description: updates a customer resource that corresponds to a customer ID.
@@ -1681,7 +1660,7 @@ paths:
       - bearerAuth: []
       summary: updates a  fiscal entities
       tags:
-      - customers
+      - Customers
   /customers/{id}/payment_sources:
     post:
       description: Gets a payment source that corresponds to a customer ID.
@@ -1786,7 +1765,7 @@ paths:
       - bearerAuth: []
       summary: creates a payment source
       tags:
-      - customers
+      - Customers
   /customers/{id}/payment_sources/{payment_sources_id}:
     delete:
       description: deletes a payment  source that corresponds to a customer ID.
@@ -1896,7 +1875,7 @@ paths:
       - bearerAuth: []
       summary: Deletes a payment source
       tags:
-      - customers
+      - Customers
     put:
       description: Gets a payment source that corresponds to a customer ID.
       operationId: UpdateCustomerPaymentSources
@@ -2007,7 +1986,7 @@ paths:
       - bearerAuth: []
       summary: updates a payment source
       tags:
-      - customers
+      - Customers
   /customers/{id}/shipping_contacts:
     post:
       description: Gets a customer resource that corresponds to a customer ID.
@@ -2112,7 +2091,7 @@ paths:
       - bearerAuth: []
       summary: creates a shipping contacts
       tags:
-      - customers
+      - Customers
   /customers/{id}/shipping_contacts/{shipping_contacts_id}:
     put:
       description: Gets a customer resource that corresponds to a customer ID.
@@ -2224,7 +2203,7 @@ paths:
       - bearerAuth: []
       summary: updates a shipping contacts
       tags:
-      - customers
+      - Customers
   /customers/{id}/subscription:
     get:
       operationId: getSubscription
@@ -3837,7 +3816,7 @@ paths:
           description: internal server error
       security:
       - bearerAuth: []
-      summary: creates a new order
+      summary: Create order
       tags:
       - orders
   /orders/{id}:
@@ -7149,6 +7128,10 @@ components:
           example: false
           type: boolean
         monthly_installments_options:
+          example:
+          - 3
+          - 6
+          - 12
           items:
             format: int8
             type: integer
@@ -7864,19 +7847,45 @@ components:
         in order to configure its corresponding checkout
       properties:
         allowed_payment_methods:
+          description: Those are the payment methods that will be available for the
+            link
+          example:
+          - cash
+          - card
+          - bank_transfer
           items:
-            example: "[cash, card, bank_transfer]"
             type: string
           type: array
         expires_at:
+          description: |
+            It is the time when the link will expire. It is expressed in seconds since the Unix epoch.
+            The valid range is from 2 to 365 days (the valid range will be taken from the next day of the creation date at 00:01 hrs)
           example: 1680397724
           format: int64
           type: integer
+        monthly_installments_enabled:
+          description: This flag allows you to specify if months without interest
+            will be active.
+          example: true
+          type: boolean
+        monthly_installments_options:
+          description: This field allows you to specify the number of months without
+            interest.
+          example:
+          - 3
+          - 6
+          - 12
+          items:
+            format: int8
+            type: integer
+          type: array
         name:
           description: checkout's name
           example: Payment Link Name 1594138857
           type: string
         needs_shipping_contact:
+          description: This flag allows you to fill in the shipping information at
+            checkout.
           example: false
           type: boolean
         on_demand_enabled:
@@ -7890,6 +7899,7 @@ components:
           format: int8
           type: integer
         recurrent:
+          description: "false: single use. true: multiple payments"
           example: false
           type: boolean
         type:
@@ -7910,7 +7920,7 @@ components:
         antifraud_info:
           $ref: '#/components/schemas/customer_antifraud_info'
         name:
-          description: client's name
+          description: Client's name
           example: miguel
           type: string
         email:
@@ -7971,7 +7981,7 @@ components:
       description: updates a customer
       properties:
         name:
-          description: client's name
+          description: Client's name
           example: miguel
           type: string
         email:
@@ -8289,13 +8299,18 @@ components:
         antifraud_info:
           additionalProperties:
             type: object
+          example:
+            key: value
           type: object
+        brand:
+          example: Cohiba
+          type: string
         description:
+          example: Imported From Mex.
           maxLength: 250
           type: string
-        sku:
-          type: string
         name:
+          description: The name of the item. It will be displayed in the order.
           example: Box of Cohiba S1s
           type: string
         unit_price:
@@ -8308,15 +8323,26 @@ components:
           format: int32
           minimum: 1
           type: integer
+        sku:
+          description: The stock keeping unit for the item. It is used to identify
+            the item in the order.
+          example: XYZ12345
+          type: string
         tags:
+          example:
+          - food
+          - mexican food
           items:
             type: string
           type: array
-        brand:
-          type: string
         metadata:
           additionalProperties:
             type: string
+          description: It is a key/value hash that can hold custom fields. Maximum
+            100 elements and allows special characters.
+          example:
+            key: value
+          maxLength: 100
           type: object
       required:
       - name
@@ -8704,6 +8730,10 @@ components:
           example: false
           type: boolean
         monthly_installments_options:
+          example:
+          - 3
+          - 6
+          - 12
           items:
             format: int8
             type: integer
@@ -9543,12 +9573,17 @@ components:
       type: object
       example: null
     checkout_order_template:
+      description: It maintains the attributes with which the order will be created
+        when receiving a new payment.
       properties:
         currency:
           example: MXN
           maxLength: 3
           type: string
         line_items:
+          description: They are the products to buy. Each contains the "unit price"
+            and "quantity" parameters that are used to calculate the total amount
+            of the order.
           items:
             $ref: '#/components/schemas/line_items'
           type: array

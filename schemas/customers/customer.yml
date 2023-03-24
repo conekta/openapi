@@ -19,7 +19,7 @@ properties:
           example: 1485151007
   name:
     type: string
-    description: client's name
+    description: Client's name
     example:  miguel
   email:
     type: string

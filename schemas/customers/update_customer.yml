@@ -4,7 +4,7 @@ type: object
 properties:
   name:
     type: string
-    description: client's name
+    description: Client's name
     example:  miguel
   email:
     type: string

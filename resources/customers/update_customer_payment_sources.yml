@@ -1,6 +1,6 @@
 put:
   tags:
-    - customers
+    - Customers
   operationId: UpdateCustomerPaymentSources
   summary: updates a payment source
   description: 'Gets a payment source that corresponds to a customer ID.'
@@ -42,7 +42,7 @@ put:
 
 delete:
   tags:
-    - customers
+    - Customers
   operationId: DeleteCustomerPaymentSources
   summary: Deletes a payment source
   description: 'deletes a payment  source that corresponds to a customer ID.'

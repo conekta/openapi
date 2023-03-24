@@ -1,6 +1,6 @@
 put:
   tags:
-    - customers
+    - Customers
   operationId: UpdateCustomerShippingContacts
   summary: updates a shipping contacts
   description: 'Gets a customer resource that corresponds to a customer ID.'

@@ -1,8 +1,8 @@
 get:
   tags:
-    - customers
+    - Customers
   operationId: getCustomerById
-  summary: returns a customer
+  summary: Get a customer
   description: 'Gets a customer resource that corresponds to a customer ID.'
   responses:
     '200':
@@ -27,9 +27,9 @@ get:
 
 delete:
   tags:
-    - customers
+    - Customers
   operationId: deleteCustomerById
-  summary: deletes a customer
+  summary: Delete a customer
   description: 'Deleted a customer resource that corresponds to a customer ID.'
   responses:
     '200':
@@ -55,9 +55,9 @@ delete:
     - $ref: '../../parameters/commons/headers/accept_language.yml'
 put:
   tags:
-    - customers
+    - Customers
   operationId: updateCustomer
-  summary: updates a customer
+  summary: Update a customer
   description: 'You can update customer-related data'
   responses:
     '200':

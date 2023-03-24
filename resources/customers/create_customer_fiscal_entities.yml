@@ -1,6 +1,6 @@
 post:
   tags:
-    - customers
+    - Customers
   operationId: CreateCustomerFiscalEntities
   summary: creates a fiscal entities
   description: 'creates a customer resource that corresponds to a customer ID.'

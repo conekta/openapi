@@ -1,8 +1,8 @@
 post:
   tags:
-    - customers
+    - Customers
   operationId: createCustomer
-  summary: creates a new customer
+  summary: Create customer
   description: |
      The purpose of business is to create and keep a customer, you will learn what elements you need to create a customer.
      Remember the credit and debit card tokenization process: [Click here](https://developers.conekta.com/page/web-checkout-tokenizer)
@@ -52,12 +52,11 @@ post:
    $ref: '../../requestBodies/customers/customer.yml'
   parameters:
     - $ref: '../../parameters/commons/headers/accept_language.yml'
-
 get:
   tags:
-    - customers
+    - Customers
   operationId: getCustomers
-  summary: returns customers
+  summary: Get a list of customers
   description: 'The purpose of business is to create and maintain a client, you will learn what elements you need to obtain a list of clients, which can be paged.'
   responses:
     '200':
@@ -96,10 +95,6 @@ get:
             example: conekta-v2.1.0; format=application/json
     401:
      $ref: '../errors/401.yml'
-    402: 
-      $ref: '../errors/402.yml'
-    422:
-     $ref: '../errors/422.yml'
     500:
      $ref: '../errors/500.yml'
   security:
@@ -107,5 +102,6 @@ get:
   parameters:
     - $ref: '../../parameters/commons/headers/accept_language.yml'
     - $ref: '../../parameters/commons/query/limit.yml'
+    - $ref: '../../parameters/commons/query/search.yml'
     - $ref: '../../parameters/commons/query/next_page.yml'
     - $ref: '../../parameters/commons/query/previous_page.yml'

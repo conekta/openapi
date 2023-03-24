@@ -1,6 +1,6 @@
 put:
   tags:
-    - customers
+    - Customers
   operationId: UpdateCustomerFiscalEntities
   summary: updates a  fiscal entities
   description: 'updates a customer resource that corresponds to a customer ID.'
