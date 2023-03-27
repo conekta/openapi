@@ -1,7 +1,7 @@
 title:  Contains details of the payment methods that the customer has active or has used in Conekta
 required:
-  - "type"
+  - type
 properties:
-  "type":
+  type:
     type: string
     example: card

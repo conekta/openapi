@@ -1,6 +1,6 @@
 post:
   tags:
-    - orders
+    - Orders
   operationId: createOrder
   summary: Create order
   description: 'Create a new order.'
@@ -24,7 +24,6 @@ post:
      $ref: '../errors/402.yml'
     500:
      $ref: '../errors/500.yml'
-
   security:
     - bearerAuth: []
   requestBody:
@@ -33,10 +32,10 @@ post:
     - $ref: '../../parameters/commons/headers/accept_language.yml'
 get:
   tags:
-    - orders
+    - Orders
   operationId: getOrders
-  summary: returns a set of /orders
-  description: 'returns a set of /orders.'
+  summary: Get a list of Orders
+  description: 'Get order details in the form of a list'
   responses:
     200:
       description: successful operation

@@ -1,8 +1,9 @@
 get:
   tags:
-    - orders
+    - Orders
   operationId: getOrderById
-  summary: Info for a specific order
+  description: Info for a specific order
+  summary: Get Order
   responses:
     200:
       description: successful
@@ -23,9 +24,10 @@ get:
     - $ref: '../../parameters/commons/headers/accept_language.yml'
 put:
   tags:
-    - orders
+    - Orders
   operationId: updateOrder
-  summary: Update an existing Order.
+  description: Update an existing Order.
+  summary: Update Order
   responses:
     200:
       description: successful

@@ -1,8 +1,9 @@
 post:
   tags:
-    - orders
+    - Orders
   operationId: ordersCreateCapture
-  summary: Processes an order that has been previously authorized.
+  description: Processes an order that has been previously authorized.
+  summary: Capture Order
   responses:
     200:
       description: successful

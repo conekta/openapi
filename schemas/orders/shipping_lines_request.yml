@@ -1,22 +1,27 @@
 title: shipping_lines_request
+required:
+  - amount
 properties:
   amount:
     type: integer
     format: int64
     example: 100
     minimum: 0
+    description: Shipping amount in cents
   carrier: 
     type: string
     example: FEDEX
+    description: Carrier name for the shipment
   tracking_number:
     type: string
     example: "TRACK123"
+    description: Tracking number can be used to track the shipment
   method:
     type: string
-    example: "TRAING"
+    example: "Same day" 
+    description: Method of shipment
   metadata:
+    description: Hash where the user can send additional information for each 'shipping_line'.
     type: object
-    additionalProperties:
-      type: object
-    example:
-      key: value
+    additionalProperties: true
+    example: { "key": "value" }

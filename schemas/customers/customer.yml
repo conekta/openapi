@@ -16,27 +16,8 @@ properties:
           format: int64
         first_paid_at:
           type: integer
+          format: int64
           example: 1485151007
-  name:
-    type: string
-    description: Client's name
-    example:  miguel
-  email:
-    type: string
-    description: "An email address is a series of customizable characters followed by a universal Internet symbol, the at symbol (@), the name of a host server, and a web domain ending (.mx, .com, .org, . net, etc)."
-    example:  miguel@gmail.com
-  phone:
-    type: string
-    description: Is the customer's phone number
-    example: "+5215555555555"
-  plan_id:
-    type: string
-    example:  plan_987234823
-    description: Contains the ID of a plan, which could together with name, email and phone create a client directly to a subscription
-  default_shipping_contact_id:
-    type: string
-    description: It is a parameter that allows to identify in the response, the Conekta ID of the shipping address (shipping_contact)
-    example: ship_cont_1a2b3c4d5e6f7g8h
   corporate:
     type: boolean
     description: "It is a value that allows identifying if the email is corporate or not."
@@ -45,15 +26,24 @@ properties:
   custom_reference:
     type: string
     description: It is an undefined value.
+  email:
+    type: string
+    description: "An email address is a series of customizable characters followed by a universal Internet symbol, the at symbol (@), the name of a host server, and a web domain ending (.mx, .com, .org, . net, etc)."
+    example:  miguel@gmail.com
   default_payment_source_id:
     type: string
     description: "It is a parameter that allows to identify in the response, the Conekta ID of a payment method (payment_id)"
     example: "src_1a2b3c4d5e6f7g8h"
+  default_shipping_contact_id:
+    type: string
+    description: It is a parameter that allows to identify in the response, the Conekta ID of the shipping address (shipping_contact)
+    example: ship_cont_1a2b3c4d5e6f7g8h
   fiscal_entities:
     type: array
     items:
       $ref: './customer_fiscal_entities_request.yml'
   payment_sources:
+    description: Contains details of the payment methods that the customer has active or has used in Conekta
     type: array
     items:
       title: consumer_payment_sources_request
@@ -68,7 +58,16 @@ properties:
           cash: payment_sources_cash
           oxxo_cash: payment_sources_cash
           spei: payment_sources_spei
+  phone:
+    type: string
+    description: Is the customer's phone number
+    example: "+5215555555555"
+  plan_id:
+    type: string
+    example:  plan_987234823
+    description: Contains the ID of a plan, which could together with name, email and phone create a client directly to a subscription
   shipping_contacts:
+    description: Contains the detail of the shipping addresses that the client has active or has used in Conekta
     type: array
     items:
       $ref: './customer_shipping_contacts.yml'

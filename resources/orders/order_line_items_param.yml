@@ -1,8 +1,10 @@
 post:
   tags:
-    - orders
+    - Products
+    - Orders
   operationId: ordersCreateLineItems
-  summary: creates a new line items for an existing orden
+  summary: Create Product
+  description: 'Create a new product for an existing order.'
   responses:
     200:
       description: successful

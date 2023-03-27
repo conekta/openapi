@@ -1,8 +1,9 @@
 post:
   tags:
-    - orders
+    - Orders
   operationId: orderRefund
-  summary: A refunded order describes the items, amount, and reason an order is being refunded.
+  description: A refunded order describes the items, amount, and reason an order is being refunded.
+  summary: Refund Order
   responses:
     200:
       description: successful

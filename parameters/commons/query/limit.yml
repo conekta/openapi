@@ -4,5 +4,7 @@ description: "The numbers of items to return, the maximum value is 250"
 required: false
 schema:
   type: integer
-  format: int32
+  format: int8
   default: 20
+  minimum: 1
+  maximum: 250

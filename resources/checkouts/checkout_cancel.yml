@@ -2,7 +2,7 @@ put:
   tags:
     - Payment Link
   operationId: cancelCheckout
-  summary: cancels a checkout
+  summary: Cancel Payment Link
   responses:
     200:
       description: successful operation

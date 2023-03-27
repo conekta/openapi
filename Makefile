@@ -1,3 +1,4 @@
+API_VERSION_ID = 641deb4041d58005f2c45bf3
 merge:
 	npx @openapitools/openapi-generator-cli  generate -g openapi-yaml -i api.yaml -p outputFile=_build/api.yaml --skip-validate-spec
 	
@@ -25,3 +26,6 @@ php:
 
 node:
 	npx @openapitools/openapi-generator-cli generate -i  api.yaml -g typescript-fetch -o conekta-node -c config-node.json
+
+update-readme:
+	make merge && rdme openapi _build/api.yaml --id=$(API_VERSION_ID)  --key=${README_API_KEY}

@@ -2,7 +2,7 @@ post:
   tags:
     - Payment Link
   operationId: smsCheckout
-  summary: sends an sms
+  summary: Send an sms
   responses:
     200:
       description: successful operation

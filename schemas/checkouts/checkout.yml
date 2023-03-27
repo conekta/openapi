@@ -35,7 +35,7 @@ properties:
     example: [3,6,12]
   name:
     type: string
-    description: checkout's name
+    description: Reason for charge
     example:  Payment Link Name 1594138857
   needs_shipping_contact:
     type: boolean
@@ -63,8 +63,8 @@ properties:
           $ref: ../../schemas/orders/line_items.yml
       metadata:
         type: object
-        additionalProperties:
-          type: object
+        additionalProperties: true
+        example: { "key": "value" }
   payments_limit_count:
     type: integer
     format: int8

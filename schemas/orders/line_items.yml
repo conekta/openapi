@@ -7,30 +7,34 @@ required:
 properties:
   antifraud_info:
     type: object
-    additionalProperties:
-      type: object
+    additionalProperties: true
     example: { "key": "value" }
   brand:
     type: string
     example: "Cohiba"
+    description: "The brand of the item."
   description:
     type: string
     example: "Imported From Mex."
     maxLength: 250
+    description: "Short description of the item"
+  metadata:
+    type: object
+    maxLength: 100
+    description: It is a key/value hash that can hold custom fields. Maximum 100 elements and allows special characters.
+    additionalProperties:
+      type: string
+    example: { "key": "value" }
   name:
     type: string
     example: "Box of Cohiba S1s"
     description: "The name of the item. It will be displayed in the order."
-  unit_price: 
-    type: integer
-    format: int32
-    example: 20000
-    minimum: 0
   quantity:
     type: integer
     format: int32
     example: 1
     minimum: 1
+    description: "The quantity of the item in the order."
   sku:
     type: string
     example: "XYZ12345"
@@ -40,10 +44,10 @@ properties:
     items:
       type: string
     example: [ "food", "mexican food"]
-  metadata:
-    type: object
-    maxLength: 100
-    description: It is a key/value hash that can hold custom fields. Maximum 100 elements and allows special characters.
-    additionalProperties:
-      type: string
-    example: { "key": "value" }
+    description: "List of tags for the item. It is used to identify the item in the order."
+  unit_price: 
+    type: integer
+    format: int32
+    example: 20000
+    minimum: 0
+    description: "The price of the item in cents."

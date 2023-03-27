@@ -11,7 +11,7 @@ properties:
     type: array
     items:
       type: string
-      example: [ "cash", "card", "bank_transfer"]
+    example: [ "cash", "card", "bank_transfer"]
   can_not_expire:
     type: boolean
     example: false
@@ -39,8 +39,8 @@ properties:
     example: true
   metadata:
     type: object
-    additionalProperties:
-      type: object
+    additionalProperties: true
+    example: { "key": "value" }
   monthly_installments_enabled:
     type: boolean
     example: false
@@ -52,7 +52,7 @@ properties:
     example: [3,6,12]
   name:
     type: string
-    description: checkout's name
+    description: Reason for charge
     example:  Payment Link Name 1594138857
   needs_shipping_contact:
     type: boolean

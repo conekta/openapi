@@ -1,8 +1,10 @@
 post:
   tags:
-    - orders
+    - Shippings
+    - Orders
   operationId: ordersCreateShippingLines
-  summary: creates a new shipping lines for an existing orden
+  summary: Create Shipping
+  description: creates a new shipping lines for an existing orden
   responses:
     200:
       description: successful

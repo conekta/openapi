@@ -1,6 +1,6 @@
 in: header
 name: "Accept-Language"
-description: use for knowing which language to use
+description: Use for knowing which language to use
 required: false
 schema:
   default: "es"

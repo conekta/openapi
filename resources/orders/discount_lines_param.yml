@@ -1,8 +1,10 @@
 post:
   tags:
-    - orders
+    - Discounts
+    - Orders
   operationId: ordersCreateDiscountLine
-  summary: creates a new discount lines for an existing orden
+  summary: Create Discount
+  description: creates a new discount lines for an existing orden
   responses:
     200:
       description: successful

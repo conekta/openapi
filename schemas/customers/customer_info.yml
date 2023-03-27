@@ -16,7 +16,6 @@ properties:
     type: string
     example: "5522997233"
   corporate:
-    default: false
     type: boolean
   object:
     type: string

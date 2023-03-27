@@ -1,8 +1,10 @@
 post:
   tags:
-    - orders
+    - Charges
+    - Orders
   operationId: ordersCreateCharge
-  summary: creates a new charge for an existing orden
+  summary: Create charge
+  description: creates a new charge for an existing orden
   responses:
     200:
       description: successful

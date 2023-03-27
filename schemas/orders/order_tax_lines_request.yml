@@ -15,5 +15,5 @@ properties:
     minLength: 2
   metadata:
     type: object
-    additionalProperties:
-      type: object
+    additionalProperties: true
+    example: { "key": "value" }
