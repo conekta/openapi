@@ -2,7 +2,7 @@ get:
   tags:
     - Customers
   operationId: getCustomerById
-  summary: Get a customer
+  summary: Get Customer
   description: 'Gets a customer resource that corresponds to a customer ID.'
   responses:
     '200':
@@ -11,34 +11,30 @@ get:
         application/vnd.conekta-v2.1.0+json:
           schema:
             $ref: '../../schemas/customers/customer_response.yml'
-       
-    422:
-     $ref: '../errors/422.yml'
     401:
      $ref: '../errors/401.yml'
+    404:
+     $ref: '../errors/404.yml'
     500:
      $ref: '../errors/500.yml'
   security:
     - bearerAuth: []
-
   parameters:
     - $ref: '../../parameters/commons/path_param/id.yml'
     - $ref: '../../parameters/commons/headers/accept_language.yml'
-
 delete:
   tags:
     - Customers
   operationId: deleteCustomerById
-  summary: Delete a customer
+  summary: Delete Customer
   description: 'Deleted a customer resource that corresponds to a customer ID.'
   responses:
-    '200':
+    200:
       description: successful operation
       content:
         application/vnd.conekta-v2.1.0+json:
           schema:
             $ref: '../../schemas/customers/customer_response.yml'
-       
     422:
      $ref: '../errors/422.yml'
     401:
@@ -57,7 +53,7 @@ put:
   tags:
     - Customers
   operationId: updateCustomer
-  summary: Update a customer
+  summary: Update customer
   description: 'You can update customer-related data'
   responses:
     '200':

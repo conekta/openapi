@@ -1,7 +1,6 @@
 put:
   tags:
     - Discounts
-    - Orders
   operationId: ordersUpdateDiscountLines
   summary: Update Discount
   description: updates an existing discount lines for an existing orden
@@ -31,7 +30,6 @@ put:
 delete:
   tags:
     - Discounts
-    - Orders
   operationId: ordersDeleteDiscountLines
   summary: Delete Discount
   description: Delete an existing discount lines for an existing orden

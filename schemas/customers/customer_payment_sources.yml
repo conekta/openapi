@@ -4,4 +4,4 @@ required:
 properties:
   type:
     type: string
-    example: card
+    example: card | cash | spei

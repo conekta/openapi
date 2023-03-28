@@ -1,15 +1,30 @@
-title: updates customer request
-description: updates a customer
+title: update customer request
+description: update customer
 type: object
 properties:
-  name:
+  antifraud_info:
+    type: object
+    nullable: true
+    properties:
+      account_created_at:
+        type: integer
+        example: 1484040996
+        format: int64
+      first_paid_at:
+        type: integer
+        example: 1485151007
+  default_payment_source_id:
     type: string
-    description: Client's name
-    example:  miguel
+    description: "It is a parameter that allows to identify in the response, the Conekta ID of a payment method (payment_id)"
+    example: "src_1a2b3c4d5e6f7g8h"
   email:
     type: string
     description: "An email address is a series of customizable characters followed by a universal Internet symbol, the at symbol (@), the name of a host server, and a web domain ending (.mx, .com, .org, . net, etc)."
     example:  miguel@gmail.com
+  name:
+    type: string
+    description: Client's name
+    example:  miguel
   phone:
     type: string
     description: Is the customer's phone number
@@ -35,30 +50,21 @@ properties:
     items:
       $ref: './customer_fiscal_entities_request.yml'
   payment_sources:
+    description: Contains details of the payment methods that the customer has active or has used in Conekta
     type: array
     items:
-      $ref: './customer_payment_sources.yml'
-    example: 
-      - type: card
-        token_id: "tok_76238476234"
-      - type: oxxo_recurrent
+      title: consumer_payment_sources_request
+      oneOf:
+        - $ref: ../../schemas/customers/payment_sources_card.yml
+        - $ref: ../../schemas/customers/payment_sources_cash.yml
+        - $ref: ../../schemas/customers/payment_sources_spei.yml
   shipping_contacts:
+    description: Contains the detail of the shipping addresses that the client has active or has used in Conekta
     type: array
     items:
       $ref: './customer_shipping_contacts.yml'
-  antifraud_info:
-    type: object
-    nullable: true
-    properties:
-      account_created_at:
-        type: integer
-        example: 1484040996
-        format: int64
-      first_paid_at:
-        type: integer
-        example: 1485151007
-  default_payment_source_id:
-    type: string
-    description: "It is a parameter that allows to identify in the response, the Conekta ID of a payment method (payment_id)"
-    example: "src_1a2b3c4d5e6f7g8h"
-    
+  subscription:
+    description: It is a parameter that allows to identify in the response, the detailed content of the plans to which the client has subscribed
+    $ref: '../../schemas/subscriptions/subscription_request.yml'
+ 
+ 

@@ -1,7 +1,6 @@
 put:
   tags:
     - Taxes
-    - Orders
   operationId: ordersUpdateTaxLines
   summary: Update Tax
   description: updates a tax lines for an existing orden
@@ -31,7 +30,6 @@ put:
 delete:
   tags:
     - Taxes
-    - Orders
   operationId: ordersDeleteTaxLines
   summary: Delete Tax
   description: Delete a tax lines for an existing orden

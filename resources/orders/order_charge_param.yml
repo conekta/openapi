@@ -1,7 +1,6 @@
 post:
   tags:
     - Charges
-    - Orders
   operationId: ordersCreateCharge
   summary: Create charge
   description: creates a new charge for an existing orden

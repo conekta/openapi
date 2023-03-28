@@ -2,8 +2,8 @@ put:
   tags:
     - Customers
   operationId: UpdateCustomerFiscalEntities
-  summary: updates a  fiscal entities
-  description: 'updates a customer resource that corresponds to a customer ID.'
+  summary: Update  Fiscal Entity
+  description: 'Update Fiscal Entity resource that corresponds to a customer ID.'
   responses:
     '200':
       description: successful operation

@@ -1,7 +1,6 @@
 post:
   tags:
     - Products
-    - Orders
   operationId: ordersCreateLineItems
   summary: Create Product
   description: 'Create a new product for an existing order.'

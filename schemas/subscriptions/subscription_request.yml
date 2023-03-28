@@ -1,5 +1,5 @@
-title: a subscription
-description: a subscriptions
+title: subscription_request
+description: It is a parameter that allows to identify in the response, the detailed content of the plans to which the client has subscribed
 type: object
 required:
   - plan_id

@@ -1,0 +1,53 @@
+title: customer_update_shipping_contacts_request
+description: |-
+  [Shipping](https://developers.conekta.com/v2.1.0/reference/createcustomershippingcontacts)
+  details, required in case of sending a shipping_line. If we do not receive a shipping_contact on the order, the default shipping_contact of the customer will be used.
+properties:
+  phone:
+    type: string
+    example:  "+525511223344"
+    description: "Phone contact"
+  receiver:
+    type: string
+    example:   "Marvin Fuller"
+    description: "Name of the person who will receive the order"
+  between_streets: 
+    type: string
+    example: "Ackerman Crescent"
+    description: "The street names between which the order will be delivered."
+  address: 
+    type: object
+    description: "Address of the person who will receive the order"
+    properties:
+      street1:
+        type: string
+        example: avenida siempre viva
+      street2: 
+        type: string
+        example: fake street
+      postal_code:
+        type: string
+        example: "06100"
+      city: 
+        type: string
+        example: "Ciudad de Mexico"
+      state:
+        type: string
+        example: "Ciudad de Mexico"
+      country:
+        type: string
+        example: MX
+        description: "this field follows the [ISO 3166-1 alpha-2 standard](https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2)"
+      residential:
+        type: boolean
+        example: true
+        nullable: true
+  parent_id:
+    type: string
+  default:
+    type: boolean
+    nullable: true
+  deleted:
+    type: boolean
+    nullable: true
+    

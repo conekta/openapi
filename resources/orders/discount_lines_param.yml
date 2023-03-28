@@ -1,7 +1,6 @@
 post:
   tags:
     - Discounts
-    - Orders
   operationId: ordersCreateDiscountLine
   summary: Create Discount
   description: creates a new discount lines for an existing orden

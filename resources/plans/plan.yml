@@ -1,8 +1,8 @@
 get:
   tags:
-    - plans
+    - Plans
   operationId: getPlan
-  summary: returns a plan
+  summary: Get Plan
   responses:
     200:
       description: successful

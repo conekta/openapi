@@ -1,8 +1,8 @@
 post:
   tags:
-    - Customers
+    - Payment Methods
   operationId: CreateCustomerPaymentSources
-  summary: creates a payment source
+  summary: Create Payment Method
   description: 'Gets a payment source that corresponds to a customer ID.'
   responses:
     '200':

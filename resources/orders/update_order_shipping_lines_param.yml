@@ -1,7 +1,6 @@
 put:
   tags:
     - Shippings
-    - Orders
   operationId: ordersUpdateShippingLines
   summary: Update Shipping
   description: updates an existing shipping lines for an existing orden

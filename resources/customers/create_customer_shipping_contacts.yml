@@ -1,7 +1,6 @@
 post: 
   tags:
     - Shipping Contacts
-    - Customers
   operationId: CreateCustomerShippingContacts
   summary: Create a shipping contacts
   description: 'Gets a customer resource that corresponds to a customer ID.'

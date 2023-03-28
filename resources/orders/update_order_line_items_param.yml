@@ -1,7 +1,6 @@
 put:
   tags:
     - Products
-    - Orders
   operationId: ordersUpdateLineItems
   description: Update a existing line items for an existing orden
   summary: Update Product
@@ -31,7 +30,6 @@ put:
 delete:
   tags:
     - Products
-    - Orders
   operationId: ordersDeleteLineItems
   description: Delete product for an existing orden
   summary: Delete Product

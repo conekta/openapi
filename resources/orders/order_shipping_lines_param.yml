@@ -1,7 +1,6 @@
 post:
   tags:
     - Shippings
-    - Orders
   operationId: ordersCreateShippingLines
   summary: Create Shipping
   description: creates a new shipping lines for an existing orden

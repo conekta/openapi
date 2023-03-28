@@ -1,0 +1,6 @@
+description: requested field for customer update shippings contacts
+content:
+  application/json:
+    schema:  
+      $ref: ../../schemas/customers/customer_update_shipping_contacts.yml
+required: true

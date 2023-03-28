@@ -1258,7 +1258,7 @@ paths:
           description: internal server error
       security:
       - bearerAuth: []
-      summary: Delete a customer
+      summary: Delete Customer
       tags:
       - Customers
     get:
@@ -1296,21 +1296,6 @@ paths:
               schema:
                 $ref: '#/components/schemas/customer_response'
           description: successful operation
-        "422":
-          content:
-            application/vnd.conekta-v2.1.0+json:
-              example:
-                details:
-                - message: The token does not exist.
-                  param: payment_method.token_id
-                  code: conekta.errors.parameter_validation.payment_method.token_id.nonexistent_token
-                  debug_message: The token does not exist.
-                log_id: 641b6d813cd9a50001515017
-                object: error
-                type: parameter_validation_error
-              schema:
-                $ref: '#/components/schemas/error'
-          description: parameter validation error
         "401":
           content:
             application/vnd.conekta-v2.1.0+json:
@@ -1325,6 +1310,22 @@ paths:
               schema:
                 $ref: '#/components/schemas/error'
           description: authentication error
+        "404":
+          content:
+            application/vnd.conekta-v2.1.0+json:
+              example:
+                details:
+                - message: The resource was not found.
+                  param: null
+                  code: conekta.errors.resource_not_found.entity
+                  debug_message: The object Webhook "641b1d5662d7e00001eaa46b" could
+                    not be found.
+                log_id: 641b6c253cd9a50001514fae
+                object: error
+                type: resource_not_found_error
+              schema:
+                $ref: '#/components/schemas/error'
+          description: not found entity
         "500":
           content:
             application/vnd.conekta-v2.1.0+json:
@@ -1344,7 +1345,7 @@ paths:
           description: internal server error
       security:
       - bearerAuth: []
-      summary: Get a customer
+      summary: Get Customer
       tags:
       - Customers
     put:
@@ -1446,12 +1447,12 @@ paths:
           description: internal server error
       security:
       - bearerAuth: []
-      summary: Update a customer
+      summary: Update customer
       tags:
       - Customers
   /customers/{id}/fiscal_entities:
     post:
-      description: creates a customer resource that corresponds to a customer ID.
+      description: Create Fiscal entity resource that corresponds to a customer ID.
       operationId: CreateCustomerFiscalEntities
       parameters:
       - description: Identifier of the resource
@@ -1551,12 +1552,12 @@ paths:
           description: internal server error
       security:
       - bearerAuth: []
-      summary: creates a fiscal entities
+      summary: Create Fiscal Entity
       tags:
       - Customers
   /customers/{id}/fiscal_entities/{fiscal_entities_id}:
     put:
-      description: updates a customer resource that corresponds to a customer ID.
+      description: Update Fiscal Entity resource that corresponds to a customer ID.
       operationId: UpdateCustomerFiscalEntities
       parameters:
       - description: Identifier of the resource
@@ -1663,7 +1664,7 @@ paths:
           description: internal server error
       security:
       - bearerAuth: []
-      summary: updates a  fiscal entities
+      summary: Update  Fiscal Entity
       tags:
       - Customers
   /customers/{id}/payment_sources:
@@ -1768,9 +1769,9 @@ paths:
           description: internal server error
       security:
       - bearerAuth: []
-      summary: creates a payment source
+      summary: Create Payment Method
       tags:
-      - Customers
+      - Payment Methods
   /customers/{id}/payment_sources/{payment_sources_id}:
     delete:
       description: deletes a payment  source that corresponds to a customer ID.
@@ -1878,9 +1879,9 @@ paths:
           description: internal server error
       security:
       - bearerAuth: []
-      summary: Deletes a payment source
+      summary: Delete Payment Method
       tags:
-      - Customers
+      - Payment Methods
     put:
       description: Gets a payment source that corresponds to a customer ID.
       operationId: UpdateCustomerPaymentSources
@@ -1989,9 +1990,9 @@ paths:
           description: internal server error
       security:
       - bearerAuth: []
-      summary: updates a payment source
+      summary: Update Payment Method
       tags:
-      - Customers
+      - Payment Methods
   /customers/{id}/shipping_contacts:
     post:
       description: Gets a customer resource that corresponds to a customer ID.
@@ -2097,7 +2098,6 @@ paths:
       summary: Create a shipping contacts
       tags:
       - Shipping Contacts
-      - Customers
   /customers/{id}/shipping_contacts/{shipping_contacts_id}:
     delete:
       description: Delete shipping contact that corresponds to a customer ID.
@@ -2208,7 +2208,6 @@ paths:
       summary: Delete shipping contacts
       tags:
       - Shipping Contacts
-      - Customers
     put:
       description: Gets a customer resource that corresponds to a customer ID.
       operationId: UpdateCustomerShippingContacts
@@ -2245,7 +2244,7 @@ paths:
           - en
           type: string
       requestBody:
-        $ref: '#/components/requestBodies/customer_shipping_contacts'
+        $ref: '#/components/requestBodies/customer_update_shipping_contacts'
       responses:
         "200":
           content:
@@ -2320,7 +2319,6 @@ paths:
       summary: Update shipping contacts
       tags:
       - Shipping Contacts
-      - Customers
   /customers/{id}/subscription:
     get:
       operationId: getSubscription
@@ -4346,7 +4344,6 @@ paths:
       summary: Create charge
       tags:
       - Charges
-      - Orders
   /orders/{id}/discount_lines:
     post:
       description: creates a new discount lines for an existing orden
@@ -4437,7 +4434,6 @@ paths:
       summary: Create Discount
       tags:
       - Discounts
-      - Orders
   /orders/{id}/discount_lines/{discount_lines_id}:
     delete:
       description: Delete an existing discount lines for an existing orden
@@ -4548,7 +4544,6 @@ paths:
       summary: Delete Discount
       tags:
       - Discounts
-      - Orders
     put:
       description: updates an existing discount lines for an existing orden
       operationId: ordersUpdateDiscountLines
@@ -4660,7 +4655,6 @@ paths:
       summary: Update Discount
       tags:
       - Discounts
-      - Orders
   /orders/{id}/line_items:
     post:
       description: Create a new product for an existing order.
@@ -4751,7 +4745,6 @@ paths:
       summary: Create Product
       tags:
       - Products
-      - Orders
   /orders/{id}/line_items/{line_item_id}:
     delete:
       description: Delete product for an existing orden
@@ -4862,7 +4855,6 @@ paths:
       summary: Delete Product
       tags:
       - Products
-      - Orders
     put:
       description: Update a existing line items for an existing orden
       operationId: ordersUpdateLineItems
@@ -4974,7 +4966,6 @@ paths:
       summary: Update Product
       tags:
       - Products
-      - Orders
   /orders/{id}/refunds:
     post:
       description: "A refunded order describes the items, amount, and reason an order\
@@ -5171,7 +5162,6 @@ paths:
       summary: Create Shipping
       tags:
       - Shippings
-      - Orders
   /orders/{id}/shipping_lines/{shipping_lines_id}:
     put:
       description: updates an existing shipping lines for an existing orden
@@ -5284,7 +5274,6 @@ paths:
       summary: Update Shipping
       tags:
       - Shippings
-      - Orders
   /orders/{id}/tax_lines:
     post:
       description: creates a new tax lines for an existing orden
@@ -5390,7 +5379,6 @@ paths:
       summary: Create Tax
       tags:
       - Taxes
-      - Orders
   /orders/{id}/tax_lines/{tax_lines_id}:
     delete:
       description: Delete a tax lines for an existing orden
@@ -5501,7 +5489,6 @@ paths:
       summary: Delete Tax
       tags:
       - Taxes
-      - Orders
     put:
       description: updates a tax lines for an existing orden
       operationId: ordersUpdateTaxLines
@@ -5613,7 +5600,6 @@ paths:
       summary: Update Tax
       tags:
       - Taxes
-      - Orders
   /plans:
     get:
       operationId: getPlans
@@ -5743,10 +5729,11 @@ paths:
           description: internal server error
       security:
       - bearerAuth: []
-      summary: returns a set of /plans
+      summary: Get A List of Plans
       tags:
-      - plans
+      - Plans
     post:
+      description: Create a new plan for an existing order
       operationId: createPlan
       parameters:
       - description: Use for knowing which language to use
@@ -5848,7 +5835,7 @@ paths:
           description: internal server error
       security:
       - bearerAuth: []
-      summary: creates a plan
+      summary: Create Plan
       tags:
       - plans
   /plans/{id}:
@@ -6101,9 +6088,9 @@ paths:
           description: internal server error
       security:
       - bearerAuth: []
-      summary: returns a plan
+      summary: Get Plan
       tags:
-      - plans
+      - Plans
     put:
       operationId: updatePlan
       parameters:
@@ -7274,6 +7261,13 @@ components:
             $ref: '#/components/schemas/customer_shipping_contacts'
       description: requested field for customer shippings contacts
       required: true
+    customer_update_shipping_contacts:
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/customer_update_shipping_contacts'
+      description: requested field for customer update shippings contacts
+      required: true
     subscription_update:
       content:
         application/json:
@@ -8433,6 +8427,10 @@ components:
           items:
             $ref: '#/components/schemas/customer_fiscal_entities_request'
           type: array
+        name:
+          description: Client's name
+          example: miguel
+          type: string
         payment_sources:
           description: Contains details of the payment methods that the customer has
             active or has used in Conekta
@@ -8463,17 +8461,24 @@ components:
       title: customer request
       type: object
     update_customer:
-      description: updates a customer
+      description: update customer
       properties:
-        name:
-          description: Client's name
-          example: miguel
+        antifraud_info:
+          $ref: '#/components/schemas/update_customer_antifraud_info'
+        default_payment_source_id:
+          description: "It is a parameter that allows to identify in the response,\
+            \ the Conekta ID of a payment method (payment_id)"
+          example: src_1a2b3c4d5e6f7g8h
           type: string
         email:
           description: "An email address is a series of customizable characters followed\
             \ by a universal Internet symbol, the at symbol (@), the name of a host\
             \ server, and a web domain ending (.mx, .com, .org, . net, etc)."
           example: miguel@gmail.com
+          type: string
+        name:
+          description: Client's name
+          example: miguel
           type: string
         phone:
           description: Is the customer's phone number
@@ -8503,25 +8508,20 @@ components:
             $ref: '#/components/schemas/customer_fiscal_entities_request'
           type: array
         payment_sources:
-          example:
-          - type: card
-            token_id: tok_76238476234
-          - type: oxxo_recurrent
+          description: Contains details of the payment methods that the customer has
+            active or has used in Conekta
           items:
-            $ref: '#/components/schemas/customer_payment_sources'
+            $ref: '#/components/schemas/consumer_payment_sources_request'
           type: array
         shipping_contacts:
+          description: Contains the detail of the shipping addresses that the client
+            has active or has used in Conekta
           items:
             $ref: '#/components/schemas/customer_shipping_contacts'
           type: array
-        antifraud_info:
-          $ref: '#/components/schemas/update_customer_antifraud_info'
-        default_payment_source_id:
-          description: "It is a parameter that allows to identify in the response,\
-            \ the Conekta ID of a payment method (payment_id)"
-          example: src_1a2b3c4d5e6f7g8h
-          type: string
-      title: updates customer request
+        subscription:
+          $ref: '#/components/schemas/subscription_request'
+      title: update customer request
       type: object
     customer_update_fiscal_entities_request:
       properties:
@@ -8597,6 +8597,35 @@ components:
       - address
       title: customer_shipping_contacts_request
       type: object
+    customer_update_shipping_contacts:
+      description: |-
+        [Shipping](https://developers.conekta.com/v2.1.0/reference/createcustomershippingcontacts)
+        details, required in case of sending a shipping_line. If we do not receive a shipping_contact on the order, the default shipping_contact of the customer will be used.
+      properties:
+        phone:
+          description: Phone contact
+          example: +525511223344
+          type: string
+        receiver:
+          description: Name of the person who will receive the order
+          example: Marvin Fuller
+          type: string
+        between_streets:
+          description: The street names between which the order will be delivered.
+          example: Ackerman Crescent
+          type: string
+        address:
+          $ref: '#/components/schemas/customer_shipping_contacts_address'
+        parent_id:
+          type: string
+        default:
+          nullable: true
+          type: boolean
+        deleted:
+          nullable: true
+          type: boolean
+      title: customer_update_shipping_contacts_request
+      type: object
     subscription_update_request:
       description: You can modify the subscription to change the plan used by your
         customers.
@@ -8613,7 +8642,8 @@ components:
       title: updates a subscription
       type: object
     subscription_request:
-      description: a subscriptions
+      description: "It is a parameter that allows to identify in the response, the\
+        \ detailed content of the plans to which the client has subscribed"
       properties:
         plan_id:
           example: f84gdgf5g48r15fd21g8w424fd1
@@ -8626,7 +8656,7 @@ components:
           type: integer
       required:
       - plan_id
-      title: a subscription
+      title: subscription_request
       type: object
     order_request:
       description: a order
@@ -9228,7 +9258,7 @@ components:
     customer_payment_sources:
       properties:
         type:
-          example: card
+          example: card | cash | spei
           type: string
       required:
       - type
@@ -10138,13 +10168,6 @@ components:
           type: integer
       type: object
     consumer_payment_sources_request:
-      discriminator:
-        mapping:
-          card: payment_sources_card
-          cash: payment_sources_cash
-          oxxo_cash: payment_sources_cash
-          spei: payment_sources_spei
-        propertyName: type
       oneOf:
       - $ref: '#/components/schemas/payment_sources_card'
       - $ref: '#/components/schemas/payment_sources_cash'

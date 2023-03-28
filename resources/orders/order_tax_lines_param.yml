@@ -1,7 +1,6 @@
 post:
   tags:
     - Taxes
-    - Orders
   operationId: ordersCreateTaxLines
   description: creates a new tax lines for an existing orden
   summary: Create Tax

@@ -1,7 +1,6 @@
 put:
   tags:
     - Shipping Contacts
-    - Customers
   operationId: UpdateCustomerShippingContacts
   summary: Update shipping contacts
   description: 'Gets a customer resource that corresponds to a customer ID.'
@@ -23,7 +22,7 @@ put:
   security:
     - bearerAuth: []
   requestBody:
-    $ref: ../../requestBodies/customers/customer_shipping_contacts.yml
+    $ref: ../../requestBodies/customers/customer_update_shipping_contacts.yml
   parameters:
     - $ref: '../../parameters/commons/path_param/id.yml'
     - $ref: '../../parameters/commons/path_param/shipping_contacts_id.yml'
@@ -31,7 +30,6 @@ put:
 delete:
   tags:
     - Shipping Contacts
-    - Customers
   operationId: DeleteCustomerShippingContacts
   summary: Delete shipping contacts
   description: 'Delete shipping contact that corresponds to a customer ID.'
