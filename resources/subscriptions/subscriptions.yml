@@ -1,8 +1,9 @@
 post:
   tags:
-    - subscriptions
+    - Subscriptions
   operationId: createSubscription
-  summary: creates a subscription
+  summary: Create Subscription
+  description: You can create the subscription to include the plans that your customers consume
   responses:
     200:
       description: successful
@@ -52,9 +53,10 @@ post:
     - $ref: '../../parameters/commons/headers/accept_language.yml'
 put:
   tags:
-    - subscriptions
+    - Subscriptions
   operationId: updateSubscription
-  summary: updates a subscription
+  summary: Update Subscription
+  description: You can modify the subscription to change the plans that your customers consume
   responses:
     200:
       description: successful
@@ -104,9 +106,9 @@ put:
     - $ref: '../../parameters/commons/headers/accept_language.yml'
 get:
   tags:
-    - subscriptions
+    - Subscriptions
   operationId: getSubscription
-  summary: returns a subscription
+  summary: Get Subscription
   responses:
     200:
       description: successful
@@ -139,8 +141,6 @@ get:
           schema:
             type: string
             example: conekta-v2.1.0; format=application/json
-    422:
-     $ref: '../errors/422.yml'
     401:
      $ref: '../errors/401.yml'
     404:

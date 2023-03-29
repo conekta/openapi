@@ -1,8 +1,9 @@
 get:
   tags:
-    - logs
+    - Logs
   operationId: getLogs
-  summary: returns a set of /logs
+  summary: Get List Of Logs
+  description: Get log details in the form of a list
   responses:
     200:
       description: successful
@@ -35,8 +36,6 @@ get:
           schema:
             type: string
             example: conekta-v2.1.0; format=application/json
-    422:
-     $ref: '../errors/422.yml'
     401:
      $ref: '../errors/401.yml'
     500:

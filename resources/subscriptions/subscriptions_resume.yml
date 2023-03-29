@@ -1,8 +1,9 @@
 post:
   tags:
-    - subscriptions
+    - Subscriptions
   operationId: resumeSubscription
-  summary: resumes a subscription
+  summary: Resume Subscription
+  description: You can resume the subscription to start the plans that your customers consume
   responses:
     200:
       description: successful

@@ -11,16 +11,25 @@ properties:
     type: integer
     example: 10000
     minimum: 1
+    description: "The amount in cents that will be charged on the interval specified."
   currency:
     type: string
     example: "MXN"
     maxLength: 3
-  expiry_count:
+    description: ISO 4217 for currencies, for the Mexican peso it is MXN/USD
+  expiry_count: 
     type: integer
     example: 12
+    description: Number of repetitions of the frequency NUMBER OF CHARGES TO BE MADE, considering the interval and frequency, this evolves over time, but is subject to the expiration count.
+  frequency: 
+    type: integer
+    example: 1
+    minimum: 1
+    description: Frequency of the charge, which together with the interval, can be every 3 weeks, every 4 months, every 2 years, every 5 fortnights
   id:
     type: string
     example: "plan_24234"
+    description: internal reference id
   interval:
     type: string
     nullable: false
@@ -29,13 +38,12 @@ properties:
       - half_month
       - month
       - year
-  frequency: 
-    type: integer
-    example: 1
-    minimum: 1
+    description: "The interval of time between each charge."
   name:
     type: string
     example: "Extra Plan3"
+    description: "The name of the plan."
   trial_period_days:
     type: integer
     example: 0
+    description: "The number of days the customer will have a free trial."

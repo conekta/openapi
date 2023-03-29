@@ -2379,21 +2379,6 @@ paths:
               schema:
                 example: conekta-v2.1.0; format=application/json
                 type: string
-        "422":
-          content:
-            application/vnd.conekta-v2.1.0+json:
-              example:
-                details:
-                - message: The token does not exist.
-                  param: payment_method.token_id
-                  code: conekta.errors.parameter_validation.payment_method.token_id.nonexistent_token
-                  debug_message: The token does not exist.
-                log_id: 641b6d813cd9a50001515017
-                object: error
-                type: parameter_validation_error
-              schema:
-                $ref: '#/components/schemas/error'
-          description: parameter validation error
         "401":
           content:
             application/vnd.conekta-v2.1.0+json:
@@ -2443,10 +2428,12 @@ paths:
           description: internal server error
       security:
       - bearerAuth: []
-      summary: returns a subscription
+      summary: Get Subscription
       tags:
-      - subscriptions
+      - Subscriptions
     post:
+      description: You can create the subscription to include the plans that your
+        customers consume
       operationId: createSubscription
       parameters:
       - description: Identifier of the resource
@@ -2571,10 +2558,12 @@ paths:
           description: internal server error
       security:
       - bearerAuth: []
-      summary: creates a subscription
+      summary: Create Subscription
       tags:
-      - subscriptions
+      - Subscriptions
     put:
+      description: You can modify the subscription to change the plans that your customers
+        consume
       operationId: updateSubscription
       parameters:
       - description: Identifier of the resource
@@ -2699,11 +2688,13 @@ paths:
           description: internal server error
       security:
       - bearerAuth: []
-      summary: updates a subscription
+      summary: Update Subscription
       tags:
-      - subscriptions
+      - Subscriptions
   /customers/{id}/subscription/cancel:
     post:
+      description: You can cancel the subscription to stop the plans that your customers
+        consume
       operationId: cancelSubscription
       parameters:
       - description: Identifier of the resource
@@ -2762,21 +2753,6 @@ paths:
               schema:
                 example: conekta-v2.1.0; format=application/json
                 type: string
-        "422":
-          content:
-            application/vnd.conekta-v2.1.0+json:
-              example:
-                details:
-                - message: The token does not exist.
-                  param: payment_method.token_id
-                  code: conekta.errors.parameter_validation.payment_method.token_id.nonexistent_token
-                  debug_message: The token does not exist.
-                log_id: 641b6d813cd9a50001515017
-                object: error
-                type: parameter_validation_error
-              schema:
-                $ref: '#/components/schemas/error'
-          description: parameter validation error
         "401":
           content:
             application/vnd.conekta-v2.1.0+json:
@@ -2791,20 +2767,6 @@ paths:
               schema:
                 $ref: '#/components/schemas/error'
           description: authentication error
-        "402":
-          content:
-            application/vnd.conekta-v2.1.0+json:
-              example:
-                details:
-                - message: The card could not be processed.
-                  code: conekta.errors.processing.tokenization.used
-                  debug_message: The token has already been used.
-                log_id: 641b6d073cd9a50001515007
-                object: error
-                type: processing_error
-              schema:
-                $ref: '#/components/schemas/error'
-          description: payment required error
         "404":
           content:
             application/vnd.conekta-v2.1.0+json:
@@ -2840,11 +2802,13 @@ paths:
           description: internal server error
       security:
       - bearerAuth: []
-      summary: cancels a subscription
+      summary: Cancel Subscription
       tags:
-      - subscriptions
+      - Subscriptions
   /customers/{id}/subscription/events:
     get:
+      description: "You can get the events of the subscription(s) of a client, with\
+        \ the customer id"
       operationId: getAllEventsFromSubscription
       parameters:
       - description: Identifier of the resource
@@ -2981,12 +2945,13 @@ paths:
           description: internal server error
       security:
       - bearerAuth: []
-      summary: "You can get the events of the subscription(s) of a client, with the\
-        \ customer id"
+      summary: Get Events By Subscription
       tags:
-      - subscriptions
+      - Subscriptions
   /customers/{id}/subscription/pause:
     post:
+      description: You can pause the subscription to stop the plans that your customers
+        consume
       operationId: pauseSubscription
       parameters:
       - description: Identifier of the resource
@@ -3045,21 +3010,6 @@ paths:
               schema:
                 example: conekta-v2.1.0; format=application/json
                 type: string
-        "422":
-          content:
-            application/vnd.conekta-v2.1.0+json:
-              example:
-                details:
-                - message: The token does not exist.
-                  param: payment_method.token_id
-                  code: conekta.errors.parameter_validation.payment_method.token_id.nonexistent_token
-                  debug_message: The token does not exist.
-                log_id: 641b6d813cd9a50001515017
-                object: error
-                type: parameter_validation_error
-              schema:
-                $ref: '#/components/schemas/error'
-          description: parameter validation error
         "401":
           content:
             application/vnd.conekta-v2.1.0+json:
@@ -3123,11 +3073,13 @@ paths:
           description: internal server error
       security:
       - bearerAuth: []
-      summary: pauses a subscription
+      summary: Pause Subscription
       tags:
-      - subscriptions
+      - Subscriptions
   /customers/{id}/subscription/resume:
     post:
+      description: You can resume the subscription to start the plans that your customers
+        consume
       operationId: resumeSubscription
       parameters:
       - description: Identifier of the resource
@@ -3264,9 +3216,9 @@ paths:
           description: internal server error
       security:
       - bearerAuth: []
-      summary: resumes a subscription
+      summary: Resume Subscription
       tags:
-      - subscriptions
+      - Subscriptions
   /events:
     get:
       operationId: getEvents
@@ -3348,21 +3300,6 @@ paths:
               schema:
                 example: conekta-v2.1.0; format=application/json
                 type: string
-        "422":
-          content:
-            application/vnd.conekta-v2.1.0+json:
-              example:
-                details:
-                - message: The token does not exist.
-                  param: payment_method.token_id
-                  code: conekta.errors.parameter_validation.payment_method.token_id.nonexistent_token
-                  debug_message: The token does not exist.
-                log_id: 641b6d813cd9a50001515017
-                object: error
-                type: parameter_validation_error
-              schema:
-                $ref: '#/components/schemas/error'
-          description: parameter validation error
         "401":
           content:
             application/vnd.conekta-v2.1.0+json:
@@ -3396,11 +3333,12 @@ paths:
           description: internal server error
       security:
       - bearerAuth: []
-      summary: returns a set of /events
+      summary: Get list of Events
       tags:
-      - events
+      - Events
   /events/{id}:
     get:
+      description: Returns a single event
       operationId: getEvent
       parameters:
       - description: Use for knowing which language to use
@@ -3508,11 +3446,12 @@ paths:
           description: internal server error
       security:
       - bearerAuth: []
-      summary: returns an event
+      summary: Get Event
       tags:
-      - events
+      - Events
   /logs:
     get:
+      description: Get log details in the form of a list
       operationId: getLogs
       parameters:
       - description: Use for knowing which language to use
@@ -3592,21 +3531,6 @@ paths:
               schema:
                 example: conekta-v2.1.0; format=application/json
                 type: string
-        "422":
-          content:
-            application/vnd.conekta-v2.1.0+json:
-              example:
-                details:
-                - message: The token does not exist.
-                  param: payment_method.token_id
-                  code: conekta.errors.parameter_validation.payment_method.token_id.nonexistent_token
-                  debug_message: The token does not exist.
-                log_id: 641b6d813cd9a50001515017
-                object: error
-                type: parameter_validation_error
-              schema:
-                $ref: '#/components/schemas/error'
-          description: parameter validation error
         "401":
           content:
             application/vnd.conekta-v2.1.0+json:
@@ -3640,11 +3564,12 @@ paths:
           description: internal server error
       security:
       - bearerAuth: []
-      summary: returns a set of /logs
+      summary: Get List Of Logs
       tags:
-      - logs
+      - Logs
   /logs/{id}:
     get:
+      description: Get the details of a specific log
       operationId: getLogById
       parameters:
       - description: Identifier of the resource
@@ -3678,21 +3603,6 @@ paths:
               schema:
                 $ref: '#/components/schemas/log_response'
           description: successful
-        "422":
-          content:
-            application/vnd.conekta-v2.1.0+json:
-              example:
-                details:
-                - message: The token does not exist.
-                  param: payment_method.token_id
-                  code: conekta.errors.parameter_validation.payment_method.token_id.nonexistent_token
-                  debug_message: The token does not exist.
-                log_id: 641b6d813cd9a50001515017
-                object: error
-                type: parameter_validation_error
-              schema:
-                $ref: '#/components/schemas/error'
-          description: parameter validation error
         "401":
           content:
             application/vnd.conekta-v2.1.0+json:
@@ -3742,9 +3652,9 @@ paths:
           description: internal server error
       security:
       - bearerAuth: []
-      summary: Info for a specific log
+      summary: Get Log
       tags:
-      - logs
+      - Logs
   /orders:
     get:
       description: Get order details in the form of a list
@@ -5837,7 +5747,7 @@ paths:
       - bearerAuth: []
       summary: Create Plan
       tags:
-      - plans
+      - Plans
   /plans/{id}:
     delete:
       operationId: deletePlan
@@ -5962,9 +5872,9 @@ paths:
           description: internal server error
       security:
       - bearerAuth: []
-      summary: deletes a plan
+      summary: Delete Plan
       tags:
-      - plans
+      - Plans
     get:
       operationId: getPlan
       parameters:
@@ -6216,11 +6126,13 @@ paths:
           description: internal server error
       security:
       - bearerAuth: []
-      summary: updates a plan
+      summary: Update Plan
       tags:
-      - plans
+      - Plans
   /webhooks:
     get:
+      description: "Consume the list of webhooks you have, each environment supports\
+        \ 10 webhooks (For production and testing)"
       operationId: getWebhooks
       parameters:
       - description: Use for knowing which language to use
@@ -6300,21 +6212,6 @@ paths:
               schema:
                 example: conekta-v2.1.0; format=application/json
                 type: string
-        "422":
-          content:
-            application/vnd.conekta-v2.1.0+json:
-              example:
-                details:
-                - message: The token does not exist.
-                  param: payment_method.token_id
-                  code: conekta.errors.parameter_validation.payment_method.token_id.nonexistent_token
-                  debug_message: The token does not exist.
-                log_id: 641b6d813cd9a50001515017
-                object: error
-                type: parameter_validation_error
-              schema:
-                $ref: '#/components/schemas/error'
-          description: parameter validation error
         "401":
           content:
             application/vnd.conekta-v2.1.0+json:
@@ -6348,11 +6245,15 @@ paths:
           description: internal server error
       security:
       - bearerAuth: []
-      summary: returns a set of /webhooks
+      summary: Get List of Webhooks
       tags:
-      - webhooks
+      - Webhooks
     post:
-      description: Create a new webhook.
+      description: "What we do at Conekta translates into events. For example, an\
+        \ event of interest to us occurs at the time a payment is successfully processed.\
+        \ At that moment we will be interested in doing several things: Send an email\
+        \ to the buyer, generate an invoice, start the process of shipping the product,\
+        \ etc."
       operationId: createWebhook
       parameters:
       - description: Use for knowing which language to use
@@ -6381,21 +6282,6 @@ paths:
               schema:
                 $ref: '#/components/schemas/webhook_response'
           description: successful operation
-        "422":
-          content:
-            application/vnd.conekta-v2.1.0+json:
-              example:
-                details:
-                - message: The token does not exist.
-                  param: payment_method.token_id
-                  code: conekta.errors.parameter_validation.payment_method.token_id.nonexistent_token
-                  debug_message: The token does not exist.
-                log_id: 641b6d813cd9a50001515017
-                object: error
-                type: parameter_validation_error
-              schema:
-                $ref: '#/components/schemas/error'
-          description: parameter validation error
         "401":
           content:
             application/vnd.conekta-v2.1.0+json:
@@ -6429,9 +6315,9 @@ paths:
           description: internal server error
       security:
       - bearerAuth: []
-      summary: creates a new webhook
+      summary: Create Webhook
       tags:
-      - webhooks
+      - Webhooks
   /webhooks/{id}:
     delete:
       operationId: deleteWebhook
@@ -6492,21 +6378,6 @@ paths:
               schema:
                 example: conekta-v2.1.0; format=application/json
                 type: string
-        "422":
-          content:
-            application/vnd.conekta-v2.1.0+json:
-              example:
-                details:
-                - message: The token does not exist.
-                  param: payment_method.token_id
-                  code: conekta.errors.parameter_validation.payment_method.token_id.nonexistent_token
-                  debug_message: The token does not exist.
-                log_id: 641b6d813cd9a50001515017
-                object: error
-                type: parameter_validation_error
-              schema:
-                $ref: '#/components/schemas/error'
-          description: parameter validation error
         "401":
           content:
             application/vnd.conekta-v2.1.0+json:
@@ -6556,9 +6427,9 @@ paths:
           description: internal server error
       security:
       - bearerAuth: []
-      summary: returns a deleted webhook
+      summary: Delete Webhook
       tags:
-      - webhooks
+      - Webhooks
     get:
       operationId: getWebhook
       parameters:
@@ -6618,21 +6489,6 @@ paths:
               schema:
                 example: conekta-v2.1.0; format=application/json
                 type: string
-        "422":
-          content:
-            application/vnd.conekta-v2.1.0+json:
-              example:
-                details:
-                - message: The token does not exist.
-                  param: payment_method.token_id
-                  code: conekta.errors.parameter_validation.payment_method.token_id.nonexistent_token
-                  debug_message: The token does not exist.
-                log_id: 641b6d813cd9a50001515017
-                object: error
-                type: parameter_validation_error
-              schema:
-                $ref: '#/components/schemas/error'
-          description: parameter validation error
         "401":
           content:
             application/vnd.conekta-v2.1.0+json:
@@ -6682,9 +6538,9 @@ paths:
           description: internal server error
       security:
       - bearerAuth: []
-      summary: returns a webhook
+      summary: Get Webhook
       tags:
-      - webhooks
+      - Webhooks
     put:
       description: updates an existing webhook
       operationId: updateWebhook
@@ -6722,21 +6578,22 @@ paths:
               schema:
                 $ref: '#/components/schemas/webhook_response'
           description: successful operation
-        "422":
+        "404":
           content:
             application/vnd.conekta-v2.1.0+json:
               example:
                 details:
-                - message: The token does not exist.
-                  param: payment_method.token_id
-                  code: conekta.errors.parameter_validation.payment_method.token_id.nonexistent_token
-                  debug_message: The token does not exist.
-                log_id: 641b6d813cd9a50001515017
+                - message: The resource was not found.
+                  param: null
+                  code: conekta.errors.resource_not_found.entity
+                  debug_message: The object Webhook "641b1d5662d7e00001eaa46b" could
+                    not be found.
+                log_id: 641b6c253cd9a50001514fae
                 object: error
-                type: parameter_validation_error
+                type: resource_not_found_error
               schema:
                 $ref: '#/components/schemas/error'
-          description: parameter validation error
+          description: not found entity
         "401":
           content:
             application/vnd.conekta-v2.1.0+json:
@@ -6770,9 +6627,9 @@ paths:
           description: internal server error
       security:
       - bearerAuth: []
-      summary: updates an existing webhook
+      summary: Update Webhook
       tags:
-      - webhooks
+      - Webhooks
 components:
   examples:
     order_cash:
@@ -7945,9 +7802,7 @@ components:
         data:
           description: set to page results.
           items:
-            additionalProperties:
-              type: object
-            type: object
+            $ref: '#/components/schemas/logs_response_data'
           nullable: true
           type: array
       title: log response for request
@@ -9008,20 +8863,33 @@ components:
       description: a plan
       properties:
         amount:
+          description: The amount in cents that will be charged on the interval specified.
           example: 10000
           minimum: 1
           type: integer
         currency:
+          description: "ISO 4217 for currencies, for the Mexican peso it is MXN/USD"
           example: MXN
           maxLength: 3
           type: string
         expiry_count:
+          description: "Number of repetitions of the frequency NUMBER OF CHARGES TO\
+            \ BE MADE, considering the interval and frequency, this evolves over time,\
+            \ but is subject to the expiration count."
           example: 12
           type: integer
+        frequency:
+          description: "Frequency of the charge, which together with the interval,\
+            \ can be every 3 weeks, every 4 months, every 2 years, every 5 fortnights"
+          example: 1
+          minimum: 1
+          type: integer
         id:
+          description: internal reference id
           example: plan_24234
           type: string
         interval:
+          description: The interval of time between each charge.
           enum:
           - week
           - half_month
@@ -9029,14 +8897,12 @@ components:
           - year
           nullable: false
           type: string
-        frequency:
-          example: 1
-          minimum: 1
-          type: integer
         name:
+          description: The name of the plan.
           example: Extra Plan3
           type: string
         trial_period_days:
+          description: The number of days the customer will have a free trial.
           example: 0
           type: integer
       required:
@@ -9050,17 +8916,23 @@ components:
       description: a plan
       properties:
         amount:
+          description: The amount in cents that will be charged on the interval specified.
           example: 10000
           minimum: 1
           type: integer
         currency:
+          description: "ISO 4217 for currencies, for the Mexican peso it is MXN/USD"
           example: MXN
           maxLength: 3
           type: string
         expiry_count:
+          description: "Number of repetitions of the frequency NUMBER OF CHARGES TO\
+            \ BE MADE, considering the interval and frequency, this evolves over time,\
+            \ but is subject to the expiration count."
           example: 12
           type: integer
         name:
+          description: The name of the plan.
           example: Extra Plan3
           type: string
       title: update_plan
@@ -9069,11 +8941,17 @@ components:
       description: a webhook
       properties:
         url:
+          description: Here you must place the URL of your Webhook remember that you
+            must program what you will do with the events received. Also do not forget
+            to handle the HTTPS protocol for greater security.
           example: https://webhook.site/89277eaa-a8e4-4306-8dc5-f55c80703dc8
           format: url
+          pattern: ^(?!.*(localhost|127\.0\.0\.1)).*$
           type: string
         synchronous:
           default: false
+          description: It is a value that allows to decide if the events will be synchronous
+            or asynchronous. We recommend asynchronous = false
           example: false
           type: boolean
       required:
@@ -9085,17 +8963,22 @@ components:
       description: an updated webhook
       properties:
         url:
+          description: Here you must place the URL of your Webhook remember that you
+            must program what you will do with the events received. Also do not forget
+            to handle the HTTPS protocol for greater security.
           example: https://webhook.site/89277eaa-a8e4-4306-8dc5-f55c80703dc8
           format: url
-          nullable: false
+          pattern: ^(?!.*(localhost|127\.0\.0\.1)).*$
           type: string
         synchronous:
           default: false
+          description: It is a value that allows to decide if the events will be synchronous
+            or asynchronous. We recommend asynchronous = false
           example: false
           type: boolean
         subscribed_events:
+          example: customer.created
           items:
-            example: customer.created
             type: string
           type: array
       required:
@@ -9876,6 +9759,127 @@ components:
           format: uri
           type: string
       title: WebhookLog
+      type: object
+    logs_response_data:
+      properties:
+        created_at:
+          example: 1661445644
+          format: int64
+          type: integer
+        id:
+          example: 6307a60c41de27127515a575
+          type: string
+        ip_address:
+          example: 54.235.131.48
+          format: ipv4
+          type: string
+        livemode:
+          example: true
+          type: boolean
+        loggable_id:
+          example: ord_87632467832
+          nullable: true
+          type: string
+        loggable_type:
+          example: order
+          nullable: true
+          type: string
+        method:
+          example: POST
+          type: string
+        oauth_token_id:
+          nullable: true
+          type: string
+        query_string:
+          additionalProperties:
+            type: string
+          example:
+            limit: "20"
+          type: object
+        related:
+          example: FilterResource
+          type: string
+        request_body:
+          example:
+            filters:
+              amount:
+                amount_from: 0
+                amount_to: 0
+              created_at:
+                date_from: 1653627600
+                date_to: 1661489999
+              filterName: Payments
+              search_term: null
+              sort_by: created_at
+              sort_direction: desc
+              status: []
+              type: []
+            id: 78e65162-0f37-4942-847c-9bf7081d54c2
+            page: "0"
+            report_type: charges
+            testMode: false
+          type: object
+        request_headers:
+          additionalProperties:
+            type: string
+          example:
+            Accept: application/vnd.conekta-v2.1.0+json
+            Accept-Encoding: "gzip, deflate, br"
+            Accept-Language: "es-419, es; q=0.9, en; q=0.8"
+            Activitypermission: orders:read
+            Apiversion: 2.1.0
+          type: object
+        response_body:
+          type: object
+        response_headers:
+          additionalProperties:
+            type: string
+          example:
+            Access-Control-Allow-Headers: "Content-Type, Depth, User-Agent, X-File-Size,\
+              \ X-Requested-With, If-Modified-Since, X-File-Name, Cache-Control, X-Prototype-Version,\
+              \ Authorization, Accept, Date, Version, X-Forwarded-For, Host, Connection,\
+              \ X-Forwarded-Proto, X-Forwarded-Port, X-Amzn-Trace-Id, Accept-Encoding,\
+              \ Accept-Language, Referer, Origin, Activitypermission, Apiversion,\
+              \ Entityid, Livemode, Sec-Ch-Ua, Sec-Ch-Ua-Mobile, Sec-Ch-Ua-Platform,\
+              \ Sec-Fetch-Dest, Sec-Fetch-Mode, Sec-Fetch-Site, X-Datadog-Parent-Id,\
+              \ X-Datadog-Sampling-Priority, X-Datadog-Trace-Id, X-Forwarded-Host,\
+              \ X-Forwarded-Server, X-Real-Ip"
+            Access-Control-Allow-Methods: "POST, GET, PUT, OPTIONS"
+            Access-Control-Allow-Origin: '*'
+            Access-Control-Max-Age: "1728000"
+            Conekta-Media-Type: conekta-v2.1.0; format=application/json
+            Content-Type: application/json; charset=utf-8
+            Referrer-Policy: strict-origin-when-cross-origin
+            Strict-Transport-Security: max-age=31536000; includeSubDomains
+            X-Content-Type-Options: nosniff
+            X-Download-Options: noopen
+            X-Frame-Options: SAMEORIGIN
+            X-Permitted-Cross-Domain-Policies: none
+            X-XSS-Protection: 1; mode=block
+          type: object
+        searchable_tags:
+          example:
+          - 6307a60c41de27127515a575
+          - 6307a60c41de27127515a571
+          items:
+            type: string
+          type: array
+        status:
+          example: "200"
+          type: string
+        updated_at:
+          example: 2022-08-25T16:40:44.887Z
+          type: string
+        url:
+          example: /filter_resource
+          type: string
+        user_account_id:
+          example: 5a0b7001edbb6e1725b0b2c6
+          type: string
+        version:
+          example: 2.1.0
+          type: string
+      title: logs_response_data
       type: object
     order_response_channel:
       properties:

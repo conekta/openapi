@@ -1,8 +1,9 @@
 get:
   tags:
-    - webhooks
+    - Webhooks
   operationId: getWebhooks
-  summary: returns a set of /webhooks
+  summary: Get List of Webhooks
+  description: 'Consume the list of webhooks you have, each environment supports 10 webhooks (For production and testing)'
   responses:
     200:
       description: successful
@@ -44,8 +45,6 @@ get:
           schema:
             type: string
             example: conekta-v2.1.0; format=application/json
-    422:
-     $ref: '../errors/422.yml'
     401:
      $ref: '../errors/401.yml'
     500:
@@ -60,10 +59,10 @@ get:
     - $ref: '../../parameters/commons/query/previous_page.yml'
 post:
   tags:
-    - webhooks
+    - Webhooks
   operationId: createWebhook
-  summary: creates a new webhook
-  description: 'Create a new webhook.'
+  summary: Create Webhook
+  description: 'What we do at Conekta translates into events. For example, an event of interest to us occurs at the time a payment is successfully processed. At that moment we will be interested in doing several things: Send an email to the buyer, generate an invoice, start the process of shipping the product, etc.'
   responses:
     '200':
       description: successful operation
@@ -71,13 +70,10 @@ post:
         application/vnd.conekta-v2.1.0+json:
           schema:
              $ref: ../../schemas/webhooks/webhook_response.yml
-    422:
-     $ref: '../errors/422.yml'
     401:
      $ref: '../errors/401.yml'
     500:
      $ref: '../errors/500.yml'
-
   security:
     - bearerAuth: []
   requestBody:

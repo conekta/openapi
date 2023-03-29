@@ -1,8 +1,9 @@
 get:
   tags:
-    - subscriptions
+    - Subscriptions
   operationId: getAllEventsFromSubscription
-  summary: You can get the events of the subscription(s) of a client, with the customer id
+  description: You can get the events of the subscription(s) of a client, with the customer id
+  summary: Get Events By Subscription
   responses:
     200:
       description: successful

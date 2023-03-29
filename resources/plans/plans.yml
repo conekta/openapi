@@ -60,7 +60,7 @@ get:
     - $ref: '../../parameters/commons/query/previous_page.yml'
 post:
   tags:
-    - plans
+    - Plans
   operationId: createPlan
   summary: Create Plan
   description: Create a new plan for an existing order
