@@ -4,4 +4,4 @@ content:
     schema:  
       $ref: '../../schemas/orders/order_request.yml'
 required: true
-x-merge-sample-json: '{"s":"s"}'
+x-merge-sample-json: '{"currency":"MXN","line_items":[{"unit_price":1000}]}'

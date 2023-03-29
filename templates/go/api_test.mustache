@@ -26,7 +26,7 @@ func Test{{classname}}_{{operationId}}(t *testing.T) {
     {{#x-merge-sample-json}}
 	var responseBody conekta.{{{dataType}}}
 	if err := json.Unmarshal([]byte(`{{{.}}}`), &responseBody); err != nil {
-		panic(err)
+		t.Fatal(err)
 	}
     {{/x-merge-sample-json}}
     {{/vendorExtensions}}
@@ -56,7 +56,7 @@ func Test{{classname}}_{{operationId}}(t *testing.T) {
     {{#x-merge-sample-json}}
 	var requestBody conekta.{{{dataType}}}
 	if err := json.Unmarshal([]byte(`{{{.}}}`), &requestBody); err != nil {
-		panic(err)
+		t.Fatal(err)
 	}
     {{/x-merge-sample-json}}
     {{/vendorExtensions}}
@@ -66,10 +66,13 @@ func Test{{classname}}_{{operationId}}(t *testing.T) {
 
 	response, httpResponse, err := api.{{classname}}.{{operationId}}Execute(request)
 	if err != nil {
-		panic(err)
+		t.Fatal(err)
 	}
 
-	b, _ := json.Marshal(response)
+	b, err := json.Marshal(response)
+    if err != nil {
+        t.Fatal(err)
+    }
 	fmt.Printf("%s", b)
 	fmt.Printf("%v", httpResponse)
 }

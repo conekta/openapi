@@ -7,7 +7,7 @@ post:
   responses:
     '200':
       description: successful operation
-      x-merge-sample-json: '{"r":"r"}'
+      x-merge-sample-json: '{"id":"ord_2tV73D6wqGFYUtChx"}'
       content:
         application/vnd.conekta-v2.1.0+json:
           schema:
@@ -41,6 +41,7 @@ get:
   responses:
     '200':
       description: successful operation
+      x-merge-sample-json: '{"data":[{"id":"ord_2tV73D6wqGFYUtChx"}]}'
       content:
         application/vnd.conekta-v2.1.0+json:
           schema:
