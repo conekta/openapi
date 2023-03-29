@@ -108,7 +108,7 @@ paths:
         required: false
         schema:
           default: 20
-          format: int8
+          format: int32
           maximum: 250
           minimum: 1
           type: integer
@@ -946,7 +946,7 @@ paths:
         required: false
         schema:
           default: 20
-          format: int8
+          format: int32
           maximum: 250
           minimum: 1
           type: integer
@@ -1668,8 +1668,147 @@ paths:
       tags:
       - Customers
   /customers/{id}/payment_sources:
+    get:
+      description: Get a list of Payment Methods
+      operationId: GetCustomerPaymentSources
+      parameters:
+      - description: Identifier of the resource
+        example: 6307a60c41de27127515a575
+        in: path
+        name: id
+        required: true
+        schema:
+          type: string
+      - description: Use for knowing which language to use
+        examples:
+          es:
+            summary: for spanish request/response
+            value: es
+          en:
+            summary: for english request/response
+            value: en
+        in: header
+        name: Accept-Language
+        required: false
+        schema:
+          default: es
+          enum:
+          - es
+          - en
+          type: string
+      - description: "The numbers of items to return, the maximum value is 250"
+        in: query
+        name: limit
+        required: false
+        schema:
+          default: 20
+          format: int32
+          maximum: 250
+          minimum: 1
+          type: integer
+      - description: next page
+        in: query
+        name: next
+        required: false
+        schema:
+          type: string
+      - description: previous page
+        in: query
+        name: previous
+        required: false
+        schema:
+          type: string
+      - description: "General order search, e.g. by mail, reference etc."
+        in: query
+        name: search
+        required: false
+        schema:
+          type: string
+      responses:
+        "200":
+          content:
+            application/vnd.conekta-v2.1.0+json:
+              examples:
+                card:
+                  summary: Card
+                  value:
+                    next_page_url: null
+                    previous_page_url: null
+                    has_more: false
+                    object: list
+                    data:
+                    - id: src_2tbd5Bg327RL9oyas
+                      object: payment_source
+                      type: card
+                      created_at: 1679958561
+                      last4: "0526"
+                      bin: "41898989"
+                      card_type: debit
+                      exp_month: "01"
+                      exp_year: "25"
+                      brand: visa
+                      name: random name
+                      parent_id: cus_2tUkvasdas1s4ihjs
+                      default: false
+                      payment_source_status: active
+                      visible_on_checkout: false
+              schema:
+                $ref: '#/components/schemas/get_payment_sources_response'
+          description: successful operation
+        "401":
+          content:
+            application/vnd.conekta-v2.1.0+json:
+              example:
+                details:
+                - message: Please include your access key in your request.
+                  param: null
+                  code: conekta.errors.authentication.missing_key
+                log_id: 507f1f77bcf86cd799439011
+                object: error
+                type: authentication_error
+              schema:
+                $ref: '#/components/schemas/error'
+          description: authentication error
+        "404":
+          content:
+            application/vnd.conekta-v2.1.0+json:
+              example:
+                details:
+                - message: The resource was not found.
+                  param: null
+                  code: conekta.errors.resource_not_found.entity
+                  debug_message: The object Webhook "641b1d5662d7e00001eaa46b" could
+                    not be found.
+                log_id: 641b6c253cd9a50001514fae
+                object: error
+                type: resource_not_found_error
+              schema:
+                $ref: '#/components/schemas/error'
+          description: not found entity
+        "500":
+          content:
+            application/vnd.conekta-v2.1.0+json:
+              example:
+                details:
+                - debug_message: There was a runtime error and Conekta engineers have
+                    been notified.
+                  message: There was a runtime error and Conekta engineers have been
+                    notified.
+                  param: null
+                  code: conekta.errors.api.system.general_failure
+                object: error
+                type: api_error
+                log_id: 641b6f2b3cd9a50001515098
+              schema:
+                $ref: '#/components/schemas/error'
+          description: internal server error
+      security:
+      - bearerAuth: []
+      summary: Get Payment Methods
+      tags:
+      - Payment Methods
     post:
-      description: Gets a payment source that corresponds to a customer ID.
+      description: Create a payment method for a customer.
       operationId: CreateCustomerPaymentSources
       parameters:
       - description: Identifier of the resource
@@ -1774,7 +1913,7 @@ paths:
       - Payment Methods
   /customers/{id}/payment_sources/{payment_sources_id}:
     delete:
-      description: deletes a payment  source that corresponds to a customer ID.
+      description: Delete an existing payment method
       operationId: DeleteCustomerPaymentSources
       parameters:
       - description: Identifier of the resource
@@ -1784,8 +1923,8 @@ paths:
         required: true
         schema:
           type: string
-      - description: identifier
-        example: tax_lin_2tQ974hSHcsdeSZHG
+      - description: Identifier of the payment method
+        example: src_2tQ974hSHcsdeSZHG
         in: path
         name: payment_sources_id
         required: true
@@ -1893,8 +2032,8 @@ paths:
         required: true
         schema:
           type: string
-      - description: identifier
-        example: tax_lin_2tQ974hSHcsdeSZHG
+      - description: Identifier of the payment method
+        example: src_2tQ974hSHcsdeSZHG
         in: path
         name: payment_sources_id
         required: true
@@ -3246,7 +3385,7 @@ paths:
         required: false
         schema:
           default: 20
-          format: int8
+          format: int32
           maximum: 250
           minimum: 1
           type: integer
@@ -3477,7 +3616,7 @@ paths:
         required: false
         schema:
           default: 20
-          format: int8
+          format: int32
           maximum: 250
           minimum: 1
           type: integer
@@ -3683,7 +3822,7 @@ paths:
         required: false
         schema:
           default: 20
-          format: int8
+          format: int32
           maximum: 250
           minimum: 1
           type: integer
@@ -4984,7 +5123,7 @@ paths:
       - Orders
   /orders/{id}/shipping_lines:
     post:
-      description: creates a new shipping lines for an existing orden
+      description: Create new shipping lines for an existing orden
       operationId: ordersCreateShippingLines
       parameters:
       - description: Identifier of the resource
@@ -5017,6 +5156,10 @@ paths:
         "200":
           content:
             application/vnd.conekta-v2.1.0+json:
+              examples:
+                sucessfull:
+                  $ref: '#/components/examples/shipping_lines'
+                  value: null
               schema:
                 $ref: '#/components/schemas/shipping_lines_order_response'
           description: successful
@@ -5073,8 +5216,117 @@ paths:
       tags:
       - Shippings
   /orders/{id}/shipping_lines/{shipping_lines_id}:
+    delete:
+      description: Delete shipping lines
+      operationId: ordersDeleteShippingLines
+      parameters:
+      - description: Identifier of the resource
+        example: 6307a60c41de27127515a575
+        in: path
+        name: id
+        required: true
+        schema:
+          type: string
+      - description: identifier
+        example: ship_lin_2tQ974hSHcsdeSZHG
+        in: path
+        name: shipping_lines_id
+        required: true
+        schema:
+          type: string
+      - description: Use for knowing which language to use
+        examples:
+          es:
+            summary: for spanish request/response
+            value: es
+          en:
+            summary: for english request/response
+            value: en
+        in: header
+        name: Accept-Language
+        required: false
+        schema:
+          default: es
+          enum:
+          - es
+          - en
+          type: string
+      responses:
+        "200":
+          content:
+            application/vnd.conekta-v2.1.0+json:
+              schema:
+                $ref: '#/components/schemas/shipping_lines_order_response'
+          description: successful
+        "401":
+          content:
+            application/vnd.conekta-v2.1.0+json:
+              example:
+                details:
+                - message: Please include your access key in your request.
+                  param: null
+                  code: conekta.errors.authentication.missing_key
+                log_id: 507f1f77bcf86cd799439011
+                object: error
+                type: authentication_error
+              schema:
+                $ref: '#/components/schemas/error'
+          description: authentication error
+        "404":
+          content:
+            application/vnd.conekta-v2.1.0+json:
+              example:
+                details:
+                - message: The resource was not found.
+                  param: null
+                  code: conekta.errors.resource_not_found.entity
+                  debug_message: The object Webhook "641b1d5662d7e00001eaa46b" could
+                    not be found.
+                log_id: 641b6c253cd9a50001514fae
+                object: error
+                type: resource_not_found_error
+              schema:
+                $ref: '#/components/schemas/error'
+          description: not found entity
+        "422":
+          content:
+            application/vnd.conekta-v2.1.0+json:
+              example:
+                details:
+                - message: The token does not exist.
+                  param: payment_method.token_id
+                  code: conekta.errors.parameter_validation.payment_method.token_id.nonexistent_token
+                  debug_message: The token does not exist.
+                log_id: 641b6d813cd9a50001515017
+                object: error
+                type: parameter_validation_error
+              schema:
+                $ref: '#/components/schemas/error'
+          description: parameter validation error
+        "500":
+          content:
+            application/vnd.conekta-v2.1.0+json:
+              example:
+                details:
+                - debug_message: There was a runtime error and Conekta engineers have
+                    been notified.
+                  message: There was a runtime error and Conekta engineers have been
+                    notified.
+                  param: null
+                  code: conekta.errors.api.system.general_failure
+                object: error
+                type: api_error
+                log_id: 641b6f2b3cd9a50001515098
+              schema:
+                $ref: '#/components/schemas/error'
+          description: internal server error
+      security:
+      - bearerAuth: []
+      summary: Delete Shipping
+      tags:
+      - Shippings
     put:
-      description: updates an existing shipping lines for an existing orden
+      description: Update existing shipping lines for an existing orden
       operationId: ordersUpdateShippingLines
       parameters:
       - description: Identifier of the resource
@@ -5537,7 +5789,7 @@ paths:
         required: false
         schema:
           default: 20
-          format: int8
+          format: int32
           maximum: 250
           minimum: 1
           type: integer
@@ -6158,7 +6410,7 @@ paths:
         required: false
         schema:
           default: 20
-          format: int8
+          format: int32
           maximum: 250
           minimum: 1
           type: integer
@@ -6687,6 +6939,16 @@ components:
         fee: "116,"
         customer_id: null
         order_id: ord_2tHuwPhgSwq6Gt7Rg
+    shipping_lines:
+      value:
+        amount: 0
+        carrier: Fedex
+        method: Airplane
+        tracking_number: TRACK123
+        object: shipping_line
+        id: ship_lin_2sLxi45ZFs1GHJmzx
+        parent_id: ord_2sLxi3MqYFJ1QfTmP
+        deleted: true
     order_with_charges:
       summary: Create an order with charges
       value:
@@ -6949,7 +7211,7 @@ components:
       required: false
       schema:
         default: 20
-        format: int8
+        format: int32
         maximum: 250
         minimum: 1
         type: integer
@@ -6991,8 +7253,8 @@ components:
       schema:
         type: string
     payment_sources_id:
-      description: identifier
-      example: tax_lin_2tQ974hSHcsdeSZHG
+      description: Identifier of the payment method
+      example: src_2tQ974hSHcsdeSZHG
       in: path
       name: payment_sources_id
       required: true
@@ -7410,10 +7672,12 @@ components:
       properties:
         next_page_url:
           description: URL of the next page.
+          example: https://api.conekta.io/charges?limit=10&next=chrg_1
           nullable: true
           type: string
         previous_page_url:
           description: Url of the previous page.
+          example: https://api.conekta.io/charges?limit=10&previous=chrg_1
           nullable: true
           type: string
       title: page metadata
@@ -8716,7 +8980,7 @@ components:
             100 elements and allows special characters.
           example:
             key: value
-          maxLength: 100
+          maxProperties: 100
           type: object
         name:
           description: The name of the item. It will be displayed in the order.
@@ -8816,6 +9080,7 @@ components:
             'shipping_line'.
           example:
             key: value
+          maxProperties: 100
           type: object
       required:
       - amount
@@ -9141,6 +9406,7 @@ components:
     customer_payment_sources:
       properties:
         type:
+          description: Type of payment source
           example: card | cash | spei
           type: string
       required:
@@ -9330,15 +9596,35 @@ components:
       - $ref: '#/components/schemas/customer_fiscal_entities_request'
       - $ref: '#/components/schemas/update_customer_fiscal_entities_response_allOf'
       title: update_customer_fiscal_entities_response
-    CreateCustomerPaymentSources_request:
+    get_customer_payment_sources_data_response:
       discriminator:
         mapping:
-          card: payment_sources_card
-          cash: payment_sources_cash
-          oxxo_recurrent: payment_sources_cash
-          spei: payment_sources_spei
-          spei_recurrent: payment_sources_spei
+          cash: payment_source_cash
+          card: payment_source_card
+          oxxo_recurrent: payment_source_cash
+          spei_recurrent: payment_source_spei_recurrent
         propertyName: type
+      oneOf:
+      - $ref: '#/components/schemas/payment_source_cash'
+      - $ref: '#/components/schemas/payment_source_card'
+      - $ref: '#/components/schemas/payment_source_spei_recurrent'
+      title: get_customer_payment_sources_data_response
+    get_payment_sources_response_allOf:
+      properties:
+        data:
+          items:
+            $ref: '#/components/schemas/get_customer_payment_sources_data_response'
+          type: array
+      type: object
+    get_payment_sources_response:
+      allOf:
+      - $ref: '#/components/schemas/pagination'
+      - $ref: '#/components/schemas/page'
+      - $ref: '#/components/schemas/get_payment_sources_response_allOf'
+      title: get_payment_sources_response
+    CreateCustomerPaymentSources_request:
+      description: Contains details of the payment methods that the customer has active
+        or has used in Conekta
       oneOf:
       - $ref: '#/components/schemas/payment_sources_card'
       - $ref: '#/components/schemas/payment_sources_cash'
@@ -9500,11 +9786,11 @@ components:
           type: array
       title: customerPaymentSources
       type: object
-    customer_payment_sources_response:
+    customers_data_response_payment_sources:
       allOf:
       - $ref: '#/components/schemas/pagination'
+      - $ref: '#/components/schemas/page'
       - $ref: '#/components/schemas/customerPaymentSources'
-      title: customer_payment_sources_response
     customer_fiscal_entities_data_response:
       allOf:
       - $ref: '#/components/schemas/customer_fiscal_entities_request'
@@ -9596,7 +9882,7 @@ components:
           example: customer
           type: string
         payment_sources:
-          $ref: '#/components/schemas/customer_payment_sources_response'
+          $ref: '#/components/schemas/customers_data_response_payment_sources'
         phone:
           example: +5215555555555
           type: string
@@ -9618,6 +9904,12 @@ components:
           type: integer
       title: customer_antifraud_info_response
       type: object
+    customer_payment_sources_response:
+      allOf:
+      - $ref: '#/components/schemas/pagination'
+      - $ref: '#/components/schemas/page'
+      - $ref: '#/components/schemas/customerPaymentSources'
+      title: customer_payment_sources_response
     customer_shipping_contacts_data_response:
       allOf:
       - $ref: '#/components/schemas/customer_shipping_contacts'
@@ -10154,6 +10446,7 @@ components:
           additionalProperties: true
           example:
             key: value
+          maxProperties: 100
           type: object
       required:
       - currency
@@ -10191,6 +10484,9 @@ components:
     payment_sources_card_allOf:
       properties:
         token_id:
+          description: "Token id that will be used to create a \"card\" type payment\
+            \ method. See the (subscriptions)[https://developers.conekta.com/v2.1.0/reference/createsubscription]\
+            \ tutorial for more information on how to tokenize cards."
           example: tok_32hj4g234as
           type: string
       type: object

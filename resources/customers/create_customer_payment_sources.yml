@@ -3,7 +3,7 @@ post:
     - Payment Methods
   operationId: CreateCustomerPaymentSources
   summary: Create Payment Method
-  description: 'Gets a payment source that corresponds to a customer ID.'
+  description: 'Create a payment method for a customer.'
   responses:
     '200':
       description: successful operation
@@ -37,3 +37,75 @@ post:
   parameters:
     - $ref: '../../parameters/commons/path_param/id.yml'
     - $ref: '../../parameters/commons/headers/accept_language.yml'
+get:
+  tags:
+    - Payment Methods
+  operationId: GetCustomerPaymentSources
+  summary: Get Payment Methods
+  description: 'Get a list of Payment Methods'
+  responses:
+    '200':
+      description: successful operation
+      content:
+        application/vnd.conekta-v2.1.0+json:
+          schema:
+            title: get_payment_sources_response
+            allOf:
+              - $ref: ../../schemas/pagination/pagination.yml
+              - $ref: ../../schemas/pagination/page.yml
+              - type: object
+                properties:
+                  data:
+                    type: array
+                    items:
+                      title: get_customer_payment_sources_data_response
+                      discriminator:
+                        propertyName: type
+                        mapping:
+                          cash: payment_source_cash
+                          card: payment_source_card
+                          oxxo_recurrent: payment_source_cash
+                          spei_recurrent: payment_source_spei_recurrent
+                      oneOf:
+                        - $ref: '../../schemas/customers/customer_payment_source_cash_response.yml#/payment_source_cash'
+                        - $ref: '../../schemas/customers/customer_payment_source_card_response.yml#/payment_source_card'
+                        - $ref: '../../schemas/customers/customer_payment_source_spei_recurrent_response.yml#/payment_source_spei_recurrent'
+          examples:
+            card:
+              value: 
+                next_page_url: null
+                previous_page_url: null
+                has_more: false
+                object: "list"
+                data:
+                  - id: "src_2tbd5Bg327RL9oyas"
+                    object: "payment_source"
+                    type: "card"
+                    created_at: 1679958561
+                    last4: "0526"
+                    bin: "41898989"
+                    card_type: "debit"
+                    exp_month: "01"
+                    exp_year: "25"
+                    brand: "visa"
+                    name: "random name"
+                    parent_id: "cus_2tUkvasdas1s4ihjs"
+                    default: false
+                    payment_source_status: "active"
+                    visible_on_checkout: false
+              summary: Card
+    401:
+     $ref: '../errors/401.yml'
+    404:
+     $ref: '../errors/404.yml'
+    500:
+     $ref: '../errors/500.yml'
+  security:
+    - bearerAuth: []
+  parameters:
+    - $ref: '../../parameters/commons/path_param/id.yml'
+    - $ref: '../../parameters/commons/headers/accept_language.yml'
+    - $ref: '../../parameters/commons/query/limit.yml'
+    - $ref: '../../parameters/commons/query/next_page.yml'
+    - $ref: '../../parameters/commons/query/previous_page.yml'
+    - $ref: '../../parameters/commons/query/search.yml'

@@ -3,7 +3,7 @@ post:
     - Shippings
   operationId: ordersCreateShippingLines
   summary: Create Shipping
-  description: creates a new shipping lines for an existing orden
+  description: Create new shipping lines for an existing orden
   responses:
     200:
       description: successful
@@ -11,6 +11,9 @@ post:
         application/vnd.conekta-v2.1.0+json:
           schema:
             $ref: ../../schemas/charges/shipping_lines_order_response.yml
+          examples:
+            sucessfull:
+              $ref: ../../schemas/orders/examples/shipping_lines.yml
     401:
      $ref: '../errors/401.yml'
     404:

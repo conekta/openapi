@@ -91,6 +91,7 @@ properties:
     title: customer_payment_sources_response
     allOf:
       - $ref: ../../schemas/pagination/pagination.yml
+      - $ref: ../../schemas/pagination/page.yml
       - type: object
         title: customerPaymentSources
         properties:

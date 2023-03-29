@@ -8022,6 +8022,134 @@
       ],
       "enabled": true,
       "responseMode": null
+    },
+    {
+      "uuid": "b11057b5-974e-46a7-b66a-9c2a6490e5ca",
+      "documentation": "get all payment sources",
+      "method": "get",
+      "endpoint": "customers/:id/payment_sources",
+      "responses": [
+        {
+          "uuid": "cf80e304-4d6e-4d2d-a97d-fda077eddea5",
+          "body": "{\n  \"next_page_url\": null,\n  \"previous_page_url\": null,\n  \"has_more\": false,\n  \"object\": \"list\",\n  \"data\": [\n    {\n      \"id\": \"src_2tbd5Bgy67RL9oycM\",\n      \"object\": \"payment_source\",\n      \"type\": \"card\",\n      \"created_at\": 1679958561,\n      \"last4\": \"0526\",\n      \"bin\": \"41892810\",\n      \"card_type\": \"debit\",\n      \"exp_month\": \"01\",\n      \"exp_year\": \"25\",\n      \"brand\": \"visa\",\n      \"name\": \"Sarai Agar Baeza\",\n      \"parent_id\": \"cus_2tUkvd5t5Z1s4ihjs\",\n      \"default\": false,\n      \"payment_source_status\": \"active\",\n      \"visible_on_checkout\": false\n    },\n    {\n      \"id\": \"src_2tbc2zv3gUCTdpHHs\",\n      \"object\": \"payment_source\",\n      \"type\": \"card\",\n      \"created_at\": 1679953833,\n      \"last4\": \"3194\",\n      \"bin\": \"42258202\",\n      \"card_type\": \"credit\",\n      \"exp_month\": \"05\",\n      \"exp_year\": \"26\",\n      \"brand\": \"visa\",\n      \"name\": \"Gabriela Gonzalez\",\n      \"parent_id\": \"cus_2tUkvd5t5Z1s4ihjs\",\n      \"default\": false,\n      \"payment_source_status\": \"active\",\n      \"visible_on_checkout\": false\n    },\n    {\n      \"id\": \"src_2tbbv6myUR6rdHzXV\",\n      \"object\": \"payment_source\",\n      \"type\": \"card\",\n      \"created_at\": 1679953291,\n      \"last4\": \"7974\",\n      \"bin\": \"48151630\",\n      \"card_type\": \"debit\",\n      \"exp_month\": \"02\",\n      \"exp_year\": \"25\",\n      \"brand\": \"visa\",\n      \"name\": \"Elizabeth Murrieta Marcelino\",\n      \"parent_id\": \"cus_2tUkvd5t5Z1s4ihjs\",\n      \"default\": false,\n      \"payment_source_status\": \"active\",\n      \"visible_on_checkout\": false\n    },\n    {\n      \"id\": \"src_2tbbufhjLhHxq1Jdi\",\n      \"object\": \"payment_source\",\n      \"type\": \"card\",\n      \"created_at\": 1679953257,\n      \"last4\": \"7974\",\n      \"bin\": \"48151630\",\n      \"card_type\": \"debit\",\n      \"exp_month\": \"02\",\n      \"exp_year\": \"25\",\n      \"brand\": \"visa\",\n      \"name\": \"Elizabeth Murrieta Marcelino\",\n      \"parent_id\": \"cus_2tUkvd5t5Z1s4ihjs\",\n      \"default\": false,\n      \"payment_source_status\": \"active\",\n      \"visible_on_checkout\": false\n    },\n    {\n      \"id\": \"src_2tV2tUvd28gXEVuC3\",\n      \"object\": \"payment_source\",\n      \"type\": \"card\",\n      \"created_at\": 1678217086,\n      \"last4\": \"7974\",\n      \"bin\": \"48151630\",\n      \"card_type\": \"debit\",\n      \"exp_month\": \"02\",\n      \"exp_year\": \"25\",\n      \"brand\": \"visa\",\n      \"name\": \"Elizabeth Murrieta Marcelino\",\n      \"parent_id\": \"cus_2tUkvd5t5Z1s4ihjs\",\n      \"default\": true,\n      \"payment_source_status\": \"active\",\n      \"visible_on_checkout\": false\n    }\n  ]\n}",
+          "latency": 0,
+          "statusCode": 200,
+          "label": "successful operation",
+          "headers": [
+            {
+              "key": "Content-Type",
+              "value": "application/vnd.conekta-v2.1.0+json"
+            }
+          ],
+          "bodyType": "INLINE",
+          "filePath": "",
+          "databucketID": "",
+          "sendFileAsBody": false,
+          "rules": [
+            {
+              "target": "params",
+              "modifier": "id",
+              "value": "src_2tbd5Bgy67RL9oycM",
+              "invert": false,
+              "operator": "equals"
+            }
+          ],
+          "rulesOperator": "AND",
+          "disableTemplating": false,
+          "fallbackTo404": false,
+          "default": true
+        },
+        {
+          "uuid": "c2bad88e-115f-4dd8-82e8-8b90ed4fae99",
+          "body": "",
+          "latency": 0,
+          "statusCode": 401,
+          "label": "authentication error",
+          "headers": [
+            {
+              "key": "Content-Type",
+              "value": "application/vnd.conekta-v2.1.0+json"
+            }
+          ],
+          "bodyType": "INLINE",
+          "filePath": "",
+          "databucketID": "",
+          "sendFileAsBody": false,
+          "rules": [],
+          "rulesOperator": "OR",
+          "disableTemplating": false,
+          "fallbackTo404": false,
+          "default": false
+        },
+        {
+          "uuid": "217239a3-8800-4e72-ab24-10811f827220",
+          "body": "{\n  \"details\": [\n    {\n      \"code\": \"conekta.errors.authentication.missing_key\",\n      \"param\": \"\",\n      \"message\": \"Acceso no autorizado.\",\n      \"debug_message\": \"Please include your access key in your request.\"\n    }\n  ]\n}",
+          "latency": 0,
+          "statusCode": 404,
+          "label": "not found entity",
+          "headers": [
+            {
+              "key": "Content-Type",
+              "value": "application/vnd.conekta-v2.1.0+json"
+            }
+          ],
+          "bodyType": "INLINE",
+          "filePath": "",
+          "databucketID": "",
+          "sendFileAsBody": false,
+          "rules": [],
+          "rulesOperator": "OR",
+          "disableTemplating": false,
+          "fallbackTo404": false,
+          "default": false
+        },
+        {
+          "uuid": "c44b413e-6c17-4e0a-b9ce-767ca19d973f",
+          "body": "",
+          "latency": 0,
+          "statusCode": 422,
+          "label": "parameter validation error",
+          "headers": [
+            {
+              "key": "Content-Type",
+              "value": "application/vnd.conekta-v2.1.0+json"
+            }
+          ],
+          "bodyType": "INLINE",
+          "filePath": "",
+          "databucketID": "",
+          "sendFileAsBody": false,
+          "rules": [],
+          "rulesOperator": "OR",
+          "disableTemplating": false,
+          "fallbackTo404": false,
+          "default": false
+        },
+        {
+          "uuid": "98d55f86-4bdd-416c-b5a4-d64ad29c51d6",
+          "body": "",
+          "latency": 0,
+          "statusCode": 500,
+          "label": "internal server error",
+          "headers": [
+            {
+              "key": "Content-Type",
+              "value": "application/vnd.conekta-v2.1.0+json"
+            }
+          ],
+          "bodyType": "INLINE",
+          "filePath": "",
+          "databucketID": "",
+          "sendFileAsBody": false,
+          "rules": [],
+          "rulesOperator": "OR",
+          "disableTemplating": false,
+          "fallbackTo404": false,
+          "default": false
+        }
+      ],
+      "enabled": true,
+      "responseMode": null
     }
   ],
   "rootChildren": [
@@ -8112,6 +8240,10 @@
     {
       "type": "route",
       "uuid": "54f087e6-500b-4d99-af66-e9a449f50f23"
+    },
+    {
+      "type": "route",
+      "uuid": "b11057b5-974e-46a7-b66a-9c2a6490e5ca"
     },
     {
       "type": "route",

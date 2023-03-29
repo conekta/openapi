@@ -65,6 +65,7 @@ properties:
         type: object
         additionalProperties: true
         example: { "key": "value" }
+        maxProperties: 100
   payments_limit_count:
     type: integer
     format: int8

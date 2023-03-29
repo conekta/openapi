@@ -39,13 +39,12 @@ put:
     - $ref: '../../parameters/commons/path_param/id.yml'
     - $ref: '../../parameters/commons/path_param/payment_sources_id.yml'
     - $ref: '../../parameters/commons/headers/accept_language.yml'
-
 delete:
   tags:
     - Payment Methods
   operationId: DeleteCustomerPaymentSources
   summary: Delete Payment Method
-  description: 'deletes a payment  source that corresponds to a customer ID.'
+  description: 'Delete an existing payment method'
   responses:
     '200':
       description: successful operation

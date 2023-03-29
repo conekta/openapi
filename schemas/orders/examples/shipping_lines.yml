@@ -1,0 +1,9 @@
+value:
+  amount: 0
+  carrier: "Fedex"
+  method: "Airplane"
+  tracking_number: "TRACK123"
+  object: "shipping_line"
+  id: "ship_lin_2sLxi45ZFs1GHJmzx"
+  parent_id: "ord_2sLxi3MqYFJ1QfTmP"
+  deleted: true

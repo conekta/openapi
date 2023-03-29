@@ -1,7 +1,7 @@
 in: path
 name: "payment_sources_id"
-description:  identifier
+description:  Identifier of the payment method
 required: true
 schema:
   type: string
-example: "tax_lin_2tQ974hSHcsdeSZHG"
+example: "src_2tQ974hSHcsdeSZHG"

@@ -5,3 +5,4 @@ properties:
   type:
     type: string
     example: card | cash | spei
+    description: Type of payment source

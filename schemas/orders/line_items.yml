@@ -20,7 +20,7 @@ properties:
     description: "Short description of the item"
   metadata:
     type: object
-    maxLength: 100
+    maxProperties: 100
     description: It is a key/value hash that can hold custom fields. Maximum 100 elements and allows special characters.
     additionalProperties:
       type: string
