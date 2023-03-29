@@ -1,8 +1,9 @@
 post:
   tags:
-    - orders
+    - Taxes
   operationId: ordersCreateTaxLines
-  summary: creates a new tax lines for an existing orden
+  description: creates a new tax lines for an existing orden
+  summary: Create Tax
   responses:
     200:
       description: successful

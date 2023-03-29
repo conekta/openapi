@@ -1,8 +1,8 @@
 get:
   tags:
-    - plans
+    - Plans
   operationId: getPlan
-  summary: returns a plan
+  summary: Get Plan
   responses:
     200:
       description: successful
@@ -50,9 +50,9 @@ get:
     - $ref: '../../parameters/commons/headers/accept_language.yml'
 put:
   tags:
-    - plans
+    - Plans
   operationId: updatePlan
-  summary: updates a plan
+  summary: Update Plan
   responses:
     200:
       description: successful
@@ -102,9 +102,9 @@ put:
     - $ref: '../../parameters/commons/headers/accept_language.yml'
 delete:
   tags:
-    - plans
+    - Plans
   operationId: deletePlan
-  summary: deletes a plan
+  summary: Delete Plan
   responses:
     200:
       description: successful

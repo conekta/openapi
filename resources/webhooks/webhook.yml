@@ -1,8 +1,8 @@
 get:
   tags:
-    - webhooks
+    - Webhooks
   operationId: getWebhook
-  summary: returns a webhook
+  summary:  Get Webhook
   responses:
     200:
       description: successful
@@ -35,8 +35,6 @@ get:
           schema:
             type: string
             example: conekta-v2.1.0; format=application/json
-    422:
-     $ref: '../errors/422.yml'
     401:
      $ref: '../errors/401.yml'
     404:
@@ -50,9 +48,9 @@ get:
     - $ref: '../../parameters/commons/headers/accept_language.yml'
 put:
   tags:
-    - webhooks
+    - Webhooks
   operationId: updateWebhook
-  summary: updates an existing webhook
+  summary: Update Webhook
   description: 'updates an existing webhook'
   responses:
     '200':
@@ -61,25 +59,24 @@ put:
         application/vnd.conekta-v2.1.0+json:
           schema:
              $ref: ../../schemas/webhooks/webhook_response.yml
-    422:
-     $ref: '../errors/422.yml'
+    404:
+     $ref: '../errors/404.yml'
     401:
      $ref: '../errors/401.yml'
     500:
      $ref: '../errors/500.yml'
-
   security:
     - bearerAuth: []
   requestBody:
-    $ref: '../../requestBodies/webhooks/webhook.yml'
+    $ref: '../../requestBodies/webhooks/webhook_update.yml'
   parameters:
     - $ref: '../../parameters/commons/headers/accept_language.yml'
     - $ref: '../../parameters/commons/path_param/id.yml'
 delete:
   tags:
-    - webhooks
+    - Webhooks
   operationId: deleteWebhook
-  summary: returns a deleted webhook
+  summary: Delete Webhook
   responses:
     200:
       description: successful
@@ -112,8 +109,6 @@ delete:
           schema:
             type: string
             example: conekta-v2.1.0; format=application/json
-    422:
-     $ref: '../errors/422.yml'
     401:
      $ref: '../errors/401.yml'
     404:

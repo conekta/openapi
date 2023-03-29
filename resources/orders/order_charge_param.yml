@@ -1,8 +1,9 @@
 post:
   tags:
-    - orders
+    - Charges
   operationId: ordersCreateCharge
-  summary: creates a new charge for an existing orden
+  summary: Create charge
+  description: creates a new charge for an existing orden
   responses:
     200:
       description: successful
@@ -14,6 +15,8 @@ post:
      $ref: '../errors/401.yml'
     404:
      $ref: '../errors/404.yml'
+    428:
+     $ref: '../errors/428.yml'
     500:
      $ref: '../errors/500.yml'
   security:

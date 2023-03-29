@@ -1,8 +1,8 @@
 post: 
   tags:
-    - customers
+    - Shipping Contacts
   operationId: CreateCustomerShippingContacts
-  summary: creates a shipping contacts
+  summary: Create a shipping contacts
   description: 'Gets a customer resource that corresponds to a customer ID.'
   responses:
     '200':

@@ -18,7 +18,7 @@
   },
   "apiName" : "conekta",
   "packageName" : "Conekta.net",
-  "packageVersion" : "6.0.0-alpha-1",
+  "packageVersion" : "6.0.0-alpha-2",
   "netCoreProjectFile" : true,
   "packageDescription" : "This is a .net library that allows interaction with https://api.conekta.io API.",
   "packageTitle" : "Conekta Library",
@@ -31,5 +31,6 @@
   "templateDir": "templates/netcore",
   "useOneOfDiscriminatorLookup" : true,
   "packageCopyright" : "Conekta",
-  "PackageReleaseNotes" : ""
+  "PackageReleaseNotes" : "",
+  "releaseNote" : "Support new version based on Openapi"
 }

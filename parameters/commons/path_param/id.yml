@@ -1,6 +1,6 @@
 in: path
 name: "id"
-description:  identifier
+description:  Identifier of the resource
 required: true
 schema:
   type: string

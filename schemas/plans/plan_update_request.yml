@@ -6,13 +6,17 @@ properties:
     type: integer
     example: 10000
     minimum: 1
+    description: "The amount in cents that will be charged on the interval specified."
   currency:
     type: string
     example: "MXN"
     maxLength: 3
+    description: ISO 4217 for currencies, for the Mexican peso it is MXN/USD
   expiry_count:
     type: integer
     example: 12
+    description: Number of repetitions of the frequency NUMBER OF CHARGES TO BE MADE, considering the interval and frequency, this evolves over time, but is subject to the expiration count.
   name:
     type: string
     example: "Extra Plan3"
+    description: "The name of the plan."

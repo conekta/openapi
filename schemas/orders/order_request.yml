@@ -7,6 +7,7 @@ required:
   - line_items
 properties:
   charges:
+    description: "List of [charges](https://developers.conekta.com/v2.1.0/reference/orderscreatecharge) that are applied to the order"
     type: array
     items:
       $ref: ../../schemas/charges/charge_request.yml
@@ -23,10 +24,12 @@ properties:
       - $ref: ../customers/customer_info.yml
       - $ref: ../customers/customer_info_just_customer_id.yml
   discount_lines:
+    description: "List of [discounts](https://developers.conekta.com/v2.1.0/reference/orderscreatediscountline) that are applied to the order. You must have at least one discount."
     type: array
     items:
       $ref: order_discount_lines_request.yml
   line_items:
+    description: "List of [products](https://developers.conekta.com/v2.1.0/reference/orderscreatelineitems) that are sold in the order. You must have at least one product."
     type: array
     items:
        $ref: line_items.yml
@@ -34,6 +37,10 @@ properties:
     type: object
     additionalProperties:
       type: string
+  needs_shipping_contact:
+    type: boolean
+    example: false
+    description: Allows you to fill out the shipping information at checkout
   pre_authorize:
     type: boolean
     description: "Indicates whether the order charges must be preauthorized"
@@ -41,10 +48,12 @@ properties:
   shipping_contact:
     $ref: ../../schemas/customers/customer_shipping_contacts.yml
   shipping_lines:
+    description: "List of [shipping costs](https://developers.conekta.com/v2.1.0/reference/orderscreateshippinglines). If the online store offers digital products."
     type: array
     items:
       $ref: ../../schemas/orders/shipping_lines_request.yml
   tax_lines:
+    description: "List of [taxes](https://developers.conekta.com/v2.1.0/reference/orderscreatetaxlines) that are applied to the order."
     type: array
     items:
       $ref: order_tax_lines_request.yml

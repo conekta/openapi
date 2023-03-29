@@ -3,4 +3,15 @@ content:
   application/vnd.conekta-v2.1.0+json:
     schema:
       $ref: '../../schemas/errors/error.yml'
- 
+    example:
+      details: [
+        {
+          message: "The token does not exist.",
+          param:  "payment_method.token_id",
+          code:  "conekta.errors.parameter_validation.payment_method.token_id.nonexistent_token",
+          debug_message: "The token does not exist."
+        }
+      ]
+      log_id: "641b6d813cd9a50001515017"
+      object: "error"
+      type: "parameter_validation_error"

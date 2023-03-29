@@ -1,8 +1,9 @@
 put:
   tags:
-    - orders
+    - Shippings
   operationId: ordersUpdateShippingLines
-  summary: updates an existing shipping lines for an existing orden
+  summary: Update Shipping
+  description: updates an existing shipping lines for an existing orden
   responses:
     200:
       description: successful

@@ -1,4 +1,4 @@
-title:  customer_info
+title:  customer_info_customer_id
 type: object
 required:
   - customer_id

@@ -1,8 +1,8 @@
 get:
   tags:
-    - plans
+    - Plans
   operationId: getPlans
-  summary: returns a set of /plans
+  summary: Get A List of Plans
   responses:
     200:
       description: successful
@@ -60,9 +60,10 @@ get:
     - $ref: '../../parameters/commons/query/previous_page.yml'
 post:
   tags:
-    - plans
+    - Plans
   operationId: createPlan
-  summary: creates a plan
+  summary: Create Plan
+  description: Create a new plan for an existing order
   responses:
     200:
       description: successful

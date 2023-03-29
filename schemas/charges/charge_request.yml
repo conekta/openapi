@@ -13,7 +13,7 @@ properties:
     example: 1677196303
   monthly_installments:
     type: integer
-    format: int32
+    format: int8
     description: "How many months without interest to apply, it can be 3, 6, 9, 12 or 18"
   payment_method:
     required:

@@ -1,17 +1,17 @@
 post:
   tags:
-    - orders
+    - Orders
   operationId: createOrder
-  summary: creates a new order
+  summary: Create order
   description: 'Create a new order.'
   responses:
-    '200':
+    200:
       description: successful operation
       x-merge-sample-json: '{"id":"ord_2tV73D6wqGFYUtChx"}'
       content:
         application/vnd.conekta-v2.1.0+json:
           schema:
-             $ref: ../../schemas/orders/order_response.yml
+              $ref: ../../schemas/orders/order_response.yml
           examples:
             cash:
               $ref: ../../schemas/orders/examples/order_cash.yml
@@ -25,7 +25,6 @@ post:
      $ref: '../errors/402.yml'
     500:
      $ref: '../errors/500.yml'
-
   security:
     - bearerAuth: []
   requestBody:
@@ -34,12 +33,12 @@ post:
     - $ref: '../../parameters/commons/headers/accept_language.yml'
 get:
   tags:
-    - orders
+    - Orders
   operationId: getOrders
-  summary: returns a set of /orders
-  description: 'returns a set of /orders.'
+  summary: Get a list of Orders
+  description: 'Get order details in the form of a list'
   responses:
-    '200':
+    200:
       description: successful operation
       x-merge-sample-json: '{"data":[{"id":"ord_2tV73D6wqGFYUtChx"}]}'
       content:

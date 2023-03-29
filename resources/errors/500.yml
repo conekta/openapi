@@ -3,4 +3,15 @@ content:
   application/vnd.conekta-v2.1.0+json:
     schema:
       $ref: '../../schemas/errors/error.yml'
- 
+    example:
+      details: [
+        {
+            "debug_message": "There was a runtime error and Conekta engineers have been notified.",
+            "message": "There was a runtime error and Conekta engineers have been notified.",
+            "param": null,
+            "code": "conekta.errors.api.system.general_failure"
+        }
+        ]
+      object: "error"
+      type: "api_error"
+      log_id: "641b6f2b3cd9a50001515098"

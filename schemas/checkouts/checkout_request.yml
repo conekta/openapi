@@ -9,7 +9,7 @@ properties:
     description: "Are the payment methods available for this link"
     items:
       type: string
-      example: [ "cash", "card", "bank_transfer"]
+    example: [ "cash", "card", "bank_transfer"]
   expires_at:
     type: integer
     format: int64
@@ -25,7 +25,7 @@ properties:
     items:
       type: integer
       format: int8
-      example: [3,6,12]
+    example: [3,6,12]
   name:
     type: string
     description: "Reason for payment"

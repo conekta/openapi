@@ -1,3 +1,4 @@
+API_VERSION_ID = 641deb4041d58005f2c45bf3
 merge:
 	npx @openapitools/openapi-generator-cli  generate -g openapi-yaml -i api.yaml -p outputFile=_build/api.yaml --skip-validate-spec
 	
@@ -18,10 +19,13 @@ ruby:
 
 csharp:
 	mkdir -p conekta-.net && cp .openapi-generator-ignore conekta-.net/.openapi-generator-ignore &&   \
-	npx @openapitools/openapi-generator-cli generate -i  api.yaml -g csharp-netcore -o conekta-.net  -c config-netcore.json --global-property modelTests=false
+	npx @openapitools/openapi-generator-cli generate -i  api.yaml -g csharp-netcore -o ../conekta-.net  -c config-netcore.json --global-property modelTests=false
 
 php:
 	npx @openapitools/openapi-generator-cli generate -i  api.yaml -g php -o conekta-php  -c config-php.json
 
 node:
 	npx @openapitools/openapi-generator-cli generate -i  api.yaml -g typescript-fetch -o conekta-node -c config-node.json
+
+update-readme:
+	make merge && rdme openapi _build/api.yaml --id=$(API_VERSION_ID)  --key=${README_API_KEY}
