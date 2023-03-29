@@ -3,7 +3,7 @@ put:
     - Shipping Contacts
   operationId: UpdateCustomerShippingContacts
   summary: Update shipping contacts
-  description: 'Gets a customer resource that corresponds to a customer ID.'
+  description: 'Update shipping contact that corresponds to a customer ID.'
   responses:
     '200':
       description: successful operation

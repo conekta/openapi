@@ -3,7 +3,7 @@ post:
     - Shipping Contacts
   operationId: CreateCustomerShippingContacts
   summary: Create a shipping contacts
-  description: 'Gets a customer resource that corresponds to a customer ID.'
+  description: 'Create a shipping contacts for a customer.'
   responses:
     '200':
       description: successful operation

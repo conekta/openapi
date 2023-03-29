@@ -3,7 +3,7 @@ put:
     - Taxes
   operationId: ordersUpdateTaxLines
   summary: Update Tax
-  description: updates a tax lines for an existing orden
+  description: Update a tax lines for an existing orden
   responses:
     200:
       description: successful

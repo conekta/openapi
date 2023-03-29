@@ -2,7 +2,7 @@ post:
   tags:
     - Taxes
   operationId: ordersCreateTaxLines
-  description: creates a new tax lines for an existing orden
+  description: Create a new tax lines for an existing orden
   summary: Create Tax
   responses:
     200:
@@ -13,8 +13,6 @@ post:
             $ref: ../../schemas/orders/update_order_tax_lines_response.yml
     401:
      $ref: '../errors/401.yml'
-    422:
-     $ref: '../errors/422.yml'
     404:
      $ref: '../errors/404.yml'
     500:

@@ -224,7 +224,7 @@ paths:
           description: internal server error
       security:
       - bearerAuth: []
-      summary: Get a list of links
+      summary: Get a list of payment links
       tags:
       - Payment Link
     post:
@@ -2134,7 +2134,7 @@ paths:
       - Payment Methods
   /customers/{id}/shipping_contacts:
     post:
-      description: Gets a customer resource that corresponds to a customer ID.
+      description: Create a shipping contacts for a customer.
       operationId: CreateCustomerShippingContacts
       parameters:
       - description: Identifier of the resource
@@ -2348,7 +2348,7 @@ paths:
       tags:
       - Shipping Contacts
     put:
-      description: Gets a customer resource that corresponds to a customer ID.
+      description: Update shipping contact that corresponds to a customer ID.
       operationId: UpdateCustomerShippingContacts
       parameters:
       - description: Identifier of the resource
@@ -4395,7 +4395,7 @@ paths:
       - Charges
   /orders/{id}/discount_lines:
     post:
-      description: creates a new discount lines for an existing orden
+      description: Create discount lines for an existing orden
       operationId: ordersCreateDiscountLine
       parameters:
       - description: Identifier of the resource
@@ -4594,7 +4594,7 @@ paths:
       tags:
       - Discounts
     put:
-      description: updates an existing discount lines for an existing orden
+      description: Update an existing discount lines for an existing orden
       operationId: ordersUpdateDiscountLines
       parameters:
       - description: Identifier of the resource
@@ -5438,7 +5438,7 @@ paths:
       - Shippings
   /orders/{id}/tax_lines:
     post:
-      description: creates a new tax lines for an existing orden
+      description: Create a new tax lines for an existing orden
       operationId: ordersCreateTaxLines
       parameters:
       - description: Identifier of the resource
@@ -5488,21 +5488,6 @@ paths:
               schema:
                 $ref: '#/components/schemas/error'
           description: authentication error
-        "422":
-          content:
-            application/vnd.conekta-v2.1.0+json:
-              example:
-                details:
-                - message: The token does not exist.
-                  param: payment_method.token_id
-                  code: conekta.errors.parameter_validation.payment_method.token_id.nonexistent_token
-                  debug_message: The token does not exist.
-                log_id: 641b6d813cd9a50001515017
-                object: error
-                type: parameter_validation_error
-              schema:
-                $ref: '#/components/schemas/error'
-          description: parameter validation error
         "404":
           content:
             application/vnd.conekta-v2.1.0+json:
@@ -5652,7 +5637,7 @@ paths:
       tags:
       - Taxes
     put:
-      description: updates a tax lines for an existing orden
+      description: Update a tax lines for an existing orden
       operationId: ordersUpdateTaxLines
       parameters:
       - description: Identifier of the resource
@@ -9090,11 +9075,13 @@ components:
       description: create a new tax lines for an existing order
       properties:
         amount:
+          description: The amount to be collected for tax in cents
           example: 100
           format: int64
           minimum: 0
           type: integer
         description:
+          description: description or tax's name
           example: testing
           minLength: 2
           type: string
@@ -9102,6 +9089,7 @@ components:
           additionalProperties: true
           example:
             key: value
+          maxProperties: 100
           type: object
       required:
       - amount
@@ -9111,17 +9099,20 @@ components:
       description: create a new tax lines for an existing order
       properties:
         amount:
+          description: The amount to be collected for tax in cents
           example: 100
           format: int64
           minimum: 0
           type: integer
         description:
+          description: description or tax's name
           example: testing
           minLength: 2
           type: string
         metadata:
           additionalProperties:
             type: object
+          maxProperties: 100
           type: object
       type: object
     plan_request:

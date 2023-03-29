@@ -3,7 +3,7 @@ put:
     - Discounts
   operationId: ordersUpdateDiscountLines
   summary: Update Discount
-  description: updates an existing discount lines for an existing orden
+  description: Update an existing discount lines for an existing orden
   responses:
     200:
       description: successful

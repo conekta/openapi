@@ -3,7 +3,7 @@ post:
     - Discounts
   operationId: ordersCreateDiscountLine
   summary: Create Discount
-  description: creates a new discount lines for an existing orden
+  description: Create discount lines for an existing orden
   responses:
     200:
       description: successful

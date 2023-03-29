@@ -6,11 +6,14 @@ properties:
     example: "100"
     format: int64
     minimum: 0
+    description: "The amount to be collected for tax in cents"
   description:
     type: string
     example: "testing"
     minLength: 2
+    description: description or tax's name
   metadata:
     type: object
     additionalProperties:
       type: object
+    maxProperties: 100
