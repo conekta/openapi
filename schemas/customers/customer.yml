@@ -30,6 +30,7 @@ properties:
     type: string
     description: "An email address is a series of customizable characters followed by a universal Internet symbol, the at symbol (@), the name of a host server, and a web domain ending (.mx, .com, .org, . net, etc)."
     example:  miguel@gmail.com
+    format: email
   default_payment_source_id:
     type: string
     description: "It is a parameter that allows to identify in the response, the Conekta ID of a payment method (payment_id)"
