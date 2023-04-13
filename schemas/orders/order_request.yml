@@ -35,8 +35,8 @@ properties:
        $ref: product.yml
   metadata:
     type: object
-    additionalProperties:
-      type: string
+    additionalProperties: true
+    maxProperties: 100
   needs_shipping_contact:
     type: boolean
     example: false

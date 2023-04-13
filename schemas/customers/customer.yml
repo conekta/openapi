@@ -43,6 +43,10 @@ properties:
     type: array
     items:
       $ref: './customer_fiscal_entities_request.yml'
+  metadata:
+    type: object
+    additionalProperties: true
+    maxProperties: 100
   name:
     type: string
     description: Client's name
