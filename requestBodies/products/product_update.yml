@@ -1,0 +1,6 @@
+description: requested field for products 
+content:
+  application/json:
+    schema:  
+      $ref: '../../schemas/orders/update_product.yml'
+required: true

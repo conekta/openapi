@@ -29,10 +29,10 @@ properties:
     items:
       $ref: order_discount_lines_request.yml
   line_items:
-    description: "List of [products](https://developers.conekta.com/v2.1.0/reference/orderscreatelineitems) that are sold in the order. You must have at least one product."
+    description: "List of [products](https://developers.conekta.com/v2.1.0/reference/orderscreateproduct) that are sold in the order. You must have at least one product."
     type: array
     items:
-       $ref: line_items.yml
+       $ref: product.yml
   metadata:
     type: object
     additionalProperties:

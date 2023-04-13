@@ -4,4 +4,4 @@ description:  identifier
 required: true
 schema:
   type: string
-example: "line_item_2tQ8HkkfbauaKP9Ho"
+example: "fis_ent_2tQ8HkkfbauaKP9Ho"

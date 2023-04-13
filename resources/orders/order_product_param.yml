@@ -1,7 +1,7 @@
 post:
   tags:
     - Products
-  operationId: ordersCreateLineItems
+  operationId: ordersCreateProduct
   summary: Create Product
   description: 'Create a new product for an existing order.'
   responses:
@@ -10,7 +10,7 @@ post:
       content:
         application/vnd.conekta-v2.1.0+json:
           schema:
-            $ref: ../../schemas/charges/line_items_order_response.yml
+            $ref: ../../schemas/charges/product_order_response.yml
     401:
      $ref: '../errors/401.yml'
     404:
@@ -20,7 +20,7 @@ post:
   security:
     - bearerAuth: []
   requestBody:
-    $ref: '../../requestBodies/line_items/line_items_create.yml'
+    $ref: '../../requestBodies/products/product_create.yml'
   parameters:
     - $ref: '../../parameters/commons/path_param/id.yml'
     - $ref: '../../parameters/commons/headers/accept_language.yml'

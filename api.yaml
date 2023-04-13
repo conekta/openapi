@@ -45,9 +45,9 @@ paths:
   /orders/{id}/capture:
     $ref: "./resources/orders/order_capture_param.yml"
   /orders/{id}/line_items:
-    $ref: "./resources/orders/order_line_items_param.yml"
+    $ref: "./resources/orders/order_product_param.yml"
   /orders/{id}/line_items/{line_item_id}:
-    $ref: "./resources/orders/update_order_line_items_param.yml"
+    $ref: "./resources/orders/update_order_product_param.yml"
   /orders/{id}/refunds:
     $ref: "./resources/orders/order_refunds_param.yml"
   /checkouts:

@@ -1,6 +1,6 @@
-title: line_items_order_response
+title: product order response
 allOf:
-  - $ref: '../../schemas/orders/line_items.yml'
+  - $ref: '../../schemas/orders/product.yml'
   - type: object
     properties:
       id: 

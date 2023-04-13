@@ -174,16 +174,18 @@ properties:
     type: boolean
     example: false
   line_items:
+    title: order_response_products
     allOf:
       - $ref: ../pagination/pagination.yml
+      - $ref: ../pagination/page.yml
       - type: object
         properties:
           data:
             type: array
             items:
-              title: line_items_data_response
+              title: product_data_response
               allOf:
-                - $ref: line_items.yml
+                - $ref: product.yml
                 - type: object
                   properties:
                     id: 

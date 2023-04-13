@@ -5531,7 +5531,7 @@
     },
     {
       "uuid": "85b4fa6b-355e-4bc6-8791-2da104ebfcea",
-      "documentation": "creates a new line items for an existing orden",
+      "documentation": "creates  new products for an existing orden",
       "method": "post",
       "endpoint": "orders/:id/line_items",
       "responses": [
@@ -5637,7 +5637,7 @@
     },
     {
       "uuid": "32dc2cd8-f7a9-4f05-bd2b-d1a7bd721a8a",
-      "documentation": "updates a existing line items for an existing orden",
+      "documentation": "updates existing products for an existing orden",
       "method": "put",
       "endpoint": "orders/:id/line_items/:line_item_id",
       "responses": [

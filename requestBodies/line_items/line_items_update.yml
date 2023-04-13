@@ -1,6 +1,0 @@
-description: requested field for a line items        
-content:
-  application/json:
-    schema:  
-      $ref: '../../schemas/orders/update_line_items.yml'
-required: true

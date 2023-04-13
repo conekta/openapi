@@ -1,8 +1,8 @@
 put:
   tags:
     - Products
-  operationId: ordersUpdateLineItems
-  description: Update a existing line items for an existing orden
+  operationId: ordersUpdateProduct
+  description: Update an existing product for an existing orden
   summary: Update Product
   responses:
     200:
@@ -10,7 +10,7 @@ put:
       content:
         application/vnd.conekta-v2.1.0+json:
           schema:
-            $ref: ../../schemas/charges/line_items_order_response.yml
+            $ref: ../../schemas/charges/product_order_response.yml
     401:
      $ref: '../errors/401.yml'
     422:
@@ -22,7 +22,7 @@ put:
   security:
     - bearerAuth: []
   requestBody:
-    $ref: '../../requestBodies/line_items/line_items_update.yml'
+    $ref: '../../requestBodies/products/product_update.yml'
   parameters:
     - $ref: '../../parameters/commons/path_param/id.yml'
     - $ref: '../../parameters/commons/path_param/line_items_id.yml'
@@ -30,7 +30,7 @@ put:
 delete:
   tags:
     - Products
-  operationId: ordersDeleteLineItems
+  operationId: ordersDeleteProduct
   description: Delete product for an existing orden
   summary: Delete Product
   responses:
@@ -39,7 +39,7 @@ delete:
       content:
         application/vnd.conekta-v2.1.0+json:
           schema:
-            $ref: ../../schemas/charges/line_items_order_response.yml
+            $ref: ../../schemas/charges/product_order_response.yml
     401:
      $ref: '../errors/401.yml'
     422:
