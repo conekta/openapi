@@ -1,5 +1,5 @@
 in: path
-name: "payment_sources_id"
+name: "payment_method_id"
 description:  Identifier of the payment method
 required: true
 schema:

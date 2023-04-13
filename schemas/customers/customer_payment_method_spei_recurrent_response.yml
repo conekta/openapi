@@ -1,6 +1,6 @@
-payment_source_spei_recurrent:
+payment_method_spei_recurrent:
   allOf:
-    - $ref: customer_payment_source_response.yml#/payment_source
+    - $ref: customer_payment_method_response.yml#/payment_method_response
     - type: object
       description: use for spei responses
       properties:

@@ -61,9 +61,9 @@ paths:
   /checkouts/{id}/sms:
     $ref: "./resources/checkouts/checkout_sms.yml"
   /customers/{id}/payment_sources:
-    $ref: "./resources/customers/create_customer_payment_sources.yml"
-  /customers/{id}/payment_sources/{payment_sources_id}:
-    $ref: "./resources/customers/update_customer_payment_sources.yml"
+    $ref: "./resources/customers/create_customer_payment_methods.yml"
+  /customers/{id}/payment_sources/{payment_method_id}:
+    $ref: "./resources/customers/update_customer_payment_methods.yml"
   /plans:
     $ref: "./resources/plans/plans.yml"
   /plans/{id}:

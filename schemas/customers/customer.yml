@@ -51,11 +51,11 @@ properties:
     description: Contains details of the payment methods that the customer has active or has used in Conekta
     type: array
     items:
-      title: consumer_payment_sources_request
+      title: consumer_payment_methods_request
       oneOf:
-        - $ref: ../../schemas/customers/payment_sources_card.yml
-        - $ref: ../../schemas/customers/payment_sources_cash.yml
-        - $ref: ../../schemas/customers/payment_sources_spei.yml
+        - $ref: ../../schemas/customers/payment_method_card_request.yml
+        - $ref: ../../schemas/customers/payment_method_cash_request.yml
+        - $ref: ../../schemas/customers/payment_method_spei_request.yml
   phone:
     type: string
     description: Is the customer's phone number

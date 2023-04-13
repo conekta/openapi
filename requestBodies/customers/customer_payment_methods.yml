@@ -1,12 +1,12 @@
-description: requested field for customer payment sources    
+description: requested field for customer payment methods    
 content:
   application/json:
     schema:  
       description: Contains details of the payment methods that the customer has active or has used in Conekta
       oneOf:
-        - $ref: ../../schemas/customers/payment_sources_card.yml
-        - $ref: ../../schemas/customers/payment_sources_cash.yml
-        - $ref: ../../schemas/customers/payment_sources_spei.yml
+        - $ref: ../../schemas/customers/payment_method_card_request.yml
+        - $ref: ../../schemas/customers/payment_method_cash_request.yml
+        - $ref: ../../schemas/customers/payment_method_spei_request.yml
     examples:
       card:
         value:

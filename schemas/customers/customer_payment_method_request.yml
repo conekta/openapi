@@ -1,0 +1,9 @@
+description:  Contains details of the payment methods that the customer has active or has used in Conekta
+title: customer_payment_method_request
+required:
+  - type
+properties:
+  type:
+    type: string
+    example: card | cash | spei
+    description: Type of payment method

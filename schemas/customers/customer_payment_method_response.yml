@@ -1,4 +1,4 @@
-payment_source:
+payment_method_response:
   type: object
   required:
     - type

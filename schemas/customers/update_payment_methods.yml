@@ -1,4 +1,4 @@
-title: update_payment_sources_card
+title: update_payment_methods_card
 type: object
 properties:
   name:

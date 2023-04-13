@@ -2365,7 +2365,7 @@
     },
     {
       "uuid": "a97429f1-4bd9-4d08-9ed0-cffa2b0b67ee",
-      "documentation": "creates a payment source",
+      "documentation": "creates a payment method",
       "method": "post",
       "endpoint": "customers/:id/payment_sources",
       "responses": [
@@ -2500,7 +2500,7 @@
     },
     {
       "uuid": "4a5ad2ec-8c5b-46e8-bf3d-990d117fc3e8",
-      "documentation": "updates a payment source",
+      "documentation": "updates a payment method",
       "method": "put",
       "endpoint": "customers/:id/payment_sources/:payment_sources_id",
       "responses": [
@@ -7742,7 +7742,7 @@
     },
     {
       "uuid": "54f087e6-500b-4d99-af66-e9a449f50f23",
-      "documentation": "deletes a payment source",
+      "documentation": "deletes a payment method",
       "method": "delete",
       "endpoint": "customers/:id/payment_sources/:payment_sources_id",
       "responses": [
@@ -8025,7 +8025,7 @@
     },
     {
       "uuid": "b11057b5-974e-46a7-b66a-9c2a6490e5ca",
-      "documentation": "get all payment sources",
+      "documentation": "get all payment method",
       "method": "get",
       "endpoint": "customers/:id/payment_sources",
       "responses": [
