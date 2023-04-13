@@ -1,6 +1,6 @@
-title: shipping_lines_order_response
+title: shipping_order_response
 allOf:
-  - $ref: '../../schemas/orders/shipping_lines_request.yml'
+  - $ref: '../../schemas/orders/shipping_request.yml'
   - type: object
     properties:
       id: 

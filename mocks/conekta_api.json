@@ -5900,7 +5900,7 @@
     },
     {
       "uuid": "729ab202-8bca-4c97-ba58-b3fee56e6c74",
-      "documentation": "creates a new shipping lines for an existing orden",
+      "documentation": "creates a new shipping for an existing orden",
       "method": "post",
       "endpoint": "orders/:id/shipping_lines",
       "responses": [
@@ -6006,7 +6006,7 @@
     },
     {
       "uuid": "3557026b-6016-4074-ac11-f93b479e729d",
-      "documentation": "updates an existing shipping lines for an existing orden",
+      "documentation": "updates an existing shipping for an existing orden",
       "method": "put",
       "endpoint": "orders/:id/shipping_lines/:shipping_lines_id",
       "responses": [

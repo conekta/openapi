@@ -1,4 +1,4 @@
-title: shipping_lines_request
+title: shipping_request
 required:
   - amount
 properties:
@@ -21,7 +21,7 @@ properties:
     example: "Same day" 
     description: Method of shipment
   metadata:
-    description: Hash where the user can send additional information for each 'shipping_line'.
+    description: Hash where the user can send additional information for each 'shipping'.
     type: object
     additionalProperties: true
     example: { "key": "value" }

@@ -43,7 +43,7 @@ properties:
   shipping_lines:
     type: array
     items:
-      $ref: ../../schemas/orders/shipping_lines_request.yml
+      $ref: ../../schemas/orders/shipping_request.yml
   tax_lines:
     type: array
     items:

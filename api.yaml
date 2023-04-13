@@ -69,9 +69,9 @@ paths:
   /plans/{id}:
     $ref: "./resources/plans/plan.yml"
   /orders/{id}/shipping_lines:
-    $ref: "./resources/orders/order_shipping_lines_param.yml"
+    $ref: "./resources/orders/order_shipping_param.yml"
   /orders/{id}/shipping_lines/{shipping_lines_id}:
-    $ref: "./resources/orders/update_order_shipping_lines_param.yml"
+    $ref: "./resources/orders/update_order_shipping_param.yml"
   /customers/{id}/shipping_contacts:
     $ref: "./resources/customers/create_customer_shipping_contacts.yml"
   /customers/{id}/shipping_contacts/{shipping_contacts_id}:
