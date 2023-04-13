@@ -53,10 +53,10 @@ properties:
     items:
       $ref: ../../schemas/orders/shipping_request.yml
   tax_lines:
-    description: "List of [taxes](https://developers.conekta.com/v2.1.0/reference/orderscreatetaxlines) that are applied to the order."
+    description: "List of [taxes](https://developers.conekta.com/v2.1.0/reference/orderscreatetaxes) that are applied to the order."
     type: array
     items:
-      $ref: order_tax_lines_request.yml
+      $ref: order_tax_request.yml
 
 
 

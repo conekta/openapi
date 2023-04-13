@@ -1,5 +1,5 @@
 in: path
-name: "tax_lines_id"
+name: "tax_id"
 description:  identifier
 required: true
 schema:

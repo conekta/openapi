@@ -25,7 +25,7 @@ put:
     $ref: '../../requestBodies/shippings/shipping_create.yml'
   parameters:
     - $ref: '../../parameters/commons/path_param/id.yml'
-    - $ref: '../../parameters/commons/path_param/shipping_lines_id.yml'
+    - $ref: '../../parameters/commons/path_param/shipping_id.yml'
     - $ref: '../../parameters/commons/headers/accept_language.yml'
 delete:
   tags:
@@ -52,5 +52,5 @@ delete:
     - bearerAuth: []
   parameters:
     - $ref: '../../parameters/commons/path_param/id.yml'
-    - $ref: '../../parameters/commons/path_param/shipping_lines_id.yml'
+    - $ref: '../../parameters/commons/path_param/shipping_id.yml'
     - $ref: '../../parameters/commons/headers/accept_language.yml'

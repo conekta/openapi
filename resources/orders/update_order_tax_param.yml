@@ -1,16 +1,16 @@
 put:
   tags:
     - Taxes
-  operationId: ordersUpdateTaxLines
+  operationId: ordersUpdateTaxes
   summary: Update Tax
-  description: Update a tax lines for an existing orden
+  description: Update taxes for an existing orden
   responses:
     200:
       description: successful
       content:
         application/vnd.conekta-v2.1.0+json:
           schema:
-            $ref: ../../schemas/orders/update_order_tax_lines_response.yml
+            $ref: ../../schemas/orders/update_order_tax_response.yml
     401:
      $ref: '../errors/401.yml'
     422:
@@ -22,24 +22,24 @@ put:
   security:
     - bearerAuth: []
   requestBody:
-    $ref: '../../requestBodies/orders/order_tax_lines_update.yml'
+    $ref: '../../requestBodies/orders/order_tax_update.yml'
   parameters:
     - $ref: '../../parameters/commons/path_param/id.yml'
-    - $ref: '../../parameters/commons/path_param/tax_lines_id.yml'
+    - $ref: '../../parameters/commons/path_param/tax_id.yml'
     - $ref: '../../parameters/commons/headers/accept_language.yml'
 delete:
   tags:
     - Taxes
-  operationId: ordersDeleteTaxLines
+  operationId: ordersDeleteTaxes
   summary: Delete Tax
-  description: Delete a tax lines for an existing orden
+  description: Delete taxes for an existing orden
   responses:
     200:
       description: successful
       content:
         application/vnd.conekta-v2.1.0+json:
           schema:
-            $ref: ../../schemas/orders/update_order_tax_lines_response.yml
+            $ref: ../../schemas/orders/update_order_tax_response.yml
     401:
      $ref: '../errors/401.yml'
     422:
@@ -52,5 +52,5 @@ delete:
     - bearerAuth: []
   parameters:
     - $ref: '../../parameters/commons/path_param/id.yml'
-    - $ref: '../../parameters/commons/path_param/tax_lines_id.yml'
+    - $ref: '../../parameters/commons/path_param/tax_id.yml'
     - $ref: '../../parameters/commons/headers/accept_language.yml'

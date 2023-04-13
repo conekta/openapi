@@ -47,7 +47,7 @@ properties:
   tax_lines:
     type: array
     items:
-      $ref: order_tax_lines_request.yml
+      $ref: order_tax_request.yml
 
 
 

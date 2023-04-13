@@ -70,7 +70,7 @@ paths:
     $ref: "./resources/plans/plan.yml"
   /orders/{id}/shipping_lines:
     $ref: "./resources/orders/order_shipping_param.yml"
-  /orders/{id}/shipping_lines/{shipping_lines_id}:
+  /orders/{id}/shipping_lines/{shipping_id}:
     $ref: "./resources/orders/update_order_shipping_param.yml"
   /customers/{id}/shipping_contacts:
     $ref: "./resources/customers/create_customer_shipping_contacts.yml"
@@ -87,9 +87,9 @@ paths:
   /customers/{id}/subscription/resume:
     $ref: "./resources/subscriptions/subscriptions_resume.yml"
   /orders/{id}/tax_lines:
-    $ref: "./resources/orders/order_tax_lines_param.yml"
-  /orders/{id}/tax_lines/{tax_lines_id}:
-    $ref: "./resources/orders/update_order_tax_lines_param.yml"
+    $ref: "./resources/orders/order_tax_param.yml"
+  /orders/{id}/tax_lines/{tax_id}:
+    $ref: "./resources/orders/update_order_tax_param.yml"
   /webhooks:
      $ref: "./resources/webhooks/webhooks.yml"
   /webhooks/{id}:

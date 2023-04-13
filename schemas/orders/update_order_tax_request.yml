@@ -1,8 +1,5 @@
-description: "create a new tax lines for an existing order"
+description: "create new taxes for an existing order"
 type: object
-required:
-  - amount
-  - description
 properties:
   amount:
     type: integer
@@ -17,6 +14,6 @@ properties:
     description: description or tax's name
   metadata:
     type: object
-    additionalProperties: true
-    example: { "key": "value" }
+    additionalProperties:
+      type: object
     maxProperties: 100

@@ -1,0 +1,6 @@
+description: requested field for taxes 
+content:
+  application/json:
+    schema:  
+      $ref: '../../schemas/orders/update_order_tax_request.yml'
+required: true
