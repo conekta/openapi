@@ -1,0 +1,56 @@
+put:
+  tags:
+    - Taxes
+  operationId: ordersUpdateTaxes
+  summary: Update Tax
+  description: Update taxes for an existing orden
+  responses:
+    200:
+      description: successful
+      content:
+        application/vnd.conekta-v2.1.0+json:
+          schema:
+            $ref: ../../schemas/orders/update_order_tax_response.yml
+    401:
+     $ref: '../errors/401.yml'
+    422:
+     $ref: '../errors/422.yml'
+    404:
+     $ref: '../errors/404.yml'
+    500:
+     $ref: '../errors/500.yml'
+  security:
+    - bearerAuth: []
+  requestBody:
+    $ref: '../../requestBodies/orders/order_tax_update.yml'
+  parameters:
+    - $ref: '../../parameters/commons/path_param/id.yml'
+    - $ref: '../../parameters/commons/path_param/tax_id.yml'
+    - $ref: '../../parameters/commons/headers/accept_language.yml'
+delete:
+  tags:
+    - Taxes
+  operationId: ordersDeleteTaxes
+  summary: Delete Tax
+  description: Delete taxes for an existing orden
+  responses:
+    200:
+      description: successful
+      content:
+        application/vnd.conekta-v2.1.0+json:
+          schema:
+            $ref: ../../schemas/orders/update_order_tax_response.yml
+    401:
+     $ref: '../errors/401.yml'
+    422:
+     $ref: '../errors/422.yml'
+    404:
+     $ref: '../errors/404.yml'
+    500:
+     $ref: '../errors/500.yml'
+  security:
+    - bearerAuth: []
+  parameters:
+    - $ref: '../../parameters/commons/path_param/id.yml'
+    - $ref: '../../parameters/commons/path_param/tax_id.yml'
+    - $ref: '../../parameters/commons/headers/accept_language.yml'

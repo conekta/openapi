@@ -1,0 +1,19 @@
+description: requested field for customer payment methods    
+content:
+  application/json:
+    schema:  
+      description: Contains details of the payment methods that the customer has active or has used in Conekta
+      oneOf:
+        - $ref: ../../schemas/customers/payment_method_card_request.yml
+        - $ref: ../../schemas/customers/payment_method_cash_request.yml
+        - $ref: ../../schemas/customers/payment_method_spei_request.yml
+    examples:
+      card:
+        value:
+          type: card
+          token_id: tok_test_visa_4242
+      cash:
+        value:
+          type: spei_recurrent
+          expires_at: 1553273553
+required: true

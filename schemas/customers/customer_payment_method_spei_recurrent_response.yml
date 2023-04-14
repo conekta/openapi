@@ -1,0 +1,13 @@
+payment_method_spei_recurrent:
+  allOf:
+    - $ref: customer_payment_method_response.yml#/payment_method_response
+    - type: object
+      description: use for spei responses
+      properties:
+        reference:
+          type: string
+          example: "93000262276908"
+        expires_at:
+          type: string
+          example: "none"
+       

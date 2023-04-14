@@ -2365,7 +2365,7 @@
     },
     {
       "uuid": "a97429f1-4bd9-4d08-9ed0-cffa2b0b67ee",
-      "documentation": "creates a payment source",
+      "documentation": "creates a payment method",
       "method": "post",
       "endpoint": "customers/:id/payment_sources",
       "responses": [
@@ -2500,7 +2500,7 @@
     },
     {
       "uuid": "4a5ad2ec-8c5b-46e8-bf3d-990d117fc3e8",
-      "documentation": "updates a payment source",
+      "documentation": "updates a payment method",
       "method": "put",
       "endpoint": "customers/:id/payment_sources/:payment_sources_id",
       "responses": [
@@ -5531,7 +5531,7 @@
     },
     {
       "uuid": "85b4fa6b-355e-4bc6-8791-2da104ebfcea",
-      "documentation": "creates a new line items for an existing orden",
+      "documentation": "creates  new products for an existing orden",
       "method": "post",
       "endpoint": "orders/:id/line_items",
       "responses": [
@@ -5637,7 +5637,7 @@
     },
     {
       "uuid": "32dc2cd8-f7a9-4f05-bd2b-d1a7bd721a8a",
-      "documentation": "updates a existing line items for an existing orden",
+      "documentation": "updates existing products for an existing orden",
       "method": "put",
       "endpoint": "orders/:id/line_items/:line_item_id",
       "responses": [
@@ -5900,7 +5900,7 @@
     },
     {
       "uuid": "729ab202-8bca-4c97-ba58-b3fee56e6c74",
-      "documentation": "creates a new shipping lines for an existing orden",
+      "documentation": "creates a new shipping for an existing orden",
       "method": "post",
       "endpoint": "orders/:id/shipping_lines",
       "responses": [
@@ -6006,7 +6006,7 @@
     },
     {
       "uuid": "3557026b-6016-4074-ac11-f93b479e729d",
-      "documentation": "updates an existing shipping lines for an existing orden",
+      "documentation": "updates an existing shipping for an existing orden",
       "method": "put",
       "endpoint": "orders/:id/shipping_lines/:shipping_lines_id",
       "responses": [
@@ -7742,7 +7742,7 @@
     },
     {
       "uuid": "54f087e6-500b-4d99-af66-e9a449f50f23",
-      "documentation": "deletes a payment source",
+      "documentation": "deletes a payment method",
       "method": "delete",
       "endpoint": "customers/:id/payment_sources/:payment_sources_id",
       "responses": [
@@ -8025,7 +8025,7 @@
     },
     {
       "uuid": "b11057b5-974e-46a7-b66a-9c2a6490e5ca",
-      "documentation": "get all payment sources",
+      "documentation": "get all payment method",
       "method": "get",
       "endpoint": "customers/:id/payment_sources",
       "responses": [

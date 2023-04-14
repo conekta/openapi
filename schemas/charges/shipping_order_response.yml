@@ -1,0 +1,11 @@
+title: shipping_order_response
+allOf:
+  - $ref: '../../schemas/orders/shipping_request.yml'
+  - type: object
+    properties:
+      id: 
+        type: string
+      object:
+        type: string
+      parent_id:
+        type: string

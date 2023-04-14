@@ -109,8 +109,15 @@ get:
           schema:
             title: customers_response
             allOf:
-              - $ref: '../../schemas/customers/customers_extra_fields_response.yml'
+              - type: object
+                properties:
+                  data:
+                    title: customers_data_response
+                    type: array
+                    items:
+                      $ref: '../../schemas/customers/customer_response.yml'
               - $ref: ../../schemas/pagination/pagination.yml
+              - $ref: ../../schemas/pagination/page.yml
       headers:
         Date:
           description: The date and time that the response was sent

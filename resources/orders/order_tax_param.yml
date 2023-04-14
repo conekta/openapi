@@ -1,0 +1,26 @@
+post:
+  tags:
+    - Taxes
+  operationId: ordersCreateTaxes
+  description: Create new taxes for an existing orden
+  summary: Create Tax
+  responses:
+    200:
+      description: successful
+      content:
+        application/vnd.conekta-v2.1.0+json:
+          schema:
+            $ref: ../../schemas/orders/update_order_tax_response.yml
+    401:
+     $ref: '../errors/401.yml'
+    404:
+     $ref: '../errors/404.yml'
+    500:
+     $ref: '../errors/500.yml'
+  security:
+    - bearerAuth: []
+  requestBody:
+    $ref: '../../requestBodies/orders/order_tax.yml'
+  parameters:
+    - $ref: '../../parameters/commons/path_param/id.yml'
+    - $ref: '../../parameters/commons/headers/accept_language.yml'

@@ -88,28 +88,29 @@ properties:
     type: string
     example: "customer"
   payment_sources:
-    title: customer_payment_sources_response
+    title: customer_payment_methods_response
     allOf:
       - $ref: ../../schemas/pagination/pagination.yml
       - $ref: ../../schemas/pagination/page.yml
       - type: object
-        title: customerPaymentSources
+        title: customerPaymentMethods
         properties:
           data:
             type: array
+            title: customer_payment_methods_data
             items:
-              title: customerPaymentSourcesData
+              title: customer_payment_methods_data
               discriminator:
                 propertyName: type
                 mapping:
-                  cash: payment_source_cash
-                  card: payment_source_card
-                  oxxo_recurrent: payment_source_cash
-                  spei_recurrent: payment_source_spei_recurrent
+                  cash: payment_method_cash_response
+                  card: payment_method_card_response
+                  oxxo_recurrent: payment_method_cash_response
+                  spei_recurrent: payment_method_spei_recurrent
               oneOf:
-                - $ref: 'customer_payment_source_cash_response.yml#/payment_source_cash'
-                - $ref: 'customer_payment_source_card_response.yml#/payment_source_card'
-                - $ref: 'customer_payment_source_spei_recurrent_response.yml#/payment_source_spei_recurrent'
+                - $ref: 'customer_payment_method_cash_response.yml#/payment_method_cash_response'
+                - $ref: 'customer_payment_method_card_response.yml#/payment_method_card_response'
+                - $ref: 'customer_payment_method_spei_recurrent_response.yml#/payment_method_spei_recurrent'
   phone:
     type: string
     example: "+5215555555555"

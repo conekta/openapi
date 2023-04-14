@@ -1,7 +1,0 @@
-in: path
-name: "payment_sources_id"
-description:  Identifier of the payment method
-required: true
-schema:
-  type: string
-example: "src_2tQ974hSHcsdeSZHG"

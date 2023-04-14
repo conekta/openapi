@@ -45,9 +45,9 @@ paths:
   /orders/{id}/capture:
     $ref: "./resources/orders/order_capture_param.yml"
   /orders/{id}/line_items:
-    $ref: "./resources/orders/order_line_items_param.yml"
+    $ref: "./resources/orders/order_product_param.yml"
   /orders/{id}/line_items/{line_item_id}:
-    $ref: "./resources/orders/update_order_line_items_param.yml"
+    $ref: "./resources/orders/update_order_product_param.yml"
   /orders/{id}/refunds:
     $ref: "./resources/orders/order_refunds_param.yml"
   /checkouts:
@@ -61,17 +61,17 @@ paths:
   /checkouts/{id}/sms:
     $ref: "./resources/checkouts/checkout_sms.yml"
   /customers/{id}/payment_sources:
-    $ref: "./resources/customers/create_customer_payment_sources.yml"
-  /customers/{id}/payment_sources/{payment_sources_id}:
-    $ref: "./resources/customers/update_customer_payment_sources.yml"
+    $ref: "./resources/customers/create_customer_payment_methods.yml"
+  /customers/{id}/payment_sources/{payment_method_id}:
+    $ref: "./resources/customers/update_customer_payment_methods.yml"
   /plans:
     $ref: "./resources/plans/plans.yml"
   /plans/{id}:
     $ref: "./resources/plans/plan.yml"
   /orders/{id}/shipping_lines:
-    $ref: "./resources/orders/order_shipping_lines_param.yml"
-  /orders/{id}/shipping_lines/{shipping_lines_id}:
-    $ref: "./resources/orders/update_order_shipping_lines_param.yml"
+    $ref: "./resources/orders/order_shipping_param.yml"
+  /orders/{id}/shipping_lines/{shipping_id}:
+    $ref: "./resources/orders/update_order_shipping_param.yml"
   /customers/{id}/shipping_contacts:
     $ref: "./resources/customers/create_customer_shipping_contacts.yml"
   /customers/{id}/shipping_contacts/{shipping_contacts_id}:
@@ -87,9 +87,9 @@ paths:
   /customers/{id}/subscription/resume:
     $ref: "./resources/subscriptions/subscriptions_resume.yml"
   /orders/{id}/tax_lines:
-    $ref: "./resources/orders/order_tax_lines_param.yml"
-  /orders/{id}/tax_lines/{tax_lines_id}:
-    $ref: "./resources/orders/update_order_tax_lines_param.yml"
+    $ref: "./resources/orders/order_tax_param.yml"
+  /orders/{id}/tax_lines/{tax_id}:
+    $ref: "./resources/orders/update_order_tax_param.yml"
   /webhooks:
      $ref: "./resources/webhooks/webhooks.yml"
   /webhooks/{id}:

@@ -24,10 +24,10 @@ properties:
     items:
       $ref: order_discount_lines_request.yml
   line_items:
-    description: "List of [products](https://developers.conekta.com/v2.1.0/reference/orderscreatelineitems) that are sold in the order. You must have at least one product."
+    description: "List of [products](https://developers.conekta.com/v2.1.0/reference/orderscreateproduct) that are sold in the order. You must have at least one product."
     type: array
     items:
-       $ref: line_items.yml
+       $ref: product.yml
   metadata:
     type: object
     additionalProperties:
@@ -40,10 +40,10 @@ properties:
     $ref: ../../schemas/customers/customer_shipping_contacts.yml
   shipping_lines:
     type: array
-    description: "List of [shipping costs](https://developers.conekta.com/v2.1.0/reference/orderscreateshippinglines). If the online store offers digital products."
+    description: "List of [shipping costs](https://developers.conekta.com/v2.1.0/reference/orderscreateshipping). If the online store offers digital products."
     items:
-      $ref: ../../schemas/orders/shipping_lines_request.yml
+      $ref: ../../schemas/orders/shipping_request.yml
   tax_lines:
     type: array
     items:
-      $ref: order_tax_lines_request.yml
+      $ref: order_tax_request.yml

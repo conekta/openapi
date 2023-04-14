@@ -29,7 +29,7 @@ properties:
   line_items:
     type: array
     items:
-       $ref: line_items.yml
+       $ref: product.yml
   metadata:
     type: object
     additionalProperties:
@@ -43,11 +43,11 @@ properties:
   shipping_lines:
     type: array
     items:
-      $ref: ../../schemas/orders/shipping_lines_request.yml
+      $ref: ../../schemas/orders/shipping_request.yml
   tax_lines:
     type: array
     items:
-      $ref: order_tax_lines_request.yml
+      $ref: order_tax_request.yml
 
 
 

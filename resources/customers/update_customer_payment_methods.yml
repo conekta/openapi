@@ -1,0 +1,80 @@
+put:
+  tags:
+    - Payment Methods
+  operationId: UpdateCustomerPaymentMethods
+  summary: Update Payment Method
+  description: 'Gets a payment Method that corresponds to a customer ID.'
+  responses:
+    '200':
+      description: successful operation
+      content:
+        application/vnd.conekta-v2.1.0+json:
+          schema:
+            title: "update_customer_payment_methods_response"
+            discriminator:
+                propertyName: type
+                mapping:
+                  cash: payment_method_cash_response
+                  card: payment_method_card_response
+                  oxxo_recurrent: payment_method_cash_response
+                  spei_recurrent: payment_method_spei_recurrent
+            oneOf:
+              - $ref: '../../schemas/customers/customer_payment_method_cash_response.yml#/payment_method_cash_response' 
+              - $ref: '../../schemas/customers/customer_payment_method_card_response.yml#/payment_method_card_response'
+              - $ref: '../../schemas/customers/customer_payment_method_spei_recurrent_response.yml#/payment_method_spei_recurrent'
+            
+    401:
+     $ref: '../errors/401.yml'
+    404:
+     $ref: '../errors/404.yml'
+    422:
+     $ref: '../errors/422.yml'
+    500:
+     $ref: '../errors/500.yml'
+  security:
+    - bearerAuth: []
+  requestBody:
+    $ref: ../../requestBodies/customers/customer_update_payment_methods.yml
+  parameters:
+    - $ref: '../../parameters/commons/path_param/id.yml'
+    - $ref: '../../parameters/commons/path_param/payment_method_id.yml'
+    - $ref: '../../parameters/commons/headers/accept_language.yml'
+delete:
+  tags:
+    - Payment Methods
+  operationId: DeleteCustomerPaymentMethods
+  summary: Delete Payment Method
+  description: 'Delete an existing payment method'
+  responses:
+    '200':
+      description: successful operation
+      content:
+        application/vnd.conekta-v2.1.0+json:
+          schema:
+            title: "update_customer_payment_methods_response"
+            discriminator:
+                propertyName: type
+                mapping:
+                  cash: payment_method_cash_response
+                  card: payment_method_card_response
+                  oxxo_recurrent: payment_method_cash_response
+                  spei_recurrent: payment_method_spei_recurrent
+            oneOf:
+              - $ref: '../../schemas/customers/customer_payment_method_cash_response.yml#/payment_method_cash_response' 
+              - $ref: '../../schemas/customers/customer_payment_method_card_response.yml#/payment_method_card_response'
+              - $ref: '../../schemas/customers/customer_payment_method_spei_recurrent_response.yml#/payment_method_spei_recurrent'
+            
+    401:
+     $ref: '../errors/401.yml'
+    404:
+     $ref: '../errors/404.yml'
+    422:
+     $ref: '../errors/422.yml'
+    500:
+     $ref: '../errors/500.yml'
+  security:
+    - bearerAuth: []
+  parameters:
+    - $ref: '../../parameters/commons/path_param/id.yml'
+    - $ref: '../../parameters/commons/path_param/payment_method_id.yml'
+    - $ref: '../../parameters/commons/headers/accept_language.yml'

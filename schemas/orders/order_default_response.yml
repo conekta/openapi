@@ -1,5 +1,0 @@
-title: order response
-description: order response
-allOf:
-  - $ref: ./order_common.yml
- 

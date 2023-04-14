@@ -1,7 +1,7 @@
 in: path
-name: "line_item_id"
+name: "tax_id"
 description:  identifier
 required: true
 schema:
   type: string
-example: "line_item_2tQ8HkkfbauaKP9Ho"
+example: "tax_lin_2tQ974hSHcsdeSZHG"

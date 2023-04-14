@@ -56,11 +56,12 @@ properties:
         type: string
         example: "MXN"
         maxLength: 3
+        description: "It is the currency in which the order will be created. It must be a valid ISO 4217 currency code."
       line_items:
         description: They are the products to buy. Each contains the "unit price" and "quantity" parameters that are used to calculate the total amount of the order.
         type: array
         items:
-          $ref: ../../schemas/orders/line_items.yml
+          $ref: ../../schemas/orders/product.yml
       metadata:
         type: object
         additionalProperties: true

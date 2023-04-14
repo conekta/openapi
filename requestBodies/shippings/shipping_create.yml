@@ -1,0 +1,6 @@
+description: requested field for a shipping
+content:
+  application/json:
+    schema:  
+      $ref: '../../schemas/orders/shipping_request.yml'
+required: true

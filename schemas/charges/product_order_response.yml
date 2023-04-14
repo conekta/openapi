@@ -1,0 +1,11 @@
+title: product order response
+allOf:
+  - $ref: '../../schemas/orders/product.yml'
+  - type: object
+    properties:
+      id: 
+        type: string
+      object:
+        type: string
+      parent_id:
+        type: string
