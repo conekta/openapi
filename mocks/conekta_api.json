@@ -5053,6 +5053,43 @@
           "default": true
         },
         {
+          "uuid": "a007a89e-a7f5-4844-9658-69d979daeb9a",
+          "body": "{\n    \"livemode\": true,\n    \"amount\": 40000,\n    \"currency\": \"MXN\",\n    \"payment_status\": \"paid\",\n    \"amount_refunded\": 0,\n    \"customer_info\": {\n        \"email\": \"Miles_Price@gmail.com\",\n        \"phone\": \"+5215555555555\",\n        \"name\": \"Elio Rincon\",\n        \"corporate\": true,\n        \"customer_id\": \"cus_2tKZmA749BLsMRgBY\",\n        \"object\": \"customer_info\"\n    },\n    \"shipping_contact\": {\n        \"receiver\": \"Marvin Fuller\",\n        \"phone\": \"+5215555555555\",\n        \"between_streets\": \"Morelos Campeche\",\n        \"address\": {\n            \"street1\": \"Nuevo Leon 4\",\n            \"street2\": \"fake street\",\n            \"city\": \"Ciudad de Mexico\",\n            \"state\": \"Ciudad de Mexico\",\n            \"country\": \"mx\",\n            \"residential\": true,\n            \"object\": \"shipping_address\",\n            \"postal_code\": \"06100\"\n        },\n        \"id\": \"ship_cont_2tVKoTd79XK1GqJmd\",\n        \"object\": \"shipping_contact\",\n        \"created_at\": 0\n    },\n    \"object\": \"order\",\n    \"id\": \"ord_2tVKoTd79XK1GqJmm\",\n    \"metadata\": {},\n    \"is_refundable\": true,\n    \"created_at\": 1678294154,\n    \"updated_at\": 1678294173,\n    \"line_items\": {\n        \"object\": \"list\",\n        \"has_more\": false,\n        \"total\": 1,\n        \"data\": [\n            {\n                \"name\": \"Pago Mensualidad\",\n                \"description\": \"Mes de Febrero.\",\n                \"unit_price\": 40000,\n                \"quantity\": 1,\n                \"tags\": [\n                    \"Pago\",\n                    \"Pago mensualidad\"\n                ],\n                \"object\": \"line_item\",\n                \"id\": \"line_item_2tVKoTd79XK1GqJmb\",\n                \"parent_id\": \"ord_2tVKoTd79XK1GqJme\",\n                \"metadata\": {},\n                \"antifraud_info\": {}\n            }\n        ]\n    },\n    \"charges\": {\n        \"object\": \"list\",\n        \"has_more\": false,\n        \"total\": 1,\n        \"data\": [\n            {\n                \"id\": \"6408bc8ade4b8e0001074477\",\n                \"livemode\": true,\n                \"created_at\": 1678294154,\n                \"currency\": \"MXN\",\n                \"device_fingerprint\": \"zptcxk4p6w1ijwz85snf1l3bqe5g09ie\",\n                \"payment_method\": {\n                    \"name\": \"erererere ererere \",\n                    \"exp_month\": \"06\",\n                    \"exp_year\": \"24\",\n                    \"auth_code\": \"867372\",\n                    \"object\": \"card_payment\",\n                    \"type\": \"credit\",\n                    \"last4\": \"4607\",\n                    \"brand\": \"mastercard\",\n                    \"issuer\": \"JOINT STOCK SAVINGS BANK BELARUSBANK\",\n                    \"account_type\": \"BUSINESS\",\n                    \"country\": \"BY\",\n                    \"fraud_indicators\": []\n                },\n                \"object\": \"charge\",\n                \"description\": \"Payment from order\",\n                \"status\": \"paid\",\n                \"amount\": 40000,\n                \"paid_at\": 1678294173,\n                \"fee\": 1972,\n                \"customer_id\": \"cus_2tKZmA749BLsMRgBY\",\n                \"order_id\": \"ord_2tVKoTd79XK1GqJme\"\n            }\n        ]\n    }\n}",
+          "latency": 0,
+          "statusCode": 200,
+          "label": "successful with body",
+          "headers": [
+            {
+              "key": "Content-Type",
+              "value": "application/vnd.conekta-v2.1.0+json"
+            }
+          ],
+          "bodyType": "INLINE",
+          "filePath": "",
+          "databucketID": "",
+          "sendFileAsBody": false,
+          "rules": [
+            {
+              "target": "params",
+              "modifier": "id",
+              "value": "ord_2tVKoTd79XK1GqJmm",
+              "invert": false,
+              "operator": "equals"
+            },
+            {
+              "target": "body",
+              "modifier": "amount",
+              "value": "40000",
+              "invert": false,
+              "operator": "equals"
+            }
+          ],
+          "rulesOperator": "AND",
+          "disableTemplating": false,
+          "fallbackTo404": false,
+          "default": false
+        },
+        {
           "uuid": "7a4f7b92-6f60-4835-a2b6-dd758b981cb6",
           "body": "",
           "latency": 0,
@@ -5536,7 +5573,7 @@
       "endpoint": "orders/:id/discount_lines/:discount_lines_id",
       "responses": [
         {
-          "uuid": "3f696740-f4fa-47e0-9c9f-744ed9b2f8e1",
+          "uuid": "97e8ce20-9a9a-4db0-8c5c-279bb934adf4",
           "body": "{\n    \"code\": \"trac\",\n    \"amount\": 100,\n    \"type\": \"loyalty\",\n    \"object\": \"discount_line\",\n    \"id\": \"dis_lin_2tVyahK8Nts7rKRMZ\",\n    \"parent_id\": \"ord_2tVyWPnCPWbrV37mW\"\n}",
           "latency": 0,
           "statusCode": 200,
@@ -5573,7 +5610,7 @@
           "default": true
         },
         {
-          "uuid": "a357ef0c-9f22-4392-bf68-61bfddf31bae",
+          "uuid": "ffb5b03a-cd29-44d4-abed-bc1423bd492b",
           "body": "",
           "latency": 0,
           "statusCode": 401,
@@ -5595,7 +5632,7 @@
           "default": false
         },
         {
-          "uuid": "f50aeb5d-54f8-45a5-afaa-eb66e8074e9e",
+          "uuid": "1787baab-a6dc-4641-b303-de176bf4a137",
           "body": "{\n  \"details\": [\n    {\n      \"code\": \"conekta.errors.authentication.missing_key\",\n      \"param\": \"\",\n      \"message\": \"Acceso no autorizado.\",\n      \"debug_message\": \"Please include your access key in your request.\"\n    }\n  ]\n}",
           "latency": 0,
           "statusCode": 404,
@@ -5617,7 +5654,7 @@
           "default": false
         },
         {
-          "uuid": "23a2684a-01ff-416f-8527-8b633f47888c",
+          "uuid": "9982fb10-56b8-4099-9bc4-76654da132d6",
           "body": "",
           "latency": 0,
           "statusCode": 422,
@@ -5639,7 +5676,7 @@
           "default": false
         },
         {
-          "uuid": "fb3b415c-671d-419c-a674-4d7a031e7a29",
+          "uuid": "b32e8699-e65a-413e-915e-f090adf5e8a1",
           "body": "",
           "latency": 0,
           "statusCode": 500,
@@ -8535,6 +8572,10 @@
     {
       "type": "route",
       "uuid": "e57d0c07-95ef-4c0a-bc56-0f5b0c7cbee2"
+    },
+    {
+      "type": "route",
+      "uuid": "948c325e-8acd-4c2c-9b08-4e81cf929ce7"
     }
   ],
   "proxyMode": false,
