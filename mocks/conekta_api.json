@@ -5530,6 +5530,141 @@
       "responseMode": null
     },
     {
+      "uuid": "948c325e-8acd-4c2c-9b08-4e81cf929ce7",
+      "documentation": "delete an existing discount lines for an existing orden",
+      "method": "delete",
+      "endpoint": "orders/:id/discount_lines/:discount_lines_id",
+      "responses": [
+        {
+          "uuid": "3f696740-f4fa-47e0-9c9f-744ed9b2f8e1",
+          "body": "{\n    \"code\": \"trac\",\n    \"amount\": 100,\n    \"type\": \"loyalty\",\n    \"object\": \"discount_line\",\n    \"id\": \"dis_lin_2tVyahK8Nts7rKRMZ\",\n    \"parent_id\": \"ord_2tVyWPnCPWbrV37mW\"\n}",
+          "latency": 0,
+          "statusCode": 200,
+          "label": "successful",
+          "headers": [
+            {
+              "key": "Content-Type",
+              "value": "application/vnd.conekta-v2.1.0+json"
+            }
+          ],
+          "bodyType": "INLINE",
+          "filePath": "",
+          "databucketID": "",
+          "sendFileAsBody": false,
+          "rules": [
+            {
+              "target": "params",
+              "modifier": "id",
+              "value": "ord_2tVyWPnCPWbrV37mW",
+              "invert": false,
+              "operator": "equals"
+            },
+            {
+              "target": "params",
+              "modifier": "discount_lines_id",
+              "value": "dis_lin_2tVyahK8Nts7rKRMZ",
+              "invert": false,
+              "operator": "equals"
+            }
+          ],
+          "rulesOperator": "AND",
+          "disableTemplating": false,
+          "fallbackTo404": false,
+          "default": true
+        },
+        {
+          "uuid": "a357ef0c-9f22-4392-bf68-61bfddf31bae",
+          "body": "",
+          "latency": 0,
+          "statusCode": 401,
+          "label": "authentication error",
+          "headers": [
+            {
+              "key": "Content-Type",
+              "value": "application/vnd.conekta-v2.1.0+json"
+            }
+          ],
+          "bodyType": "INLINE",
+          "filePath": "",
+          "databucketID": "",
+          "sendFileAsBody": false,
+          "rules": [],
+          "rulesOperator": "OR",
+          "disableTemplating": false,
+          "fallbackTo404": false,
+          "default": false
+        },
+        {
+          "uuid": "f50aeb5d-54f8-45a5-afaa-eb66e8074e9e",
+          "body": "{\n  \"details\": [\n    {\n      \"code\": \"conekta.errors.authentication.missing_key\",\n      \"param\": \"\",\n      \"message\": \"Acceso no autorizado.\",\n      \"debug_message\": \"Please include your access key in your request.\"\n    }\n  ]\n}",
+          "latency": 0,
+          "statusCode": 404,
+          "label": "not found entity",
+          "headers": [
+            {
+              "key": "Content-Type",
+              "value": "application/vnd.conekta-v2.1.0+json"
+            }
+          ],
+          "bodyType": "INLINE",
+          "filePath": "",
+          "databucketID": "",
+          "sendFileAsBody": false,
+          "rules": [],
+          "rulesOperator": "OR",
+          "disableTemplating": false,
+          "fallbackTo404": false,
+          "default": false
+        },
+        {
+          "uuid": "23a2684a-01ff-416f-8527-8b633f47888c",
+          "body": "",
+          "latency": 0,
+          "statusCode": 422,
+          "label": "parameter validation error",
+          "headers": [
+            {
+              "key": "Content-Type",
+              "value": "application/vnd.conekta-v2.1.0+json"
+            }
+          ],
+          "bodyType": "INLINE",
+          "filePath": "",
+          "databucketID": "",
+          "sendFileAsBody": false,
+          "rules": [],
+          "rulesOperator": "OR",
+          "disableTemplating": false,
+          "fallbackTo404": false,
+          "default": false
+        },
+        {
+          "uuid": "fb3b415c-671d-419c-a674-4d7a031e7a29",
+          "body": "",
+          "latency": 0,
+          "statusCode": 500,
+          "label": "internal server error",
+          "headers": [
+            {
+              "key": "Content-Type",
+              "value": "application/vnd.conekta-v2.1.0+json"
+            }
+          ],
+          "bodyType": "INLINE",
+          "filePath": "",
+          "databucketID": "",
+          "sendFileAsBody": false,
+          "rules": [],
+          "rulesOperator": "OR",
+          "disableTemplating": false,
+          "fallbackTo404": false,
+          "default": false
+        }
+      ],
+      "enabled": true,
+      "responseMode": null
+    },
+    {
       "uuid": "85b4fa6b-355e-4bc6-8791-2da104ebfcea",
       "documentation": "creates  new products for an existing orden",
       "method": "post",
