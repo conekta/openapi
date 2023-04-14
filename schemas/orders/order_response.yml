@@ -71,7 +71,7 @@ properties:
       metadata:
         type: object
         additionalProperties:
-          type: object
+          type: string
       monthly_installments_enabled:
         type: boolean
         example: false
@@ -197,7 +197,7 @@ properties:
   metadata:
     type: object
     additionalProperties:
-      type: object
+      type: string
   object:
     type: string
     example: "order"
