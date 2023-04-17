@@ -1,4 +1,5 @@
 API_README_VERSION_ID = 641deb4041d58005f2c45bf3
+SDK_VERSION=6.0.0-alpha-3
 merge:
 	npx @openapitools/openapi-generator-cli  generate -g openapi-yaml -i api.yaml -p outputFile=_build/api.yaml --skip-validate-spec
 	
@@ -18,9 +19,17 @@ ruby:
 	npx @openapitools/openapi-generator-cli generate -i  api.yaml -g ruby -o conekta-ruby  -c config-ruby.json 
 
 csharp:
-	mkdir -p conekta-.net && cp .openapi-generator-ignore conekta-.net/.openapi-generator-ignore &&   \
-	rm -rf ../conekta-.net/docs &&   rm -rf ../conekta-.net/src/Conekta.net/Model && \
-	npx @openapitools/openapi-generator-cli generate -i  api.yaml -g csharp-netcore -o ../conekta-.net  -c config-netcore.json --global-property modelTests=false
+	mkdir -p conekta-.net && \
+	cp .openapi-generator-ignore conekta-.net/.openapi-generator-ignore &&   \
+	rm -rf ../conekta-.net/docs && \
+	rm -rf ../conekta-.net/src/Conekta.net/Model && \
+	npx @openapitools/openapi-generator-cli generate \
+    -i api.yaml \
+    -g csharp-netcore \
+    -o ../conekta-.net \
+    --additional-properties=packageVersion=$(SDK_VERSION) \
+    -c config-netcore.json \
+    --global-property modelTests=false
 
 php:
 	npx @openapitools/openapi-generator-cli generate -i  api.yaml -g php -o conekta-php  -c config-php.json
