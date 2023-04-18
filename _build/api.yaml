@@ -7972,11 +7972,11 @@ components:
           format: int64
           type: integer
         data:
-          additionalProperties:
-            type: object
+          additionalProperties: true
           example:
             action: ping
             livemode: true
+          maxProperties: 100
           type: object
         id:
           example: 6307a60c41de27127515a575
@@ -10080,11 +10080,11 @@ components:
           example: webhook_log
           type: string
         response_data:
-          additionalProperties:
-            type: object
+          additionalProperties: true
           example:
             amount: 3000
             payable: true
+          maxProperties: 100
           type: object
         url:
           example: https://username:password@mockoon.stg.conekta.io/payments-api/cash/merchant_approval
