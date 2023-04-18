@@ -2,6 +2,9 @@ delete:
   tags:
     - Antifraud Whitelists rules
   operationId: DeleteRuleWhitelist
+  parameters:
+    - $ref: '../../../parameters/commons/path_param/id.yml'
+    - $ref: '../../../parameters/commons/headers/accept_language.yml'
   summary: Delete a whitelisted rule
   responses:
     '200':

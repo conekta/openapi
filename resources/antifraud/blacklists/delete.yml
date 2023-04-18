@@ -3,6 +3,9 @@ delete:
   tags:
     - Antifraud Blacklist rules
   operationId: DeleteBlacklistRule
+  parameters:
+    - $ref: '../../../parameters/commons/path_param/id.yml'
+    - $ref: '../../../parameters/commons/headers/accept_language.yml'
   responses:
     200:
       description: successfully deleted rule
