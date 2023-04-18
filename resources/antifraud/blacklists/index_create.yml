@@ -1,6 +1,6 @@
 get:
   tags:
-    - Blacklist
+    - Antifraud Blacklist rules
   operationId: GetBlacklist
   description: Return all rules
   summary: Get a list of blacklisted rules
@@ -17,7 +17,7 @@ get:
       $ref: '../../errors/500.yml'
 post:
   tags:
-    - Blacklist
+    - Antifraud Blacklist rules
   operationId: CreateNewBlacklistRule
   summary: Create a blacklisted rule
   responses:
@@ -34,6 +34,9 @@ post:
               type:
                 type: string
                 example: 'email'
+              livemode:
+                type: boolean
+                example: true
               value:
                 type: string
                 example: 'email@example.com'
@@ -51,34 +54,3 @@ post:
         schema:
           $ref: '../../../schemas/antifraud/create_risk_rules_data.yml'
     required: true
-delete:
-  summary: Delete a blacklisted rule
-  tags:
-    - Blacklist
-  operationId: DeleteBlacklistRule
-  responses:
-    200:
-      description: successfully deleted rule
-      content:
-        application/vnd.conekta-v2.1.0+json:
-          schema:
-            title: deleted_blacklist_rule_response
-            properties:
-              id:
-                type: string
-                example: '2fw8EWJusiRrxdPzT'
-              type:
-                type: string
-                example: 'email'
-              value:
-                type: string
-                example: 'email@example.com'
-              description:
-                type: string
-                example: 'secure customer example@example.com'
-    401:
-     $ref: '../../errors/401.yml'
-    404:
-     $ref: '../../errors/404.yml'
-    500:
-     $ref: '../../errors/500.yml'

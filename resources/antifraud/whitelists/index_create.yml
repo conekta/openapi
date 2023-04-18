@@ -1,14 +1,6 @@
-delete:
-  tags:
-    - Whitelists
-  operationId: DeleteRuleWhitelist
-  summary: Delete a whitelisted rule
-  responses:
-    '200':
-      description: successfully deleted rule
 get:
   tags:
-    - Whitelists
+    - Antifraud Whitelists rules
   operationId: GetWhiteList
   description: Return all rules
   summary: Get a list of whitelisted rules
@@ -21,7 +13,7 @@ get:
             $ref: '../../../schemas/antifraud/risk_rules_list.yml'
 post:
   tags:
-    - Whitelists
+    - Antifraud Whitelists rules
   operationId: CreateNewRuleWhitelist
   summary: Create a whitelisted rule
   responses:

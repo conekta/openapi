@@ -1,0 +1,8 @@
+delete:
+  tags:
+    - Antifraud Whitelists rules
+  operationId: DeleteRuleWhitelist
+  summary: Delete a whitelisted rule
+  responses:
+    '200':
+      description: successfully deleted rule
