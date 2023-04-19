@@ -25,7 +25,7 @@ delete:
                 example: 'email@example.com'
               description:
                 type: string
-                example: 'secure customer example@example.com'
+                example: 'banned customer example@example.com'
     401:
      $ref: '../errors/401.yml'
     404:

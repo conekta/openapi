@@ -40,9 +40,11 @@ post:
                 type: string
                 example: 'banned customer example@example.com'
       401:
-        $ref: '../errors/401.yml'
+       $ref: '../errors/401.yml'
+      404:
+       $ref: '../errors/404.yml'
       500:
-        $ref: '../errors/500.yml'
+      $ref: '../errors/500.yml'
   requestBody:
     content:
       application/json:

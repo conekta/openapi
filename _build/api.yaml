@@ -5728,9 +5728,10 @@ paths:
       responses:
         '200':
           '401':
-            $ref: '#/paths/~1logs/get/responses/401'
-          '500':
-            $ref: '#/paths/~1logs/get/responses/500'
+            $ref: ../errors/401.yml
+          '404':
+            $ref: ../errors/404.yml
+          '500': null
           description: successfully registered rule
           content:
             application/vnd.conekta-v2.1.0+json:
@@ -5752,6 +5753,7 @@ paths:
                   description:
                     type: string
                     example: banned customer example@example.com
+          $ref: '#/paths/~1logs/get/responses/500'
       requestBody:
         content:
           application/json:
@@ -5782,6 +5784,29 @@ paths:
       responses:
         '200':
           description: successfully deleted rule
+          content:
+            application/vnd.conekta-v2.1.0+json:
+              schema:
+                title: deleted_whitelist_rule_response
+                properties:
+                  id:
+                    type: string
+                    example: 2fw8EWJusiRrxdPzT
+                  type:
+                    type: string
+                    example: email
+                  value:
+                    type: string
+                    example: email@example.com
+                  description:
+                    type: string
+                    example: secure customer example@example.com
+        '401':
+          $ref: '#/paths/~1logs/get/responses/401'
+        '404':
+          $ref: '#/paths/~1logs~1%7Bid%7D/get/responses/404'
+        '500':
+          $ref: '#/paths/~1logs/get/responses/500'
   /antifraud/blacklists:
     get:
       tags:
@@ -5809,6 +5834,8 @@ paths:
         '200':
           '401':
             $ref: '#/paths/~1logs/get/responses/401'
+          '404':
+            $ref: '#/paths/~1logs~1%7Bid%7D/get/responses/404'
           '500':
             $ref: '#/paths/~1logs/get/responses/500'
           description: successfully registered rule
@@ -5867,7 +5894,7 @@ paths:
                     example: email@example.com
                   description:
                     type: string
-                    example: secure customer example@example.com
+                    example: banned customer example@example.com
         '401':
           $ref: '#/paths/~1logs/get/responses/401'
         '404':
