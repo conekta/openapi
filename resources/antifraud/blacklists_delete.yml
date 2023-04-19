@@ -1,8 +1,8 @@
 delete:
-  summary: Delete a blacklisted rule
+  summary: Delete blacklisted rule
   tags:
     - Antifraud
-  operationId: DeleteBlacklistRule
+  operationId: DeleteRuleBlacklist
   parameters:
     - $ref: '../../parameters/commons/path_param/id.yml'
     - $ref: '../../parameters/commons/headers/accept_language.yml'

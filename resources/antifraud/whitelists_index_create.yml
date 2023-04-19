@@ -1,7 +1,7 @@
 get:
   tags:
     - Antifraud
-  operationId: GetWhiteList
+  operationId: GetRuleWhitelist
   description: Return all rules
   summary: Get a list of whitelisted rules
   responses:
@@ -14,8 +14,8 @@ get:
 post:
   tags:
     - Antifraud
-  operationId: CreateNewRuleWhitelist
-  summary: Create a whitelisted rule
+  operationId: CreateRuleWhitelist
+  summary: Create whitelisted rule
   responses:
     '200':
       description: successfully registered rule

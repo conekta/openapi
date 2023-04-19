@@ -71,23 +71,32 @@ properties:
                 - amount
                 - created_at
               properties:
-                object:
-                  type: string
-                  example: "refund"
                 amount:
                   type: integer
                   format: int64
                   example: -15000
-                id:
+                auth_code:
                   type: string
-                  example: "6407b5bee1329a000175ba11"
+                  example: "867372"
                 created_at:
                   type: integer
                   example: 1678226878
                   format: int64
-                auth_code:
+                expires_at:
+                  type: integer
+                  example: 1678226878
+                  format: int64
+                  description: refund expiration date
+                id:
                   type: string
-                  example: "867372"
+                  example: "6407b5bee1329a000175ba11"
+                object:
+                  type: string
+                  example: "refund"
+                status:
+                  type: string
+                  example: "pending"
+                  description: refund status
     nullable: true
   status:
     type: string

@@ -14,6 +14,14 @@ info:
     name: MIT-LICENSE
     url: 'https://www.apache.org/licenses/LICENSE-2.0.html'
 paths:
+  /antifraud/whitelists:
+    $ref: "./resources/antifraud/whitelists_index_create.yml"
+  /antifraud/whitelists/{id}:
+    $ref: "./resources/antifraud/whitelists_delete.yml"
+  /antifraud/blacklists:
+    $ref: "./resources/antifraud/blacklists_index_create.yml"
+  /antifraud/blacklists/{id}:
+    $ref: "./resources/antifraud/blacklists_delete.yml"
   /orders/{id}/charges:
     $ref: "./resources/orders/order_charge_param.yml"
   /customers:
@@ -92,14 +100,6 @@ paths:
      $ref: "./resources/webhooks/webhooks.yml"
   /webhooks/{id}:
      $ref: "./resources/webhooks/webhook.yml"
-  /antifraud/whitelists:
-    $ref: "./resources/antifraud/whitelists_index_create.yml"
-  /antifraud/whitelists/{id}:
-    $ref: "./resources/antifraud/whitelists_delete.yml"
-  /antifraud/blacklists:
-    $ref: "./resources/antifraud/blacklists_index_create.yml"
-  /antifraud/blacklists/{id}:
-    $ref: "./resources/antifraud/blacklists_delete.yml"
 security:
   - bearerAuth: []
 components:
