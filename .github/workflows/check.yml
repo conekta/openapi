@@ -13,9 +13,13 @@ jobs:
       uses: actions/checkout@v2
       with:
         ref: ${{ github.head_ref }}
+    - name: Get previous commit hash
+      run: |
+        PREV_COMMIT=$(git log --pretty=format:'%h' -n 1 HEAD~1)
+        echo "Previous commit hash: $PREV_COMMIT"
     - name: Check if API YAML was modified
       run: |
-        git diff --name-only HEAD~1..HEAD | grep "_build/api.yaml"
+        git diff --name-only $PREV_COMMIT..HEAD | grep "_build/api.yaml"
         if [ $? -eq 0 ]; then
           echo "API YAML was modified"
         else

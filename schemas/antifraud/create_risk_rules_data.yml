@@ -6,6 +6,9 @@ properties:
   type:
     type: string
     example: 'email | phone | card_token'
+  livemode:
+    type: boolean
+    example: false
   value:
     type: string
     example: 'email@example.com | 818081808180 | src_2qUCNd5AyQqfPMBuV'

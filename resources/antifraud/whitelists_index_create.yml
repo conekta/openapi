@@ -1,0 +1,52 @@
+get:
+  tags:
+    - Antifraud
+  operationId: GetWhiteList
+  description: Return all rules
+  summary: Get a list of whitelisted rules
+  responses:
+    '200':
+      description: All the rules
+      content:
+        application/json:
+          schema:
+            $ref: '../../schemas/antifraud/risk_rules_list.yml'
+post:
+  tags:
+    - Antifraud
+  operationId: CreateNewRuleWhitelist
+  summary: Create a whitelisted rule
+  responses:
+    '200':
+      description: successfully registered rule
+      content:
+        application/vnd.conekta-v2.1.0+json:
+          schema:
+            title: whitelistlist_rule_response
+            properties:
+              id:
+                type: string
+                example: '2fw8EWJusiRrxdPzT'
+              type:
+                type: string
+                example: 'email'
+              livemode:
+                type: boolean
+                example: true
+              value:
+                type: string
+                example: 'email@example.com'
+              description:
+                type: string
+                example: 'banned customer example@example.com'
+      401:
+       $ref: '../errors/401.yml'
+      404:
+       $ref: '../errors/404.yml'
+      500:
+      $ref: '../errors/500.yml'
+  requestBody:
+    content:
+      application/json:
+        schema:
+          $ref: '../../schemas/antifraud/create_risk_rules_data.yml'

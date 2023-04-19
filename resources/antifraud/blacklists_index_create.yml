@@ -1,0 +1,58 @@
+get:
+  tags:
+    - Antifraud
+  operationId: GetBlacklist
+  description: Return all rules
+  summary: Get a list of blacklisted rules
+  responses:
+    '200':
+      description: All the rules
+      content:
+        application/vnd.conekta-v2.1.0+json:
+          schema:
+              $ref: '../../schemas/antifraud/risk_rules_list.yml'
+    401:
+      $ref: '../errors/401.yml'
+    500:
+      $ref: '../errors/500.yml'
+post:
+  tags:
+    - Antifraud
+  operationId: CreateNewBlacklistRule
+  summary: Create a blacklisted rule
+  responses:
+    '200':
+      description: successfully registered rule
+      content:
+        application/vnd.conekta-v2.1.0+json:
+          schema:
+            title: blacklist_rule_response
+            properties:
+              id:
+                type: string
+                example: '2fw8EWJusiRrxdPzT'
+              type:
+                type: string
+                example: 'email'
+              livemode:
+                type: boolean
+                example: true
+              value:
+                type: string
+                example: 'email@example.com'
+              description:
+                type: string
+                example: 'secure customer example@example.com'
+      401:
+       $ref: '../errors/401.yml'
+      404:
+       $ref: '../errors/404.yml'
+      500:
+       $ref: '../errors/500.yml'
+  requestBody:
+    description: requested field for blacklist rule
+    content:
+      application/json:
+        schema:
+          $ref: '../../schemas/antifraud/create_risk_rules_data.yml'
+    required: true

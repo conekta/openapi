@@ -1,0 +1,34 @@
+delete:
+  tags:
+    - Antifraud
+  operationId: DeleteRuleWhitelist
+  parameters:
+    - $ref: '../../parameters/commons/path_param/id.yml'
+    - $ref: '../../parameters/commons/headers/accept_language.yml'
+  summary: Delete a whitelisted rule
+  responses:
+    200:
+      description: successfully deleted rule
+      content:
+        application/vnd.conekta-v2.1.0+json:
+          schema:
+            title: deleted_whitelist_rule_response
+            properties:
+              id:
+                type: string
+                example: '2fw8EWJusiRrxdPzT'
+              type:
+                type: string
+                example: 'email'
+              value:
+                type: string
+                example: 'email@example.com'
+              description:
+                type: string
+                example: 'secure customer example@example.com'
+    401:
+     $ref: '../errors/401.yml'
+    404:
+     $ref: '../errors/404.yml'
+    500:
+     $ref: '../errors/500.yml'
