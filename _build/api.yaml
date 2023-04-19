@@ -1234,9 +1234,9 @@ paths:
                     format: int64
                     example: 1661445644
                   data:
+                    additionalProperties: true
+                    maxProperties: 100
                     type: object
-                    additionalProperties:
-                      type: object
                     example:
                       action: ping
                       livemode: true
@@ -1275,9 +1275,9 @@ paths:
                           type: string
                           example: webhook_log
                         response_data:
+                          additionalProperties: true
+                          maxProperties: 100
                           type: object
-                          additionalProperties:
-                            type: object
                           example:
                             amount: 3000
                             payable: true
