@@ -1,0 +1,7 @@
+#!/bin/sh
+
+# Ejecutar "make merge" para actualizar el archivo _build/api.yaml
+make merge
+
+# Agregar los cambios en el archivo _build/api.yaml al área de preparación de Git
+git add _build/api.yaml
