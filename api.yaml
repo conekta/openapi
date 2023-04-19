@@ -93,13 +93,13 @@ paths:
   /webhooks/{id}:
      $ref: "./resources/webhooks/webhook.yml"
   /antifraud/whitelists:
-    $ref: "./resources/antifraud/whitelists/index_create.yml"
+    $ref: "./resources/antifraud/whitelists_index_create.yml"
   /antifraud/whitelists/{id}:
-    $ref: "./resources/antifraud/whitelists/delete.yml"
+    $ref: "./resources/antifraud/whitelists_delete.yml"
   /antifraud/blacklists:
-    $ref: "./resources/antifraud/blacklists/index_create.yml"
+    $ref: "./resources/antifraud/blacklists_index_create.yml"
   /antifraud/blacklists/{id}:
-    $ref: "./resources/antifraud/blacklists/delete.yml"
+    $ref: "./resources/antifraud/blacklists_delete.yml"
 security:
   - bearerAuth: []
 components:

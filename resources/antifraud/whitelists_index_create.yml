@@ -1,6 +1,6 @@
 get:
   tags:
-    - Antifraud Whitelists rules
+    - Antifraud
   operationId: GetWhiteList
   description: Return all rules
   summary: Get a list of whitelisted rules
@@ -10,10 +10,10 @@ get:
       content:
         application/json:
           schema:
-            $ref: '../../../schemas/antifraud/risk_rules_list.yml'
+            $ref: '../../schemas/antifraud/risk_rules_list.yml'
 post:
   tags:
-    - Antifraud Whitelists rules
+    - Antifraud
   operationId: CreateNewRuleWhitelist
   summary: Create a whitelisted rule
   responses:
@@ -40,11 +40,11 @@ post:
                 type: string
                 example: 'banned customer example@example.com'
       401:
-        $ref: '../../errors/401.yml'
+        $ref: '../errors/401.yml'
       500:
-        $ref: '../../errors/500.yml'
+        $ref: '../errors/500.yml'
   requestBody:
     content:
       application/json:
         schema:
-          $ref: '../../../schemas/antifraud/create_risk_rules_data.yml'
+          $ref: '../../schemas/antifraud/create_risk_rules_data.yml'

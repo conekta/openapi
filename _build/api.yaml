@@ -5685,7 +5685,7 @@ paths:
   /antifraud/whitelists:
     get:
       tags:
-        - Antifraud Whitelists rules
+        - Antifraud
       operationId: GetWhiteList
       description: Return all rules
       summary: Get a list of whitelisted rules
@@ -5722,7 +5722,7 @@ paths:
                           example: secure customer example@example.com
     post:
       tags:
-        - Antifraud Whitelists rules
+        - Antifraud
       operationId: CreateNewRuleWhitelist
       summary: Create a whitelisted rule
       responses:
@@ -5773,7 +5773,7 @@ paths:
   '/antifraud/whitelists/{id}':
     delete:
       tags:
-        - Antifraud Whitelists rules
+        - Antifraud
       operationId: DeleteRuleWhitelist
       parameters:
         - $ref: '#/paths/~1logs~1%7Bid%7D/get/parameters/0'
@@ -5785,7 +5785,7 @@ paths:
   /antifraud/blacklists:
     get:
       tags:
-        - Antifraud Blacklist rules
+        - Antifraud
       operationId: GetBlacklist
       description: Return all rules
       summary: Get a list of blacklisted rules
@@ -5802,7 +5802,7 @@ paths:
           $ref: '#/paths/~1logs/get/responses/500'
     post:
       tags:
-        - Antifraud Blacklist rules
+        - Antifraud
       operationId: CreateNewBlacklistRule
       summary: Create a blacklisted rule
       responses:
@@ -5843,7 +5843,7 @@ paths:
     delete:
       summary: Delete a blacklisted rule
       tags:
-        - Antifraud Blacklist rules
+        - Antifraud
       operationId: DeleteBlacklistRule
       parameters:
         - $ref: '#/paths/~1logs~1%7Bid%7D/get/parameters/0'

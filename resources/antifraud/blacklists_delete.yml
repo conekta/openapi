@@ -1,11 +1,11 @@
 delete:
   summary: Delete a blacklisted rule
   tags:
-    - Antifraud Blacklist rules
+    - Antifraud
   operationId: DeleteBlacklistRule
   parameters:
-    - $ref: '../../../parameters/commons/path_param/id.yml'
-    - $ref: '../../../parameters/commons/headers/accept_language.yml'
+    - $ref: '../../parameters/commons/path_param/id.yml'
+    - $ref: '../../parameters/commons/headers/accept_language.yml'
   responses:
     200:
       description: successfully deleted rule
@@ -27,8 +27,8 @@ delete:
                 type: string
                 example: 'secure customer example@example.com'
     401:
-     $ref: '../../errors/401.yml'
+     $ref: '../errors/401.yml'
     404:
-     $ref: '../../errors/404.yml'
+     $ref: '../errors/404.yml'
     500:
-     $ref: '../../errors/500.yml'
+     $ref: '../errors/500.yml'
