@@ -1,0 +1,20 @@
+title: company_response
+description: Company model
+type: object
+properties:
+  id:
+    type: string
+    example: "6441bb27659a060465da7335"
+    object:
+      type: string
+      enum: ["company"]
+  parent_company_id:
+    type: string
+    example: "6441bb3c62db5812e7920c31"
+  use_parent_fiscal_data:
+    type: boolean
+    example: false
+  payout_destination:
+    $ref: './company_payout_destination_response.yml'
+  fiscal_info:
+    $ref: './company_fiscal_info_response.yml'

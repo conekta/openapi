@@ -37,6 +37,7 @@ post:
   parameters:
     - $ref: '../../parameters/commons/path_param/id.yml'
     - $ref: '../../parameters/commons/headers/accept_language.yml'
+    - $ref: '../../parameters/commons/headers/x_child_company_id.yml'
 get:
   tags:
     - Payment Methods
@@ -105,6 +106,7 @@ get:
   parameters:
     - $ref: '../../parameters/commons/path_param/id.yml'
     - $ref: '../../parameters/commons/headers/accept_language.yml'
+    - $ref: '../../parameters/commons/headers/x_child_company_id.yml'
     - $ref: '../../parameters/commons/query/limit.yml'
     - $ref: '../../parameters/commons/query/next_page.yml'
     - $ref: '../../parameters/commons/query/previous_page.yml'

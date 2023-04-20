@@ -1,15 +1,16 @@
 get:
   tags:
-    - Events
-  operationId: getEvents
-  summary: Get list of Events
+    - Companies
+  operationId: getCompanies
+  summary: Get List of Companies
+  description: 'Consume the list of child companies.  This is used for holding companies with several child entities.'
   responses:
     200:
       description: successful
       content:
         application/vnd.conekta-v2.1.0+json:
           schema:
-            title: get_events_response
+            title: get_companies_response
             allOf:
               - $ref: ../../schemas/pagination/pagination.yml
               - $ref: ../../schemas/pagination/page.yml
@@ -18,7 +19,7 @@ get:
                   data:
                     type: array
                     items:
-                      $ref: '../../schemas/events/event_response.yml'
+                      $ref: '../../schemas/companies/company_response.yml'
       headers:
         Date:
           description: The date and time that the response was sent
@@ -52,8 +53,30 @@ get:
     - bearerAuth: []
   parameters:
     - $ref: '../../parameters/commons/headers/accept_language.yml'
-    - $ref: '../../parameters/commons/headers/x_child_company_id.yml'
     - $ref: '../../parameters/commons/query/limit.yml'
     - $ref: '../../parameters/commons/query/search.yml'
     - $ref: '../../parameters/commons/query/next_page.yml'
     - $ref: '../../parameters/commons/query/previous_page.yml'
+post:
+  tags:
+    - Companies
+  operationId: createCompany
+  summary: Create Company
+  description: 'What we do at Conekta translates into events. For example, an event of interest to us occurs at the time a payment is successfully processed. At that moment we will be interested in doing several things: Send an email to the buyer, generate an invoice, start the process of shipping the product, etc.'
+  responses:
+    '200':
+      description: successful operation
+      content:
+        application/vnd.conekta-v2.1.0+json:
+          schema:
+             $ref: ../../schemas/companies/company_response.yml
+    401:
+     $ref: '../errors/401.yml'
+    500:
+     $ref: '../errors/500.yml'
+  security:
+    - bearerAuth: []
+  requestBody:
+    $ref: '../../requestBodies/companies/company.yml'
+  parameters:
+    - $ref: '../../parameters/commons/headers/accept_language.yml'

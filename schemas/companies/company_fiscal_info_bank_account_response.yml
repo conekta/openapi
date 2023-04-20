@@ -1,0 +1,13 @@
+title: company_fiscal_info_bank_account_response
+description: Company fiscal info bank account model
+type: object
+properties:
+  object:
+    type: string
+    enum: ['fiscal_info_bank_account']
+  account_number:
+    type: string
+  account_holder_name:
+    type: string
+  bank:
+    type: string

@@ -1,0 +1,21 @@
+title: company_payout_destination_response
+description: Company payout destination model
+type: object
+properties:
+  object:
+    type: string
+    enum: ['payout_destination']
+  created_at:
+    type: string
+    format: date-time
+  currency:
+    type: string
+  account_holder_name:
+    type: string
+  bank:
+    type: string
+  type:
+    type: string
+    enum: ['bank_account']
+  last4:
+    type: string

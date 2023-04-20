@@ -39,6 +39,7 @@ put:
     - $ref: '../../parameters/commons/path_param/id.yml'
     - $ref: '../../parameters/commons/path_param/payment_method_id.yml'
     - $ref: '../../parameters/commons/headers/accept_language.yml'
+    - $ref: '../../parameters/commons/headers/x_child_company_id.yml'
 delete:
   tags:
     - Payment Methods
@@ -78,3 +79,4 @@ delete:
     - $ref: '../../parameters/commons/path_param/id.yml'
     - $ref: '../../parameters/commons/path_param/payment_method_id.yml'
     - $ref: '../../parameters/commons/headers/accept_language.yml'
+    - $ref: '../../parameters/commons/headers/x_child_company_id.yml'

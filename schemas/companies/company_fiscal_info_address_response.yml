@@ -1,0 +1,25 @@
+title: company_fiscal_info_address_response
+description: Company fiscal info address model
+type: object
+properties:
+  object:
+    type: string
+    enum: ['address']
+  street1:
+    type: string
+  street2:
+    type: string
+  street3:
+    type: string
+  city:
+    type: string
+  state:
+    type: string
+  country:
+    type: string
+  zip:
+    type: string
+  external_number:
+    type: string
+  internal_number:
+    type: string

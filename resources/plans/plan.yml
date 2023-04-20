@@ -48,6 +48,7 @@ get:
   parameters:
     - $ref: '../../parameters/commons/path_param/id.yml'
     - $ref: '../../parameters/commons/headers/accept_language.yml'
+    - $ref: '../../parameters/commons/headers/x_child_company_id.yml'
 put:
   tags:
     - Plans
@@ -100,6 +101,7 @@ put:
   parameters:
     - $ref: '../../parameters/commons/path_param/id.yml'
     - $ref: '../../parameters/commons/headers/accept_language.yml'
+    - $ref: '../../parameters/commons/headers/x_child_company_id.yml'
 delete:
   tags:
     - Plans

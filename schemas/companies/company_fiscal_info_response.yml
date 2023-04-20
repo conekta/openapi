@@ -1,0 +1,21 @@
+title: company_fiscal_info_response
+description: Company fiscal info model
+type: object
+properties:
+  object:
+    type: string
+    enum: ['fiscal_info']
+  tax_id:
+    type: string
+  legal_entity_name:
+    type: string
+  business_type:
+    type: string
+  phone:
+    type: string
+  physical_person_business_type:
+    type: string
+  address:
+    $ref: './company_fiscal_info_address_response.yml'
+  bank_account:
+    $ref: '/company_fiscal_info_bank_account_response.yml'

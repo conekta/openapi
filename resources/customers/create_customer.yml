@@ -52,6 +52,7 @@ post:
    $ref: '../../requestBodies/customers/customer.yml'
   parameters:
     - $ref: '../../parameters/commons/headers/accept_language.yml'
+    - $ref: '../../parameters/commons/headers/x_child_company_id.yml'
   x-readme:
     code-samples:
     - language: csharp
@@ -151,6 +152,7 @@ get:
     - bearerAuth: []
   parameters:
     - $ref: '../../parameters/commons/headers/accept_language.yml'
+    - $ref: '../../parameters/commons/headers/x_child_company_id.yml'
     - $ref: '../../parameters/commons/query/limit.yml'
     - $ref: '../../parameters/commons/query/search.yml'
     - $ref: '../../parameters/commons/query/next_page.yml'
