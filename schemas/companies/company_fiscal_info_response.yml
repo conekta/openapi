@@ -5,17 +5,26 @@ properties:
   object:
     type: string
     enum: ['fiscal_info']
+    description: The resource's type
   tax_id:
     type: string
+    example: 'XAXX010101000'
+    description: Tax ID of the company
   legal_entity_name:
     type: string
+    example: 'Child Company A'
+    description: Legal name of the company
   business_type:
     type: string
+    example: 'persona_moral'
+    description: Business type of the company
   phone:
     type: string
+    example: '5555555555'
+    description: Phone number of the company
   physical_person_business_type:
     type: string
+    description: Business type if 'persona_fisica'
   address:
     $ref: './company_fiscal_info_address_response.yml'
-  bank_account:
-    $ref: './company_fiscal_info_bank_account_response.yml'
+    description: Address of the company

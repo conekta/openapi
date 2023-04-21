@@ -8,13 +8,27 @@ properties:
     object:
       type: string
       enum: ["company"]
+    description: The child company's unique identifier
+  created_at:
+    type: integer
+    example: 1680397724
+    format: int64
+    description: The resource's creation date (unix timestamp)
+  name:
+    type: string
+    example: "Child Company A"
+    description: The child company's name
   parent_company_id:
     type: string
     example: "6441bb3c62db5812e7920c31"
+    description: Id of the parent company
   use_parent_fiscal_data:
     type: boolean
     example: false
+    description: Whether the parent company's fiscal data is to be used for liquidation and tax purposes
   payout_destination:
     $ref: './company_payout_destination_response.yml'
+    description: Where processed payments are to be deposited
   fiscal_info:
     $ref: './company_fiscal_info_response.yml'
+    description: The company's fiscal information
