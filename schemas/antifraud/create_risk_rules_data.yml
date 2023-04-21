@@ -11,6 +11,8 @@ properties:
   field:
     type: string
     example: 'email | phone | card_token'
+    description: 'Field to be used for the rule'
   value:
     type: string
     example: 'email@example.com | 818081808180 | src_2qUCNd5AyQqfPMBuV'
+    description: 'Value to be used for the rule'

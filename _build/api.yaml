@@ -42,24 +42,31 @@ paths:
                             id:
                               type: string
                               example: 618c3f2fdb8b8da9be376af9
+                              description: rule id
                             field:
                               type: string
                               example: email
+                              description: field to be used for the rule
                             created_at:
                               type: string
                               example: '2021-11-10T21:52:47.339Z'
+                              description: rule creation date
                             value:
                               type: string
                               example: email@example.com
+                              description: value to be used for the rule
                             is_global:
                               type: boolean
                               example: false
+                              description: if the rule is global
                             is_test:
                               type: boolean
                               example: false
+                              description: if the rule is test
                             description:
                               type: string
                               example: secure customer example@example.com
+                              description: description of the rule
         '401':
           $ref: '#/paths/~1logs/get/responses/401'
         '500':
@@ -82,15 +89,19 @@ paths:
                   id:
                     type: string
                     example: 2fw8EWJusiRrxdPzT
+                    description: Whitelist rule id
                   field:
                     type: string
                     example: email
+                    description: field used for whitelists rule
                   value:
                     type: string
                     example: email@example.com
+                    description: value used for whitelists rule
                   description:
                     type: string
                     example: banned customer example@example.com
+                    description: use an description for whitelisted rule
         '401':
           $ref: '#/paths/~1logs/get/responses/401'
         '500':
@@ -112,9 +123,11 @@ paths:
                 field:
                   type: string
                   example: email | phone | card_token
+                  description: Field to be used for the rule
                 value:
                   type: string
                   example: email@example.com | 818081808180 | src_2qUCNd5AyQqfPMBuV
+                  description: Value to be used for the rule
   '/antifraud/whitelists/{id}':
     delete:
       tags:
@@ -135,15 +148,19 @@ paths:
                   id:
                     type: string
                     example: 2fw8EWJusiRrxdPzT
+                    description: Whitelist rule id
                   field:
                     type: string
                     example: email
+                    description: field used for whitelists rule deleted
                   value:
                     type: string
                     example: email@example.com
+                    description: value used for whitelists rule deleted
                   description:
                     type: string
                     example: secure customer example@example.com
+                    description: use an description for whitelisted rule
         '401':
           $ref: '#/paths/~1logs/get/responses/401'
         '404':
@@ -188,18 +205,19 @@ paths:
                   id:
                     type: string
                     example: 2fw8EWJusiRrxdPzT
+                    description: Blacklist rule id
                   field:
                     type: string
                     example: email
-                  livemode:
-                    type: boolean
-                    example: true
+                    description: field used for blacklists rule
                   value:
                     type: string
                     example: email@example.com
+                    description: value used for blacklists rule
                   description:
                     type: string
                     example: secure customer example@example.com
+                    description: use an description for blacklisted rule
         '401':
           $ref: '#/paths/~1logs/get/responses/401'
         '500':
@@ -231,15 +249,19 @@ paths:
                   id:
                     type: string
                     example: 2fw8EWJusiRrxdPzT
+                    description: Blacklist rule id
                   field:
                     type: string
                     example: email
+                    description: field used for blacklists rule deleted
                   value:
                     type: string
                     example: email@example.com
+                    description: value used for blacklists rule deleted
                   description:
                     type: string
                     example: banned customer example@example.com
+                    description: use an description for blacklisted rule
         '401':
           $ref: '#/paths/~1logs/get/responses/401'
         '404':

@@ -35,15 +35,19 @@ post:
               id:
                 type: string
                 example: '2fw8EWJusiRrxdPzT'
+                description: 'Whitelist rule id'
               field:
                 type: string
                 example: 'email'
+                description: 'field used for whitelists rule'
               value:
                 type: string
                 example: 'email@example.com'
+                description: 'value used for whitelists rule'
               description:
                 type: string
                 example: 'banned customer example@example.com'
+                description: 'use an description for whitelisted rule'
     401:
      $ref: '../errors/401.yml'
     500:

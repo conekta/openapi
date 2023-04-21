@@ -11,21 +11,28 @@ allOf:
             id:
               type: string
               example: '618c3f2fdb8b8da9be376af9'
+              description: 'rule id'
             field:
               type: string
               example: 'email'
+              description: 'field to be used for the rule'
             created_at:
               type: string
               example: '2021-11-10T21:52:47.339Z'
+              description: 'rule creation date'
             value:
               type: string
               example: 'email@example.com'
+              description: 'value to be used for the rule'
             is_global:
               type: boolean
               example: false
+              description: 'if the rule is global'
             is_test:
               type: boolean
               example: false
+              description: 'if the rule is test'
             description:
               type: string
               example: 'secure customer example@example.com'
+              description: 'description of the rule'

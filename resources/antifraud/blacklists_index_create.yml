@@ -35,18 +35,19 @@ post:
               id:
                 type: string
                 example: '2fw8EWJusiRrxdPzT'
+                description: 'Blacklist rule id'
               field:
                 type: string
                 example: 'email'
-              livemode:
-                type: boolean
-                example: true
+                description: 'field used for blacklists rule'
               value:
                 type: string
                 example: 'email@example.com'
+                description: 'value used for blacklists rule'
               description:
                 type: string
                 example: 'secure customer example@example.com'
+                description: 'use an description for blacklisted rule'
     401:
      $ref: '../errors/401.yml'
     500:
