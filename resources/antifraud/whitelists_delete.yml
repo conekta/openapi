@@ -17,7 +17,7 @@ delete:
               id:
                 type: string
                 example: '2fw8EWJusiRrxdPzT'
-              type:
+              field:
                 type: string
                 example: 'email'
               value:

@@ -4,20 +4,28 @@ get:
   operationId: GetRuleWhitelist
   description: Return all rules
   summary: Get a list of whitelisted rules
+  parameters:
+    - $ref: '../../parameters/commons/headers/accept_language.yml'
   responses:
-    '200':
+    200:
       description: All the rules
       content:
-        application/json:
+        application/vnd.conekta-v2.1.0+json:
           schema:
             $ref: '../../schemas/antifraud/risk_rules_list.yml'
+    401:
+     $ref: '../errors/401.yml'
+    500:
+     $ref: '../errors/500.yml'
 post:
   tags:
     - Antifraud
   operationId: CreateRuleWhitelist
   summary: Create whitelisted rule
+  parameters:
+    - $ref: '../../parameters/commons/headers/accept_language.yml'
   responses:
-    '200':
+    200:
       description: successfully registered rule
       content:
         application/vnd.conekta-v2.1.0+json:
@@ -27,24 +35,19 @@ post:
               id:
                 type: string
                 example: '2fw8EWJusiRrxdPzT'
-              type:
+              field:
                 type: string
                 example: 'email'
-              livemode:
-                type: boolean
-                example: true
               value:
                 type: string
                 example: 'email@example.com'
               description:
                 type: string
                 example: 'banned customer example@example.com'
-      401:
-       $ref: '../errors/401.yml'
-      404:
-       $ref: '../errors/404.yml'
-      500:
-      $ref: '../errors/500.yml'
+    401:
+     $ref: '../errors/401.yml'
+    500:
+     $ref: '../errors/500.yml'
   requestBody:
     content:
       application/json:

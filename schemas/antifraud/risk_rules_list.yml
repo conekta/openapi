@@ -1,25 +1,31 @@
-type: object
-properties:
-  has_more:
-    type: boolean
-    example: true
-  object:
-    type: string
-    example: 'list'
-  data:
-    type: array
-    items:
-      type: object
-      properties:
-        id:
-          type: string
-          example: '2fw8EWJusiRrxdPzT'
-        type:
-          type: string
-          example: 'email'
-        value:
-          type: string
-          example: 'email@example.com'
-        description:
-          type: string
-          example: 'secure customer example@example.com'
+allOf:
+  - $ref: ../../schemas/pagination/pagination.yml
+  - $ref: ../../schemas/pagination/page.yml
+  - type: object
+    properties:
+      data:
+        type: array
+        items:
+          type: object
+          properties:
+            id:
+              type: string
+              example: '618c3f2fdb8b8da9be376af9'
+            field:
+              type: string
+              example: 'email'
+            created_at:
+              type: string
+              example: '2021-11-10T21:52:47.339Z'
+            value:
+              type: string
+              example: 'email@example.com'
+            is_global:
+              type: boolean
+              example: false
+            is_test:
+              type: boolean
+              example: false
+            description:
+              type: string
+              example: 'secure customer example@example.com'
