@@ -18,4 +18,4 @@ properties:
   address:
     $ref: './company_fiscal_info_address_response.yml'
   bank_account:
-    $ref: '/company_fiscal_info_bank_account_response.yml'
+    $ref: './company_fiscal_info_bank_account_response.yml'
