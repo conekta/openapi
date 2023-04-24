@@ -12,11 +12,11 @@
       "uuid": "d479962f-5632-4bb0-8f1a-fe499b7b1d63",
       "documentation": "",
       "method": "delete",
-      "endpoint": "antifraud/whitelists",
+      "endpoint": "antifraud/whitelists/:id",
       "responses": [
         {
           "uuid": "2d52c593-f3d2-4835-b633-efc78d8be485",
-          "body": "",
+          "body": "{\n    \"id\": \"618c3f2fdb8b8da9be376afe\",\n    \"company_id\": \"5c537c4d27839876e2f18139\",\n    \"created_at\": \"2021-11-10T21:52:47.471Z\",\n    \"created_by\": \"alejandra.aguilera@conekta.com\",\n    \"description\": \"migration shield\",\n    \"decision\": \"A\",\n    \"field\": \"email\",\n    \"is_global\": false,\n    \"is_test\": false,\n    \"rule\": \"email == ramirez_2402@hotmail.com\",\n    \"type\": \"Whitelist\",\n    \"updated_at\": null,\n    \"updated_by\": null,\n    \"value\": \"ramirez_2402@hotmail.com\",\n    \"time_to_live\": 0,\n    \"expires\": null\n}",
           "latency": 0,
           "statusCode": 200,
           "label": "successfully deleted rule",
@@ -30,7 +30,15 @@
           "filePath": "",
           "databucketID": "",
           "sendFileAsBody": false,
-          "rules": [],
+          "rules": [
+            {
+              "target": "params",
+              "modifier": "id",
+              "value": "618c3f2fdb8b8da9be376afe",
+              "invert": false,
+              "operator": "equals"
+            }
+          ],
           "rulesOperator": "OR",
           "disableTemplating": false,
           "fallbackTo404": false,
@@ -48,7 +56,7 @@
       "responses": [
         {
           "uuid": "13aafcac-a6ad-4fa9-ae1b-f1ef3d63c35a",
-          "body": "{\n  \"total\": 8,\n  \"data\": [\n    {\n      \"description\": \"secure customer example@example.com\",\n      \"id\": \"2fw8EWJusiRrxdPzT\",\n      \"type\": \"email\",\n      \"value\": \"email@example.com\"\n    },\n    {\n      \"description\": \"secure customer example@example.com\",\n      \"id\": \"2fw8EWJusiRrxdPzT\",\n      \"type\": \"email\",\n      \"value\": \"email@example.com\"\n    }\n  ],\n  \"has_more\": true,\n  \"object\": \"list\"\n}",
+          "body": "{\n    \"has_more\": true,\n    \"object\": \"list\",\n    \"data\": [\n        {\n            \"id\": \"618c3f2fdb8b8da9be376af8\",\n            \"company_id\": \"551c385e241229d47b00151e\",\n            \"created_at\": \"2021-11-10T21:52:47.339Z\",\n            \"created_by\": \"marialuisa@conekta.com\",\n            \"description\": \"migration shield\",\n            \"decision\": \"A\",\n            \"field\": \"email\",\n            \"is_global\": false,\n            \"is_test\": false,\n            \"rule\": \"email == samo_ortiz@hotmail.com\",\n            \"type\": \"Whitelist\",\n            \"updated_at\": null,\n            \"updated_by\": null,\n            \"value\": \"samo_ortiz@hotmail.com\",\n            \"time_to_live\": 0,\n            \"expires\": null\n        },\n        {\n            \"id\": \"618c3f2fdb8b8da9be376afe\",\n            \"company_id\": \"5c537c4d27839876e2f18139\",\n            \"created_at\": \"2021-11-10T21:52:47.471Z\",\n            \"created_by\": \"alejandra.aguilera@conekta.com\",\n            \"description\": \"migration shield\",\n            \"decision\": \"A\",\n            \"field\": \"email\",\n            \"is_global\": false,\n            \"is_test\": false,\n            \"rule\": \"email == ramirez_2402@hotmail.com\",\n            \"type\": \"Whitelist\",\n            \"updated_at\": null,\n            \"updated_by\": null,\n            \"value\": \"ramirez_2402@hotmail.com\",\n            \"time_to_live\": 0,\n            \"expires\": null\n        },\n        {\n            \"id\": \"618c3f2fdb8b8da9be376b03\",\n            \"company_id\": \"52864f938ee31e3ae600166c\",\n            \"created_at\": \"2021-11-10T21:52:47.582Z\",\n            \"created_by\": \"ivan.gonzalez@conekta.com\",\n            \"description\": \"migration shield\",\n            \"decision\": \"A\",\n            \"field\": \"email\",\n            \"is_global\": false,\n            \"is_test\": false,\n            \"rule\": \"email == eddnoble@hotmail.com\",\n            \"type\": \"Whitelist\",\n            \"updated_at\": null,\n            \"updated_by\": null,\n            \"value\": \"eddnoble@hotmail.com\",\n            \"time_to_live\": 0,\n            \"expires\": null\n        },\n        {\n            \"id\": \"618c3f2fdb8b8da9be376b04\",\n            \"company_id\": \"5c537c4d27839876e2f18139\",\n            \"created_at\": \"2021-11-10T21:52:47.738Z\",\n            \"created_by\": \"marialuisa@conekta.com\",\n            \"description\": \"migration shield\",\n            \"decision\": \"A\",\n            \"field\": \"email\",\n            \"is_global\": false,\n            \"is_test\": false,\n            \"rule\": \"email == jonha.cabrera@gmail.com\",\n            \"type\": \"Whitelist\",\n            \"updated_at\": null,\n            \"updated_by\": null,\n            \"value\": \"jonha.cabrera@gmail.com\",\n            \"time_to_live\": 0,\n            \"expires\": null\n        },\n        {\n            \"id\": \"618c3f2fdb8b8da9be376b05\",\n            \"company_id\": \"5c537c4d27839876e2f18139\",\n            \"created_at\": \"2021-11-10T21:52:47.739Z\",\n            \"created_by\": \"alejandra.aguilera@conekta.com\",\n            \"description\": \"migration shield\",\n            \"decision\": \"A\",\n            \"field\": \"email\",\n            \"is_global\": false,\n            \"is_test\": false,\n            \"rule\": \"email == licona_sonia@yahoo.com\",\n            \"type\": \"Whitelist\",\n            \"updated_at\": null,\n            \"updated_by\": null,\n            \"value\": \"licona_sonia@yahoo.com\",\n            \"time_to_live\": 0,\n            \"expires\": null\n        },\n        {\n            \"id\": \"618c3f2fdb8b8da9be376b07\",\n            \"company_id\": \"551c385e241229d47b00151e\",\n            \"created_at\": \"2021-11-10T21:52:47.74Z\",\n            \"created_by\": \"alejandra.aguilera@conekta.com\",\n            \"description\": \"migration shield\",\n            \"decision\": \"A\",\n            \"field\": \"email\",\n            \"is_global\": false,\n            \"is_test\": false,\n            \"rule\": \"email == janylego@gmail.com\",\n            \"type\": \"Whitelist\",\n            \"updated_at\": null,\n            \"updated_by\": null,\n            \"value\": \"janylego@gmail.com\",\n            \"time_to_live\": 0,\n            \"expires\": null\n        },\n        {\n            \"id\": \"618c3f2fdb8b8da9be376b0a\",\n            \"company_id\": \"55dbca0924122911d20000b7\",\n            \"created_at\": \"2021-11-10T21:52:47.848Z\",\n            \"created_by\": \"jorge.marquez@conekta.com\",\n            \"description\": \"migration shield\",\n            \"decision\": \"A\",\n            \"field\": \"email\",\n            \"is_global\": false,\n            \"is_test\": false,\n            \"rule\": \"email == chente_inteligente@hotmail.com\",\n            \"type\": \"Whitelist\",\n            \"updated_at\": null,\n            \"updated_by\": null,\n            \"value\": \"chente_inteligente@hotmail.com\",\n            \"time_to_live\": 0,\n            \"expires\": null\n        },\n        {\n            \"id\": \"618c3f2fdb8b8da9be376b0d\",\n            \"company_id\": \"56a702a719ce8852b3001261\",\n            \"created_at\": \"2021-11-10T21:52:47.85Z\",\n            \"created_by\": \"manuel@fitpass.mx\",\n            \"description\": \"chargeback\",\n            \"decision\": \"A\",\n            \"field\": \"phone_number\",\n            \"is_global\": false,\n            \"is_test\": false,\n            \"rule\": \"phone_number == +525524042000\",\n            \"type\": \"Whitelist\",\n            \"updated_at\": null,\n            \"updated_by\": null,\n            \"value\": \"+525524042000\",\n            \"time_to_live\": 0,\n            \"expires\": null\n        },\n        {\n            \"id\": \"618c3f30db8b8da9be376b0e\",\n            \"company_id\": \"52864f938ee31e3ae600166c\",\n            \"created_at\": \"2021-11-10T21:52:48.023Z\",\n            \"created_by\": \"riesgo@conekta.com\",\n            \"description\": \"migration shield\",\n            \"decision\": \"A\",\n            \"field\": \"email\",\n            \"is_global\": false,\n            \"is_test\": false,\n            \"rule\": \"email == gabybeltran1980@gmail.com\",\n            \"type\": \"Whitelist\",\n            \"updated_at\": null,\n            \"updated_by\": null,\n            \"value\": \"gabybeltran1980@gmail.com\",\n            \"time_to_live\": 0,\n            \"expires\": null\n        },\n        {\n            \"id\": \"618c3f30db8b8da9be376b0f\",\n            \"company_id\": \"551c385e241229d47b00151e\",\n            \"created_at\": \"2021-11-10T21:52:48.023Z\",\n            \"created_by\": \"marialuisa@conekta.com\",\n            \"description\": \"migration shield\",\n            \"decision\": \"A\",\n            \"field\": \"email\",\n            \"is_global\": false,\n            \"is_test\": false,\n            \"rule\": \"email == mikekique@hotmail.com\",\n            \"type\": \"Whitelist\",\n            \"updated_at\": null,\n            \"updated_by\": null,\n            \"value\": \"mikekique@hotmail.com\",\n            \"time_to_live\": 0,\n            \"expires\": null\n        },\n        {\n            \"id\": \"618c3f30db8b8da9be376b16\",\n            \"company_id\": \"57c99cb301cc6ab82c00425e\",\n            \"created_at\": \"2021-11-10T21:52:48.133Z\",\n            \"created_by\": \"erick.garduno@conekta.com\",\n            \"description\": \"request_by_merchant\",\n            \"decision\": \"A\",\n            \"field\": \"email\",\n            \"is_global\": false,\n            \"is_test\": false,\n            \"rule\": \"email == reclutamiento@vrtalent.com.mx\",\n            \"type\": \"Whitelist\",\n            \"updated_at\": null,\n            \"updated_by\": null,\n            \"value\": \"reclutamiento@vrtalent.com.mx\",\n            \"time_to_live\": 0,\n            \"expires\": null\n        },\n        {\n            \"id\": \"618c3f30db8b8da9be376b17\",\n            \"company_id\": \"5c537c4d27839876e2f18139\",\n            \"created_at\": \"2021-11-10T21:52:48.135Z\",\n            \"created_by\": \"marialuisa@conekta.com\",\n            \"description\": \"migration shield\",\n            \"decision\": \"A\",\n            \"field\": \"email\",\n            \"is_global\": false,\n            \"is_test\": false,\n            \"rule\": \"email == fatima.roblesm@hotmail.com\",\n            \"type\": \"Whitelist\",\n            \"updated_at\": null,\n            \"updated_by\": null,\n            \"value\": \"fatima.roblesm@hotmail.com\",\n            \"time_to_live\": 0,\n            \"expires\": null\n        },\n        {\n            \"id\": \"618c3f30db8b8da9be376b19\",\n            \"company_id\": \"556c69a119ce88e863004162\",\n            \"created_at\": \"2021-11-10T21:52:48.235Z\",\n            \"created_by\": \"marialuisa@conekta.com\",\n            \"description\": \"migration shield\",\n            \"decision\": \"A\",\n            \"field\": \"email\",\n            \"is_global\": false,\n            \"is_test\": false,\n            \"rule\": \"email == bsantamaria@mail.com\",\n            \"type\": \"Whitelist\",\n            \"updated_at\": null,\n            \"updated_by\": null,\n            \"value\": \"bsantamaria@mail.com\",\n            \"time_to_live\": 0,\n            \"expires\": null\n        },\n        {\n            \"id\": \"618c3f30db8b8da9be376b1b\",\n            \"company_id\": \"5c537c4d27839876e2f18139\",\n            \"created_at\": \"2021-11-10T21:52:48.235Z\",\n            \"created_by\": \"marialuisa@conekta.com\",\n            \"description\": \"migration shield\",\n            \"decision\": \"A\",\n            \"field\": \"email\",\n            \"is_global\": false,\n            \"is_test\": false,\n            \"rule\": \"email == dra.wenrogel@hotmail.com\",\n            \"type\": \"Whitelist\",\n            \"updated_at\": null,\n            \"updated_by\": null,\n            \"value\": \"dra.wenrogel@hotmail.com\",\n            \"time_to_live\": 0,\n            \"expires\": null\n        },\n        {\n            \"id\": \"618c3f30db8b8da9be376b1c\",\n            \"company_id\": \"56cf1bbd2412292d10008f38\",\n            \"created_at\": \"2021-11-10T21:52:48.236Z\",\n            \"created_by\": \"sagrario.rodriguez@driveapp.mx\",\n            \"description\": \"chargeback\",\n            \"decision\": \"A\",\n            \"field\": \"email\",\n            \"is_global\": false,\n            \"is_test\": false,\n            \"rule\": \"email == zuryef@me.com\",\n            \"type\": \"Whitelist\",\n            \"updated_at\": null,\n            \"updated_by\": null,\n            \"value\": \"zuryef@me.com\",\n            \"time_to_live\": 0,\n            \"expires\": null\n        },\n        {\n            \"id\": \"618c3f30db8b8da9be376b1a\",\n            \"company_id\": \"551c385e241229d47b00151e\",\n            \"created_at\": \"2021-11-10T21:52:48.235Z\",\n            \"created_by\": \"alejandra.aguilera@conekta.com\",\n            \"description\": \"migration shield\",\n            \"decision\": \"A\",\n            \"field\": \"email\",\n            \"is_global\": false,\n            \"is_test\": false,\n            \"rule\": \"email == esbeydy_1988@hotmail.com\",\n            \"type\": \"Whitelist\",\n            \"updated_at\": null,\n            \"updated_by\": null,\n            \"value\": \"esbeydy_1988@hotmail.com\",\n            \"time_to_live\": 0,\n            \"expires\": null\n        },\n        {\n            \"id\": \"618c3f30db8b8da9be376b1d\",\n            \"company_id\": \"5c537c4d27839876e2f18139\",\n            \"created_at\": \"2021-11-10T21:52:48.422Z\",\n            \"created_by\": \"marialuisa@conekta.com\",\n            \"description\": \"migration shield\",\n            \"decision\": \"A\",\n            \"field\": \"email\",\n            \"is_global\": false,\n            \"is_test\": false,\n            \"rule\": \"email == jenn_guerra@hotmail.com\",\n            \"type\": \"Whitelist\",\n            \"updated_at\": null,\n            \"updated_by\": null,\n            \"value\": \"jenn_guerra@hotmail.com\",\n            \"time_to_live\": 0,\n            \"expires\": null\n        },\n        {\n            \"id\": \"618c3f30db8b8da9be376b24\",\n            \"company_id\": \"55dbca0924122911d20000b7\",\n            \"created_at\": \"2021-11-10T21:52:48.534Z\",\n            \"created_by\": \"jorge.marquez@conekta.com\",\n            \"description\": \"migration shield\",\n            \"decision\": \"A\",\n            \"field\": \"email\",\n            \"is_global\": false,\n            \"is_test\": false,\n            \"rule\": \"email == b.etzy112@hotmail.com\",\n            \"type\": \"Whitelist\",\n            \"updated_at\": null,\n            \"updated_by\": null,\n            \"value\": \"b.etzy112@hotmail.com\",\n            \"time_to_live\": 0,\n            \"expires\": null\n        },\n        {\n            \"id\": \"618c3f30db8b8da9be376b25\",\n            \"company_id\": \"553e9eb319ce8833e4000a44\",\n            \"created_at\": \"2021-11-10T21:52:48.537Z\",\n            \"created_by\": \"riesgo@conekta.com\",\n            \"description\": \"migration shield\",\n            \"decision\": \"A\",\n            \"field\": \"email\",\n            \"is_global\": false,\n            \"is_test\": false,\n            \"rule\": \"email == luknegro@hotmail.com\",\n            \"type\": \"Whitelist\",\n            \"updated_at\": null,\n            \"updated_by\": null,\n            \"value\": \"luknegro@hotmail.com\",\n            \"time_to_live\": 0,\n            \"expires\": null\n        },\n        {\n            \"id\": \"618c3f30db8b8da9be376b23\",\n            \"company_id\": \"5500f50d241229bc0b001861\",\n            \"created_at\": \"2021-11-10T21:52:48.534Z\",\n            \"created_by\": \"andres@siclo.com\",\n            \"description\": \"chargeback\",\n            \"decision\": \"A\",\n            \"field\": \"email\",\n            \"is_global\": false,\n            \"is_test\": false,\n            \"rule\": \"email == anamar_az@hotmail.com\",\n            \"type\": \"Whitelist\",\n            \"updated_at\": null,\n            \"updated_by\": null,\n            \"value\": \"anamar_az@hotmail.com\",\n            \"time_to_live\": 0,\n            \"expires\": null\n        },\n        {\n            \"id\": \"618c3f30db8b8da9be376b26\",\n            \"company_id\": \"530fe67bd7e1a01fb20004ed\",\n            \"created_at\": \"2021-11-10T21:52:48.538Z\",\n            \"created_by\": \"riesgo@conekta.com\",\n            \"description\": \"migration shield\",\n            \"decision\": \"A\",\n            \"field\": \"email\",\n            \"is_global\": false,\n            \"is_test\": false,\n            \"rule\": \"email == florpaulina@live.com.mx\",\n            \"type\": \"Whitelist\",\n            \"updated_at\": null,\n            \"updated_by\": null,\n            \"value\": \"florpaulina@live.com.mx\",\n            \"time_to_live\": 0,\n            \"expires\": null\n        },\n        {\n            \"id\": \"618c3f30db8b8da9be376b2b\",\n            \"company_id\": \"551c385e241229d47b00151e\",\n            \"created_at\": \"2021-11-10T21:52:48.643Z\",\n            \"created_by\": \"alejandra.aguilera@conekta.com\",\n            \"description\": \"migration shield\",\n            \"decision\": \"A\",\n            \"field\": \"email\",\n            \"is_global\": false,\n            \"is_test\": false,\n            \"rule\": \"email == markovale94@hotmail.com\",\n            \"type\": \"Whitelist\",\n            \"updated_at\": null,\n            \"updated_by\": null,\n            \"value\": \"markovale94@hotmail.com\",\n            \"time_to_live\": 0,\n            \"expires\": null\n        },\n        {\n            \"id\": \"618c3f30db8b8da9be376b2d\",\n            \"company_id\": \"5c537c4d27839876e2f18139\",\n            \"created_at\": \"2021-11-10T21:52:48.744Z\",\n            \"created_by\": \"marialuisa@conekta.com\",\n            \"description\": \"migration shield\",\n            \"decision\": \"A\",\n            \"field\": \"email\",\n            \"is_global\": false,\n            \"is_test\": false,\n            \"rule\": \"email == anareli_920303@hotmail.com\",\n            \"type\": \"Whitelist\",\n            \"updated_at\": null,\n            \"updated_by\": null,\n            \"value\": \"anareli_920303@hotmail.com\",\n            \"time_to_live\": 0,\n            \"expires\": null\n        },\n        {\n            \"id\": \"618c3f30db8b8da9be376b2e\",\n            \"company_id\": \"551c385e241229d47b00151e\",\n            \"created_at\": \"2021-11-10T21:52:48.744Z\",\n            \"created_by\": \"jaime@busolinea.com\",\n            \"description\": \"migration shield\",\n            \"decision\": \"A\",\n            \"field\": \"email\",\n            \"is_global\": false,\n            \"is_test\": false,\n            \"rule\": \"email == ventas2@satelitetravel.com.mx\",\n            \"type\": \"Whitelist\",\n            \"updated_at\": null,\n            \"updated_by\": null,\n            \"value\": \"ventas2@satelitetravel.com.mx\",\n            \"time_to_live\": 0,\n            \"expires\": null\n        },\n        {\n            \"id\": \"618c3f30db8b8da9be376b2f\",\n            \"company_id\": \"58a507a5dba34dcc570005f6\",\n            \"created_at\": \"2021-11-10T21:52:48.745Z\",\n            \"created_by\": \"marialuisa@conekta.com\",\n            \"description\": \"migration shield\",\n            \"decision\": \"A\",\n            \"field\": \"email\",\n            \"is_global\": false,\n            \"is_test\": false,\n            \"rule\": \"email == durazo8@hotmail.com\",\n            \"type\": \"Whitelist\",\n            \"updated_at\": null,\n            \"updated_by\": null,\n            \"value\": \"durazo8@hotmail.com\",\n            \"time_to_live\": 0,\n            \"expires\": null\n        }\n    ]\n}",
           "latency": 0,
           "statusCode": 200,
           "label": "All the rules",
@@ -62,7 +70,15 @@
           "filePath": "",
           "databucketID": "",
           "sendFileAsBody": false,
-          "rules": [],
+          "rules": [
+            {
+              "target": "header",
+              "modifier": "Authorization",
+              "value": "key_uMxL6X1txuxyzQzJEXt72Aaaaba",
+              "invert": false,
+              "operator": "equals"
+            }
+          ],
           "rulesOperator": "OR",
           "disableTemplating": false,
           "fallbackTo404": false,
@@ -80,7 +96,7 @@
       "responses": [
         {
           "uuid": "b9e46508-d28f-4a8c-8a38-1fc85070e2b7",
-          "body": "",
+          "body": "{\n  \"id\": \"618c3f30db8b8da9be376b17\",\n            \"company_id\": \"5c537c4d27839876e2f18139\",\n            \"created_at\": \"2021-11-10T21:52:48.135Z\",\n            \"created_by\": \"marialuisa@conekta.com\",\n            \"description\": \"test description\",\n            \"decision\": \"A\",\n            \"field\": \"email\",\n            \"is_global\": false,\n            \"is_test\": false,\n            \"rule\": \"email == fcarrero@gmail.com\",\n            \"type\": \"Whitelist\",\n            \"updated_at\": null,\n            \"updated_by\": null,\n            \"value\": \"fcarrero@gmail.com\",\n            \"time_to_live\": 0,\n            \"expires\": null\n}",
           "latency": 0,
           "statusCode": 200,
           "label": "successfully registered rule",
@@ -94,7 +110,15 @@
           "filePath": "",
           "databucketID": "",
           "sendFileAsBody": false,
-          "rules": [],
+          "rules": [
+            {
+              "target": "body",
+              "modifier": "value",
+              "value": "fcarrero@gmail.com",
+              "invert": false,
+              "operator": "equals"
+            }
+          ],
           "rulesOperator": "OR",
           "disableTemplating": false,
           "fallbackTo404": false,
@@ -108,11 +132,11 @@
       "uuid": "894e252a-552d-45f2-afde-fd8693913c67",
       "documentation": "",
       "method": "delete",
-      "endpoint": "antifraud/blacklists",
+      "endpoint": "antifraud/blacklists/:id",
       "responses": [
         {
           "uuid": "39d9d2c6-ab1e-403c-919f-b94af3a565f7",
-          "body": "",
+          "body": "{\n  \"id\": \"618c3f30db8b8da9be376b1e\",\n  \"company_id\": \"\",\n  \"created_at\": \"2021-11-10T21:52:48.422Z\",\n  \"created_by\": \"javier@conekta.com\",\n  \"description\": \"migration shield\",\n  \"decision\": \"D\",\n  \"field\": \"email\",\n  \"is_global\": true,\n  \"is_test\": false,\n  \"rule\": \"email == aita_lv@hotmail.com\",\n  \"type\": \"Blacklist\",\n  \"updated_at\": null,\n  \"updated_by\": null,\n  \"value\": \"aita_lv@hotmail.com\",\n  \"time_to_live\": 0,\n  \"expires\": null\n}",
           "latency": 0,
           "statusCode": 200,
           "label": "successfully deleted rule",
@@ -126,7 +150,15 @@
           "filePath": "",
           "databucketID": "",
           "sendFileAsBody": false,
-          "rules": [],
+          "rules": [
+            {
+              "target": "params",
+              "modifier": "id",
+              "value": "618c3f30db8b8da9be376b1e",
+              "invert": false,
+              "operator": "equals"
+            }
+          ],
           "rulesOperator": "OR",
           "disableTemplating": false,
           "fallbackTo404": false,
@@ -144,7 +176,7 @@
       "responses": [
         {
           "uuid": "11d7a7c6-f595-4bd3-97df-72134c1560db",
-          "body": "{\"has_more\":true,\"total\":85983,\"object\":\"list\",\"data\":[{\"id\":\"618c3f2fdb8b8da9be376af9\",\"company_id\":\"57ed5affdba34df0630071dc\",\"created_at\":\"2021-11-10T21:52:47.339Z\",\"created_by\":\"riesgo@conekta.com\",\"description\":\"migration shield\",\"decision\":\"D\",\"field\":\"email\",\"is_global\":false,\"is_test\":false,\"rule\":\"email == astridx1x@outlook.com\",\"type\":\"Blacklist\",\"updated_at\":null,\"updated_by\":null,\"value\":\"astridx1x@outlook.com\",\"time_to_live\":0,\"expires\":null},{\"id\":\"618c3f2fdb8b8da9be376afa\",\"company_id\":\"57ed5affdba34df0630071dc\",\"created_at\":\"2021-11-10T21:52:47.468Z\",\"created_by\":\"viviana@conekta.com\",\"description\":\"migration shield\",\"decision\":\"D\",\"field\":\"email\",\"is_global\":false,\"is_test\":false,\"rule\":\"email == al8096908@gmail.com\",\"type\":\"Blacklist\",\"updated_at\":null,\"updated_by\":null,\"value\":\"al8096908@gmail.com\",\"time_to_live\":0,\"expires\":null},{\"id\":\"618c3f2fdb8b8da9be376afb\",\"company_id\":\"\",\"created_at\":\"2021-11-10T21:52:47.469Z\",\"created_by\":\"javier@conekta.com\",\"description\":\"migration shield\",\"decision\":\"D\",\"field\":\"email\",\"is_global\":true,\"is_test\":false,\"rule\":\"email == kassandrachantal@ciencias.unam.mx\",\"type\":\"Blacklist\",\"updated_at\":null,\"updated_by\":null,\"value\":\"kassandrachantal@ciencias.unam.mx\",\"time_to_live\":0,\"expires\":null}]}",
+          "body": "{\n    \"has_more\": true,\n    \"object\": \"list\",\n    \"data\": [\n        {\n            \"id\": \"618c3f2fdb8b8da9be376afa\",\n            \"company_id\": \"57ed5affdba34df0630071dc\",\n            \"created_at\": \"2021-11-10T21:52:47.468Z\",\n            \"created_by\": \"viviana@conekta.com\",\n            \"description\": \"migration shield\",\n            \"decision\": \"D\",\n            \"field\": \"email\",\n            \"is_global\": false,\n            \"is_test\": false,\n            \"rule\": \"email == al8096908@gmail.com\",\n            \"type\": \"Blacklist\",\n            \"updated_at\": null,\n            \"updated_by\": null,\n            \"value\": \"al8096908@gmail.com\",\n            \"time_to_live\": 0,\n            \"expires\": null\n        },\n        {\n            \"id\": \"618c3f2fdb8b8da9be376afb\",\n            \"company_id\": \"\",\n            \"created_at\": \"2021-11-10T21:52:47.469Z\",\n            \"created_by\": \"javier@conekta.com\",\n            \"description\": \"migration shield\",\n            \"decision\": \"D\",\n            \"field\": \"email\",\n            \"is_global\": true,\n            \"is_test\": false,\n            \"rule\": \"email == kassandrachantal@ciencias.unam.mx\",\n            \"type\": \"Blacklist\",\n            \"updated_at\": null,\n            \"updated_by\": null,\n            \"value\": \"kassandrachantal@ciencias.unam.mx\",\n            \"time_to_live\": 0,\n            \"expires\": null\n        },\n        {\n            \"id\": \"618c3f2fdb8b8da9be376afc\",\n            \"company_id\": \"563b82ae19ce8893550034bf\",\n            \"created_at\": \"2021-11-10T21:52:47.47Z\",\n            \"created_by\": \"fernando@nuvlar.com\",\n            \"description\": \"chargeback\",\n            \"decision\": \"D\",\n            \"field\": \"phone_number\",\n            \"is_global\": false,\n            \"is_test\": false,\n            \"rule\": \"phone_number == +526692273700\",\n            \"type\": \"Blacklist\",\n            \"updated_at\": null,\n            \"updated_by\": null,\n            \"value\": \"+526692273700\",\n            \"time_to_live\": 0,\n            \"expires\": null\n        },\n        {\n            \"id\": \"618c3f2fdb8b8da9be376afd\",\n            \"company_id\": \"\",\n            \"created_at\": \"2021-11-10T21:52:47.47Z\",\n            \"created_by\": \"javier@conekta.com\",\n            \"description\": \"migration shield\",\n            \"decision\": \"D\",\n            \"field\": \"email\",\n            \"is_global\": true,\n            \"is_test\": false,\n            \"rule\": \"email == omar-laamarti@hotmail.com\",\n            \"type\": \"Blacklist\",\n            \"updated_at\": null,\n            \"updated_by\": null,\n            \"value\": \"omar-laamarti@hotmail.com\",\n            \"time_to_live\": 0,\n            \"expires\": null\n        },\n        {\n            \"id\": \"618c3f2fdb8b8da9be376aff\",\n            \"company_id\": \"\",\n            \"created_at\": \"2021-11-10T21:52:47.578Z\",\n            \"created_by\": \"javier@conekta.com\",\n            \"description\": \"migration shield\",\n            \"decision\": \"D\",\n            \"field\": \"email\",\n            \"is_global\": true,\n            \"is_test\": false,\n            \"rule\": \"email == pedritoi998@hotmail.com\",\n            \"type\": \"Blacklist\",\n            \"updated_at\": null,\n            \"updated_by\": null,\n            \"value\": \"pedritoi998@hotmail.com\",\n            \"time_to_live\": 0,\n            \"expires\": null\n        },\n        {\n            \"id\": \"618c3f2fdb8b8da9be376b00\",\n            \"company_id\": \"\",\n            \"created_at\": \"2021-11-10T21:52:47.58Z\",\n            \"created_by\": \"riesgo@conekta.com\",\n            \"description\": \"migration shield\",\n            \"decision\": \"D\",\n            \"field\": \"email\",\n            \"is_global\": true,\n            \"is_test\": false,\n            \"rule\": \"email == jovava85@gmail.com\",\n            \"type\": \"Blacklist\",\n            \"updated_at\": null,\n            \"updated_by\": null,\n            \"value\": \"jovava85@gmail.com\",\n            \"time_to_live\": 0,\n            \"expires\": null\n        },\n        {\n            \"id\": \"618c3f2fdb8b8da9be376b01\",\n            \"company_id\": \"57ed5affdba34df0630071dc\",\n            \"created_at\": \"2021-11-10T21:52:47.58Z\",\n            \"created_by\": \"marialuisa@conekta.com\",\n            \"description\": \"migration shield\",\n            \"decision\": \"D\",\n            \"field\": \"email\",\n            \"is_global\": false,\n            \"is_test\": false,\n            \"rule\": \"email == johanna1023@gmail.com\",\n            \"type\": \"Blacklist\",\n            \"updated_at\": null,\n            \"updated_by\": null,\n            \"value\": \"johanna1023@gmail.com\",\n            \"time_to_live\": 0,\n            \"expires\": null\n        },\n        {\n            \"id\": \"618c3f2fdb8b8da9be376b02\",\n            \"company_id\": \"5417516c2412292448000b54\",\n            \"created_at\": \"2021-11-10T21:52:47.581Z\",\n            \"created_by\": \"marina@gaiadesign.com.mx\",\n            \"description\": \"migration shield\",\n            \"decision\": \"D\",\n            \"field\": \"email\",\n            \"is_global\": false,\n            \"is_test\": false,\n            \"rule\": \"email == rockyblue14@outlook.com\",\n            \"type\": \"Blacklist\",\n            \"updated_at\": null,\n            \"updated_by\": null,\n            \"value\": \"rockyblue14@outlook.com\",\n            \"time_to_live\": 0,\n            \"expires\": null\n        },\n        {\n            \"id\": \"618c3f2fdb8b8da9be376b06\",\n            \"company_id\": \"\",\n            \"created_at\": \"2021-11-10T21:52:47.739Z\",\n            \"created_by\": \"riesgo@conekta.com\",\n            \"description\": \"migration shield\",\n            \"decision\": \"D\",\n            \"field\": \"email\",\n            \"is_global\": true,\n            \"is_test\": false,\n            \"rule\": \"email == glaffglaf@gmail.com\",\n            \"type\": \"Blacklist\",\n            \"updated_at\": null,\n            \"updated_by\": null,\n            \"value\": \"glaffglaf@gmail.com\",\n            \"time_to_live\": 0,\n            \"expires\": null\n        },\n        {\n            \"id\": \"618c3f2fdb8b8da9be376b09\",\n            \"company_id\": \"\",\n            \"created_at\": \"2021-11-10T21:52:47.847Z\",\n            \"created_by\": \"javier@conekta.com\",\n            \"description\": \"migration shield\",\n            \"decision\": \"D\",\n            \"field\": \"email\",\n            \"is_global\": true,\n            \"is_test\": false,\n            \"rule\": \"email == guadalup.apo@gmail.com\",\n            \"type\": \"Blacklist\",\n            \"updated_at\": null,\n            \"updated_by\": null,\n            \"value\": \"guadalup.apo@gmail.com\",\n            \"time_to_live\": 0,\n            \"expires\": null\n        },\n        {\n            \"id\": \"618c3f2fdb8b8da9be376b0b\",\n            \"company_id\": \"58fe1f44c835f013b9635800\",\n            \"created_at\": \"2021-11-10T21:52:47.849Z\",\n            \"created_by\": \"ivan.gonzalez@conekta.com\",\n            \"description\": \"migration shield\",\n            \"decision\": \"D\",\n            \"field\": \"email\",\n            \"is_global\": false,\n            \"is_test\": false,\n            \"rule\": \"email == zues2782@iclud.com\",\n            \"type\": \"Blacklist\",\n            \"updated_at\": null,\n            \"updated_by\": null,\n            \"value\": \"zues2782@iclud.com\",\n            \"time_to_live\": 0,\n            \"expires\": null\n        },\n        {\n            \"id\": \"618c3f2fdb8b8da9be376b0c\",\n            \"company_id\": \"\",\n            \"created_at\": \"2021-11-10T21:52:47.85Z\",\n            \"created_by\": \"javier@conekta.com\",\n            \"description\": \"migration shield\",\n            \"decision\": \"D\",\n            \"field\": \"email\",\n            \"is_global\": true,\n            \"is_test\": false,\n            \"rule\": \"email == fernandovega794@gmail.com\",\n            \"type\": \"Blacklist\",\n            \"updated_at\": null,\n            \"updated_by\": null,\n            \"value\": \"fernandovega794@gmail.com\",\n            \"time_to_live\": 0,\n            \"expires\": null\n        },\n        {\n            \"id\": \"618c3f30db8b8da9be376b10\",\n            \"company_id\": \"\",\n            \"created_at\": \"2021-11-10T21:52:48.024Z\",\n            \"created_by\": \"riesgo@conekta.com\",\n            \"description\": \"migration shield\",\n            \"decision\": \"D\",\n            \"field\": \"email\",\n            \"is_global\": true,\n            \"is_test\": false,\n            \"rule\": \"email == danielflojuar95@gmail.com\",\n            \"type\": \"Blacklist\",\n            \"updated_at\": null,\n            \"updated_by\": null,\n            \"value\": \"danielflojuar95@gmail.com\",\n            \"time_to_live\": 0,\n            \"expires\": null\n        },\n        {\n            \"id\": \"618c3f30db8b8da9be376b12\",\n            \"company_id\": \"57ed5affdba34df0630071dc\",\n            \"created_at\": \"2021-11-10T21:52:48.025Z\",\n            \"created_by\": \"viviana@conekta.com\",\n            \"description\": \"migration shield\",\n            \"decision\": \"D\",\n            \"field\": \"email\",\n            \"is_global\": false,\n            \"is_test\": false,\n            \"rule\": \"email == labastidanetor738@gmail.com\",\n            \"type\": \"Blacklist\",\n            \"updated_at\": null,\n            \"updated_by\": null,\n            \"value\": \"labastidanetor738@gmail.com\",\n            \"time_to_live\": 0,\n            \"expires\": null\n        },\n        {\n            \"id\": \"618c3f30db8b8da9be376b11\",\n            \"company_id\": \"\",\n            \"created_at\": \"2021-11-10T21:52:48.025Z\",\n            \"created_by\": \"javier@conekta.com\",\n            \"description\": \"migration shield\",\n            \"decision\": \"D\",\n            \"field\": \"email\",\n            \"is_global\": true,\n            \"is_test\": false,\n            \"rule\": \"email == carlos.lopez.mateos@gmail.com\",\n            \"type\": \"Blacklist\",\n            \"updated_at\": null,\n            \"updated_by\": null,\n            \"value\": \"carlos.lopez.mateos@gmail.com\",\n            \"time_to_live\": 0,\n            \"expires\": null\n        },\n        {\n            \"id\": \"618c3f30db8b8da9be376b13\",\n            \"company_id\": \"\",\n            \"created_at\": \"2021-11-10T21:52:48.131Z\",\n            \"created_by\": \"javier@conekta.com\",\n            \"description\": \"migration shield\",\n            \"decision\": \"D\",\n            \"field\": \"email\",\n            \"is_global\": true,\n            \"is_test\": false,\n            \"rule\": \"email == carloposkru@hotmail.com\",\n            \"type\": \"Blacklist\",\n            \"updated_at\": null,\n            \"updated_by\": null,\n            \"value\": \"carloposkru@hotmail.com\",\n            \"time_to_live\": 0,\n            \"expires\": null\n        },\n        {\n            \"id\": \"618c3f30db8b8da9be376b15\",\n            \"company_id\": \"\",\n            \"created_at\": \"2021-11-10T21:52:48.132Z\",\n            \"created_by\": \"javier@conekta.com\",\n            \"description\": \"migration shield\",\n            \"decision\": \"D\",\n            \"field\": \"email\",\n            \"is_global\": true,\n            \"is_test\": false,\n            \"rule\": \"email == lethiisha.almada@gmail.com\",\n            \"type\": \"Blacklist\",\n            \"updated_at\": null,\n            \"updated_by\": null,\n            \"value\": \"lethiisha.almada@gmail.com\",\n            \"time_to_live\": 0,\n            \"expires\": null\n        },\n        {\n            \"id\": \"618c3f30db8b8da9be376b18\",\n            \"company_id\": \"\",\n            \"created_at\": \"2021-11-10T21:52:48.235Z\",\n            \"created_by\": \"javier@conekta.com\",\n            \"description\": \"migration shield\",\n            \"decision\": \"D\",\n            \"field\": \"email\",\n            \"is_global\": true,\n            \"is_test\": false,\n            \"rule\": \"email == juancarlosgarcia2017@hotmail.com\",\n            \"type\": \"Blacklist\",\n            \"updated_at\": null,\n            \"updated_by\": null,\n            \"value\": \"juancarlosgarcia2017@hotmail.com\",\n            \"time_to_live\": 0,\n            \"expires\": null\n        },\n        {\n            \"id\": \"618c3f30db8b8da9be376b1e\",\n            \"company_id\": \"\",\n            \"created_at\": \"2021-11-10T21:52:48.422Z\",\n            \"created_by\": \"javier@conekta.com\",\n            \"description\": \"migration shield\",\n            \"decision\": \"D\",\n            \"field\": \"email\",\n            \"is_global\": true,\n            \"is_test\": false,\n            \"rule\": \"email == aita_lv@hotmail.com\",\n            \"type\": \"Blacklist\",\n            \"updated_at\": null,\n            \"updated_by\": null,\n            \"value\": \"aita_lv@hotmail.com\",\n            \"time_to_live\": 0,\n            \"expires\": null\n        },\n        {\n            \"id\": \"618c3f30db8b8da9be376b1f\",\n            \"company_id\": \"57ed5affdba34df0630071dc\",\n            \"created_at\": \"2021-11-10T21:52:48.421Z\",\n            \"created_by\": \"viviana@conekta.com\",\n            \"description\": \"migration shield\",\n            \"decision\": \"D\",\n            \"field\": \"email\",\n            \"is_global\": false,\n            \"is_test\": false,\n            \"rule\": \"email == magdichave12@yahoo.com\",\n            \"type\": \"Blacklist\",\n            \"updated_at\": null,\n            \"updated_by\": null,\n            \"value\": \"magdichave12@yahoo.com\",\n            \"time_to_live\": 0,\n            \"expires\": null\n        },\n        {\n            \"id\": \"618c3f30db8b8da9be376b21\",\n            \"company_id\": \"\",\n            \"created_at\": \"2021-11-10T21:52:48.422Z\",\n            \"created_by\": \"viviana@conekta.com\",\n            \"description\": \"migration shield\",\n            \"decision\": \"D\",\n            \"field\": \"email\",\n            \"is_global\": true,\n            \"is_test\": false,\n            \"rule\": \"email == fdl00103@gmail.com\",\n            \"type\": \"Blacklist\",\n            \"updated_at\": null,\n            \"updated_by\": null,\n            \"value\": \"fdl00103@gmail.com\",\n            \"time_to_live\": 0,\n            \"expires\": null\n        },\n        {\n            \"id\": \"618c3f30db8b8da9be376b20\",\n            \"company_id\": \"\",\n            \"created_at\": \"2021-11-10T21:52:48.422Z\",\n            \"created_by\": \"riesgo@conekta.com\",\n            \"description\": \"migration shield\",\n            \"decision\": \"D\",\n            \"field\": \"email\",\n            \"is_global\": true,\n            \"is_test\": false,\n            \"rule\": \"email == lara.mora.alan@gmail.com\",\n            \"type\": \"Blacklist\",\n            \"updated_at\": null,\n            \"updated_by\": null,\n            \"value\": \"lara.mora.alan@gmail.com\",\n            \"time_to_live\": 0,\n            \"expires\": null\n        },\n        {\n            \"id\": \"618c3f30db8b8da9be376b27\",\n            \"company_id\": \"\",\n            \"created_at\": \"2021-11-10T21:52:48.64Z\",\n            \"created_by\": \"viviana@conekta.com\",\n            \"description\": \"migration shield\",\n            \"decision\": \"D\",\n            \"field\": \"email\",\n            \"is_global\": true,\n            \"is_test\": false,\n            \"rule\": \"email == luisgutierrezlf93@gmail.com\",\n            \"type\": \"Blacklist\",\n            \"updated_at\": null,\n            \"updated_by\": null,\n            \"value\": \"luisgutierrezlf93@gmail.com\",\n            \"time_to_live\": 0,\n            \"expires\": null\n        },\n        {\n            \"id\": \"618c3f30db8b8da9be376b28\",\n            \"company_id\": \"58c6d048edbb6e09eb177639\",\n            \"created_at\": \"2021-11-10T21:52:48.641Z\",\n            \"created_by\": \"jorge.marquez@conekta.com\",\n            \"description\": \"migration shield\",\n            \"decision\": \"D\",\n            \"field\": \"email\",\n            \"is_global\": false,\n            \"is_test\": false,\n            \"rule\": \"email == marti.roro79@gmail.com\",\n            \"type\": \"Blacklist\",\n            \"updated_at\": null,\n            \"updated_by\": null,\n            \"value\": \"marti.roro79@gmail.com\",\n            \"time_to_live\": 0,\n            \"expires\": null\n        },\n        {\n            \"id\": \"618c3f30db8b8da9be376b29\",\n            \"company_id\": \"563b82ae19ce8893550034bf\",\n            \"created_at\": \"2021-11-10T21:52:48.642Z\",\n            \"created_by\": \"fernando@nuvlar.com\",\n            \"description\": \"chargeback\",\n            \"decision\": \"D\",\n            \"field\": \"email\",\n            \"is_global\": false,\n            \"is_test\": false,\n            \"rule\": \"email == a01656387@itesm.mx\",\n            \"type\": \"Blacklist\",\n            \"updated_at\": null,\n            \"updated_by\": null,\n            \"value\": \"a01656387@itesm.mx\",\n            \"time_to_live\": 0,\n            \"expires\": null\n        }\n    ]\n}",
           "latency": 0,
           "statusCode": 200,
           "label": "All the rules",
@@ -158,7 +190,15 @@
           "filePath": "",
           "databucketID": "",
           "sendFileAsBody": false,
-          "rules": [],
+          "rules": [
+            {
+              "target": "header",
+              "modifier": "Authorization",
+              "value": "key_uMxL6X1txuxyzQzJEXt72Aaaaba",
+              "invert": false,
+              "operator": "equals"
+            }
+          ],
           "rulesOperator": "OR",
           "disableTemplating": false,
           "fallbackTo404": false,
@@ -176,7 +216,7 @@
       "responses": [
         {
           "uuid": "ccb98470-03fe-4b0e-a035-2b268942ccae",
-          "body": "",
+          "body": "{\n            \"id\": \"618c3f2fdb8b8da9be376afa\",\n            \"company_id\": \"57ed5affdba34df0630071dc\",\n            \"created_at\": \"2021-11-10T21:52:47.468Z\",\n            \"created_by\": \"viviana@conekta.com\",\n            \"description\": \"test description\",\n            \"decision\": \"D\",\n            \"field\": \"email\",\n            \"is_global\": false,\n            \"is_test\": false,\n            \"rule\": \"email == fcarrero_black@gmail.com\",\n            \"type\": \"Blacklist\",\n            \"updated_at\": null,\n            \"updated_by\": null,\n            \"value\": \"fcarrero_black@gmail.com\",\n            \"time_to_live\": 0,\n            \"expires\": null\n        }",
           "latency": 0,
           "statusCode": 200,
           "label": "successfully registered rule",
@@ -190,7 +230,15 @@
           "filePath": "",
           "databucketID": "",
           "sendFileAsBody": false,
-          "rules": [],
+          "rules": [
+            {
+              "target": "body",
+              "modifier": "value",
+              "value": "fcarrero_black@gmail.com",
+              "invert": false,
+              "operator": "equals"
+            }
+          ],
           "rulesOperator": "OR",
           "disableTemplating": false,
           "fallbackTo404": false,
@@ -2772,141 +2820,6 @@
       "uuid": "4a3465fe-57ec-4336-a7fb-f3fd5bb9e788",
       "documentation": "updates a shipping contacts",
       "method": "put",
-      "endpoint": "customers/:id/shipping_contacts/:shipping_contacts_id",
-      "responses": [
-        {
-          "uuid": "510d7b99-45e5-4dd1-b1e1-d34516ce0aa2",
-          "body": "{\n    \"phone\": \"3143145050\",\n    \"address\": {\n        \"street1\": \"Calle 123, int 2\",\n        \"country\": \"mx\",\n        \"residential\": true,\n        \"object\": \"shipping_address\",\n        \"postal_code\": \"06100\"\n    },\n    \"id\": \"ship_cont_2tZWzJPBf87C6TcoQ\",\n    \"object\": \"shipping_contact\",\n    \"created_at\": 1679402268,\n    \"parent_id\": \"cus_2tZWxbTPtQgGJGh8P\",\n    \"default\": false\n}",
-          "latency": 0,
-          "statusCode": 200,
-          "label": "successful operation",
-          "headers": [
-            {
-              "key": "Content-Type",
-              "value": "application/vnd.conekta-v2.1.0+json"
-            }
-          ],
-          "bodyType": "INLINE",
-          "filePath": "",
-          "databucketID": "",
-          "sendFileAsBody": false,
-          "rules": [
-            {
-              "target": "params",
-              "modifier": "id",
-              "value": "cus_2tZWxbTPtQgGJGh8P",
-              "invert": false,
-              "operator": "equals"
-            },
-            {
-              "target": "params",
-              "modifier": "shipping_contacts_id",
-              "value": "ship_cont_2tZWzJPBf87C6TcoQ",
-              "invert": false,
-              "operator": "equals"
-            }
-          ],
-          "rulesOperator": "AND",
-          "disableTemplating": false,
-          "fallbackTo404": false,
-          "default": true
-        },
-        {
-          "uuid": "9230a760-7ce4-4e85-ad82-0ef2bbe173ed",
-          "body": "",
-          "latency": 0,
-          "statusCode": 401,
-          "label": "authentication error",
-          "headers": [
-            {
-              "key": "Content-Type",
-              "value": "application/vnd.conekta-v2.1.0+json"
-            }
-          ],
-          "bodyType": "INLINE",
-          "filePath": "",
-          "databucketID": "",
-          "sendFileAsBody": false,
-          "rules": [],
-          "rulesOperator": "OR",
-          "disableTemplating": false,
-          "fallbackTo404": false,
-          "default": false
-        },
-        {
-          "uuid": "23d70de9-53db-44d4-aac2-16338d24730b",
-          "body": "{\n  \"details\": [\n    {\n      \"code\": \"conekta.errors.authentication.missing_key\",\n      \"param\": \"\",\n      \"message\": \"Acceso no autorizado.\",\n      \"debug_message\": \"Please include your access key in your request.\"\n    }\n  ]\n}",
-          "latency": 0,
-          "statusCode": 404,
-          "label": "not found entity",
-          "headers": [
-            {
-              "key": "Content-Type",
-              "value": "application/vnd.conekta-v2.1.0+json"
-            }
-          ],
-          "bodyType": "INLINE",
-          "filePath": "",
-          "databucketID": "",
-          "sendFileAsBody": false,
-          "rules": [],
-          "rulesOperator": "OR",
-          "disableTemplating": false,
-          "fallbackTo404": false,
-          "default": false
-        },
-        {
-          "uuid": "343aee22-21c5-4d1f-9b26-fada5c9c4488",
-          "body": "",
-          "latency": 0,
-          "statusCode": 422,
-          "label": "parameter validation error",
-          "headers": [
-            {
-              "key": "Content-Type",
-              "value": "application/vnd.conekta-v2.1.0+json"
-            }
-          ],
-          "bodyType": "INLINE",
-          "filePath": "",
-          "databucketID": "",
-          "sendFileAsBody": false,
-          "rules": [],
-          "rulesOperator": "OR",
-          "disableTemplating": false,
-          "fallbackTo404": false,
-          "default": false
-        },
-        {
-          "uuid": "0457eda1-a06e-4c26-a200-494297b08d34",
-          "body": "",
-          "latency": 0,
-          "statusCode": 500,
-          "label": "internal server error",
-          "headers": [
-            {
-              "key": "Content-Type",
-              "value": "application/vnd.conekta-v2.1.0+json"
-            }
-          ],
-          "bodyType": "INLINE",
-          "filePath": "",
-          "databucketID": "",
-          "sendFileAsBody": false,
-          "rules": [],
-          "rulesOperator": "OR",
-          "disableTemplating": false,
-          "fallbackTo404": false,
-          "default": false
-        }
-      ],
-      "enabled": true,
-      "responseMode": null
-    },
-    {
-      "uuid": "b1ebcb35-1796-48ab-9f34-baa1972ced55",
-      "documentation": "delete a shipping contacts",
-      "method": "delete",
       "endpoint": "customers/:id/shipping_contacts/:shipping_contacts_id",
       "responses": [
         {
@@ -5708,141 +5621,6 @@
       "endpoint": "orders/:id/discount_lines/:discount_lines_id",
       "responses": [
         {
-          "uuid": "3f696740-f4fa-47e0-9c9f-744ed9b2f8e1",
-          "body": "{\n    \"code\": \"trac\",\n    \"amount\": 100,\n    \"type\": \"loyalty\",\n    \"object\": \"discount_line\",\n    \"id\": \"dis_lin_2tVyahK8Nts7rKRMZ\",\n    \"parent_id\": \"ord_2tVyWPnCPWbrV37mW\"\n}",
-          "latency": 0,
-          "statusCode": 200,
-          "label": "successful",
-          "headers": [
-            {
-              "key": "Content-Type",
-              "value": "application/vnd.conekta-v2.1.0+json"
-            }
-          ],
-          "bodyType": "INLINE",
-          "filePath": "",
-          "databucketID": "",
-          "sendFileAsBody": false,
-          "rules": [
-            {
-              "target": "params",
-              "modifier": "id",
-              "value": "ord_2tVyWPnCPWbrV37mW",
-              "invert": false,
-              "operator": "equals"
-            },
-            {
-              "target": "params",
-              "modifier": "discount_lines_id",
-              "value": "dis_lin_2tVyahK8Nts7rKRMZ",
-              "invert": false,
-              "operator": "equals"
-            }
-          ],
-          "rulesOperator": "AND",
-          "disableTemplating": false,
-          "fallbackTo404": false,
-          "default": true
-        },
-        {
-          "uuid": "a357ef0c-9f22-4392-bf68-61bfddf31bae",
-          "body": "",
-          "latency": 0,
-          "statusCode": 401,
-          "label": "authentication error",
-          "headers": [
-            {
-              "key": "Content-Type",
-              "value": "application/vnd.conekta-v2.1.0+json"
-            }
-          ],
-          "bodyType": "INLINE",
-          "filePath": "",
-          "databucketID": "",
-          "sendFileAsBody": false,
-          "rules": [],
-          "rulesOperator": "OR",
-          "disableTemplating": false,
-          "fallbackTo404": false,
-          "default": false
-        },
-        {
-          "uuid": "f50aeb5d-54f8-45a5-afaa-eb66e8074e9e",
-          "body": "{\n  \"details\": [\n    {\n      \"code\": \"conekta.errors.authentication.missing_key\",\n      \"param\": \"\",\n      \"message\": \"Acceso no autorizado.\",\n      \"debug_message\": \"Please include your access key in your request.\"\n    }\n  ]\n}",
-          "latency": 0,
-          "statusCode": 404,
-          "label": "not found entity",
-          "headers": [
-            {
-              "key": "Content-Type",
-              "value": "application/vnd.conekta-v2.1.0+json"
-            }
-          ],
-          "bodyType": "INLINE",
-          "filePath": "",
-          "databucketID": "",
-          "sendFileAsBody": false,
-          "rules": [],
-          "rulesOperator": "OR",
-          "disableTemplating": false,
-          "fallbackTo404": false,
-          "default": false
-        },
-        {
-          "uuid": "23a2684a-01ff-416f-8527-8b633f47888c",
-          "body": "",
-          "latency": 0,
-          "statusCode": 422,
-          "label": "parameter validation error",
-          "headers": [
-            {
-              "key": "Content-Type",
-              "value": "application/vnd.conekta-v2.1.0+json"
-            }
-          ],
-          "bodyType": "INLINE",
-          "filePath": "",
-          "databucketID": "",
-          "sendFileAsBody": false,
-          "rules": [],
-          "rulesOperator": "OR",
-          "disableTemplating": false,
-          "fallbackTo404": false,
-          "default": false
-        },
-        {
-          "uuid": "fb3b415c-671d-419c-a674-4d7a031e7a29",
-          "body": "",
-          "latency": 0,
-          "statusCode": 500,
-          "label": "internal server error",
-          "headers": [
-            {
-              "key": "Content-Type",
-              "value": "application/vnd.conekta-v2.1.0+json"
-            }
-          ],
-          "bodyType": "INLINE",
-          "filePath": "",
-          "databucketID": "",
-          "sendFileAsBody": false,
-          "rules": [],
-          "rulesOperator": "OR",
-          "disableTemplating": false,
-          "fallbackTo404": false,
-          "default": false
-        }
-      ],
-      "enabled": true,
-      "responseMode": null
-    },
-    {
-      "uuid": "948c325e-8acd-4c2c-9b08-4e81cf929ce7",
-      "documentation": "delete an existing discount lines for an existing orden",
-      "method": "delete",
-      "endpoint": "orders/:id/discount_lines/:discount_lines_id",
-      "responses": [
-        {
           "uuid": "97e8ce20-9a9a-4db0-8c5c-279bb934adf4",
           "body": "{\n    \"code\": \"trac\",\n    \"amount\": 100,\n    \"type\": \"loyalty\",\n    \"object\": \"discount_line\",\n    \"id\": \"dis_lin_2tVyahK8Nts7rKRMZ\",\n    \"parent_id\": \"ord_2tVyWPnCPWbrV37mW\"\n}",
           "latency": 0,
@@ -6081,141 +5859,6 @@
       "uuid": "32dc2cd8-f7a9-4f05-bd2b-d1a7bd721a8a",
       "documentation": "updates existing products for an existing orden",
       "method": "put",
-      "endpoint": "orders/:id/line_items/:line_item_id",
-      "responses": [
-        {
-          "uuid": "431c300e-4876-4749-b11a-635594fa4791",
-          "body": "{\n    \"name\": \"Pago Mensualidad\",\n    \"description\": \"Mes de marz.\",\n    \"unit_price\": 1000,\n    \"quantity\": 1,\n    \"tags\": [\n        \"Pago 2\",\n        \"Pago mensualidad 2\"\n    ],\n    \"object\": \"line_item\",\n    \"id\": \"line_item_2tVz8UkyWhSxLfUd7\",\n    \"parent_id\": \"ord_2tVyWPnCPWbrV37mW\",\n    \"metadata\": {},\n    \"antifraud_info\": {}\n}",
-          "latency": 0,
-          "statusCode": 200,
-          "label": "successful",
-          "headers": [
-            {
-              "key": "Content-Type",
-              "value": "application/vnd.conekta-v2.1.0+json"
-            }
-          ],
-          "bodyType": "INLINE",
-          "filePath": "",
-          "databucketID": "",
-          "sendFileAsBody": false,
-          "rules": [
-            {
-              "target": "params",
-              "modifier": "id",
-              "value": "ord_2tVyWPnCPWbrV37mW",
-              "invert": false,
-              "operator": "equals"
-            },
-            {
-              "target": "params",
-              "modifier": "line_item_id",
-              "value": "line_item_2tVz8UkyWhSxLfUd7",
-              "invert": false,
-              "operator": "equals"
-            }
-          ],
-          "rulesOperator": "AND",
-          "disableTemplating": false,
-          "fallbackTo404": false,
-          "default": true
-        },
-        {
-          "uuid": "5ce40706-593f-42c0-89b1-f433c04d98f7",
-          "body": "",
-          "latency": 0,
-          "statusCode": 401,
-          "label": "authentication error",
-          "headers": [
-            {
-              "key": "Content-Type",
-              "value": "application/vnd.conekta-v2.1.0+json"
-            }
-          ],
-          "bodyType": "INLINE",
-          "filePath": "",
-          "databucketID": "",
-          "sendFileAsBody": false,
-          "rules": [],
-          "rulesOperator": "OR",
-          "disableTemplating": false,
-          "fallbackTo404": false,
-          "default": false
-        },
-        {
-          "uuid": "4f475ded-6dd1-4618-8789-8f44a8871153",
-          "body": "{\n  \"details\": [\n    {\n      \"code\": \"conekta.errors.authentication.missing_key\",\n      \"param\": \"\",\n      \"message\": \"Acceso no autorizado.\",\n      \"debug_message\": \"Please include your access key in your request.\"\n    }\n  ]\n}",
-          "latency": 0,
-          "statusCode": 404,
-          "label": "not found entity",
-          "headers": [
-            {
-              "key": "Content-Type",
-              "value": "application/vnd.conekta-v2.1.0+json"
-            }
-          ],
-          "bodyType": "INLINE",
-          "filePath": "",
-          "databucketID": "",
-          "sendFileAsBody": false,
-          "rules": [],
-          "rulesOperator": "OR",
-          "disableTemplating": false,
-          "fallbackTo404": false,
-          "default": false
-        },
-        {
-          "uuid": "c70483cd-0915-4980-be51-49c5cfb58da1",
-          "body": "",
-          "latency": 0,
-          "statusCode": 422,
-          "label": "parameter validation error",
-          "headers": [
-            {
-              "key": "Content-Type",
-              "value": "application/vnd.conekta-v2.1.0+json"
-            }
-          ],
-          "bodyType": "INLINE",
-          "filePath": "",
-          "databucketID": "",
-          "sendFileAsBody": false,
-          "rules": [],
-          "rulesOperator": "OR",
-          "disableTemplating": false,
-          "fallbackTo404": false,
-          "default": false
-        },
-        {
-          "uuid": "0ec1949f-3fc8-440b-9694-e1b907327c10",
-          "body": "",
-          "latency": 0,
-          "statusCode": 500,
-          "label": "internal server error",
-          "headers": [
-            {
-              "key": "Content-Type",
-              "value": "application/vnd.conekta-v2.1.0+json"
-            }
-          ],
-          "bodyType": "INLINE",
-          "filePath": "",
-          "databucketID": "",
-          "sendFileAsBody": false,
-          "rules": [],
-          "rulesOperator": "OR",
-          "disableTemplating": false,
-          "fallbackTo404": false,
-          "default": false
-        }
-      ],
-      "enabled": true,
-      "responseMode": null
-    },
-    {
-      "uuid": "3a29ddea-3f34-4914-8979-ad190dbae4b0",
-      "documentation": "delete existing products for an existing orden",
-      "method": "delete",
       "endpoint": "orders/:id/line_items/:line_item_id",
       "responses": [
         {
@@ -6717,141 +6360,6 @@
       "responseMode": null
     },
     {
-      "uuid": "262d9689-649d-4420-8693-02e1f51059d4",
-      "documentation": "delete an existing shipping for an existing orden",
-      "method": "delete",
-      "endpoint": "orders/:id/shipping_lines/:shipping_lines_id",
-      "responses": [
-        {
-          "uuid": "a184e18a-b3d0-4eeb-a886-e0cfc9a3d2be",
-          "body": "{\n    \"amount\": 540,\n    \"object\": \"shipping_line\",\n    \"id\": \"ship_lin_2tVzNuDGSaDwreMg6\",\n    \"parent_id\": \"ord_2tVyWPnCPWbrV37mW\"\n}",
-          "latency": 0,
-          "statusCode": 200,
-          "label": "successful",
-          "headers": [
-            {
-              "key": "Content-Type",
-              "value": "application/vnd.conekta-v2.1.0+json"
-            }
-          ],
-          "bodyType": "INLINE",
-          "filePath": "",
-          "databucketID": "",
-          "sendFileAsBody": false,
-          "rules": [
-            {
-              "target": "params",
-              "modifier": "id",
-              "value": "ord_2tVyWPnCPWbrV37mW",
-              "invert": false,
-              "operator": "equals"
-            },
-            {
-              "target": "params",
-              "modifier": "shipping_lines_id",
-              "value": "ship_lin_2tVzNuDGSaDwreMg6",
-              "invert": false,
-              "operator": "equals"
-            }
-          ],
-          "rulesOperator": "AND",
-          "disableTemplating": false,
-          "fallbackTo404": false,
-          "default": true
-        },
-        {
-          "uuid": "74a77ee1-166d-4ab7-b003-8da04d20fabb",
-          "body": "",
-          "latency": 0,
-          "statusCode": 401,
-          "label": "authentication error",
-          "headers": [
-            {
-              "key": "Content-Type",
-              "value": "application/vnd.conekta-v2.1.0+json"
-            }
-          ],
-          "bodyType": "INLINE",
-          "filePath": "",
-          "databucketID": "",
-          "sendFileAsBody": false,
-          "rules": [],
-          "rulesOperator": "OR",
-          "disableTemplating": false,
-          "fallbackTo404": false,
-          "default": false
-        },
-        {
-          "uuid": "488a25e2-d986-4d88-ac7f-a2b0686c65e7",
-          "body": "{\n  \"details\": [\n    {\n      \"code\": \"conekta.errors.authentication.missing_key\",\n      \"param\": \"\",\n      \"message\": \"Acceso no autorizado.\",\n      \"debug_message\": \"Please include your access key in your request.\"\n    }\n  ]\n}",
-          "latency": 0,
-          "statusCode": 404,
-          "label": "not found entity",
-          "headers": [
-            {
-              "key": "Content-Type",
-              "value": "application/vnd.conekta-v2.1.0+json"
-            }
-          ],
-          "bodyType": "INLINE",
-          "filePath": "",
-          "databucketID": "",
-          "sendFileAsBody": false,
-          "rules": [],
-          "rulesOperator": "OR",
-          "disableTemplating": false,
-          "fallbackTo404": false,
-          "default": false
-        },
-        {
-          "uuid": "0d6380b7-c4d8-4d45-9681-0bb0fb283a80",
-          "body": "",
-          "latency": 0,
-          "statusCode": 422,
-          "label": "parameter validation error",
-          "headers": [
-            {
-              "key": "Content-Type",
-              "value": "application/vnd.conekta-v2.1.0+json"
-            }
-          ],
-          "bodyType": "INLINE",
-          "filePath": "",
-          "databucketID": "",
-          "sendFileAsBody": false,
-          "rules": [],
-          "rulesOperator": "OR",
-          "disableTemplating": false,
-          "fallbackTo404": false,
-          "default": false
-        },
-        {
-          "uuid": "fb715fb0-7321-4ebd-a81d-d8f1196cad59",
-          "body": "",
-          "latency": 0,
-          "statusCode": 500,
-          "label": "internal server error",
-          "headers": [
-            {
-              "key": "Content-Type",
-              "value": "application/vnd.conekta-v2.1.0+json"
-            }
-          ],
-          "bodyType": "INLINE",
-          "filePath": "",
-          "databucketID": "",
-          "sendFileAsBody": false,
-          "rules": [],
-          "rulesOperator": "OR",
-          "disableTemplating": false,
-          "fallbackTo404": false,
-          "default": false
-        }
-      ],
-      "enabled": true,
-      "responseMode": null
-    },
-    {
       "uuid": "e5effadc-1c04-4408-83d6-9d38b52b3b0b",
       "documentation": "creates a new tax lines for an existing orden",
       "method": "post",
@@ -6983,141 +6491,6 @@
       "uuid": "991034b0-ca10-4fab-bc3e-84759baf0939",
       "documentation": "updates a new tax lines for an existing orden",
       "method": "put",
-      "endpoint": "orders/:id/tax_lines/:tax_lines_id",
-      "responses": [
-        {
-          "uuid": "3846e5de-d9cb-420e-bc65-365d4022b702",
-          "body": "{\n    \"description\": \"test postman\",\n    \"amount\": 99,\n    \"object\": \"tax_line\",\n    \"id\": \"tax_lin_2tVzVp6AAptCRHhgt\",\n    \"parent_id\": \"ord_2tVyWPnCPWbrV37mW\",\n    \"metadata\": {\n        \"key\": \"value\"\n    }\n}",
-          "latency": 0,
-          "statusCode": 200,
-          "label": "successful",
-          "headers": [
-            {
-              "key": "Content-Type",
-              "value": "application/vnd.conekta-v2.1.0+json"
-            }
-          ],
-          "bodyType": "INLINE",
-          "filePath": "",
-          "databucketID": "",
-          "sendFileAsBody": false,
-          "rules": [
-            {
-              "target": "params",
-              "modifier": "id",
-              "value": "ord_2tVyWPnCPWbrV37mW",
-              "invert": false,
-              "operator": "equals"
-            },
-            {
-              "target": "params",
-              "modifier": "tax_lines_id",
-              "value": "tax_lin_2tVzVp6AAptCRHhgt",
-              "invert": false,
-              "operator": "equals"
-            }
-          ],
-          "rulesOperator": "AND",
-          "disableTemplating": false,
-          "fallbackTo404": false,
-          "default": true
-        },
-        {
-          "uuid": "e8edcd13-62f2-4610-b355-3fd430966042",
-          "body": "",
-          "latency": 0,
-          "statusCode": 401,
-          "label": "authentication error",
-          "headers": [
-            {
-              "key": "Content-Type",
-              "value": "application/vnd.conekta-v2.1.0+json"
-            }
-          ],
-          "bodyType": "INLINE",
-          "filePath": "",
-          "databucketID": "",
-          "sendFileAsBody": false,
-          "rules": [],
-          "rulesOperator": "OR",
-          "disableTemplating": false,
-          "fallbackTo404": false,
-          "default": false
-        },
-        {
-          "uuid": "752d6c4b-7293-4d1f-af49-00971bc34c4c",
-          "body": "{\n  \"details\": [\n    {\n      \"code\": \"conekta.errors.authentication.missing_key\",\n      \"param\": \"\",\n      \"message\": \"Acceso no autorizado.\",\n      \"debug_message\": \"Please include your access key in your request.\"\n    }\n  ]\n}",
-          "latency": 0,
-          "statusCode": 404,
-          "label": "not found entity",
-          "headers": [
-            {
-              "key": "Content-Type",
-              "value": "application/vnd.conekta-v2.1.0+json"
-            }
-          ],
-          "bodyType": "INLINE",
-          "filePath": "",
-          "databucketID": "",
-          "sendFileAsBody": false,
-          "rules": [],
-          "rulesOperator": "OR",
-          "disableTemplating": false,
-          "fallbackTo404": false,
-          "default": false
-        },
-        {
-          "uuid": "d1ad87dc-9c5c-4f14-b71f-a6e6da9c75c1",
-          "body": "",
-          "latency": 0,
-          "statusCode": 422,
-          "label": "parameter validation error",
-          "headers": [
-            {
-              "key": "Content-Type",
-              "value": "application/vnd.conekta-v2.1.0+json"
-            }
-          ],
-          "bodyType": "INLINE",
-          "filePath": "",
-          "databucketID": "",
-          "sendFileAsBody": false,
-          "rules": [],
-          "rulesOperator": "OR",
-          "disableTemplating": false,
-          "fallbackTo404": false,
-          "default": false
-        },
-        {
-          "uuid": "64467944-2e12-46aa-b12e-36a5aa96c046",
-          "body": "",
-          "latency": 0,
-          "statusCode": 500,
-          "label": "internal server error",
-          "headers": [
-            {
-              "key": "Content-Type",
-              "value": "application/vnd.conekta-v2.1.0+json"
-            }
-          ],
-          "bodyType": "INLINE",
-          "filePath": "",
-          "databucketID": "",
-          "sendFileAsBody": false,
-          "rules": [],
-          "rulesOperator": "OR",
-          "disableTemplating": false,
-          "fallbackTo404": false,
-          "default": false
-        }
-      ],
-      "enabled": true,
-      "responseMode": null
-    },
-    {
-      "uuid": "fa718a78-491d-4925-a9db-bb7600238ea7",
-      "documentation": "delete a new tax lines for an existing orden",
-      "method": "delete",
       "endpoint": "orders/:id/tax_lines/:tax_lines_id",
       "responses": [
         {

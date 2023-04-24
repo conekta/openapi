@@ -2,6 +2,7 @@ allOf:
   - $ref: ../../schemas/pagination/pagination.yml
   - $ref: ../../schemas/pagination/page.yml
   - type: object
+    title: risk_rules
     properties:
       data:
         type: array

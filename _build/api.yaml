@@ -8019,7 +8019,7 @@ components:
       allOf:
       - $ref: '#/components/schemas/pagination'
       - $ref: '#/components/schemas/page'
-      - $ref: '#/components/schemas/risk_rules_list_allOf'
+      - $ref: '#/components/schemas/risk_rules'
     error:
       allOf:
       - $ref: '#/components/schemas/details'
@@ -10206,7 +10206,7 @@ components:
       - $ref: '#/components/schemas/page'
       - $ref: '#/components/schemas/get_webhooks_response_allOf'
       title: get_webhooks_response
-    risk_rules_list_allOf_data:
+    risk_rules_data:
       properties:
         id:
           description: rule id
@@ -10238,12 +10238,13 @@ components:
           type: string
       type: object
       example: null
-    risk_rules_list_allOf:
+    risk_rules:
       properties:
         data:
           items:
-            $ref: '#/components/schemas/risk_rules_list_allOf_data'
+            $ref: '#/components/schemas/risk_rules_data'
           type: array
+      title: risk_rules
       type: object
       example: null
     error_allOf:
