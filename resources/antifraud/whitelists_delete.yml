@@ -32,6 +32,8 @@ delete:
                 description: 'use an description for whitelisted rule'
     401:
      $ref: '../errors/401.yml'
+    403:
+     $ref: '../errors/403.yml'
     404:
      $ref: '../errors/404.yml'
     500:
