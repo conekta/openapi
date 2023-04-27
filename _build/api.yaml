@@ -59,6 +59,21 @@ paths:
               schema:
                 $ref: '#/components/schemas/error'
           description: authentication error
+        "403":
+          content:
+            application/vnd.conekta-v2.1.0+json:
+              example:
+                details:
+                - message: "Unauthorized access service, please contact support team"
+                  code: conekta.errors.forbidden.authentication.invalid_whitelist_access
+                  debug_message: "Unauthorized access to whitelists service, please\
+                    \ contact support team"
+                log_id: 641b6d073cd9a50001515007
+                object: error
+                type: processing_error
+              schema:
+                $ref: '#/components/schemas/error'
+          description: forbidden error
         "500":
           content:
             application/vnd.conekta-v2.1.0+json:
@@ -125,6 +140,21 @@ paths:
               schema:
                 $ref: '#/components/schemas/error'
           description: authentication error
+        "403":
+          content:
+            application/vnd.conekta-v2.1.0+json:
+              example:
+                details:
+                - message: "Unauthorized access service, please contact support team"
+                  code: conekta.errors.forbidden.authentication.invalid_whitelist_access
+                  debug_message: "Unauthorized access to whitelists service, please\
+                    \ contact support team"
+                log_id: 641b6d073cd9a50001515007
+                object: error
+                type: processing_error
+              schema:
+                $ref: '#/components/schemas/error'
+          description: forbidden error
         "500":
           content:
             application/vnd.conekta-v2.1.0+json:
@@ -194,6 +224,21 @@ paths:
               schema:
                 $ref: '#/components/schemas/error'
           description: authentication error
+        "403":
+          content:
+            application/vnd.conekta-v2.1.0+json:
+              example:
+                details:
+                - message: "Unauthorized access service, please contact support team"
+                  code: conekta.errors.forbidden.authentication.invalid_whitelist_access
+                  debug_message: "Unauthorized access to whitelists service, please\
+                    \ contact support team"
+                log_id: 641b6d073cd9a50001515007
+                object: error
+                type: processing_error
+              schema:
+                $ref: '#/components/schemas/error'
+          description: forbidden error
         "404":
           content:
             application/vnd.conekta-v2.1.0+json:
@@ -7936,6 +7981,21 @@ components:
           schema:
             $ref: '#/components/schemas/error'
       description: authentication error
+    "403":
+      content:
+        application/vnd.conekta-v2.1.0+json:
+          example:
+            details:
+            - message: "Unauthorized access service, please contact support team"
+              code: conekta.errors.forbidden.authentication.invalid_whitelist_access
+              debug_message: "Unauthorized access to whitelists service, please contact\
+                \ support team"
+            log_id: 641b6d073cd9a50001515007
+            object: error
+            type: processing_error
+          schema:
+            $ref: '#/components/schemas/error'
+      description: forbidden error
     "500":
       content:
         application/vnd.conekta-v2.1.0+json:

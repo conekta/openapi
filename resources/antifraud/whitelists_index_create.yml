@@ -15,6 +15,8 @@ get:
             $ref: '../../schemas/antifraud/risk_rules_list.yml'
     401:
      $ref: '../errors/401.yml'
+    403:
+     $ref: '../errors/403.yml'
     500:
      $ref: '../errors/500.yml'
 post:
@@ -50,6 +52,8 @@ post:
                 description: 'use an description for whitelisted rule'
     401:
      $ref: '../errors/401.yml'
+    403:
+     $ref: '../errors/403.yml'
     500:
      $ref: '../errors/500.yml'
   requestBody:
