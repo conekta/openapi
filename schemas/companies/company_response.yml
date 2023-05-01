@@ -18,6 +18,10 @@ properties:
     type: string
     example: "Child Company A"
     description: The child company's name
+  object:
+    type: string
+    enum: ['company']
+    description: The resource's type
   parent_company_id:
     type: string
     example: "6441bb3c62db5812e7920c31"
