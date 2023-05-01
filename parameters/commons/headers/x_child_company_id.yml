@@ -1,0 +1,11 @@
+in: header
+name: "X-Child-Company-Id"
+description: In the case of a holding company, the company id of the child company to which will process the request.
+required: false
+schema:
+  default: null
+  type: string
+examples:
+  "6441b6376b60c3a638da80af":
+    summary: for spanish request/response
+    value:  "6441b6376b60c3a638da80af"

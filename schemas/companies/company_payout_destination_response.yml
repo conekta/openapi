@@ -1,0 +1,28 @@
+title: company_payout_destination_response
+description: Company payout destination model
+type: object
+properties:
+  object:
+    type: string
+    enum: ['payout_destination']
+    description: The resource's type 
+  currency:
+    type: string
+    example: 'MXN'
+    description: currency of the receiving account
+  account_holder_name:
+    type: string
+    example: Child Company A
+    description: Name of the account holder
+  bank:
+    type: string
+    example: BBVA
+    description: Name of the bank
+  type:
+    type: string
+    enum: ['bank_account']
+    description: Type of the payout destination
+  account_number:
+    type: string
+    description: Account number of the receiving account
+    example: 123456789012345678

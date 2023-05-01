@@ -51,5 +51,6 @@ post:
     $ref: '../../requestBodies/checkouts/checkout_sms.yml'
   parameters:
     - $ref: '../../parameters/commons/headers/accept_language.yml'
+    - $ref: '../../parameters/commons/headers/x_child_company_id.yml'
     - $ref: '../../parameters/commons/path_param/id.yml'
   

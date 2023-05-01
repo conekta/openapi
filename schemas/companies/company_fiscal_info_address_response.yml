@@ -1,0 +1,40 @@
+title: company_fiscal_info_address_response
+description: Company fiscal info address model
+type: object
+properties:
+  object:
+    type: string
+    enum: ['address']
+    description: The resource's type
+  street1:
+    type: string
+    example: Calle 13
+    description: Street Address
+  street2:
+    type: string
+    example: Navarte
+    description: Colonia
+  city:
+    type: string
+    example: Cuauhtémoc
+    description: City
+  state:
+    type: string
+    example: Ciudad de México
+    description: State
+  country:
+    type: string
+    example: MX
+    description: Country
+  postal_code:
+    type: string
+    example: 06000
+    description: Postal code
+  external_number:
+    type: string
+    example: 123
+    description: Street number
+  internal_number:
+    type: string
+    example: 123
+    description: Unit / apartment number

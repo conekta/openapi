@@ -6,6 +6,7 @@ delete:
   parameters:
     - $ref: '../../parameters/commons/path_param/id.yml'
     - $ref: '../../parameters/commons/headers/accept_language.yml'
+    - $ref: '../../parameters/commons/headers/x_child_company_id.yml'
   responses:
     200:
       description: successfully deleted rule

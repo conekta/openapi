@@ -24,6 +24,10 @@ paths:
     $ref: "./resources/antifraud/blacklists_delete.yml"
   /orders/{id}/charges:
     $ref: "./resources/orders/order_charge_param.yml"
+  /companies:
+    $ref: "./resources/companies/companies.yml"
+  /companies/{id}:
+    $ref: "./resources/companies/company.yml"
   /customers:
     $ref: "./resources/customers/create_customer.yml"
   /customers/{id}:

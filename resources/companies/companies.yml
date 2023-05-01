@@ -1,16 +1,25 @@
-post:
+get:
   tags:
-    - Subscriptions
-  operationId: cancelSubscription
-  summary: Cancel Subscription
-  description: You can cancel the subscription to stop the plans that your customers consume
+    - Companies
+  operationId: getCompanies
+  summary: Get List of Companies
+  description: 'Consume the list of child companies.  This is used for holding companies with several child entities.'
   responses:
     200:
       description: successful
       content:
         application/vnd.conekta-v2.1.0+json:
           schema:
-            $ref: '../../schemas/subscriptions/subscription_response.yml'
+            title: get_companies_response
+            allOf:
+              - $ref: ../../schemas/pagination/pagination.yml
+              - $ref: ../../schemas/pagination/page.yml
+              - type: object
+                properties:
+                  data:
+                    type: array
+                    items:
+                      $ref: '../../schemas/companies/company_response.yml'
       headers:
         Date:
           description: The date and time that the response was sent
@@ -38,13 +47,13 @@ post:
             example: conekta-v2.1.0; format=application/json
     401:
      $ref: '../errors/401.yml'
-    404:
-     $ref: '../errors/404.yml'
     500:
      $ref: '../errors/500.yml'
   security:
     - bearerAuth: []
   parameters:
-    - $ref: '../../parameters/commons/path_param/id.yml'
     - $ref: '../../parameters/commons/headers/accept_language.yml'
-    - $ref: '../../parameters/commons/headers/x_child_company_id.yml'
+    - $ref: '../../parameters/commons/query/limit.yml'
+    - $ref: '../../parameters/commons/query/search.yml'
+    - $ref: '../../parameters/commons/query/next_page.yml'
+    - $ref: '../../parameters/commons/query/previous_page.yml'
