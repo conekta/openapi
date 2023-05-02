@@ -100,6 +100,8 @@ paths:
     $ref: "./resources/orders/order_tax_param.yml"
   /orders/{id}/tax_lines/{tax_id}:
     $ref: "./resources/orders/update_order_tax_param.yml"
+  /tokens:
+     $ref: "./resources/tokens/token.yml"
   /webhooks:
      $ref: "./resources/webhooks/webhooks.yml"
   /webhooks/{id}:

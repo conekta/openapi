@@ -1,0 +1,6 @@
+description: requested field for token        
+content:
+  application/json:
+    schema:  
+      $ref: '../../schemas/tokens/token.yml'
+required: true

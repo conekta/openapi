@@ -1,0 +1,49 @@
+title: token request
+description: a token
+type: object
+properties:
+  card:
+    type: object
+    nullable: true
+    required:
+        - exp_month
+        - exp_year
+        - number
+        - cvc
+        - name
+    properties:
+      cvc:
+        type: string
+        description: "It is a value that allows identifying the security code of the card."
+        example: "123"
+        maxLength: 4
+      device_fingerprint: 
+        type: string
+        description: "It is a value that allows identifying the device fingerprint."
+        example: "zptcxk4p6w1ijwz85snf1l3bqe5g09ie"
+      exp_month:
+        type: string
+        description: "It is a value that allows identifying the expiration month of the card."
+        example: "12"
+        maxLength: 2
+      exp_year: 
+        type: string
+        description: "It is a value that allows identifying the expiration year of the card."
+        example: "26"
+        maxLength: 2
+      name: 
+        type: string
+        description: "It is a value that allows identifying the name of the cardholder."
+        example: "Miguel"
+      number:
+        type: string
+        description: "It is a value that allows identifying the number of the card."
+        example: "4242424242424242"
+  checkout:
+    type: object
+    nullable: true
+    properties:
+      returns_control_on: 
+        type: string
+        description: "It is a value that allows identifying the returns control on."
+        example: "Token"

@@ -8370,6 +8370,93 @@
       ],
       "enabled": true,
       "responseMode": null
+    },
+    {
+      "uuid": "e5b7029f-5634-4c7c-8079-ef97cc7e0d79",
+      "documentation": "",
+      "method": "post",
+      "endpoint": "tokens",
+      "responses": [
+        {
+          "uuid": "657a7c44-24a3-4ac0-b1cd-d8be7d758e05",
+          "body": "{\n    \"id\": \"tok_2toPJUcZ27AH5LsZk\",\n    \"livemode\": true,\n    \"used\": false,\n    \"object\": \"token\"\n}",
+          "latency": 0,
+          "statusCode": 200,
+          "label": "",
+          "headers": [
+            {
+              "key": "Content-Type",
+              "value": "application/vnd.conekta-v2.1.0+json"
+            }
+          ],
+          "bodyType": "INLINE",
+          "filePath": "",
+          "databucketID": "",
+          "sendFileAsBody": false,
+          "rules": [
+            {
+              "target": "body",
+              "modifier": "card.number",
+              "value": "5475040095304607",
+              "invert": false,
+              "operator": "equals"
+            }
+          ],
+          "rulesOperator": "AND",
+          "disableTemplating": false,
+          "fallbackTo404": true,
+          "default": false
+        },
+        {
+          "uuid": "6e910376-84de-4824-bdf3-34092ba9dccd",
+          "body": "{\n    \"id\": \"tok_2toNoPZpJgRU4PvgZ\",\n    \"livemode\": true,\n    \"used\": false,\n    \"checkout\": {\n        \"id\": \"524f9d2f-8c2e-4e64-a33d-6006711a91bd\",\n        \"name\": \"tok-2toNoPZpJgRU4PvgZ\",\n        \"livemode\": true,\n        \"emails_sent\": 0,\n        \"success_url\": \"\",\n        \"failure_url\": \"\",\n        \"paid_payments_count\": 0,\n        \"sms_sent\": 0,\n        \"status\": \"Issued\",\n        \"type\": \"Integration\",\n        \"recurrent\": false,\n        \"starts_at\": 1683007200,\n        \"expires_at\": 1683266399,\n        \"allowed_payment_methods\": [\n            \"card\"\n        ],\n        \"exclude_card_networks\": [],\n        \"needs_shipping_contact\": false,\n        \"monthly_installments_options\": [],\n        \"monthly_installments_enabled\": false,\n        \"force_3ds_flow\": false,\n        \"metadata\": {},\n        \"can_not_expire\": false,\n        \"object\": \"checkout\",\n        \"on_demand_enabled\": false\n    },\n    \"object\": \"token\"\n}",
+          "latency": 0,
+          "statusCode": 200,
+          "label": "empty token",
+          "headers": [
+            {
+              "key": "Content-Type",
+              "value": "application/vnd.conekta-v2.1.0+json"
+            }
+          ],
+          "bodyType": "INLINE",
+          "filePath": "",
+          "databucketID": "",
+          "sendFileAsBody": false,
+          "rules": [
+            {
+              "target": "body",
+              "modifier": "checkout.returns_control_on",
+              "value": "Token",
+              "invert": false,
+              "operator": "equals"
+            }
+          ],
+          "rulesOperator": "AND",
+          "disableTemplating": false,
+          "fallbackTo404": true,
+          "default": false
+        },
+        {
+          "uuid": "a4b545c8-5c92-4fd1-9488-e84a7550d6f0",
+          "body": "{}",
+          "latency": 0,
+          "statusCode": 500,
+          "label": "",
+          "headers": [],
+          "bodyType": "INLINE",
+          "filePath": "",
+          "databucketID": "",
+          "sendFileAsBody": false,
+          "rules": [],
+          "rulesOperator": "OR",
+          "disableTemplating": false,
+          "fallbackTo404": false,
+          "default": true
+        }
+      ],
+      "enabled": true,
+      "responseMode": null
     }
   ],
   "rootChildren": [
@@ -8624,6 +8711,10 @@
     {
       "type": "route",
       "uuid": "948c325e-8acd-4c2c-9b08-4e81cf929ce7"
+    },
+    {
+      "type": "route",
+      "uuid": "e5b7029f-5634-4c7c-8079-ef97cc7e0d79"
     }
   ],
   "proxyMode": false,
