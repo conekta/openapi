@@ -9085,6 +9085,11 @@ components:
           description: The child company's name
           example: Child Company A
           type: string
+        object:
+          description: The resource's type
+          enum:
+          - company
+          type: string
         parent_company_id:
           description: Id of the parent company
           example: 6441bb3c62db5812e7920c31
