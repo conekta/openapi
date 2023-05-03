@@ -1,5 +1,4 @@
 API_README_VERSION_ID = 641deb4041d58005f2c45bf3
-SDK_VERSION=6.0.0-alpha-3
 merge:
 	npx @openapitools/openapi-generator-cli  generate -g openapi-yaml -i api.yaml -p outputFile=_build/api.yaml --skip-validate-spec
 	
@@ -27,7 +26,6 @@ csharp:
     -i api.yaml \
     -g csharp-netcore \
     -o ../conekta-.net \
-    --additional-properties=packageVersion=$(SDK_VERSION) \
     -c config-netcore.json \
     --global-property modelTests=false
 

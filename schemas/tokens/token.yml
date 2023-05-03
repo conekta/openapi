@@ -40,6 +40,7 @@ properties:
         description: "It is a value that allows identifying the number of the card."
         example: "4242424242424242"
   checkout:
+    deprecated: true
     type: object
     nullable: true
     properties:

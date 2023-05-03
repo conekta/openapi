@@ -6,11 +6,6 @@ properties:
   amount:
     type: integer
     example: 40000
-  expires_at:
-    type: integer
-    format: int64
-    description: "Method expiration date as unix timestamp"
-    example: 1677196303
   monthly_installments:
     type: integer
     format: int8
@@ -22,6 +17,11 @@ properties:
     description: |
           Payment method used in the charge. Go to the [payment methods](https://developers.conekta.com/reference/m%C3%A9todos-de-pago) section for more details
     properties:
+      expires_at:
+        type: integer
+        format: int64
+        description: "Method expiration date as unix timestamp"
+        example: 1677196303
       type:
         type: string
         example: "card"

@@ -2,7 +2,7 @@ post:
   tags:
     - Tokens
   operationId: createToken
-  summary: Create empty token
+  summary: Create Token
   description: |
     Generate a payment token, to associate it with a card
   responses:

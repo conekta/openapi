@@ -8,6 +8,7 @@ required:
   - used
 properties:
   checkout:
+    deprecated: true
     nullable: true
     type: object
     properties:

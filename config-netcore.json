@@ -31,5 +31,6 @@
   "useOneOfDiscriminatorLookup" : true,
   "packageCopyright" : "Conekta",
   "PackageReleaseNotes" : "",
-  "releaseNote" : "Fix issues, Rename models, Clean unused models"
+  "releaseNote" : "Fix issues, Rename models, Clean unused models",
+  "packageVersion" : "6.0.0"
 }
