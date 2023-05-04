@@ -2904,6 +2904,23 @@
           "default": false
         },
         {
+          "uuid": "b1ebcb35-1796-48ab-9f34-baa1972ced55",
+          "body": "{}",
+          "latency": 0,
+          "statusCode": 200,
+          "label": "",
+          "headers": [],
+          "bodyType": "INLINE",
+          "filePath": "",
+          "databucketID": "",
+          "sendFileAsBody": false,
+          "rules": [],
+          "rulesOperator": "OR",
+          "disableTemplating": false,
+          "fallbackTo404": false,
+          "default": false
+        },
+        {
           "uuid": "343aee22-21c5-4d1f-9b26-fada5c9c4488",
           "body": "",
           "latency": 0,
@@ -4576,7 +4593,7 @@
       "responses": [
         {
           "uuid": "1369035e-186e-44e5-ae7f-362d16e2f7cf",
-          "body": "{\n    \"livemode\": true,\n    \"amount\": 2000,\n    \"currency\": \"MXN\",\n    \"payment_status\": \"pending_payment\",\n    \"amount_refunded\": 0,\n    \"customer_info\": {\n        \"email\": \"Alec_Fay59@yahoo.com\",\n        \"phone\": \"+5215555555555\",\n        \"name\": \"Elio Rincon\",\n        \"corporate\": false,\n        \"customer_id\": \"cus_2tKcHxhTz7xU5SymF\",\n        \"object\": \"customer_info\"\n    },\n    \"shipping_contact\": {\n        \"receiver\": \"Marvin Fuller\",\n        \"phone\": \"+5215555555555\",\n        \"between_streets\": \"Morelos Campeche\",\n        \"address\": {\n            \"street1\": \"Nuevo Leon 4\",\n            \"street2\": \"fake street\",\n            \"city\": \"Ciudad de Mexico\",\n            \"state\": \"Ciudad de Mexico\",\n            \"country\": \"mx\",\n            \"residential\": true,\n            \"object\": \"shipping_address\",\n            \"postal_code\": \"06100\"\n        },\n        \"id\": \"ship_cont_2tTirxDJEFDe8NUAL\",\n        \"object\": \"shipping_contact\",\n        \"created_at\": 0\n    },\n    \"fiscal_entity\": {\n        \"tax_id\": \"324234234\",\n        \"address\": {\n            \"street1\": \"avenida siempre viva\",\n            \"street2\": \"fake street\",\n            \"external_number\": \"string\",\n            \"city\": \"Ciudad de Mexico\",\n            \"state\": \"Ciudad de Mexico\",\n            \"country\": \"mx\",\n            \"object\": \"fiscal_entity_address\",\n            \"postal_code\": \"06100\"\n        },\n        \"id\": \"fis_ent_2tTirxDJEFDe8NUAM\",\n        \"object\": \"fiscal_entity\",\n        \"created_at\": 0\n    },\n    \"object\": \"order\",\n    \"id\": \"ord_2tTirxDJEFDe8NUAN\",\n    \"metadata\": {},\n    \"is_refundable\": false,\n    \"created_at\": 1677870662,\n    \"updated_at\": 1677870662,\n    \"line_items\": {\n        \"object\": \"list\",\n        \"has_more\": false,\n        \"total\": 1,\n        \"data\": [\n            {\n                \"name\": \"Pago Mensualidad\",\n                \"description\": \"Mes de Febrero.\",\n                \"unit_price\": 2000,\n                \"quantity\": 1,\n                \"tags\": [\n                    \"Pago\",\n                    \"Pago mensualidad\"\n                ],\n                \"object\": \"line_item\",\n                \"id\": \"line_item_2tTirxDJEFDe8NUAJ\",\n                \"parent_id\": \"ord_2tTirxDJEFDe8NUAN\",\n                \"metadata\": {},\n                \"antifraud_info\": {}\n            }\n        ]\n    },\n    \"charges\": {\n        \"object\": \"list\",\n        \"has_more\": false,\n        \"total\": 1,\n        \"data\": [\n            {\n                \"id\": \"6402464645f9e8000165c2ca\",\n                \"livemode\": true,\n                \"created_at\": 1677870662,\n                \"currency\": \"MXN\",\n                \"payment_method\": {\n                    \"service_name\": \"OxxoPay\",\n                    \"barcode_url\": \"https://pt-common-s3-stg.s3.amazonaws.com/94e526bbd9f77af1a95130691088021ff869fbda.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=ASIA3UN6375MLPWLPAKO%2F20230303%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20230303T191102Z&X-Amz-Expires=604800&X-Amz-Security-Token=IQoJb3JpZ2luX2VjEBwaCXVzLWVhc3QtMSJIMEYCIQCJcvbKD7bOSESXyn8oo%2FzfAPwgWO4m3NCWDb2gumoMZAIhAIam91DYG1qorOEkgdzBoLNsGcQEMW%2BoxcWGT0Y0IqIXKpAECMT%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FwEQAhoMNzk5ODAxMDgxNjg4IgwOC3W4Y8gV514Fx7cq5APKrTe4Zq7AkcKI9H4NfaNt1MA7YwPFUl0JCC0jkCW1KRpmzXir9Gl8%2F6YslsKNsWhyPU7ZJH8rynf%2BENPwAf0doyCP0mT5mA7I1HaCNXW4AioVMgP2uPAVEimK16%2Br2MQ9LGNbUywuMErd8rDtpzSQ0tXyB0E9piLTh3ejASBzSsSF79KCD2eVEg24wdyUQyw1ftuwsDk24j9QpCFUyPeihzOVf3RDXtTYSWyQt4%2B1cYVodnBXErRVpO%2FPVA%2FpKe20WxZbLyBkMKU4Sb34YpFOhqVIeWr8SWB%2BueUkRuXj8jxhaMve9lNaCdRIzSZxSbhIcslWupXp6J6hPXgOSv%2BVBDxtl4geZLNACIXcTgVzLaLOUt8w2ItPULFzdtgOYaHvsQzZUlDcJFUrl1ytBOdrIvBX7qwuHOxJBQ2yQKMbH7gKFdd%2B5PGNDj5cWe%2B1plr%2FUileuMpdXLfXmQ2%2FNTgo6knbmXbaji6O%2BdS3ox3czOobhNOoqvCGdpPzyHyACYmzRP9VLnJluXZIHn3T6lEqNcGO1b%2FGdP1yeAG%2Bw%2BSWS6nspG9y33z8fdjqBFqmD%2F0Qp4fzPqrbI4G0Yc8us8xzJKw8t32Eq%2FTOvxxhOxqZTPi%2B5LiDADW8qvIO1v1SpmqKUnVVMJ2KiaAGOqQBKKpjIc7bpa6UwW1yHiHZNf7wCDnSr0bucJHkDvFTGc6wcCNzQgzCaRxp5%2FlLY68NFiqTLrjswEesap%2FQINS9y68Wz%2BvmZYEQrjSLXdDuXvckYrPzYsInCb%2BKvqS1p%2FXAhrk6c9eHYErOLJC4gTowtTWM6VH68%2B74ZSu4J1C2nxL252u5uCb2yODA5WfQ79cxPCeMmB9D0b9cJnDPqa6vf1tHHoc%3D&X-Amz-SignedHeaders=host&X-Amz-Signature=0af1ed056b660f18c69f4ab039e46891dee21fd4a045a9201181a825f1766c05\",\n                    \"object\": \"cash_payment\",\n                    \"type\": \"oxxo\",\n                    \"expires_at\":  {{body 'charges.0.payment_method.expires_at' }},\n                    \"store_name\": \"OXXO\",\n                    \"reference\": \"93000262280678\"\n                },\n                \"object\": \"charge\",\n                \"description\": \"Payment from order\",\n                \"status\": \"pending_payment\",\n                \"amount\": 2000,\n                \"fee\": 1160,\n                \"customer_id\": \"\",\n                \"order_id\": \"ord_2tTirxDJEFDe8NUAN\"\n            }\n        ]\n    }\n}",
+          "body": "{\n    \"livemode\": true,\n    \"amount\": 2000,\n    \"currency\": \"MXN\",\n    \"payment_status\": \"pending_payment\",\n    \"amount_refunded\": 0,\n    \"customer_info\": {\n        \"email\": \"Alec_Fay59@yahoo.com\",\n        \"phone\": \"+5215555555555\",\n        \"name\": \"Elio Rincon\",\n        \"corporate\": false,\n        \"customer_id\": \"cus_2tKcHxhTz7xU5SymF\",\n        \"object\": \"customer_info\"\n    },\n    \"shipping_contact\": {\n        \"receiver\": \"Marvin Fuller\",\n        \"phone\": \"+5215555555555\",\n        \"between_streets\": \"Morelos Campeche\",\n        \"address\": {\n            \"street1\": \"Nuevo Leon 4\",\n            \"street2\": \"fake street\",\n            \"city\": \"Ciudad de Mexico\",\n            \"state\": \"Ciudad de Mexico\",\n            \"country\": \"mx\",\n            \"residential\": true,\n            \"object\": \"shipping_address\",\n            \"postal_code\": \"06100\"\n        },\n        \"id\": \"ship_cont_2tTirxDJEFDe8NUAL\",\n        \"object\": \"shipping_contact\",\n        \"created_at\": 0\n    },\n    \"fiscal_entity\": {\n        \"tax_id\": \"324234234\",\n        \"address\": {\n            \"street1\": \"avenida siempre viva\",\n            \"street2\": \"fake street\",\n            \"external_number\": \"string\",\n            \"city\": \"Ciudad de Mexico\",\n            \"state\": \"Ciudad de Mexico\",\n            \"country\": \"mx\",\n            \"object\": \"fiscal_entity_address\",\n            \"postal_code\": \"06100\"\n        },\n        \"id\": \"fis_ent_2tTirxDJEFDe8NUAM\",\n        \"object\": \"fiscal_entity\",\n        \"created_at\": 0\n    },\n    \"object\": \"order\",\n    \"id\": \"ord_2tTirxDJEFDe8NUAN\",\n    \"metadata\": {},\n    \"is_refundable\": false,\n    \"created_at\": 1677870662,\n    \"updated_at\": 1677870662,\n    \"line_items\": {\n        \"object\": \"list\",\n        \"has_more\": false,\n        \"total\": 1,\n        \"data\": [\n            {\n                \"name\": \"Pago Mensualidad\",\n                \"description\": \"Mes de Febrero.\",\n                \"unit_price\": 2000,\n                \"quantity\": 1,\n                \"tags\": [\n                    \"Pago\",\n                    \"Pago mensualidad\"\n                ],\n                \"object\": \"line_item\",\n                \"id\": \"line_item_2tTirxDJEFDe8NUAJ\",\n                \"parent_id\": \"ord_2tTirxDJEFDe8NUAN\",\n                \"metadata\": {},\n                \"antifraud_info\": {}\n            }\n        ]\n    },\n    \"charges\": {\n        \"object\": \"list\",\n        \"has_more\": false,\n        \"total\": 1,\n        \"data\": [\n            {\n                \"id\": \"6402464645f9e8000165c2ca\",\n                \"livemode\": true,\n                \"created_at\": 1677870662,\n                \"currency\": \"MXN\",\n                \"payment_method\": {\n                    \"service_name\": \"OxxoPay\",\n                    \"barcode_url\": \"https://pt-common-s3-stg.s3.amazonaws.com/94e526bbd9f77af1a95130691088021ff869fbda.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=ASIA3UN6375MLPWLPAKO%2F20230303%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20230303T191102Z&X-Amz-Expires=604800&X-Amz-Security-Token=IQoJb3JpZ2luX2VjEBwaCXVzLWVhc3QtMSJIMEYCIQCJcvbKD7bOSESXyn8oo%2FzfAPwgWO4m3NCWDb2gumoMZAIhAIam91DYG1qorOEkgdzBoLNsGcQEMW%2BoxcWGT0Y0IqIXKpAECMT%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FwEQAhoMNzk5ODAxMDgxNjg4IgwOC3W4Y8gV514Fx7cq5APKrTe4Zq7AkcKI9H4NfaNt1MA7YwPFUl0JCC0jkCW1KRpmzXir9Gl8%2F6YslsKNsWhyPU7ZJH8rynf%2BENPwAf0doyCP0mT5mA7I1HaCNXW4AioVMgP2uPAVEimK16%2Br2MQ9LGNbUywuMErd8rDtpzSQ0tXyB0E9piLTh3ejASBzSsSF79KCD2eVEg24wdyUQyw1ftuwsDk24j9QpCFUyPeihzOVf3RDXtTYSWyQt4%2B1cYVodnBXErRVpO%2FPVA%2FpKe20WxZbLyBkMKU4Sb34YpFOhqVIeWr8SWB%2BueUkRuXj8jxhaMve9lNaCdRIzSZxSbhIcslWupXp6J6hPXgOSv%2BVBDxtl4geZLNACIXcTgVzLaLOUt8w2ItPULFzdtgOYaHvsQzZUlDcJFUrl1ytBOdrIvBX7qwuHOxJBQ2yQKMbH7gKFdd%2B5PGNDj5cWe%2B1plr%2FUileuMpdXLfXmQ2%2FNTgo6knbmXbaji6O%2BdS3ox3czOobhNOoqvCGdpPzyHyACYmzRP9VLnJluXZIHn3T6lEqNcGO1b%2FGdP1yeAG%2Bw%2BSWS6nspG9y33z8fdjqBFqmD%2F0Qp4fzPqrbI4G0Yc8us8xzJKw8t32Eq%2FTOvxxhOxqZTPi%2B5LiDADW8qvIO1v1SpmqKUnVVMJ2KiaAGOqQBKKpjIc7bpa6UwW1yHiHZNf7wCDnSr0bucJHkDvFTGc6wcCNzQgzCaRxp5%2FlLY68NFiqTLrjswEesap%2FQINS9y68Wz%2BvmZYEQrjSLXdDuXvckYrPzYsInCb%2BKvqS1p%2FXAhrk6c9eHYErOLJC4gTowtTWM6VH68%2B74ZSu4J1C2nxL252u5uCb2yODA5WfQ79cxPCeMmB9D0b9cJnDPqa6vf1tHHoc%3D&X-Amz-SignedHeaders=host&X-Amz-Signature=0af1ed056b660f18c69f4ab039e46891dee21fd4a045a9201181a825f1766c05\",\n                    \"object\": \"cash_payment\",\n                    \"type\": \"oxxo\",\n                    \"expires_at\":  {{body 'charges.0.payment_method.expires_at' 1683232092 }},\n                    \"store_name\": \"OXXO\",\n                    \"reference\": \"93000262280678\"\n                },\n                \"object\": \"charge\",\n                \"description\": \"Payment from order\",\n                \"status\": \"pending_payment\",\n                \"amount\": 2000,\n                \"fee\": 1160,\n                \"customer_id\": \"\",\n                \"order_id\": \"ord_2tTirxDJEFDe8NUAN\"\n            }\n        ]\n    }\n}",
           "latency": 0,
           "statusCode": 200,
           "label": "successful operation cash",
@@ -8457,6 +8474,546 @@
       ],
       "enabled": true,
       "responseMode": null
+    },
+    {
+      "uuid": "58d8bab1-60c3-4e44-b7b3-f493e56dfede",
+      "documentation": "delete a new tax lines for an existing orden",
+      "method": "delete",
+      "endpoint": "orders/:id/tax_lines/:tax_lines_id",
+      "responses": [
+        {
+          "uuid": "f13ffe1f-e7a9-4a91-bcb1-64290ddb5036",
+          "body": "{\n    \"description\": \"test postman\",\n    \"amount\": 99,\n    \"object\": \"tax_line\",\n    \"id\": \"tax_lin_2tVzVp6AAptCRHhgt\",\n    \"parent_id\": \"ord_2tVyWPnCPWbrV37mW\",\n    \"metadata\": {\n        \"key\": \"value\"\n    }\n}",
+          "latency": 0,
+          "statusCode": 200,
+          "label": "successful",
+          "headers": [
+            {
+              "key": "Content-Type",
+              "value": "application/vnd.conekta-v2.1.0+json"
+            }
+          ],
+          "bodyType": "INLINE",
+          "filePath": "",
+          "databucketID": "",
+          "sendFileAsBody": false,
+          "rules": [
+            {
+              "target": "params",
+              "modifier": "id",
+              "value": "ord_2tVyWPnCPWbrV37mW",
+              "invert": false,
+              "operator": "equals"
+            },
+            {
+              "target": "params",
+              "modifier": "tax_lines_id",
+              "value": "tax_lin_2tVzVp6AAptCRHhgt",
+              "invert": false,
+              "operator": "equals"
+            }
+          ],
+          "rulesOperator": "AND",
+          "disableTemplating": false,
+          "fallbackTo404": false,
+          "default": true
+        },
+        {
+          "uuid": "aee52137-0b0b-4679-b3ef-a13ba54a7629",
+          "body": "",
+          "latency": 0,
+          "statusCode": 401,
+          "label": "authentication error",
+          "headers": [
+            {
+              "key": "Content-Type",
+              "value": "application/vnd.conekta-v2.1.0+json"
+            }
+          ],
+          "bodyType": "INLINE",
+          "filePath": "",
+          "databucketID": "",
+          "sendFileAsBody": false,
+          "rules": [],
+          "rulesOperator": "OR",
+          "disableTemplating": false,
+          "fallbackTo404": false,
+          "default": false
+        },
+        {
+          "uuid": "a6a6b651-4929-49ba-9432-448c6845c458",
+          "body": "{\n  \"details\": [\n    {\n      \"code\": \"conekta.errors.authentication.missing_key\",\n      \"param\": \"\",\n      \"message\": \"Acceso no autorizado.\",\n      \"debug_message\": \"Please include your access key in your request.\"\n    }\n  ]\n}",
+          "latency": 0,
+          "statusCode": 404,
+          "label": "not found entity",
+          "headers": [
+            {
+              "key": "Content-Type",
+              "value": "application/vnd.conekta-v2.1.0+json"
+            }
+          ],
+          "bodyType": "INLINE",
+          "filePath": "",
+          "databucketID": "",
+          "sendFileAsBody": false,
+          "rules": [],
+          "rulesOperator": "OR",
+          "disableTemplating": false,
+          "fallbackTo404": false,
+          "default": false
+        },
+        {
+          "uuid": "289fb401-728a-4016-8cfc-c4f5d9253f1a",
+          "body": "",
+          "latency": 0,
+          "statusCode": 422,
+          "label": "parameter validation error",
+          "headers": [
+            {
+              "key": "Content-Type",
+              "value": "application/vnd.conekta-v2.1.0+json"
+            }
+          ],
+          "bodyType": "INLINE",
+          "filePath": "",
+          "databucketID": "",
+          "sendFileAsBody": false,
+          "rules": [],
+          "rulesOperator": "OR",
+          "disableTemplating": false,
+          "fallbackTo404": false,
+          "default": false
+        },
+        {
+          "uuid": "6d0d639d-17e3-4348-be12-8bebda910757",
+          "body": "",
+          "latency": 0,
+          "statusCode": 500,
+          "label": "internal server error",
+          "headers": [
+            {
+              "key": "Content-Type",
+              "value": "application/vnd.conekta-v2.1.0+json"
+            }
+          ],
+          "bodyType": "INLINE",
+          "filePath": "",
+          "databucketID": "",
+          "sendFileAsBody": false,
+          "rules": [],
+          "rulesOperator": "OR",
+          "disableTemplating": false,
+          "fallbackTo404": false,
+          "default": false
+        }
+      ],
+      "enabled": true,
+      "responseMode": null
+    },
+    {
+      "uuid": "1a9bf109-e617-4ccc-80c0-e540bf3483ae",
+      "documentation": "delete an existing shipping for an existing orden",
+      "method": "delete",
+      "endpoint": "orders/:id/shipping_lines/:shipping_lines_id",
+      "responses": [
+        {
+          "uuid": "4abbce6c-91e7-4fda-8fe4-f93db43ebfc3",
+          "body": "{\n    \"amount\": 540,\n    \"object\": \"shipping_line\",\n    \"id\": \"ship_lin_2tVzNuDGSaDwreMg6\",\n    \"parent_id\": \"ord_2tVyWPnCPWbrV37mW\"\n}",
+          "latency": 0,
+          "statusCode": 200,
+          "label": "successful",
+          "headers": [
+            {
+              "key": "Content-Type",
+              "value": "application/vnd.conekta-v2.1.0+json"
+            }
+          ],
+          "bodyType": "INLINE",
+          "filePath": "",
+          "databucketID": "",
+          "sendFileAsBody": false,
+          "rules": [
+            {
+              "target": "params",
+              "modifier": "id",
+              "value": "ord_2tVyWPnCPWbrV37mW",
+              "invert": false,
+              "operator": "equals"
+            },
+            {
+              "target": "params",
+              "modifier": "shipping_lines_id",
+              "value": "ship_lin_2tVzNuDGSaDwreMg6",
+              "invert": false,
+              "operator": "equals"
+            }
+          ],
+          "rulesOperator": "AND",
+          "disableTemplating": false,
+          "fallbackTo404": false,
+          "default": true
+        },
+        {
+          "uuid": "af921044-cb91-4d94-b948-f3ca52f16a10",
+          "body": "",
+          "latency": 0,
+          "statusCode": 401,
+          "label": "authentication error",
+          "headers": [
+            {
+              "key": "Content-Type",
+              "value": "application/vnd.conekta-v2.1.0+json"
+            }
+          ],
+          "bodyType": "INLINE",
+          "filePath": "",
+          "databucketID": "",
+          "sendFileAsBody": false,
+          "rules": [],
+          "rulesOperator": "OR",
+          "disableTemplating": false,
+          "fallbackTo404": false,
+          "default": false
+        },
+        {
+          "uuid": "d5068220-5b9d-4109-86ab-46f2703e396c",
+          "body": "{\n  \"details\": [\n    {\n      \"code\": \"conekta.errors.authentication.missing_key\",\n      \"param\": \"\",\n      \"message\": \"Acceso no autorizado.\",\n      \"debug_message\": \"Please include your access key in your request.\"\n    }\n  ]\n}",
+          "latency": 0,
+          "statusCode": 404,
+          "label": "not found entity",
+          "headers": [
+            {
+              "key": "Content-Type",
+              "value": "application/vnd.conekta-v2.1.0+json"
+            }
+          ],
+          "bodyType": "INLINE",
+          "filePath": "",
+          "databucketID": "",
+          "sendFileAsBody": false,
+          "rules": [],
+          "rulesOperator": "OR",
+          "disableTemplating": false,
+          "fallbackTo404": false,
+          "default": false
+        },
+        {
+          "uuid": "8c841acd-fac5-4b93-b218-f15c97eb5aba",
+          "body": "",
+          "latency": 0,
+          "statusCode": 422,
+          "label": "parameter validation error",
+          "headers": [
+            {
+              "key": "Content-Type",
+              "value": "application/vnd.conekta-v2.1.0+json"
+            }
+          ],
+          "bodyType": "INLINE",
+          "filePath": "",
+          "databucketID": "",
+          "sendFileAsBody": false,
+          "rules": [],
+          "rulesOperator": "OR",
+          "disableTemplating": false,
+          "fallbackTo404": false,
+          "default": false
+        },
+        {
+          "uuid": "0bd4c230-8c5c-4ce9-8b63-3dc158677f78",
+          "body": "",
+          "latency": 0,
+          "statusCode": 500,
+          "label": "internal server error",
+          "headers": [
+            {
+              "key": "Content-Type",
+              "value": "application/vnd.conekta-v2.1.0+json"
+            }
+          ],
+          "bodyType": "INLINE",
+          "filePath": "",
+          "databucketID": "",
+          "sendFileAsBody": false,
+          "rules": [],
+          "rulesOperator": "OR",
+          "disableTemplating": false,
+          "fallbackTo404": false,
+          "default": false
+        }
+      ],
+      "enabled": true,
+      "responseMode": null
+    },
+    {
+      "uuid": "2b49d9be-aef4-4b6d-9023-a658979c16b1",
+      "documentation": "delete a shipping contacts",
+      "method": "delete",
+      "endpoint": "customers/:id/shipping_contacts/:shipping_contacts_id",
+      "responses": [
+        {
+          "uuid": "da7394b2-3e92-4f99-8456-4f6df0a7e942",
+          "body": "{\n    \"phone\": \"3143145050\",\n    \"address\": {\n        \"street1\": \"Calle 123, int 2\",\n        \"country\": \"mx\",\n        \"residential\": true,\n        \"object\": \"shipping_address\",\n        \"postal_code\": \"06100\"\n    },\n    \"id\": \"ship_cont_2tZWzJPBf87C6TcoQ\",\n    \"object\": \"shipping_contact\",\n    \"created_at\": 1679402268,\n    \"parent_id\": \"cus_2tZWxbTPtQgGJGh8P\",\n    \"default\": false\n}",
+          "latency": 0,
+          "statusCode": 200,
+          "label": "successful operation",
+          "headers": [
+            {
+              "key": "Content-Type",
+              "value": "application/vnd.conekta-v2.1.0+json"
+            }
+          ],
+          "bodyType": "INLINE",
+          "filePath": "",
+          "databucketID": "",
+          "sendFileAsBody": false,
+          "rules": [
+            {
+              "target": "params",
+              "modifier": "id",
+              "value": "cus_2tZWxbTPtQgGJGh8P",
+              "invert": false,
+              "operator": "equals"
+            },
+            {
+              "target": "params",
+              "modifier": "shipping_contacts_id",
+              "value": "ship_cont_2tZWzJPBf87C6TcoQ",
+              "invert": false,
+              "operator": "equals"
+            }
+          ],
+          "rulesOperator": "AND",
+          "disableTemplating": false,
+          "fallbackTo404": false,
+          "default": true
+        },
+        {
+          "uuid": "8df796da-8d68-4d59-971e-182f1c007f76",
+          "body": "",
+          "latency": 0,
+          "statusCode": 401,
+          "label": "authentication error",
+          "headers": [
+            {
+              "key": "Content-Type",
+              "value": "application/vnd.conekta-v2.1.0+json"
+            }
+          ],
+          "bodyType": "INLINE",
+          "filePath": "",
+          "databucketID": "",
+          "sendFileAsBody": false,
+          "rules": [],
+          "rulesOperator": "OR",
+          "disableTemplating": false,
+          "fallbackTo404": false,
+          "default": false
+        },
+        {
+          "uuid": "083adfaf-e58a-4b57-9dc6-f2465b19e19a",
+          "body": "{\n  \"details\": [\n    {\n      \"code\": \"conekta.errors.authentication.missing_key\",\n      \"param\": \"\",\n      \"message\": \"Acceso no autorizado.\",\n      \"debug_message\": \"Please include your access key in your request.\"\n    }\n  ]\n}",
+          "latency": 0,
+          "statusCode": 404,
+          "label": "not found entity",
+          "headers": [
+            {
+              "key": "Content-Type",
+              "value": "application/vnd.conekta-v2.1.0+json"
+            }
+          ],
+          "bodyType": "INLINE",
+          "filePath": "",
+          "databucketID": "",
+          "sendFileAsBody": false,
+          "rules": [],
+          "rulesOperator": "OR",
+          "disableTemplating": false,
+          "fallbackTo404": false,
+          "default": false
+        },
+        {
+          "uuid": "c9468366-ef00-468e-aa4d-b6dad72cc92f",
+          "body": "",
+          "latency": 0,
+          "statusCode": 422,
+          "label": "parameter validation error",
+          "headers": [
+            {
+              "key": "Content-Type",
+              "value": "application/vnd.conekta-v2.1.0+json"
+            }
+          ],
+          "bodyType": "INLINE",
+          "filePath": "",
+          "databucketID": "",
+          "sendFileAsBody": false,
+          "rules": [],
+          "rulesOperator": "OR",
+          "disableTemplating": false,
+          "fallbackTo404": false,
+          "default": false
+        },
+        {
+          "uuid": "5eca1bfe-775f-4342-9774-ee34754a5200",
+          "body": "",
+          "latency": 0,
+          "statusCode": 500,
+          "label": "internal server error",
+          "headers": [
+            {
+              "key": "Content-Type",
+              "value": "application/vnd.conekta-v2.1.0+json"
+            }
+          ],
+          "bodyType": "INLINE",
+          "filePath": "",
+          "databucketID": "",
+          "sendFileAsBody": false,
+          "rules": [],
+          "rulesOperator": "OR",
+          "disableTemplating": false,
+          "fallbackTo404": false,
+          "default": false
+        }
+      ],
+      "enabled": true,
+      "responseMode": null
+    },
+    {
+      "uuid": "9598435d-3d9c-4947-bb6c-5af052f69395",
+      "documentation": "delete existing products for an existing orden",
+      "method": "delete",
+      "endpoint": "orders/:id/line_items/:line_item_id",
+      "responses": [
+        {
+          "uuid": "640ffc5b-f3d5-426d-a246-6e012a98cc2e",
+          "body": "{\n    \"name\": \"Pago Mensualidad\",\n    \"description\": \"Mes de marz.\",\n    \"unit_price\": 1000,\n    \"quantity\": 1,\n    \"tags\": [\n        \"Pago 2\",\n        \"Pago mensualidad 2\"\n    ],\n    \"object\": \"line_item\",\n    \"id\": \"line_item_2tVz8UkyWhSxLfUd7\",\n    \"parent_id\": \"ord_2tVyWPnCPWbrV37mW\",\n    \"metadata\": {},\n    \"antifraud_info\": {}\n}",
+          "latency": 0,
+          "statusCode": 200,
+          "label": "successful",
+          "headers": [
+            {
+              "key": "Content-Type",
+              "value": "application/vnd.conekta-v2.1.0+json"
+            }
+          ],
+          "bodyType": "INLINE",
+          "filePath": "",
+          "databucketID": "",
+          "sendFileAsBody": false,
+          "rules": [
+            {
+              "target": "params",
+              "modifier": "id",
+              "value": "ord_2tVyWPnCPWbrV37mW",
+              "invert": false,
+              "operator": "equals"
+            },
+            {
+              "target": "params",
+              "modifier": "line_item_id",
+              "value": "line_item_2tVz8UkyWhSxLfUd7",
+              "invert": false,
+              "operator": "equals"
+            }
+          ],
+          "rulesOperator": "AND",
+          "disableTemplating": false,
+          "fallbackTo404": false,
+          "default": true
+        },
+        {
+          "uuid": "e5ca522c-a70c-4772-bbcf-34ca3056131d",
+          "body": "",
+          "latency": 0,
+          "statusCode": 401,
+          "label": "authentication error",
+          "headers": [
+            {
+              "key": "Content-Type",
+              "value": "application/vnd.conekta-v2.1.0+json"
+            }
+          ],
+          "bodyType": "INLINE",
+          "filePath": "",
+          "databucketID": "",
+          "sendFileAsBody": false,
+          "rules": [],
+          "rulesOperator": "OR",
+          "disableTemplating": false,
+          "fallbackTo404": false,
+          "default": false
+        },
+        {
+          "uuid": "9d1cdba5-2fc9-4945-bf7b-cb4332603dc4",
+          "body": "{\n  \"details\": [\n    {\n      \"code\": \"conekta.errors.authentication.missing_key\",\n      \"param\": \"\",\n      \"message\": \"Acceso no autorizado.\",\n      \"debug_message\": \"Please include your access key in your request.\"\n    }\n  ]\n}",
+          "latency": 0,
+          "statusCode": 404,
+          "label": "not found entity",
+          "headers": [
+            {
+              "key": "Content-Type",
+              "value": "application/vnd.conekta-v2.1.0+json"
+            }
+          ],
+          "bodyType": "INLINE",
+          "filePath": "",
+          "databucketID": "",
+          "sendFileAsBody": false,
+          "rules": [],
+          "rulesOperator": "OR",
+          "disableTemplating": false,
+          "fallbackTo404": false,
+          "default": false
+        },
+        {
+          "uuid": "acb41b60-acd7-499e-9668-81cb8732b19f",
+          "body": "",
+          "latency": 0,
+          "statusCode": 422,
+          "label": "parameter validation error",
+          "headers": [
+            {
+              "key": "Content-Type",
+              "value": "application/vnd.conekta-v2.1.0+json"
+            }
+          ],
+          "bodyType": "INLINE",
+          "filePath": "",
+          "databucketID": "",
+          "sendFileAsBody": false,
+          "rules": [],
+          "rulesOperator": "OR",
+          "disableTemplating": false,
+          "fallbackTo404": false,
+          "default": false
+        },
+        {
+          "uuid": "0e2d7841-0f82-4e40-87de-763a708a26f0",
+          "body": "",
+          "latency": 0,
+          "statusCode": 500,
+          "label": "internal server error",
+          "headers": [
+            {
+              "key": "Content-Type",
+              "value": "application/vnd.conekta-v2.1.0+json"
+            }
+          ],
+          "bodyType": "INLINE",
+          "filePath": "",
+          "databucketID": "",
+          "sendFileAsBody": false,
+          "rules": [],
+          "rulesOperator": "OR",
+          "disableTemplating": false,
+          "fallbackTo404": false,
+          "default": false
+        }
+      ],
+      "enabled": true,
+      "responseMode": null
     }
   ],
   "rootChildren": [
@@ -8715,6 +9272,22 @@
     {
       "type": "route",
       "uuid": "e5b7029f-5634-4c7c-8079-ef97cc7e0d79"
+    },
+    {
+      "type": "route",
+      "uuid": "58d8bab1-60c3-4e44-b7b3-f493e56dfede"
+    },
+    {
+      "type": "route",
+      "uuid": "1a9bf109-e617-4ccc-80c0-e540bf3483ae"
+    },
+    {
+      "type": "route",
+      "uuid": "2b49d9be-aef4-4b6d-9023-a658979c16b1"
+    },
+    {
+      "type": "route",
+      "uuid": "9598435d-3d9c-4947-bb6c-5af052f69395"
     }
   ],
   "proxyMode": false,
