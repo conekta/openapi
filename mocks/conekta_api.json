@@ -9016,7 +9016,7 @@
       "responseMode": null
     },
     {
-      "uuid": "4460a398-6abd-452c-a4d7-524798813de2",
+      "uuid": "68ff5743-804e-44d2-9368-f3c4c47e85a2",
       "documentation": "returns a company",
       "method": "get",
       "endpoint": "companies/:id",
