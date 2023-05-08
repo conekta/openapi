@@ -9014,6 +9014,210 @@
       ],
       "enabled": true,
       "responseMode": null
+    },
+    {
+      "uuid": "68ff5743-804e-44d2-9368-f3c4c47e85a2",
+      "documentation": "returns a company",
+      "method": "get",
+      "endpoint": "companies/:id",
+      "responses": [
+        {
+          "uuid": "8361bd83-2c9d-47e3-8ba5-398519fa37ee",
+          "body": "{\"id\":\"6441bb27659a060465da7335\",\"created_at\":1680397724,\"name\":\"Child Company A\",\"object\":\"company\",\"parent_company_id\":\"6441bb3c62db5812e7920c31\",\"use_parent_fiscal_data\":false,\"payout_destination\":{\"object\":\"payout_destination\",\"currency\":\"MXN\",\"account_holder_name\":\"Child Company A\",\"bank\":\"BBVA\",\"type\":\"bank_account\",\"account_number\":\"123456789012345678\"},\"fiscal_info\":{\"object\":\"fiscal_info\",\"tax_id\":\"XAXX010101000\",\"legal_entity_name\":\"Child Company A\",\"business_type\":\"persona_moral\",\"phone\":\"5555555555\",\"physical_person_business_type\":\"string\",\"address\":{\"object\":\"address\",\"street1\":\"Calle 13\",\"street2\":\"Navarte\",\"city\":\"Cuauhtémoc\",\"state\":\"Ciudad de México\",\"country\":\"MX\",\"postal_code\":\"3072\",\"external_number\":\"123\",\"internal_number\":\"123\"}}}",
+          "latency": 0,
+          "statusCode": 200,
+          "label": "successful operation company",
+          "headers": [
+            {
+              "key": "Content-Type",
+              "value": "application/vnd.conekta-v2.1.0+json"
+            }
+          ],
+          "bodyType": "INLINE",
+          "filePath": "",
+          "databucketID": "",
+          "sendFileAsBody": false,
+          "rules": [
+            {
+              "target": "params",
+              "modifier": "id",
+              "value": "6441bb27659a060465da7335",
+              "invert": false,
+              "operator": "equals"
+            }
+          ],
+          "rulesOperator": "OR",
+          "disableTemplating": false,
+          "fallbackTo404": false,
+          "default": true
+        },
+        {
+          "uuid": "c94d7a4f-988b-4f96-84a7-ec3c79fc27d6",
+          "body": "",
+          "latency": 0,
+          "statusCode": 401,
+          "label": "authentication error",
+          "headers": [
+            {
+              "key": "Content-Type",
+              "value": "application/vnd.conekta-v2.1.0+json"
+            }
+          ],
+          "bodyType": "INLINE",
+          "filePath": "",
+          "databucketID": "",
+          "sendFileAsBody": false,
+          "rules": [],
+          "rulesOperator": "OR",
+          "disableTemplating": false,
+          "fallbackTo404": false,
+          "default": false
+        },
+        {
+          "uuid": "94682b5b-79d0-4e51-8237-af7e1e65c3fb",
+          "body": "",
+          "latency": 0,
+          "statusCode": 422,
+          "label": "parameter validation error",
+          "headers": [
+            {
+              "key": "Content-Type",
+              "value": "application/vnd.conekta-v2.1.0+json"
+            }
+          ],
+          "bodyType": "INLINE",
+          "filePath": "",
+          "databucketID": "",
+          "sendFileAsBody": false,
+          "rules": [],
+          "rulesOperator": "OR",
+          "disableTemplating": false,
+          "fallbackTo404": false,
+          "default": false
+        },
+        {
+          "uuid": "d67e62f3-2be0-40a2-85f0-635382734a12",
+          "body": "",
+          "latency": 0,
+          "statusCode": 500,
+          "label": "internal server error",
+          "headers": [
+            {
+              "key": "Content-Type",
+              "value": "application/vnd.conekta-v2.1.0+json"
+            }
+          ],
+          "bodyType": "INLINE",
+          "filePath": "",
+          "databucketID": "",
+          "sendFileAsBody": false,
+          "rules": [],
+          "rulesOperator": "OR",
+          "disableTemplating": false,
+          "fallbackTo404": false,
+          "default": false
+        }
+      ],
+      "enabled": true,
+      "responseMode": null
+    },
+    {
+      "uuid": "45f2f599-cdab-4bc3-b159-103719d25a38",
+      "documentation": "returns all companies",
+      "method": "get",
+      "endpoint": "companies",
+      "responses": [
+        {
+          "uuid": "8361bd83-2c9d-47e3-8ba5-398519fa37ee",
+          "body": "{\"object\":\"list\",\"has_more\":false,\"next_page_url\":\"https://api.conekta.io/resources?limit=10&next=chrg_1\",\"previous_page_url\":\"https://api.conekta.io/resources?limit=10&previous=chrg_1\",\"data\":[{\"id\":\"6441bb27659a060465da7335\",\"created_at\":1680397724,\"name\":\"Child Company A\",\"object\":\"company\",\"parent_company_id\":\"6441bb3c62db5812e7920c31\",\"use_parent_fiscal_data\":false,\"payout_destination\":{\"object\":\"payout_destination\",\"currency\":\"MXN\",\"account_holder_name\":\"Child Company A\",\"bank\":\"BBVA\",\"type\":\"bank_account\",\"account_number\":\"123456789012345678\"},\"fiscal_info\":{\"object\":\"fiscal_info\",\"tax_id\":\"XAXX010101000\",\"legal_entity_name\":\"Child Company A\",\"business_type\":\"persona_moral\",\"phone\":\"5555555555\",\"physical_person_business_type\":\"string\",\"address\":{\"object\":\"address\",\"street1\":\"Calle 13\",\"street2\":\"Navarte\",\"city\":\"Cuauhtémoc\",\"state\":\"Ciudad de México\",\"country\":\"MX\",\"postal_code\":\"3072\",\"external_number\":\"123\",\"internal_number\":\"123\"}}}]}",
+          "latency": 0,
+          "statusCode": 200,
+          "label": "successful operation companies",
+          "headers": [
+            {
+              "key": "Content-Type",
+              "value": "application/vnd.conekta-v2.1.0+json"
+            }
+          ],
+          "bodyType": "INLINE",
+          "filePath": "",
+          "databucketID": "",
+          "sendFileAsBody": false,
+          "rules": [],
+          "rulesOperator": "OR",
+          "disableTemplating": false,
+          "fallbackTo404": false,
+          "default": true
+        },
+        {
+          "uuid": "c94d7a4f-988b-4f96-84a7-ec3c79fc27d6",
+          "body": "",
+          "latency": 0,
+          "statusCode": 401,
+          "label": "authentication error",
+          "headers": [
+            {
+              "key": "Content-Type",
+              "value": "application/vnd.conekta-v2.1.0+json"
+            }
+          ],
+          "bodyType": "INLINE",
+          "filePath": "",
+          "databucketID": "",
+          "sendFileAsBody": false,
+          "rules": [],
+          "rulesOperator": "OR",
+          "disableTemplating": false,
+          "fallbackTo404": false,
+          "default": false
+        },
+        {
+          "uuid": "94682b5b-79d0-4e51-8237-af7e1e65c3fb",
+          "body": "",
+          "latency": 0,
+          "statusCode": 422,
+          "label": "parameter validation error",
+          "headers": [
+            {
+              "key": "Content-Type",
+              "value": "application/vnd.conekta-v2.1.0+json"
+            }
+          ],
+          "bodyType": "INLINE",
+          "filePath": "",
+          "databucketID": "",
+          "sendFileAsBody": false,
+          "rules": [],
+          "rulesOperator": "OR",
+          "disableTemplating": false,
+          "fallbackTo404": false,
+          "default": false
+        },
+        {
+          "uuid": "d67e62f3-2be0-40a2-85f0-635382734a12",
+          "body": "",
+          "latency": 0,
+          "statusCode": 500,
+          "label": "internal server error",
+          "headers": [
+            {
+              "key": "Content-Type",
+              "value": "application/vnd.conekta-v2.1.0+json"
+            }
+          ],
+          "bodyType": "INLINE",
+          "filePath": "",
+          "databucketID": "",
+          "sendFileAsBody": false,
+          "rules": [],
+          "rulesOperator": "OR",
+          "disableTemplating": false,
+          "fallbackTo404": false,
+          "default": false
+        }
+      ],
+      "enabled": true,
+      "responseMode": null
     }
   ],
   "rootChildren": [
