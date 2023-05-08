@@ -1,0 +1,81 @@
+title: transfer_response
+description: "A transfer represents the action of sending an amount to a business bank account including the status, amount and method used to make the transfer."
+type: object
+properties:
+  amount: 
+    type: integer
+    example: 10000
+    format: int64
+    description: "Amount in cents of the transfer."
+  created_at:
+    type: integer
+    example: 1553273553
+    format: int64
+    description: "Date and time of creation of the transfer."
+  currency:
+    type: string
+    example: "MXN"
+    description: "The currency of the transfer. It uses the 3-letter code of the [International Standard ISO 4217.](https://es.wikipedia.org/wiki/ISO_4217)"
+    maxLength: 3
+  id:
+    type: string
+    example: "5b0337d4dD344ef954fe1X4b6"
+    description: "Unique identifier of the transfer."
+  livemode:
+    type: boolean
+    example: true
+    description: "Indicates whether the transfer was created in live mode or test mode."
+  method:
+    type: object
+    description: "Method used to make the transfer."
+    title: transfer_method_response
+    properties:
+      account_holder:
+        type: string
+        example: "John Doe"
+        description: "Name of the account holder."
+      account_number:
+        type: string
+        example: "012180023547896764"
+        description: "Account number of the bank account."
+      bank:
+        type: string
+        example: "BBVA Bancomer"
+        description: "Name of the bank."
+      created_at:
+        type: integer
+        example: 1553273553
+        format: int64
+        description: "Date and time of creation of the transfer."
+      id:
+        type: string
+        example: "pytmtd_2ide3qwTdDvNBosEC"
+        description: "Unique identifier of the transfer."
+      object:
+        type: string
+        example: "bank_transfer_payout_method"
+        description: "Object name, which is bank_transfer_payout_method."
+      payee_id:
+        type: string
+        example: "payee_2icdDewRxDENBos85"
+        description: "Unique identifier of the payee."
+      _type:
+        type: string
+        example: "BankTransferPayoutMethod"
+        description: "Type of the payee."
+  object:
+    type: string
+    example: "transfer"
+    description: "Object name, which is transfer."
+  statement_description:
+    type: string
+    example: "Conekta 4401234"
+    description: "Description of the transfer."
+  statement_reference:
+    type: string
+    example: "4401234"
+    description: "Reference number of the transfer."
+  status:
+    type: string
+    example: "pending"
+    description: "Code indicating transfer status."

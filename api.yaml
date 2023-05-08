@@ -108,6 +108,10 @@ paths:
     $ref: "./resources/transactions/transactions.yml"
   /transactions/{id}}:
     $ref: "./resources/transactions/transaction.yml"
+  /transfers:
+    $ref: "./resources/transfers/transfers.yml"
+  /transfers/{id}:
+    $ref: "./resources/transfers/transfer.yml"
   /webhooks:
      $ref: "./resources/webhooks/webhooks.yml"
   /webhooks/{id}:

@@ -1,6 +1,18 @@
 title: transaction_response
 description: "The Transaction object represents the actions or steps of an order. Statuses can be: unprocessed, pending, available, owen, paid_out, voided, capture, capture_reversal, liquidation, liquidation_reversal, payout, payout_reversal, refund, refund_reversal, chargeback, chargeback_reversal, rounding_adjustment, won_chargeback, transferred, and transferred."
 type: object
+required:
+  - id
+  - object
+  - amount
+  - fee
+  - net
+  - status
+  - type
+  - created_at
+  - currency
+  - charge
+  - livemode
 properties:
   amount:
     type: integer

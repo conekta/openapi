@@ -1,16 +1,26 @@
 get:
   tags:
-    - Transactions
-  operationId: getTransaction
-  summary: Get transaction
-  description: Get the details of a transaction
+    - Transfers
+  operationId: getTransfers
+  summary: Get a list of transfers
+  description: Get transfers details in the form of a list
   responses:
     200:
       description: successful
       content:
         application/vnd.conekta-v2.1.0+json:
           schema:
-            $ref: '../../schemas/transactions/transaction_response.yml'
+            title: get_transfers_response
+            allOf:
+              - $ref: ../../schemas/pagination/pagination.yml
+              - $ref: ../../schemas/pagination/page.yml
+              - type: object
+                properties:
+                  data:
+                    description: Transfers
+                    type: array
+                    items:
+                      $ref: '../../schemas/transfers/transfer_response.yml'
       headers:
         Date:
           description: The date and time that the response was sent
@@ -38,8 +48,6 @@ get:
             example: conekta-v2.1.0; format=application/json
     401:
      $ref: '../errors/401.yml'
-    404:
-     $ref: '../errors/401.yml'
     500:
      $ref: '../errors/500.yml'
   security:
@@ -47,4 +55,7 @@ get:
   parameters:
     - $ref: '../../parameters/commons/headers/accept_language.yml'
     - $ref: '../../parameters/commons/headers/x_child_company_id.yml'
-    - $ref: '../../parameters/commons/path_param/id.yml'
+    - $ref: '../../parameters/commons/query/limit.yml'
+    - $ref: '../../parameters/commons/query/search.yml'
+    - $ref: '../../parameters/commons/query/next_page.yml'
+    - $ref: '../../parameters/commons/query/previous_page.yml'

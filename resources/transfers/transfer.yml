@@ -1,16 +1,16 @@
 get:
   tags:
-    - Transactions
-  operationId: getTransaction
-  summary: Get transaction
-  description: Get the details of a transaction
+    - Transfers
+  operationId: getTransfer
+  summary: Get Transfer
+  description: Get the details of a Transfer
   responses:
     200:
       description: successful
       content:
         application/vnd.conekta-v2.1.0+json:
           schema:
-            $ref: '../../schemas/transactions/transaction_response.yml'
+            $ref: '../../schemas/transfers/transfer_response.yml'
       headers:
         Date:
           description: The date and time that the response was sent

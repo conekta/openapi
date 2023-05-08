@@ -7829,7 +7829,7 @@ paths:
       - Transactions
   /transactions/{id}}:
     get:
-      description: Get transaction details in the form of a list
+      description: Get the details of a transaction
       operationId: getTransaction
       parameters:
       - description: Use for knowing which language to use
@@ -7910,6 +7910,20 @@ paths:
               schema:
                 $ref: '#/components/schemas/error'
           description: authentication error
+        "404":
+          content:
+            application/vnd.conekta-v2.1.0+json:
+              example:
+                details:
+                - message: Please include your access key in your request.
+                  param: null
+                  code: conekta.errors.authentication.missing_key
+                log_id: 507f1f77bcf86cd799439011
+                object: error
+                type: authentication_error
+              schema:
+                $ref: '#/components/schemas/error'
+          description: authentication error
         "500":
           content:
             application/vnd.conekta-v2.1.0+json:
@@ -7929,9 +7943,254 @@ paths:
           description: internal server error
       security:
       - bearerAuth: []
-      summary: Get  transactions
+      summary: Get transaction
       tags:
       - Transactions
+  /transfers:
+    get:
+      description: Get transfers details in the form of a list
+      operationId: getTransfers
+      parameters:
+      - description: Use for knowing which language to use
+        examples:
+          es:
+            summary: for spanish request/response
+            value: es
+          en:
+            summary: for english request/response
+            value: en
+        in: header
+        name: Accept-Language
+        required: false
+        schema:
+          default: es
+          enum:
+          - es
+          - en
+          type: string
+      - description: "In the case of a holding company, the company id of the child\
+          \ company to which will process the request."
+        example: 6441b6376b60c3a638da80af
+        in: header
+        name: X-Child-Company-Id
+        required: false
+        schema:
+          type: string
+      - description: "The numbers of items to return, the maximum value is 250"
+        in: query
+        name: limit
+        required: false
+        schema:
+          default: 20
+          format: int32
+          maximum: 250
+          minimum: 1
+          type: integer
+      - description: "General order search, e.g. by mail, reference etc."
+        in: query
+        name: search
+        required: false
+        schema:
+          type: string
+      - description: next page
+        in: query
+        name: next
+        required: false
+        schema:
+          type: string
+      - description: previous page
+        in: query
+        name: previous
+        required: false
+        schema:
+          type: string
+      responses:
+        "200":
+          content:
+            application/vnd.conekta-v2.1.0+json:
+              schema:
+                $ref: '#/components/schemas/get_transfers_response'
+          description: successful
+          headers:
+            Date:
+              description: The date and time that the response was sent
+              schema:
+                example: "Fri, 03 Feb 2023 16:57:48 GMT"
+                type: string
+            Content-Type:
+              description: The format of the response body
+              schema:
+                example: application/json; charset=utf-8
+                type: string
+            Content-Length:
+              description: The length of the response body in bytes
+              schema:
+                example: "2737"
+                type: string
+            Connection:
+              description: The type of connection used to transfer the response
+              schema:
+                example: keep-alive
+                type: string
+            Conekta-Media-Type:
+              schema:
+                example: conekta-v2.1.0; format=application/json
+                type: string
+        "401":
+          content:
+            application/vnd.conekta-v2.1.0+json:
+              example:
+                details:
+                - message: Please include your access key in your request.
+                  param: null
+                  code: conekta.errors.authentication.missing_key
+                log_id: 507f1f77bcf86cd799439011
+                object: error
+                type: authentication_error
+              schema:
+                $ref: '#/components/schemas/error'
+          description: authentication error
+        "500":
+          content:
+            application/vnd.conekta-v2.1.0+json:
+              example:
+                details:
+                - debug_message: There was a runtime error and Conekta engineers have
+                    been notified.
+                  message: There was a runtime error and Conekta engineers have been
+                    notified.
+                  param: null
+                  code: conekta.errors.api.system.general_failure
+                object: error
+                type: api_error
+                log_id: 641b6f2b3cd9a50001515098
+              schema:
+                $ref: '#/components/schemas/error'
+          description: internal server error
+      security:
+      - bearerAuth: []
+      summary: Get a list of transfers
+      tags:
+      - Transfers
+  /transfers/{id}:
+    get:
+      description: Get the details of a Transfer
+      operationId: getTransfer
+      parameters:
+      - description: Use for knowing which language to use
+        examples:
+          es:
+            summary: for spanish request/response
+            value: es
+          en:
+            summary: for english request/response
+            value: en
+        in: header
+        name: Accept-Language
+        required: false
+        schema:
+          default: es
+          enum:
+          - es
+          - en
+          type: string
+      - description: "In the case of a holding company, the company id of the child\
+          \ company to which will process the request."
+        example: 6441b6376b60c3a638da80af
+        in: header
+        name: X-Child-Company-Id
+        required: false
+        schema:
+          type: string
+      - description: Identifier of the resource
+        example: 6307a60c41de27127515a575
+        in: path
+        name: id
+        required: true
+        schema:
+          type: string
+      responses:
+        "200":
+          content:
+            application/vnd.conekta-v2.1.0+json:
+              schema:
+                $ref: '#/components/schemas/transfer_response'
+          description: successful
+          headers:
+            Date:
+              description: The date and time that the response was sent
+              schema:
+                example: "Fri, 03 Feb 2023 16:57:48 GMT"
+                type: string
+            Content-Type:
+              description: The format of the response body
+              schema:
+                example: application/json; charset=utf-8
+                type: string
+            Content-Length:
+              description: The length of the response body in bytes
+              schema:
+                example: "2737"
+                type: string
+            Connection:
+              description: The type of connection used to transfer the response
+              schema:
+                example: keep-alive
+                type: string
+            Conekta-Media-Type:
+              schema:
+                example: conekta-v2.1.0; format=application/json
+                type: string
+        "401":
+          content:
+            application/vnd.conekta-v2.1.0+json:
+              example:
+                details:
+                - message: Please include your access key in your request.
+                  param: null
+                  code: conekta.errors.authentication.missing_key
+                log_id: 507f1f77bcf86cd799439011
+                object: error
+                type: authentication_error
+              schema:
+                $ref: '#/components/schemas/error'
+          description: authentication error
+        "404":
+          content:
+            application/vnd.conekta-v2.1.0+json:
+              example:
+                details:
+                - message: Please include your access key in your request.
+                  param: null
+                  code: conekta.errors.authentication.missing_key
+                log_id: 507f1f77bcf86cd799439011
+                object: error
+                type: authentication_error
+              schema:
+                $ref: '#/components/schemas/error'
+          description: authentication error
+        "500":
+          content:
+            application/vnd.conekta-v2.1.0+json:
+              example:
+                details:
+                - debug_message: There was a runtime error and Conekta engineers have
+                    been notified.
+                  message: There was a runtime error and Conekta engineers have been
+                    notified.
+                  param: null
+                  code: conekta.errors.api.system.general_failure
+                object: error
+                type: api_error
+                log_id: 641b6f2b3cd9a50001515098
+              schema:
+                $ref: '#/components/schemas/error'
+          description: internal server error
+      security:
+      - bearerAuth: []
+      summary: Get Transfer
+      tags:
+      - Transfers
   /webhooks:
     get:
       description: "Consume the list of webhooks you have, each environment supports\
@@ -10113,7 +10372,68 @@ components:
           description: Transaction Type
           example: capture
           type: string
+      required:
+      - amount
+      - charge
+      - created_at
+      - currency
+      - fee
+      - id
+      - livemode
+      - net
+      - object
+      - status
+      - type
       title: transaction_response
+      type: object
+    transfer_response:
+      description: "A transfer represents the action of sending an amount to a business\
+        \ bank account including the status, amount and method used to make the transfer."
+      properties:
+        amount:
+          description: Amount in cents of the transfer.
+          example: 10000
+          format: int64
+          type: integer
+        created_at:
+          description: Date and time of creation of the transfer.
+          example: 1553273553
+          format: int64
+          type: integer
+        currency:
+          description: "The currency of the transfer. It uses the 3-letter code of\
+            \ the [International Standard ISO 4217.](https://es.wikipedia.org/wiki/ISO_4217)"
+          example: MXN
+          maxLength: 3
+          type: string
+        id:
+          description: Unique identifier of the transfer.
+          example: 5b0337d4dD344ef954fe1X4b6
+          type: string
+        livemode:
+          description: Indicates whether the transfer was created in live mode or
+            test mode.
+          example: true
+          type: boolean
+        method:
+          $ref: '#/components/schemas/transfer_method_response'
+        object:
+          description: "Object name, which is transfer."
+          example: transfer
+          type: string
+        statement_description:
+          description: Description of the transfer.
+          example: Conekta 4401234
+          type: string
+        statement_reference:
+          description: Reference number of the transfer.
+          example: "4401234"
+          type: string
+        status:
+          description: Code indicating transfer status.
+          example: pending
+          type: string
+      title: transfer_response
       type: object
     webhook_response:
       description: webhooks model
@@ -11686,6 +12006,20 @@ components:
       - $ref: '#/components/schemas/page'
       - $ref: '#/components/schemas/get_transactions_response_allOf'
       title: get_transactions_response
+    get_transfers_response_allOf:
+      properties:
+        data:
+          description: Transfers
+          items:
+            $ref: '#/components/schemas/transfer_response'
+          type: array
+      type: object
+    get_transfers_response:
+      allOf:
+      - $ref: '#/components/schemas/pagination'
+      - $ref: '#/components/schemas/page'
+      - $ref: '#/components/schemas/get_transfers_response_allOf'
+      title: get_transfers_response
     get_webhooks_response_allOf:
       properties:
         data:
@@ -12447,6 +12781,44 @@ components:
           description: Type of checkout.
           example: Integration
           type: string
+      type: object
+    transfer_method_response:
+      description: Method used to make the transfer.
+      properties:
+        account_holder:
+          description: Name of the account holder.
+          example: John Doe
+          type: string
+        account_number:
+          description: Account number of the bank account.
+          example: "012180023547896764"
+          type: string
+        bank:
+          description: Name of the bank.
+          example: BBVA Bancomer
+          type: string
+        created_at:
+          description: Date and time of creation of the transfer.
+          example: 1553273553
+          format: int64
+          type: integer
+        id:
+          description: Unique identifier of the transfer.
+          example: pytmtd_2ide3qwTdDvNBosEC
+          type: string
+        object:
+          description: "Object name, which is bank_transfer_payout_method."
+          example: bank_transfer_payout_method
+          type: string
+        payee_id:
+          description: Unique identifier of the payee.
+          example: payee_2icdDewRxDENBos85
+          type: string
+        _type:
+          description: Type of the payee.
+          example: BankTransferPayoutMethod
+          type: string
+      title: transfer_method_response
       type: object
     charge_request_payment_method:
       description: |
