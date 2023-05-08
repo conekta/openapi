@@ -1,0 +1,7 @@
+in: path
+name: "refund_id"
+description:  refund identifier
+required: true
+schema:
+  type: string
+example: "6407b5bee1329a000175ba11"

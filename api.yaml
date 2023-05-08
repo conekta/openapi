@@ -60,6 +60,8 @@ paths:
     $ref: "./resources/orders/update_order_product_param.yml"
   /orders/{id}/refunds:
     $ref: "./resources/orders/order_refunds_param.yml"
+  /orders/{id}/refunds/{refund_id}:
+    $ref: "./resources/orders/order_cancel_refunds_param.yml"
   /checkouts:
     $ref: "./resources/checkouts/checkouts.yml"
   /checkouts/{id}:
@@ -102,6 +104,10 @@ paths:
     $ref: "./resources/orders/update_order_tax_param.yml"
   /tokens:
      $ref: "./resources/tokens/token.yml"
+  /transactions:
+    $ref: "./resources/transactions/transactions.yml"
+  /transactions/{id}}:
+    $ref: "./resources/transactions/transaction.yml"
   /webhooks:
      $ref: "./resources/webhooks/webhooks.yml"
   /webhooks/{id}:
