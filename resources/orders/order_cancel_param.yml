@@ -2,7 +2,7 @@ post:
   tags:
     - Orders
   operationId: ordersCancel
-  description: Cancel an order that has been previously authorized.
+  description: Cancel an order that has been previously created.
   summary: Cancel Order
   responses:
     200:

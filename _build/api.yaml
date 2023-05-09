@@ -2876,7 +2876,7 @@ paths:
       - Orders
   /orders/{id}/cancel:
     post:
-      description: Cancel an order that has been previously authorized.
+      description: Cancel an order that has been previously created.
       operationId: ordersCancel
       parameters:
       - description: Identifier of the resource
