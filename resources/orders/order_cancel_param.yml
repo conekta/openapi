@@ -1,7 +1,7 @@
 post:
   tags:
     - Orders
-  operationId: ordersCancel
+  operationId: CancelOrder
   description: Cancel an order that has been previously created.
   summary: Cancel Order
   responses:
