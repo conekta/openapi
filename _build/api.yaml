@@ -10976,7 +10976,7 @@ components:
           example: 5ee7ec58885a45585e6d9f8m
           type: string
         created_at:
-          description: Date and time of creation of the transaction.
+          description: Date and time of creation of the transaction in Unix format.
           example: 1553273553
           format: int64
           type: integer
@@ -11090,7 +11090,7 @@ components:
           format: int64
           type: integer
         created_at:
-          description: Date and time of creation of the transfer.
+          description: Date and time of creation of the transfer in Unix format.
           example: 1553273553
           format: int64
           type: integer

@@ -11,7 +11,7 @@ properties:
     type: integer
     example: 1553273553
     format: int64
-    description: "Date and time of creation of the transfer."
+    description: "Date and time of creation of the transfer in Unix format."
   currency:
     type: string
     example: "MXN"
