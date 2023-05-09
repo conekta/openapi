@@ -9838,6 +9838,68 @@
       ],
       "enabled": true,
       "responseMode": null
+    },
+    {
+      "uuid": "ff48168a-e0c5-4964-990b-d6c5a94c433f",
+      "documentation": "",
+      "method": "post",
+      "endpoint": "orders/:id/cancel",
+      "responses": [
+        {
+          "uuid": "048a5377-9adb-4278-a2a5-41f1d697b45a",
+          "body": "{\"livemode\":true,\"amount\":40100,\"currency\":\"MXN\",\"payment_status\":\"canceled\",\"amount_refunded\":0,\"split_payment\":false,\"customer_info\":{\"email\":\"Miles_Price@gmail.com\",\"phone\":\"+5215555555555\",\"name\":\"demo demo\",\"corporate\":true,\"customer_id\":\"cus_2tKZmA749BLsMRgBY\",\"object\":\"customer_info\",\"customer_custom_reference\":null},\"shipping_contact\":{\"receiver\":null,\"phone\":null,\"between_streets\":null,\"address\":{\"street1\":\"av se\",\"street2\":null,\"city\":null,\"state\":null,\"country\":\"mx\",\"residential\":true,\"object\":\"shipping_address\",\"postal_code\":\"11011\"},\"id\":\"ship_cont_2tqaGQYZyvBsMKEgr\",\"object\":\"shipping_contact\",\"created_at\":1683645760},\"channel\":null,\"fiscal_entity\":null,\"object\":\"order\",\"id\":\"ord_2tqaGQYZyvBsMKEgs\",\"metadata\":{},\"is_refundable\":false,\"created_at\":1683645760,\"updated_at\":1683645774,\"line_items\":{\"object\":\"list\",\"has_more\":false,\"total\":1,\"data\":[{\"name\":\"Pago Mensualidad\",\"description\":\"Mes de Febrero.\",\"unit_price\":40000,\"quantity\":1,\"sku\":null,\"tags\":[\"Pago\",\"Pago mensualidad\"],\"brand\":null,\"type\":null,\"object\":\"line_item\",\"id\":\"line_item_2tqaGQYZyvBsMKEgo\",\"parent_id\":\"ord_2tqaGQYZyvBsMKEgs\",\"metadata\":{},\"antifraud_info\":{}}]},\"shipping_lines\":null,\"tax_lines\":{\"object\":\"list\",\"has_more\":false,\"total\":1,\"data\":[{\"description\":\"test postman\",\"amount\":100,\"object\":\"tax_line\",\"id\":\"tax_lin_2tqaGQYZyvBsMKEgp\",\"parent_id\":\"ord_2tqaGQYZyvBsMKEgs\",\"metadata\":{\"key\":\"value\"}}]},\"discount_lines\":null,\"charges\":{\"object\":\"list\",\"has_more\":false,\"total\":1,\"data\":[{\"id\":\"645a6540ca7fe20001f11031\",\"livemode\":true,\"created_at\":1683645760,\"currency\":\"MXN\",\"failure_code\":null,\"failure_message\":null,\"monthly_installments\":null,\"device_fingerprint\":null,\"channel\":null,\"payment_method\":{\"service_name\":\"OxxoPay\",\"barcode_url\":\"https://pt-common-s3-stg.s3.amazonaws.com/be1ad970f84c5334f9b0c7140a29466377af4f37.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=ASIA3UN6375MHKYG43IS%2F20230509%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20230509T152240Z&X-Amz-Expires=604800&X-Amz-Security-Token=IQoJb3JpZ2luX2VjEGAaCXVzLWVhc3QtMSJGMEQCIH%2B7U9gIyGKS9Kjq8CZyY4%2BgTKrTlfV5gzDS62BfKdIBAiBu060gyGvpGppIf4IYDU4xeRTcUl0Q16saTxSE3Q1UkiqHBAh4EAIaDDc5OTgwMTA4MTY4OCIMlI2wfsh1NqpBl3h8KuQD6ChpOi6%2FVgoOZlHes%2Bz5SIpphQ7Lwb8BJOaHs73KMmsOUJq6jtH%2FxcamYmwJgSVG6A1MPo6Fk6r3Duv%2FmPlDPl6P4UVKmL4fLwgl17sXQ4wmQvHil4LerXb9265hbDoAsHq51%2FdD4aidPJMWcO15OAwaYs6nUmJINcenhsWrUPFWmZwOUL3HwfThu2Jpkq1bzTMOu%2FTAdzuXJryq10UybTmon12Y8n%2B8W22FIAh81siuUfiTvfxiwJngJcRHuKHLzma%2FBKdzdeMvcwy8mmvj59PXMZpfEuqUeXXGhNlsC%2BKx%2B5iIqtCdW4b9owI2A0DKAfyTrSqk0SR06YhfWV8FQMZioXPOJe8rWJqIkDIx%2BW%2BQ6JvP6ZoOM%2Fqnto0ulavPP7NuGcvl%2FAzOAmNozy97x3LOSZpdS%2Bd3gtJAw7gp2t%2BbXHBQZLufp%2BplESRcHQvuw3pZHSf0m945lKkMZkaBdZ1Se77jb9E9w76434qyYJFsg0hDilmxfGgkFr%2BcPdWNxm7dFJiUzIQCtTQLWLY31mWxdaaPk1mpvGB8YnAXEqLAxxjM6B3tGzqr0Hj6vbuI4aIPuqHpl3BUcI3KPnuIfKUExghtiWm4iJxFsiE%2F7LWp5aaQw2%2B%2BqRy415SmHn4p6jVJ1DD6wumiBjqmAV7oZxzEBKn5W3td1WQ2W%2FZgEPtXVvBwXLgTnByLPc70qZtspR3JAu60HClfaxB9rBRa6IdHE%2Bx2EILuoFEh%2BVRUeHqyTG554f4i%2FIrIcitK%2BMy0efK%2FiQURvitXfd%2BphWY631r0L%2Fhf6N8xiA93XA9swkmVlaPDHFmW6xXZwvB2IYrmRj5XsmVGmCLOUqR1ZvFrML2HdhD9FC0Wab7Cb%2BBeLDx7ag0%3D&X-Amz-SignedHeaders=host&X-Amz-Signature=2fedf78874646e1ffac38fc91dd8c7373833832b1f34b4c444a3058c9347ab30\",\"store\":null,\"auth_code\":null,\"object\":\"cash_payment\",\"type\":\"oxxo\",\"expires_at\":1686268800,\"store_name\":\"OXXO\",\"reference\":\"93000262285701\",\"cashier_id\":null},\"object\":\"charge\",\"description\":\"Payment from order\",\"is_refundable\":false,\"reference_id\":null,\"status\":\"canceled\",\"amount\":40100,\"paid_at\":null,\"customer_id\":\"\",\"order_id\":\"ord_2tqaGQYZyvBsMKEgs\",\"refunds\":null}]}}",
+          "latency": 0,
+          "statusCode": 200,
+          "label": "",
+          "headers": [
+            {
+              "key": "Content-Type",
+              "value": "application/javascript; charset=utf-8"
+            }
+          ],
+          "bodyType": "INLINE",
+          "filePath": "",
+          "databucketID": "",
+          "sendFileAsBody": false,
+          "rules": [
+            {
+              "target": "params",
+              "modifier": "id",
+              "value": "ord_2tqaGQYZyvBsMKEgs",
+              "invert": false,
+              "operator": "equals"
+            }
+          ],
+          "rulesOperator": "OR",
+          "disableTemplating": false,
+          "fallbackTo404": false,
+          "default": false
+        },
+        {
+          "uuid": "f91ad431-e28b-42f1-8adb-f4aad4a41d7a",
+          "body": "{\n  \"details\": [\n    {\n      \"debug_message\": \"There was a runtime error and Conekta engineers have been notified.\",\n      \"message\": \"There was a runtime error and Conekta engineers have been notified.\",\n      \"param\": null,\n      \"code\": \"conekta.errors.api.system.general_failure\"\n    }\n  ],\n  \"object\": \"error\",\n  \"type\": \"api_error\",\n  \"log_id\": \"641b6f2b3cd9a50001515098\"\n}",
+          "latency": 0,
+          "statusCode": 500,
+          "label": "",
+          "headers": [
+            {
+              "key": "Content-Type",
+              "value": "application/javascript; charset=utf-8"
+            }
+          ],
+          "bodyType": "INLINE",
+          "filePath": "",
+          "databucketID": "",
+          "sendFileAsBody": false,
+          "rules": [],
+          "rulesOperator": "OR",
+          "disableTemplating": false,
+          "fallbackTo404": false,
+          "default": true
+        }
+      ],
+      "enabled": true,
+      "responseMode": null
     }
   ],
   "rootChildren": [
@@ -10156,6 +10218,10 @@
     {
       "type": "route",
       "uuid": "16976e08-8e22-4868-9013-2f969caa0363"
+    },
+    {
+      "type": "route",
+      "uuid": "ff48168a-e0c5-4964-990b-d6c5a94c433f"
     }
   ],
   "proxyMode": false,

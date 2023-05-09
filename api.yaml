@@ -52,6 +52,8 @@ paths:
     $ref: "./resources/orders/order.yml"
   /orders/{id}:
     $ref: "./resources/orders/order_param.yml"
+  /orders/{id}/cancel:
+    $ref: "./resources/orders/order_cancel_param.yml"
   /orders/{id}/capture:
     $ref: "./resources/orders/order_capture_param.yml"
   /orders/{id}/line_items:
