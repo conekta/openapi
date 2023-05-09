@@ -1,13 +1,14 @@
 {
-  "packageVersion": "4.0.0",
+  "packageVersion": "6.0.0",
   "packageName": "conekta",
   "hideGenerationTimestamp": false,
   "generateInterfaces": true,
   "disallowAdditionalPropertiesIfNotPresent": true,
   "gitUserId": "conekta",
   "gitRepoId": "conekta-go",
-  "httpUserAgent": "Conekta/v2 GoBindings/4.0.0",
+  "httpUserAgent": "Conekta/v2 GoBindings/6.0.0",
   "files": {
+    "CODE_OF_CONDUCT.md" : {},
     "AUTHORS.md": {},
     "LICENSE": {},
     "conekta.png" : {}
