@@ -1,9 +1,9 @@
 post:
   tags:
     - Orders
-  operationId: orderRefund
-  description: A refunded order describes the items, amount, and reason an order is being refunded.
-  summary: Refund Order
+  operationId: ordersCancel
+  description: Cancel an order that has been previously created.
+  summary: Cancel Order
   responses:
     200:
       description: successful
@@ -17,14 +17,12 @@ post:
      $ref: '../errors/402.yml'
     404:
      $ref: '../errors/404.yml'
-    422:
-     $ref: '../errors/422.yml'
+    428:
+     $ref: '../errors/428.yml'
     500:
      $ref: '../errors/500.yml'
   security:
     - bearerAuth: []
-  requestBody:
-   $ref: '../../requestBodies/orders/order_refunds_request.yml'
   parameters:
     - $ref: '../../parameters/commons/path_param/id.yml'
     - $ref: '../../parameters/commons/headers/accept_language.yml'

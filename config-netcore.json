@@ -31,6 +31,6 @@
   "useOneOfDiscriminatorLookup" : true,
   "packageCopyright" : "Conekta",
   "PackageReleaseNotes" : "",
-  "releaseNote" : "Fix issues, Rename models, Clean unused models",
-  "packageVersion" : "6.0.0"
+  "releaseNote" : "Add missing documentation, add cancel refund endpoint, add transactions, transfers and webhook_keys",
+  "packageVersion" : "6.0.1"
 }

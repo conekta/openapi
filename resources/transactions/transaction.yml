@@ -1,0 +1,50 @@
+get:
+  tags:
+    - Transactions
+  operationId: getTransaction
+  summary: Get transaction
+  description: Get the details of a transaction
+  responses:
+    200:
+      description: successful
+      content:
+        application/vnd.conekta-v2.1.0+json:
+          schema:
+            $ref: '../../schemas/transactions/transaction_response.yml'
+      headers:
+        Date:
+          description: The date and time that the response was sent
+          schema:
+            type: string
+            example: "Fri, 03 Feb 2023 16:57:48 GMT"
+        Content-Type:
+          description: The format of the response body
+          schema:
+            type: string
+            example: "application/json; charset=utf-8"
+        Content-Length:
+          description: The length of the response body in bytes
+          schema:
+            type: string
+            example: "2737"
+        Connection:
+          description: The type of connection used to transfer the response
+          schema:
+            type: string
+            example: "keep-alive"
+        Conekta-Media-Type:
+          schema:
+            type: string
+            example: conekta-v2.1.0; format=application/json
+    401:
+     $ref: '../errors/401.yml'
+    404:
+     $ref: '../errors/401.yml'
+    500:
+     $ref: '../errors/500.yml'
+  security:
+    - bearerAuth: []
+  parameters:
+    - $ref: '../../parameters/commons/headers/accept_language.yml'
+    - $ref: '../../parameters/commons/headers/x_child_company_id.yml'
+    - $ref: '../../parameters/commons/path_param/id.yml'

@@ -52,6 +52,8 @@ paths:
     $ref: "./resources/orders/order.yml"
   /orders/{id}:
     $ref: "./resources/orders/order_param.yml"
+  /orders/{id}/cancel:
+    $ref: "./resources/orders/order_cancel_param.yml"
   /orders/{id}/capture:
     $ref: "./resources/orders/order_capture_param.yml"
   /orders/{id}/line_items:
@@ -60,6 +62,8 @@ paths:
     $ref: "./resources/orders/update_order_product_param.yml"
   /orders/{id}/refunds:
     $ref: "./resources/orders/order_refunds_param.yml"
+  /orders/{id}/refunds/{refund_id}:
+    $ref: "./resources/orders/order_cancel_refunds_param.yml"
   /checkouts:
     $ref: "./resources/checkouts/checkouts.yml"
   /checkouts/{id}:
@@ -102,6 +106,18 @@ paths:
     $ref: "./resources/orders/update_order_tax_param.yml"
   /tokens:
      $ref: "./resources/tokens/token.yml"
+  /transactions:
+    $ref: "./resources/transactions/transactions.yml"
+  /transactions/{id}:
+    $ref: "./resources/transactions/transaction.yml"
+  /transfers:
+    $ref: "./resources/transfers/transfers.yml"
+  /transfers/{id}:
+    $ref: "./resources/transfers/transfer.yml"
+  /webhook_keys:
+    $ref: "./resources/webhook_keys/webhook_keys.yml"
+  /webhook_keys/{id}:
+    $ref: "./resources/webhook_keys/webhook_key.yml"
   /webhooks:
      $ref: "./resources/webhooks/webhooks.yml"
   /webhooks/{id}:

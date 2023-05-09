@@ -4,9 +4,11 @@ properties:
   amount:
     type: integer
     example: 21605
+    description: "The total amount to be collected in cents"
   amount_refunded:
     type: integer
     example: 0
+    description: "The total amount refunded in cents"
   channel:
     type: object
     properties:
@@ -23,6 +25,7 @@ properties:
         type: string
         example: "channel_2tNDzhA4Akmzj11AU"
   charges:
+    description: "The charges associated with the order"
     allOf:
       - $ref: ../pagination/pagination.yml
       - type: object
@@ -124,9 +127,11 @@ properties:
     type: integer
     example: 1676328434
     format: int64
+    description: "The time at which the object was created in seconds since the Unix epoch"
   currency:
     type: string
     example: "MXN"
+    description: "The three-letter ISO 4217 currency code. The currency of the order."
   customer_info:
     allOf:
       - type: object
@@ -196,16 +201,21 @@ properties:
                       type: string
   livemode:
     type: boolean
+    example: false
+    description: "Whether the object exists in live mode or test mode"
   metadata:
     additionalProperties: true
     maxProperties: 100
     type: object
+    description: "Set of key-value pairs that you can attach to an object. This can be useful for storing additional information about the object in a structured format."
   object:
     type: string
     example: "order"
+    description: "String representing the object’s type. Objects of the same type share the same value."
   payment_status:
     type: string
     example: "paid"
+    description: "The payment status of the order."
   shipping_contact:
     allOf:
       - type: object
@@ -222,3 +232,4 @@ properties:
     type: integer
     example: 1676328434
     format: int64
+    description: "The time at which the object was last updated in seconds since the Unix epoch"

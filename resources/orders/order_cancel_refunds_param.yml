@@ -1,9 +1,9 @@
-post:
+delete:
   tags:
     - Orders
-  operationId: orderRefund
+  operationId: orderCancelRefund
   description: A refunded order describes the items, amount, and reason an order is being refunded.
-  summary: Refund Order
+  summary: Cancel Refund
   responses:
     200:
       description: successful
@@ -23,9 +23,8 @@ post:
      $ref: '../errors/500.yml'
   security:
     - bearerAuth: []
-  requestBody:
-   $ref: '../../requestBodies/orders/order_refunds_request.yml'
   parameters:
     - $ref: '../../parameters/commons/path_param/id.yml'
+    - $ref: '../../parameters/commons/path_param/refund_id.yml'
     - $ref: '../../parameters/commons/headers/accept_language.yml'
     - $ref: '../../parameters/commons/headers/x_child_company_id.yml'

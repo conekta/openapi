@@ -1,0 +1,66 @@
+title: transaction_response
+description: "The Transaction object represents the actions or steps of an order. Statuses can be: unprocessed, pending, available, owen, paid_out, voided, capture, capture_reversal, liquidation, liquidation_reversal, payout, payout_reversal, refund, refund_reversal, chargeback, chargeback_reversal, rounding_adjustment, won_chargeback, transferred, and transferred."
+type: object
+required:
+  - id
+  - object
+  - amount
+  - fee
+  - net
+  - status
+  - type
+  - created_at
+  - currency
+  - charge
+  - livemode
+properties:
+  amount:
+    type: integer
+    example: 1000
+    format: int64
+    description: "The amount of the transaction."
+  charge:
+    type: string
+    example: "5ee7ec58885a45585e6d9f8m"
+    description: "Randomly assigned unique order identifier associated with the charge."
+  created_at:
+    type: integer
+    example: 1553273553
+    format: int64
+    description: "Date and time of creation of the transaction in Unix format."
+  currency:
+    type: string
+    example: "MXN"
+    description: "The currency of the transaction. It uses the 3-letter code of the [International Standard ISO 4217.](https://es.wikipedia.org/wiki/ISO_4217)"
+    maxLength: 3
+  fee:
+    type: integer
+    example: 560
+    format: int64
+    description: "The amount to be deducted for taxes and commissions."
+  id:
+    type: string
+    example: "5ee7ec5b8dea41085erb7f9e"
+    description: "Unique identifier of the transaction."
+  livemode:
+    type: boolean
+    example: true
+    description: "Indicates whether the transaction was created in live mode or test mode."
+  net:
+    type: integer
+    example: 440
+    format: int64
+    description: "The net amount after deducting commissions and taxes."
+  object:
+    type: string
+    example: "transaction"
+    description: "Object name, which is transaction."
+  status:
+    type: string
+    example: "pending"
+    description: "Code indicating transaction status."
+  type:
+    type: string
+    example: "capture"
+    description: "Transaction Type"
+  
