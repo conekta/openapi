@@ -1,4 +1,4 @@
-title: transfer_response
+title: transfers_response
 description: "A transfer represents the action of sending an amount to a business bank account including the status, amount and method used to make the transfer."
 type: object
 properties:
@@ -25,10 +25,10 @@ properties:
     type: boolean
     example: true
     description: "Indicates whether the transfer was created in live mode or test mode."
-  destination:
+  method:
     type: object
     description: "Method used to make the transfer."
-    title: transfer_destination_response
+    title: transfer_method_response
     properties:
       account_holder:
         type: string

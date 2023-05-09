@@ -1,26 +1,25 @@
 get:
   tags:
-    - Transfers
-  operationId: getTransfers
-  summary: Get a list of transfers
-  description: Get transfers details in the form of a list
+    - Webhook keys
+  operationId: getWebhookKeys
+  summary: Get List of Webhook Keys
+  description: 'Consume the list of webhook keys you have'
   responses:
     200:
       description: successful
       content:
         application/vnd.conekta-v2.1.0+json:
           schema:
-            title: get_transfers_response
+            title: get_webhook_keys_response
             allOf:
               - $ref: ../../schemas/pagination/pagination.yml
               - $ref: ../../schemas/pagination/page.yml
               - type: object
                 properties:
                   data:
-                    description: Transfers
                     type: array
                     items:
-                      $ref: '../../schemas/transfers/transfers_response.yml'
+                      $ref: '../../schemas/webhook-keys/webhook-key_response.yml'
       headers:
         Date:
           description: The date and time that the response was sent
@@ -59,3 +58,36 @@ get:
     - $ref: '../../parameters/commons/query/search.yml'
     - $ref: '../../parameters/commons/query/next_page.yml'
     - $ref: '../../parameters/commons/query/previous_page.yml'
+post:
+  tags:
+    - Webhook keys
+  operationId: createWebhookKey
+  summary: Create Webhook Key
+  description: 'Create a webhook key'
+  responses:
+    '200':
+      description: successful operation
+      content:
+        application/vnd.conekta-v2.1.0+json:
+          schema:
+            $ref: '../../schemas/webhook-keys/webhook-key_create_response.yml'
+    401:
+     $ref: '../errors/401.yml'
+    500:
+     $ref: '../errors/500.yml'
+  security:
+    - bearerAuth: []
+  requestBody:
+    content:
+      application/json:
+        schema:  
+          type: object
+          title: webhook_key_request
+          properties:
+            active:
+              type: boolean
+              example: true
+              description: Indicates if the webhook key is active
+              default: true
+  parameters:
+    - $ref: '../../parameters/commons/headers/accept_language.yml'

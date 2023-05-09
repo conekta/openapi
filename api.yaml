@@ -106,12 +106,16 @@ paths:
      $ref: "./resources/tokens/token.yml"
   /transactions:
     $ref: "./resources/transactions/transactions.yml"
-  /transactions/{id}}:
+  /transactions/{id}:
     $ref: "./resources/transactions/transaction.yml"
   /transfers:
     $ref: "./resources/transfers/transfers.yml"
   /transfers/{id}:
     $ref: "./resources/transfers/transfer.yml"
+  /webhook_keys:
+    $ref: "./resources/webhook_keys/webhook_keys.yml"
+  /webhook_keys/{id}:
+    $ref: "./resources/webhook_keys/webhook_key.yml"
   /webhooks:
      $ref: "./resources/webhooks/webhooks.yml"
   /webhooks/{id}:

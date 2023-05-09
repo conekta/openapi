@@ -1,0 +1,133 @@
+get:
+  tags:
+    -  Webhook keys
+  operationId: getWebhookKey
+  summary:  Get Webhook Key
+  responses:
+    200:
+      description: successful
+      content:
+        application/vnd.conekta-v2.1.0+json:
+          schema:
+            $ref: '../../schemas/webhook-keys/webhook-key_response.yml'
+      headers:
+        Date:
+          description: The date and time that the response was sent
+          schema:
+            type: string
+            example: "Fri, 03 Feb 2023 16:57:48 GMT"
+        Content-Type:
+          description: The format of the response body
+          schema:
+            type: string
+            example: "application/json; charset=utf-8"
+        Content-Length:
+          description: The length of the response body in bytes
+          schema:
+            type: string
+            example: "2737"
+        Connection:
+          description: The type of connection used to transfer the response
+          schema:
+            type: string
+            example: "keep-alive"
+        Conekta-Media-Type:
+          schema:
+            type: string
+            example: conekta-v2.1.0; format=application/json
+    401:
+     $ref: '../errors/401.yml'
+    404:
+     $ref: '../errors/404.yml'
+    500:
+     $ref: '../errors/500.yml'
+  security:
+    - bearerAuth: []
+  parameters:
+    - $ref: '../../parameters/commons/path_param/id.yml'
+    - $ref: '../../parameters/commons/headers/accept_language.yml'
+    - $ref: '../../parameters/commons/headers/x_child_company_id.yml'
+put:
+  tags:
+    - Webhook keys
+  operationId: updateWebhookKey
+  summary: Update Webhook Key
+  description: 'updates an existing webhook key'
+  responses:
+    '200':
+      description: successful operation
+      content:
+        application/vnd.conekta-v2.1.0+json:
+          schema:
+             $ref: '../../schemas/webhook-keys/webhook-key_response.yml'
+    404:
+     $ref: '../errors/404.yml'
+    401:
+     $ref: '../errors/401.yml'
+    500:
+     $ref: '../errors/500.yml'
+  security:
+    - bearerAuth: []
+  requestBody:
+    content:
+      application/json:
+        schema:  
+          type: object
+          title: webhook_key_update_request
+          properties:
+            active:
+              type: boolean
+              example: false
+              description: Indicates if the webhook key is active
+              default: false
+  parameters:
+    - $ref: '../../parameters/commons/path_param/id.yml'
+    - $ref: '../../parameters/commons/headers/accept_language.yml'
+delete:
+  tags:
+    - Webhook keys
+  operationId: deleteWebhookKey
+  summary: Delete Webhook key
+  responses:
+    200:
+      description: successful
+      content:
+        application/vnd.conekta-v2.1.0+json:
+          schema:
+            $ref: '../../schemas/webhook-keys/webhook-key_delete_response.yml'
+      headers:
+        Date:
+          description: The date and time that the response was sent
+          schema:
+            type: string
+            example: "Fri, 03 Feb 2023 16:57:48 GMT"
+        Content-Type:
+          description: The format of the response body
+          schema:
+            type: string
+            example: "application/json; charset=utf-8"
+        Content-Length:
+          description: The length of the response body in bytes
+          schema:
+            type: string
+            example: "2737"
+        Connection:
+          description: The type of connection used to transfer the response
+          schema:
+            type: string
+            example: "keep-alive"
+        Conekta-Media-Type:
+          schema:
+            type: string
+            example: conekta-v2.1.0; format=application/json
+    401:
+     $ref: '../errors/401.yml'
+    404:
+     $ref: '../errors/404.yml'
+    500:
+     $ref: '../errors/500.yml'
+  security:
+    - bearerAuth: []
+  parameters:
+    - $ref: '../../parameters/commons/path_param/id.yml'
+    - $ref: '../../parameters/commons/headers/accept_language.yml'
