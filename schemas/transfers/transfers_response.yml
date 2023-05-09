@@ -59,7 +59,7 @@ properties:
         type: string
         example: "payee_2icdDewRxDENBos85"
         description: "Unique identifier of the payee."
-      _type:
+      type:
         type: string
         example: "BankTransferPayoutMethod"
         description: "Type of the payee."
