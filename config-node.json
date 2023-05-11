@@ -22,6 +22,12 @@
   "useObjectParameters": true,
   "npmRepository": "https://www.npmjs.com/package/conekta",
   "supportsES6": true,
-  "legacyDiscriminatorBehavior": false,
-  "templateDir": "templates/node"
+  "legacyDiscriminatorBehavior": true,
+  "modelPackage" : "model",
+  "apiPackage" : "api",
+  "withSeparateModelsAndApi": true,
+  "withInterfaces" :true,
+  "templateDir": "templates/node",
+  "enumPropertyNaming" : "camelCase",
+  "paramNaming" : "camelCase"
 }

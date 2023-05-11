@@ -14034,6 +14034,7 @@ components:
     charge_response_refunds_allOf:
       properties:
         data:
+          description: refunds
           items:
             $ref: '#/components/schemas/charge_response_refunds_data'
           type: array

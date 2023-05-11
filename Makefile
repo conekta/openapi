@@ -33,7 +33,9 @@ php:
 	npx @openapitools/openapi-generator-cli generate -i  api.yaml -g php -o conekta-php  -c config-php.json
 
 node:
-	npx @openapitools/openapi-generator-cli generate -i  api.yaml -g typescript-node -o ../conekta-node -c config-node.json
+	npx @openapitools/openapi-generator-cli generate -i  api.yaml -g typescript-axios \
+	 -o ../conekta-node  -c config-node.json  \
+	 --global-property apiDocs=false  --global-property apiTests=true 
 
 update-readme:
 	make merge && rdme openapi _build/api.yaml --id=$(API_README_VERSION_ID)  --key=${README_API_KEY}

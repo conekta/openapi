@@ -1,37 +1,51 @@
 {
-    "name": "{{npmName}}",
-    "version": "{{npmVersion}}",
-    "description": "NodeJS client for {{npmName}}",
-    "repository": {
-        "type": "git",
-        "url": "https://{{gitHost}}/{{gitUserId}}/{{gitRepoId}}.git"
-    },
-    "main": "dist/api.js",
-    "types": "dist/api.d.ts",
-    "scripts": {
-        "clean": "rm -Rf node_modules/ *.js",
-        "build": "tsc",
-        "test": "jest"
-    },
-    "author": "OpenAPI-Generator Contributors",
-    "license": "Unlicense",
-    "dependencies": {
-        "bluebird": "^3.5.0",
-        "request": "^2.81.0",
-        "rewire": "^3.0.2"
-    },
-    "devDependencies": {
-        "@types/jest": "27.5.2",
-        "@types/bluebird": "^3.5.33",
-        "@types/node": "14.18.42",
-        "@types/request": "^2.48.8",
-        "typescript": "^4.0",
-        "jest": "^27.0.6",
-        "ts-jest": "^27.0.4",
-        "ttypescript": "^1.5.10"
-       
-    }{{#npmRepository}},
-    "publishConfig": {
-        "registry": "{{npmRepository}}"
-    }{{/npmRepository}}
+  "name": "{{npmName}}",
+  "version": "{{npmVersion}}",
+  "description": "OpenAPI client for {{npmName}}",
+  "author": "engineering conekta",
+  "repository": {
+    "type": "git",
+    "url": "https://{{gitHost}}/{{gitUserId}}/{{gitRepoId}}.git"
+  },
+  "engines": {
+    "node": ">=14"
+  },
+  "keywords": [
+    "{{npmName}}",
+    "api",
+    "nodejs"
+  ],
+  "bugs": {
+    "url": "https://{{gitHost}}/{{gitUserId}}/{{gitRepoId}}/issues"
+  },
+  "homepage": "https://{{gitHost}}/{{gitUserId}}/{{gitRepoId}}#readme",
+  "license": "MIT",
+  "main": "./dist/index.js",
+  "typings": "./dist/index.d.ts",
+{{#supportsES6}}
+  "module": "./dist/esm/index.js",
+  "sideEffects": false,
+{{/supportsES6}}
+  "scripts": {
+    "build": "tsc {{#supportsES6}}&& tsc -p tsconfig.esm.json{{/supportsES6}}",
+    "prepare": "npm run build",
+    "test": "jest"
+  },
+  "dependencies": {
+    "axios": "^0.27.2"
+  },
+  "devDependencies": {
+    "@types/node": "^12.11.5",
+    "typescript": "^4.0",
+    "@types/jest" : "^27.5.2",
+    "jest": "^27.0.6",
+    "ts-jest": "^27.0.4",
+    "ttypescript": "^1.5.10"
+  }{{#npmRepository}},{{/npmRepository}}
+{{#npmRepository}}
+  "publishConfig": {
+    "registry": "{{npmRepository}}",
+    "access": "public"
+  }
+{{/npmRepository}}
 }
