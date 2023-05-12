@@ -537,12 +537,56 @@
               "value": "PaymentLink",
               "invert": false,
               "operator": "equals"
+            },
+            {
+              "target": "body",
+              "modifier": "recurrent",
+              "value": "false",
+              "invert": false,
+              "operator": "equals"
             }
           ],
-          "rulesOperator": "OR",
+          "rulesOperator": "AND",
           "disableTemplating": false,
           "fallbackTo404": false,
-          "default": true
+          "default": false
+        },
+        {
+          "uuid": "6228f836-8cdf-4220-aca8-9a74cd7d72dc",
+          "body": "{\n    \"id\": \"4b57dde6-1080-4529-8a7c-7299812a3b1a\",\n    \"name\": \"{{body 'name' }}\",\n    \"livemode\": true,\n    \"emails_sent\": 0,\n    \"success_url\": \"\",\n    \"failure_url\": \"\",\n    \"paid_payments_count\": 0,\n    \"sms_sent\": 0,\n    \"status\": \"Issued\",\n    \"type\": \"PaymentLink\",\n    \"recurrent\": false,\n    \"starts_at\": 1683784800,\n    \"expires_at\": {{body 'expires_at' }} ,\n    \"allowed_payment_methods\": {{body 'allowed_payment_methods' }},\n    \"exclude_card_networks\": [],\n    \"needs_shipping_contact\": true,\n    \"monthly_installments_options\": [\n        3,\n        6,\n        9,\n        12\n    ],\n    \"monthly_installments_enabled\": true,\n    \"force_3ds_flow\": false,\n    \"metadata\": {\n        \"my_custom_customer_id\": \"abc123\"\n    },\n    \"can_not_expire\": false,\n    \"object\": \"checkout\",\n    \"slug\": \"4b57dde6108045298a7c7299812a3b1a\",\n    \"url\": \"https://pay.conekta.com/link/4b57dde6108045298a7c7299812a3b1a\"\n}",
+          "latency": 0,
+          "statusCode": 200,
+          "label": "payment link with customer info",
+          "headers": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            }
+          ],
+          "bodyType": "INLINE",
+          "filePath": "",
+          "databucketID": "",
+          "sendFileAsBody": false,
+          "rules": [
+            {
+              "target": "body",
+              "modifier": "order_template.customer_info.email",
+              "value": "steven@gmail.com",
+              "invert": false,
+              "operator": "equals"
+            },
+            {
+              "target": "body",
+              "modifier": "recurrent",
+              "value": "true",
+              "invert": false,
+              "operator": "equals"
+            }
+          ],
+          "rulesOperator": "AND",
+          "disableTemplating": false,
+          "fallbackTo404": false,
+          "default": false
         },
         {
           "uuid": "5f7b4a43-4460-4c1d-a023-35998d27a897",
@@ -630,7 +674,7 @@
           "rulesOperator": "OR",
           "disableTemplating": false,
           "fallbackTo404": false,
-          "default": false
+          "default": true
         }
       ],
       "enabled": true,

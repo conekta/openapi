@@ -45,6 +45,7 @@ properties:
     type: boolean
     example: true
     nullable: true
+    description: "This flag allows you to specify if the link will be on demand."
   order_template:
     description: "It maintains the attributes with which the order will be created when receiving a new payment."
     type: object
@@ -57,6 +58,11 @@ properties:
         example: "MXN"
         maxLength: 3
         description: "It is the currency in which the order will be created. It must be a valid ISO 4217 currency code."
+      customer_info:
+        description: "It is the information of the customer who will be created when receiving a new payment."
+        oneOf:
+          - $ref: ../customers/customer_info.yml
+          - $ref: ../customers/customer_info_just_customer_id.yml
       line_items:
         description: They are the products to buy. Each contains the "unit price" and "quantity" parameters that are used to calculate the total amount of the order.
         type: array
@@ -67,10 +73,12 @@ properties:
         additionalProperties: true
         example: { "key": "value" }
         maxProperties: 100
+        description: "It is a set of key-value pairs that you can attach to the order. It can be used to store additional information about the order in a structured format."
   payments_limit_count:
     type: integer
     format: int8
     example: 5
+    description: "It is the number of payments that can be made through the link."
   recurrent:
     type: boolean
     example: false
@@ -78,4 +86,5 @@ properties:
   type:
     type: string
     example: "PaymentLink"
+    description: "It is the type of link that will be created. It must be a valid type."
   

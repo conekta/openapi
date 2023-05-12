@@ -31,6 +31,6 @@
   "useOneOfDiscriminatorLookup" : true,
   "packageCopyright" : "Conekta",
   "PackageReleaseNotes" : "",
-  "releaseNote" : "Add missing documentation, add cancel refund endpoint, add transactions, transfers and webhook_keys",
-  "packageVersion" : "6.0.1"
+  "releaseNote" : "Add missing properties to the checkout model",
+  "packageVersion" : "6.0.2"
 }
