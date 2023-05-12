@@ -11,7 +11,7 @@ java:
 	-c config-java.json  
 
 go:
-	npx @openapitools/openapi-generator-cli generate -i  api.yaml -g go -o conekta-go  -c config-go.json   --global-property apiTests=false
+	npx @openapitools/openapi-generator-cli generate -i  api.yaml -g go -o ../conekta-go  -c config-go.json   --global-property apiTests=false
 
 ruby:
 	mkdir -p conekta-ruby && cp .openapi-generator-ignore conekta-ruby/.openapi-generator-ignore &&   \

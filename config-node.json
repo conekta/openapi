@@ -12,7 +12,8 @@
     "CODE_OF_CONDUCT.md": {},
     "AUTHORS.md": {},
     "LICENSE": {},
-    "conekta.png": {}
+    "conekta.png": {},
+    "CONTRIBUTING.md" : {}
   },
   "gitUserId": "conekta",
   "gitRepoId": "conekta-node",
@@ -29,5 +30,6 @@
   "withInterfaces" :true,
   "templateDir": "templates/node",
   "enumPropertyNaming" : "camelCase",
-  "paramNaming" : "camelCase"
+  "paramNaming" : "camelCase",
+  "apiVersion" :"application/vnd.conekta-v2.1.0+json"
 }

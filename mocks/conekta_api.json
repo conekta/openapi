@@ -9093,7 +9093,7 @@
           "rulesOperator": "OR",
           "disableTemplating": false,
           "fallbackTo404": false,
-          "default": true
+          "default": false
         },
         {
           "uuid": "08b57c16-ecc8-463d-90c6-cc52350dce47",
@@ -9159,7 +9159,7 @@
           "rulesOperator": "OR",
           "disableTemplating": false,
           "fallbackTo404": false,
-          "default": false
+          "default": true
         }
       ],
       "enabled": true,
@@ -9191,7 +9191,7 @@
           "rulesOperator": "OR",
           "disableTemplating": false,
           "fallbackTo404": false,
-          "default": true
+          "default": false
         },
         {
           "uuid": "a40ca71b-2dc4-4a49-94f0-80f97624c290",
@@ -9257,7 +9257,7 @@
           "rulesOperator": "OR",
           "disableTemplating": false,
           "fallbackTo404": false,
-          "default": false
+          "default": true
         }
       ],
       "enabled": true,
