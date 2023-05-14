@@ -11526,6 +11526,7 @@ components:
           type: array
         metadata:
           additionalProperties: true
+          description: Metadata associated with the order
           maxProperties: 100
           type: object
         needs_shipping_contact:
@@ -11572,7 +11573,7 @@ components:
           maxLength: 3
           type: string
         customer_info:
-          $ref: '#/components/schemas/order_request_customer_info'
+          $ref: '#/components/schemas/order_update_request_customer_info'
         discount_lines:
           description: "List of [discounts](https://developers.conekta.com/v2.1.0/reference/orderscreatediscountline)\
             \ that are applied to the order. You must have at least one discount."
@@ -12324,7 +12325,7 @@ components:
       type: object
     checkout_request:
       description: |
-        [Checkout](https://developers.conekta.com/reference/checkout) details
+        [Checkout](https://developers.conekta.com/v2.1.0/reference/payment-link) details
       properties:
         allowed_payment_methods:
           description: Are the payment methods available for this link
@@ -13735,6 +13736,11 @@ components:
           type: integer
       type: object
     order_request_customer_info:
+      description: Customer information
+      oneOf:
+      - $ref: '#/components/schemas/customer_info'
+      - $ref: '#/components/schemas/customer_info_just_customer_id'
+    order_update_request_customer_info:
       oneOf:
       - $ref: '#/components/schemas/customer_info'
       - $ref: '#/components/schemas/customer_info_just_customer_id'
