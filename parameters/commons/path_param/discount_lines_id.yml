@@ -1,6 +1,6 @@
 in: path
 name: "discount_lines_id"
-description:  identifier
+description: discount line id identifier
 required: true
 schema:
   type: string

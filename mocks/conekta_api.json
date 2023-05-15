@@ -9191,7 +9191,7 @@
           "rulesOperator": "OR",
           "disableTemplating": false,
           "fallbackTo404": false,
-          "default": false
+          "default": true
         },
         {
           "uuid": "a40ca71b-2dc4-4a49-94f0-80f97624c290",
@@ -9257,7 +9257,7 @@
           "rulesOperator": "OR",
           "disableTemplating": false,
           "fallbackTo404": false,
-          "default": true
+          "default": false
         }
       ],
       "enabled": true,
@@ -9944,6 +9944,269 @@
       ],
       "enabled": true,
       "responseMode": null
+    },
+    {
+      "uuid": "1906dfd7-ef47-442b-b8ec-8f23c3fd1c8a",
+      "documentation": "get an existing discount lines for an existing orden",
+      "method": "get",
+      "endpoint": "orders/:id/discount_lines/:discount_lines_id",
+      "responses": [
+        {
+          "uuid": "daeb9b7f-4e8e-47a6-a7cf-176c22634bdf",
+          "body": "{\n    \"code\": \"trac\",\n    \"amount\": 100,\n    \"type\": \"loyalty\",\n    \"object\": \"discount_line\",\n    \"id\": \"dis_lin_2tVyahK8Nts7rKRMZ\",\n    \"parent_id\": \"ord_2tVyWPnCPWbrV37mW\"\n}",
+          "latency": 0,
+          "statusCode": 200,
+          "label": "successful",
+          "headers": [
+            {
+              "key": "Content-Type",
+              "value": "application/vnd.conekta-v2.1.0+json"
+            }
+          ],
+          "bodyType": "INLINE",
+          "filePath": "",
+          "databucketID": "",
+          "sendFileAsBody": false,
+          "rules": [
+            {
+              "target": "params",
+              "modifier": "id",
+              "value": "ord_2tVyWPnCPWbrV37mW",
+              "invert": false,
+              "operator": "equals"
+            },
+            {
+              "target": "params",
+              "modifier": "discount_lines_id",
+              "value": "dis_lin_2tVyahK8Nts7rKRMZ",
+              "invert": false,
+              "operator": "equals"
+            }
+          ],
+          "rulesOperator": "AND",
+          "disableTemplating": false,
+          "fallbackTo404": false,
+          "default": false
+        },
+        {
+          "uuid": "26fb3860-ab9f-496c-b466-21eb9c997ef6",
+          "body": "",
+          "latency": 0,
+          "statusCode": 401,
+          "label": "authentication error",
+          "headers": [
+            {
+              "key": "Content-Type",
+              "value": "application/vnd.conekta-v2.1.0+json"
+            }
+          ],
+          "bodyType": "INLINE",
+          "filePath": "",
+          "databucketID": "",
+          "sendFileAsBody": false,
+          "rules": [],
+          "rulesOperator": "OR",
+          "disableTemplating": false,
+          "fallbackTo404": false,
+          "default": false
+        },
+        {
+          "uuid": "dc66fcba-ec42-494c-934d-a7d3c89b9273",
+          "body": "{\n  \"details\": [\n    {\n      \"code\": \"conekta.errors.authentication.missing_key\",\n      \"param\": \"\",\n      \"message\": \"Acceso no autorizado.\",\n      \"debug_message\": \"Please include your access key in your request.\"\n    }\n  ]\n}",
+          "latency": 0,
+          "statusCode": 404,
+          "label": "not found entity",
+          "headers": [
+            {
+              "key": "Content-Type",
+              "value": "application/vnd.conekta-v2.1.0+json"
+            }
+          ],
+          "bodyType": "INLINE",
+          "filePath": "",
+          "databucketID": "",
+          "sendFileAsBody": false,
+          "rules": [],
+          "rulesOperator": "OR",
+          "disableTemplating": false,
+          "fallbackTo404": false,
+          "default": false
+        },
+        {
+          "uuid": "7eda3a0f-a85f-418a-a2a0-84d93fbfb3d0",
+          "body": "",
+          "latency": 0,
+          "statusCode": 422,
+          "label": "parameter validation error",
+          "headers": [
+            {
+              "key": "Content-Type",
+              "value": "application/vnd.conekta-v2.1.0+json"
+            }
+          ],
+          "bodyType": "INLINE",
+          "filePath": "",
+          "databucketID": "",
+          "sendFileAsBody": false,
+          "rules": [],
+          "rulesOperator": "OR",
+          "disableTemplating": false,
+          "fallbackTo404": false,
+          "default": false
+        },
+        {
+          "uuid": "dfa5d6f5-726b-40df-91bb-46b450eb15ef",
+          "body": "",
+          "latency": 0,
+          "statusCode": 500,
+          "label": "internal server error",
+          "headers": [
+            {
+              "key": "Content-Type",
+              "value": "application/vnd.conekta-v2.1.0+json"
+            }
+          ],
+          "bodyType": "INLINE",
+          "filePath": "",
+          "databucketID": "",
+          "sendFileAsBody": false,
+          "rules": [],
+          "rulesOperator": "OR",
+          "disableTemplating": false,
+          "fallbackTo404": false,
+          "default": true
+        }
+      ],
+      "enabled": true,
+      "responseMode": null
+    },
+    {
+      "uuid": "37336f5f-6e75-4916-87b6-53a08241e59d",
+      "documentation": "get an existing discount lines for an existing orden",
+      "method": "get",
+      "endpoint": "orders/:id/discount_lines",
+      "responses": [
+        {
+          "uuid": "6bbf264e-268a-4fc2-9171-3dcbd9108778",
+          "body": "{\n    \"next_page_url\": null,\n    \"previous_page_url\": null,\n    \"has_more\": false,\n    \"object\": \"list\",\n    \"data\": [\n        {\n            \"code\": \"trac\",\n            \"amount\": 100,\n            \"type\": \"loyalty\",\n            \"object\": \"discount_line\",\n            \"id\": \"dis_lin_2tVyahK8Nts7rKRMZ\",\n            \"parent_id\": \"ord_2tVyWPnCPWbrV37mW\"\n        },\n        {\n            \"code\": \"trac\",\n            \"amount\": 1,\n            \"type\": \"loyalty\",\n            \"object\": \"discount_line\",\n            \"id\": \"dis_lin_2tVyaKuNH7YJiVB9W\",\n            \"parent_id\": \"ord_2tVyWPnCPWbrV37mW\"\n        }\n    ]\n}",
+          "latency": 0,
+          "statusCode": 200,
+          "label": "successful",
+          "headers": [
+            {
+              "key": "Content-Type",
+              "value": "application/vnd.conekta-v2.1.0+json"
+            }
+          ],
+          "bodyType": "INLINE",
+          "filePath": "",
+          "databucketID": "",
+          "sendFileAsBody": false,
+          "rules": [
+            {
+              "target": "params",
+              "modifier": "id",
+              "value": "ord_2tVyWPnCPWbrV37mW",
+              "invert": false,
+              "operator": "equals"
+            }
+          ],
+          "rulesOperator": "AND",
+          "disableTemplating": false,
+          "fallbackTo404": false,
+          "default": false
+        },
+        {
+          "uuid": "6bf8c043-f7cb-4c1f-a9a0-cf9197f5239f",
+          "body": "",
+          "latency": 0,
+          "statusCode": 401,
+          "label": "authentication error",
+          "headers": [
+            {
+              "key": "Content-Type",
+              "value": "application/vnd.conekta-v2.1.0+json"
+            }
+          ],
+          "bodyType": "INLINE",
+          "filePath": "",
+          "databucketID": "",
+          "sendFileAsBody": false,
+          "rules": [],
+          "rulesOperator": "OR",
+          "disableTemplating": false,
+          "fallbackTo404": false,
+          "default": false
+        },
+        {
+          "uuid": "3ca24436-d316-492c-9abf-9b94044b2a51",
+          "body": "{\n  \"details\": [\n    {\n      \"code\": \"conekta.errors.authentication.missing_key\",\n      \"param\": \"\",\n      \"message\": \"Acceso no autorizado.\",\n      \"debug_message\": \"Please include your access key in your request.\"\n    }\n  ]\n}",
+          "latency": 0,
+          "statusCode": 404,
+          "label": "not found entity",
+          "headers": [
+            {
+              "key": "Content-Type",
+              "value": "application/vnd.conekta-v2.1.0+json"
+            }
+          ],
+          "bodyType": "INLINE",
+          "filePath": "",
+          "databucketID": "",
+          "sendFileAsBody": false,
+          "rules": [],
+          "rulesOperator": "OR",
+          "disableTemplating": false,
+          "fallbackTo404": false,
+          "default": false
+        },
+        {
+          "uuid": "6a2896da-3a17-4dc5-9d38-585dda751f14",
+          "body": "",
+          "latency": 0,
+          "statusCode": 422,
+          "label": "parameter validation error",
+          "headers": [
+            {
+              "key": "Content-Type",
+              "value": "application/vnd.conekta-v2.1.0+json"
+            }
+          ],
+          "bodyType": "INLINE",
+          "filePath": "",
+          "databucketID": "",
+          "sendFileAsBody": false,
+          "rules": [],
+          "rulesOperator": "OR",
+          "disableTemplating": false,
+          "fallbackTo404": false,
+          "default": false
+        },
+        {
+          "uuid": "0d87e421-5841-415e-84f1-0ecf7756ada3",
+          "body": "",
+          "latency": 0,
+          "statusCode": 500,
+          "label": "internal server error",
+          "headers": [
+            {
+              "key": "Content-Type",
+              "value": "application/vnd.conekta-v2.1.0+json"
+            }
+          ],
+          "bodyType": "INLINE",
+          "filePath": "",
+          "databucketID": "",
+          "sendFileAsBody": false,
+          "rules": [],
+          "rulesOperator": "OR",
+          "disableTemplating": false,
+          "fallbackTo404": false,
+          "default": true
+        }
+      ],
+      "enabled": true,
+      "responseMode": null
     }
   ],
   "rootChildren": [
@@ -10197,7 +10460,15 @@
     },
     {
       "type": "route",
+      "uuid": "37336f5f-6e75-4916-87b6-53a08241e59d"
+    },
+    {
+      "type": "route",
       "uuid": "948c325e-8acd-4c2c-9b08-4e81cf929ce7"
+    },
+    {
+      "type": "route",
+      "uuid": "1906dfd7-ef47-442b-b8ec-8f23c3fd1c8a"
     },
     {
       "type": "route",
