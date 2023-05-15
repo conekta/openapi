@@ -23,14 +23,10 @@ jobs:
         uses: openapi-generators/openapitools-generator-action@v1
         with:
           generator: openapi-yaml
-          config-file: api.yaml
-      # Do something with the generated client (likely publishing it somewhere)
-      - name: Do something with the client
-        run: |
-          cd openapi-yaml-client && ls -la
+          openapi-file: api.yaml
       - name: check if api.yaml are equals
         run: |
-          if diff -q _build/api.yaml openapi-yaml-client/api.yaml >/dev/null; then
+          if diff -q _build/api.yaml openapi-yaml-client/openapi/openapi.yaml >/dev/null; then
             echo "files are equals"
           else
             echo "exists differences between files _build/api.yaml"
