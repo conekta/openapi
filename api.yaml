@@ -22,6 +22,8 @@ paths:
     $ref: "./resources/antifraud/blacklists_index_create.yml"
   /antifraud/blacklists/{id}:
     $ref: "./resources/antifraud/blacklists_delete.yml"
+  /charges:
+    $ref: "./resources/charges/charges.yml"
   /orders/{id}/charges:
     $ref: "./resources/orders/order_charge_param.yml"
   /companies:
