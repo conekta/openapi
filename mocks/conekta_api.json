@@ -10207,6 +10207,68 @@
       ],
       "enabled": true,
       "responseMode": null
+    },
+    {
+      "uuid": "dd698e21-bd2b-459e-b0ca-62f16576bf11",
+      "documentation": "",
+      "method": "get",
+      "endpoint": "balances",
+      "responses": [
+        {
+          "uuid": "35511c3e-e0dd-4eb1-b9f2-644f9fe95b5e",
+          "body": "{\n  \"available\": [\n    {\n      \"amount\": 413343,\n      \"currency\": \"MXN\"\n    }\n  ],\n  \"pending\": [\n    {\n      \"amount\": 0,\n      \"currency\": \"MXN\"\n    }\n  ],\n  \"retention_amount\": [\n    {\n      \"amount\": 100000,\n      \"currency\": \"MXN\"\n    }\n  ],\n  \"retained\": [\n    {\n      \"amount\": 688,\n      \"currency\": \"MXN\"\n    }\n  ],\n  \"temporarily_retained\": [\n    {\n      \"amount\": 0,\n      \"currency\": \"MXN\"\n    }\n  ],\n  \"target_retention_amount\": [\n    {\n      \"amount\": 100000,\n      \"currency\": \"MXN\"\n    }\n  ],\n  \"conekta_retention\": [\n    {\n      \"amount\": 100000,\n      \"currency\": \"MXN\"\n    }\n  ],\n  \"target_collateral_amount\": {},\n  \"gateway\": [],\n  \"cashout_retention_amount\": [\n    {\n      \"amount\": 0,\n      \"currency\": \"MXN\"\n    }\n  ]\n}",
+          "latency": 0,
+          "statusCode": 200,
+          "label": "",
+          "headers": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            }
+          ],
+          "bodyType": "INLINE",
+          "filePath": "",
+          "databucketID": "",
+          "sendFileAsBody": false,
+          "rules": [
+            {
+              "target": "header",
+              "modifier": "Accept-language",
+              "value": "es",
+              "invert": false,
+              "operator": "equals"
+            }
+          ],
+          "rulesOperator": "OR",
+          "disableTemplating": false,
+          "fallbackTo404": false,
+          "default": false
+        },
+        {
+          "uuid": "ef13b39a-148c-46e6-8aee-6c57ff7883ff",
+          "body": "{\n  \"details\": [\n    {\n      \"debug_message\": \"There was a runtime error and Conekta engineers have been notified.\",\n      \"message\": \"There was a runtime error and Conekta engineers have been notified.\",\n      \"param\": null,\n      \"code\": \"conekta.errors.api.system.general_failure\"\n    }\n  ],\n  \"object\": \"error\",\n  \"type\": \"api_error\",\n  \"log_id\": \"641b6f2b3cd9a50001515098\"\n}",
+          "latency": 0,
+          "statusCode": 500,
+          "label": "",
+          "headers": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            }
+          ],
+          "bodyType": "INLINE",
+          "filePath": "",
+          "databucketID": "",
+          "sendFileAsBody": false,
+          "rules": [],
+          "rulesOperator": "OR",
+          "disableTemplating": false,
+          "fallbackTo404": false,
+          "default": true
+        }
+      ],
+      "enabled": true,
+      "responseMode": null
     }
   ],
   "rootChildren": [
@@ -10537,6 +10599,10 @@
     {
       "type": "route",
       "uuid": "ff48168a-e0c5-4964-990b-d6c5a94c433f"
+    },
+    {
+      "type": "route",
+      "uuid": "dd698e21-bd2b-459e-b0ca-62f16576bf11"
     }
   ],
   "proxyMode": false,

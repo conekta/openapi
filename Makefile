@@ -33,6 +33,8 @@ php:
 	npx @openapitools/openapi-generator-cli generate -i  api.yaml -g php -o conekta-php  -c config-php.json
 
 node:
+	rm -rf ../conekta-node/api && \
+	rm -rf ../conekta-node/model && \
 	npx @openapitools/openapi-generator-cli generate -i  api.yaml -g typescript-axios \
 	 -o ../conekta-node  -c config-node.json  \
 	 --global-property apiDocs=false  --global-property apiTests=true 

@@ -507,6 +507,96 @@ paths:
       summary: Delete blacklisted rule
       tags:
       - Antifraud
+  /balances:
+    get:
+      description: Get a company's balance
+      operationId: getBalance
+      parameters:
+      - description: Use for knowing which language to use
+        examples:
+          es:
+            summary: for spanish request/response
+            value: es
+          en:
+            summary: for english request/response
+            value: en
+        in: header
+        name: Accept-Language
+        required: false
+        schema:
+          default: es
+          enum:
+          - es
+          - en
+          type: string
+      responses:
+        "200":
+          content:
+            application/vnd.conekta-v2.1.0+json:
+              schema:
+                $ref: '#/components/schemas/balance_response'
+          description: successful
+          headers:
+            Date:
+              description: The date and time that the response was sent
+              schema:
+                example: "Fri, 03 Feb 2023 16:57:48 GMT"
+                type: string
+            Content-Type:
+              description: The format of the response body
+              schema:
+                example: application/json; charset=utf-8
+                type: string
+            Content-Length:
+              description: The length of the response body in bytes
+              schema:
+                example: "2737"
+                type: string
+            Connection:
+              description: The type of connection used to transfer the response
+              schema:
+                example: keep-alive
+                type: string
+            Conekta-Media-Type:
+              schema:
+                example: conekta-v2.1.0; format=application/json
+                type: string
+        "401":
+          content:
+            application/vnd.conekta-v2.1.0+json:
+              example:
+                details:
+                - message: Please include your access key in your request.
+                  param: null
+                  code: conekta.errors.authentication.missing_key
+                log_id: 507f1f77bcf86cd799439011
+                object: error
+                type: authentication_error
+              schema:
+                $ref: '#/components/schemas/error'
+          description: authentication error
+        "500":
+          content:
+            application/vnd.conekta-v2.1.0+json:
+              example:
+                details:
+                - debug_message: There was a runtime error and Conekta engineers have
+                    been notified.
+                  message: There was a runtime error and Conekta engineers have been
+                    notified.
+                  param: null
+                  code: conekta.errors.api.system.general_failure
+                object: error
+                type: api_error
+                log_id: 641b6f2b3cd9a50001515098
+              schema:
+                $ref: '#/components/schemas/error'
+          description: internal server error
+      security:
+      - bearerAuth: []
+      summary: Get a company's balance
+      tags:
+      - Balances
   /orders/{id}/charges:
     post:
       description: Create charge for an existing orden
@@ -10388,6 +10478,59 @@ components:
       - field
       - value
       type: object
+    balance_response:
+      description: balance model
+      properties:
+        available:
+          description: The balance's available
+          items:
+            $ref: '#/components/schemas/balance_common_field'
+          type: array
+        cashout_retention_amount:
+          description: The balance's cashout retention amount
+          items:
+            $ref: '#/components/schemas/balance_common_field'
+          type: array
+        conekta_retention:
+          description: The balance's conekta retention
+          items:
+            $ref: '#/components/schemas/balance_common_field'
+          type: array
+        gateway:
+          description: The balance's gateway
+          items:
+            $ref: '#/components/schemas/balance_common_field'
+          type: array
+        pending:
+          description: The balance's pending
+          items:
+            $ref: '#/components/schemas/balance_common_field'
+          type: array
+        retained:
+          description: The balance's retained
+          items:
+            $ref: '#/components/schemas/balance_common_field'
+          type: array
+        retention_amount:
+          description: The balance's retention amount
+          items:
+            $ref: '#/components/schemas/balance_common_field'
+          type: array
+        target_collateral_amount:
+          description: The balance's target collateral amount
+          type: object
+        target_retention_amount:
+          description: The balance's target retention amount
+          items:
+            $ref: '#/components/schemas/balance_common_field'
+          type: array
+        temporarily_retained:
+          description: The balance's temporarily retained
+          items:
+            $ref: '#/components/schemas/balance_common_field'
+          type: array
+      title: balance_response
+      type: object
     charge_order_response:
       properties:
         amount:
@@ -12338,6 +12481,20 @@ components:
           items:
             $ref: '#/components/schemas/details_error'
           type: array
+      type: object
+    balance_common_field:
+      description: balance common fields model
+      properties:
+        amount:
+          description: The balance's amount
+          example: 100
+          format: int64
+          type: integer
+        currency:
+          description: The balance's currency
+          example: MXN
+          type: string
+      title: balance_common_fiels_response
       type: object
     payment_method_cash:
       allOf:

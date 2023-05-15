@@ -1,0 +1,53 @@
+title: balance_response
+description: balance model
+type: object
+properties:
+  available:
+    type: array
+    description: The balance's available
+    items:
+      $ref: './balance_common_field.yml'
+  cashout_retention_amount:
+    type: array
+    description: The balance's cashout retention amount
+    items:
+      $ref: './balance_common_field.yml'
+  conekta_retention:
+    type: array
+    description: The balance's conekta retention
+    items:
+      $ref: './balance_common_field.yml'
+  gateway:
+    type: array
+    description: The balance's gateway
+    items:
+      $ref: './balance_common_field.yml'
+  pending:
+    type: array
+    description: The balance's pending
+    items:
+      $ref: './balance_common_field.yml'
+  retained:
+    type: array
+    description: The balance's retained
+    items:
+      $ref: './balance_common_field.yml'
+  retention_amount:
+    type: array
+    description: The balance's retention amount
+    items:
+      $ref: './balance_common_field.yml'
+  target_collateral_amount:
+    type: object
+    description: The balance's target collateral amount
+  target_retention_amount:
+    type: array
+    description: The balance's target retention amount
+    items:
+      $ref: './balance_common_field.yml'
+  temporarily_retained:
+    type: array
+    description: The balance's temporarily retained
+    items:
+      $ref: './balance_common_field.yml'
+  
