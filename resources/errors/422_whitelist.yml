@@ -1,0 +1,18 @@
+description: whitelist validation error
+content:
+  application/vnd.conekta-v2.1.0+json:
+    schema:
+      $ref: '../../schemas/errors/error.yml'
+    example:
+      {
+          "details": [
+              {
+                  "debug_message": "The \"custom_field\" parameter is not allowed",
+                  "message": "El parametro \"custom_field\" no está permitido",
+                  "code": "conekta.errors.parameter_validation.whitelist"
+              }
+          ],
+          "object": "error",
+          "type": "parameter_validation_error",
+          "log_id": "6462aa7c90fef20001633546"
+      }

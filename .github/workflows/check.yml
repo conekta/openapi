@@ -6,23 +6,29 @@ on:
     types: [ opened, synchronize ]
 
 jobs:
-  check-api-modification:
+  generate-client:
     runs-on: ubuntu-latest
+    name: openapi
     steps:
-    - name: Checkout code
-      uses: actions/checkout@v2
-      with:
-        ref: ${{ github.head_ref }}
-    - name: Get previous commit hash
-      run: |
-        PREV_COMMIT=$(git log --pretty=format:'%h' -n 1 HEAD~1)
-        echo "Previous commit hash: $PREV_COMMIT"
-    - name: Check if API YAML was modified
-      run: |
-        git diff --name-only $PREV_COMMIT..HEAD | grep "_build/api.yaml"
-        if [ $? -eq 0 ]; then
-          echo "API YAML was modified"
-        else
-          echo "API YAML was not modified"
-          exit 1
-        fi
+
+      # Checkout your code
+      - name: Checkout
+        uses: actions/checkout@v2
+
+      # Generate your OpenAPI document (if you don't write it manually)
+
+      # Use the action to generate a client package
+      # This uses the default path for the openapi document and thus assumes there is an openapi.json in the current workspace.
+      - name: Generate Client
+        uses: openapi-generators/openapitools-generator-action@v1
+        with:
+          generator: openapi-yaml
+          openapi-file: api.yaml
+      - name: check if api.yaml are equals
+        run: |
+          if diff -q _build/api.yaml openapi-yaml-client/openapi/openapi.yaml >/dev/null; then
+            echo "files are equals"
+          else
+            echo "exists differences between files _build/api.yaml"
+            exit 1
+          fi
