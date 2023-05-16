@@ -528,14 +528,6 @@ paths:
           - es
           - en
           type: string
-      - description: "In the case of a holding company, the company id of the child\
-          \ company to which will process the request."
-        example: 6441b6376b60c3a638da80af
-        in: header
-        name: X-Child-Company-Id
-        required: false
-        schema:
-          type: string
       - description: "The numbers of items to return, the maximum value is 250"
         in: query
         name: limit
