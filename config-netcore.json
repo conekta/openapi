@@ -32,6 +32,6 @@
   "useOneOfDiscriminatorLookup" : true,
   "packageCopyright" : "Conekta",
   "PackageReleaseNotes" : "",
-  "releaseNote" : "Add missing properties to the checkout model",
-  "packageVersion" : "6.0.2"
+  "releaseNote" : "for charges api rename the property 'ChargeOrderResponsePaymentMethod' to 'ChargeResponsePaymentMethod'",
+  "packageVersion" : "6.0.3"
 }

@@ -10706,6 +10706,8 @@ components:
         amount:
           example: 4321
           type: integer
+        channel:
+          $ref: '#/components/schemas/charge_response_channel'
         created_at:
           example: 1676386026
           format: int64
@@ -10747,6 +10749,11 @@ components:
           type: integer
         payment_method:
           $ref: '#/components/schemas/charge_response_payment_method'
+        reference_id:
+          description: Reference ID of the charge
+          example: ref_2tN73UdUSNrYRPD9r
+          nullable: true
+          type: string
         refunds:
           $ref: '#/components/schemas/charge_response_refunds'
         status:
@@ -10760,7 +10767,7 @@ components:
           example: 4321
           type: integer
         channel:
-          $ref: '#/components/schemas/charge_order_response_channel'
+          $ref: '#/components/schemas/charge_response_channel'
         created_at:
           example: 1676386026
           format: int64
@@ -10806,8 +10813,10 @@ components:
           nullable: true
           type: integer
         payment_method:
-          $ref: '#/components/schemas/charge_response_payment_method'
+          $ref: '#/components/schemas/charge_order_response_payment_method'
         reference_id:
+          description: Reference ID of the charge
+          example: ref_2tN73UdUSNrYRPD9r
           nullable: true
           type: string
         refunds:
@@ -11149,7 +11158,7 @@ components:
           example: 0
           type: integer
         channel:
-          $ref: '#/components/schemas/charge_order_response_channel'
+          $ref: '#/components/schemas/charge_response_channel'
         charges:
           $ref: '#/components/schemas/order_response_charges'
         checkout:
@@ -13462,6 +13471,21 @@ components:
           type: string
       type: object
       example: null
+    charge_response_channel:
+      properties:
+        segment:
+          example: Checkout
+          type: string
+        checkout_request_id:
+          example: 6fca054a-8519-4c43-971e-cea35cc519bb
+          type: string
+        checkout_request_type:
+          example: HostedPayment
+          type: string
+        id:
+          example: channel_2tNDzhA4Akmzj11AU
+          type: string
+      type: object
     charge_response_payment_method:
       discriminator:
         mapping:
@@ -13473,6 +13497,7 @@ components:
       - $ref: '#/components/schemas/payment_method_cash'
       - $ref: '#/components/schemas/payment_method_card'
       - $ref: '#/components/schemas/payment_method_bank_transfer'
+      title: charge_response_payment_method
     charge_response_refunds_data:
       properties:
         amount:
@@ -13524,21 +13549,18 @@ components:
       nullable: true
       title: charge_response_refunds
       type: object
-    charge_order_response_channel:
-      properties:
-        segment:
-          example: Checkout
-          type: string
-        checkout_request_id:
-          example: 6fca054a-8519-4c43-971e-cea35cc519bb
-          type: string
-        checkout_request_type:
-          example: HostedPayment
-          type: string
-        id:
-          example: channel_2tNDzhA4Akmzj11AU
-          type: string
-      type: object
+    charge_order_response_payment_method:
+      discriminator:
+        mapping:
+          cash_payment: payment_method_cash
+          card_payment: payment_method_card
+          bank_transfer_payment: payment_method_bank_transfer
+        propertyName: object
+      oneOf:
+      - $ref: '#/components/schemas/payment_method_cash'
+      - $ref: '#/components/schemas/payment_method_card'
+      - $ref: '#/components/schemas/payment_method_bank_transfer'
+      title: charge_order_response_payment_method
     customer_antifraud_info_response:
       nullable: true
       properties:
