@@ -8,9 +8,6 @@ properties:
   id:
     type: string
     example: "6307a60c41de27127515a575"
-  livemode:
-    type: boolean
-    example: true
   object:
     type: string
     example: "webhook"
