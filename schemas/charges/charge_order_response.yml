@@ -76,6 +76,8 @@ properties:
         bank_transfer_payment: payment_method_bank_transfer
   reference_id:
     type: string
+    description: "Reference ID of the charge"
+    example: ref_2tN73UdUSNrYRPD9r
     nullable: true
   refunds:
     type: array
