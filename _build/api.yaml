@@ -10439,7 +10439,7 @@ components:
           nullable: true
           type: integer
         payment_method:
-          $ref: '#/components/schemas/charge_response_payment_method'
+          $ref: '#/components/schemas/charge_order_response_payment_method'
         reference_id:
           nullable: true
           type: string
@@ -13078,6 +13078,7 @@ components:
       - $ref: '#/components/schemas/payment_method_cash'
       - $ref: '#/components/schemas/payment_method_card'
       - $ref: '#/components/schemas/payment_method_bank_transfer'
+      title: charge_response_payment_method
     charge_response_refunds_data:
       properties:
         amount:
@@ -13143,6 +13144,18 @@ components:
           example: channel_2tNDzhA4Akmzj11AU
           type: string
       type: object
+    charge_order_response_payment_method:
+      discriminator:
+        mapping:
+          cash_payment: payment_method_cash
+          card_payment: payment_method_card
+          bank_transfer_payment: payment_method_bank_transfer
+        propertyName: object
+      oneOf:
+      - $ref: '#/components/schemas/payment_method_cash'
+      - $ref: '#/components/schemas/payment_method_card'
+      - $ref: '#/components/schemas/payment_method_bank_transfer'
+      title: charge_order_response_payment_method
     customer_antifraud_info_response:
       nullable: true
       properties:

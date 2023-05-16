@@ -43,6 +43,7 @@ properties:
     example: 1676390742
     nullable: true
   payment_method:
+    title: charge_response_payment_method
     oneOf:
       - $ref: 'charge_payment_method_cash_response.yml#/payment_method_cash'
       - $ref: 'charge_payment_method_card_response.yml#/payment_method_card'
