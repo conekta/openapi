@@ -1,0 +1,7 @@
+in: path
+name: "event_id"
+description: identifier event
+required: true
+schema:
+  type: string
+example: "6463d6e35a4c3e001819e760"

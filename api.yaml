@@ -3,16 +3,16 @@ servers:
   - url: https://api.conekta.io
     description: Conekta main server
 info:
-  description: Conekta sdk 
+  description: Conekta sdk
   version: 2.1.0
   contact:
     name: Api support client
-    url:  https://github.com/conekta/openapi/issues
+    url: https://github.com/conekta/openapi/issues
     email: engineering@conekta.com
   title: Conekta API
   license:
     name: MIT-LICENSE
-    url: 'https://www.apache.org/licenses/LICENSE-2.0.html'
+    url: "https://www.apache.org/licenses/LICENSE-2.0.html"
 paths:
   /antifraud/whitelists:
     $ref: "./resources/antifraud/whitelists_index_create.yml"
@@ -46,8 +46,10 @@ paths:
     $ref: "./resources/events/events.yml"
   /events/{id}:
     $ref: "./resources/events/event.yml"
+  /events/{event_id}/webhook_logs/{webhook_log_id}/resend:
+    $ref: "./resources/events/events_webhook_resend.yml"
   /logs:
-     $ref: "./resources/logs/log.yml"
+    $ref: "./resources/logs/log.yml"
   /logs/{id}:
     $ref: "./resources/logs/log_by_id.yml"
   /orders:
@@ -107,7 +109,7 @@ paths:
   /orders/{id}/tax_lines/{tax_id}:
     $ref: "./resources/orders/update_order_tax_param.yml"
   /tokens:
-     $ref: "./resources/tokens/token.yml"
+    $ref: "./resources/tokens/token.yml"
   /transactions:
     $ref: "./resources/transactions/transactions.yml"
   /transactions/{id}:
@@ -121,9 +123,11 @@ paths:
   /webhook_keys/{id}:
     $ref: "./resources/webhook_keys/webhook_key.yml"
   /webhooks:
-     $ref: "./resources/webhooks/webhooks.yml"
+    $ref: "./resources/webhooks/webhooks.yml"
   /webhooks/{id}:
-     $ref: "./resources/webhooks/webhook.yml"
+    $ref: "./resources/webhooks/webhook.yml"
+  /webhooks/{id}/test:
+    $ref: "./resources/webhooks/webhook_test.yml"
 security:
   - bearerAuth: []
 components:

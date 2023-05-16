@@ -1,0 +1,26 @@
+title: event_webhook_resend_response
+description: event model
+type: object
+properties:
+  failed_attempts:
+    type: integer
+    example: 6
+  id:
+    type: string
+    example: "webhl_2svd2sh6GbqzyWBNZ"
+  last_attempted_at:
+    type: integer
+    example: 1684265970
+  last_http_response_status:
+    type: integer
+    format: int32
+    example: 405
+  response_data:
+    additionalProperties: true
+    maxProperties: 100
+    type: object
+    example: {}
+  url:
+    type: string
+    example: "https://username:password@mockoon.stg.conekta.io/payments-api/cash/merchant_approval"
+    format: uri
