@@ -13,7 +13,11 @@
     "AUTHORS.md": {},
     "LICENSE": {},
     "conekta.png": {},
-    "CONTRIBUTING.md" : {}
+    "CONTRIBUTING.md" : {},
+    "VERSION.mustache" : {
+      "templateType": "SupportingFiles",
+      "destinationFilename": "VERSION"
+    }
   },
   "gitUserId": "conekta",
   "gitRepoId": "conekta-node",

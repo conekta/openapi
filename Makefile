@@ -1,6 +1,7 @@
 API_README_VERSION_ID = 641deb4041d58005f2c45bf3
 merge:
-	npx @openapitools/openapi-generator-cli  generate -g openapi-yaml -i api.yaml -p outputFile=_build/api.yaml --skip-validate-spec
+	docker run --rm \
+  -v ${PWD}:/${PWD} openapitools/openapi-generator-cli  generate -g openapi-yaml -i ${PWD}/api.yaml -o ${PWD} -p outputFile=_build/api.yaml --skip-validate-spec
 	
 python:
 	npx @openapitools/openapi-generator-cli generate -i  api.yaml -g python-nextgen -o conekta-python -c config-python.json   
@@ -38,6 +39,18 @@ node:
 	npx @openapitools/openapi-generator-cli generate -i  api.yaml -g typescript-axios \
 	 -o ../conekta-node  -c config-node.json  \
 	 --global-property apiDocs=false  --global-property apiTests=true 
+
+dart:
+	npx @openapitools/openapi-generator-cli generate -i  api.yaml -g dart \
+	 -o ../conekta-dart \
+	 -c config-dart.json  \
+	 --global-property modelTests=false
+
+dart-dio:
+	npx @openapitools/openapi-generator-cli generate -i  api.yaml -g dart-dio \
+	 -o conekta-dart-dio \
+	 -c config-dart-dio.json  \
+	 --global-property modelTests=false
 
 update-readme:
 	make merge && rdme openapi _build/api.yaml --id=$(API_README_VERSION_ID)  --key=${README_API_KEY}
