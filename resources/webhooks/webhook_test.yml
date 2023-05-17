@@ -3,7 +3,7 @@ post:
     - Webhooks
   operationId: testWebhook
   summary: Test Webhook
-  description: "Send a test to your webhooks"
+  description: "Send a test to your webhook"
   responses:
     200:
       description: successful
