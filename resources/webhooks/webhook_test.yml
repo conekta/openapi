@@ -10,7 +10,7 @@ post:
       content:
         application/vnd.conekta-v2.1.0+json:
           schema:
-            $ref: ../../schemas/webhooks/webhook_test_response.yml
+            $ref: ../../schemas/webhooks/webhook_response.yml
     401:
       $ref: "../errors/401.yml"
     404:

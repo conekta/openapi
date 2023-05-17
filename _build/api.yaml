@@ -2040,6 +2040,8 @@ paths:
                     format: uri
         '401':
           $ref: '#/paths/~1logs/get/responses/401'
+        '404':
+          $ref: '#/paths/~1logs~1%7Bid%7D/get/responses/404'
         '500':
           $ref: '#/paths/~1logs/get/responses/500'
       security:
@@ -2047,14 +2049,14 @@ paths:
       parameters:
         - in: path
           name: event_id
-          description: identifier event
+          description: event identifier
           required: true
           schema:
             type: string
           example: 6463d6e35a4c3e001819e760
         - in: path
-          name: webhook log id
-          description: identifier webhook log
+          name: webhook_log_id
+          description: webhook log identifier
           required: true
           schema:
             type: string
@@ -7481,60 +7483,14 @@ paths:
         - Webhooks
       operationId: testWebhook
       summary: Test Webhook
-      description: Send a test to your webhooks
+      description: Send a test to your webhook
       responses:
         '200':
           description: successful
           content:
             application/vnd.conekta-v2.1.0+json:
               schema:
-                title: webhook_test_response
-                description: webhooks model
-                type: object
-                properties:
-                  development_enabled:
-                    type: boolean
-                    example: false
-                  id:
-                    type: string
-                    example: 6307a60c41de27127515a575
-                  object:
-                    type: string
-                    example: webhook
-                  production_enabled:
-                    type: boolean
-                    example: true
-                  status:
-                    type: string
-                    example: listening
-                  subscribed_events:
-                    type: array
-                    items:
-                      type: string
-                    example:
-                      - charge.created
-                      - charge.paid
-                      - charge.under_fraud_review
-                      - charge.fraudulent
-                      - charge.refunded
-                      - charge.preauthorized
-                      - charge.declined
-                      - charge.canceled
-                      - charge.reversed
-                      - charge.pending_confirmation
-                      - charge.expired
-                      - customer.created
-                      - customer.updated
-                      - customer.deleted
-                      - webhook.created
-                      - webhook.updated
-                      - webhook.deleted
-                  synchronous:
-                    type: boolean
-                    example: false
-                  url:
-                    type: string
-                    example: 'https://shop-plugin.conekta.com/api/webhooks'
+                $ref: '#/paths/~1webhooks/post/responses/200/content/application~1vnd.conekta-v2.1.0%2Bjson/schema'
         '401':
           $ref: '#/paths/~1logs/get/responses/401'
         '404':

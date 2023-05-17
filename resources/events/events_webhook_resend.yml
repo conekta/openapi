@@ -13,6 +13,8 @@ post:
             $ref: ../../schemas/events/events_webhook_resend_response.yml
     401:
       $ref: "../errors/401.yml"
+    404:
+      $ref: "../errors/404.yml"
     500:
       $ref: "../errors/500.yml"
   security:
