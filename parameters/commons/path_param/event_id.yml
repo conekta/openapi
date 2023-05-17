@@ -1,6 +1,6 @@
 in: path
 name: "event_id"
-description: identifier event
+description: event identifier
 required: true
 schema:
   type: string
