@@ -36,11 +36,10 @@ properties:
     nullable: true
   query_string:
     type: object
-    additionalProperties:
-      type: string
-    example: {
-      "limit":"20"
-    }
+    additionalProperties: true
+    example:
+      amount: 3000
+      payable: true
   related:
     type: string
     example: "FilterResource"

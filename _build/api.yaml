@@ -11042,10 +11042,10 @@ components:
           nullable: true
           type: string
         query_string:
-          additionalProperties:
-            type: string
+          additionalProperties: true
           example:
-            limit: "20"
+            amount: 3000
+            payable: true
           type: object
         related:
           example: FilterResource
@@ -13736,10 +13736,10 @@ components:
           nullable: true
           type: string
         query_string:
-          additionalProperties:
-            type: string
+          additionalProperties: true
           example:
-            limit: "20"
+            amount: 3000
+            payable: true
           type: object
         related:
           example: FilterResource
