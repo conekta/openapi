@@ -1,6 +1,6 @@
 in: path
 name: "webhook_log_id"
-description: identifier webhook log
+description: webhook log identifier
 required: true
 schema:
   type: string
