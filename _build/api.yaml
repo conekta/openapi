@@ -2132,10 +2132,10 @@ paths:
                           nullable: true
                         query_string:
                           type: object
-                          additionalProperties:
-                            type: string
+                          additionalProperties: true
                           example:
-                            limit: '20'
+                            amount: 3000
+                            payable: true
                         related:
                           type: string
                           example: FilterResource
@@ -2407,10 +2407,10 @@ paths:
                     nullable: true
                   query_string:
                     type: object
-                    additionalProperties:
-                      type: string
+                    additionalProperties: true
                     example:
-                      limit: '20'
+                      amount: 3000
+                      payable: true
                   related:
                     type: string
                     example: FilterResource
