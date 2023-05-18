@@ -41,15 +41,11 @@ node:
 	 --global-property apiDocs=false  --global-property apiTests=true 
 
 dart:
-	npx @openapitools/openapi-generator-cli generate -i  api.yaml -g dart \
+	rm -rf ../conekta-dart/lib && \
+	rm -rf ../conekta-dart/doc && \
+	npx @openapitools/openapi-generator-cli generate -i  api.yaml -g dart-dio \
 	 -o ../conekta-dart \
 	 -c config-dart.json  \
-	 --global-property modelTests=false
-
-dart-dio:
-	npx @openapitools/openapi-generator-cli generate -i  api.yaml -g dart-dio \
-	 -o conekta-dart-dio \
-	 -c config-dart-dio.json  \
 	 --global-property modelTests=false
 
 update-readme:

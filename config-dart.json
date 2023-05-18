@@ -2,11 +2,30 @@
   "useEnumExtension": true,
   "pubAuthor": "conekta",
   "pubLibrary": "conekta",
-  "pubVersion": "6.0.0",
+  "pubVersion": "6.0.0-beta.1",
   "pubName": "conekta",
   "pubRepository": "https://www.github.com/conekta/conekta_dart",
+  "pubHomepage" : "https://www.github.com/conekta/conekta_dart",
   "pubAuthorEmail": "engineering@conekta.com",
+  "pubPublishTo" : "https://pub.dartlang.org",
   "pubDescription": "Conekta dart Library",
+  "serializationLibrary" : "built_value",
   "templateDir": "templates/dart",
-  "serializationLibrary" : "native_serialization"
+  "files" : {
+    "CODE_OF_CONDUCT.md" : {},
+    "AUTHORS.md" : {},
+    "LICENSE" : {},
+    "conekta.png" : {},
+    "CONTRIBUTING.md" : {},
+    "utils.mustache" : {
+      "templateType": "SupportingFiles",
+      "destinationFilename": "utils.dart",
+      "folder": "lib/src/utils"
+    },
+    "VERSION.mustache" : {
+      "templateType": "SupportingFiles",
+      "destinationFilename": "VERSION"
+    }
+  },
+  "httpUserAgent": "Conekta/v2 DartBindings"
 }
