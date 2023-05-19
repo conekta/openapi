@@ -2274,8 +2274,8 @@ paths:
     post:
       tags:
         - Events
-      operationId: resendWebhook
-      summary: Resend Webhook
+      operationId: resendEvent
+      summary: Resend Event
       description: Try to send an event
       responses:
         '200':
