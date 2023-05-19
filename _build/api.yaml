@@ -1999,6 +1999,69 @@ paths:
         - $ref: '#/paths/~1logs/get/parameters/0'
         - $ref: '#/paths/~1logs/get/parameters/1'
         - $ref: '#/paths/~1logs~1%7Bid%7D/get/parameters/0'
+  '/events/{event_id}/webhook_logs/{webhook_log_id}/resend':
+    post:
+      tags:
+        - Events
+      operationId: resendWebhook
+      summary: Resend Webhook
+      description: Try to send an event
+      responses:
+        '200':
+          description: successful operation
+          content:
+            application/vnd.conekta-v2.1.0+json:
+              schema:
+                title: event_webhook_resend_response
+                description: event model
+                type: object
+                properties:
+                  failed_attempts:
+                    type: integer
+                    example: 6
+                  id:
+                    type: string
+                    example: webhl_2svd2sh6GbqzyWBNZ
+                  last_attempted_at:
+                    type: integer
+                    example: 1684265970
+                  last_http_response_status:
+                    type: integer
+                    format: int32
+                    example: 405
+                  response_data:
+                    additionalProperties: true
+                    maxProperties: 100
+                    type: object
+                    example: {}
+                  url:
+                    type: string
+                    example: 'https://username:password@mockoon.stg.conekta.io/payments-api/cash/merchant_approval'
+                    format: uri
+        '401':
+          $ref: '#/paths/~1logs/get/responses/401'
+        '404':
+          $ref: '#/paths/~1logs~1%7Bid%7D/get/responses/404'
+        '500':
+          $ref: '#/paths/~1logs/get/responses/500'
+      security:
+        - bearerAuth: []
+      parameters:
+        - in: path
+          name: event_id
+          description: event identifier
+          required: true
+          schema:
+            type: string
+          example: 6463d6e35a4c3e001819e760
+        - in: path
+          name: webhook_log_id
+          description: webhook log identifier
+          required: true
+          schema:
+            type: string
+          example: webhl_2tsv6NzWJHBWCkqGt
+        - $ref: '#/paths/~1logs/get/parameters/0'
   /logs:
     get:
       tags:
@@ -7407,6 +7470,31 @@ paths:
               schema:
                 type: string
                 example: conekta-v2.1.0; format=application/json
+        '401':
+          $ref: '#/paths/~1logs/get/responses/401'
+        '404':
+          $ref: '#/paths/~1logs~1%7Bid%7D/get/responses/404'
+        '500':
+          $ref: '#/paths/~1logs/get/responses/500'
+      security:
+        - bearerAuth: []
+      parameters:
+        - $ref: '#/paths/~1logs~1%7Bid%7D/get/parameters/0'
+        - $ref: '#/paths/~1logs/get/parameters/0'
+  '/webhooks/{id}/test':
+    post:
+      tags:
+        - Webhooks
+      operationId: testWebhook
+      summary: Test Webhook
+      description: Send a webhook.ping event
+      responses:
+        '200':
+          description: successful
+          content:
+            application/vnd.conekta-v2.1.0+json:
+              schema:
+                $ref: '#/paths/~1webhooks/post/responses/200/content/application~1vnd.conekta-v2.1.0%2Bjson/schema'
         '401':
           $ref: '#/paths/~1logs/get/responses/401'
         '404':
