@@ -50,6 +50,8 @@ paths:
     $ref: "./resources/events/events.yml"
   /events/{id}:
     $ref: "./resources/events/event.yml"
+  /events/{event_id}/webhook_logs/{webhook_log_id}/resend:
+    $ref: "./resources/events/events_webhook_resend.yml"
   /logs:
     $ref: "./resources/logs/log.yml"
   /logs/{id}:
@@ -128,6 +130,8 @@ paths:
     $ref: "./resources/webhooks/webhooks.yml"
   /webhooks/{id}:
     $ref: "./resources/webhooks/webhook.yml"
+  /webhooks/{id}/test:
+    $ref: "./resources/webhooks/webhook_test.yml"
 security:
   - bearerAuth: []
 components:
