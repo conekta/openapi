@@ -30,6 +30,8 @@ get:
     - bearerAuth: []
   parameters:
     - $ref: "../../parameters/commons/path_param/id.yml"
+    - $ref: "../../parameters/commons/headers/accept_language.yml"
+    - $ref: "../../parameters/commons/headers/x_child_company_id.yml"
 put:
   tags:
     - Api Keys
@@ -68,6 +70,7 @@ put:
               description: Indicates if the webhook key is active
   parameters:
     - $ref: "../../parameters/commons/path_param/id.yml"
+    - $ref: "../../parameters/commons/headers/accept_language.yml"
 delete:
   tags:
     - Api Keys
@@ -107,3 +110,4 @@ delete:
     - bearerAuth: []
   parameters:
     - $ref: "../../parameters/commons/path_param/id.yml"
+    - $ref: "../../parameters/commons/headers/accept_language.yml"

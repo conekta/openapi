@@ -15,9 +15,6 @@ get:
               - $ref: ../../schemas/pagination/pagination.yml
               - type: object
                 properties:
-                  total:
-                    type: integer
-                    example: 1
                   data:
                     type: array
                     items:
@@ -38,6 +35,13 @@ get:
       $ref: "../errors/500.yml"
   security:
     - bearerAuth: []
+  parameters:
+    - $ref: "../../parameters/commons/headers/accept_language.yml"
+    - $ref: "../../parameters/commons/headers/x_child_company_id.yml"
+    - $ref: "../../parameters/commons/query/limit.yml"
+    - $ref: "../../parameters/commons/query/search.yml"
+    - $ref: "../../parameters/commons/query/next_page.yml"
+    - $ref: "../../parameters/commons/query/previous_page.yml"
 post:
   tags:
     - Api Keys
@@ -59,3 +63,5 @@ post:
     - bearerAuth: []
   requestBody:
     $ref: "../../requestBodies/api_keys/api_keys_create.yml"
+  parameters:
+    - $ref: "../../parameters/commons/headers/accept_language.yml"
