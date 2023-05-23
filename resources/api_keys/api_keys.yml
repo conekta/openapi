@@ -54,7 +54,25 @@ post:
       content:
         application/vnd.conekta-v2.1.0+json:
           schema:
-            $ref: "../../schemas/api_keys/api-key_create_response.yml"
+            title: api_key_create_response
+            allOf:
+              - type: object
+                properties:
+                  authentication_token:
+                    type: string
+                    example: key_rpHzxufNgjFCdprEEFZRTKi
+                    description: It is occupied as a user when authenticated with basic authentication, with a blank password. This value will only appear once, in the request to create a new key
+              - $ref: "../../schemas/api_keys/api-key_response.yml"
+      headers:
+        Content-Type:
+          description: The format of the response body
+          schema:
+            type: string
+            example: "application/json; charset=utf-8"
+        Conekta-Media-Type:
+          schema:
+            type: string
+            example: conekta-v2.1.0; format=application/json
     401:
       $ref: "../errors/401.yml"
     500:
@@ -65,3 +83,4 @@ post:
     $ref: "../../requestBodies/api_keys/api_keys_create.yml"
   parameters:
     - $ref: "../../parameters/commons/headers/accept_language.yml"
+    - $ref: "../../parameters/commons/headers/x_child_company_id.yml"

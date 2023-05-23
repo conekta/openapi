@@ -28,7 +28,7 @@ properties:
     description: Object name, value is api_key
     example: api_key
   prefix:
-    type: integer
+    type: string
     description: The first few characters of the authentication_token
     example: key_rp
   role:

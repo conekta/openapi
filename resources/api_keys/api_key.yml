@@ -3,6 +3,7 @@ get:
     - Api Keys
   operationId: getApiKey
   summary: Get Api Key
+  description: "Gets a api key that corresponds to a api key ID"
   responses:
     200:
       description: successful
@@ -37,7 +38,7 @@ put:
     - Api Keys
   operationId: updateApiKey
   summary: Update Api Key
-  description: "Update an existing api Key"
+  description: "Update an existing api key"
   responses:
     "200":
       description: successful operation
@@ -67,7 +68,7 @@ put:
             description:
               type: string
               example: online store
-              description: Indicates if the webhook key is active
+              description: Detail of the use that will be given to the api key
   parameters:
     - $ref: "../../parameters/commons/path_param/id.yml"
     - $ref: "../../parameters/commons/headers/accept_language.yml"
@@ -76,6 +77,7 @@ delete:
     - Api Keys
   operationId: deleteApiKey
   summary: Delete Api Key
+  description: "Deletes a api key that corresponds to a api key ID"
   responses:
     200:
       description: successful
