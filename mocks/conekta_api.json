@@ -4210,7 +4210,7 @@
       "responses": [
         {
           "uuid": "ae163a56-c578-45cb-8406-928dbf13b37f",
-          "body": "{\"failed_attempts\":\"6\",\"id\":\"webhl_2svd2sh6GbqzyWBNZ\",\"last_attempted_at\":1684265970,\"last_http_response_status\":\"405\",\"response_data\":{},\"url\":\"https://username:password@mockoon.stg.conekta.io/payments-api/cash/merchant_approval\"}",
+          "body": "{\"failed_attempts\":6,\"id\":\"webhl_2svd2sh6GbqzyWBNZ\",\"last_attempted_at\":1684265970,\"last_http_response_status\":405,\"response_data\":{},\"url\":\"https://username:password@mockoon.stg.conekta.io/payments-api/cash/merchant_approval\"}",
           "latency": 0,
           "statusCode": 200,
           "label": "successful",
