@@ -37,7 +37,7 @@ put:
     - Api Keys
   operationId: updateApiKey
   summary: Update Api Key
-  description: "update an existing api Key"
+  description: "Update an existing api Key"
   responses:
     "200":
       description: successful operation
