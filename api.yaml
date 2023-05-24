@@ -22,6 +22,10 @@ paths:
     $ref: "./resources/antifraud/blacklists_index_create.yml"
   /antifraud/blacklists/{id}:
     $ref: "./resources/antifraud/blacklists_delete.yml"
+  /api_keys:
+    $ref: "./resources/api_keys/api_keys.yml"
+  /api_keys/{id}:
+    $ref: "./resources/api_keys/api_key.yml"
   /charges:
     $ref: "./resources/charges/charges.yml"
   /orders/{id}/charges:
@@ -47,7 +51,7 @@ paths:
   /events/{id}:
     $ref: "./resources/events/event.yml"
   /events/{event_id}/webhook_logs/{webhook_log_id}/resend:
-    $ref: "./resources/events/events_webhook_resend.yml"
+    $ref: "./resources/events/events_resend.yml"
   /logs:
     $ref: "./resources/logs/log.yml"
   /logs/{id}:
