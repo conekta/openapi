@@ -1,0 +1,87 @@
+get:
+  tags:
+    - Api Keys
+  operationId: getApiKeys
+  summary: Get list of Api Keys
+  description: "Consume the list of api keys you have"
+  responses:
+    200:
+      description: successful
+      content:
+        application/vnd.conekta-v2.1.0+json:
+          schema:
+            title: get_api_keys_response
+            allOf:
+              - $ref: ../../schemas/pagination/page.yml
+              - $ref: ../../schemas/pagination/pagination.yml
+              - type: object
+                properties:
+                  data:
+                    type: array
+                    items:
+                      $ref: "../../schemas/api_keys/api-key_response.yml"
+      headers:
+        Content-Type:
+          description: The format of the response body
+          schema:
+            type: string
+            example: "application/json; charset=utf-8"
+        Conekta-Media-Type:
+          schema:
+            type: string
+            example: conekta-v2.1.0; format=application/json
+    401:
+      $ref: "../errors/401.yml"
+    500:
+      $ref: "../errors/500.yml"
+  security:
+    - bearerAuth: []
+  parameters:
+    - $ref: "../../parameters/commons/headers/accept_language.yml"
+    - $ref: "../../parameters/commons/headers/x_child_company_id.yml"
+    - $ref: "../../parameters/commons/query/limit.yml"
+    - $ref: "../../parameters/commons/query/search.yml"
+    - $ref: "../../parameters/commons/query/next_page.yml"
+    - $ref: "../../parameters/commons/query/previous_page.yml"
+post:
+  tags:
+    - Api Keys
+  operationId: createApiKey
+  summary: Create Api Key
+  description: "Create a api key"
+  responses:
+    200:
+      description: successful operation
+      content:
+        application/vnd.conekta-v2.1.0+json:
+          schema:
+            title: api_key_create_response
+            allOf:
+              - type: object
+                properties:
+                  authentication_token:
+                    type: string
+                    example: key_rpHzxufNgjFCdprEEFZRTKi
+                    description: It is occupied as a user when authenticated with basic authentication, with a blank password. This value will only appear once, in the request to create a new key
+              - $ref: "../../schemas/api_keys/api-key_response.yml"
+      headers:
+        Content-Type:
+          description: The format of the response body
+          schema:
+            type: string
+            example: "application/json; charset=utf-8"
+        Conekta-Media-Type:
+          schema:
+            type: string
+            example: conekta-v2.1.0; format=application/json
+    401:
+      $ref: "../errors/401.yml"
+    500:
+      $ref: "../errors/500.yml"
+  security:
+    - bearerAuth: []
+  requestBody:
+    $ref: "../../requestBodies/api_keys/api_keys_create.yml"
+  parameters:
+    - $ref: "../../parameters/commons/headers/accept_language.yml"
+    - $ref: "../../parameters/commons/headers/x_child_company_id.yml"
