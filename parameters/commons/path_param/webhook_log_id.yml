@@ -1,0 +1,7 @@
+in: path
+name: "webhook_log_id"
+description: webhook log identifier
+required: true
+schema:
+  type: string
+example: "webhl_2tsv6NzWJHBWCkqGt"

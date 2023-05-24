@@ -2,7 +2,7 @@
   "useEnumExtension": true,
   "pubAuthor": "conekta",
   "pubLibrary": "conekta",
-  "pubVersion": "6.0.0-beta.1",
+  "pubVersion": "6.0.0-beta.2",
   "pubName": "conekta",
   "pubRepository": "https://www.github.com/conekta/conekta-dart",
   "pubHomepage" : "https://www.github.com/conekta/conekta-dart",
@@ -26,5 +26,7 @@
       "destinationFilename": "VERSION"
     }
   },
-  "httpUserAgent": "Conekta/v2 DartBindings"
+  "httpUserAgent": "Conekta/v2 DartBindings",
+  "gitUserId": "conekta",
+  "gitRepoId": "conekta-dart"
 }
