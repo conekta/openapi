@@ -16,4 +16,4 @@ properties:
   role:
     type: string
     example: private
-    description: Indicates if the api key is public or private
+    descripción: Indicates the user account private=owner or public=public

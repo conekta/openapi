@@ -10999,17 +10999,32 @@ components:
       - field
       - value
       type: object
+    page:
+      description: page metadata
+      properties:
+        next_page_url:
+          description: URL of the next page.
+          example: https://api.conekta.io/resources?limit=10&next=chrg_1
+          nullable: true
+          type: string
+        previous_page_url:
+          description: Url of the previous page.
+          example: https://api.conekta.io/resources?limit=10&previous=chrg_1
+          nullable: true
+          type: string
+      title: page metadata
+      type: object
     pagination:
       description: pagination metadata
       properties:
-        object:
-          description: "Object type, in this case is list"
-          example: list
-          type: string
         has_more:
           description: Indicates if there are more pages to be requested
           example: false
           type: boolean
+        object:
+          description: "Object type, in this case is list"
+          example: list
+          type: string
       required:
       - has_more
       - object
@@ -11049,25 +11064,10 @@ components:
           example: key_rp
           type: string
         role:
-          description: Indicates if the api key is public or private
+          description: Indicates the user account private=owner or public=public
           example: private
           type: string
       title: api_key_response
-      type: object
-    page:
-      description: page metadata
-      properties:
-        next_page_url:
-          description: URL of the next page.
-          example: https://api.conekta.io/resources?limit=10&next=chrg_1
-          nullable: true
-          type: string
-        previous_page_url:
-          description: Url of the previous page.
-          example: https://api.conekta.io/resources?limit=10&previous=chrg_1
-          nullable: true
-          type: string
-      title: page metadata
       type: object
     charge_response:
       properties:
@@ -12253,7 +12253,6 @@ components:
           example: online store
           type: string
         role:
-          description: Indicates if the api key is public or private
           example: private
           type: string
       required:
@@ -13493,6 +13492,7 @@ components:
       type: object
     get_api_keys_response:
       allOf:
+      - $ref: '#/components/schemas/page'
       - $ref: '#/components/schemas/pagination'
       - $ref: '#/components/schemas/get_api_keys_response_allOf'
       title: get_api_keys_response

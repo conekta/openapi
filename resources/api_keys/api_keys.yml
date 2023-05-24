@@ -12,6 +12,7 @@ get:
           schema:
             title: get_api_keys_response
             allOf:
+              - $ref: ../../schemas/pagination/page.yml
               - $ref: ../../schemas/pagination/pagination.yml
               - type: object
                 properties:

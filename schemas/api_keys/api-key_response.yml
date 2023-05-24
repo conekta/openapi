@@ -33,5 +33,5 @@ properties:
     example: key_rp
   role:
     type: string
-    description: Indicates if the api key is public or private
+    description: Indicates the user account private=owner or public=public
     example: private
