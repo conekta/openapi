@@ -4203,6 +4203,132 @@
       "responseMode": null
     },
     {
+      "uuid": "65489b44-8a61-4a12-875c-1b63fee81858",
+      "documentation": "resend event webhook",
+      "method": "post",
+      "endpoint": "events/:event_id/webhook_logs/:webhook_log_id/resend",
+      "responses": [
+        {
+          "uuid": "ae163a56-c578-45cb-8406-928dbf13b37f",
+          "body": "{\"failed_attempts\":6,\"id\":\"webhl_2svd2sh6GbqzyWBNZ\",\"last_attempted_at\":1684265970,\"last_http_response_status\":405,\"response_data\":{},\"url\":\"https://username:password@mockoon.stg.conekta.io/payments-api/cash/merchant_approval\"}",
+          "latency": 0,
+          "statusCode": 200,
+          "label": "successful",
+          "headers": [
+            {
+              "key": "Content-Type",
+              "value": "application/vnd.conekta-v2.1.0+json"
+            },
+            {
+              "key": "Date",
+              "value": ""
+            },
+            {
+              "key": "Content-Type",
+              "value": ""
+            },
+            {
+              "key": "Content-Length",
+              "value": ""
+            },
+            {
+              "key": "Connection",
+              "value": ""
+            },
+            {
+              "key": "Conekta-Media-Type",
+              "value": ""
+            }
+          ],
+          "bodyType": "INLINE",
+          "filePath": "",
+          "databucketID": "",
+          "sendFileAsBody": false,
+          "rules": [
+            {
+              "target": "params",
+              "modifier": "event_id",
+              "value": "6463d6e35a4c3e001819e760",
+              "invert": false,
+              "operator": "equals"
+            }
+          ],
+          "rulesOperator": "OR",
+          "disableTemplating": false,
+          "fallbackTo404": false,
+          "default": true
+        },
+        {
+          "uuid": "1daf60f5-84c5-4729-bbc5-a03fab3ecffc",
+          "body": "",
+          "latency": 0,
+          "statusCode": 401,
+          "label": "authentication error",
+          "headers": [
+            {
+              "key": "Content-Type",
+              "value": "application/vnd.conekta-v2.1.0+json"
+            }
+          ],
+          "bodyType": "INLINE",
+          "filePath": "",
+          "databucketID": "",
+          "sendFileAsBody": false,
+          "rules": [],
+          "rulesOperator": "OR",
+          "disableTemplating": false,
+          "fallbackTo404": false,
+          "default": false
+        },
+        {
+          "uuid": "06751242-e54d-4410-b6ca-77f386b7062e",
+          "body": "",
+          "latency": 0,
+          "statusCode": 422,
+          "label": "parameter validation error",
+          "headers": [
+            {
+              "key": "Content-Type",
+              "value": "application/vnd.conekta-v2.1.0+json"
+            }
+          ],
+          "bodyType": "INLINE",
+          "filePath": "",
+          "databucketID": "",
+          "sendFileAsBody": false,
+          "rules": [],
+          "rulesOperator": "OR",
+          "disableTemplating": false,
+          "fallbackTo404": false,
+          "default": false
+        },
+        {
+          "uuid": "d05fe38f-a162-46e6-89eb-9de0bf8748fb",
+          "body": "",
+          "latency": 0,
+          "statusCode": 500,
+          "label": "internal server error",
+          "headers": [
+            {
+              "key": "Content-Type",
+              "value": "application/vnd.conekta-v2.1.0+json"
+            }
+          ],
+          "bodyType": "INLINE",
+          "filePath": "",
+          "databucketID": "",
+          "sendFileAsBody": false,
+          "rules": [],
+          "rulesOperator": "OR",
+          "disableTemplating": false,
+          "fallbackTo404": false,
+          "default": false
+        }
+      ],
+      "enabled": true,
+      "responseMode": null
+    },
+    {
       "uuid": "2d0fb9c2-91ac-4302-9629-1a8bfe902266",
       "documentation": "returns a set of /logs",
       "method": "get",
@@ -7592,6 +7718,154 @@
       "documentation": "returns a deleted webhook",
       "method": "delete",
       "endpoint": "webhooks/:id",
+      "responses": [
+        {
+          "uuid": "d3dffa11-7982-4238-bade-4cb9689a0fdd",
+          "body": "{\n    \"url\": \"https://updated.webhook.site/0b8c9fa8-92c3-4a04-beea-a7ec037f6466\",\n    \"status\": \"intermittent_errors\",\n    \"subscribed_events\": [\n        \"charge.created\",\n        \"charge.paid\",\n        \"charge.under_fraud_review\",\n        \"charge.fraudulent\",\n        \"charge.refunded\",\n        \"charge.preauthorized\",\n        \"charge.declined\",\n        \"charge.canceled\",\n        \"charge.reversed\",\n        \"charge.pending_confirmation\",\n        \"charge.expired\",\n        \"customer.created\",\n        \"customer.updated\",\n        \"customer.deleted\",\n        \"webhook.created\",\n        \"webhook.updated\",\n        \"webhook.deleted\",\n        \"charge.chargeback.created\",\n        \"charge.chargeback.updated\",\n        \"charge.chargeback.under_review\",\n        \"charge.chargeback.lost\",\n        \"charge.chargeback.won\",\n        \"payout.created\",\n        \"payout.retrying\",\n        \"payout.paid_out\",\n        \"payout.failed\",\n        \"plan.created\",\n        \"plan.updated\",\n        \"plan.deleted\",\n        \"subscription.created\",\n        \"subscription.paused\",\n        \"subscription.resumed\",\n        \"subscription.canceled\",\n        \"subscription.expired\",\n        \"subscription.updated\",\n        \"subscription.paid\",\n        \"subscription.payment_failed\",\n        \"payee.created\",\n        \"payee.updated\",\n        \"payee.deleted\",\n        \"payee.payout_method.created\",\n        \"payee.payout_method.updated\",\n        \"payee.payout_method.deleted\",\n        \"charge.score_updated\",\n        \"receipt.created\",\n        \"order.canceled\",\n        \"order.charged_back\",\n        \"order.created\",\n        \"order.expired\",\n        \"order.fraudulent\",\n        \"order.under_fraud_review\",\n        \"order.paid\",\n        \"order.partially_refunded\",\n        \"order.pending_payment\",\n        \"order.pre_authorized\",\n        \"order.refunded\",\n        \"order.updated\",\n        \"order.voided\",\n        \"order.declined\",\n        \"cashout.canceled\",\n        \"cashout.confirmed\",\n        \"webhook_ping\",\n        \"customer.payment_source.card.blocked\",\n        \"cash_refund.created\",\n        \"cash_refund.canceled\",\n        \"cash_refund.refunded\",\n        \"cash_refund.expired\"\n    ],\n    \"synchronous\": false,\n    \"id\": \"641b1d5662d7e00001eaa46b\",\n    \"object\": \"webhook\",\n    \"production_enabled\": true,\n    \"development_enabled\": false,\n    \"deleted\": true\n}",
+          "latency": 0,
+          "statusCode": 200,
+          "label": "successful",
+          "headers": [
+            {
+              "key": "Content-Type",
+              "value": "application/vnd.conekta-v2.1.0+json"
+            },
+            {
+              "key": "Date",
+              "value": ""
+            },
+            {
+              "key": "Content-Type",
+              "value": ""
+            },
+            {
+              "key": "Content-Length",
+              "value": ""
+            },
+            {
+              "key": "Connection",
+              "value": ""
+            },
+            {
+              "key": "Conekta-Media-Type",
+              "value": ""
+            }
+          ],
+          "bodyType": "INLINE",
+          "filePath": "",
+          "databucketID": "",
+          "sendFileAsBody": false,
+          "rules": [
+            {
+              "target": "params",
+              "modifier": "id",
+              "value": "641b1d5662d7e00001eaa46b",
+              "invert": false,
+              "operator": "equals"
+            }
+          ],
+          "rulesOperator": "OR",
+          "disableTemplating": false,
+          "fallbackTo404": false,
+          "default": true
+        },
+        {
+          "uuid": "3c1ab659-11da-4a19-a4ca-1fc94af0e839",
+          "body": "",
+          "latency": 0,
+          "statusCode": 401,
+          "label": "authentication error",
+          "headers": [
+            {
+              "key": "Content-Type",
+              "value": "application/vnd.conekta-v2.1.0+json"
+            }
+          ],
+          "bodyType": "INLINE",
+          "filePath": "",
+          "databucketID": "",
+          "sendFileAsBody": false,
+          "rules": [],
+          "rulesOperator": "OR",
+          "disableTemplating": false,
+          "fallbackTo404": false,
+          "default": false
+        },
+        {
+          "uuid": "b11c8847-4177-4dfc-bf1b-6ebc6ba903b6",
+          "body": "{\n  \"details\": [\n    {\n      \"code\": \"conekta.errors.authentication.missing_key\",\n      \"param\": \"\",\n      \"message\": \"Acceso no autorizado.\",\n      \"debug_message\": \"Please include your access key in your request.\"\n    }\n  ]\n}",
+          "latency": 0,
+          "statusCode": 404,
+          "label": "not found entity",
+          "headers": [
+            {
+              "key": "Content-Type",
+              "value": "application/vnd.conekta-v2.1.0+json"
+            }
+          ],
+          "bodyType": "INLINE",
+          "filePath": "",
+          "databucketID": "",
+          "sendFileAsBody": false,
+          "rules": [],
+          "rulesOperator": "OR",
+          "disableTemplating": false,
+          "fallbackTo404": false,
+          "default": false
+        },
+        {
+          "uuid": "1eb6ec95-d7e0-44ad-90e3-6ce2308cd565",
+          "body": "",
+          "latency": 0,
+          "statusCode": 422,
+          "label": "parameter validation error",
+          "headers": [
+            {
+              "key": "Content-Type",
+              "value": "application/vnd.conekta-v2.1.0+json"
+            }
+          ],
+          "bodyType": "INLINE",
+          "filePath": "",
+          "databucketID": "",
+          "sendFileAsBody": false,
+          "rules": [],
+          "rulesOperator": "OR",
+          "disableTemplating": false,
+          "fallbackTo404": false,
+          "default": false
+        },
+        {
+          "uuid": "eb1fe908-8d76-4f67-a90f-e5423989ad50",
+          "body": "",
+          "latency": 0,
+          "statusCode": 500,
+          "label": "internal server error",
+          "headers": [
+            {
+              "key": "Content-Type",
+              "value": "application/vnd.conekta-v2.1.0+json"
+            }
+          ],
+          "bodyType": "INLINE",
+          "filePath": "",
+          "databucketID": "",
+          "sendFileAsBody": false,
+          "rules": [],
+          "rulesOperator": "OR",
+          "disableTemplating": false,
+          "fallbackTo404": false,
+          "default": false
+        }
+      ],
+      "enabled": true,
+      "responseMode": null
+    },
+    {
+      "uuid": "db96e0c7-4f34-47c9-8cf2-d9aa590945c7",
+      "documentation": "test webhook",
+      "method": "post",
+      "endpoint": "webhooks/:id/test",
       "responses": [
         {
           "uuid": "d3dffa11-7982-4238-bade-4cb9689a0fdd",
