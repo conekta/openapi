@@ -680,6 +680,21 @@ paths:
               schema:
                 $ref: '#/components/schemas/error'
           description: authentication error
+        "422":
+          content:
+            application/vnd.conekta-v2.1.0+json:
+              example:
+                details:
+                - message: The token does not exist.
+                  param: payment_method.token_id
+                  code: conekta.errors.parameter_validation.payment_method.token_id.nonexistent_token
+                  debug_message: The token does not exist.
+                log_id: 641b6d813cd9a50001515017
+                object: error
+                type: parameter_validation_error
+              schema:
+                $ref: '#/components/schemas/error'
+          description: parameter validation error
         "500":
           content:
             application/vnd.conekta-v2.1.0+json:
@@ -10908,6 +10923,21 @@ components:
           schema:
             $ref: '#/components/schemas/error'
       description: not found entity
+    "422":
+      content:
+        application/vnd.conekta-v2.1.0+json:
+          example:
+            details:
+            - message: The token does not exist.
+              param: payment_method.token_id
+              code: conekta.errors.parameter_validation.payment_method.token_id.nonexistent_token
+              debug_message: The token does not exist.
+            log_id: 641b6d813cd9a50001515017
+            object: error
+            type: parameter_validation_error
+          schema:
+            $ref: '#/components/schemas/error'
+      description: parameter validation error
     "422_whitelist":
       content:
         application/vnd.conekta-v2.1.0+json:
@@ -10953,21 +10983,6 @@ components:
           schema:
             $ref: '#/components/schemas/error'
       description: payment required error
-    "422":
-      content:
-        application/vnd.conekta-v2.1.0+json:
-          example:
-            details:
-            - message: The token does not exist.
-              param: payment_method.token_id
-              code: conekta.errors.parameter_validation.payment_method.token_id.nonexistent_token
-              debug_message: The token does not exist.
-            log_id: 641b6d813cd9a50001515017
-            object: error
-            type: parameter_validation_error
-          schema:
-            $ref: '#/components/schemas/error'
-      description: parameter validation error
   schemas:
     risk_rules_list:
       allOf:
