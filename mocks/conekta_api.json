@@ -6306,6 +6306,134 @@
       "responseMode": null
     },
     {
+      "uuid": "6ee401e9-ecd6-4164-a157-10e6afb3ddc9",
+      "documentation": "Cancel refund from order",
+      "method": "delete",
+      "endpoint": "orders/:id/refunds/:refund_id",
+      "responses": [
+        {
+          "uuid": "908aa1a8-a959-42d5-9dfb-e82f6611c794",
+          "body": "{\n    \"livemode\": true,\n    \"amount\": 40000,\n    \"currency\": \"MXN\",\n    \"payment_status\": \"partially_refunded\",\n    \"amount_refunded\": 15000,\n    \"customer_info\": {\n        \"email\": \"Miles_Price@gmail.com\",\n        \"phone\": \"+5215555555555\",\n        \"name\": \"Elio Rincon\",\n        \"corporate\": true,\n        \"customer_id\": \"cus_2tKZmA749BLsMRgBY\",\n        \"object\": \"customer_info\"\n    },\n    \"shipping_contact\": {\n        \"receiver\": \"Marvin Fuller\",\n        \"phone\": \"+5215555555555\",\n        \"between_streets\": \"Morelos Campeche\",\n        \"address\": {\n            \"street1\": \"Nuevo Leon 4\",\n            \"street2\": \"fake street\",\n            \"city\": \"Ciudad de Mexico\",\n            \"state\": \"Ciudad de Mexico\",\n            \"country\": \"mx\",\n            \"residential\": true,\n            \"object\": \"shipping_address\",\n            \"postal_code\": \"06100\"\n        },\n        \"id\": \"ship_cont_2tV52JvSom2w3E8bW\",\n        \"object\": \"shipping_contact\",\n        \"created_at\": 0\n    },\n    \"object\": \"order\",\n    \"id\": \"ord_2tV52JvSom2w3E8bX\",\n    \"metadata\": {},\n    \"is_refundable\": true,\n    \"created_at\": 1678226814,\n    \"updated_at\": 1678226878,\n    \"line_items\": {\n        \"object\": \"list\",\n        \"has_more\": false,\n        \"total\": 1,\n        \"data\": [\n            {\n                \"name\": \"Pago Mensualidad\",\n                \"description\": \"Mes de Febrero.\",\n                \"unit_price\": 40000,\n                \"quantity\": 1,\n                \"tags\": [\n                    \"Pago\",\n                    \"Pago mensualidad\"\n                ],\n                \"object\": \"line_item\",\n                \"id\": \"line_item_2tV52JvSom2w3E8bU\",\n                \"parent_id\": \"ord_2tV52JvSom2w3E8bX\",\n                \"metadata\": {},\n                \"antifraud_info\": {}\n            }\n        ]\n    },\n    \"charges\": {\n        \"object\": \"list\",\n        \"has_more\": false,\n        \"total\": 1,\n        \"data\": [\n            {\n                \"id\": \"6407b57ee1329a000175b9fc\",\n                \"livemode\": true,\n                \"created_at\": 1678226815,\n                \"currency\": \"MXN\",\n                \"device_fingerprint\": \"zptcxk4p6w1ijwz85snf1l3bqe5g09ie\",\n                \"payment_method\": {\n                    \"name\": \"erererere ererere \",\n                    \"exp_month\": \"06\",\n                    \"exp_year\": \"24\",\n                    \"auth_code\": \"867372\",\n                    \"object\": \"card_payment\",\n                    \"type\": \"credit\",\n                    \"last4\": \"4607\",\n                    \"brand\": \"mastercard\",\n                    \"issuer\": \"JOINT STOCK SAVINGS BANK BELARUSBANK\",\n                    \"account_type\": \"BUSINESS\",\n                    \"country\": \"BY\",\n                    \"fraud_indicators\": []\n                },\n                \"object\": \"charge\",\n                \"description\": \"Payment from order\",\n                \"status\": \"partially_refunded\",\n                \"amount\": 40000,\n                \"paid_at\": 1678226816,\n                \"fee\": 1972,\n                \"customer_id\": \"cus_2tKZmA749BLsMRgBY\",\n                \"order_id\": \"ord_2tV52JvSom2w3E8bX\",\n                \"refunds\": {\n                    \"object\": \"list\",\n                    \"has_more\": false,\n                    \"total\": 1,\n                    \"data\": [\n                        {\n                            \"object\": \"refund\",\n                            \"amount\": -15000,\n                            \"id\": \"6407b5bee1329a000175ba11\",\n                            \"created_at\": 1678226878,\n                            \"auth_code\": \"867372\"\n                        }\n                    ]\n                }\n            }\n        ]\n    }\n}",
+          "latency": 0,
+          "statusCode": 200,
+          "label": "successful",
+          "headers": [
+            {
+              "key": "Content-Type",
+              "value": "application/vnd.conekta-v2.1.0+json"
+            }
+          ],
+          "bodyType": "INLINE",
+          "filePath": "",
+          "databucketID": "",
+          "sendFileAsBody": false,
+          "rules": [
+            {
+              "target": "params",
+              "modifier": "id",
+              "value": "ord_2tV52JvSom2w3E8bX",
+              "invert": false,
+              "operator": "equals"
+            }
+          ],
+          "rulesOperator": "OR",
+          "disableTemplating": false,
+          "fallbackTo404": false,
+          "default": true
+        },
+        {
+          "uuid": "f0cfbbc5-9023-4f8d-9613-b2f767f34fbe",
+          "body": "",
+          "latency": 0,
+          "statusCode": 401,
+          "label": "authentication error",
+          "headers": [
+            {
+              "key": "Content-Type",
+              "value": "application/vnd.conekta-v2.1.0+json"
+            }
+          ],
+          "bodyType": "INLINE",
+          "filePath": "",
+          "databucketID": "",
+          "sendFileAsBody": false,
+          "rules": [],
+          "rulesOperator": "OR",
+          "disableTemplating": false,
+          "fallbackTo404": false,
+          "default": false
+        },
+        {
+          "uuid": "953ee139-f04c-428e-8f1e-a9f11d67c36e",
+          "body": "{\n  \"details\": [\n    {\n      \"code\": \"conekta.errors.authentication.missing_key\",\n      \"param\": \"\",\n      \"message\": \"Acceso no autorizado.\",\n      \"debug_message\": \"Please include your access key in your request.\"\n    }\n  ]\n}",
+          "latency": 0,
+          "statusCode": 404,
+          "label": "not found entity",
+          "headers": [
+            {
+              "key": "Content-Type",
+              "value": "application/vnd.conekta-v2.1.0+json"
+            }
+          ],
+          "bodyType": "INLINE",
+          "filePath": "",
+          "databucketID": "",
+          "sendFileAsBody": false,
+          "rules": [],
+          "rulesOperator": "OR",
+          "disableTemplating": false,
+          "fallbackTo404": false,
+          "default": false
+        },
+        {
+          "uuid": "12576115-1076-43db-aa50-9cc43aa89110",
+          "body": "",
+          "latency": 0,
+          "statusCode": 422,
+          "label": "parameter validation error",
+          "headers": [
+            {
+              "key": "Content-Type",
+              "value": "application/vnd.conekta-v2.1.0+json"
+            }
+          ],
+          "bodyType": "INLINE",
+          "filePath": "",
+          "databucketID": "",
+          "sendFileAsBody": false,
+          "rules": [],
+          "rulesOperator": "OR",
+          "disableTemplating": false,
+          "fallbackTo404": false,
+          "default": false
+        },
+        {
+          "uuid": "798370d3-2080-4680-8772-73c6cb558ead",
+          "body": "",
+          "latency": 0,
+          "statusCode": 500,
+          "label": "internal server error",
+          "headers": [
+            {
+              "key": "Content-Type",
+              "value": "application/vnd.conekta-v2.1.0+json"
+            }
+          ],
+          "bodyType": "INLINE",
+          "filePath": "",
+          "databucketID": "",
+          "sendFileAsBody": false,
+          "rules": [],
+          "rulesOperator": "OR",
+          "disableTemplating": false,
+          "fallbackTo404": false,
+          "default": false
+        }
+      ],
+      "enabled": true,
+      "responseMode": null
+    },
+    {
       "uuid": "729ab202-8bca-4c97-ba58-b3fee56e6c74",
       "documentation": "creates a new shipping for an existing orden",
       "method": "post",
@@ -10172,7 +10300,7 @@
           "headers": [
             {
               "key": "Content-Type",
-              "value": "application/javascript; charset=utf-8"
+              "value": "application/vnd.conekta-v2.1.0+json"
             }
           ],
           "bodyType": "INLINE",
