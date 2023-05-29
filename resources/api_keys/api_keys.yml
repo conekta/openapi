@@ -76,6 +76,8 @@ post:
             example: conekta-v2.1.0; format=application/json
     401:
       $ref: "../errors/401.yml"
+    422:
+      $ref: "../errors/422.yml"
     500:
       $ref: "../errors/500.yml"
   security:
