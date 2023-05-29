@@ -32,6 +32,6 @@
   "useOneOfDiscriminatorLookup" : true,
   "packageCopyright" : "Conekta",
   "PackageReleaseNotes" : "",
-  "releaseNote" : "for charges api rename the property 'ChargeOrderResponsePaymentMethod' to 'ChargeResponsePaymentMethod'",
-  "packageVersion" : "6.0.3"
+  "releaseNote" : "support for resend event, api keys and webhook keys",
+  "packageVersion" : "6.0.4"
 }
