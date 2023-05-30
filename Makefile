@@ -15,13 +15,13 @@ python:
 
 java:
 	mkdir -p conekta-java && \
-	cp .openapi-generator-ignore ct-conekta-java/.openapi-generator-ignore && \
 	npx @openapitools/openapi-generator-cli generate \
 	-i api.yaml \
 	-g java \
 	-o ct-conekta-java \
 	-c config-java.json \
-	--global-property modelTests=false
+	--global-property modelTests=false \
+	--additional-properties=hideGenerationTimestamp=true
 
 go:
 	npx @openapitools/openapi-generator-cli generate \
