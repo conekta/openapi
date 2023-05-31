@@ -4209,7 +4209,7 @@
       "endpoint": "events/:event_id/webhook_logs/:webhook_log_id/resend",
       "responses": [
         {
-          "uuid": "ae163a56-c578-45cb-8406-928dbf13b37f",
+          "uuid": "aefc6bb5-5b01-4771-ba09-bff968edd103",
           "body": "{\"failed_attempts\":6,\"id\":\"webhl_2svd2sh6GbqzyWBNZ\",\"last_attempted_at\":1684265970,\"last_http_response_status\":405,\"response_data\":{},\"url\":\"https://username:password@mockoon.stg.conekta.io/payments-api/cash/merchant_approval\"}",
           "latency": 0,
           "statusCode": 200,
@@ -4259,7 +4259,7 @@
           "default": true
         },
         {
-          "uuid": "1daf60f5-84c5-4729-bbc5-a03fab3ecffc",
+          "uuid": "a1a4114a-a6a6-4274-b17e-a9f67817d4a1",
           "body": "",
           "latency": 0,
           "statusCode": 401,
@@ -4281,7 +4281,7 @@
           "default": false
         },
         {
-          "uuid": "06751242-e54d-4410-b6ca-77f386b7062e",
+          "uuid": "400e70cd-54ac-40b6-bde3-2085cb05e327",
           "body": "",
           "latency": 0,
           "statusCode": 422,
@@ -4303,7 +4303,7 @@
           "default": false
         },
         {
-          "uuid": "d05fe38f-a162-46e6-89eb-9de0bf8748fb",
+          "uuid": "d2d39d93-e0d7-4779-89f1-bc6d21837d85",
           "body": "",
           "latency": 0,
           "statusCode": 500,
@@ -7868,7 +7868,7 @@
       "endpoint": "webhooks/:id/test",
       "responses": [
         {
-          "uuid": "d3dffa11-7982-4238-bade-4cb9689a0fdd",
+          "uuid": "f173ae28-7bff-433f-a794-0f10ed6330a6",
           "body": "{\n    \"url\": \"https://updated.webhook.site/0b8c9fa8-92c3-4a04-beea-a7ec037f6466\",\n    \"status\": \"intermittent_errors\",\n    \"subscribed_events\": [\n        \"charge.created\",\n        \"charge.paid\",\n        \"charge.under_fraud_review\",\n        \"charge.fraudulent\",\n        \"charge.refunded\",\n        \"charge.preauthorized\",\n        \"charge.declined\",\n        \"charge.canceled\",\n        \"charge.reversed\",\n        \"charge.pending_confirmation\",\n        \"charge.expired\",\n        \"customer.created\",\n        \"customer.updated\",\n        \"customer.deleted\",\n        \"webhook.created\",\n        \"webhook.updated\",\n        \"webhook.deleted\",\n        \"charge.chargeback.created\",\n        \"charge.chargeback.updated\",\n        \"charge.chargeback.under_review\",\n        \"charge.chargeback.lost\",\n        \"charge.chargeback.won\",\n        \"payout.created\",\n        \"payout.retrying\",\n        \"payout.paid_out\",\n        \"payout.failed\",\n        \"plan.created\",\n        \"plan.updated\",\n        \"plan.deleted\",\n        \"subscription.created\",\n        \"subscription.paused\",\n        \"subscription.resumed\",\n        \"subscription.canceled\",\n        \"subscription.expired\",\n        \"subscription.updated\",\n        \"subscription.paid\",\n        \"subscription.payment_failed\",\n        \"payee.created\",\n        \"payee.updated\",\n        \"payee.deleted\",\n        \"payee.payout_method.created\",\n        \"payee.payout_method.updated\",\n        \"payee.payout_method.deleted\",\n        \"charge.score_updated\",\n        \"receipt.created\",\n        \"order.canceled\",\n        \"order.charged_back\",\n        \"order.created\",\n        \"order.expired\",\n        \"order.fraudulent\",\n        \"order.under_fraud_review\",\n        \"order.paid\",\n        \"order.partially_refunded\",\n        \"order.pending_payment\",\n        \"order.pre_authorized\",\n        \"order.refunded\",\n        \"order.updated\",\n        \"order.voided\",\n        \"order.declined\",\n        \"cashout.canceled\",\n        \"cashout.confirmed\",\n        \"webhook_ping\",\n        \"customer.payment_source.card.blocked\",\n        \"cash_refund.created\",\n        \"cash_refund.canceled\",\n        \"cash_refund.refunded\",\n        \"cash_refund.expired\"\n    ],\n    \"synchronous\": false,\n    \"id\": \"641b1d5662d7e00001eaa46b\",\n    \"object\": \"webhook\",\n    \"production_enabled\": true,\n    \"development_enabled\": false,\n    \"deleted\": true\n}",
           "latency": 0,
           "statusCode": 200,
@@ -7918,7 +7918,7 @@
           "default": true
         },
         {
-          "uuid": "3c1ab659-11da-4a19-a4ca-1fc94af0e839",
+          "uuid": "be7d5cdf-8f41-4aa1-b862-4cd9fc27404b",
           "body": "",
           "latency": 0,
           "statusCode": 401,
@@ -7940,7 +7940,7 @@
           "default": false
         },
         {
-          "uuid": "b11c8847-4177-4dfc-bf1b-6ebc6ba903b6",
+          "uuid": "bf3402c1-7c1a-4ab6-bbae-5e9c38cd7f6c",
           "body": "{\n  \"details\": [\n    {\n      \"code\": \"conekta.errors.authentication.missing_key\",\n      \"param\": \"\",\n      \"message\": \"Acceso no autorizado.\",\n      \"debug_message\": \"Please include your access key in your request.\"\n    }\n  ]\n}",
           "latency": 0,
           "statusCode": 404,
@@ -7962,7 +7962,7 @@
           "default": false
         },
         {
-          "uuid": "1eb6ec95-d7e0-44ad-90e3-6ce2308cd565",
+          "uuid": "def2f6ec-e7d5-4563-b4ef-b158e23177b9",
           "body": "",
           "latency": 0,
           "statusCode": 422,
@@ -7984,7 +7984,7 @@
           "default": false
         },
         {
-          "uuid": "eb1fe908-8d76-4f67-a90f-e5423989ad50",
+          "uuid": "b17e39d8-dced-40de-bd51-ceb464f9da51",
           "body": "",
           "latency": 0,
           "statusCode": 500,
@@ -9367,7 +9367,7 @@
           "rulesOperator": "OR",
           "disableTemplating": false,
           "fallbackTo404": false,
-          "default": false
+          "default": true
         },
         {
           "uuid": "08b57c16-ecc8-463d-90c6-cc52350dce47",
@@ -9433,7 +9433,7 @@
           "rulesOperator": "OR",
           "disableTemplating": false,
           "fallbackTo404": false,
-          "default": true
+          "default": false
         }
       ],
       "enabled": true,
@@ -10220,331 +10220,6 @@
       "responseMode": null
     },
     {
-      "uuid": "1906dfd7-ef47-442b-b8ec-8f23c3fd1c8a",
-      "documentation": "get an existing discount lines for an existing orden",
-      "method": "get",
-      "endpoint": "orders/:id/discount_lines/:discount_lines_id",
-      "responses": [
-        {
-          "uuid": "daeb9b7f-4e8e-47a6-a7cf-176c22634bdf",
-          "body": "{\n    \"code\": \"trac\",\n    \"amount\": 100,\n    \"type\": \"loyalty\",\n    \"object\": \"discount_line\",\n    \"id\": \"dis_lin_2tVyahK8Nts7rKRMZ\",\n    \"parent_id\": \"ord_2tVyWPnCPWbrV37mW\"\n}",
-          "latency": 0,
-          "statusCode": 200,
-          "label": "successful",
-          "headers": [
-            {
-              "key": "Content-Type",
-              "value": "application/vnd.conekta-v2.1.0+json"
-            }
-          ],
-          "bodyType": "INLINE",
-          "filePath": "",
-          "databucketID": "",
-          "sendFileAsBody": false,
-          "rules": [
-            {
-              "target": "params",
-              "modifier": "id",
-              "value": "ord_2tVyWPnCPWbrV37mW",
-              "invert": false,
-              "operator": "equals"
-            },
-            {
-              "target": "params",
-              "modifier": "discount_lines_id",
-              "value": "dis_lin_2tVyahK8Nts7rKRMZ",
-              "invert": false,
-              "operator": "equals"
-            }
-          ],
-          "rulesOperator": "AND",
-          "disableTemplating": false,
-          "fallbackTo404": false,
-          "default": false
-        },
-        {
-          "uuid": "26fb3860-ab9f-496c-b466-21eb9c997ef6",
-          "body": "",
-          "latency": 0,
-          "statusCode": 401,
-          "label": "authentication error",
-          "headers": [
-            {
-              "key": "Content-Type",
-              "value": "application/vnd.conekta-v2.1.0+json"
-            }
-          ],
-          "bodyType": "INLINE",
-          "filePath": "",
-          "databucketID": "",
-          "sendFileAsBody": false,
-          "rules": [],
-          "rulesOperator": "OR",
-          "disableTemplating": false,
-          "fallbackTo404": false,
-          "default": false
-        },
-        {
-          "uuid": "dc66fcba-ec42-494c-934d-a7d3c89b9273",
-          "body": "{\n  \"details\": [\n    {\n      \"code\": \"conekta.errors.authentication.missing_key\",\n      \"param\": \"\",\n      \"message\": \"Acceso no autorizado.\",\n      \"debug_message\": \"Please include your access key in your request.\"\n    }\n  ]\n}",
-          "latency": 0,
-          "statusCode": 404,
-          "label": "not found entity",
-          "headers": [
-            {
-              "key": "Content-Type",
-              "value": "application/vnd.conekta-v2.1.0+json"
-            }
-          ],
-          "bodyType": "INLINE",
-          "filePath": "",
-          "databucketID": "",
-          "sendFileAsBody": false,
-          "rules": [],
-          "rulesOperator": "OR",
-          "disableTemplating": false,
-          "fallbackTo404": false,
-          "default": false
-        },
-        {
-          "uuid": "7eda3a0f-a85f-418a-a2a0-84d93fbfb3d0",
-          "body": "",
-          "latency": 0,
-          "statusCode": 422,
-          "label": "parameter validation error",
-          "headers": [
-            {
-              "key": "Content-Type",
-              "value": "application/vnd.conekta-v2.1.0+json"
-            }
-          ],
-          "bodyType": "INLINE",
-          "filePath": "",
-          "databucketID": "",
-          "sendFileAsBody": false,
-          "rules": [],
-          "rulesOperator": "OR",
-          "disableTemplating": false,
-          "fallbackTo404": false,
-          "default": false
-        },
-        {
-          "uuid": "dfa5d6f5-726b-40df-91bb-46b450eb15ef",
-          "body": "",
-          "latency": 0,
-          "statusCode": 500,
-          "label": "internal server error",
-          "headers": [
-            {
-              "key": "Content-Type",
-              "value": "application/vnd.conekta-v2.1.0+json"
-            }
-          ],
-          "bodyType": "INLINE",
-          "filePath": "",
-          "databucketID": "",
-          "sendFileAsBody": false,
-          "rules": [],
-          "rulesOperator": "OR",
-          "disableTemplating": false,
-          "fallbackTo404": false,
-          "default": true
-        }
-      ],
-      "enabled": true,
-      "responseMode": null
-    },
-    {
-      "uuid": "37336f5f-6e75-4916-87b6-53a08241e59d",
-      "documentation": "get an existing discount lines for an existing orden",
-      "method": "get",
-      "endpoint": "orders/:id/discount_lines",
-      "responses": [
-        {
-          "uuid": "6bbf264e-268a-4fc2-9171-3dcbd9108778",
-          "body": "{\n    \"next_page_url\": null,\n    \"previous_page_url\": null,\n    \"has_more\": false,\n    \"object\": \"list\",\n    \"data\": [\n        {\n            \"code\": \"trac\",\n            \"amount\": 100,\n            \"type\": \"loyalty\",\n            \"object\": \"discount_line\",\n            \"id\": \"dis_lin_2tVyahK8Nts7rKRMZ\",\n            \"parent_id\": \"ord_2tVyWPnCPWbrV37mW\"\n        },\n        {\n            \"code\": \"trac\",\n            \"amount\": 1,\n            \"type\": \"loyalty\",\n            \"object\": \"discount_line\",\n            \"id\": \"dis_lin_2tVyaKuNH7YJiVB9W\",\n            \"parent_id\": \"ord_2tVyWPnCPWbrV37mW\"\n        }\n    ]\n}",
-          "latency": 0,
-          "statusCode": 200,
-          "label": "successful",
-          "headers": [
-            {
-              "key": "Content-Type",
-              "value": "application/vnd.conekta-v2.1.0+json"
-            }
-          ],
-          "bodyType": "INLINE",
-          "filePath": "",
-          "databucketID": "",
-          "sendFileAsBody": false,
-          "rules": [
-            {
-              "target": "params",
-              "modifier": "id",
-              "value": "ord_2tVyWPnCPWbrV37mW",
-              "invert": false,
-              "operator": "equals"
-            }
-          ],
-          "rulesOperator": "AND",
-          "disableTemplating": false,
-          "fallbackTo404": false,
-          "default": false
-        },
-        {
-          "uuid": "6bf8c043-f7cb-4c1f-a9a0-cf9197f5239f",
-          "body": "",
-          "latency": 0,
-          "statusCode": 401,
-          "label": "authentication error",
-          "headers": [
-            {
-              "key": "Content-Type",
-              "value": "application/vnd.conekta-v2.1.0+json"
-            }
-          ],
-          "bodyType": "INLINE",
-          "filePath": "",
-          "databucketID": "",
-          "sendFileAsBody": false,
-          "rules": [],
-          "rulesOperator": "OR",
-          "disableTemplating": false,
-          "fallbackTo404": false,
-          "default": false
-        },
-        {
-          "uuid": "3ca24436-d316-492c-9abf-9b94044b2a51",
-          "body": "{\n  \"details\": [\n    {\n      \"code\": \"conekta.errors.authentication.missing_key\",\n      \"param\": \"\",\n      \"message\": \"Acceso no autorizado.\",\n      \"debug_message\": \"Please include your access key in your request.\"\n    }\n  ]\n}",
-          "latency": 0,
-          "statusCode": 404,
-          "label": "not found entity",
-          "headers": [
-            {
-              "key": "Content-Type",
-              "value": "application/vnd.conekta-v2.1.0+json"
-            }
-          ],
-          "bodyType": "INLINE",
-          "filePath": "",
-          "databucketID": "",
-          "sendFileAsBody": false,
-          "rules": [],
-          "rulesOperator": "OR",
-          "disableTemplating": false,
-          "fallbackTo404": false,
-          "default": false
-        },
-        {
-          "uuid": "6a2896da-3a17-4dc5-9d38-585dda751f14",
-          "body": "",
-          "latency": 0,
-          "statusCode": 422,
-          "label": "parameter validation error",
-          "headers": [
-            {
-              "key": "Content-Type",
-              "value": "application/vnd.conekta-v2.1.0+json"
-            }
-          ],
-          "bodyType": "INLINE",
-          "filePath": "",
-          "databucketID": "",
-          "sendFileAsBody": false,
-          "rules": [],
-          "rulesOperator": "OR",
-          "disableTemplating": false,
-          "fallbackTo404": false,
-          "default": false
-        },
-        {
-          "uuid": "0d87e421-5841-415e-84f1-0ecf7756ada3",
-          "body": "",
-          "latency": 0,
-          "statusCode": 500,
-          "label": "internal server error",
-          "headers": [
-            {
-              "key": "Content-Type",
-              "value": "application/vnd.conekta-v2.1.0+json"
-            }
-          ],
-          "bodyType": "INLINE",
-          "filePath": "",
-          "databucketID": "",
-          "sendFileAsBody": false,
-          "rules": [],
-          "rulesOperator": "OR",
-          "disableTemplating": false,
-          "fallbackTo404": false,
-          "default": true
-        }
-      ],
-      "enabled": true,
-      "responseMode": null
-    },
-    {
-      "uuid": "dd698e21-bd2b-459e-b0ca-62f16576bf11",
-      "documentation": "",
-      "method": "get",
-      "endpoint": "balances",
-      "responses": [
-        {
-          "uuid": "35511c3e-e0dd-4eb1-b9f2-644f9fe95b5e",
-          "body": "{\n  \"available\": [\n    {\n      \"amount\": 413343,\n      \"currency\": \"MXN\"\n    }\n  ],\n  \"pending\": [\n    {\n      \"amount\": 0,\n      \"currency\": \"MXN\"\n    }\n  ],\n  \"retention_amount\": [\n    {\n      \"amount\": 100000,\n      \"currency\": \"MXN\"\n    }\n  ],\n  \"retained\": [\n    {\n      \"amount\": 688,\n      \"currency\": \"MXN\"\n    }\n  ],\n  \"temporarily_retained\": [\n    {\n      \"amount\": 0,\n      \"currency\": \"MXN\"\n    }\n  ],\n  \"target_retention_amount\": [\n    {\n      \"amount\": 100000,\n      \"currency\": \"MXN\"\n    }\n  ],\n  \"conekta_retention\": [\n    {\n      \"amount\": 100000,\n      \"currency\": \"MXN\"\n    }\n  ],\n  \"target_collateral_amount\": {},\n  \"gateway\": [],\n  \"cashout_retention_amount\": [\n    {\n      \"amount\": 0,\n      \"currency\": \"MXN\"\n    }\n  ]\n}",
-          "latency": 0,
-          "statusCode": 200,
-          "label": "",
-          "headers": [
-            {
-              "key": "Content-Type",
-              "value": "application/json"
-            }
-          ],
-          "bodyType": "INLINE",
-          "filePath": "",
-          "databucketID": "",
-          "sendFileAsBody": false,
-          "rules": [
-            {
-              "target": "header",
-              "modifier": "Accept-language",
-              "value": "es",
-              "invert": false,
-              "operator": "equals"
-            }
-          ],
-          "rulesOperator": "OR",
-          "disableTemplating": false,
-          "fallbackTo404": false,
-          "default": false
-        },
-        {
-          "uuid": "ef13b39a-148c-46e6-8aee-6c57ff7883ff",
-          "body": "{\n  \"details\": [\n    {\n      \"debug_message\": \"There was a runtime error and Conekta engineers have been notified.\",\n      \"message\": \"There was a runtime error and Conekta engineers have been notified.\",\n      \"param\": null,\n      \"code\": \"conekta.errors.api.system.general_failure\"\n    }\n  ],\n  \"object\": \"error\",\n  \"type\": \"api_error\",\n  \"log_id\": \"641b6f2b3cd9a50001515098\"\n}",
-          "latency": 0,
-          "statusCode": 500,
-          "label": "",
-          "headers": [
-            {
-              "key": "Content-Type",
-              "value": "application/json"
-            }
-          ],
-          "bodyType": "INLINE",
-          "filePath": "",
-          "databucketID": "",
-          "sendFileAsBody": false,
-          "rules": [],
-          "rulesOperator": "OR",
-          "disableTemplating": false,
-          "fallbackTo404": false,
-          "default": true
-        }
-      ],
-      "enabled": true,
-      "responseMode": null
-    },
-    {
       "uuid": "b55a6368-64c1-4a9a-81d6-6f8ad61f51ff",
       "documentation": "",
       "method": "get",
@@ -10620,7 +10295,7 @@
       "endpoint": "api_keys",
       "responses": [
         {
-          "uuid": "c582302b-4024-4a37-ba72-ce6efc2400a6",
+          "uuid": "928f1bd5-65cd-45ed-b64f-edf25ee9ef01",
           "body": "{\"next_page_url\":\"\",\"previous_page_url\":\"\",\"has_more\":false,\"object\":\"\",\"data\":[{\"active\":true,\"created_at\":1684167881,\"description\":\"online store\",\"id\":\"64625cc9f3e02c00163f5e4d\",\"livemode\":true,\"object\":\"api_key\",\"prefix\":\"key_rp\",\"role\":\"private\"}]}",
           "latency": 0,
           "statusCode": 200,
@@ -10657,7 +10332,7 @@
           "default": false
         },
         {
-          "uuid": "1c413da0-70a4-468d-aae4-46fea2629098",
+          "uuid": "fdf83ea2-5ad0-46e9-b303-6bc24a89457d",
           "body": "{\n  \"details\": [\n    {\n      \"debug_message\": \"There was a runtime error and Conekta engineers have been notified.\",\n      \"message\": \"There was a runtime error and Conekta engineers have been notified.\",\n      \"param\": null,\n      \"code\": \"conekta.errors.api.system.general_failure\"\n    }\n  ],\n  \"object\": \"error\",\n  \"type\": \"api_error\",\n  \"log_id\": \"641b6f2b3cd9a50001515098\"\n}",
           "latency": 0,
           "statusCode": 500,
@@ -10689,7 +10364,7 @@
       "endpoint": "api_keys/:id",
       "responses": [
         {
-          "uuid": "c582302b-4024-4a37-ba72-ce6efc2400a6",
+          "uuid": "f8d4a1ee-a719-4138-8727-af8d5fade777",
           "body": "{\"active\":true,\"created_at\":1684167881,\"description\":\"online store\",\"id\":\"64625cc9f3e02c00163f5e4d\",\"livemode\":true,\"object\":\"api_key\",\"prefix\":\"key_rp\",\"role\":\"private\"}",
           "latency": 0,
           "statusCode": 200,
@@ -10726,7 +10401,7 @@
           "default": false
         },
         {
-          "uuid": "1c413da0-70a4-468d-aae4-46fea2629098",
+          "uuid": "c8685f86-d4b7-4955-915c-202a44c29c0e",
           "body": "{\n  \"details\": [\n    {\n      \"debug_message\": \"There was a runtime error and Conekta engineers have been notified.\",\n      \"message\": \"There was a runtime error and Conekta engineers have been notified.\",\n      \"param\": null,\n      \"code\": \"conekta.errors.api.system.general_failure\"\n    }\n  ],\n  \"object\": \"error\",\n  \"type\": \"api_error\",\n  \"log_id\": \"641b6f2b3cd9a50001515098\"\n}",
           "latency": 0,
           "statusCode": 500,
@@ -10758,7 +10433,7 @@
       "endpoint": "api_keys/:id",
       "responses": [
         {
-          "uuid": "c582302b-4024-4a37-ba72-ce6efc2400a6",
+          "uuid": "182bcbac-eac7-4f5a-ab8d-3c71ee4e9906",
           "body": "{\"active\":true,\"created_at\":1684167881,\"description\":\"online store\",\"id\":\"64625cc9f3e02c00163f5e4d\",\"livemode\":true,\"object\":\"api_key\",\"prefix\":\"key_rp\",\"role\":\"private\",\"deleted\":true}",
           "latency": 0,
           "statusCode": 200,
@@ -10795,7 +10470,7 @@
           "default": false
         },
         {
-          "uuid": "1c413da0-70a4-468d-aae4-46fea2629098",
+          "uuid": "57dd1c47-b374-4dab-b3d6-8784ec7a5c63",
           "body": "{\n  \"details\": [\n    {\n      \"debug_message\": \"There was a runtime error and Conekta engineers have been notified.\",\n      \"message\": \"There was a runtime error and Conekta engineers have been notified.\",\n      \"param\": null,\n      \"code\": \"conekta.errors.api.system.general_failure\"\n    }\n  ],\n  \"object\": \"error\",\n  \"type\": \"api_error\",\n  \"log_id\": \"641b6f2b3cd9a50001515098\"\n}",
           "latency": 0,
           "statusCode": 500,
@@ -10827,8 +10502,8 @@
       "endpoint": "api_keys/:id",
       "responses": [
         {
-          "uuid": "c582302b-4024-4a37-ba72-ce6efc2400a6",
-          "body": "{\"active\":true,\"created_at\":1684167881,\"description\":\"online store\",\"id\":\"64625cc9f3e02c00163f5e4d\",\"livemode\":true,\"object\":\"api_key\",\"prefix\":\"key_rp\",\"role\":\"private\"}",
+          "uuid": "1f3aa547-17a6-42e3-92dd-961ba5e4e86f",
+          "body": "{\n  \"active\": true,\n  \"created_at\": 1684167881,\n  \"description\": \"online store\",\n  \"id\": \"64625cc9f3e02c00163f5e4d\",\n  \"livemode\": true,\n  \"object\": \"api_key\",\n  \"prefix\": \"key_rp\",\n  \"role\": \"private\"\n}",
           "latency": 0,
           "statusCode": 200,
           "label": "",
@@ -10864,7 +10539,7 @@
           "default": false
         },
         {
-          "uuid": "1c413da0-70a4-468d-aae4-46fea2629098",
+          "uuid": "eb265952-52ad-4800-ab38-bb6e93ec1043",
           "body": "{\n  \"details\": [\n    {\n      \"debug_message\": \"There was a runtime error and Conekta engineers have been notified.\",\n      \"message\": \"There was a runtime error and Conekta engineers have been notified.\",\n      \"param\": null,\n      \"code\": \"conekta.errors.api.system.general_failure\"\n    }\n  ],\n  \"object\": \"error\",\n  \"type\": \"api_error\",\n  \"log_id\": \"641b6f2b3cd9a50001515098\"\n}",
           "latency": 0,
           "statusCode": 500,
@@ -10896,8 +10571,8 @@
       "endpoint": "api_keys",
       "responses": [
         {
-          "uuid": "c582302b-4024-4a37-ba72-ce6efc2400a6",
-          "body": "{\"authentication_token\":\"key_rpHzxufNgjFCdprEEFZRTKi\",\"active\":true,\"created_at\":1684167881,\"description\":\"online store\",\"id\":\"64625cc9f3e02c00163f5e4d\",\"livemode\":true,\"object\":\"api_key\",\"prefix\":\"key_rp\",\"role\":\"private\"}",
+          "uuid": "f11c107e-884b-4435-bf74-f067d3bd944d",
+          "body": "{\n  \"authentication_token\": \"key_rpHzxufNgjFCdprEEFZRTKi\",\n  \"active\": true,\n  \"created_at\": 1684167881,\n  \"description\": \"online store\",\n  \"id\": \"64625cc9f3e02c00163f5e4d\",\n  \"livemode\": true,\n  \"object\": \"api_key\",\n  \"prefix\": \"key_rp\",\n  \"role\": \"private\"\n}",
           "latency": 0,
           "statusCode": 200,
           "label": "",
@@ -10926,7 +10601,7 @@
           "default": false
         },
         {
-          "uuid": "1c413da0-70a4-468d-aae4-46fea2629098",
+          "uuid": "3e102aeb-3c6b-4b7b-a496-f23b0673013a",
           "body": "{\n  \"details\": [\n    {\n      \"debug_message\": \"There was a runtime error and Conekta engineers have been notified.\",\n      \"message\": \"There was a runtime error and Conekta engineers have been notified.\",\n      \"param\": null,\n      \"code\": \"conekta.errors.api.system.general_failure\"\n    }\n  ],\n  \"object\": \"error\",\n  \"type\": \"api_error\",\n  \"log_id\": \"641b6f2b3cd9a50001515098\"\n}",
           "latency": 0,
           "statusCode": 500,
@@ -10942,6 +10617,138 @@
           "databucketID": "",
           "sendFileAsBody": false,
           "rules": [],
+          "rulesOperator": "OR",
+          "disableTemplating": false,
+          "fallbackTo404": false,
+          "default": true
+        }
+      ],
+      "enabled": true,
+      "responseMode": null
+    },
+    {
+      "uuid": "d29ebe75-bf8a-4181-b92b-7c7d840efcdd",
+      "documentation": "",
+      "method": "get",
+      "endpoint": "balances",
+      "responses": [
+        {
+          "uuid": "26b41b2d-37da-4dcb-ba62-d8c8a572816b",
+          "body": "{\n    \"available\": [\n        {\n            \"amount\": 413343,\n            \"currency\": \"MXN\"\n        }\n    ],\n    \"pending\": [\n        {\n            \"amount\": 0,\n            \"currency\": \"MXN\"\n        }\n    ],\n    \"retention_amount\": [\n        {\n            \"amount\": 100000,\n            \"currency\": \"MXN\"\n        }\n    ],\n    \"retained\": [\n        {\n            \"amount\": 688,\n            \"currency\": \"MXN\"\n        }\n    ],\n    \"temporarily_retained\": [\n        {\n            \"amount\": 0,\n            \"currency\": \"MXN\"\n        }\n    ],\n    \"target_retention_amount\": [\n        {\n            \"amount\": 100000,\n            \"currency\": \"MXN\"\n        }\n    ],\n    \"conekta_retention\": [\n        {\n            \"amount\": 100000,\n            \"currency\": \"MXN\"\n        }\n    ],\n    \"target_collateral_amount\": {},\n    \"gateway\": [],\n    \"cashout_retention_amount\": [\n        {\n            \"amount\": 0,\n            \"currency\": \"MXN\"\n        }\n    ]\n}",
+          "latency": 0,
+          "statusCode": 200,
+          "label": "",
+          "headers": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            }
+          ],
+          "bodyType": "INLINE",
+          "filePath": "",
+          "databucketID": "",
+          "sendFileAsBody": false,
+          "rules": [
+            {
+              "target": "header",
+              "modifier": "accept-language",
+              "value": "es",
+              "invert": false,
+              "operator": "equals"
+            }
+          ],
+          "rulesOperator": "OR",
+          "disableTemplating": false,
+          "fallbackTo404": false,
+          "default": false
+        },
+        {
+          "uuid": "f8e1e16d-223c-467d-9881-2885671a75ca",
+          "body": "{\n  \"details\": [\n    {\n      \"debug_message\": \"There was a runtime error and Conekta engineers have been notified.\",\n      \"message\": \"There was a runtime error and Conekta engineers have been notified.\",\n      \"param\": null,\n      \"code\": \"conekta.errors.api.system.general_failure\"\n    }\n  ],\n  \"object\": \"error\",\n  \"type\": \"api_error\",\n  \"log_id\": \"641b6f2b3cd9a50001515098\"\n}",
+          "latency": 0,
+          "statusCode": 500,
+          "label": "",
+          "headers": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            }
+          ],
+          "bodyType": "INLINE",
+          "filePath": "",
+          "databucketID": "",
+          "sendFileAsBody": false,
+          "rules": [],
+          "rulesOperator": "OR",
+          "disableTemplating": false,
+          "fallbackTo404": false,
+          "default": true
+        }
+      ],
+      "enabled": true,
+      "responseMode": null
+    },
+    {
+      "uuid": "1e997eab-4cd3-48e3-b4ab-4fae53b791bd",
+      "documentation": "",
+      "method": "get",
+      "endpoint": "orders/:id/discount_lines",
+      "responses": [
+        {
+          "uuid": "8233f842-7273-457d-9655-7714194b3433",
+          "body": "{\n    \"next_page_url\": null,\n    \"previous_page_url\": null,\n    \"has_more\": false,\n    \"object\": \"list\",\n    \"data\": [\n        {\n            \"code\": \"trac\",\n            \"amount\": 100,\n            \"type\": \"loyalty\",\n            \"object\": \"discount_line\",\n            \"id\": \"dis_lin_2tVyahK8Nts7rKRMZ\",\n            \"parent_id\": \"ord_2tVyWPnCPWbrV37mW\"\n        },\n        {\n            \"code\": \"trac\",\n            \"amount\": 1,\n            \"type\": \"loyalty\",\n            \"object\": \"discount_line\",\n            \"id\": \"dis_lin_2tVyaKuNH7YJiVB9W\",\n            \"parent_id\": \"ord_2tVyWPnCPWbrV37mW\"\n        }\n    ]\n}",
+          "latency": 0,
+          "statusCode": 200,
+          "label": "",
+          "headers": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            }
+          ],
+          "bodyType": "INLINE",
+          "filePath": "",
+          "databucketID": "",
+          "sendFileAsBody": false,
+          "rules": [
+            {
+              "target": "params",
+              "modifier": "id",
+              "value": "ord_2tVyWPnCPWbrV37mW",
+              "invert": false,
+              "operator": "equals"
+            }
+          ],
+          "rulesOperator": "OR",
+          "disableTemplating": false,
+          "fallbackTo404": false,
+          "default": false
+        },
+        {
+          "uuid": "3b24957a-9d7a-49ef-945c-4151a20a6a28",
+          "body": "{\n  \"details\": [\n    {\n      \"debug_message\": \"There was a runtime error and Conekta engineers have been notified.\",\n      \"message\": \"There was a runtime error and Conekta engineers have been notified.\",\n      \"param\": null,\n      \"code\": \"conekta.errors.api.system.general_failure\"\n    }\n  ],\n  \"object\": \"error\",\n  \"type\": \"api_error\",\n  \"log_id\": \"641b6f2b3cd9a50001515098\"\n}",
+          "latency": 0,
+          "statusCode": 500,
+          "label": "",
+          "headers": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            }
+          ],
+          "bodyType": "INLINE",
+          "filePath": "",
+          "databucketID": "",
+          "sendFileAsBody": false,
+          "rules": [
+            {
+              "target": "params",
+              "modifier": "id",
+              "value": "ord_2tVyWPnCPWbrV37mW",
+              "invert": false,
+              "operator": "equals"
+            }
+          ],
           "rulesOperator": "OR",
           "disableTemplating": false,
           "fallbackTo404": false,
@@ -11203,15 +11010,7 @@
     },
     {
       "type": "route",
-      "uuid": "37336f5f-6e75-4916-87b6-53a08241e59d"
-    },
-    {
-      "type": "route",
       "uuid": "948c325e-8acd-4c2c-9b08-4e81cf929ce7"
-    },
-    {
-      "type": "route",
-      "uuid": "1906dfd7-ef47-442b-b8ec-8f23c3fd1c8a"
     },
     {
       "type": "route",
@@ -11283,11 +11082,43 @@
     },
     {
       "type": "route",
-      "uuid": "dd698e21-bd2b-459e-b0ca-62f16576bf11"
+      "uuid": "b55a6368-64c1-4a9a-81d6-6f8ad61f51ff"
     },
     {
       "type": "route",
-      "uuid": "b55a6368-64c1-4a9a-81d6-6f8ad61f51ff"
+      "uuid": "65489b44-8a61-4a12-875c-1b63fee81858"
+    },
+    {
+      "type": "route",
+      "uuid": "db96e0c7-4f34-47c9-8cf2-d9aa590945c7"
+    },
+    {
+      "type": "route",
+      "uuid": "98377ded-9d35-49fc-abc7-2ebd899a4741"
+    },
+    {
+      "type": "route",
+      "uuid": "c6908799-fa45-4384-926a-5eb53bfe0608"
+    },
+    {
+      "type": "route",
+      "uuid": "8d6ea9d5-1d8b-4088-acbb-06e03f2f0407"
+    },
+    {
+      "type": "route",
+      "uuid": "b9ac8488-4cd1-434e-9833-aec37db60650"
+    },
+    {
+      "type": "route",
+      "uuid": "2a74f846-2e1b-403a-b12f-1f6a0aea4252"
+    },
+    {
+      "type": "route",
+      "uuid": "d29ebe75-bf8a-4181-b92b-7c7d840efcdd"
+    },
+    {
+      "type": "route",
+      "uuid": "1e997eab-4cd3-48e3-b4ab-4fae53b791bd"
     }
   ],
   "proxyMode": false,
