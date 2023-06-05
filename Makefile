@@ -10,7 +10,7 @@ python:
 	npx @openapitools/openapi-generator-cli generate \
 	-i api.yaml \
 	-g python-nextgen \
-	-o conekta-python \
+	-o ../conekta-python \
 	-c config-python.json \
 	--global-property modelTests=false
 
@@ -19,7 +19,7 @@ java:
 	npx @openapitools/openapi-generator-cli generate \
 	-i api.yaml \
 	-g java \
-	-o ct-conekta-java \
+	-o ../ct-conekta-java \
 	-c config-java.json \
 	--global-property modelTests=false \
 	--additional-properties=hideGenerationTimestamp=true
@@ -28,7 +28,7 @@ go:
 	npx @openapitools/openapi-generator-cli generate \
 	-i  api.yaml \
 	-g go \
-	-o conekta-go \
+	-o ../conekta-go \
 	-c config-go.json \
 	--global-property apiTests=false
 
@@ -38,7 +38,7 @@ ruby:
 	npx @openapitools/openapi-generator-cli generate \
 	-i  api.yaml \
 	-g ruby \
-	-o conekta-ruby \
+	-o ../conekta-ruby \
 	-c config-ruby.json 
 
 csharp:
@@ -57,14 +57,14 @@ php:
 	npx @openapitools/openapi-generator-cli generate \
 	-i api.yaml \
 	-g php \
-	-o conekta-php \
+	-o ../conekta-php \
 	-c config-php.json
 
 node:
 	npx @openapitools/openapi-generator-cli generate \
 	-i api.yaml \
 	-g typescript-fetch \
-	-o conekta-node \
+	-o ../conekta-node \
 	-c config-node.json
 
 update-readme:
