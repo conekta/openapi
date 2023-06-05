@@ -6,7 +6,7 @@ info:
   description: Conekta sdk
   version: 2.1.0
   contact:
-    name: Api support client
+    name: Engineering Conekta
     url: https://github.com/conekta/openapi/issues
     email: engineering@conekta.com
   title: Conekta API
