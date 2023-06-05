@@ -11,7 +11,8 @@ python:
 	-i api.yaml \
 	-g python-nextgen \
 	-o conekta-python \
-	-c config-python.json   
+	-c config-python.json \
+	--global-property modelTests=false
 
 java:
 	mkdir -p conekta-java && \
