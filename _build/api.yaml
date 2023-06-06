@@ -2,7 +2,7 @@ openapi: 3.0.3
 info:
   contact:
     email: engineering@conekta.com
-    name: Api support client
+    name: Engineering Conekta
     url: https://github.com/conekta/openapi/issues
   description: Conekta sdk
   license:
@@ -3641,8 +3641,10 @@ paths:
               examples:
                 cash:
                   $ref: '#/components/examples/order_cash'
+                  value: null
                 card:
                   $ref: '#/components/examples/order_card'
+                  value: null
               schema:
                 $ref: '#/components/schemas/order_response'
           description: successful operation
@@ -6831,6 +6833,7 @@ paths:
               examples:
                 sucessfull:
                   $ref: '#/components/examples/shipping'
+                  value: null
               schema:
                 $ref: '#/components/schemas/shipping_order_response'
           description: successful
@@ -10999,14 +11002,19 @@ components:
           examples:
             order_with_charges:
               $ref: '#/components/examples/order_with_charges'
+              value: null
             order_with_checkout:
               $ref: '#/components/examples/order_with_checkout'
+              value: null
             split_payment_with_2_card_charges:
               $ref: '#/components/examples/split_payment_with_2_cards'
+              value: null
             split_payment_with_3_cash_charges:
               $ref: '#/components/examples/split_payment_with_cash'
+              value: null
             split_payment_with_cash_card_charges:
               $ref: '#/components/examples/split_payment_with_cash_card'
+              value: null
           schema:
             $ref: '#/components/schemas/order_request'
       description: requested field for order
