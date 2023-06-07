@@ -1,20 +1,30 @@
 {
   "packageName": "conekta",
   "generateSourceCodeOnly": "false",
-  "artifactVersion": "4.0.0",
+  "artifactVersion": "6.0.0-beta.1",
   "packageUrl": "https://developers.conekta.com/",
   "projectName": "conekta-php",
-  "appDescription" : "Conekta PHP Library",
+  "appDescriptionV2" : "Conekta PHP Library",
   "useOneOfDiscriminatorLookup" : true,
   "nonCompliantUseDiscriminatorIfCompositionFails" : false,
-  "httpUserAgent": "Conekta/v2 PhpBindings/4.0.0",
+  "httpUserAgent": "Conekta/v2 PhpBindings/6.0.0-beta.1",
+  "packageAuthors" : "engineering@conekta.com",
   "files": {
+    "CODE_OF_CONDUCT.md" : {},
     "AUTHORS.md" : {},
-    "LICENSE" : {}
+    "CONTRIBUTING.md" : {},
+    "LICENSE" : {},
+    "conekta.png" : {},
+    "VERSION.mustache" : {
+      "templateType": "SupportingFiles",
+      "destinationFilename": "VERSION"
+    }
   },
   "gitUserId": "conekta",
   "gitRepoId": "conekta-php",
   "modern" : true,
   "disallowAdditionalPropertiesIfNotPresent" : true,
-  "invokerPackage" : "Conekta"
+  "invokerPackage" : "Conekta",
+  "templateDir": "templates/php",
+  "legacyDiscriminatorBehavior" : false
 }
