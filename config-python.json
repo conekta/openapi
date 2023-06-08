@@ -18,7 +18,11 @@
   "files": {
     "AUTHORS.md" : {},
     "CODE_OF_CONDUCT.md": {},
-    "LICENSE" : {}
+    "LICENSE" : {},
+    "VERSION.mustache" : {
+      "templateType": "SupportingFiles",
+      "destinationFilename": "VERSION"
+    }
   },
   "gitUserId": "conekta",
   "gitRepoId": "conekta-python"
