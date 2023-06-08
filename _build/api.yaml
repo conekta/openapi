@@ -6985,6 +6985,23 @@ paths:
               schema:
                 $ref: '#/components/schemas/error'
           description: parameter validation error
+        "428":
+          content:
+            application/vnd.conekta-v2.1.0+json:
+              example:
+                details:
+                - debug_message: The order cannot be modified because it has already
+                    a charge which is pending payment.
+                  message: The order cannot be modified because it has already a charge
+                    which is pending payment.
+                  param: null
+                  code: conekta.errors.precondition_required.combo.order.cannot_be_updated_because_has_charge
+                log_id: 641b6e233cd9a50001515039
+                object: error
+                type: precondition_required_error
+              schema:
+                $ref: '#/components/schemas/error'
+          description: Precondition Required
         "500":
           content:
             application/vnd.conekta-v2.1.0+json:

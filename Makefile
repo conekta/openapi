@@ -58,7 +58,8 @@ php:
 	-i api.yaml \
 	-g php \
 	-o ../conekta-php \
-	-c config-php.json
+	-c config-php.json \
+	--global-property modelTests=false
 
 node:
 	rm -rf ../conekta-node/api && \
