@@ -1,5 +1,6 @@
 [tool.poetry]
 name = "{{{packageName}}}"
+version = "{{packageVersion}}"
 description = "{{{appName}}}"
 authors = ["{{infoName}}{{^infoName}}OpenAPI Generator Community{{/infoName}} <{{infoEmail}}{{^infoEmail}}team@openapitools.org{{/infoEmail}}>"]
 license = "{{{licenseInfo}}}{{^licenseInfo}}NoLicense{{/licenseInfo}}"
@@ -31,7 +32,7 @@ tox = ">=3.9.0"
 flake8 = ">=4.0.0"
 
 [build-system]
-requires = ["setuptools>=45", "setuptools_scm[toml]>=6.2"]
+requires = ["setuptools"]
 build-backend = "setuptools.build_meta"
 
 [tool.setuptools_scm]
@@ -41,6 +42,7 @@ extension-pkg-whitelist = "pydantic"
 
 [project]
 name = "{{{packageName}}}"
+version = "{{packageVersion}}"
 authors = [
   { name="{{infoName}}{{^infoName}}OpenAPI Generator Community{{/infoName}}", email="{{infoEmail}}{{^infoEmail}}team@openapitools.org{{/infoEmail}}" },
 ]
@@ -52,7 +54,6 @@ classifiers = [
     "License :: OSI Approved :: MIT License",
     "Operating System :: OS Independent",
 ]
-dynamic = ["version"]
 
 [project.urls]
 "Homepage" = "https://github.com/{{{gitUserId}}}/{{{gitRepoId}}}"
