@@ -99,11 +99,10 @@ public class CustomersApiExample {
 
     public static void main(String[] args) {
         ApiClient defaultClient = Configuration.getDefaultApiClient();
-        defaultClient.setBasePath("https://api.conekta.io");
 
         // Configure HTTP bearer authorization: bearerAuth
         HttpBearerAuth bearerAuth = (HttpBearerAuth) defaultClient.getAuthentication("bearerAuth");
-        bearerAuth.setBearerToken("BEARER TOKEN");
+        bearerAuth.setBearerToken("API_KEY");
 
         CustomersApi apiInstance = new CustomersApi(defaultClient);
         Customer customer = new Customer(); // Customer | requested field for customer
@@ -140,11 +139,10 @@ public class CustomersApiExample {
 
     public static void main(String[] args) {
         ApiClient defaultClient = Configuration.getDefaultApiClient();
-        defaultClient.setBasePath("https://api.conekta.io");
 
         // Configure HTTP bearer authorization: bearerAuth
         HttpBearerAuth bearerAuth = (HttpBearerAuth) defaultClient.getAuthentication("bearerAuth");
-        bearerAuth.setBearerToken("BEARER TOKEN");
+        bearerAuth.setBearerToken("API_KEY");
 
         CustomersApi apiInstance = new CustomersApi(defaultClient);
         Customer customer = new Customer(); // Customer | requested field for customer
