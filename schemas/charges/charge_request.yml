@@ -31,6 +31,12 @@ properties:
       payment_source_id:
         type: string
         example: "src_2tLkkyfMPh6v7pFry"
+      contract_id:
+        type: string
+        description: "Optional id sent to indicate the bank contract for recurrent card charges."
+        example: "S781317595"
+        maxLength: 10
+        minLength: 10
   reference_id:
     description: "Custom reference to add to the charge"
     type: string
