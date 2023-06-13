@@ -11618,6 +11618,11 @@ components:
           description: The payment status of the order.
           example: paid
           type: string
+        processing_mode:
+          description: "Indicates the processing mode for the order, either ecommerce,\
+            \ recurrent or validation."
+          example: ecommerce
+          type: string
         shipping_contact:
           $ref: '#/components/schemas/order_response_shipping_contact'
         updated_at:
@@ -12538,6 +12543,11 @@ components:
           default: false
           description: Indicates whether the order charges must be preauthorized
           type: boolean
+        processing_mode:
+          description: "Indicates the processing mode for the order, either ecommerce,\
+            \ recurrent or validation."
+          example: ecommerce
+          type: string
         shipping_contact:
           $ref: '#/components/schemas/customer_shipping_contacts'
         shipping_lines:
@@ -14777,6 +14787,13 @@ components:
         payment_source_id:
           example: src_2tLkkyfMPh6v7pFry
           type: string
+        contract_id:
+          description: Optional id sent to indicate the bank contract for recurrent
+            card charges.
+          example: S781317595
+          maxLength: 10
+          minLength: 10
+          type: string
       required:
       - type
       type: object
@@ -15006,6 +15023,12 @@ components:
           type: string
         brand:
           example: visa
+          type: string
+        contract_id:
+          description: Id sent for recurrent charges.
+          example: S781317595
+          maxLength: 10
+          minLength: 10
           type: string
         country:
           example: MX

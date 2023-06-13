@@ -216,6 +216,10 @@ properties:
     type: string
     example: "paid"
     description: "The payment status of the order."
+  processing_mode:
+    type: string
+    description: "Indicates the processing mode for the order, either ecommerce, recurrent or validation."
+    example: "ecommerce"
   shipping_contact:
     allOf:
       - type: object
