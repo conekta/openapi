@@ -1,0 +1,6 @@
+in: query
+name: "search"
+description: "General search, e.g. by id, description, prefix"
+required: false
+schema:
+  type: string

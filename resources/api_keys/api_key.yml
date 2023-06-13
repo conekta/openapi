@@ -86,7 +86,7 @@ delete:
           schema:
             title: delete_api_keys_response
             allOf:
-              - $ref: "../../schemas/api_keys/api-key_response.yml"
+              - $ref: "../../schemas/api_keys/api-key_response_on_delete.yml"
               - type: object
                 properties:
                   deleted:

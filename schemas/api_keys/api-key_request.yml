@@ -1,14 +1,8 @@
 title: api_keys_request
 name: api_keys_request
 required:
-  - active
-  - description
   - role
 properties:
-  active:
-    type: boolean
-    example: true
-    description: Indicates if the api key is active
   description:
     type: string
     description: Detail of the use that will be given to the api key
@@ -16,4 +10,4 @@ properties:
   role:
     type: string
     example: private
-    descripción: Indicates the user account private=owner or public=public
+    descripción: Indicates if the api key is private or public
