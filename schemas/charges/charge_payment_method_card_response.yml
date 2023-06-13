@@ -14,6 +14,12 @@ payment_method_card:
         brand:
           type: string
           example: "visa"
+        contract_id:
+          type: string
+          description: "Id sent for recurrent charges."
+          example: "S781317595"
+          maxLength: 10
+          minLength: 10
         country:
           type: string
           example: "MX"
