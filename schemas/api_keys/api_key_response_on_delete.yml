@@ -31,10 +31,12 @@ properties:
     type: string
     description: Object name, value is api_key
     example: api_key
-  deleted:
-    type: boolean
-    description: Indicates if the api key was deleted
-    example: nil
+  last_used_at:
+    type: integer
+    description: Unix timestamp in seconds with the api key was used
+    example: null
+    nullable: true
+    format: int64
   role:
     type: string
     description: Indicates if the api key is private or public
