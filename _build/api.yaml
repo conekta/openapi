@@ -11068,12 +11068,6 @@ components:
           nullable: true
           type: integer
           example: null
-        last_used_at:
-          description: Unix timestamp in seconds with the api key was used
-          format: int64
-          nullable: true
-          type: integer
-          example: null
         description:
           description: A name or brief explanation of what this api key is used for
           example: online store
@@ -11084,6 +11078,10 @@ components:
           type: string
         livemode:
           description: Indicates if the api key is in production
+          example: false
+          type: boolean
+        deleted:
+          description: Indicates if the api key was deleted
           example: false
           type: boolean
         object:
@@ -11132,12 +11130,10 @@ components:
           description: "Object name, value is 'api_key'"
           example: api_key
           type: string
-        last_used_at:
-          description: Unix timestamp in seconds with the api key was used
-          format: int64
-          nullable: true
-          type: integer
-          example: null
+        deleted:
+          description: Indicates if the api key was deleted
+          example: false
+          type: boolean
         role:
           description: Indicates if the api key is private or public
           example: private
