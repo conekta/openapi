@@ -7,7 +7,7 @@ get:
     200:
       description: successful
       content:
-        application/vnd.conekta-v2.1.0+json:
+        application/vnd.conekta-v2.2.0+json:
           schema:
             $ref: '../../schemas/plans/plan_response.yml'
       headers:
@@ -58,7 +58,7 @@ put:
     200:
       description: successful
       content:
-        application/vnd.conekta-v2.1.0+json:
+        application/vnd.conekta-v2.2.0+json:
           schema:
             $ref: '../../schemas/plans/plan_response.yml'
       headers:
@@ -111,7 +111,7 @@ delete:
     200:
       description: successful
       content:
-        application/vnd.conekta-v2.1.0+json:
+        application/vnd.conekta-v2.2.0+json:
           schema:
             $ref: '../../schemas/plans/plan_response.yml'
       headers:

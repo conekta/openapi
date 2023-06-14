@@ -8,7 +8,7 @@ get:
     200:
       description: successful
       content:
-        application/vnd.conekta-v2.1.0+json:
+        application/vnd.conekta-v2.2.0+json:
           schema:
             title: get_api_keys_response
             allOf:
@@ -58,7 +58,7 @@ post:
     200:
       description: successful operation
       content:
-        application/vnd.conekta-v2.1.0+json:
+        application/vnd.conekta-v2.2.0+json:
           schema:
             title: api_key_create_response
             allOf:
