@@ -8,17 +8,17 @@ properties:
     example: true
   created_at:
     type: integer
-    description: Unix timestamp in seconds with the creation date of the api key
+    description: Unix timestamp in seconds of when the api key was created
     example: 1684167881
     format: int64
   updated_at:
     type: integer
-    description: Unix timestamp in seconds with the last upadate at date of the api key
+    description: Unix timestamp in seconds of when the api key was last updated
     example: 1684167923
     format: int64
   deactivated_at:
     type: integer
-    description: Unix timestamp in seconds with the api key was deleted
+    description: Unix timestamp in seconds of when the api key was deleted
     example: null
     nullable: true
     format: int64
@@ -30,7 +30,7 @@ properties:
     format: int64
   description:
     type: string
-    description: Detail of the use that will be given to the api key
+    description: A name or brief explanation of what this api key is used for
     example: online store
   id:
     type: string
@@ -38,11 +38,11 @@ properties:
     description: Unique identifier of the api key
   livemode:
     type: boolean
-    description: Indicates if the api key is in live mode
+    description: Indicates if the api key is in production
     example: false
   object:
     type: string
-    description: Object name, value is api_key
+    description: "Object name, value is 'api_key'"
     example: api_key
   prefix:
     type: string
