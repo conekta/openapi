@@ -1,0 +1,13 @@
+title: api_keys_request
+name: api_keys_request
+required:
+  - role
+properties:
+  description:
+    type: string
+    description: A name or brief explanation of what this api key is used for
+    example: online store
+  role:
+    type: string
+    example: private
+    descripción: Indicates if the api key is private or public
