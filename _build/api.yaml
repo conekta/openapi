@@ -856,7 +856,7 @@ paths:
           content:
             application/vnd.conekta-v2.1.0+json:
               schema:
-                $ref: '#/components/schemas/api-key_response'
+                $ref: '#/components/schemas/api_key_response'
           description: successful
           headers:
             Content-Type:
@@ -958,7 +958,7 @@ paths:
           content:
             application/vnd.conekta-v2.1.0+json:
               schema:
-                $ref: '#/components/schemas/api-key_response'
+                $ref: '#/components/schemas/api_key_response'
           description: successful operation
         "404":
           content:
@@ -10630,7 +10630,7 @@ components:
       content:
         application/json:
           schema:
-            $ref: '#/components/schemas/api-key_request'
+            $ref: '#/components/schemas/api_key_request'
       description: requested field for a api keys
       required: true
     charge_create:
@@ -11045,7 +11045,7 @@ components:
       - object
       title: pagination metadata
       type: object
-    api-key_response:
+    api_key_response:
       description: api keys model
       properties:
         active:
@@ -11100,7 +11100,7 @@ components:
           type: string
       title: api_key_response
       type: object
-    api-key_response_on_delete:
+    api_key_response_on_delete:
       description: api keys model
       properties:
         active:
@@ -12321,7 +12321,7 @@ components:
           type: string
       title: webhook_response
       type: object
-    api-key_request:
+    api_key_request:
       properties:
         description:
           description: Detail of the use that will be given to the api key
@@ -13565,7 +13565,7 @@ components:
       properties:
         data:
           items:
-            $ref: '#/components/schemas/api-key_response'
+            $ref: '#/components/schemas/api_key_response'
           type: array
       type: object
     get_api_keys_response:
@@ -13586,7 +13586,7 @@ components:
     api_key_create_response:
       allOf:
       - $ref: '#/components/schemas/api_key_create_response_allOf'
-      - $ref: '#/components/schemas/api-key_response'
+      - $ref: '#/components/schemas/api_key_response'
       title: api_key_create_response
     api_key_update_request:
       properties:
@@ -13608,7 +13608,7 @@ components:
       type: object
     delete_api_keys_response:
       allOf:
-      - $ref: '#/components/schemas/api-key_response_on_delete'
+      - $ref: '#/components/schemas/api_key_response_on_delete'
       - $ref: '#/components/schemas/delete_api_keys_response_allOf'
       title: delete_api_keys_response
     get_charges_response_allOf:
