@@ -547,12 +547,6 @@ paths:
           maximum: 250
           minimum: 1
           type: integer
-      - description: "General search, e.g. by id, description, prefix"
-        in: query
-        name: search
-        required: false
-        schema:
-          type: string
       - description: next page
         in: query
         name: next
@@ -562,6 +556,12 @@ paths:
       - description: previous page
         in: query
         name: previous
+        required: false
+        schema:
+          type: string
+      - description: "General search, e.g. by id, description, prefix"
+        in: query
+        name: search
         required: false
         schema:
           type: string
@@ -1051,7 +1051,7 @@ paths:
           maximum: 250
           minimum: 1
           type: integer
-      - description: "General search, e.g. by id, description, prefix"
+      - description: "General order search, e.g. by mail, reference etc."
         in: query
         name: search
         required: false
@@ -1285,7 +1285,7 @@ paths:
           maximum: 250
           minimum: 1
           type: integer
-      - description: "General search, e.g. by id, description, prefix"
+      - description: "General order search, e.g. by mail, reference etc."
         in: query
         name: search
         required: false
@@ -1525,7 +1525,7 @@ paths:
           maximum: 250
           minimum: 1
           type: integer
-      - description: "General search, e.g. by id, description, prefix"
+      - description: "General order search, e.g. by mail, reference etc."
         in: query
         name: search
         required: false
@@ -2664,7 +2664,7 @@ paths:
           maximum: 250
           minimum: 1
           type: integer
-      - description: "General search, e.g. by id, description, prefix"
+      - description: "General order search, e.g. by mail, reference etc."
         in: query
         name: search
         required: false
@@ -3006,7 +3006,7 @@ paths:
           maximum: 250
           minimum: 1
           type: integer
-      - description: "General search, e.g. by id, description, prefix"
+      - description: "General order search, e.g. by mail, reference etc."
         in: query
         name: search
         required: false
@@ -3228,7 +3228,7 @@ paths:
           maximum: 250
           minimum: 1
           type: integer
-      - description: "General search, e.g. by id, description, prefix"
+      - description: "General order search, e.g. by mail, reference etc."
         in: query
         name: search
         required: false
@@ -4481,7 +4481,7 @@ paths:
           maximum: 250
           minimum: 1
           type: integer
-      - description: "General search, e.g. by id, description, prefix"
+      - description: "General order search, e.g. by mail, reference etc."
         in: query
         name: search
         required: false
@@ -5384,7 +5384,7 @@ paths:
         required: false
         schema:
           type: string
-      - description: "General search, e.g. by id, description, prefix"
+      - description: "General order search, e.g. by mail, reference etc."
         in: query
         name: search
         required: false
@@ -5861,7 +5861,7 @@ paths:
           maximum: 250
           minimum: 1
           type: integer
-      - description: "General search, e.g. by id, description, prefix"
+      - description: "General order search, e.g. by mail, reference etc."
         in: query
         name: search
         required: false
@@ -8593,7 +8593,7 @@ paths:
           maximum: 250
           minimum: 1
           type: integer
-      - description: "General search, e.g. by id, description, prefix"
+      - description: "General order search, e.g. by mail, reference etc."
         in: query
         name: search
         required: false
@@ -8838,7 +8838,7 @@ paths:
           maximum: 250
           minimum: 1
           type: integer
-      - description: "General search, e.g. by id, description, prefix"
+      - description: "General order search, e.g. by mail, reference etc."
         in: query
         name: search
         required: false
@@ -9083,7 +9083,7 @@ paths:
           maximum: 250
           minimum: 1
           type: integer
-      - description: "General search, e.g. by id, description, prefix"
+      - description: "General order search, e.g. by mail, reference etc."
         in: query
         name: search
         required: false
@@ -9602,7 +9602,7 @@ paths:
           maximum: 250
           minimum: 1
           type: integer
-      - description: "General search, e.g. by id, description, prefix"
+      - description: "General order search, e.g. by mail, reference etc."
         in: query
         name: search
         required: false
@@ -10524,13 +10524,6 @@ components:
         maximum: 250
         minimum: 1
         type: integer
-    search:
-      description: "General search, e.g. by id, description, prefix"
-      in: query
-      name: search
-      required: false
-      schema:
-        type: string
     next_page:
       description: next page
       in: query
@@ -10542,6 +10535,13 @@ components:
       description: previous page
       in: query
       name: previous
+      required: false
+      schema:
+        type: string
+    search:
+      description: "General order search, e.g. by mail, reference etc."
+      in: query
+      name: search
       required: false
       schema:
         type: string

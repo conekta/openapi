@@ -40,9 +40,14 @@ get:
     - $ref: "../../parameters/commons/headers/accept_language.yml"
     - $ref: "../../parameters/commons/headers/x_child_company_id.yml"
     - $ref: "../../parameters/commons/query/limit.yml"
-    - $ref: "../../parameters/api_keys/query/search.yml"
     - $ref: "../../parameters/commons/query/next_page.yml"
     - $ref: "../../parameters/commons/query/previous_page.yml"
+    - description: "General search, e.g. by id, description, prefix"
+      in: query
+      name: "search"
+      required: false
+      schema:
+        type: string
 post:
   tags:
     - Api Keys
