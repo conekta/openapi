@@ -18,7 +18,7 @@ properties:
     format: int64
   deactivated_at:
     type: integer
-    description: Unix timestamp in seconds with the api key was deleted
+    description: Unix timestamp in seconds of when the api key was deleted
     example: null
     nullable: true
     format: int64

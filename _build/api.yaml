@@ -11063,7 +11063,7 @@ components:
           format: int64
           type: integer
         deactivated_at:
-          description: Unix timestamp in seconds with the api key was deleted
+          description: Unix timestamp in seconds of when the api key was deleted
           format: int64
           nullable: true
           type: integer
