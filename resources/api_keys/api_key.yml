@@ -10,7 +10,7 @@ get:
       content:
         application/vnd.conekta-v2.1.0+json:
           schema:
-            $ref: "../../schemas/api_keys/api-key_response.yml"
+            $ref: "../../schemas/api_keys/api_key_response.yml"
       headers:
         Content-Type:
           description: The format of the response body
@@ -45,7 +45,7 @@ put:
       content:
         application/vnd.conekta-v2.1.0+json:
           schema:
-            $ref: ../../schemas/api_keys/api-key_response.yml
+            $ref: ../../schemas/api_keys/api_key_response.yml
     404:
       $ref: "../errors/404.yml"
     401:
@@ -68,7 +68,7 @@ put:
             description:
               type: string
               example: online store
-              description: Detail of the use that will be given to the api key
+              description: A name or brief explanation of what this api key is used for
   parameters:
     - $ref: "../../parameters/commons/path_param/id.yml"
     - $ref: "../../parameters/commons/headers/accept_language.yml"
@@ -86,7 +86,7 @@ delete:
           schema:
             title: delete_api_keys_response
             allOf:
-              - $ref: "../../schemas/api_keys/api-key_response.yml"
+              - $ref: "../../schemas/api_keys/api_key_response_on_delete.yml"
               - type: object
                 properties:
                   deleted:
