@@ -19,7 +19,7 @@ get:
                   data:
                     type: array
                     items:
-                      $ref: "../../schemas/api_keys/api-key_response.yml"
+                      $ref: "../../schemas/api_keys/api_key_response.yml"
       headers:
         Content-Type:
           description: The format of the response body
@@ -40,9 +40,14 @@ get:
     - $ref: "../../parameters/commons/headers/accept_language.yml"
     - $ref: "../../parameters/commons/headers/x_child_company_id.yml"
     - $ref: "../../parameters/commons/query/limit.yml"
-    - $ref: "../../parameters/commons/query/search.yml"
     - $ref: "../../parameters/commons/query/next_page.yml"
     - $ref: "../../parameters/commons/query/previous_page.yml"
+    - description: "General search, e.g. by id, description, prefix"
+      in: query
+      name: "search"
+      required: false
+      schema:
+        type: string
 post:
   tags:
     - Api Keys
@@ -62,8 +67,8 @@ post:
                   authentication_token:
                     type: string
                     example: key_rpHzxufNgjFCdprEEFZRTKi
-                    description: It is occupied as a user when authenticated with basic authentication, with a blank password. This value will only appear once, in the request to create a new key
-              - $ref: "../../schemas/api_keys/api-key_response.yml"
+                    description: It is occupied as a user when authenticated with basic authentication, with a blank password. This value will only appear once, in the request to create a new key. Copy and save it in a safe place.
+              - $ref: "../../schemas/api_keys/api_key_response.yml"
       headers:
         Content-Type:
           description: The format of the response body
