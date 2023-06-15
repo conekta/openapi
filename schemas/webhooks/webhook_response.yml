@@ -3,24 +3,31 @@ description: webhooks model
 type: object
 properties:
   id:
+    description: id of the webhook
     type: string
     example: "6307a60c41de27127515a575"
   description:
+    description: A name or brief explanation of what this webhook is used for
     type: string
     example: "Server payments processor"
   livemode:
+    description: Indicates if the webhook is in production
     type: boolean
     example: true
   active:
+    description: Indicates if the webhook is actived or not
     type: boolean
     example: true
   object:
+    description: "Object name, value is 'webhook'"
     type: string
     example: "event"
   status:
+    description: "Indicates if the webhook is ready to receive events or failing"
     type: string
     example: "listening"
   subscribed_events:
+    description: "lists the events that will be sent to the webhook"
     type: array
     items:
       type: string
@@ -35,6 +42,7 @@ properties:
                 "charge.reversed",
                 "charge.pending_confirmation"]
   url:
+    description: 'url or endpoint of the webhook'
     type: string
     example: "https://username:password@mockoon.stg.conekta.io/payments-api/cash/merchant_approval"
     

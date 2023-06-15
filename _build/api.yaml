@@ -12274,24 +12274,31 @@ components:
       description: webhooks model
       properties:
         id:
+          description: id of the webhook
           example: 6307a60c41de27127515a575
           type: string
         description:
+          description: A name or brief explanation of what this webhook is used for
           example: Server payments processor
           type: string
         livemode:
+          description: Indicates if the webhook is in production
           example: true
           type: boolean
         active:
+          description: Indicates if the webhook is actived or not
           example: true
           type: boolean
         object:
+          description: "Object name, value is 'webhook'"
           example: event
           type: string
         status:
+          description: Indicates if the webhook is ready to receive events or failing
           example: listening
           type: string
         subscribed_events:
+          description: lists the events that will be sent to the webhook
           example:
           - charge.created
           - charge.paid
@@ -12307,6 +12314,7 @@ components:
             type: string
           type: array
         url:
+          description: url or endpoint of the webhook
           example: https://username:password@mockoon.stg.conekta.io/payments-api/cash/merchant_approval
           type: string
       title: webhook_response
