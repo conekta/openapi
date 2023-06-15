@@ -9,7 +9,12 @@ properties:
     pattern: "^(?!.*(localhost|127\\.0\\.0\\.1)).*$"
     description: Here you must place the URL of your Webhook remember that you must program what you will do with the events received. Also do not forget to handle the HTTPS protocol for greater security.
   subscribed_events:
+    description: events that will be sent to the webhook
     type: array
     items:
       type: string
     example: 'customer.created'
+  active:
+    description: whether the webhook is active or not
+    type: boolean
+    example: true

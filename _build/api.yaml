@@ -13126,6 +13126,7 @@ components:
           pattern: ^(?!.*(localhost|127\.0\.0\.1)).*$
           type: string
         subscribed_events:
+          description: events that will be sent to the webhook
           example: customer.created
           items:
             type: string
@@ -13146,10 +13147,15 @@ components:
           pattern: ^(?!.*(localhost|127\.0\.0\.1)).*$
           type: string
         subscribed_events:
+          description: events that will be sent to the webhook
           example: customer.created
           items:
             type: string
           type: array
+        active:
+          description: whether the webhook is active or not
+          example: true
+          type: boolean
       title: update_webhook
       type: object
     details:
