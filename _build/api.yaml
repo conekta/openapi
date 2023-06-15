@@ -13125,14 +13125,12 @@ components:
           format: url
           pattern: ^(?!.*(localhost|127\.0\.0\.1)).*$
           type: string
-        synchronous:
-          default: false
-          description: It is a value that allows to decide if the events will be synchronous
-            or asynchronous. We recommend asynchronous = false
-          example: false
-          type: boolean
+        subscribed_events:
+          example: customer.created
+          items:
+            type: string
+          type: array
       required:
-      - synchronous
       - url
       title: a webhook
       type: object
@@ -13147,19 +13145,11 @@ components:
           format: url
           pattern: ^(?!.*(localhost|127\.0\.0\.1)).*$
           type: string
-        synchronous:
-          default: false
-          description: It is a value that allows to decide if the events will be synchronous
-            or asynchronous. We recommend asynchronous = false
-          example: false
-          type: boolean
         subscribed_events:
           example: customer.created
           items:
             type: string
           type: array
-      required:
-      - url
       title: update_webhook
       type: object
     details:
