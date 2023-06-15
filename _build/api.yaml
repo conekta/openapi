@@ -12273,25 +12273,21 @@ components:
     webhook_response:
       description: webhooks model
       properties:
-        deleted:
-          example: false
-          nullable: true
-          type: boolean
-        development_enabled:
-          example: false
-          type: boolean
         id:
           example: 6307a60c41de27127515a575
           type: string
+        description:
+          example: Server payments processor
+          type: string
         livemode:
+          example: true
+          type: boolean
+        active:
           example: true
           type: boolean
         object:
           example: event
           type: string
-        production_enabled:
-          example: true
-          type: boolean
         status:
           example: listening
           type: string
@@ -12310,9 +12306,6 @@ components:
           items:
             type: string
           type: array
-        synchronous:
-          example: false
-          type: boolean
         url:
           example: https://username:password@mockoon.stg.conekta.io/payments-api/cash/merchant_approval
           type: string
