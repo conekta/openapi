@@ -1,8 +1,6 @@
 title: update_webhook
 description: an updated webhook
 type: object
-required:
-   - url
 properties:
   url:
     type: string
@@ -10,13 +8,13 @@ properties:
     example: "https://webhook.site/89277eaa-a8e4-4306-8dc5-f55c80703dc8"
     pattern: "^(?!.*(localhost|127\\.0\\.0\\.1)).*$"
     description: Here you must place the URL of your Webhook remember that you must program what you will do with the events received. Also do not forget to handle the HTTPS protocol for greater security.
-  synchronous:
-    type: boolean
-    example: false
-    default: false
-    description: It is a value that allows to decide if the events will be synchronous or asynchronous. We recommend asynchronous = false
   subscribed_events:
+    description: events that will be sent to the webhook
     type: array
     items:
       type: string
-    example: "customer.created"
+    example: 'customer.created'
+  active:
+    description: whether the webhook is active or not
+    type: boolean
+    example: true
