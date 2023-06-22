@@ -1,6 +1,6 @@
 description: Precondition Required
 content:
-  application/vnd.conekta-v2.1.0+json:
+  application/vnd.conekta-v2.2.0+json:
     schema:
       $ref: '../../schemas/errors/error.yml'
     example:

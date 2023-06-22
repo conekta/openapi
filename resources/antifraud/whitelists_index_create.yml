@@ -10,7 +10,7 @@ get:
     200:
       description: All the rules
       content:
-        application/vnd.conekta-v2.1.0+json:
+        application/vnd.conekta-v2.2.0+json:
           schema:
             $ref: '../../schemas/antifraud/risk_rules_list.yml'
     401:
@@ -30,7 +30,7 @@ post:
     200:
       description: successfully registered rule
       content:
-        application/vnd.conekta-v2.1.0+json:
+        application/vnd.conekta-v2.2.0+json:
           schema:
             title: whitelistlist_rule_response
             properties:

@@ -72,7 +72,7 @@ properties:
     additionalProperties:
       type: string
     example: {
-        "Accept": "application/vnd.conekta-v2.1.0+json",
+        "Accept": "application/vnd.conekta-v2.2.0+json",
         "Accept-Encoding": "gzip, deflate, br",
         "Accept-Language": "es-419, es; q=0.9, en; q=0.8",
         "Activitypermission": "orders:read",
