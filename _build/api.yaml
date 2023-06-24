@@ -2905,7 +2905,7 @@ paths:
           application/json:
             schema:
               $ref: '#/components/schemas/resend_request'
-        description: requested field for blacklist rule
+        description: requested fields for resend an event
         required: true
       responses:
         "200":
