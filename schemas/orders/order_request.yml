@@ -47,6 +47,10 @@ properties:
     type: boolean
     description: "Indicates whether the order charges must be preauthorized"
     default: false
+  processing_mode:
+    type: string
+    description: "Indicates the processing mode for the order, either ecommerce, recurrent or validation."
+    example: "ecommerce"
   shipping_contact:
     $ref: ../../schemas/customers/customer_shipping_contacts.yml
   shipping_lines:

@@ -2,5 +2,5 @@ description: requested field for a api keys
 content:
   application/json:
     schema:
-      $ref: "../../schemas/api_keys/api-key_request.yml"
+      $ref: "../../schemas/api_keys/api_key_request.yml"
 required: true
