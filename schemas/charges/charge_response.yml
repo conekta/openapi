@@ -83,6 +83,7 @@ properties:
       - type: object
         properties:
           data:
+            description: refunds
             type: array
             items:
               title: charge_response_refunds_data
