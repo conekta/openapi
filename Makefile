@@ -26,11 +26,12 @@ java:
 
 go:
 	npx @openapitools/openapi-generator-cli generate \
-	-i  api.yaml \
+	-i api.yaml \
 	-g go \
 	-o ../conekta-go \
 	-c config-go.json \
-	--global-property apiTests=false
+	--global-property modelTests=false \
+	--additional-properties=hideGenerationTimestamp=true
 
 ruby:
 	mkdir -p conekta-ruby && 
