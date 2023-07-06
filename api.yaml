@@ -50,7 +50,7 @@ paths:
     $ref: "./resources/events/events.yml"
   /events/{id}:
     $ref: "./resources/events/event.yml"
-  /events/{event_id}/webhook_logs/{webhook_log_id}/resend:
+  /events/{event_id}/resend:
     $ref: "./resources/events/events_resend.yml"
   /logs:
     $ref: "./resources/logs/log.yml"

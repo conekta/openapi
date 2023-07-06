@@ -2871,22 +2871,15 @@ paths:
       summary: Get Event
       tags:
       - Events
-  /events/{event_id}/webhook_logs/{webhook_log_id}/resend:
+  /events/{event_id}/resend:
     post:
-      description: Try to send an event
+      description: Resend event to selected webhooks
       operationId: resendEvent
       parameters:
       - description: event identifier
         example: 6463d6e35a4c3e001819e760
         in: path
         name: event_id
-        required: true
-        schema:
-          type: string
-      - description: webhook log identifier
-        example: webhl_2tsv6NzWJHBWCkqGt
-        in: path
-        name: webhook_log_id
         required: true
         schema:
           type: string
@@ -2907,6 +2900,13 @@ paths:
           - es
           - en
           type: string
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/resend_request'
+        description: requested fields for resend an event
+        required: true
       responses:
         "200":
           content:
@@ -10569,14 +10569,6 @@ components:
       required: true
       schema:
         type: string
-    webhook_log_id:
-      description: webhook log identifier
-      example: webhl_2tsv6NzWJHBWCkqGt
-      in: path
-      name: webhook_log_id
-      required: true
-      schema:
-        type: string
     line_items_id:
       description: identifier
       example: line_item_2tQ8HkkfbauaKP9Ho
@@ -11425,6 +11417,19 @@ components:
           example: successful
           type: string
       title: event_response
+      type: object
+    resend_request:
+      properties:
+        webhooks_ids:
+          description: webhooks ids to resend event
+          example:
+          - 6307a60c41de27127515a575
+          - 6307a60c41de27127515a571
+          items:
+            type: string
+          type: array
+      required:
+      - webhooks_ids
       type: object
     events_resend_response:
       description: event model

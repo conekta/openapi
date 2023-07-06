@@ -1,0 +1,12 @@
+type: object
+required:
+  - webhooks_ids
+properties:
+  webhooks_ids:
+    type: array
+    items:
+      type: string
+    example:
+          - 6307a60c41de27127515a575
+          - 6307a60c41de27127515a571
+    description: 'webhooks ids to resend event'
