@@ -11330,7 +11330,7 @@ components:
       properties:
         description:
           description: Description of the rule
-          example: this client's email was verified at 20/09/22 by internal process
+          example: this client email was verified at 20/09/22 by internal process
           type: string
         field:
           description: Field to be used for the rule

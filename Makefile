@@ -34,13 +34,12 @@ go:
 	--additional-properties=hideGenerationTimestamp=true
 
 ruby:
-	mkdir -p conekta-ruby && 
-	cp .openapi-generator-ignore conekta-ruby/.openapi-generator-ignore && \
 	npx @openapitools/openapi-generator-cli generate \
 	-i  api.yaml \
 	-g ruby \
 	-o ../conekta-ruby \
-	-c config-ruby.json 
+	-c config-ruby.json \
+	--global-property modelTests=false 
 
 csharp:
 	mkdir -p conekta-.net && \
@@ -56,11 +55,11 @@ csharp:
 
 php:
 	npx @openapitools/openapi-generator-cli generate \
-	-i api.yaml \
-	-g php \
-	-o ../conekta-php \
-	-c config-php.json \
-	--global-property modelTests=false
+		-i api.yaml \
+		-g php \
+		-o ../conekta-php \
+		-c config-php.json \
+		--global-property modelTests=false
 
 node:
 	rm -rf ../conekta-node/api && \
