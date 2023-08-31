@@ -2,13 +2,20 @@ title: discount_lines_order_response
 allOf:
   - $ref: 'order_discount_lines_request.yml'
   - type: object
+    required:
+        - id
+        - object
+        - parent_id
     properties:
       id: 
         type: string
         example: "dis_lin_2tQQ58HPgPw7StE8z"
+        description: "The discount line id"
       object:
         type: string
         example: "discount_line"
+        description: "The object name"
       parent_id:
         type: string
         example: "ord_2tPAmKCEJqh8RE6nY"
+        description: "The order id"

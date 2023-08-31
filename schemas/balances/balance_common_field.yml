@@ -1,0 +1,13 @@
+title: balance_common_fiels_response
+description: balance common fields model
+type: object
+properties:
+  amount:
+    type: integer
+    example: 100
+    description: The balance's amount
+    format: int64
+  currency:
+    type: string
+    example: "MXN"
+    description: The balance's currency

@@ -1,13 +1,13 @@
 {
   "packageName": "conekta",
   "generateSourceCodeOnly": "false",
-  "artifactVersion": "6.0.0-beta.1",
+  "artifactVersion": "6.0.1",
   "packageUrl": "https://developers.conekta.com/",
   "projectName": "conekta-php",
   "appDescriptionV2" : "Conekta PHP Library",
   "useOneOfDiscriminatorLookup" : true,
   "nonCompliantUseDiscriminatorIfCompositionFails" : false,
-  "httpUserAgent": "Conekta/v2 PhpBindings/6.0.0-beta.1",
+  "httpUserAgent": "Conekta/v2 PhpBindings/6.0.1",
   "packageAuthors" : "engineering@conekta.com",
   "files": {
     "CODE_OF_CONDUCT.md" : {},
@@ -18,6 +18,9 @@
     "VERSION.mustache" : {
       "templateType": "SupportingFiles",
       "destinationFilename": "VERSION"
+    },
+    "ssl_data/ca_bundle.crt": {
+      "destinationFilename": "lib/ssl_data/ca_bundle.crt"
     }
   },
   "gitUserId": "conekta",

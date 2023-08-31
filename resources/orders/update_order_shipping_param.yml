@@ -47,6 +47,8 @@ delete:
      $ref: '../errors/404.yml'
     422:
      $ref: '../errors/422.yml'
+    428:
+     $ref: '../errors/428.yml'
     500:
      $ref: '../errors/500.yml'
   security:
