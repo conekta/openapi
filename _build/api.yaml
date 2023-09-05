@@ -1012,7 +1012,7 @@ paths:
       summary: Update Api Key
       tags:
       - Api Keys
-  /balances:
+  /balance:
     get:
       description: Get a company's balance
       operationId: getBalance
