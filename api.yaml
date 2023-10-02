@@ -26,7 +26,7 @@ paths:
     $ref: "./resources/api_keys/api_keys.yml"
   /api_keys/{id}:
     $ref: "./resources/api_keys/api_key.yml"
-  /balances:
+  /balance:
     $ref: "./resources/balances/balances.yml"
   /charges:
     $ref: "./resources/charges/charges.yml"

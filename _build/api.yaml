@@ -1012,7 +1012,7 @@ paths:
       summary: Update Api Key
       tags:
       - Api Keys
-  /balances:
+  /balance:
     get:
       description: Get a company's balance
       operationId: getBalance
@@ -1068,7 +1068,7 @@ paths:
                 type: string
         "401":
           content:
-            application/vnd.conekta-v2.1.0+json:
+            application/vnd.conekta-v2.2.0+json:
               example:
                 details:
                 - message: Please include your access key in your request.
@@ -1082,7 +1082,7 @@ paths:
           description: authentication error
         "500":
           content:
-            application/vnd.conekta-v2.1.0+json:
+            application/vnd.conekta-v2.2.0+json:
               example:
                 details:
                 - debug_message: There was a runtime error and Conekta engineers have
@@ -2454,7 +2454,7 @@ paths:
           description: successful
         "401":
           content:
-            application/vnd.conekta-v2.1.0+json:
+            application/vnd.conekta-v2.2.0+json:
               example:
                 details:
                 - message: Please include your access key in your request.
@@ -2468,7 +2468,7 @@ paths:
           description: authentication error
         "500":
           content:
-            application/vnd.conekta-v2.1.0+json:
+            application/vnd.conekta-v2.2.0+json:
               example:
                 details:
                 - debug_message: There was a runtime error and Conekta engineers have
@@ -2749,7 +2749,7 @@ paths:
       responses:
         "200":
           content:
-            application/vnd.conekta-v2.2.0+json:
+            application/vnd.conekta-v2.1.0+json:
               schema:
                 $ref: '#/components/schemas/discount_lines_response'
           description: successful
@@ -2874,7 +2874,7 @@ paths:
           description: successful
         "401":
           content:
-            application/vnd.conekta-v2.1.0+json:
+            application/vnd.conekta-v2.2.0+json:
               example:
                 details:
                 - message: Please include your access key in your request.
@@ -2888,7 +2888,7 @@ paths:
           description: authentication error
         "404":
           content:
-            application/vnd.conekta-v2.1.0+json:
+            application/vnd.conekta-v2.2.0+json:
               example:
                 details:
                 - message: The resource was not found.
@@ -2904,7 +2904,7 @@ paths:
           description: not found entity
         "422":
           content:
-            application/vnd.conekta-v2.1.0+json:
+            application/vnd.conekta-v2.2.0+json:
               example:
                 details:
                 - message: The token does not exist.
@@ -2919,7 +2919,7 @@ paths:
           description: parameter validation error
         "500":
           content:
-            application/vnd.conekta-v2.1.0+json:
+            application/vnd.conekta-v2.2.0+json:
               example:
                 details:
                 - debug_message: There was a runtime error and Conekta engineers have
@@ -2999,7 +2999,7 @@ paths:
       responses:
         "200":
           content:
-            application/vnd.conekta-v2.1.0+json:
+            application/vnd.conekta-v2.2.0+json:
               schema:
                 $ref: '#/components/schemas/get_events_response'
           description: successful
@@ -3641,8 +3641,10 @@ paths:
               examples:
                 cash:
                   $ref: '#/components/examples/order_cash'
+                  value: null
                 card:
                   $ref: '#/components/examples/order_card'
+                  value: null
               schema:
                 $ref: '#/components/schemas/order_response'
           description: successful operation
@@ -6831,6 +6833,7 @@ paths:
               examples:
                 sucessfull:
                   $ref: '#/components/examples/shipping'
+                  value: null
               schema:
                 $ref: '#/components/schemas/shipping_order_response'
           description: successful
@@ -6984,7 +6987,7 @@ paths:
           description: parameter validation error
         "428":
           content:
-            application/vnd.conekta-v2.1.0+json:
+            application/vnd.conekta-v2.2.0+json:
               example:
                 details:
                 - debug_message: The order cannot be modified because it has already
@@ -11008,14 +11011,19 @@ components:
           examples:
             order_with_charges:
               $ref: '#/components/examples/order_with_charges'
+              value: null
             order_with_checkout:
               $ref: '#/components/examples/order_with_checkout'
+              value: null
             split_payment_with_2_card_charges:
               $ref: '#/components/examples/split_payment_with_2_cards'
+              value: null
             split_payment_with_3_cash_charges:
               $ref: '#/components/examples/split_payment_with_cash'
+              value: null
             split_payment_with_cash_card_charges:
               $ref: '#/components/examples/split_payment_with_cash_card'
+              value: null
           schema:
             $ref: '#/components/schemas/order_request'
       description: requested field for order
@@ -11303,29 +11311,11 @@ components:
       allOf:
       - $ref: '#/components/schemas/pagination'
       - $ref: '#/components/schemas/page'
-      - properties:
-          data:
-            items:
-              $ref: '#/components/schemas/risk_rules_data'
-            type: array
-        title: risk_rules
-        type: object
+      - $ref: '#/components/schemas/risk_rules'
     error:
       allOf:
       - $ref: '#/components/schemas/details'
-      - properties:
-          log_id:
-            description: log id
-            example: 507f1f77bcf86cd799439011
-            nullable: true
-            type: string
-          type:
-            example: authentication_error
-            type: string
-          object:
-            example: error
-            type: string
-        type: object
+      - $ref: '#/components/schemas/error_allOf'
       description: err model
       title: error
     create_risk_rules_data:
@@ -11754,8 +11744,7 @@ components:
     customer_fiscal_entities_request:
       properties:
         address:
-          allOf:
-          - $ref: '#/components/schemas/customer_address'
+          $ref: '#/components/schemas/customer_fiscal_entities_request_address'
         tax_id:
           type: string
         email:
@@ -11776,24 +11765,7 @@ components:
     discount_lines_response:
       allOf:
       - $ref: '#/components/schemas/order_discount_lines_request'
-      - properties:
-          id:
-            description: The discount line id
-            example: dis_lin_2tQQ58HPgPw7StE8z
-            type: string
-          object:
-            description: The object name
-            example: discount_line
-            type: string
-          parent_id:
-            description: The order id
-            example: ord_2tPAmKCEJqh8RE6nY
-            type: string
-        required:
-        - id
-        - object
-        - parent_id
-        type: object
+      - $ref: '#/components/schemas/discount_lines_response_allOf'
       title: discount_lines_order_response
     event_response:
       description: event model
@@ -12113,14 +12085,7 @@ components:
     product_order_response:
       allOf:
       - $ref: '#/components/schemas/product'
-      - properties:
-          id:
-            type: string
-          object:
-            type: string
-          parent_id:
-            type: string
-        type: object
+      - $ref: '#/components/schemas/product_order_response_allOf'
       title: product order response
     checkout_response:
       description: checkout response
@@ -12229,71 +12194,15 @@ components:
     payment_method_cash_response:
       allOf:
       - $ref: '#/components/schemas/payment_method_response'
-      - description: use for cash responses
-        properties:
-          reference:
-            example: "93000262276908"
-            type: string
-          barcode:
-            example: "93000262276908"
-            type: string
-          barcode_url:
-            example: https://pt-common-s3-stg.s3.amazonaws.com/644ebf80f2243197aad6cd8810375b905b613dbe.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=ASIA3UN6375MP4SLLCWV%2F20230203%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20230203T215750Z&X-Amz-Expires=604800&X-Amz-Security-Token=IQoJb3JpZ2luX2VjEH4aCXVzLWVhc3QtMSJGMEQCICd79cu7DYu%2F4%2B3HnVVswydgU9yHcE9kmQIIk2TLoZJrAiBVZ0HxVSeboK5lhdQSqADjwQF62XX35jhC%2F2riB0M8uCqQBAj2%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F8BEAIaDDc5OTgwMTA4MTY4OCIMXWZds9ZI5hzUdbeGKuQDFreMyeWnWWPqDuGZ2%2BHk6usCr%2Fl096%2FNJh9xtf8htLu56K%2FhWUTx%2BjiqFWM2O%2FF5zTS%2BIV6TqkLDZ%2BQ5Jo1miQrRmR57YDz6uP2Yd1mNZ1ouq5ipnNjUuu5UWCCBAmqyZQsrVmeMQpSV2IB%2BTERCCcW2SukFEYU%2F20%2Fzy5orsoZ8DxOW460IymR3cWBk5u3Xh2cV6Y1RdPEwDEThhqYEF5w%2ByKbLENloMsI%2FUm6sG5PPrO3yQOAP9aK2muLJs9lXQRU%2FL%2FSsmS4FKSUFOqlN6YU%2Bi2Y%2FyGIKAJT2VDkngvz5Sl%2Fadj0j%2BPKftVRV5FcEhySB6Rl%2BSkPN7kVQMJp6pS8hMJ6JCyEA%2BA3eWYdIfKgQhWVXAR4oCBfJ62DH8FU3a7WfSjjpTwfVkiReWen3GGCYfUWETTVKp46MKnJ9PG0CD3KzxKV8VfmEGc5krK%2FI%2F%2BDV2wtSa%2F9qf1%2BK1YYJIK9qZGb25ljUiGhTB4T%2BMUOSQFjetiWUoOJc5Q3Jz%2FXJbiTAMTST39MhdbCgiMgfrc8OGKN5DOVbex33Z7dn0xf%2FOCkSqurhLaG08efKQBdhLNS0RlE9hbg9yZ2ywwtQIF39fI6A7eeH0T11a5HMlvm51u4rAffPHRuEJfwJoIuj%2F2s3QzDg7%2FWeBjqmAbnPOlGfysjrDdvHyG7HVnaX02kdG%2BI3Q4PFOO4Mjaa3ocpjcfPT70%2BZ5a%2FSv5vP0jDLGrLToeM9%2BAUlNepptICRu23a1tLGW4ri0twPA%2FZ4JDTtUUUgdblyG8bKpcUTNp4oOsdmLLBz3FVyr4c2xQbDZSu2zYOtoOxB18W0AC6kIbsMWVU55Bf0mBhPeBWxGrtM4Kw1SgHHlt%2F8vetQi2OwtUcg08c%3D&X-Amz-SignedHeaders=host&X-Amz-Signature=d06dfa41550003359f2aabc8006063a80dfd806a13a54d244024946a76aa9abc
-            type: string
-          expires_at:
-            example: 0
-            format: int64
-            type: integer
-          provider:
-            example: Oxxo
-            type: string
-        type: object
+      - $ref: '#/components/schemas/payment_method_cash_response_allOf'
     payment_method_card_response:
       allOf:
       - $ref: '#/components/schemas/payment_method_response'
-      - description: use for card responses
-        properties:
-          last4:
-            example: "6410"
-            type: string
-          bin:
-            example: "40276657"
-            type: string
-          card_type:
-            example: debit
-            type: string
-          exp_month:
-            example: "10"
-            type: string
-          exp_year:
-            example: "25"
-            type: string
-          brand:
-            example: visa
-            type: string
-          name:
-            example: Fulano Perez"
-            type: string
-          default:
-            type: boolean
-          visible_on_checkout:
-            type: boolean
-          payment_source_status:
-            example: active
-            type: string
-        type: object
+      - $ref: '#/components/schemas/payment_method_card_response_allOf'
     payment_method_spei_recurrent:
       allOf:
       - $ref: '#/components/schemas/payment_method_response'
-      - description: use for spei responses
-        properties:
-          reference:
-            example: "93000262276908"
-            type: string
-          expires_at:
-            example: none
-            type: string
-        type: object
+      - $ref: '#/components/schemas/payment_method_spei_recurrent_allOf'
     plan_response:
       description: plans model
       properties:
@@ -12339,14 +12248,7 @@ components:
     shipping_order_response:
       allOf:
       - $ref: '#/components/schemas/shipping_request'
-      - properties:
-          id:
-            type: string
-          object:
-            type: string
-          parent_id:
-            type: string
-        type: object
+      - $ref: '#/components/schemas/product_order_response_allOf'
       title: shipping_order_response
     customer_shipping_contacts_response:
       description: Contains the detail of the shipping addresses that the client has
@@ -12456,17 +12358,7 @@ components:
     update_order_tax_response:
       allOf:
       - $ref: '#/components/schemas/order_tax_request'
-      - properties:
-          id:
-            example: tax_lin_2tQ8dC5mg1UADmVPo
-            type: string
-          object:
-            example: tax_line
-            type: string
-          parent_id:
-            example: ord_2tPAmKCEJqh8RE6nY
-            type: string
-        type: object
+      - $ref: '#/components/schemas/update_order_tax_response_allOf'
       description: create new taxes for an existing order response
       required:
       - id
@@ -12995,8 +12887,7 @@ components:
     customer_update_fiscal_entities_request:
       properties:
         address:
-          allOf:
-          - $ref: '#/components/schemas/customer_address'
+          $ref: '#/components/schemas/customer_fiscal_entities_request_address'
         tax_id:
           type: string
         email:
@@ -13349,36 +13240,19 @@ components:
     payment_method_card_request:
       allOf:
       - $ref: '#/components/schemas/customer_payment_method_request'
-      - properties:
-          token_id:
-            description: "Token id that will be used to create a \"card\" type payment\
-              \ method. See the (subscriptions)[https://developers.conekta.com/v2.1.0/reference/createsubscription]\
-              \ tutorial for more information on how to tokenize cards."
-            example: tok_32hj4g234as
-            type: string
-        type: object
+      - $ref: '#/components/schemas/payment_method_card_request_allOf'
       required:
       - token_id
       title: payment_method_card_request
     payment_method_cash_request:
       allOf:
       - $ref: '#/components/schemas/customer_payment_method_request'
-      - properties:
-          expires_at:
-            example: 1553273553
-            format: int64
-            type: integer
-        type: object
+      - $ref: '#/components/schemas/payment_method_cash_request_allOf'
       title: payment_method_cash_request
     payment_method_spei_request:
       allOf:
       - $ref: '#/components/schemas/customer_payment_method_request'
-      - properties:
-          expires_at:
-            example: 1553273553
-            format: int64
-            type: integer
-        type: object
+      - $ref: '#/components/schemas/payment_method_cash_request_allOf'
       title: payment_method_spei_request
     update_payment_methods:
       properties:
@@ -13710,137 +13584,15 @@ components:
     payment_method_cash:
       allOf:
       - $ref: '#/components/schemas/payment_method'
-      - description: use for cash responses
-        properties:
-          auth_code:
-            example: 542563
-            nullable: true
-            type: integer
-          cashier_id:
-            example: OINM01010
-            nullable: true
-            type: string
-          reference:
-            example: "93000262276908"
-            type: string
-          barcode_url:
-            example: https://pt-common-s3-stg.s3.amazonaws.com/644ebf80f2243197aad6cd8810375b905b613dbe.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=ASIA3UN6375MP4SLLCWV%2F20230203%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20230203T215750Z&X-Amz-Expires=604800&X-Amz-Security-Token=IQoJb3JpZ2luX2VjEH4aCXVzLWVhc3QtMSJGMEQCICd79cu7DYu%2F4%2B3HnVVswydgU9yHcE9kmQIIk2TLoZJrAiBVZ0HxVSeboK5lhdQSqADjwQF62XX35jhC%2F2riB0M8uCqQBAj2%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F8BEAIaDDc5OTgwMTA4MTY4OCIMXWZds9ZI5hzUdbeGKuQDFreMyeWnWWPqDuGZ2%2BHk6usCr%2Fl096%2FNJh9xtf8htLu56K%2FhWUTx%2BjiqFWM2O%2FF5zTS%2BIV6TqkLDZ%2BQ5Jo1miQrRmR57YDz6uP2Yd1mNZ1ouq5ipnNjUuu5UWCCBAmqyZQsrVmeMQpSV2IB%2BTERCCcW2SukFEYU%2F20%2Fzy5orsoZ8DxOW460IymR3cWBk5u3Xh2cV6Y1RdPEwDEThhqYEF5w%2ByKbLENloMsI%2FUm6sG5PPrO3yQOAP9aK2muLJs9lXQRU%2FL%2FSsmS4FKSUFOqlN6YU%2Bi2Y%2FyGIKAJT2VDkngvz5Sl%2Fadj0j%2BPKftVRV5FcEhySB6Rl%2BSkPN7kVQMJp6pS8hMJ6JCyEA%2BA3eWYdIfKgQhWVXAR4oCBfJ62DH8FU3a7WfSjjpTwfVkiReWen3GGCYfUWETTVKp46MKnJ9PG0CD3KzxKV8VfmEGc5krK%2FI%2F%2BDV2wtSa%2F9qf1%2BK1YYJIK9qZGb25ljUiGhTB4T%2BMUOSQFjetiWUoOJc5Q3Jz%2FXJbiTAMTST39MhdbCgiMgfrc8OGKN5DOVbex33Z7dn0xf%2FOCkSqurhLaG08efKQBdhLNS0RlE9hbg9yZ2ywwtQIF39fI6A7eeH0T11a5HMlvm51u4rAffPHRuEJfwJoIuj%2F2s3QzDg7%2FWeBjqmAbnPOlGfysjrDdvHyG7HVnaX02kdG%2BI3Q4PFOO4Mjaa3ocpjcfPT70%2BZ5a%2FSv5vP0jDLGrLToeM9%2BAUlNepptICRu23a1tLGW4ri0twPA%2FZ4JDTtUUUgdblyG8bKpcUTNp4oOsdmLLBz3FVyr4c2xQbDZSu2zYOtoOxB18W0AC6kIbsMWVU55Bf0mBhPeBWxGrtM4Kw1SgHHlt%2F8vetQi2OwtUcg08c%3D&X-Amz-SignedHeaders=host&X-Amz-Signature=d06dfa41550003359f2aabc8006063a80dfd806a13a54d244024946a76aa9abc
-            type: string
-          expires_at:
-            example: 0
-            format: int64
-            type: integer
-          service_name:
-            example: OxxoPay
-            type: string
-          store:
-            example: 10MON50EDI
-            nullable: true
-            type: string
-          store_name:
-            example: OXXO
-            type: string
-        title: charge_data_payment_method_cash_response
-        type: object
+      - $ref: '#/components/schemas/charge_data_payment_method_cash_response'
     payment_method_card:
       allOf:
       - $ref: '#/components/schemas/payment_method'
-      - description: use for card responses
-        properties:
-          account_type:
-            example: Credit
-            type: string
-          auth_code:
-            example: "867372"
-            type: string
-          brand:
-            example: visa
-            type: string
-          contract_id:
-            description: Id sent for recurrent charges.
-            example: S781317595
-            maxLength: 10
-            minLength: 10
-            type: string
-          country:
-            example: MX
-            type: string
-          exp_month:
-            example: "02"
-            type: string
-          exp_year:
-            example: "30"
-            type: string
-          fraud_indicators:
-            items: {}
-            type: array
-          issuer:
-            example: BANAMEX
-            type: string
-          last4:
-            example: "4242"
-            type: string
-          name:
-            example: Fulanito Perez
-            type: string
-        title: charge_data_payment_method_card_response
-        type: object
+      - $ref: '#/components/schemas/charge_data_payment_method_card_response'
     payment_method_bank_transfer:
       allOf:
       - $ref: '#/components/schemas/payment_method'
-      - description: use for bank transfer responses
-        properties:
-          bank:
-            example: STP
-            type: string
-          clabe:
-            example: "646180111805034237"
-            type: string
-          description:
-            nullable: true
-            type: string
-          executed_at:
-            nullable: true
-            type: integer
-          expires_at:
-            example: 1683053729
-            format: int64
-            type: integer
-          issuing_account_bank:
-            nullable: true
-            type: string
-          issuing_account_number:
-            nullable: true
-            type: string
-          issuing_account_holder_name:
-            nullable: true
-            type: string
-          issuing_account_tax_id:
-            nullable: true
-            type: string
-          payment_attempts:
-            items: {}
-            type: array
-          receiving_account_holder_name:
-            nullable: true
-            type: string
-          receiving_account_number:
-            example: "646180111805034237"
-            type: string
-          receiving_account_bank:
-            example: STP
-            type: string
-          receiving_account_tax_id:
-            nullable: true
-            type: string
-          reference_number:
-            nullable: true
-            type: string
-          tracking_code:
-            nullable: true
-            type: string
-        title: charge_data_payment_method_bank_transfer_response
-        type: object
+      - $ref: '#/components/schemas/charge_data_payment_method_bank_transfer_response'
     company_payout_destination_response:
       description: Company payout destination model
       properties:
@@ -14211,27 +13963,31 @@ components:
           type: string
       title: deleted_blacklist_rule_response
       type: object
+    get_api_keys_response_allOf:
+      properties:
+        data:
+          items:
+            $ref: '#/components/schemas/api_key_response'
+          type: array
+      type: object
     get_api_keys_response:
       allOf:
       - $ref: '#/components/schemas/page'
       - $ref: '#/components/schemas/pagination'
-      - properties:
-          data:
-            items:
-              $ref: '#/components/schemas/api_key_response'
-            type: array
-        type: object
+      - $ref: '#/components/schemas/get_api_keys_response_allOf'
       title: get_api_keys_response
+    api_key_create_response_allOf:
+      properties:
+        authentication_token:
+          description: "It is occupied as a user when authenticated with basic authentication,\
+            \ with a blank password. This value will only appear once, in the request\
+            \ to create a new key. Copy and save it in a safe place."
+          example: key_rpHzxufNgjFCdprEEFZRTKi
+          type: string
+      type: object
     api_key_create_response:
       allOf:
-      - properties:
-          authentication_token:
-            description: "It is occupied as a user when authenticated with basic authentication,\
-              \ with a blank password. This value will only appear once, in the request\
-              \ to create a new key. Copy and save it in a safe place."
-            example: key_rpHzxufNgjFCdprEEFZRTKi
-            type: string
-        type: object
+      - $ref: '#/components/schemas/api_key_create_response_allOf'
       - $ref: '#/components/schemas/api_key_response'
       title: api_key_create_response
     api_key_update_request:
@@ -14246,120 +14002,136 @@ components:
           type: string
       title: api_key_update_request
       type: object
+    delete_api_keys_response_allOf:
+      properties:
+        deleted:
+          example: true
+          type: boolean
+      type: object
     delete_api_keys_response:
       allOf:
       - $ref: '#/components/schemas/api_key_response_on_delete'
-      - properties:
-          deleted:
-            example: true
-            type: boolean
-        type: object
+      - $ref: '#/components/schemas/delete_api_keys_response_allOf'
       title: delete_api_keys_response
+    get_charges_response_allOf:
+      properties:
+        data:
+          items:
+            $ref: '#/components/schemas/charge_response'
+          type: array
+      type: object
     get_charges_response:
       allOf:
       - $ref: '#/components/schemas/pagination'
       - $ref: '#/components/schemas/page'
-      - properties:
-          data:
-            items:
-              $ref: '#/components/schemas/charge_response'
-            type: array
-        type: object
+      - $ref: '#/components/schemas/get_charges_response_allOf'
       title: get_charges_response
+    get_companies_response_allOf:
+      properties:
+        data:
+          items:
+            $ref: '#/components/schemas/company_response'
+          type: array
+      type: object
     get_companies_response:
       allOf:
       - $ref: '#/components/schemas/pagination'
       - $ref: '#/components/schemas/page'
-      - properties:
-          data:
-            items:
-              $ref: '#/components/schemas/company_response'
-            type: array
-        type: object
+      - $ref: '#/components/schemas/get_companies_response_allOf'
       title: get_companies_response
+    customers_response_allOf:
+      properties:
+        data:
+          items:
+            $ref: '#/components/schemas/customer_response'
+          title: customers_data_response
+          type: array
+      type: object
     customers_response:
       allOf:
-      - properties:
-          data:
-            items:
-              $ref: '#/components/schemas/customer_response'
-            title: customers_data_response
-            type: array
-        type: object
+      - $ref: '#/components/schemas/customers_response_allOf'
       - $ref: '#/components/schemas/pagination'
       - $ref: '#/components/schemas/page'
       title: customers_response
+    create_customer_fiscal_entities_response_allOf:
+      properties:
+        id:
+          example: ship_cont_2tKZsTYcsryyu7Ah8
+          type: string
+        object:
+          example: shipping_contact
+          type: string
+        created_at:
+          example: 1675715413
+          format: int64
+          type: integer
+        parent_id:
+          example: cus_2tKcHxhTz7xU5SymF
+          type: string
+        default:
+          type: boolean
+      required:
+      - created_at
+      - id
+      - object
+      type: object
     create_customer_fiscal_entities_response:
       allOf:
       - $ref: '#/components/schemas/customer_fiscal_entities_request'
-      - properties:
-          id:
-            example: ship_cont_2tKZsTYcsryyu7Ah8
-            type: string
-          object:
-            example: shipping_contact
-            type: string
-          created_at:
-            example: 1675715413
-            format: int64
-            type: integer
-          parent_id:
-            example: cus_2tKcHxhTz7xU5SymF
-            type: string
-          default:
-            type: boolean
-        required:
-        - created_at
-        - id
-        - object
-        type: object
+      - $ref: '#/components/schemas/create_customer_fiscal_entities_response_allOf'
       title: create_customer_fiscal_entities_response
+    update_customer_fiscal_entities_response_allOf:
+      properties:
+        id:
+          example: fis_ent_2tKZsTYcsryyu7Ah8
+          type: string
+        object:
+          example: fiscal_entities
+          type: string
+        created_at:
+          example: 1675715413
+          format: int64
+          type: integer
+        parent_id:
+          example: cus_2tKcHxhTz7xU5SymF
+          type: string
+        default:
+          type: boolean
+      required:
+      - created_at
+      - id
+      - object
+      type: object
     update_customer_fiscal_entities_response:
       allOf:
       - $ref: '#/components/schemas/customer_fiscal_entities_request'
-      - properties:
-          id:
-            example: fis_ent_2tKZsTYcsryyu7Ah8
-            type: string
-          object:
-            example: fiscal_entities
-            type: string
-          created_at:
-            example: 1675715413
-            format: int64
-            type: integer
-          parent_id:
-            example: cus_2tKcHxhTz7xU5SymF
-            type: string
-          default:
-            type: boolean
-        required:
-        - created_at
-        - id
-        - object
-        type: object
+      - $ref: '#/components/schemas/update_customer_fiscal_entities_response_allOf'
       title: update_customer_fiscal_entities_response
+    get_order_discount_lines_response_allOf:
+      properties:
+        data:
+          items:
+            $ref: '#/components/schemas/discount_lines_response'
+          type: array
+      type: object
     get_order_discount_lines_response:
       allOf:
       - $ref: '#/components/schemas/pagination'
       - $ref: '#/components/schemas/page'
-      - properties:
-          data:
-            items:
-              $ref: '#/components/schemas/discount_lines_response'
-            type: array
-        type: object
+      - $ref: '#/components/schemas/get_order_discount_lines_response_allOf'
       title: get_order_discount_lines_response
+    get_events_response_allOf:
+      properties:
+        data:
+          items:
+            $ref: '#/components/schemas/event_response'
+          type: array
+      type: object
     get_events_response:
       allOf:
       - $ref: '#/components/schemas/pagination'
       - $ref: '#/components/schemas/page'
-      - properties:
-          data:
-            items:
-              $ref: '#/components/schemas/event_response'
-            type: array
-        type: object
+      - $ref: '#/components/schemas/get_events_response_allOf'
       title: get_events_response
     get_orders_response:
       allOf:
@@ -14397,16 +14169,18 @@ components:
       - amount
       - reason
       type: object
+    checkouts_response_allOf:
+      properties:
+        data:
+          items:
+            $ref: '#/components/schemas/checkout_response'
+          type: array
+      type: object
     checkouts_response:
       allOf:
       - $ref: '#/components/schemas/pagination'
       - $ref: '#/components/schemas/page'
-      - properties:
-          data:
-            items:
-              $ref: '#/components/schemas/checkout_response'
-            type: array
-        type: object
+      - $ref: '#/components/schemas/checkouts_response_allOf'
       title: checkouts_response
     emailCheckout_request:
       properties:
@@ -14438,16 +14212,18 @@ components:
       - $ref: '#/components/schemas/payment_method_card_response'
       - $ref: '#/components/schemas/payment_method_spei_recurrent'
       title: get_customer_payment_method_data_response
+    get_payment_method_response_allOf:
+      properties:
+        data:
+          items:
+            $ref: '#/components/schemas/get_customer_payment_method_data_response'
+          type: array
+      type: object
     get_payment_method_response:
       allOf:
       - $ref: '#/components/schemas/pagination'
       - $ref: '#/components/schemas/page'
-      - properties:
-          data:
-            items:
-              $ref: '#/components/schemas/get_customer_payment_method_data_response'
-            type: array
-        type: object
+      - $ref: '#/components/schemas/get_payment_method_response_allOf'
       title: get_payment_method_response
     CreateCustomerPaymentMethods_request:
       description: Contains details of the payment methods that the customer has active
@@ -14482,62 +14258,65 @@ components:
       - $ref: '#/components/schemas/payment_method_card_response'
       - $ref: '#/components/schemas/payment_method_spei_recurrent'
       title: update_customer_payment_methods_response
+    get_plans_response_allOf:
+      properties:
+        data:
+          items:
+            $ref: '#/components/schemas/plan_response'
+          type: array
+      type: object
     get_plans_response:
       allOf:
       - $ref: '#/components/schemas/pagination'
       - $ref: '#/components/schemas/page'
-      - properties:
-          data:
-            items:
-              $ref: '#/components/schemas/plan_response'
-            type: array
-        type: object
+      - $ref: '#/components/schemas/get_plans_response_allOf'
       title: get_plans_response
     subscription_events_response:
       allOf:
       - $ref: '#/components/schemas/pagination'
       - $ref: '#/components/schemas/page'
-      - properties:
-          data:
-            items:
-              $ref: '#/components/schemas/event_response'
-            type: array
-        type: object
+      - $ref: '#/components/schemas/get_events_response_allOf'
       title: subscription_events_response
+    get_transactions_response_allOf:
+      properties:
+        data:
+          description: Transactions
+          items:
+            $ref: '#/components/schemas/transaction_response'
+          type: array
+      type: object
     get_transactions_response:
       allOf:
       - $ref: '#/components/schemas/pagination'
       - $ref: '#/components/schemas/page'
-      - properties:
-          data:
-            description: Transactions
-            items:
-              $ref: '#/components/schemas/transaction_response'
-            type: array
-        type: object
+      - $ref: '#/components/schemas/get_transactions_response_allOf'
       title: get_transactions_response
+    get_transfers_response_allOf:
+      properties:
+        data:
+          description: Transfers
+          items:
+            $ref: '#/components/schemas/transfers_response'
+          type: array
+      type: object
     get_transfers_response:
       allOf:
       - $ref: '#/components/schemas/pagination'
       - $ref: '#/components/schemas/page'
-      - properties:
-          data:
-            description: Transfers
-            items:
-              $ref: '#/components/schemas/transfers_response'
-            type: array
-        type: object
+      - $ref: '#/components/schemas/get_transfers_response_allOf'
       title: get_transfers_response
+    get_webhook_keys_response_allOf:
+      properties:
+        data:
+          items:
+            $ref: '#/components/schemas/webhook-key_response'
+          type: array
+      type: object
     get_webhook_keys_response:
       allOf:
       - $ref: '#/components/schemas/pagination'
       - $ref: '#/components/schemas/page'
-      - properties:
-          data:
-            items:
-              $ref: '#/components/schemas/webhook-key_response'
-            type: array
-        type: object
+      - $ref: '#/components/schemas/get_webhook_keys_response_allOf'
       title: get_webhook_keys_response
     webhook_key_request:
       properties:
@@ -14557,16 +14336,18 @@ components:
           type: boolean
       title: webhook_key_update_request
       type: object
+    get_webhooks_response_allOf:
+      properties:
+        data:
+          items:
+            $ref: '#/components/schemas/webhook_response'
+          type: array
+      type: object
     get_webhooks_response:
       allOf:
       - $ref: '#/components/schemas/pagination'
       - $ref: '#/components/schemas/page'
-      - properties:
-          data:
-            items:
-              $ref: '#/components/schemas/webhook_response'
-            type: array
-        type: object
+      - $ref: '#/components/schemas/get_webhooks_response_allOf'
       title: get_webhooks_response
     risk_rules_data:
       properties:
@@ -14597,6 +14378,30 @@ components:
         description:
           description: description of the rule
           example: secure customer example@example.com
+          type: string
+      type: object
+      example: null
+    risk_rules:
+      properties:
+        data:
+          items:
+            $ref: '#/components/schemas/risk_rules_data'
+          type: array
+      title: risk_rules
+      type: object
+      example: null
+    error_allOf:
+      properties:
+        log_id:
+          description: log id
+          example: 507f1f77bcf86cd799439011
+          nullable: true
+          type: string
+        type:
+          example: authentication_error
+          type: string
+        object:
+          example: error
           type: string
       type: object
       example: null
@@ -14662,17 +14467,19 @@ components:
       - object
       title: charge_response_refunds_data
       type: object
+    charge_response_refunds_allOf:
+      properties:
+        data:
+          description: refunds
+          items:
+            $ref: '#/components/schemas/charge_response_refunds_data'
+          type: array
+      type: object
     charge_response_refunds:
       allOf:
       - $ref: '#/components/schemas/pagination'
       - $ref: '#/components/schemas/page'
-      - properties:
-          data:
-            description: refunds
-            items:
-              $ref: '#/components/schemas/charge_response_refunds_data'
-            type: array
-        type: object
+      - $ref: '#/components/schemas/charge_response_refunds_allOf'
       nullable: true
       title: charge_response_refunds
       type: object
@@ -14703,37 +14510,19 @@ components:
     customer_fiscal_entities_data_response:
       allOf:
       - $ref: '#/components/schemas/customer_fiscal_entities_request'
-      - properties:
-          id:
-            example: ship_cont_2tKZsTYcsryyu7Ah8
-            type: string
-          object:
-            example: shipping_contact
-            type: string
-          created_at:
-            example: 1675715413
-            format: int64
-            type: integer
-          parent_id:
-            example: cus_2tKcHxhTz7xU5SymF
-            type: string
-          default:
-            type: boolean
-        required:
-        - created_at
-        - id
-        - object
-        type: object
+      - $ref: '#/components/schemas/create_customer_fiscal_entities_response_allOf'
       title: customer_fiscal_entities_data_response
+    customer_fiscal_entities_response_allOf:
+      properties:
+        data:
+          items:
+            $ref: '#/components/schemas/customer_fiscal_entities_data_response'
+          type: array
+      type: object
     customer_fiscal_entities_response:
       allOf:
       - $ref: '#/components/schemas/pagination'
-      - properties:
-          data:
-            items:
-              $ref: '#/components/schemas/customer_fiscal_entities_data_response'
-            type: array
-        type: object
+      - $ref: '#/components/schemas/customer_fiscal_entities_response_allOf'
       title: customer_fiscal_entities_response
     customer_payment_methods_data:
       discriminator:
@@ -14748,48 +14537,77 @@ components:
       - $ref: '#/components/schemas/payment_method_card_response'
       - $ref: '#/components/schemas/payment_method_spei_recurrent'
       title: customer_payment_methods_data
+    customerPaymentMethods:
+      properties:
+        data:
+          items:
+            $ref: '#/components/schemas/customer_payment_methods_data'
+          title: customer_payment_methods_data
+          type: array
+      title: customerPaymentMethods
+      type: object
     customer_payment_methods_response:
       allOf:
       - $ref: '#/components/schemas/pagination'
       - $ref: '#/components/schemas/page'
-      - properties:
-          data:
-            items:
-              $ref: '#/components/schemas/customer_payment_methods_data'
-            title: customer_payment_methods_data
-            type: array
-        title: customerPaymentMethods
-        type: object
+      - $ref: '#/components/schemas/customerPaymentMethods'
       title: customer_payment_methods_response
+    customer_shipping_contacts_data_response_allOf:
+      properties:
+        id:
+          example: ship_cont_2tKZsTYcsryyu7Ah8
+          type: string
+        object:
+          example: shipping_contact
+          type: string
+        created_at:
+          example: 1675715413
+          format: int64
+          type: integer
+      required:
+      - created_at
+      - id
+      - object
+      type: object
     customer_shipping_contacts_data_response:
       allOf:
       - $ref: '#/components/schemas/customer_shipping_contacts'
-      - properties:
-          id:
-            example: ship_cont_2tKZsTYcsryyu7Ah8
-            type: string
-          object:
-            example: shipping_contact
-            type: string
-          created_at:
-            example: 1675715413
-            format: int64
-            type: integer
-        required:
-        - created_at
-        - id
-        - object
-        type: object
+      - $ref: '#/components/schemas/customer_shipping_contacts_data_response_allOf'
       title: customer_shipping_contacts_data_response
+    customer_response_shipping_contacts_allOf:
+      properties:
+        data:
+          items:
+            $ref: '#/components/schemas/customer_shipping_contacts_data_response'
+          type: array
+      type: object
     customer_response_shipping_contacts:
       allOf:
       - $ref: '#/components/schemas/pagination'
-      - properties:
-          data:
-            items:
-              $ref: '#/components/schemas/customer_shipping_contacts_data_response'
-            type: array
-        type: object
+      - $ref: '#/components/schemas/customer_response_shipping_contacts_allOf'
+    customer_fiscal_entities_request_address:
+      allOf:
+      - $ref: '#/components/schemas/customer_address'
+    discount_lines_response_allOf:
+      properties:
+        id:
+          description: The discount line id
+          example: dis_lin_2tQQ58HPgPw7StE8z
+          type: string
+        object:
+          description: The object name
+          example: discount_line
+          type: string
+        parent_id:
+          description: The order id
+          example: ord_2tPAmKCEJqh8RE6nY
+          type: string
+      required:
+      - id
+      - object
+      - parent_id
+      type: object
+      example: null
     WebhookLog:
       properties:
         failed_attempts:
@@ -14942,17 +14760,21 @@ components:
           type: string
       title: logs_response_data
       type: object
+    charges_data_response:
+      allOf:
+      - $ref: '#/components/schemas/charge_response'
+      title: charges_data_response
+    order_response_charges_allOf:
+      properties:
+        data:
+          items:
+            $ref: '#/components/schemas/charges_data_response'
+          type: array
+      type: object
     order_response_charges:
       allOf:
       - $ref: '#/components/schemas/pagination'
-      - properties:
-          data:
-            items:
-              allOf:
-              - $ref: '#/components/schemas/charge_response'
-              title: charges_data_response
-            type: array
-        type: object
+      - $ref: '#/components/schemas/order_response_charges_allOf'
       description: The charges associated with the order
     order_response_checkout:
       properties:
@@ -15042,34 +14864,42 @@ components:
           example: https://pay.stg.conekta.io/checkout/6fca054a85194c43971ecea35cc519bb
           type: string
       type: object
+    order_response_customer_info_allOf:
+      properties:
+        object:
+          example: customer_info
+          type: string
+      type: object
     order_response_customer_info:
       allOf:
-      - properties:
-          object:
-            example: customer_info
-            type: string
-        type: object
+      - $ref: '#/components/schemas/order_response_customer_info_allOf'
       - $ref: '#/components/schemas/customer_info_response'
       - $ref: '#/components/schemas/customer_info_just_customer_id_response'
+    discount_lines_data_response:
+      allOf:
+      - $ref: '#/components/schemas/discount_lines_response'
+      title: discount_lines_data_response
+    order_response_discount_lines_allOf:
+      properties:
+        data:
+          items:
+            $ref: '#/components/schemas/discount_lines_data_response'
+          type: array
+      type: object
     order_response_discount_lines:
       allOf:
       - $ref: '#/components/schemas/pagination'
-      - properties:
-          data:
-            items:
-              allOf:
-              - $ref: '#/components/schemas/discount_lines_response'
-              title: discount_lines_data_response
-            type: array
-        type: object
+      - $ref: '#/components/schemas/order_response_discount_lines_allOf'
+    order_response_fiscal_entity_address_allOf:
+      properties:
+        object:
+          example: fiscal_entity_address
+          type: string
+      type: object
     order_response_fiscal_entity_address:
       allOf:
       - $ref: '#/components/schemas/customer_address'
-      - properties:
-          object:
-            example: fiscal_entity_address
-            type: string
-        type: object
+      - $ref: '#/components/schemas/order_response_fiscal_entity_address_allOf'
     order_response_fiscal_entity:
       properties:
         address:
@@ -15084,41 +14914,122 @@ components:
           example: fiscal_entity
           type: string
       type: object
+    product_data_response_allOf:
+      properties:
+        id:
+          type: string
+        object:
+          type: string
+        parent_id:
+          type: string
+      type: object
     product_data_response:
       allOf:
       - $ref: '#/components/schemas/product'
-      - properties:
-          id:
-            type: string
-          object:
-            type: string
-          parent_id:
-            type: string
-        type: object
+      - $ref: '#/components/schemas/product_data_response_allOf'
       title: product_data_response
+    order_response_products_allOf:
+      properties:
+        data:
+          items:
+            $ref: '#/components/schemas/product_data_response'
+          type: array
+      type: object
     order_response_products:
       allOf:
       - $ref: '#/components/schemas/pagination'
       - $ref: '#/components/schemas/page'
-      - properties:
-          data:
-            items:
-              $ref: '#/components/schemas/product_data_response'
-            type: array
-        type: object
+      - $ref: '#/components/schemas/order_response_products_allOf'
       title: order_response_products
+    order_response_shipping_contact_allOf:
+      properties:
+        created_at:
+          format: int64
+          type: integer
+        id:
+          type: string
+        object:
+          type: string
+      type: object
     order_response_shipping_contact:
       allOf:
-      - properties:
-          created_at:
-            format: int64
-            type: integer
-          id:
-            type: string
-          object:
-            type: string
-        type: object
+      - $ref: '#/components/schemas/order_response_shipping_contact_allOf'
       - $ref: '#/components/schemas/customer_shipping_contacts_response'
+    product_order_response_allOf:
+      properties:
+        id:
+          type: string
+        object:
+          type: string
+        parent_id:
+          type: string
+      type: object
+      example: null
+    payment_method_cash_response_allOf:
+      description: use for cash responses
+      properties:
+        reference:
+          example: "93000262276908"
+          type: string
+        barcode:
+          example: "93000262276908"
+          type: string
+        barcode_url:
+          example: https://pt-common-s3-stg.s3.amazonaws.com/644ebf80f2243197aad6cd8810375b905b613dbe.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=ASIA3UN6375MP4SLLCWV%2F20230203%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20230203T215750Z&X-Amz-Expires=604800&X-Amz-Security-Token=IQoJb3JpZ2luX2VjEH4aCXVzLWVhc3QtMSJGMEQCICd79cu7DYu%2F4%2B3HnVVswydgU9yHcE9kmQIIk2TLoZJrAiBVZ0HxVSeboK5lhdQSqADjwQF62XX35jhC%2F2riB0M8uCqQBAj2%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F8BEAIaDDc5OTgwMTA4MTY4OCIMXWZds9ZI5hzUdbeGKuQDFreMyeWnWWPqDuGZ2%2BHk6usCr%2Fl096%2FNJh9xtf8htLu56K%2FhWUTx%2BjiqFWM2O%2FF5zTS%2BIV6TqkLDZ%2BQ5Jo1miQrRmR57YDz6uP2Yd1mNZ1ouq5ipnNjUuu5UWCCBAmqyZQsrVmeMQpSV2IB%2BTERCCcW2SukFEYU%2F20%2Fzy5orsoZ8DxOW460IymR3cWBk5u3Xh2cV6Y1RdPEwDEThhqYEF5w%2ByKbLENloMsI%2FUm6sG5PPrO3yQOAP9aK2muLJs9lXQRU%2FL%2FSsmS4FKSUFOqlN6YU%2Bi2Y%2FyGIKAJT2VDkngvz5Sl%2Fadj0j%2BPKftVRV5FcEhySB6Rl%2BSkPN7kVQMJp6pS8hMJ6JCyEA%2BA3eWYdIfKgQhWVXAR4oCBfJ62DH8FU3a7WfSjjpTwfVkiReWen3GGCYfUWETTVKp46MKnJ9PG0CD3KzxKV8VfmEGc5krK%2FI%2F%2BDV2wtSa%2F9qf1%2BK1YYJIK9qZGb25ljUiGhTB4T%2BMUOSQFjetiWUoOJc5Q3Jz%2FXJbiTAMTST39MhdbCgiMgfrc8OGKN5DOVbex33Z7dn0xf%2FOCkSqurhLaG08efKQBdhLNS0RlE9hbg9yZ2ywwtQIF39fI6A7eeH0T11a5HMlvm51u4rAffPHRuEJfwJoIuj%2F2s3QzDg7%2FWeBjqmAbnPOlGfysjrDdvHyG7HVnaX02kdG%2BI3Q4PFOO4Mjaa3ocpjcfPT70%2BZ5a%2FSv5vP0jDLGrLToeM9%2BAUlNepptICRu23a1tLGW4ri0twPA%2FZ4JDTtUUUgdblyG8bKpcUTNp4oOsdmLLBz3FVyr4c2xQbDZSu2zYOtoOxB18W0AC6kIbsMWVU55Bf0mBhPeBWxGrtM4Kw1SgHHlt%2F8vetQi2OwtUcg08c%3D&X-Amz-SignedHeaders=host&X-Amz-Signature=d06dfa41550003359f2aabc8006063a80dfd806a13a54d244024946a76aa9abc
+          type: string
+        expires_at:
+          example: 0
+          format: int64
+          type: integer
+        provider:
+          example: Oxxo
+          type: string
+      type: object
+      example: null
+    payment_method_card_response_allOf:
+      description: use for card responses
+      properties:
+        last4:
+          example: "6410"
+          type: string
+        bin:
+          example: "40276657"
+          type: string
+        card_type:
+          example: debit
+          type: string
+        exp_month:
+          example: "10"
+          type: string
+        exp_year:
+          example: "25"
+          type: string
+        brand:
+          example: visa
+          type: string
+        name:
+          example: Fulano Perez"
+          type: string
+        default:
+          type: boolean
+        visible_on_checkout:
+          type: boolean
+        payment_source_status:
+          example: active
+          type: string
+      type: object
+      example: null
+    payment_method_spei_recurrent_allOf:
+      description: use for spei responses
+      properties:
+        reference:
+          example: "93000262276908"
+          type: string
+        expires_at:
+          example: none
+          type: string
+      type: object
+      example: null
     customer_shipping_contacts_response_address:
       properties:
         object:
@@ -15146,6 +15057,19 @@ components:
           example: true
           type: boolean
       type: object
+    update_order_tax_response_allOf:
+      properties:
+        id:
+          example: tax_lin_2tQ8dC5mg1UADmVPo
+          type: string
+        object:
+          example: tax_line
+          type: string
+        parent_id:
+          example: ord_2tPAmKCEJqh8RE6nY
+          type: string
+      type: object
+      example: null
     token_response_checkout:
       deprecated: true
       nullable: true
@@ -15425,6 +15349,24 @@ components:
       - currency
       - line_items
       type: object
+    payment_method_card_request_allOf:
+      properties:
+        token_id:
+          description: "Token id that will be used to create a \"card\" type payment\
+            \ method. See the (subscriptions)[https://developers.conekta.com/v2.1.0/reference/createsubscription]\
+            \ tutorial for more information on how to tokenize cards."
+          example: tok_32hj4g234as
+          type: string
+      type: object
+      example: null
+    payment_method_cash_request_allOf:
+      properties:
+        expires_at:
+          example: 1553273553
+          format: int64
+          type: integer
+      type: object
+      example: null
     customer_shipping_contacts_address:
       description: Address of the person who will receive the order
       properties:
@@ -15517,6 +15459,137 @@ components:
           type: string
       title: details_error
       type: object
+    charge_data_payment_method_cash_response:
+      description: use for cash responses
+      properties:
+        auth_code:
+          example: 542563
+          nullable: true
+          type: integer
+        cashier_id:
+          example: OINM01010
+          nullable: true
+          type: string
+        reference:
+          example: "93000262276908"
+          type: string
+        barcode_url:
+          example: https://pt-common-s3-stg.s3.amazonaws.com/644ebf80f2243197aad6cd8810375b905b613dbe.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=ASIA3UN6375MP4SLLCWV%2F20230203%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20230203T215750Z&X-Amz-Expires=604800&X-Amz-Security-Token=IQoJb3JpZ2luX2VjEH4aCXVzLWVhc3QtMSJGMEQCICd79cu7DYu%2F4%2B3HnVVswydgU9yHcE9kmQIIk2TLoZJrAiBVZ0HxVSeboK5lhdQSqADjwQF62XX35jhC%2F2riB0M8uCqQBAj2%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F8BEAIaDDc5OTgwMTA4MTY4OCIMXWZds9ZI5hzUdbeGKuQDFreMyeWnWWPqDuGZ2%2BHk6usCr%2Fl096%2FNJh9xtf8htLu56K%2FhWUTx%2BjiqFWM2O%2FF5zTS%2BIV6TqkLDZ%2BQ5Jo1miQrRmR57YDz6uP2Yd1mNZ1ouq5ipnNjUuu5UWCCBAmqyZQsrVmeMQpSV2IB%2BTERCCcW2SukFEYU%2F20%2Fzy5orsoZ8DxOW460IymR3cWBk5u3Xh2cV6Y1RdPEwDEThhqYEF5w%2ByKbLENloMsI%2FUm6sG5PPrO3yQOAP9aK2muLJs9lXQRU%2FL%2FSsmS4FKSUFOqlN6YU%2Bi2Y%2FyGIKAJT2VDkngvz5Sl%2Fadj0j%2BPKftVRV5FcEhySB6Rl%2BSkPN7kVQMJp6pS8hMJ6JCyEA%2BA3eWYdIfKgQhWVXAR4oCBfJ62DH8FU3a7WfSjjpTwfVkiReWen3GGCYfUWETTVKp46MKnJ9PG0CD3KzxKV8VfmEGc5krK%2FI%2F%2BDV2wtSa%2F9qf1%2BK1YYJIK9qZGb25ljUiGhTB4T%2BMUOSQFjetiWUoOJc5Q3Jz%2FXJbiTAMTST39MhdbCgiMgfrc8OGKN5DOVbex33Z7dn0xf%2FOCkSqurhLaG08efKQBdhLNS0RlE9hbg9yZ2ywwtQIF39fI6A7eeH0T11a5HMlvm51u4rAffPHRuEJfwJoIuj%2F2s3QzDg7%2FWeBjqmAbnPOlGfysjrDdvHyG7HVnaX02kdG%2BI3Q4PFOO4Mjaa3ocpjcfPT70%2BZ5a%2FSv5vP0jDLGrLToeM9%2BAUlNepptICRu23a1tLGW4ri0twPA%2FZ4JDTtUUUgdblyG8bKpcUTNp4oOsdmLLBz3FVyr4c2xQbDZSu2zYOtoOxB18W0AC6kIbsMWVU55Bf0mBhPeBWxGrtM4Kw1SgHHlt%2F8vetQi2OwtUcg08c%3D&X-Amz-SignedHeaders=host&X-Amz-Signature=d06dfa41550003359f2aabc8006063a80dfd806a13a54d244024946a76aa9abc
+          type: string
+        expires_at:
+          example: 0
+          format: int64
+          type: integer
+        service_name:
+          example: OxxoPay
+          type: string
+        store:
+          example: 10MON50EDI
+          nullable: true
+          type: string
+        store_name:
+          example: OXXO
+          type: string
+      title: charge_data_payment_method_cash_response
+      type: object
+      example: null
+    charge_data_payment_method_card_response:
+      description: use for card responses
+      properties:
+        account_type:
+          example: Credit
+          type: string
+        auth_code:
+          example: "867372"
+          type: string
+        brand:
+          example: visa
+          type: string
+        contract_id:
+          description: Id sent for recurrent charges.
+          example: S781317595
+          maxLength: 10
+          minLength: 10
+          type: string
+        country:
+          example: MX
+          type: string
+        exp_month:
+          example: "02"
+          type: string
+        exp_year:
+          example: "30"
+          type: string
+        fraud_indicators:
+          items: {}
+          type: array
+        issuer:
+          example: BANAMEX
+          type: string
+        last4:
+          example: "4242"
+          type: string
+        name:
+          example: Fulanito Perez
+          type: string
+      title: charge_data_payment_method_card_response
+      type: object
+      example: null
+    charge_data_payment_method_bank_transfer_response:
+      description: use for bank transfer responses
+      properties:
+        bank:
+          example: STP
+          type: string
+        clabe:
+          example: "646180111805034237"
+          type: string
+        description:
+          nullable: true
+          type: string
+        executed_at:
+          nullable: true
+          type: integer
+        expires_at:
+          example: 1683053729
+          format: int64
+          type: integer
+        issuing_account_bank:
+          nullable: true
+          type: string
+        issuing_account_number:
+          nullable: true
+          type: string
+        issuing_account_holder_name:
+          nullable: true
+          type: string
+        issuing_account_tax_id:
+          nullable: true
+          type: string
+        payment_attempts:
+          items: {}
+          type: array
+        receiving_account_holder_name:
+          nullable: true
+          type: string
+        receiving_account_number:
+          example: "646180111805034237"
+          type: string
+        receiving_account_bank:
+          example: STP
+          type: string
+        receiving_account_tax_id:
+          nullable: true
+          type: string
+        reference_number:
+          nullable: true
+          type: string
+        tracking_code:
+          nullable: true
+          type: string
+      title: charge_data_payment_method_bank_transfer_response
+      type: object
+      example: null
   securitySchemes:
     bearerAuth:
       scheme: bearer
