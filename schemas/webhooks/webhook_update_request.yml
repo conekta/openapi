@@ -15,7 +15,7 @@ properties:
     example: false
     default: false
     description: It is a value that allows to decide if the events will be synchronous or asynchronous. We recommend asynchronous = false
-  subscribed_events:
+  events:
     type: array
     items:
       type: string
