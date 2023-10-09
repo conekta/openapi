@@ -1,6 +1,11 @@
 title:  customer_info
 type: object
 properties:
+  custom_reference:
+    type: string
+    example: "custom_reference"
+    description: Custom reference
+    nullable: true
   name:
     type: string
     example: "DevTest"

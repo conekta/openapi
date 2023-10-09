@@ -11693,12 +11693,16 @@ components:
         antifraud_info:
           $ref: '#/components/schemas/customer_antifraud_info_response'
         corporate:
+          description: true if the customer is a company
           type: boolean
         created_at:
+          description: Creation date of the object
           example: 1485151007
           format: int64
           type: integer
         custom_reference:
+          description: Custom reference
+          example: custom_reference
           type: string
         default_fiscal_entity_id:
           example: fis_ent_2tKqqAfqPi21oCmEJ
@@ -11718,20 +11722,29 @@ components:
         fiscal_entities:
           $ref: '#/components/schemas/customer_fiscal_entities_response'
         id:
+          description: Customer's ID
           example: cus_2tHJfJ79KyUwpxTik
           type: string
         livemode:
+          description: true if the object exists in live mode or the value false if
+            the object exists in test mode
           example: true
           type: boolean
         name:
+          description: Customer's name
           example: Felipe
           type: string
+        metadata:
+          additionalProperties: true
+          maxProperties: 100
+          type: object
         object:
           example: customer
           type: string
         payment_sources:
           $ref: '#/components/schemas/customer_payment_methods_response'
         phone:
+          description: Customer's phone number
           example: +5215555555555
           type: string
         shipping_contacts:
@@ -11742,6 +11755,7 @@ components:
       - created_at
       - id
       - livemode
+      - name
       - object
       title: customer response
       type: object
@@ -12029,7 +12043,7 @@ components:
         discount_lines:
           $ref: '#/components/schemas/order_response_discount_lines'
         fiscal_entity:
-          $ref: '#/components/schemas/order_response_fiscal_entity'
+          $ref: '#/components/schemas/order_fiscal_entity_response'
         id:
           example: ord_2tMtQQpDvfnNjiuFG
           type: string
@@ -12721,11 +12735,6 @@ components:
         amount:
           example: 40000
           type: integer
-        monthly_installments:
-          description: "How many months without interest to apply, it can be 3, 6,\
-            \ 9, 12 or 18"
-          format: int8
-          type: integer
         payment_method:
           $ref: '#/components/schemas/charge_request_payment_method'
         reference_id:
@@ -12959,6 +12968,8 @@ components:
           items:
             $ref: '#/components/schemas/order_discount_lines_request'
           type: array
+        fiscal_entity:
+          $ref: '#/components/schemas/order_fiscal_entity_request'
         line_items:
           description: "List of [products](https://developers.conekta.com/v2.1.0/reference/orderscreateproduct)\
             \ that are sold in the order. You must have at least one product."
@@ -13026,6 +13037,8 @@ components:
           items:
             $ref: '#/components/schemas/order_discount_lines_request'
           type: array
+        fiscal_entity:
+          $ref: '#/components/schemas/order_fiscal_entity_request'
         line_items:
           description: "List of [products](https://developers.conekta.com/v2.1.0/reference/orderscreateproduct)\
             \ that are sold in the order. You must have at least one product."
@@ -13682,6 +13695,11 @@ components:
       type: object
     customer_info_response:
       properties:
+        custom_reference:
+          description: Custom reference
+          example: custom_reference
+          nullable: true
+          type: string
         name:
           example: DevTest
           type: string
@@ -13706,6 +13724,46 @@ components:
           example: cus_23874283647
           type: string
       title: customer_info_response
+      type: object
+    fiscal_entity_address:
+      description: Address of the fiscal entity
+      properties:
+        street1:
+          description: Street name and number
+          example: avenida siempre viva
+          type: string
+        street2:
+          description: Street name and number
+          example: fake street
+          nullable: true
+          type: string
+        postal_code:
+          description: Postal code
+          example: "06100"
+          type: string
+        city:
+          description: City
+          example: Ciudad de Mexico
+          type: string
+        state:
+          description: State
+          example: Ciudad de Mexico
+          type: string
+        country:
+          description: "this field follows the [ISO 3166-1 alpha-2 standard](https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2)"
+          example: MX
+          type: string
+        external_number:
+          description: External number
+          example: "123"
+          type: string
+      required:
+      - city
+      - country
+      - external_number
+      - postal_code
+      - street1
+      title: order_fiscal_entity_address_request
       type: object
     payment_method_response:
       properties:
@@ -14884,29 +14942,54 @@ components:
       allOf:
       - $ref: '#/components/schemas/pagination'
       - $ref: '#/components/schemas/order_response_discount_lines_allOf'
-    order_response_fiscal_entity_address_allOf:
+    order_fiscal_entity_address_response_allOf:
       properties:
         object:
           example: fiscal_entity_address
           type: string
       type: object
-    order_response_fiscal_entity_address:
+    order_fiscal_entity_address_response:
       allOf:
-      - $ref: '#/components/schemas/customer_address'
-      - $ref: '#/components/schemas/order_response_fiscal_entity_address_allOf'
-    order_response_fiscal_entity:
+      - $ref: '#/components/schemas/fiscal_entity_address'
+      - $ref: '#/components/schemas/order_fiscal_entity_address_response_allOf'
+      description: Address of the fiscal entity
+      title: order_fiscal_entity_address_response
+    order_fiscal_entity_response:
+      description: "Fiscal entity of the order, Currently it is a purely informative\
+        \ field"
+      nullable: true
       properties:
         address:
-          $ref: '#/components/schemas/order_response_fiscal_entity_address'
+          $ref: '#/components/schemas/order_fiscal_entity_address_response'
+        name:
+          description: Name of the fiscal entity
+          example: Conekta Inc
+          nullable: true
+          type: string
         tax_id:
+          description: Tax ID of the fiscal entity
           example: "324234234"
+          nullable: true
           type: string
         id:
+          description: ID of the fiscal entity
           example: fis_ent_2tN85VYaSMyDvjB3M
           type: string
+        created_at:
+          description: The time at which the object was created in seconds since the
+            Unix epoch
+          example: 1676328434
+          format: int64
+          type: integer
         object:
           example: fiscal_entity
           type: string
+      required:
+      - address
+      - created_at
+      - id
+      - object
+      title: order_fiscal_entity_response
       type: object
     product_data_response_allOf:
       properties:
@@ -15248,6 +15331,11 @@ components:
           example: 1677196303
           format: int64
           type: integer
+        monthly_installments:
+          description: "How many months without interest to apply, it can be 3, 6,\
+            \ 9, 12 or 18"
+          format: int8
+          type: integer
         type:
           example: card
           type: string
@@ -15301,6 +15389,25 @@ components:
       oneOf:
       - $ref: '#/components/schemas/customer_info'
       - $ref: '#/components/schemas/customer_info_just_customer_id'
+    order_fiscal_entity_request:
+      description: "Fiscal entity of the order, Currently it is a purely informative\
+        \ field"
+      nullable: true
+      properties:
+        address:
+          $ref: '#/components/schemas/fiscal_entity_address'
+        name:
+          description: Name of the fiscal entity
+          example: Conekta Inc
+          nullable: true
+          type: string
+        tax_id:
+          description: Tax ID of the fiscal entity
+          example: AAA010101AAA
+          nullable: true
+          type: string
+      title: order_fiscal_entity_request
+      type: object
     order_update_request_customer_info:
       oneOf:
       - $ref: '#/components/schemas/customer_info'

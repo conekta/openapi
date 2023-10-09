@@ -154,21 +154,44 @@ properties:
                 - $ref: ../../schemas/orders/discount_lines_response.yml
   fiscal_entity:
     type: object
+    title: order_fiscal_entity_response
+    nullable: true
+    description: "Fiscal entity of the order, Currently it is a purely informative field"
+    required:
+      - address
+      - id
+      - object
+      - created_at
     properties:
       address:
+        title: order_fiscal_entity_address_response
+        description: "Address of the fiscal entity"
         allOf:
-          - $ref: ../customers/customer_address.yml
+          - $ref: fiscal_entity_address.yml
           - type: object
             properties:
               object:
                 type: string
                 example: "fiscal_entity_address"
+      name: 
+        type: string
+        example: "Conekta Inc"
+        nullable: true
+        description: "Name of the fiscal entity"
       tax_id:
         type: string
         example: "324234234"
+        description: "Tax ID of the fiscal entity"
+        nullable: true
       id:
         type: string
         example: "fis_ent_2tN85VYaSMyDvjB3M"
+        description: "ID of the fiscal entity"
+      created_at:
+        type: integer
+        format: int64
+        example: 1676328434
+        description: "The time at which the object was created in seconds since the Unix epoch"
       object:
         type: string
         example: "fiscal_entity"

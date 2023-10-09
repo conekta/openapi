@@ -23,6 +23,24 @@ properties:
     type: array
     items:
       $ref: order_discount_lines_request.yml
+  fiscal_entity:
+    title: order_fiscal_entity_request
+    type: object
+    description: "Fiscal entity of the order, Currently it is a purely informative field"
+    nullable: true
+    properties:
+      address: 
+        $ref: fiscal_entity_address.yml
+      name:
+        type: string
+        example: "Conekta Inc"
+        nullable: true
+        description: "Name of the fiscal entity"
+      tax_id:
+        type: string
+        example: "AAA010101AAA"
+        nullable: true
+        description: "Tax ID of the fiscal entity"
   line_items:
     description: "List of [products](https://developers.conekta.com/v2.1.0/reference/orderscreateproduct) that are sold in the order. You must have at least one product."
     type: array

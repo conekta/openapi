@@ -1,0 +1,39 @@
+title: order_fiscal_entity_address_request
+required:
+  - street1
+  - city
+  - country
+  - postal_code
+  - external_number
+type: object
+description: "Address of the fiscal entity"
+properties:
+  street1:
+    type: string
+    example: avenida siempre viva
+    description: "Street name and number"
+  street2: 
+    type: string
+    example: fake street
+    description: "Street name and number"
+    nullable: true
+  postal_code:
+    type: string
+    example: "06100"
+    description: "Postal code"
+  city: 
+    type: string
+    example: "Ciudad de Mexico"
+    description: "City"
+  state:
+    type: string
+    example: "Ciudad de Mexico"
+    description: "State"
+  country:
+    type: string
+    example: MX
+    description: "this field follows the [ISO 3166-1 alpha-2 standard](https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2)"
+  external_number:
+    type: string
+    example: "123"
+    description: "External number"
