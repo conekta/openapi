@@ -1,0 +1,7 @@
+title: charge_update_request
+description: requested field for update a charge
+properties:
+  reference_id:
+    type: string
+    example: "278482642"
+    description: "custom reference id"

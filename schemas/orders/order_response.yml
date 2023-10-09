@@ -139,7 +139,7 @@ properties:
           object:
             type: string
             example: "customer_info"
-      - $ref: ../customers/customer_info_response.yml
+      - $ref: order_customer_info_response.yml
       - $ref: ../customers/customer_info_just_customer_id_response.yml
   discount_lines:
     allOf:

@@ -1,0 +1,24 @@
+title:  order_customer_info_response
+type: object
+properties:
+  customer_custom_reference:
+    type: string
+    example: "custom_reference"
+    description: Custom reference
+    nullable: true
+  name:
+    type: string
+    example: "DevTest"
+  email:
+    type: string
+    format: email
+    example: test@conekta.com
+  phone:
+    type: string
+    example: "5522997233"
+  corporate:
+    default: false
+    type: boolean
+  object:
+    type: string
+    example: "customer_info"

@@ -1,0 +1,6 @@
+description: requested field for update a charge        
+content:
+  application/json:
+    schema:  
+      $ref: '../../schemas/charges/charge_update_request.yml'
+required: true
