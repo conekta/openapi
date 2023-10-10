@@ -1227,10 +1227,17 @@ paths:
       summary: Get A List of Charges
       tags:
       - Charges
-  /charges{id}:
+  /charges/{id}:
     put:
       operationId: updateCharge
       parameters:
+      - description: Identifier of the resource
+        example: 6307a60c41de27127515a575
+        in: path
+        name: id
+        required: true
+        schema:
+          type: string
       - description: Use for knowing which language to use
         examples:
           es:
