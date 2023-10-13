@@ -16,6 +16,22 @@ value:
     phone: '5522997233'
     corporate: false
     object: customer_info
+  fiscal_entity:
+    tax_id: '1234567890'
+    name: Conekta Inc
+    email: "test@gmail.com"
+    phone: "525511223344"
+    metadata:
+      test: true
+      company_id: '123'
+    address:
+      street1: Nuevo Leon 254
+      street2: Departamento 404
+      postal_code: '06100'
+      city: Ciudad de Mexico
+      state: Ciudad de Mexico
+      country: MX
+      external_number: '123'
   discount_lines:
   - amount: 500
     code: '123'
@@ -38,17 +54,19 @@ value:
       additionalProp2: string
       additionalProp3: string
   metadata:
-    additionalProp1: string
-    additionalProp2: string
-    additionalProp3: string
+   test: true
+   company_id: '123'
   pre_authorize: false
   shipping_contact:
     phone: '525511223344'
     receiver: Marvin Fuller
     between_streets: Ackerman Crescent
+    metadata:
+      test: true
+      company_id: '123'
     address:
-      street1: avenida siempre viva
-      street2: fake street
+      street1: Nuevo Leon 254
+      street2: Departamento 404
       postal_code: '06100'
       city: Ciudad de Mexico
       state: Ciudad de Mexico

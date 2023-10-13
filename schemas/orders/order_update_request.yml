@@ -23,6 +23,38 @@ properties:
     type: array
     items:
       $ref: order_discount_lines_request.yml
+  fiscal_entity:
+    title: order_update_fiscal_entity_request
+    type: object
+    description: "Fiscal entity of the order, Currently it is a purely informative field"
+    required:
+      - address
+    properties:
+      address: 
+        $ref: fiscal_entity_address.yml
+      email:
+        type: string
+        example: "test@gmail.com"
+        description: "Email of the fiscal entity"
+      name:
+        type: string
+        example: "Conekta Inc"
+        nullable: true
+        description: "Name of the fiscal entity"
+      metadata:
+        type: object
+        additionalProperties: true
+        maxProperties: 100
+        description: "Metadata associated with the fiscal entity"
+      phone:
+        type: string
+        example: "+525511223344"
+        description: "Phone of the fiscal entity"
+      tax_id:
+        type: string
+        example: "AAA010101AAA"
+        nullable: true
+        description: "Tax ID of the fiscal entity"
   line_items:
     description: "List of [products](https://developers.conekta.com/v2.1.0/reference/orderscreateproduct) that are sold in the order. You must have at least one product."
     type: array

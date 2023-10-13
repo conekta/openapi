@@ -6,6 +6,7 @@ required:
   - livemode
   - created_at
   - object
+  - name
 properties:
   antifraud_info:
     title: customer_antifraud_info_response
@@ -21,12 +22,16 @@ properties:
         format: int64
   corporate:
     type: boolean
+    description: true if the customer is a company
   created_at:
     type: integer
     format: int64
     example: 1485151007
+    description: Creation date of the object
   custom_reference:
     type: string
+    example: "custom_reference"
+    description: Custom reference
   default_fiscal_entity_id:
     type: string
     nullable: true
@@ -78,12 +83,19 @@ properties:
   id:
     type: string
     example:  "cus_2tHJfJ79KyUwpxTik"
+    description: Customer's ID
   livemode:
     type: boolean
     example: true
+    description: true if the object exists in live mode or the value false if the object exists in test mode
   name: 
     type: string
     example: Felipe
+    description: Customer's name
+  metadata:
+    type: object
+    additionalProperties: true
+    maxProperties: 100
   object: 
     type: string
     example: "customer"
@@ -114,6 +126,7 @@ properties:
   phone:
     type: string
     example: "+5215555555555"
+    description: Customer's phone number
   shipping_contacts:
     allOf:
        - $ref: ../../schemas/pagination/pagination.yml

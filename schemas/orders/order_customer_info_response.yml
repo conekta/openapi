@@ -1,7 +1,7 @@
-title:  customer_info
+title:  order_customer_info_response
 type: object
 properties:
-  custom_reference:
+  customer_custom_reference:
     type: string
     example: "custom_reference"
     description: Custom reference
