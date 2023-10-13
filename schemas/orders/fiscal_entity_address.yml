@@ -10,11 +10,11 @@ description: "Address of the fiscal entity"
 properties:
   street1:
     type: string
-    example: avenida siempre viva
+    example: Nuevo Leon 254
     description: "Street name and number"
   street2: 
     type: string
-    example: fake street
+    example: Departamento 404
     description: "Street name and number"
     nullable: true
   postal_code:

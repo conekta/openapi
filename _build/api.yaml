@@ -10744,8 +10744,8 @@ components:
           receiver: Marvin Fuller
           between_streets: Ackerman Crescent
           address:
-            street1: avenida siempre viva
-            street2: fake street
+            street1: Nuevo Leon 254
+            street2: Departamento 404
             postal_code: "06100"
             city: Ciudad de Mexico
             state: Ciudad de Mexico
@@ -10821,8 +10821,8 @@ components:
           receiver: Marvin Fuller
           between_streets: Ackerman Crescent
           address:
-            street1: avenida siempre viva
-            street2: fake street
+            street1: Nuevo Leon 254
+            street2: Departamento 404
             postal_code: "06100"
             city: Ciudad de Mexico
             state: Ciudad de Mexico
@@ -13813,10 +13813,10 @@ components:
     customer_address:
       properties:
         street1:
-          example: avenida siempre viva
+          example: Nuevo Leon 254
           type: string
         street2:
-          example: fake street
+          example: Departamento 404
           type: string
         postal_code:
           example: "06100"
@@ -13878,11 +13878,11 @@ components:
       properties:
         street1:
           description: Street name and number
-          example: avenida siempre viva
+          example: Nuevo Leon 254
           type: string
         street2:
           description: Street name and number
-          example: fake street
+          example: Departamento 404
           nullable: true
           type: string
         postal_code:
@@ -15276,10 +15276,10 @@ components:
           example: shipping_address
           type: string
         street1:
-          example: avenida siempre viva
+          example: Nuevo Leon 254
           type: string
         street2:
-          example: fake street
+          example: Departamento 404
           type: string
         postal_code:
           example: "06100"
@@ -15682,10 +15682,10 @@ components:
       description: Address of the person who will receive the order
       properties:
         street1:
-          example: avenida siempre viva
+          example: Nuevo Leon 254
           type: string
         street2:
-          example: fake street
+          example: Departamento 404
           type: string
         postal_code:
           example: "06100"
