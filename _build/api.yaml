@@ -12412,6 +12412,11 @@ components:
           example: 1675715413
           format: int64
           type: integer
+        metadata:
+          additionalProperties: true
+          description: Metadata associated with the shipping contact
+          maxProperties: 100
+          type: object
         object:
           example: shipping_contact
           type: string
@@ -13176,7 +13181,7 @@ components:
             $ref: '#/components/schemas/order_discount_lines_request'
           type: array
         fiscal_entity:
-          $ref: '#/components/schemas/order_fiscal_entity_request'
+          $ref: '#/components/schemas/order_update_fiscal_entity_request'
         line_items:
           description: "List of [products](https://developers.conekta.com/v2.1.0/reference/orderscreateproduct)\
             \ that are sold in the order. You must have at least one product."
@@ -13539,6 +13544,11 @@ components:
         deleted:
           nullable: true
           type: boolean
+        metadata:
+          additionalProperties: true
+          description: Metadata associated with the shipping contact
+          maxProperties: 100
+          type: object
       required:
       - address
       title: customer_shipping_contacts_request
@@ -15099,6 +15109,16 @@ components:
       properties:
         address:
           $ref: '#/components/schemas/order_fiscal_entity_address_response'
+        email:
+          description: Email of the fiscal entity
+          example: test@gmail.com
+          nullable: true
+          type: string
+        metadata:
+          additionalProperties: true
+          description: Metadata associated with the fiscal entity
+          maxProperties: 100
+          type: object
         name:
           description: Name of the fiscal entity
           example: Conekta Inc
@@ -15121,6 +15141,11 @@ components:
           type: integer
         object:
           example: fiscal_entity
+          type: string
+        phone:
+          description: Phone of the fiscal entity
+          example: +525511223344
+          nullable: true
           type: string
       required:
       - address
@@ -15530,26 +15555,73 @@ components:
     order_fiscal_entity_request:
       description: "Fiscal entity of the order, Currently it is a purely informative\
         \ field"
-      nullable: true
       properties:
         address:
           $ref: '#/components/schemas/fiscal_entity_address'
+        email:
+          description: Email of the fiscal entity
+          example: test@gmail.com
+          type: string
+        metadata:
+          additionalProperties: true
+          description: Metadata associated with the fiscal entity
+          maxProperties: 100
+          type: object
         name:
           description: Name of the fiscal entity
           example: Conekta Inc
           nullable: true
+          type: string
+        phone:
+          description: Phone of the fiscal entity
+          example: +525511223344
           type: string
         tax_id:
           description: Tax ID of the fiscal entity
           example: AAA010101AAA
           nullable: true
           type: string
+      required:
+      - address
       title: order_fiscal_entity_request
       type: object
     order_update_request_customer_info:
       oneOf:
       - $ref: '#/components/schemas/customer_info'
       - $ref: '#/components/schemas/customer_info_just_customer_id'
+    order_update_fiscal_entity_request:
+      description: "Fiscal entity of the order, Currently it is a purely informative\
+        \ field"
+      properties:
+        address:
+          $ref: '#/components/schemas/fiscal_entity_address'
+        email:
+          description: Email of the fiscal entity
+          example: test@gmail.com
+          type: string
+        name:
+          description: Name of the fiscal entity
+          example: Conekta Inc
+          nullable: true
+          type: string
+        metadata:
+          additionalProperties: true
+          description: Metadata associated with the fiscal entity
+          maxProperties: 100
+          type: object
+        phone:
+          description: Phone of the fiscal entity
+          example: +525511223344
+          type: string
+        tax_id:
+          description: Tax ID of the fiscal entity
+          example: AAA010101AAA
+          nullable: true
+          type: string
+      required:
+      - address
+      title: order_update_fiscal_entity_request
+      type: object
     checkout_order_template_customer_info:
       description: It is the information of the customer who will be created when
         receiving a new payment.

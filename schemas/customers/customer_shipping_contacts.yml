@@ -52,4 +52,8 @@ properties:
   deleted:
     type: boolean
     nullable: true
-    
+  metadata:
+    type: object
+    additionalProperties: true
+    maxProperties: 100
+    description: "Metadata associated with the shipping contact"

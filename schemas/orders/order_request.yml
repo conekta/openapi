@@ -33,15 +33,29 @@ properties:
     title: order_fiscal_entity_request
     type: object
     description: "Fiscal entity of the order, Currently it is a purely informative field"
-    nullable: true
+    required:
+      - address
     properties:
       address: 
         $ref: fiscal_entity_address.yml
+      email:
+        type: string
+        example: "test@gmail.com"
+        description: "Email of the fiscal entity"
+      metadata:
+        type: object
+        additionalProperties: true
+        maxProperties: 100
+        description: "Metadata associated with the fiscal entity"
       name:
         type: string
         example: "Conekta Inc"
         nullable: true
         description: "Name of the fiscal entity"
+      phone:
+        type: string
+        example: "+525511223344"
+        description: "Phone of the fiscal entity"
       tax_id:
         type: string
         example: "AAA010101AAA"

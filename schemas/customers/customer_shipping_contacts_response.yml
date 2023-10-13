@@ -49,6 +49,11 @@ properties:
     type: integer
     format: int64
     example: 1675715413
+  metadata:
+    type: object
+    additionalProperties: true
+    maxProperties: 100
+    description: "Metadata associated with the shipping contact"
   object:
     type: string
     example: "shipping_contact"
