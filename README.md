@@ -12,12 +12,12 @@ How to use
 </h2>
 
 <h3>
-java generator proyect
+go generator proyect
 
 </h3>
 
 ```
-make java
+make go
 ```
 
 <h2>

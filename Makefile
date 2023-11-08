@@ -14,16 +14,6 @@ python:
 	-c config-python.json \
 	--global-property modelTests=false
 
-java:
-	mkdir -p conekta-java && \
-	npx @openapitools/openapi-generator-cli generate \
-	-i api.yaml \
-	-g java \
-	-o ../ct-conekta-java \
-	-c config-java.json \
-	--global-property modelTests=false \
-	--additional-properties=hideGenerationTimestamp=true
-
 go:
 	npx @openapitools/openapi-generator-cli generate \
 	-i api.yaml \
