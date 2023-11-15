@@ -11746,9 +11746,6 @@ components:
           example: Este cargo ha sido declinado porque el comportamiento del comprador
             es sospechoso.
           type: string
-        fee:
-          example: 1160
-          type: integer
         id:
           example: 63efa757cf65380001aec040
           type: string
@@ -11807,9 +11804,6 @@ components:
           example: Este cargo ha sido declinado porque el comportamiento del comprador
             es sospechoso.
           type: string
-        fee:
-          example: 1160
-          type: integer
         id:
           example: 63efa757cf65380001aec040
           type: string
