@@ -9046,12 +9046,6 @@ paths:
           maximum: 250
           minimum: 1
           type: integer
-      - description: "General order search, e.g. by mail, reference etc."
-        in: query
-        name: search
-        required: false
-        schema:
-          type: string
       - description: next page
         in: query
         name: next
@@ -9063,6 +9057,34 @@ paths:
         name: previous
         required: false
         schema:
+          type: string
+      - description: Identifier of the resource
+        example: 6307a60c41de27127515a575
+        in: path
+        name: id
+        required: true
+        schema:
+          type: string
+      - description: id of the charge used for filtering
+        in: query
+        name: charge_id
+        required: false
+        schema:
+          example: 65412a893cd69a0001c25892
+          type: string
+      - description: type of the object to be retrieved
+        in: query
+        name: type
+        required: false
+        schema:
+          example: capture
+          type: string
+      - description: currency of the object to be retrieved
+        in: query
+        name: currency
+        required: false
+        schema:
+          example: MXN
           type: string
       responses:
         "200":
@@ -11095,6 +11117,30 @@ components:
       name: tax_id
       required: true
       schema:
+        type: string
+    charge_id:
+      description: id of the charge used for filtering
+      in: query
+      name: charge_id
+      required: false
+      schema:
+        example: 65412a893cd69a0001c25892
+        type: string
+    type:
+      description: type of the object to be retrieved
+      in: query
+      name: type
+      required: false
+      schema:
+        example: capture
+        type: string
+    currency:
+      description: currency of the object to be retrieved
+      in: query
+      name: currency
+      required: false
+      schema:
+        example: MXN
         type: string
   requestBodies:
     api_keys_create:
