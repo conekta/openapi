@@ -1,0 +1,7 @@
+in: query
+name: "type"
+description: "type of the object to be retrieved"
+required: false
+schema:
+  type: string
+  example: "capture"
