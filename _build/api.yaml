@@ -9058,12 +9058,12 @@ paths:
         required: false
         schema:
           type: string
-      - description: Identifier of the resource
-        example: 6307a60c41de27127515a575
-        in: path
+      - description: id of the object to be retrieved
+        in: query
         name: id
-        required: true
+        required: false
         schema:
+          example: 65412a893cd69a0001c25892
           type: string
       - description: id of the charge used for filtering
         in: query
@@ -11117,6 +11117,14 @@ components:
       name: tax_id
       required: true
       schema:
+        type: string
+    id_query:
+      description: id of the object to be retrieved
+      in: query
+      name: id
+      required: false
+      schema:
+        example: 65412a893cd69a0001c25892
         type: string
     charge_id:
       description: id of the charge used for filtering
