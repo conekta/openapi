@@ -40,9 +40,6 @@ properties:
   failure_message: 
     type: string
     example: "Este cargo ha sido declinado porque el comportamiento del comprador es sospechoso."
-  fee:
-    type: integer
-    example: 1160
   id: 
     type: string
     example: "63efa757cf65380001aec040"

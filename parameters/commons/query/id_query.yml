@@ -1,0 +1,7 @@
+in: query
+name: "id"
+description: "id of the object to be retrieved"
+required: false
+schema:
+  type: string
+  example: "65412a893cd69a0001c25892"
