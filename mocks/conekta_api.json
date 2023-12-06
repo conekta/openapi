@@ -10792,7 +10792,7 @@
       "uuid": "d29ebe75-bf8a-4181-b92b-7c7d840efcdd",
       "documentation": "",
       "method": "get",
-      "endpoint": "balances",
+      "endpoint": "balance",
       "responses": [
         {
           "uuid": "26b41b2d-37da-4dcb-ba62-d8c8a572816b",
