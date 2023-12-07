@@ -15578,8 +15578,6 @@ components:
           description: Optional id sent to indicate the bank contract for recurrent
             card charges.
           example: S781317595
-          maxLength: 10
-          minLength: 10
           type: string
       required:
       - type
@@ -15885,8 +15883,6 @@ components:
         contract_id:
           description: Id sent for recurrent charges.
           example: S781317595
-          maxLength: 10
-          minLength: 10
           type: string
         country:
           example: MX
