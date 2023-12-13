@@ -37,6 +37,7 @@ properties:
       residential:
         type: boolean
         example: true
+        nullable: true
   parent_id:
     type: string
   default:

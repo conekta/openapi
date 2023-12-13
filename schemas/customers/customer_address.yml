@@ -26,6 +26,7 @@ properties:
   residential:
     type: boolean
     example: true
+    default: false
   external_number:
     type: string
     
