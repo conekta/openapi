@@ -23,13 +23,7 @@ go:
 	--global-property modelTests=false \
 	--additional-properties=hideGenerationTimestamp=true
 
-ruby:
-	npx @openapitools/openapi-generator-cli generate \
-	-i  api.yaml \
-	-g ruby \
-	-o ../conekta-ruby \
-	-c config-ruby.json \
-	--global-property modelTests=false 
+
 
 php:
 	npx @openapitools/openapi-generator-cli generate \
