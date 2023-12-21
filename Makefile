@@ -14,17 +14,6 @@ python:
 	-c config-python.json \
 	--global-property modelTests=false
 
-go:
-	npx @openapitools/openapi-generator-cli generate \
-	-i api.yaml \
-	-g go \
-	-o ../conekta-go \
-	-c config-go.json \
-	--global-property modelTests=false \
-	--additional-properties=hideGenerationTimestamp=true
-
-
-
 php:
 	npx @openapitools/openapi-generator-cli generate \
 		-i api.yaml \
