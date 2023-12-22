@@ -6,14 +6,6 @@ merge:
 	-p outputFile=_build/api.yaml \
 	--skip-validate-spec
 	
-python:
-	npx @openapitools/openapi-generator-cli generate \
-	-i api.yaml \
-	-g python-nextgen \
-	-o ../conekta-python \
-	-c config-python.json \
-	--global-property modelTests=false
-
 php:
 	npx @openapitools/openapi-generator-cli generate \
 		-i api.yaml \
@@ -32,6 +24,7 @@ node:
 dart:
 	rm -rf ../conekta-dart/lib && \
 	rm -rf ../conekta-dart/doc && \
+	rm -rf ../conekta-dart/lib/src/model && \
 	npx @openapitools/openapi-generator-cli generate -i  api.yaml -g dart-dio \
 	 -o ../conekta-dart \
 	 -c config-dart.json  \
