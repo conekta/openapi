@@ -14,12 +14,5 @@ php:
 		-c config-php.json \
 		--global-property modelTests=false
 
-node:
-	rm -rf ../conekta-node/api && \
-	rm -rf ../conekta-node/model && \
-	npx @openapitools/openapi-generator-cli generate -i  api.yaml -g typescript-axios \
-	 -o ../conekta-node  -c config-node.json  \
-	 --global-property apiDocs=false  --global-property apiTests=true 
-
 update-readme:
 	make merge && rdme openapi _build/api.yaml --id=$(API_README_VERSION_ID)  --key=${README_API_KEY}
