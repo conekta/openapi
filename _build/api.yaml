@@ -14299,6 +14299,11 @@ components:
         on_demand_enabled:
           example: true
           type: boolean
+        redirection_time:
+          description: number of seconds to wait before redirecting to the success_url
+          example: 10
+          format: int8
+          type: integer
         success_url:
           description: "Redirection url back to the site in case of successful payment,\
             \ applies only to HostedPayment"
