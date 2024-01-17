@@ -11508,6 +11508,16 @@ components:
             $ref: '#/components/schemas/error'
       description: payment required error
   schemas:
+    event_types:
+      description: "It is a parameter that allows to identify in the response, the\
+        \ type of event that is being generated."
+      enum:
+      - webhook_ping
+      - order.paid
+      - order.expired
+      - order.canceled
+      title: event_types
+      type: string
     risk_rules_list:
       allOf:
       - $ref: '#/components/schemas/pagination'

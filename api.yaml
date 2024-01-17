@@ -139,6 +139,9 @@ paths:
 security:
   - bearerAuth: []
 components:
+  schemas:
+    event_types:
+      $ref: "./schemas/event_types/event_types.yml"
   securitySchemes:
     bearerAuth:
       type: http
