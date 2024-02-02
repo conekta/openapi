@@ -1,0 +1,49 @@
+---
+kind: pipeline
+type: kubernetes
+name: default
+
+trigger:
+  branch:
+    - main
+  event:
+    - pull_request
+
+
+steps:
+  - name: build_image
+    image: plugins/ecr
+    privileged: true
+    settings:
+      dockerfile: Dockerfile
+      registry: 462204803675.dkr.ecr.us-east-1.amazonaws.com
+      debug: true
+      target: builder
+      tags:
+        - "${DRONE_BUILD_NUMBER}"
+    environment:
+      AWS_ACCESS_KEY_ID:
+        from_secret: AWS_ACCESS_KEY_ID
+      AWS_SECRET_ACCESS_KEY:
+        from_secret: AWS_SECRET_ACCESS_KEY
+      PLUGIN_SSH_AGENT_KEY:
+        from_secret: SSH_KEY
+      DOCKER_BUILDKIT: 1
+      ECR_CREATE_REPOSITORY: true
+      PLUGIN_REPO: ${DRONE_REPO}
+  - name: validate
+    image: 462204803675.dkr.ecr.us-east-1.amazonaws.com/${DRONE_REPO}:${DRONE_BUILD_NUMBER}
+    depends_on:
+      - build_image
+    commands:
+      - openapi-generator-cli validate -i api.yaml
+  - name: dummy generator
+    image: 462204803675.dkr.ecr.us-east-1.amazonaws.com/${DRONE_REPO}:${DRONE_BUILD_NUMBER}
+    depends_on:
+      - build_image
+    commands:
+      - openapi-generator-cli generate -i api.yaml -g openapi-yaml
+
+image_pull_secrets:
+  - ECR_PULL_SECRET
+  - DOCKERCONFIG
