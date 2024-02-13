@@ -6,3 +6,4 @@ enum:
   - order.paid
   - order.expired
   - order.canceled
+  - order.pending_payment

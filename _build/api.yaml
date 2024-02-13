@@ -11516,6 +11516,7 @@ components:
       - order.paid
       - order.expired
       - order.canceled
+      - order.pending_payment
       title: event_types
       type: string
     risk_rules_list:

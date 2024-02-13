@@ -6,7 +6,7 @@ RUN apt-get update && \
     apt-get clean;
 
 RUN npm install @openapitools/openapi-generator-cli -g
-RUN openapi-generator-cli version-manager set 7.2.0
+RUN openapi-generator-cli version-manager set 7.3.0
 WORKDIR /app
 
 COPY parameters/ parameters/
