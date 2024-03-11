@@ -16309,7 +16309,7 @@ components:
       - address
       title: order_update_fiscal_entity_request
       type: object
-    caca:
+    payout_method:
       description: The payout method of the payout order.
       properties:
         type:
@@ -16318,13 +16318,13 @@ components:
           type: string
       required:
       - type
-      title: caca
+      title: payout_method
       type: object
     payout:
       description: The payout information of the payout order.
       properties:
         payout_method:
-          $ref: '#/components/schemas/caca'
+          $ref: '#/components/schemas/payout_method'
       required:
       - payout_method
       title: payout
