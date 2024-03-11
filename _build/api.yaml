@@ -12684,8 +12684,12 @@ components:
             custom_client_id: "12345"
           maxProperties: 100
           type: object
-        payout:
-          $ref: '#/components/schemas/payout_order_response_payout'
+        payouts:
+          description: The payout information of the payout order.
+          items:
+            $ref: '#/components/schemas/payout_order_payouts_item'
+          title: payout_order_payouts
+          type: array
         reason:
           description: The reason for the payout order.
           example: Payout order for the customer
@@ -12707,7 +12711,7 @@ components:
       - id
       - livemode
       - object
-      - payout
+      - payouts
       - reason
       - updated_at
       title: payout_order_response
@@ -15923,8 +15927,7 @@ components:
         type: object
       - $ref: '#/components/schemas/order_customer_info_response'
       description: The customer information of the payout order.
-    payout_order_response_payout:
-      description: The payout information of the payout order.
+    payout_order_payouts_item:
       properties:
         amount:
           description: The amount of the payout.
@@ -15964,6 +15967,7 @@ components:
       - id
       - livemode
       - object
+      title: payout_order_payouts_item
       type: object
     customer_shipping_contacts_response_address:
       properties:

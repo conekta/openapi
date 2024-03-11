@@ -10,7 +10,7 @@ required:
   - id
   - livemode
   - object
-  - payout
+  - payouts
   - reason
   - updated_at
 properties:
@@ -68,48 +68,52 @@ properties:
     additionalProperties: true
     maxProperties: 100
     example: {"custom_client_id": "12345"}
-  payout:
-    type: object
+  payouts:
+    type: array
     description: "The payout information of the payout order."
-    required:
-      - id
-      - amount
-      - currency
-      - livemode
-      - object
-    properties:
-      amount:
-        type: integer
-        description: "The amount of the payout."
-        example: 3000
-      currency:
-        type: string
-        description: "The currency in which the payout is made."
-        example: "MXN"
-      expires_at:
-        type: integer
-        description: "The expiration date of the payout."
-        example: 1677626837
-      id:
-        type: string
-        description: "The id of the payout."
-        example: "payout_2vZwsRAhhGp2dFDJx"
-      livemode:
-        type: boolean
-        description: "The live mode of the payout."
-        example: true
-      object:
-        type: string
-        description: "The object of the payout."
-        example: "payout"
-      payout_order_id:
-        type: string
-        description: "The id of the payout order."
-        example: "f2654d66-d740-457a-9a8c-f96b5196f44e"
-      status:
-        type: string
-        description: "The status of the payout."
-        example: "open"
+    title: payout_order_payouts
+    items:
+      type: object
+      title: payout_order_payouts_item
+      required:
+        - id
+        - amount
+        - currency
+        - livemode
+        - object
+      properties:
+        amount:
+          type: integer
+          description: "The amount of the payout."
+          example: 3000
+        currency:
+          type: string
+          description: "The currency in which the payout is made."
+          example: "MXN"
+        expires_at:
+          type: integer
+          description: "The expiration date of the payout."
+          example: 1677626837
+        id:
+          type: string
+          description: "The id of the payout."
+          example: "payout_2vZwsRAhhGp2dFDJx"
+        livemode:
+          type: boolean
+          description: "The live mode of the payout."
+          example: true
+        object:
+          type: string
+          description: "The object of the payout."
+          example: "payout"
+        payout_order_id:
+          type: string
+          description: "The id of the payout order."
+          example: "f2654d66-d740-457a-9a8c-f96b5196f44e"
+        status:
+          type: string
+          description: "The status of the payout."
+          example: "open"
   reason:
     type: string
     description: "The reason for the payout order."
