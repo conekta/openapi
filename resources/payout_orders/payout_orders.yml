@@ -1,0 +1,64 @@
+post:
+  tags:
+    - Payout Orders
+  operationId: createPayoutOrder
+  summary: Create payout order
+  description: 'Create a new payout order.'
+  responses:
+    200:
+      description: successful operation
+      content:
+        application/vnd.conekta-v2.1.0+json:
+          schema:
+              $ref: ../../schemas/payout_orders/payout_order_response.yml
+    422:
+     $ref: '../errors/422.yml'
+    401:
+     $ref: '../errors/401.yml'
+    402:
+     $ref: '../errors/402.yml'
+    404:
+     $ref: '../errors/404.yml'
+    500:
+     $ref: '../errors/500.yml'
+  security:
+    - bearerAuth: []
+  requestBody:
+    $ref: '../../requestBodies/payout_orders/payout_order.yml'
+  parameters:
+    - $ref: '../../parameters/commons/headers/accept_language.yml'
+get:
+  tags:
+    - Payout Orders
+  operationId: getPayoutOrders
+  summary: Get a list of Payout Orders
+  description: 'Get Payout order details in the form of a list'
+  responses:
+    200:
+      description: successful operation
+      content:
+        application/vnd.conekta-v2.1.0+json:
+          schema:
+            title: payout_orders_response
+            allOf:
+              - type: object
+                properties:
+                  data:
+                    title: payout_orders_data_response
+                    type: array
+                    items:
+                      $ref: '../../schemas/payout_orders/payout_order_response.yml'
+              - $ref: ../../schemas/pagination/pagination.yml
+              - $ref: ../../schemas/pagination/page.yml
+    401:
+     $ref: '../errors/401.yml'
+    500:
+     $ref: '../errors/500.yml'
+  security:
+    - bearerAuth: []
+  parameters:
+    - $ref: '../../parameters/commons/headers/accept_language.yml'
+    - $ref: '../../parameters/commons/query/limit.yml'
+    - $ref: '../../parameters/commons/query/search.yml'
+    - $ref: '../../parameters/commons/query/next_page.yml'
+    - $ref: '../../parameters/commons/query/previous_page.yml'
