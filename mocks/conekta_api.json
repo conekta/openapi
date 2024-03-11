@@ -11218,6 +11218,68 @@
       ],
       "enabled": true,
       "responseMode": null
+    },
+    {
+      "uuid": "503ef689-df8a-4330-bbaf-ea07eb343ea6",
+      "documentation": "create payout_orders",
+      "method": "post",
+      "endpoint": "payout_orders",
+      "responses": [
+        {
+          "uuid": "f919d23d-6fcc-4a76-8dc3-942a3ce094f6",
+          "body": "{}",
+          "latency": 0,
+          "statusCode": 500,
+          "label": "",
+          "headers": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            }
+          ],
+          "bodyType": "INLINE",
+          "filePath": "",
+          "databucketID": "",
+          "sendFileAsBody": false,
+          "rules": [],
+          "rulesOperator": "OR",
+          "disableTemplating": false,
+          "fallbackTo404": false,
+          "default": true
+        },
+        {
+          "uuid": "c35a08a1-9c11-4bb7-8866-f42f31ea82dd",
+          "body": "{\n    \"id\": \"a2a1732a-4f0c-4fda-9dc7-efeec9be044b\",\n    \"amount\": 3000,\n    \"currency\": \"MXN\",\n    \"allowed_payout_methods\": [\n        \"cashout\"\n    ],\n    \"reason\": \"Referencia de retiro en efectivo\",\n    \"livemode\": true,\n    \"created_at\": 1706810746,\n    \"updated_at\": 1706810746,\n    \"customer_info\": {\n        \"id\": \"cus_2vE4xnYczpRRVPKfU\",\n        \"name\": \"ans\",\n        \"email\": \"sns@gmail.com\"\n    },\n    \"object\": \"payout_order\",\n    \"expires_at\": 1706983546,\n    \"metadata\": {\n        \"custom_client_id\": \"12345\"\n    },\n    \"status\": \"open\",\n    \"payouts\": [\n        {\n            \"id\": \"payout_2vME4PZPvj2ktQe5B\",\n            \"amount\": 3000,\n            \"currency\": \"MXN\",\n            \"payout_order_id\": \"a2a1732a-4f0c-4fda-9dc7-efeec9be044b\",\n            \"livemode\": true,\n            \"status\": \"open\",\n            \"object\": \"payout\",\n            \"expires_at\": 1706983546\n        }\n    ]\n}",
+          "latency": 0,
+          "statusCode": 200,
+          "label": "",
+          "headers": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            }
+          ],
+          "bodyType": "INLINE",
+          "filePath": "",
+          "databucketID": "",
+          "sendFileAsBody": false,
+          "rules": [
+            {
+              "target": "body",
+              "modifier": "amount",
+              "value": "3000",
+              "invert": false,
+              "operator": "equals"
+            }
+          ],
+          "rulesOperator": "OR",
+          "disableTemplating": false,
+          "fallbackTo404": false,
+          "default": false
+        }
+      ],
+      "enabled": true,
+      "responseMode": null
     }
   ],
   "rootChildren": [
@@ -11600,6 +11662,10 @@
     {
       "type": "route",
       "uuid": "b9656029-f0c2-4920-bc41-13f88a091f4a"
+    },
+    {
+      "type": "route",
+      "uuid": "503ef689-df8a-4330-bbaf-ea07eb343ea6"
     }
   ],
   "proxyMode": false,

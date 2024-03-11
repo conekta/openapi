@@ -15748,6 +15748,12 @@ components:
         recurrent:
           example: false
           type: boolean
+        redirection_time:
+          description: number of seconds to wait before redirecting to the success_url
+          example: 2
+          format: int8
+          nullable: true
+          type: integer
         slug:
           example: 6fca054a85194c43971ecea35cc519bb
           type: string
