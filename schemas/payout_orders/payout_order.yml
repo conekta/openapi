@@ -41,7 +41,6 @@ properties:
     description: "The payout information of the payout order."
     properties:
       payout_method:
-        title: payout_method
         required:
           - type
         type: object
