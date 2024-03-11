@@ -13915,7 +13915,7 @@ components:
           maxProperties: 100
           type: object
         payout:
-          $ref: '#/components/schemas/payout_order_payout'
+          $ref: '#/components/schemas/payout'
         reason:
           description: The reason for the payout order.
           example: Payout order for the customer
@@ -16309,7 +16309,7 @@ components:
       - address
       title: order_update_fiscal_entity_request
       type: object
-    payout_order_payout_payout_method:
+    payout_payout_method:
       description: The payout method of the payout order.
       properties:
         type:
@@ -16319,13 +16319,14 @@ components:
       required:
       - type
       type: object
-    payout_order_payout:
+    payout:
       description: The payout information of the payout order.
       properties:
         payout_method:
-          $ref: '#/components/schemas/payout_order_payout_payout_method'
+          $ref: '#/components/schemas/payout_payout_method'
       required:
       - payout_method
+      title: payout
       type: object
     checkout_order_template_customer_info:
       description: It is the information of the customer who will be created when
