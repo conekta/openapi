@@ -35,8 +35,17 @@ properties:
     example: "MXN"
     default: "MXN"
   customer_info:
-    description: "The customer information to whom the payout order is made."
-    $ref: '../../schemas/customers/customer_info_just_customer_id.yml'
+    description: "The customer information of the payout order."
+    allOf:
+      - type: object
+        required:
+          - id
+        properties:
+          id:
+            type: string
+            example: "cus_23874283647"
+            description: "The id of the customer."
+      - $ref:  ../orders/order_customer_info_response.yml
   expires_at:
     type: integer
     description: "The expiration date of the payout order."

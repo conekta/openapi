@@ -12660,7 +12660,7 @@ components:
           example: MXN
           type: string
         customer_info:
-          $ref: '#/components/schemas/customer_info_just_customer_id'
+          $ref: '#/components/schemas/payout_order_response_customer_info'
         expires_at:
           description: The expiration date of the payout order.
           example: 1677626837
@@ -14010,9 +14010,9 @@ components:
               \ tutorial for more information on how to tokenize cards."
             example: tok_32hj4g234as
             type: string
+        required:
+        - token_id
         type: object
-      required:
-      - token_id
       title: payment_method_card_request
     payment_method_cash_request:
       allOf:
@@ -14668,15 +14668,6 @@ components:
       - street1
       title: order_fiscal_entity_address_request
       type: object
-    customer_info_just_customer_id:
-      properties:
-        customer_id:
-          example: cus_23874283647
-          type: string
-      required:
-      - customer_id
-      title: customer_info_customer_id
-      type: object
     payment_method_response:
       properties:
         type:
@@ -14778,6 +14769,15 @@ components:
       - name
       - phone
       title: customer_info
+      type: object
+    customer_info_just_customer_id:
+      properties:
+        customer_id:
+          example: cus_23874283647
+          type: string
+      required:
+      - customer_id
+      title: customer_info_customer_id
       type: object
     customer_payment_method_request:
       description: Contains details of the payment methods that the customer has active
@@ -15911,6 +15911,18 @@ components:
             type: string
         type: object
       - $ref: '#/components/schemas/customer_shipping_contacts_response'
+    payout_order_response_customer_info:
+      allOf:
+      - properties:
+          id:
+            description: The id of the customer.
+            example: cus_23874283647
+            type: string
+        required:
+        - id
+        type: object
+      - $ref: '#/components/schemas/order_customer_info_response'
+      description: The customer information of the payout order.
     payout_order_response_payout:
       description: The payout information of the payout order.
       properties:

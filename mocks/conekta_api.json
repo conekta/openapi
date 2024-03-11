@@ -11087,6 +11087,75 @@
       ],
       "enabled": true,
       "responseMode": null
+    },
+    {
+      "uuid": "3e017e41-4d6d-4490-8c66-c859706bd6eb",
+      "documentation": "payout_orders",
+      "method": "get",
+      "endpoint": "payout_orders/:id",
+      "responses": [
+        {
+          "uuid": "0f0cea2a-ff1d-4bc0-b28c-88cec65b0ccf",
+          "body": "{}",
+          "latency": 0,
+          "statusCode": 404,
+          "label": "",
+          "headers": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            }
+          ],
+          "bodyType": "INLINE",
+          "filePath": "",
+          "databucketID": "",
+          "sendFileAsBody": false,
+          "rules": [],
+          "rulesOperator": "OR",
+          "disableTemplating": false,
+          "fallbackTo404": false,
+          "default": true
+        },
+        {
+          "uuid": "cd19a401-4442-4d9e-92bf-3f0753d42de5",
+          "body": "{\n    \"id\": \"f2654d66-d740-457a-9a8c-f96b5196f44e\",\n    \"amount\": 3000,\n    \"currency\": \"MXN\",\n    \"allowed_payout_methods\": [\n        \"cashout\"\n    ],\n    \"reason\": \"Referencia de retiro en efectivo\",\n    \"livemode\": true,\n    \"created_at\": 1710172680,\n    \"updated_at\": 1710172680,\n    \"customer_info\": {\n        \"id\": \"cus_2vXfQGMFcf2uopcFt\",\n        \"name\": \"Juanito José\",\n        \"email\": \"declinado@conekta.com\",\n        \"phone\": \"5556581111\"\n    },\n    \"object\": \"payout_order\",\n    \"expires_at\": 1710345479,\n    \"metadata\": {\n        \"custom_client_id\": \"12345\"\n    },\n    \"status\": \"open\",\n    \"payouts\": [\n        {\n            \"id\": \"payout_2vZwsRAhhGp2dFDJx\",\n            \"amount\": 3000,\n            \"currency\": \"MXN\",\n            \"payout_order_id\": \"f2654d66-d740-457a-9a8c-f96b5196f44e\",\n            \"livemode\": true,\n            \"status\": \"open\",\n            \"object\": \"payout\",\n            \"expires_at\": 1710345479\n        }\n    ]\n}",
+          "latency": 0,
+          "statusCode": 200,
+          "label": "",
+          "headers": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            }
+          ],
+          "bodyType": "INLINE",
+          "filePath": "",
+          "databucketID": "",
+          "sendFileAsBody": false,
+          "rules": [
+            {
+              "target": "params",
+              "modifier": "id",
+              "value": "f2654d66-d740-457a-9a8c-f96b5196f44e",
+              "invert": false,
+              "operator": "equals"
+            },
+            {
+              "target": "header",
+              "modifier": "Authorization",
+              "value": "",
+              "invert": true,
+              "operator": "null"
+            }
+          ],
+          "rulesOperator": "OR",
+          "disableTemplating": false,
+          "fallbackTo404": false,
+          "default": false
+        }
+      ],
+      "enabled": true,
+      "responseMode": null
     }
   ],
   "rootChildren": [
@@ -11461,6 +11530,10 @@
     {
       "type": "route",
       "uuid": "1b06f728-1985-4bc0-98a4-664ad6e7e604"
+    },
+    {
+      "type": "route",
+      "uuid": "3e017e41-4d6d-4490-8c66-c859706bd6eb"
     }
   ],
   "proxyMode": false,
