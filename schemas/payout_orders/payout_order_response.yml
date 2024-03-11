@@ -29,6 +29,7 @@ properties:
     type: integer
     description: "The creation date of the payout order."
     example: 1677626837
+    format: int64
   currency:
     type: string
     description: "The currency in which the payout order is made."
@@ -128,3 +129,4 @@ properties:
     type: integer
     description: "The update date of the payout order."
     example: 1677626837
+    format: int64
