@@ -12664,6 +12664,7 @@ components:
         expires_at:
           description: The expiration date of the payout order.
           example: 1677626837
+          format: int64
           type: integer
         id:
           description: The id of the payout order.
@@ -15940,6 +15941,7 @@ components:
         expires_at:
           description: The expiration date of the payout.
           example: 1677626837
+          format: int64
           type: integer
         id:
           description: The id of the payout.

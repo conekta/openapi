@@ -49,6 +49,7 @@ properties:
   expires_at:
     type: integer
     description: "The expiration date of the payout order."
+    format: int64
     example: 1677626837
   id:
     type: string
@@ -91,6 +92,7 @@ properties:
           description: "The currency in which the payout is made."
           example: "MXN"
         expires_at:
+          format: int64
           type: integer
           description: "The expiration date of the payout."
           example: 1677626837
