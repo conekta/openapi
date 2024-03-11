@@ -12644,6 +12644,7 @@ components:
           - cashout
           items:
             type: string
+          minItems: 1
           type: array
         amount:
           description: The amount of the payout order.

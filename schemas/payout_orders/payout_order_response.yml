@@ -20,6 +20,7 @@ properties:
     items:
       type: string
     example: ["cashout"]
+    minItems: 1
   amount:
     type: integer
     description: "The amount of the payout order."
