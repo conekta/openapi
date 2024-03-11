@@ -76,6 +76,10 @@ paths:
     $ref: "./resources/orders/order_refunds_param.yml"
   /orders/{id}/refunds/{refund_id}:
     $ref: "./resources/orders/order_cancel_refunds_param.yml"
+  /payout_orders:
+    $ref: "./resources/payout_orders/payout_orders.yml"
+  /payout_orders/{id}:
+    $ref: "./resources/payout_orders/get_payout_order.yml"
   /checkouts:
     $ref: "./resources/checkouts/checkouts.yml"
   /checkouts/{id}:

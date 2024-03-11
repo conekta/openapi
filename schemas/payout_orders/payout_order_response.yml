@@ -1,0 +1,132 @@
+title: payout_order_response
+description: payout order model response
+type: object
+required:
+  - allowed_payout_methods
+  - amount
+  - created_at
+  - currency
+  - customer_info
+  - id
+  - livemode
+  - object
+  - payouts
+  - reason
+  - updated_at
+properties:
+  allowed_payout_methods:
+    type: array
+    description: "The payout methods that are allowed for the payout order."
+    items:
+      type: string
+    example: ["cashout"]
+    minItems: 1
+  amount:
+    type: integer
+    description: "The amount of the payout order."
+    example: 100
+  created_at:
+    type: integer
+    description: "The creation date of the payout order."
+    example: 1677626837
+    format: int64
+  currency:
+    type: string
+    description: "The currency in which the payout order is made."
+    example: "MXN"
+    default: "MXN"
+  customer_info:
+    description: "The customer information of the payout order."
+    allOf:
+      - type: object
+        required:
+          - id
+        properties:
+          id:
+            type: string
+            example: "cus_23874283647"
+            description: "The id of the customer."
+      - $ref:  ../orders/order_customer_info_response.yml
+  expires_at:
+    type: integer
+    description: "The expiration date of the payout order."
+    format: int64
+    example: 1677626837
+  id:
+    type: string
+    description: "The id of the payout order."
+    example: "f2654d66-d740-457a-9a8c-f96b5196f44e"
+  livemode:
+    type: boolean
+    description: "The live mode of the payout order."
+    example: true
+  object:
+    type: string
+    description: "The object of the payout order."
+    example: "payout_order"
+  metadata:
+    type: object
+    description: "The metadata of the payout order."
+    additionalProperties: true
+    maxProperties: 100
+    example: {"custom_client_id": "12345"}
+  payouts:
+    type: array
+    description: "The payout information of the payout order."
+    title: payout_order_payouts
+    items:
+      type: object
+      title: payout_order_payouts_item
+      required:
+        - id
+        - amount
+        - currency
+        - livemode
+        - object
+      properties:
+        amount:
+          type: integer
+          description: "The amount of the payout."
+          example: 3000
+        currency:
+          type: string
+          description: "The currency in which the payout is made."
+          example: "MXN"
+        expires_at:
+          format: int64
+          type: integer
+          description: "The expiration date of the payout."
+          example: 1677626837
+        id:
+          type: string
+          description: "The id of the payout."
+          example: "payout_2vZwsRAhhGp2dFDJx"
+        livemode:
+          type: boolean
+          description: "The live mode of the payout."
+          example: true
+        object:
+          type: string
+          description: "The object of the payout."
+          example: "payout"
+        payout_order_id:
+          type: string
+          description: "The id of the payout order."
+          example: "f2654d66-d740-457a-9a8c-f96b5196f44e"
+        status:
+          type: string
+          description: "The status of the payout."
+          example: "open"
+  reason:
+    type: string
+    description: "The reason for the payout order."
+    example: "Payout order for the customer"
+  status:
+    type: string
+    description: "The status of the payout order."
+    example: "open"
+  updated_at:
+    type: integer
+    description: "The update date of the payout order."
+    example: 1677626837
+    format: int64

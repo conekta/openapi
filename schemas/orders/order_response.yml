@@ -102,6 +102,12 @@ properties:
       recurrent:
         type: boolean
         example: false
+      redirection_time:
+        type: integer
+        nullable: true
+        example: 2
+        format: int8
+        description: "number of seconds to wait before redirecting to the success_url"
       slug:
         type: string
         example:  "6fca054a85194c43971ecea35cc519bb"

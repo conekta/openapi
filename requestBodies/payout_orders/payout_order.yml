@@ -1,0 +1,6 @@
+description: requested field for payout order    
+content:
+  application/json:
+    schema:  
+      $ref: '../../schemas/payout_orders/payout_order.yml'
+required: true
