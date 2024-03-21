@@ -10373,6 +10373,12 @@ paths:
         required: false
         schema:
           type: string
+      - description: url for webhook filter
+        in: query
+        name: url
+        required: false
+        schema:
+          type: string
       - description: next page
         in: query
         name: next
@@ -11439,6 +11445,13 @@ components:
       required: false
       schema:
         example: MXN
+        type: string
+    url:
+      description: url for webhook filter
+      in: query
+      name: url
+      required: false
+      schema:
         type: string
   requestBodies:
     api_keys_create:

@@ -1,0 +1,6 @@
+in: query
+name: "url"
+description: "url for webhook filter"
+required: false
+schema:
+  type: string
