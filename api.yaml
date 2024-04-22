@@ -30,6 +30,8 @@ paths:
     $ref: "./resources/balances/balances.yml"
   /charges:
     $ref: "./resources/charges/charges.yml"
+  /charges/{id}:
+    $ref: "./resources/charges/update_charge.yml"
   /orders/{id}/charges:
     $ref: "./resources/orders/order_charge_param.yml"
   /companies:
@@ -74,6 +76,10 @@ paths:
     $ref: "./resources/orders/order_refunds_param.yml"
   /orders/{id}/refunds/{refund_id}:
     $ref: "./resources/orders/order_cancel_refunds_param.yml"
+  /payout_orders:
+    $ref: "./resources/payout_orders/payout_orders.yml"
+  /payout_orders/{id}:
+    $ref: "./resources/payout_orders/get_payout_order.yml"
   /checkouts:
     $ref: "./resources/checkouts/checkouts.yml"
   /checkouts/{id}:
@@ -137,6 +143,9 @@ paths:
 security:
   - bearerAuth: []
 components:
+  schemas:
+    event_types:
+      $ref: "./schemas/event_types/event_types.yml"
   securitySchemes:
     bearerAuth:
       type: http

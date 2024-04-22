@@ -1,0 +1,9 @@
+title: event_types
+type: string
+description: "It is a parameter that allows to identify in the response, the type of event that is being generated."
+enum:
+  - webhook_ping
+  - order.paid
+  - order.expired
+  - order.canceled
+  - order.pending_payment

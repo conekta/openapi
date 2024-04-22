@@ -21,10 +21,10 @@ properties:
     properties:
       street1:
         type: string
-        example: avenida siempre viva
+        example: Nuevo Leon 254
       street2: 
         type: string
-        example: fake street
+        example: Departamento 404
       postal_code:
         type: string
         example: "06100"

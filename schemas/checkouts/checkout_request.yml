@@ -32,6 +32,11 @@ properties:
   on_demand_enabled:
     type: boolean
     example: true
+  redirection_time:
+    type: integer
+    format: int8
+    description: "number of seconds to wait before redirecting to the success_url"
+    example: 10
   success_url:
     type: string
     description: "Redirection url back to the site in case of successful payment, applies only to HostedPayment"

@@ -1,0 +1,57 @@
+title: payout order request
+description: a payout order
+type: object
+required:
+  - allowed_payout_methods
+  - amount
+  - currency
+  - customer_info
+  - payout
+  - reason
+properties:
+  allowed_payout_methods:
+    type: array
+    description: "The payout methods that are allowed for the payout order."
+    items:
+      type: string
+    example: ["cashout"]
+  amount:
+    type: integer
+    description: "The amount of the payout order."
+    example: 100
+  currency:
+    type: string
+    description: "The currency in which the payout order is made."
+    example: "MXN"
+    default: "MXN"
+  customer_info:
+    description: "The customer information to whom the payout order is made."
+    $ref: '../../schemas/customers/customer_info_just_customer_id.yml'
+  metadata:
+    type: object
+    description: "The metadata of the payout order."
+    additionalProperties: true
+    maxProperties: 100
+    example: {"custom_client_id": "12345"}
+  payout:
+    title: payout
+    required:
+      - payout_method
+    type: object
+    description: "The payout information of the payout order."
+    properties:
+      payout_method:
+        title: payout_method
+        required:
+          - type
+        type: object
+        description: "The payout method of the payout order."
+        properties:
+          type:
+            type: string
+            description: "The type of the payout method."
+            example: "cashout"
+  reason:
+    type: string
+    description: "The reason for the payout order."
+    example: "Payout order for the customer"

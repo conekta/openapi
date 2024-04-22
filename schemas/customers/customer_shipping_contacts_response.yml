@@ -18,10 +18,10 @@ properties:
         example: "shipping_address"
       street1:
         type: string
-        example: avenida siempre viva
+        example: Nuevo Leon 254
       street2: 
         type: string
-        example: fake street
+        example: Departamento 404
       postal_code:
         type: string
         example: "06100"
@@ -37,6 +37,7 @@ properties:
       residential:
         type: boolean
         example: true
+        nullable: true
   parent_id:
     type: string
   default:
@@ -49,6 +50,11 @@ properties:
     type: integer
     format: int64
     example: 1675715413
+  metadata:
+    type: object
+    additionalProperties: true
+    maxProperties: 100
+    description: "Metadata associated with the shipping contact"
   object:
     type: string
     example: "shipping_contact"

@@ -1,26 +1,15 @@
-get:
+put:
   tags:
-    - Transactions
-  operationId: getTransactions
-  summary: Get List transactions
-  description: Get transaction details in the form of a list
+    - Charges
+  operationId: updateCharge
+  summary: Update a charge
   responses:
     200:
       description: successful
       content:
-        application/vnd.conekta-v2.2.0+json:
+        application/vnd.conekta-v2.1.0+json:
           schema:
-            title: get_transactions_response
-            allOf:
-              - $ref: ../../schemas/pagination/pagination.yml
-              - $ref: ../../schemas/pagination/page.yml
-              - type: object
-                properties:
-                  data:
-                    description: Transactions
-                    type: array
-                    items:
-                      $ref: '../../schemas/transactions/transaction_response.yml'
+            $ref: '../../schemas/charges/charge_response.yml'
       headers:
         Date:
           description: The date and time that the response was sent
@@ -46,19 +35,17 @@ get:
           schema:
             type: string
             example: conekta-v2.1.0; format=application/json
-    401:
-     $ref: '../errors/401.yml'
+    422:
+     $ref: '../errors/422_whitelist.yml'
+    404:
+      $ref: '../errors/404.yml'
     500:
      $ref: '../errors/500.yml'
   security:
     - bearerAuth: []
+  requestBody:
+   $ref: '../../requestBodies/charges/charge_update.yml'
   parameters:
+    - $ref: '../../parameters/commons/path_param/id.yml'
     - $ref: '../../parameters/commons/headers/accept_language.yml'
     - $ref: '../../parameters/commons/headers/x_child_company_id.yml'
-    - $ref: '../../parameters/commons/query/limit.yml'
-    - $ref: '../../parameters/commons/query/next_page.yml'
-    - $ref: '../../parameters/commons/query/previous_page.yml'
-    - $ref: '../../parameters/commons/query/id_query.yml'
-    - $ref: '../../parameters/commons/query/charge_id.yml'
-    - $ref: '../../parameters/commons/query/type.yml'
-    - $ref: '../../parameters/commons/query/currency.yml'
