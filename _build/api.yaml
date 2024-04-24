@@ -13821,8 +13821,8 @@ components:
           maxLength: 250
           type: string
         metadata:
-          additionalProperties:
-            type: string
+          additionalProperties: true
+          default: {}
           description: It is a key/value hash that can hold custom fields. Maximum
             100 elements and allows special characters.
           example:
