@@ -22,9 +22,9 @@ properties:
     type: object
     maxProperties: 100
     description: It is a key/value hash that can hold custom fields. Maximum 100 elements and allows special characters.
-    additionalProperties:
-      type: string
+    additionalProperties: true
     example: { "key": "value" }
+    default: {}
   name:
     type: string
     example: "Box of Cohiba S1s"
