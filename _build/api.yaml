@@ -3682,6 +3682,60 @@ paths:
         required: false
         schema:
           type: string
+      - description: Filters by order status
+        in: query
+        name: payment_status
+        required: false
+        schema:
+          example: paid
+          type: string
+      - description: Filters by last payment info status
+        in: query
+        name: last_payment_info.status
+        required: false
+        schema:
+          example: pending_payment
+          type: string
+      - description: created equal to
+        in: query
+        name: created_at
+        required: false
+        schema:
+          example: 1612137600
+          format: int64
+          type: integer
+      - description: created at greater than or equal to
+        in: query
+        name: created_at.gte
+        required: false
+        schema:
+          example: 1612137600
+          format: int64
+          type: integer
+      - description: created at less than or equal to
+        in: query
+        name: created_at.lte
+        required: false
+        schema:
+          example: 1612137600
+          format: int64
+          type: integer
+      - description: updated at greater than or equal to
+        in: query
+        name: updated_at.gte
+        required: false
+        schema:
+          example: 1612137600
+          format: int64
+          type: integer
+      - description: updated at less than or equal to
+        in: query
+        name: updated_at.lte
+        required: false
+        schema:
+          example: 1612137600
+          format: int64
+          type: integer
       responses:
         "200":
           content:
@@ -11366,6 +11420,67 @@ components:
       required: true
       schema:
         type: string
+    payment_status:
+      description: Filters by order status
+      in: query
+      name: payment_status
+      required: false
+      schema:
+        example: paid
+        type: string
+    last_payment_infostatus:
+      description: Filters by last payment info status
+      in: query
+      name: last_payment_info.status
+      required: false
+      schema:
+        example: pending_payment
+        type: string
+    created_at:
+      description: created equal to
+      in: query
+      name: created_at
+      required: false
+      schema:
+        example: 1612137600
+        format: int64
+        type: integer
+    created_at_gte:
+      description: created at greater than or equal to
+      in: query
+      name: created_at.gte
+      required: false
+      schema:
+        example: 1612137600
+        format: int64
+        type: integer
+    created_at_lte:
+      description: created at less than or equal to
+      in: query
+      name: created_at.lte
+      required: false
+      schema:
+        example: 1612137600
+        format: int64
+        type: integer
+    updated_at_gte:
+      description: updated at greater than or equal to
+      in: query
+      name: updated_at.gte
+      required: false
+      schema:
+        example: 1612137600
+        format: int64
+        type: integer
+    updated_at_lte:
+      description: updated at less than or equal to
+      in: query
+      name: updated_at.lte
+      required: false
+      schema:
+        example: 1612137600
+        format: int64
+        type: integer
     line_items_id:
       description: identifier
       example: line_item_2tQ8HkkfbauaKP9Ho

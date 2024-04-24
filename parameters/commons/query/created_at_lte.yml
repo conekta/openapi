@@ -1,0 +1,8 @@
+in: query
+name: "created_at.lte"
+description: "created at less than or equal to"
+required: false
+schema:
+  type: integer
+  example: 1612137600
+  format: int64
