@@ -1,6 +1,6 @@
 title: payment_method_card_request
 allOf:
-  - $ref: './customer_payment_method_request.yml'
+  - $ref: './customer_payment_method_request_card.yml'
   - type: object
     required:
         - token_id

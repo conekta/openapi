@@ -1,0 +1,9 @@
+description:  For spei recurrent payment method
+title: customer_payment_method_request
+required:
+  - type
+properties:
+  type:
+    type: string
+    example: spei_recurrent
+    description: Type of payment method
