@@ -1,9 +1,0 @@
-description:  For card recurrent payment method
-title: customer_payment_method_request
-required:
-  - type
-properties:
-  type:
-    type: string
-    example: card
-    description: Type of payment method
