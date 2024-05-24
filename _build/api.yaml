@@ -14137,7 +14137,7 @@ components:
       type: object
     payment_method_card_request:
       allOf:
-      - $ref: '#/components/schemas/customer_payment_method_request'
+      - $ref: '#/components/schemas/customer_payment_method_request_card'
       - properties:
           token_id:
             description: "Token id that will be used to create a \"card\" type payment\
@@ -14151,7 +14151,7 @@ components:
       title: payment_method_card_request
     payment_method_cash_request:
       allOf:
-      - $ref: '#/components/schemas/customer_payment_method_request'
+      - $ref: '#/components/schemas/customer_payment_method_request_cash_recurrent'
       - properties:
           expires_at:
             example: 1553273553
@@ -14161,7 +14161,7 @@ components:
       title: payment_method_cash_request
     payment_method_spei_request:
       allOf:
-      - $ref: '#/components/schemas/customer_payment_method_request'
+      - $ref: '#/components/schemas/customer_payment_method_request_spei_recurrent'
       - properties:
           expires_at:
             example: 1553273553
@@ -14914,13 +14914,34 @@ components:
       - customer_id
       title: customer_info_customer_id
       type: object
-    customer_payment_method_request:
-      description: Contains details of the payment methods that the customer has active
-        or has used in Conekta
+    customer_payment_method_request_card:
+      description: For card recurrent payment method
       properties:
         type:
           description: Type of payment method
-          example: card | cash | spei
+          example: card
+          type: string
+      required:
+      - type
+      title: customer_payment_method_request
+      type: object
+    customer_payment_method_request_cash_recurrent:
+      description: For cash recurrent payment method
+      properties:
+        type:
+          description: Type of payment method
+          example: cash_recurrent
+          type: string
+      required:
+      - type
+      title: customer_payment_method_request
+      type: object
+    customer_payment_method_request_spei_recurrent:
+      description: For spei recurrent payment method
+      properties:
+        type:
+          description: Type of payment method
+          example: spei_recurrent
           type: string
       required:
       - type
