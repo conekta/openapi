@@ -8,12 +8,14 @@ payment_method_card:
         account_type:
           type: string
           example: "Credit"
+          description: "Account type of the card"
         auth_code:
           type: string
           example: "867372"
         brand:
           type: string
           example: "visa"
+          description: "Brand of the card"
         contract_id:
           type: string
           description: "Id sent for recurrent charges."
@@ -21,22 +23,28 @@ payment_method_card:
         country:
           type: string
           example: "MX"
+          description: "Country of the card"
         exp_month:
           type: string
           example: "02"
+          description: "Expiration month of the card"
         exp_year:
           type: string
-          example: "30"
+          example: "2026"
+          description: "Expiration year of the card"
         fraud_indicators:
           type: array
           items: {}
         issuer:
           type: string
           example: "BANAMEX"
+          description: "Issuer of the card"
         last4:
           type: string
           example: "4242"
+          description: "Last 4 digits of the card"
         name:
           type: string
           example: "Fulanito Perez"
+          description: "Name of the cardholder"
         
