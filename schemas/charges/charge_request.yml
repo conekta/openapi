@@ -8,7 +8,7 @@ properties:
     example: 40000
     description: "Amount to be charged in cents"
   payment_method:
-    title: payment_method
+    title: charge_request_payment_method
     oneOf:
       - $ref: '../customers/payment_method_card_request.yml'
       - required:

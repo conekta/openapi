@@ -13586,7 +13586,7 @@ components:
           example: 40000
           type: integer
         payment_method:
-          $ref: '#/components/schemas/payment_method_1'
+          $ref: '#/components/schemas/charge_request_payment_method'
         reference_id:
           description: Custom reference to add to the charge
           type: string
@@ -16397,11 +16397,11 @@ components:
       - type
       title: payment_method_request
       type: object
-    payment_method_1:
+    charge_request_payment_method:
       oneOf:
       - $ref: '#/components/schemas/payment_method_card_request'
       - $ref: '#/components/schemas/payment_method_request'
-      title: payment_method
+      title: charge_request_payment_method
     customer_antifraud_info:
       nullable: true
       properties:
