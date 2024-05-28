@@ -47,4 +47,3 @@ payment_method_card:
           type: string
           example: "Fulanito Perez"
           description: "Name of the cardholder"
-        
