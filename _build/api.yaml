@@ -16364,44 +16364,10 @@ components:
           type: string
       title: transfer_destination_response
       type: object
-    payment_method_request:
-      description: |
-        Payment method used in the charge. Go to the [payment methods](https://developers.conekta.com/reference/m%C3%A9todos-de-pago) section for more details
-      properties:
-        expires_at:
-          description: Method expiration date as unix timestamp
-          example: 1677196303
-          format: int64
-          type: integer
-        monthly_installments:
-          description: "How many months without interest to apply, it can be 3, 6,\
-            \ 9, 12 or 18"
-          format: int8
-          type: integer
-        type:
-          description: Type of payment method
-          example: card
-          type: string
-        token_id:
-          example: tok_2897348234
-          type: string
-        payment_source_id:
-          example: src_2tLkkyfMPh6v7pFry
-          type: string
-        contract_id:
-          description: Optional id sent to indicate the bank contract for recurrent
-            card charges.
-          example: S781317595
-          type: string
-      required:
-      - type
-      title: payment_method_request
-      type: object
     charge_request_payment_method:
       oneOf:
       - $ref: '#/components/schemas/payment_method_card_request'
-      - $ref: '#/components/schemas/payment_method_request'
-      title: charge_request_payment_method
+      - $ref: '#/components/schemas/charge_request_payment_method'
     customer_antifraud_info:
       nullable: true
       properties:

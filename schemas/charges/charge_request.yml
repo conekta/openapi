@@ -8,13 +8,12 @@ properties:
     example: 40000
     description: "Amount to be charged in cents"
   payment_method:
-    title: charge_request_payment_method
     oneOf:
       - $ref: '../customers/payment_method_card_request.yml'
       - required:
           - type
         type: object
-        title: payment_method_request
+        title: charge_request_payment_method
         description: |
               Payment method used in the charge. Go to the [payment methods](https://developers.conekta.com/reference/m%C3%A9todos-de-pago) section for more details
         properties:
