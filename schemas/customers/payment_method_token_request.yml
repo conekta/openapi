@@ -3,7 +3,7 @@ allOf:
   - $ref: './customer_payment_method_request.yml'
   - type: object
     required:
-        - token_id
+      - token_id
     properties:
       token_id:
         type: string
