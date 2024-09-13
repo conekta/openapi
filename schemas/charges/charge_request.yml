@@ -37,6 +37,10 @@ properties:
           payment_source_id:
             type: string
             example: "src_2tLkkyfMPh6v7pFry"
+          cvc:
+            type: string
+            example: "123"
+            description: "Optional, Only for PCI merchants"
           contract_id:
             type: string
             description: "Optional id sent to indicate the bank contract for recurrent card charges."
