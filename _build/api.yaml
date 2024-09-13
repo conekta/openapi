@@ -16396,7 +16396,8 @@ components:
           example: src_2tLkkyfMPh6v7pFry
           type: string
         cvc:
-          description: "Optional, Only for PCI merchants"
+          description: "Optional, It is a value that allows identifying the security\
+            \ code of the card. Only for PCI merchants"
           example: "123"
           type: string
         contract_id:
