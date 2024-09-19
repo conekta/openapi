@@ -13852,7 +13852,7 @@ components:
           type: string
         return_url:
           description: Indicates the redirection callback upon completion of the 3DS2
-            flow.
+            flow. Do not use this parameter if your order has a checkout parameter
           example: https://my-website.com
           format: uri
           type: string
@@ -14109,6 +14109,9 @@ components:
             format: int8
             type: integer
           type: array
+        three_ds_mode:
+          description: "Indicates the 3DS2 mode for the order, either smart or strict."
+          type: string
         name:
           description: Reason for charge
           example: Payment Link Name 1594138857

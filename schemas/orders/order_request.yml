@@ -86,7 +86,7 @@ properties:
   return_url:
     type: string
     format: uri
-    description: "Indicates the redirection callback upon completion of the 3DS2 flow."
+    description: "Indicates the redirection callback upon completion of the 3DS2 flow. Do not use this parameter if your order has a checkout parameter"
     example: https://my-website.com
   shipping_contact:
     $ref: ../../schemas/customers/customer_shipping_contacts.yml
