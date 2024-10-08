@@ -6663,7 +6663,7 @@ paths:
       responses:
         "200":
           content:
-            application/vnd.conekta-v2.1.0+json:
+            application/vnd.conekta-v2.2.0+json:
               schema:
                 $ref: '#/components/schemas/get_plans_response'
           description: successful
@@ -6690,7 +6690,7 @@ paths:
                 type: string
             Conekta-Media-Type:
               schema:
-                example: conekta-v2.1.0; format=application/json
+                example: conekta-v2.2.0; format=application/json
                 type: string
         "422":
           content:
@@ -6777,7 +6777,7 @@ paths:
       responses:
         "200":
           content:
-            application/vnd.conekta-v2.1.0+json:
+            application/vnd.conekta-v2.2.0+json:
               schema:
                 $ref: '#/components/schemas/plan_response'
           description: successful
@@ -6804,7 +6804,7 @@ paths:
                 type: string
             Conekta-Media-Type:
               schema:
-                example: conekta-v2.1.0; format=application/json
+                example: conekta-v2.2.0; format=application/json
                 type: string
         "422":
           content:
@@ -6888,7 +6888,7 @@ paths:
       responses:
         "200":
           content:
-            application/vnd.conekta-v2.1.0+json:
+            application/vnd.conekta-v2.2.0+json:
               schema:
                 $ref: '#/components/schemas/plan_response'
           description: successful
@@ -6915,7 +6915,7 @@ paths:
                 type: string
             Conekta-Media-Type:
               schema:
-                example: conekta-v2.1.0; format=application/json
+                example: conekta-v2.2.0; format=application/json
                 type: string
         "422":
           content:
@@ -7022,7 +7022,7 @@ paths:
       responses:
         "200":
           content:
-            application/vnd.conekta-v2.1.0+json:
+            application/vnd.conekta-v2.2.0+json:
               schema:
                 $ref: '#/components/schemas/plan_response'
           description: successful
@@ -7049,7 +7049,7 @@ paths:
                 type: string
             Conekta-Media-Type:
               schema:
-                example: conekta-v2.1.0; format=application/json
+                example: conekta-v2.2.0; format=application/json
                 type: string
         "422":
           content:
@@ -7158,7 +7158,7 @@ paths:
       responses:
         "200":
           content:
-            application/vnd.conekta-v2.1.0+json:
+            application/vnd.conekta-v2.2.0+json:
               schema:
                 $ref: '#/components/schemas/plan_response'
           description: successful
@@ -7185,7 +7185,7 @@ paths:
                 type: string
             Conekta-Media-Type:
               schema:
-                example: conekta-v2.1.0; format=application/json
+                example: conekta-v2.2.0; format=application/json
                 type: string
         "422":
           content:
@@ -13066,6 +13066,12 @@ components:
           example: 0
           nullable: true
           type: integer
+        max_retries:
+          example: 3
+          type: integer
+        retry_delay_hours:
+          example: 48
+          type: integer
       title: plan_response
       type: object
     shipping_order_response:
@@ -14237,6 +14243,18 @@ components:
         trial_period_days:
           description: The number of days the customer will have a free trial.
           example: 0
+          type: integer
+        max_retries:
+          description: (optional) Specifies the maximum number of retry attempts for
+            a subscription payment before it is canceled.
+          example: 3
+          minimum: 3
+          type: integer
+        retry_delay_hours:
+          description: (optional)  Defines the number of hours between subscription
+            payment retry attempts.
+          example: 50
+          minimum: 48
           type: integer
       required:
       - amount

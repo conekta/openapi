@@ -7,7 +7,7 @@ get:
     200:
       description: successful
       content:
-        application/vnd.conekta-v2.1.0+json:
+        application/vnd.conekta-v2.2.0+json:
           schema:
             $ref: '../../schemas/plans/plan_response.yml'
       headers:
@@ -34,7 +34,7 @@ get:
         Conekta-Media-Type:
           schema:
             type: string
-            example: conekta-v2.1.0; format=application/json
+            example: conekta-v2.2.0; format=application/json
     422:
      $ref: '../errors/422.yml'
     401:
@@ -58,7 +58,7 @@ put:
     200:
       description: successful
       content:
-        application/vnd.conekta-v2.1.0+json:
+        application/vnd.conekta-v2.2.0+json:
           schema:
             $ref: '../../schemas/plans/plan_response.yml'
       headers:
@@ -85,7 +85,7 @@ put:
         Conekta-Media-Type:
           schema:
             type: string
-            example: conekta-v2.1.0; format=application/json
+            example: conekta-v2.2.0; format=application/json
     422:
      $ref: '../errors/422.yml'
     401:
@@ -111,7 +111,7 @@ delete:
     200:
       description: successful
       content:
-        application/vnd.conekta-v2.1.0+json:
+        application/vnd.conekta-v2.2.0+json:
           schema:
             $ref: '../../schemas/plans/plan_response.yml'
       headers:
@@ -138,7 +138,7 @@ delete:
         Conekta-Media-Type:
           schema:
             type: string
-            example: conekta-v2.1.0; format=application/json
+            example: conekta-v2.2.0; format=application/json
     422:
      $ref: '../errors/422.yml'
     401:
