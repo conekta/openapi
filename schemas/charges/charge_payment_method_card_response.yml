@@ -47,3 +47,7 @@ payment_method_card:
           type: string
           example: "Fulanito Perez"
           description: "Name of the cardholder"
+        customer_ip_address:
+          type: string
+          example: "0.0.0.0"
+          description: "Optional field used to capture the customer's IP address for fraud prevention and security monitoring purposes"

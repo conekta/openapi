@@ -45,6 +45,10 @@ properties:
             type: string
             description: "Optional id sent to indicate the bank contract for recurrent card charges."
             example: "S781317595"
+          customer_ip_address:
+            type: string
+            description: "Optional field used to capture the customer's IP address for fraud prevention and security monitoring purposes"
+            example: "0.0.0.0"  
   reference_id:
     description: "Custom reference to add to the charge"
     type: string
