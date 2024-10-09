@@ -1,0 +1,7 @@
+in: query
+name: "last_payment_info.status"
+description: "Filters by last payment info status"
+required: false
+schema:
+  type: string
+  example: "pending_payment"

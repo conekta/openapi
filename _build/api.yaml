@@ -1299,7 +1299,7 @@ paths:
                 type: string
         "422":
           content:
-            application/vnd.conekta-v2.1.0+json:
+            application/vnd.conekta-v2.2.0+json:
               example:
                 details:
                 - debug_message: The "custom_field" parameter is not allowed
@@ -1313,7 +1313,7 @@ paths:
           description: whitelist validation error
         "404":
           content:
-            application/vnd.conekta-v2.1.0+json:
+            application/vnd.conekta-v2.2.0+json:
               example:
                 details:
                 - message: The resource was not found.
@@ -1329,7 +1329,7 @@ paths:
           description: not found entity
         "500":
           content:
-            application/vnd.conekta-v2.1.0+json:
+            application/vnd.conekta-v2.2.0+json:
               example:
                 details:
                 - debug_message: There was a runtime error and Conekta engineers have
@@ -3682,6 +3682,60 @@ paths:
         required: false
         schema:
           type: string
+      - description: Filters by order status
+        in: query
+        name: payment_status
+        required: false
+        schema:
+          example: paid
+          type: string
+      - description: Filters by last payment info status
+        in: query
+        name: last_payment_info.status
+        required: false
+        schema:
+          example: pending_payment
+          type: string
+      - description: created equal to
+        in: query
+        name: created_at
+        required: false
+        schema:
+          example: 1612137600
+          format: int64
+          type: integer
+      - description: created at greater than or equal to
+        in: query
+        name: created_at.gte
+        required: false
+        schema:
+          example: 1612137600
+          format: int64
+          type: integer
+      - description: created at less than or equal to
+        in: query
+        name: created_at.lte
+        required: false
+        schema:
+          example: 1612137600
+          format: int64
+          type: integer
+      - description: updated at greater than or equal to
+        in: query
+        name: updated_at.gte
+        required: false
+        schema:
+          example: 1612137600
+          format: int64
+          type: integer
+      - description: updated at less than or equal to
+        in: query
+        name: updated_at.lte
+        required: false
+        schema:
+          example: 1612137600
+          format: int64
+          type: integer
       responses:
         "200":
           content:
@@ -4934,7 +4988,7 @@ paths:
           description: successful operation
         "401":
           content:
-            application/vnd.conekta-v2.1.0+json:
+            application/vnd.conekta-v2.2.0+json:
               example:
                 details:
                 - message: Please include your access key in your request.
@@ -4948,7 +5002,7 @@ paths:
           description: authentication error
         "500":
           content:
-            application/vnd.conekta-v2.1.0+json:
+            application/vnd.conekta-v2.2.0+json:
               example:
                 details:
                 - debug_message: There was a runtime error and Conekta engineers have
@@ -5000,7 +5054,7 @@ paths:
           description: successful operation
         "422":
           content:
-            application/vnd.conekta-v2.1.0+json:
+            application/vnd.conekta-v2.2.0+json:
               example:
                 details:
                 - message: The token does not exist.
@@ -5015,7 +5069,7 @@ paths:
           description: parameter validation error
         "401":
           content:
-            application/vnd.conekta-v2.1.0+json:
+            application/vnd.conekta-v2.2.0+json:
               example:
                 details:
                 - message: Please include your access key in your request.
@@ -5029,7 +5083,7 @@ paths:
           description: authentication error
         "402":
           content:
-            application/vnd.conekta-v2.1.0+json:
+            application/vnd.conekta-v2.2.0+json:
               example:
                 details:
                 - message: The card could not be processed.
@@ -5043,7 +5097,7 @@ paths:
           description: payment required error
         "404":
           content:
-            application/vnd.conekta-v2.1.0+json:
+            application/vnd.conekta-v2.2.0+json:
               example:
                 details:
                 - message: The resource was not found.
@@ -5059,7 +5113,7 @@ paths:
           description: not found entity
         "500":
           content:
-            application/vnd.conekta-v2.1.0+json:
+            application/vnd.conekta-v2.2.0+json:
               example:
                 details:
                 - debug_message: There was a runtime error and Conekta engineers have
@@ -5118,7 +5172,7 @@ paths:
           description: successful operation
         "401":
           content:
-            application/vnd.conekta-v2.1.0+json:
+            application/vnd.conekta-v2.2.0+json:
               example:
                 details:
                 - message: Please include your access key in your request.
@@ -5132,7 +5186,7 @@ paths:
           description: authentication error
         "404":
           content:
-            application/vnd.conekta-v2.1.0+json:
+            application/vnd.conekta-v2.2.0+json:
               example:
                 details:
                 - message: The resource was not found.
@@ -5148,7 +5202,7 @@ paths:
           description: not found entity
         "500":
           content:
-            application/vnd.conekta-v2.1.0+json:
+            application/vnd.conekta-v2.2.0+json:
               example:
                 details:
                 - debug_message: There was a runtime error and Conekta engineers have
@@ -11358,6 +11412,67 @@ components:
       required: true
       schema:
         type: string
+    payment_status:
+      description: Filters by order status
+      in: query
+      name: payment_status
+      required: false
+      schema:
+        example: paid
+        type: string
+    last_payment_infostatus:
+      description: Filters by last payment info status
+      in: query
+      name: last_payment_info.status
+      required: false
+      schema:
+        example: pending_payment
+        type: string
+    created_at:
+      description: created equal to
+      in: query
+      name: created_at
+      required: false
+      schema:
+        example: 1612137600
+        format: int64
+        type: integer
+    created_at_gte:
+      description: created at greater than or equal to
+      in: query
+      name: created_at.gte
+      required: false
+      schema:
+        example: 1612137600
+        format: int64
+        type: integer
+    created_at_lte:
+      description: created at less than or equal to
+      in: query
+      name: created_at.lte
+      required: false
+      schema:
+        example: 1612137600
+        format: int64
+        type: integer
+    updated_at_gte:
+      description: updated at greater than or equal to
+      in: query
+      name: updated_at.gte
+      required: false
+      schema:
+        example: 1612137600
+        format: int64
+        type: integer
+    updated_at_lte:
+      description: updated at less than or equal to
+      in: query
+      name: updated_at.lte
+      required: false
+      schema:
+        example: 1612137600
+        format: int64
+        type: integer
     line_items_id:
       description: identifier
       example: line_item_2tQ8HkkfbauaKP9Ho
@@ -12085,17 +12200,24 @@ components:
             es sospechoso.
           type: string
         id:
+          description: Charge ID
           example: 63efa757cf65380001aec040
           type: string
         livemode:
+          description: Whether the charge was made in live mode or not
+          example: false
           type: boolean
         object:
+          example: charge
           type: string
         order_id:
+          description: Order ID
           example: ord_2tN73UdUSNrYRPD9r
           type: string
         paid_at:
+          description: Payment date
           example: 1676390742
+          format: int64
           nullable: true
           type: integer
         payment_method:
@@ -12953,6 +13075,12 @@ components:
           example: 0
           nullable: true
           type: integer
+        max_retries:
+          example: 3
+          type: integer
+        retry_delay_hours:
+          example: 48
+          type: integer
       title: plan_response
       type: object
     shipping_order_response:
@@ -13025,6 +13153,11 @@ components:
           format: int64
           nullable: true
           type: integer
+        canceled_reason:
+          description: Reason for cancellation. This field appears when the subscription
+            status is 'canceled'.
+          example: user_cancelation
+          type: string
         card_id:
           example: src_2tKcHxhTz7xU5SymL
           type: string
@@ -13470,6 +13603,7 @@ components:
       description: The charges to be made
       properties:
         amount:
+          description: Amount to be charged in cents
           example: 40000
           type: integer
         payment_method:
@@ -13734,7 +13868,7 @@ components:
           type: string
         return_url:
           description: Indicates the redirection callback upon completion of the 3DS2
-            flow.
+            flow. Do not use this parameter if your order has a checkout parameter
           example: https://my-website.com
           format: uri
           type: string
@@ -13831,8 +13965,8 @@ components:
           maxLength: 250
           type: string
         metadata:
-          additionalProperties:
-            type: string
+          additionalProperties: true
+          default: {}
           description: It is a key/value hash that can hold custom fields. Maximum
             100 elements and allows special characters.
           example:
@@ -13991,6 +14125,9 @@ components:
             format: int8
             type: integer
           type: array
+        three_ds_mode:
+          description: "Indicates the 3DS2 mode for the order, either smart or strict."
+          type: string
         name:
           description: Reason for charge
           example: Payment Link Name 1594138857
@@ -14030,7 +14167,7 @@ components:
       - type
       title: checkout_request
       type: object
-    payment_method_card_request:
+    payment_method_token_request:
       allOf:
       - $ref: '#/components/schemas/customer_payment_method_request'
       - properties:
@@ -14043,7 +14180,7 @@ components:
         required:
         - token_id
         type: object
-      title: payment_method_card_request
+      title: payment_method_token_request
     payment_method_cash_request:
       allOf:
       - $ref: '#/components/schemas/customer_payment_method_request'
@@ -14116,6 +14253,18 @@ components:
         trial_period_days:
           description: The number of days the customer will have a free trial.
           example: 0
+          type: integer
+        max_retries:
+          description: (optional) Specifies the maximum number of retry attempts for
+            a subscription payment before it is canceled.
+          example: 3
+          minimum: 3
+          type: integer
+        retry_delay_hours:
+          description: (optional)  Defines the number of hours between subscription
+            payment retry attempts.
+          example: 50
+          minimum: 48
           type: integer
       required:
       - amount
@@ -14437,12 +14586,14 @@ components:
       - description: use for card responses
         properties:
           account_type:
+            description: Account type of the card
             example: Credit
             type: string
           auth_code:
             example: "867372"
             type: string
           brand:
+            description: Brand of the card
             example: visa
             type: string
           contract_id:
@@ -14450,24 +14601,30 @@ components:
             example: S781317595
             type: string
           country:
+            description: Country of the card
             example: MX
             type: string
           exp_month:
+            description: Expiration month of the card
             example: "02"
             type: string
           exp_year:
-            example: "30"
+            description: Expiration year of the card
+            example: "2026"
             type: string
           fraud_indicators:
             items: {}
             type: array
           issuer:
+            description: Issuer of the card
             example: BANAMEX
             type: string
           last4:
+            description: Last 4 digits of the card
             example: "4242"
             type: string
           name:
+            description: Name of the cardholder
             example: Fulanito Perez
             type: string
         title: charge_data_payment_method_card_response
@@ -14717,6 +14874,44 @@ components:
       - object
       - type
       type: object
+    payment_method_card_request:
+      allOf:
+      - $ref: '#/components/schemas/customer_payment_method_request'
+      - properties:
+          cvc:
+            description: Card security code
+            example: "198"
+            maxLength: 4
+            minLength: 3
+            type: string
+          exp_month:
+            description: Card expiration month
+            example: "12"
+            maxLength: 2
+            minLength: 2
+            type: string
+          exp_year:
+            description: Card expiration year
+            example: "2025"
+            maxLength: 4
+            minLength: 4
+            type: string
+          name:
+            description: Cardholder name
+            example: John Doe
+            type: string
+          number:
+            description: Card number
+            example: "4242424242424242"
+            type: string
+        required:
+        - cvc
+        - exp_month
+        - exp_year
+        - name
+        - number
+        type: object
+      title: payment_method_card_request
     checkout_request:
       description: |
         [Checkout](https://developers.conekta.com/v2.1.0/reference/payment-link) details
@@ -15121,6 +15316,7 @@ components:
     orderRefund_request:
       properties:
         amount:
+          description: Amount to be refunded in cents
           example: 500
           type: integer
         expires_at:
@@ -15129,6 +15325,7 @@ components:
           nullable: true
           type: integer
         reason:
+          description: Reason for the refund
           example: suspected_fraud
           type: string
       required:
@@ -15203,7 +15400,7 @@ components:
       description: Contains details of the payment methods that the customer has active
         or has used in Conekta
       oneOf:
-      - $ref: '#/components/schemas/payment_method_card_request'
+      - $ref: '#/components/schemas/payment_method_token_request'
       - $ref: '#/components/schemas/payment_method_cash_request'
       - $ref: '#/components/schemas/payment_method_spei_request'
     create_customer_payment_methods_response:
@@ -16201,7 +16398,7 @@ components:
           type: string
       title: transfer_destination_response
       type: object
-    charge_request_payment_method:
+    payment_method_general_request:
       description: |
         Payment method used in the charge. Go to the [payment methods](https://developers.conekta.com/reference/m%C3%A9todos-de-pago) section for more details
       properties:
@@ -16216,6 +16413,7 @@ components:
           format: int8
           type: integer
         type:
+          description: Type of payment method
           example: card
           type: string
         token_id:
@@ -16224,6 +16422,11 @@ components:
         payment_source_id:
           example: src_2tLkkyfMPh6v7pFry
           type: string
+        cvc:
+          description: "Optional, It is a value that allows identifying the security\
+            \ code of the card. Only for PCI merchants"
+          example: "123"
+          type: string
         contract_id:
           description: Optional id sent to indicate the bank contract for recurrent
             card charges.
@@ -16231,7 +16434,13 @@ components:
           type: string
       required:
       - type
+      title: payment_method_general_request
       type: object
+    charge_request_payment_method:
+      oneOf:
+      - $ref: '#/components/schemas/payment_method_card_request'
+      - $ref: '#/components/schemas/payment_method_general_request'
+      title: charge_request_payment_method
     customer_antifraud_info:
       nullable: true
       properties:
@@ -16246,7 +16455,7 @@ components:
       type: object
     customer_payment_methods_request:
       oneOf:
-      - $ref: '#/components/schemas/payment_method_card_request'
+      - $ref: '#/components/schemas/payment_method_token_request'
       - $ref: '#/components/schemas/payment_method_cash_request'
       - $ref: '#/components/schemas/payment_method_spei_request'
       title: customer_payment_methods_request
