@@ -43,17 +43,24 @@ properties:
   id: 
     type: string
     example: "63efa757cf65380001aec040"
+    description: "Charge ID"
   livemode:
     type: boolean
+    example: false
+    description: "Whether the charge was made in live mode or not"
   object:
     type: string
+    example: "charge"
   order_id:
     type: string
     example: "ord_2tN73UdUSNrYRPD9r"
+    description: "Order ID"
   paid_at:
     type: integer
+    format: int64
     example: 1676390742
     nullable: true
+    description: "Payment date"
   payment_method:
     title: charge_response_payment_method
     oneOf:

@@ -17,6 +17,10 @@ properties:
     example: 1678258162
     format: int64
     nullable: true
+  canceled_reason:
+    type: string
+    example: "user_cancelation"
+    description: "Reason for cancellation. This field appears when the subscription status is 'canceled'."
   card_id:
     type: string
     example: "src_2tKcHxhTz7xU5SymL"

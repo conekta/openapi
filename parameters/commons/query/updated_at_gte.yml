@@ -1,0 +1,8 @@
+in: query
+name: "updated_at.gte"
+description: "updated at greater than or equal to"
+required: false
+schema:
+  type: integer
+  example: 1612137600
+  format: int64

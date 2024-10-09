@@ -3,9 +3,35 @@ allOf:
   - $ref: './customer_payment_method_request.yml'
   - type: object
     required:
-        - token_id
+        - cvc
+        - name
+        - number
+        - exp_month
+        - exp_year
     properties:
-      token_id:
+      cvc:
         type: string
-        example: "tok_32hj4g234as"
-        description: Token id that will be used to create a "card" type payment method. See the (subscriptions)[https://developers.conekta.com/v2.1.0/reference/createsubscription] tutorial for more information on how to tokenize cards.
+        example: "198"
+        description: "Card security code"
+        maxLength: 4
+        minLength: 3
+      exp_month:
+        type: string
+        example: "12"
+        description: "Card expiration month"
+        maxLength: 2
+        minLength: 2
+      exp_year:
+        type: string
+        example: "2025"
+        description: "Card expiration year"
+        maxLength: 4
+        minLength: 4
+      name:
+        type: string
+        example: "John Doe"
+        description: "Cardholder name"
+      number:
+        type: string
+        example: "4242424242424242"
+        description: "Card number"

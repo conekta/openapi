@@ -1,0 +1,11 @@
+title: payment_method_token_request
+allOf:
+  - $ref: './customer_payment_method_request.yml'
+  - type: object
+    required:
+      - token_id
+    properties:
+      token_id:
+        type: string
+        example: "tok_32hj4g234as"
+        description: Token id that will be used to create a "card" type payment method. See the (subscriptions)[https://developers.conekta.com/v2.1.0/reference/createsubscription] tutorial for more information on how to tokenize cards.
