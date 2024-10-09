@@ -41,13 +41,13 @@ paths:
       responses:
         "200":
           content:
-            application/vnd.conekta-v2.2.0+json:
+            application/vnd.conekta-v2.1.0+json:
               schema:
                 $ref: '#/components/schemas/risk_rules_list'
           description: All the rules
         "401":
           content:
-            application/vnd.conekta-v2.2.0+json:
+            application/vnd.conekta-v2.1.0+json:
               example:
                 details:
                 - message: Please include your access key in your request.
@@ -61,7 +61,7 @@ paths:
           description: authentication error
         "403":
           content:
-            application/vnd.conekta-v2.2.0+json:
+            application/vnd.conekta-v2.1.0+json:
               example:
                 details:
                 - message: "Unauthorized access service, please contact support team"
@@ -76,7 +76,7 @@ paths:
           description: forbidden error
         "500":
           content:
-            application/vnd.conekta-v2.2.0+json:
+            application/vnd.conekta-v2.1.0+json:
               example:
                 details:
                 - debug_message: There was a runtime error and Conekta engineers have
@@ -122,13 +122,13 @@ paths:
       responses:
         "200":
           content:
-            application/vnd.conekta-v2.2.0+json:
+            application/vnd.conekta-v2.1.0+json:
               schema:
                 $ref: '#/components/schemas/whitelistlist_rule_response'
           description: successfully registered rule
         "401":
           content:
-            application/vnd.conekta-v2.2.0+json:
+            application/vnd.conekta-v2.1.0+json:
               example:
                 details:
                 - message: Please include your access key in your request.
@@ -142,7 +142,7 @@ paths:
           description: authentication error
         "403":
           content:
-            application/vnd.conekta-v2.2.0+json:
+            application/vnd.conekta-v2.1.0+json:
               example:
                 details:
                 - message: "Unauthorized access service, please contact support team"
@@ -157,7 +157,7 @@ paths:
           description: forbidden error
         "500":
           content:
-            application/vnd.conekta-v2.2.0+json:
+            application/vnd.conekta-v2.1.0+json:
               example:
                 details:
                 - debug_message: There was a runtime error and Conekta engineers have
@@ -214,13 +214,13 @@ paths:
       responses:
         "200":
           content:
-            application/vnd.conekta-v2.2.0+json:
+            application/vnd.conekta-v2.1.0+json:
               schema:
                 $ref: '#/components/schemas/deleted_whitelist_rule_response'
           description: successfully deleted rule
         "401":
           content:
-            application/vnd.conekta-v2.2.0+json:
+            application/vnd.conekta-v2.1.0+json:
               example:
                 details:
                 - message: Please include your access key in your request.
@@ -234,7 +234,7 @@ paths:
           description: authentication error
         "403":
           content:
-            application/vnd.conekta-v2.2.0+json:
+            application/vnd.conekta-v2.1.0+json:
               example:
                 details:
                 - message: "Unauthorized access service, please contact support team"
@@ -249,7 +249,7 @@ paths:
           description: forbidden error
         "404":
           content:
-            application/vnd.conekta-v2.2.0+json:
+            application/vnd.conekta-v2.1.0+json:
               example:
                 details:
                 - message: The resource was not found.
@@ -265,7 +265,7 @@ paths:
           description: not found entity
         "500":
           content:
-            application/vnd.conekta-v2.2.0+json:
+            application/vnd.conekta-v2.1.0+json:
               example:
                 details:
                 - debug_message: There was a runtime error and Conekta engineers have
@@ -308,13 +308,13 @@ paths:
       responses:
         "200":
           content:
-            application/vnd.conekta-v2.2.0+json:
+            application/vnd.conekta-v2.1.0+json:
               schema:
                 $ref: '#/components/schemas/risk_rules_list'
           description: All the rules
         "401":
           content:
-            application/vnd.conekta-v2.2.0+json:
+            application/vnd.conekta-v2.1.0+json:
               example:
                 details:
                 - message: Please include your access key in your request.
@@ -328,7 +328,7 @@ paths:
           description: authentication error
         "500":
           content:
-            application/vnd.conekta-v2.2.0+json:
+            application/vnd.conekta-v2.1.0+json:
               example:
                 details:
                 - debug_message: There was a runtime error and Conekta engineers have
@@ -376,13 +376,13 @@ paths:
       responses:
         "200":
           content:
-            application/vnd.conekta-v2.2.0+json:
+            application/vnd.conekta-v2.1.0+json:
               schema:
                 $ref: '#/components/schemas/blacklist_rule_response'
           description: successfully registered rule
         "401":
           content:
-            application/vnd.conekta-v2.2.0+json:
+            application/vnd.conekta-v2.1.0+json:
               example:
                 details:
                 - message: Please include your access key in your request.
@@ -396,7 +396,7 @@ paths:
           description: authentication error
         "500":
           content:
-            application/vnd.conekta-v2.2.0+json:
+            application/vnd.conekta-v2.1.0+json:
               example:
                 details:
                 - debug_message: There was a runtime error and Conekta engineers have
@@ -453,13 +453,13 @@ paths:
       responses:
         "200":
           content:
-            application/vnd.conekta-v2.2.0+json:
+            application/vnd.conekta-v2.1.0+json:
               schema:
                 $ref: '#/components/schemas/deleted_blacklist_rule_response'
           description: successfully deleted rule
         "401":
           content:
-            application/vnd.conekta-v2.2.0+json:
+            application/vnd.conekta-v2.1.0+json:
               example:
                 details:
                 - message: Please include your access key in your request.
@@ -473,7 +473,7 @@ paths:
           description: authentication error
         "404":
           content:
-            application/vnd.conekta-v2.2.0+json:
+            application/vnd.conekta-v2.1.0+json:
               example:
                 details:
                 - message: The resource was not found.
@@ -489,7 +489,7 @@ paths:
           description: not found entity
         "500":
           content:
-            application/vnd.conekta-v2.2.0+json:
+            application/vnd.conekta-v2.1.0+json:
               example:
                 details:
                 - debug_message: There was a runtime error and Conekta engineers have
@@ -568,7 +568,7 @@ paths:
       responses:
         "200":
           content:
-            application/vnd.conekta-v2.2.0+json:
+            application/vnd.conekta-v2.1.0+json:
               schema:
                 $ref: '#/components/schemas/get_api_keys_response'
           description: successful
@@ -584,7 +584,7 @@ paths:
                 type: string
         "401":
           content:
-            application/vnd.conekta-v2.2.0+json:
+            application/vnd.conekta-v2.1.0+json:
               example:
                 details:
                 - message: Please include your access key in your request.
@@ -598,7 +598,7 @@ paths:
           description: authentication error
         "500":
           content:
-            application/vnd.conekta-v2.2.0+json:
+            application/vnd.conekta-v2.1.0+json:
               example:
                 details:
                 - debug_message: There was a runtime error and Conekta engineers have
@@ -652,7 +652,7 @@ paths:
       responses:
         "200":
           content:
-            application/vnd.conekta-v2.2.0+json:
+            application/vnd.conekta-v2.1.0+json:
               schema:
                 $ref: '#/components/schemas/api_key_create_response'
           description: successful operation
@@ -668,7 +668,7 @@ paths:
                 type: string
         "401":
           content:
-            application/vnd.conekta-v2.2.0+json:
+            application/vnd.conekta-v2.1.0+json:
               example:
                 details:
                 - message: Please include your access key in your request.
@@ -682,7 +682,7 @@ paths:
           description: authentication error
         "422":
           content:
-            application/vnd.conekta-v2.2.0+json:
+            application/vnd.conekta-v2.1.0+json:
               example:
                 details:
                 - message: The token does not exist.
@@ -697,7 +697,7 @@ paths:
           description: parameter validation error
         "500":
           content:
-            application/vnd.conekta-v2.2.0+json:
+            application/vnd.conekta-v2.1.0+json:
               example:
                 details:
                 - debug_message: There was a runtime error and Conekta engineers have
@@ -749,7 +749,7 @@ paths:
       responses:
         "200":
           content:
-            application/vnd.conekta-v2.2.0+json:
+            application/vnd.conekta-v2.1.0+json:
               schema:
                 $ref: '#/components/schemas/delete_api_keys_response'
           description: successful
@@ -765,7 +765,7 @@ paths:
                 type: string
         "401":
           content:
-            application/vnd.conekta-v2.2.0+json:
+            application/vnd.conekta-v2.1.0+json:
               example:
                 details:
                 - message: Please include your access key in your request.
@@ -779,7 +779,7 @@ paths:
           description: authentication error
         "404":
           content:
-            application/vnd.conekta-v2.2.0+json:
+            application/vnd.conekta-v2.1.0+json:
               example:
                 details:
                 - message: The resource was not found.
@@ -795,7 +795,7 @@ paths:
           description: not found entity
         "500":
           content:
-            application/vnd.conekta-v2.2.0+json:
+            application/vnd.conekta-v2.1.0+json:
               example:
                 details:
                 - debug_message: There was a runtime error and Conekta engineers have
@@ -854,7 +854,7 @@ paths:
       responses:
         "200":
           content:
-            application/vnd.conekta-v2.2.0+json:
+            application/vnd.conekta-v2.1.0+json:
               schema:
                 $ref: '#/components/schemas/api_key_response'
           description: successful
@@ -870,7 +870,7 @@ paths:
                 type: string
         "401":
           content:
-            application/vnd.conekta-v2.2.0+json:
+            application/vnd.conekta-v2.1.0+json:
               example:
                 details:
                 - message: Please include your access key in your request.
@@ -884,7 +884,7 @@ paths:
           description: authentication error
         "404":
           content:
-            application/vnd.conekta-v2.2.0+json:
+            application/vnd.conekta-v2.1.0+json:
               example:
                 details:
                 - message: The resource was not found.
@@ -900,7 +900,7 @@ paths:
           description: not found entity
         "500":
           content:
-            application/vnd.conekta-v2.2.0+json:
+            application/vnd.conekta-v2.1.0+json:
               example:
                 details:
                 - debug_message: There was a runtime error and Conekta engineers have
@@ -956,13 +956,13 @@ paths:
       responses:
         "200":
           content:
-            application/vnd.conekta-v2.2.0+json:
+            application/vnd.conekta-v2.1.0+json:
               schema:
                 $ref: '#/components/schemas/api_key_response'
           description: successful operation
         "404":
           content:
-            application/vnd.conekta-v2.2.0+json:
+            application/vnd.conekta-v2.1.0+json:
               example:
                 details:
                 - message: The resource was not found.
@@ -978,7 +978,7 @@ paths:
           description: not found entity
         "401":
           content:
-            application/vnd.conekta-v2.2.0+json:
+            application/vnd.conekta-v2.1.0+json:
               example:
                 details:
                 - message: Please include your access key in your request.
@@ -992,7 +992,7 @@ paths:
           description: authentication error
         "500":
           content:
-            application/vnd.conekta-v2.2.0+json:
+            application/vnd.conekta-v2.1.0+json:
               example:
                 details:
                 - debug_message: There was a runtime error and Conekta engineers have
@@ -1068,7 +1068,7 @@ paths:
                 type: string
         "401":
           content:
-            application/vnd.conekta-v2.2.0+json:
+            application/vnd.conekta-v2.1.0+json:
               example:
                 details:
                 - message: Please include your access key in your request.
@@ -1082,7 +1082,7 @@ paths:
           description: authentication error
         "500":
           content:
-            application/vnd.conekta-v2.2.0+json:
+            application/vnd.conekta-v2.1.0+json:
               example:
                 details:
                 - debug_message: There was a runtime error and Conekta engineers have
@@ -1162,7 +1162,7 @@ paths:
       responses:
         "200":
           content:
-            application/vnd.conekta-v2.2.0+json:
+            application/vnd.conekta-v2.1.0+json:
               schema:
                 $ref: '#/components/schemas/get_charges_response'
           description: successful
@@ -1193,7 +1193,7 @@ paths:
                 type: string
         "422":
           content:
-            application/vnd.conekta-v2.2.0+json:
+            application/vnd.conekta-v2.1.0+json:
               example:
                 details:
                 - debug_message: The "custom_field" parameter is not allowed
@@ -1207,7 +1207,7 @@ paths:
           description: whitelist validation error
         "500":
           content:
-            application/vnd.conekta-v2.2.0+json:
+            application/vnd.conekta-v2.1.0+json:
               example:
                 details:
                 - debug_message: There was a runtime error and Conekta engineers have
@@ -1299,7 +1299,7 @@ paths:
                 type: string
         "422":
           content:
-            application/vnd.conekta-v2.2.0+json:
+            application/vnd.conekta-v2.1.0+json:
               example:
                 details:
                 - debug_message: The "custom_field" parameter is not allowed
@@ -1313,7 +1313,7 @@ paths:
           description: whitelist validation error
         "404":
           content:
-            application/vnd.conekta-v2.2.0+json:
+            application/vnd.conekta-v2.1.0+json:
               example:
                 details:
                 - message: The resource was not found.
@@ -1329,7 +1329,7 @@ paths:
           description: not found entity
         "500":
           content:
-            application/vnd.conekta-v2.2.0+json:
+            application/vnd.conekta-v2.1.0+json:
               example:
                 details:
                 - debug_message: There was a runtime error and Conekta engineers have
@@ -1391,13 +1391,13 @@ paths:
       responses:
         "200":
           content:
-            application/vnd.conekta-v2.2.0+json:
+            application/vnd.conekta-v2.1.0+json:
               schema:
                 $ref: '#/components/schemas/charge_order_response'
           description: successful
         "401":
           content:
-            application/vnd.conekta-v2.2.0+json:
+            application/vnd.conekta-v2.1.0+json:
               example:
                 details:
                 - message: Please include your access key in your request.
@@ -1411,7 +1411,7 @@ paths:
           description: authentication error
         "404":
           content:
-            application/vnd.conekta-v2.2.0+json:
+            application/vnd.conekta-v2.1.0+json:
               example:
                 details:
                 - message: The resource was not found.
@@ -1427,7 +1427,7 @@ paths:
           description: not found entity
         "428":
           content:
-            application/vnd.conekta-v2.2.0+json:
+            application/vnd.conekta-v2.1.0+json:
               example:
                 details:
                 - debug_message: The order cannot be modified because it has already
@@ -1444,7 +1444,7 @@ paths:
           description: Precondition Required
         "500":
           content:
-            application/vnd.conekta-v2.2.0+json:
+            application/vnd.conekta-v2.1.0+json:
               example:
                 details:
                 - debug_message: There was a runtime error and Conekta engineers have
@@ -1518,7 +1518,7 @@ paths:
       responses:
         "200":
           content:
-            application/vnd.conekta-v2.2.0+json:
+            application/vnd.conekta-v2.1.0+json:
               schema:
                 $ref: '#/components/schemas/get_companies_response'
           description: successful
@@ -1549,7 +1549,7 @@ paths:
                 type: string
         "401":
           content:
-            application/vnd.conekta-v2.2.0+json:
+            application/vnd.conekta-v2.1.0+json:
               example:
                 details:
                 - message: Please include your access key in your request.
@@ -1563,7 +1563,7 @@ paths:
           description: authentication error
         "500":
           content:
-            application/vnd.conekta-v2.2.0+json:
+            application/vnd.conekta-v2.1.0+json:
               example:
                 details:
                 - debug_message: There was a runtime error and Conekta engineers have
@@ -1614,7 +1614,7 @@ paths:
       responses:
         "200":
           content:
-            application/vnd.conekta-v2.2.0+json:
+            application/vnd.conekta-v2.1.0+json:
               schema:
                 $ref: '#/components/schemas/company_response'
           description: successful
@@ -1645,7 +1645,7 @@ paths:
                 type: string
         "401":
           content:
-            application/vnd.conekta-v2.2.0+json:
+            application/vnd.conekta-v2.1.0+json:
               example:
                 details:
                 - message: Please include your access key in your request.
@@ -1659,7 +1659,7 @@ paths:
           description: authentication error
         "404":
           content:
-            application/vnd.conekta-v2.2.0+json:
+            application/vnd.conekta-v2.1.0+json:
               example:
                 details:
                 - message: The resource was not found.
@@ -1675,7 +1675,7 @@ paths:
           description: not found entity
         "500":
           content:
-            application/vnd.conekta-v2.2.0+json:
+            application/vnd.conekta-v2.1.0+json:
               example:
                 details:
                 - debug_message: There was a runtime error and Conekta engineers have
@@ -1758,7 +1758,7 @@ paths:
       responses:
         "200":
           content:
-            application/vnd.conekta-v2.2.0+json:
+            application/vnd.conekta-v2.1.0+json:
               schema:
                 $ref: '#/components/schemas/customers_response'
           description: successful operation
@@ -1789,7 +1789,7 @@ paths:
                 type: string
         "401":
           content:
-            application/vnd.conekta-v2.2.0+json:
+            application/vnd.conekta-v2.1.0+json:
               example:
                 details:
                 - message: Please include your access key in your request.
@@ -1803,7 +1803,7 @@ paths:
           description: authentication error
         "500":
           content:
-            application/vnd.conekta-v2.2.0+json:
+            application/vnd.conekta-v2.1.0+json:
               example:
                 details:
                 - debug_message: There was a runtime error and Conekta engineers have
@@ -1859,7 +1859,7 @@ paths:
       responses:
         "200":
           content:
-            application/vnd.conekta-v2.2.0+json:
+            application/vnd.conekta-v2.1.0+json:
               schema:
                 $ref: '#/components/schemas/customer_response'
           description: successful operation
@@ -1890,7 +1890,7 @@ paths:
                 type: string
         "401":
           content:
-            application/vnd.conekta-v2.2.0+json:
+            application/vnd.conekta-v2.1.0+json:
               example:
                 details:
                 - message: Please include your access key in your request.
@@ -1904,7 +1904,7 @@ paths:
           description: authentication error
         "402":
           content:
-            application/vnd.conekta-v2.2.0+json:
+            application/vnd.conekta-v2.1.0+json:
               example:
                 details:
                 - message: The card could not be processed.
@@ -1918,7 +1918,7 @@ paths:
           description: payment required error
         "422":
           content:
-            application/vnd.conekta-v2.2.0+json:
+            application/vnd.conekta-v2.1.0+json:
               example:
                 details:
                 - message: The token does not exist.
@@ -1933,7 +1933,7 @@ paths:
           description: parameter validation error
         "500":
           content:
-            application/vnd.conekta-v2.2.0+json:
+            application/vnd.conekta-v2.1.0+json:
               example:
                 details:
                 - debug_message: There was a runtime error and Conekta engineers have
@@ -1993,13 +1993,13 @@ paths:
       responses:
         "200":
           content:
-            application/vnd.conekta-v2.2.0+json:
+            application/vnd.conekta-v2.1.0+json:
               schema:
                 $ref: '#/components/schemas/customer_response'
           description: successful operation
         "422":
           content:
-            application/vnd.conekta-v2.2.0+json:
+            application/vnd.conekta-v2.1.0+json:
               example:
                 details:
                 - message: The token does not exist.
@@ -2014,7 +2014,7 @@ paths:
           description: parameter validation error
         "401":
           content:
-            application/vnd.conekta-v2.2.0+json:
+            application/vnd.conekta-v2.1.0+json:
               example:
                 details:
                 - message: Please include your access key in your request.
@@ -2028,7 +2028,7 @@ paths:
           description: authentication error
         "404":
           content:
-            application/vnd.conekta-v2.2.0+json:
+            application/vnd.conekta-v2.1.0+json:
               example:
                 details:
                 - message: The resource was not found.
@@ -2044,7 +2044,7 @@ paths:
           description: not found entity
         "500":
           content:
-            application/vnd.conekta-v2.2.0+json:
+            application/vnd.conekta-v2.1.0+json:
               example:
                 details:
                 - debug_message: There was a runtime error and Conekta engineers have
@@ -2103,13 +2103,13 @@ paths:
       responses:
         "200":
           content:
-            application/vnd.conekta-v2.2.0+json:
+            application/vnd.conekta-v2.1.0+json:
               schema:
                 $ref: '#/components/schemas/customer_response'
           description: successful operation
         "401":
           content:
-            application/vnd.conekta-v2.2.0+json:
+            application/vnd.conekta-v2.1.0+json:
               example:
                 details:
                 - message: Please include your access key in your request.
@@ -2123,7 +2123,7 @@ paths:
           description: authentication error
         "404":
           content:
-            application/vnd.conekta-v2.2.0+json:
+            application/vnd.conekta-v2.1.0+json:
               example:
                 details:
                 - message: The resource was not found.
@@ -2139,7 +2139,7 @@ paths:
           description: not found entity
         "500":
           content:
-            application/vnd.conekta-v2.2.0+json:
+            application/vnd.conekta-v2.1.0+json:
               example:
                 details:
                 - debug_message: There was a runtime error and Conekta engineers have
@@ -2200,13 +2200,13 @@ paths:
       responses:
         "200":
           content:
-            application/vnd.conekta-v2.2.0+json:
+            application/vnd.conekta-v2.1.0+json:
               schema:
                 $ref: '#/components/schemas/customer_response'
           description: successful operation
         "401":
           content:
-            application/vnd.conekta-v2.2.0+json:
+            application/vnd.conekta-v2.1.0+json:
               example:
                 details:
                 - message: Please include your access key in your request.
@@ -2220,7 +2220,7 @@ paths:
           description: authentication error
         "402":
           content:
-            application/vnd.conekta-v2.2.0+json:
+            application/vnd.conekta-v2.1.0+json:
               example:
                 details:
                 - message: The card could not be processed.
@@ -2234,7 +2234,7 @@ paths:
           description: payment required error
         "422":
           content:
-            application/vnd.conekta-v2.2.0+json:
+            application/vnd.conekta-v2.1.0+json:
               example:
                 details:
                 - message: The token does not exist.
@@ -2249,7 +2249,7 @@ paths:
           description: parameter validation error
         "500":
           content:
-            application/vnd.conekta-v2.2.0+json:
+            application/vnd.conekta-v2.1.0+json:
               example:
                 details:
                 - debug_message: There was a runtime error and Conekta engineers have
@@ -2311,13 +2311,13 @@ paths:
       responses:
         "200":
           content:
-            application/vnd.conekta-v2.2.0+json:
+            application/vnd.conekta-v2.1.0+json:
               schema:
                 $ref: '#/components/schemas/create_customer_fiscal_entities_response'
           description: successful operation
         "401":
           content:
-            application/vnd.conekta-v2.2.0+json:
+            application/vnd.conekta-v2.1.0+json:
               example:
                 details:
                 - message: Please include your access key in your request.
@@ -2331,7 +2331,7 @@ paths:
           description: authentication error
         "404":
           content:
-            application/vnd.conekta-v2.2.0+json:
+            application/vnd.conekta-v2.1.0+json:
               example:
                 details:
                 - message: The resource was not found.
@@ -2347,7 +2347,7 @@ paths:
           description: not found entity
         "422":
           content:
-            application/vnd.conekta-v2.2.0+json:
+            application/vnd.conekta-v2.1.0+json:
               example:
                 details:
                 - message: The token does not exist.
@@ -2362,7 +2362,7 @@ paths:
           description: parameter validation error
         "500":
           content:
-            application/vnd.conekta-v2.2.0+json:
+            application/vnd.conekta-v2.1.0+json:
               example:
                 details:
                 - debug_message: There was a runtime error and Conekta engineers have
@@ -2431,13 +2431,13 @@ paths:
       responses:
         "200":
           content:
-            application/vnd.conekta-v2.2.0+json:
+            application/vnd.conekta-v2.1.0+json:
               schema:
                 $ref: '#/components/schemas/update_customer_fiscal_entities_response'
           description: successful operation
         "401":
           content:
-            application/vnd.conekta-v2.2.0+json:
+            application/vnd.conekta-v2.1.0+json:
               example:
                 details:
                 - message: Please include your access key in your request.
@@ -2451,7 +2451,7 @@ paths:
           description: authentication error
         "404":
           content:
-            application/vnd.conekta-v2.2.0+json:
+            application/vnd.conekta-v2.1.0+json:
               example:
                 details:
                 - message: The resource was not found.
@@ -2467,7 +2467,7 @@ paths:
           description: not found entity
         "422":
           content:
-            application/vnd.conekta-v2.2.0+json:
+            application/vnd.conekta-v2.1.0+json:
               example:
                 details:
                 - message: The token does not exist.
@@ -2482,7 +2482,7 @@ paths:
           description: parameter validation error
         "500":
           content:
-            application/vnd.conekta-v2.2.0+json:
+            application/vnd.conekta-v2.1.0+json:
               example:
                 details:
                 - debug_message: There was a runtime error and Conekta engineers have
@@ -2576,7 +2576,7 @@ paths:
           description: successful
         "401":
           content:
-            application/vnd.conekta-v2.2.0+json:
+            application/vnd.conekta-v2.1.0+json:
               example:
                 details:
                 - message: Please include your access key in your request.
@@ -2590,7 +2590,7 @@ paths:
           description: authentication error
         "500":
           content:
-            application/vnd.conekta-v2.2.0+json:
+            application/vnd.conekta-v2.1.0+json:
               example:
                 details:
                 - debug_message: There was a runtime error and Conekta engineers have
@@ -2651,13 +2651,13 @@ paths:
       responses:
         "200":
           content:
-            application/vnd.conekta-v2.2.0+json:
+            application/vnd.conekta-v2.1.0+json:
               schema:
                 $ref: '#/components/schemas/discount_lines_response'
           description: successful
         "401":
           content:
-            application/vnd.conekta-v2.2.0+json:
+            application/vnd.conekta-v2.1.0+json:
               example:
                 details:
                 - message: Please include your access key in your request.
@@ -2671,7 +2671,7 @@ paths:
           description: authentication error
         "404":
           content:
-            application/vnd.conekta-v2.2.0+json:
+            application/vnd.conekta-v2.1.0+json:
               example:
                 details:
                 - message: The resource was not found.
@@ -2687,7 +2687,7 @@ paths:
           description: not found entity
         "500":
           content:
-            application/vnd.conekta-v2.2.0+json:
+            application/vnd.conekta-v2.1.0+json:
               example:
                 details:
                 - debug_message: There was a runtime error and Conekta engineers have
@@ -2754,13 +2754,13 @@ paths:
       responses:
         "200":
           content:
-            application/vnd.conekta-v2.2.0+json:
+            application/vnd.conekta-v2.1.0+json:
               schema:
                 $ref: '#/components/schemas/discount_lines_response'
           description: successful
         "401":
           content:
-            application/vnd.conekta-v2.2.0+json:
+            application/vnd.conekta-v2.1.0+json:
               example:
                 details:
                 - message: Please include your access key in your request.
@@ -2774,7 +2774,7 @@ paths:
           description: authentication error
         "404":
           content:
-            application/vnd.conekta-v2.2.0+json:
+            application/vnd.conekta-v2.1.0+json:
               example:
                 details:
                 - message: The resource was not found.
@@ -2790,7 +2790,7 @@ paths:
           description: not found entity
         "422":
           content:
-            application/vnd.conekta-v2.2.0+json:
+            application/vnd.conekta-v2.1.0+json:
               example:
                 details:
                 - message: The token does not exist.
@@ -2805,7 +2805,7 @@ paths:
           description: parameter validation error
         "500":
           content:
-            application/vnd.conekta-v2.2.0+json:
+            application/vnd.conekta-v2.1.0+json:
               example:
                 details:
                 - debug_message: There was a runtime error and Conekta engineers have
@@ -2877,7 +2877,7 @@ paths:
           description: successful
         "401":
           content:
-            application/vnd.conekta-v2.2.0+json:
+            application/vnd.conekta-v2.1.0+json:
               example:
                 details:
                 - message: Please include your access key in your request.
@@ -2891,7 +2891,7 @@ paths:
           description: authentication error
         "404":
           content:
-            application/vnd.conekta-v2.2.0+json:
+            application/vnd.conekta-v2.1.0+json:
               example:
                 details:
                 - message: The resource was not found.
@@ -2907,7 +2907,7 @@ paths:
           description: not found entity
         "422":
           content:
-            application/vnd.conekta-v2.2.0+json:
+            application/vnd.conekta-v2.1.0+json:
               example:
                 details:
                 - message: The token does not exist.
@@ -2922,7 +2922,7 @@ paths:
           description: parameter validation error
         "500":
           content:
-            application/vnd.conekta-v2.2.0+json:
+            application/vnd.conekta-v2.1.0+json:
               example:
                 details:
                 - debug_message: There was a runtime error and Conekta engineers have
@@ -2990,13 +2990,13 @@ paths:
       responses:
         "200":
           content:
-            application/vnd.conekta-v2.2.0+json:
+            application/vnd.conekta-v2.1.0+json:
               schema:
                 $ref: '#/components/schemas/discount_lines_response'
           description: successful
         "401":
           content:
-            application/vnd.conekta-v2.2.0+json:
+            application/vnd.conekta-v2.1.0+json:
               example:
                 details:
                 - message: Please include your access key in your request.
@@ -3010,7 +3010,7 @@ paths:
           description: authentication error
         "404":
           content:
-            application/vnd.conekta-v2.2.0+json:
+            application/vnd.conekta-v2.1.0+json:
               example:
                 details:
                 - message: The resource was not found.
@@ -3026,7 +3026,7 @@ paths:
           description: not found entity
         "422":
           content:
-            application/vnd.conekta-v2.2.0+json:
+            application/vnd.conekta-v2.1.0+json:
               example:
                 details:
                 - message: The token does not exist.
@@ -3041,7 +3041,7 @@ paths:
           description: parameter validation error
         "500":
           content:
-            application/vnd.conekta-v2.2.0+json:
+            application/vnd.conekta-v2.1.0+json:
               example:
                 details:
                 - debug_message: There was a runtime error and Conekta engineers have
@@ -3121,7 +3121,7 @@ paths:
       responses:
         "200":
           content:
-            application/vnd.conekta-v2.2.0+json:
+            application/vnd.conekta-v2.1.0+json:
               schema:
                 $ref: '#/components/schemas/get_events_response'
           description: successful
@@ -3152,7 +3152,7 @@ paths:
                 type: string
         "401":
           content:
-            application/vnd.conekta-v2.2.0+json:
+            application/vnd.conekta-v2.1.0+json:
               example:
                 details:
                 - message: Please include your access key in your request.
@@ -3166,7 +3166,7 @@ paths:
           description: authentication error
         "500":
           content:
-            application/vnd.conekta-v2.2.0+json:
+            application/vnd.conekta-v2.1.0+json:
               example:
                 details:
                 - debug_message: There was a runtime error and Conekta engineers have
@@ -3226,7 +3226,7 @@ paths:
       responses:
         "200":
           content:
-            application/vnd.conekta-v2.2.0+json:
+            application/vnd.conekta-v2.1.0+json:
               schema:
                 $ref: '#/components/schemas/event_response'
           description: successful
@@ -3257,7 +3257,7 @@ paths:
                 type: string
         "401":
           content:
-            application/vnd.conekta-v2.2.0+json:
+            application/vnd.conekta-v2.1.0+json:
               example:
                 details:
                 - message: Please include your access key in your request.
@@ -3271,7 +3271,7 @@ paths:
           description: authentication error
         "404":
           content:
-            application/vnd.conekta-v2.2.0+json:
+            application/vnd.conekta-v2.1.0+json:
               example:
                 details:
                 - message: The resource was not found.
@@ -3287,7 +3287,7 @@ paths:
           description: not found entity
         "500":
           content:
-            application/vnd.conekta-v2.2.0+json:
+            application/vnd.conekta-v2.1.0+json:
               example:
                 details:
                 - debug_message: There was a runtime error and Conekta engineers have
@@ -3307,15 +3307,22 @@ paths:
       summary: Get Event
       tags:
       - Events
-  /events/{event_id}/resend:
+  /events/{event_id}/webhook_logs/{webhook_log_id}/resend:
     post:
-      description: Resend event to selected webhooks
+      description: Try to send an event
       operationId: resendEvent
       parameters:
       - description: event identifier
         example: 6463d6e35a4c3e001819e760
         in: path
         name: event_id
+        required: true
+        schema:
+          type: string
+      - description: webhook log identifier
+        example: webhl_2tsv6NzWJHBWCkqGt
+        in: path
+        name: webhook_log_id
         required: true
         schema:
           type: string
@@ -3336,23 +3343,16 @@ paths:
           - es
           - en
           type: string
-      requestBody:
-        content:
-          application/json:
-            schema:
-              $ref: '#/components/schemas/resend_request'
-        description: requested fields for resend an event
-        required: true
       responses:
         "200":
           content:
-            application/vnd.conekta-v2.2.0+json:
+            application/vnd.conekta-v2.1.0+json:
               schema:
                 $ref: '#/components/schemas/events_resend_response'
           description: successful operation
         "401":
           content:
-            application/vnd.conekta-v2.2.0+json:
+            application/vnd.conekta-v2.1.0+json:
               example:
                 details:
                 - message: Please include your access key in your request.
@@ -3366,7 +3366,7 @@ paths:
           description: authentication error
         "404":
           content:
-            application/vnd.conekta-v2.2.0+json:
+            application/vnd.conekta-v2.1.0+json:
               example:
                 details:
                 - message: The resource was not found.
@@ -3382,7 +3382,7 @@ paths:
           description: not found entity
         "500":
           content:
-            application/vnd.conekta-v2.2.0+json:
+            application/vnd.conekta-v2.1.0+json:
               example:
                 details:
                 - debug_message: There was a runtime error and Conekta engineers have
@@ -3463,7 +3463,7 @@ paths:
       responses:
         "200":
           content:
-            application/vnd.conekta-v2.2.0+json:
+            application/vnd.conekta-v2.1.0+json:
               schema:
                 $ref: '#/components/schemas/logs_response'
           description: successful
@@ -3494,7 +3494,7 @@ paths:
                 type: string
         "401":
           content:
-            application/vnd.conekta-v2.2.0+json:
+            application/vnd.conekta-v2.1.0+json:
               example:
                 details:
                 - message: Please include your access key in your request.
@@ -3508,7 +3508,7 @@ paths:
           description: authentication error
         "500":
           content:
-            application/vnd.conekta-v2.2.0+json:
+            application/vnd.conekta-v2.1.0+json:
               example:
                 details:
                 - debug_message: There was a runtime error and Conekta engineers have
@@ -3568,13 +3568,13 @@ paths:
       responses:
         "200":
           content:
-            application/vnd.conekta-v2.2.0+json:
+            application/vnd.conekta-v2.1.0+json:
               schema:
                 $ref: '#/components/schemas/log_response'
           description: successful
         "401":
           content:
-            application/vnd.conekta-v2.2.0+json:
+            application/vnd.conekta-v2.1.0+json:
               example:
                 details:
                 - message: Please include your access key in your request.
@@ -3588,7 +3588,7 @@ paths:
           description: authentication error
         "404":
           content:
-            application/vnd.conekta-v2.2.0+json:
+            application/vnd.conekta-v2.1.0+json:
               example:
                 details:
                 - message: The resource was not found.
@@ -3604,7 +3604,7 @@ paths:
           description: not found entity
         "500":
           content:
-            application/vnd.conekta-v2.2.0+json:
+            application/vnd.conekta-v2.1.0+json:
               example:
                 details:
                 - debug_message: There was a runtime error and Conekta engineers have
@@ -3739,13 +3739,13 @@ paths:
       responses:
         "200":
           content:
-            application/vnd.conekta-v2.2.0+json:
+            application/vnd.conekta-v2.1.0+json:
               schema:
                 $ref: '#/components/schemas/get_orders_response'
           description: successful operation
         "401":
           content:
-            application/vnd.conekta-v2.2.0+json:
+            application/vnd.conekta-v2.1.0+json:
               example:
                 details:
                 - message: Please include your access key in your request.
@@ -3759,7 +3759,7 @@ paths:
           description: authentication error
         "500":
           content:
-            application/vnd.conekta-v2.2.0+json:
+            application/vnd.conekta-v2.1.0+json:
               example:
                 details:
                 - debug_message: There was a runtime error and Conekta engineers have
@@ -3813,7 +3813,7 @@ paths:
       responses:
         "200":
           content:
-            application/vnd.conekta-v2.2.0+json:
+            application/vnd.conekta-v2.1.0+json:
               examples:
                 cash:
                   $ref: '#/components/examples/order_cash'
@@ -3824,7 +3824,7 @@ paths:
           description: successful operation
         "422":
           content:
-            application/vnd.conekta-v2.2.0+json:
+            application/vnd.conekta-v2.1.0+json:
               example:
                 details:
                 - message: The token does not exist.
@@ -3839,7 +3839,7 @@ paths:
           description: parameter validation error
         "401":
           content:
-            application/vnd.conekta-v2.2.0+json:
+            application/vnd.conekta-v2.1.0+json:
               example:
                 details:
                 - message: Please include your access key in your request.
@@ -3853,7 +3853,7 @@ paths:
           description: authentication error
         "402":
           content:
-            application/vnd.conekta-v2.2.0+json:
+            application/vnd.conekta-v2.1.0+json:
               example:
                 details:
                 - message: The card could not be processed.
@@ -3867,7 +3867,7 @@ paths:
           description: payment required error
         "500":
           content:
-            application/vnd.conekta-v2.2.0+json:
+            application/vnd.conekta-v2.1.0+json:
               example:
                 details:
                 - debug_message: There was a runtime error and Conekta engineers have
@@ -3927,13 +3927,13 @@ paths:
       responses:
         "200":
           content:
-            application/vnd.conekta-v2.2.0+json:
+            application/vnd.conekta-v2.1.0+json:
               schema:
                 $ref: '#/components/schemas/order_response'
           description: successful
         "401":
           content:
-            application/vnd.conekta-v2.2.0+json:
+            application/vnd.conekta-v2.1.0+json:
               example:
                 details:
                 - message: Please include your access key in your request.
@@ -3947,7 +3947,7 @@ paths:
           description: authentication error
         "404":
           content:
-            application/vnd.conekta-v2.2.0+json:
+            application/vnd.conekta-v2.1.0+json:
               example:
                 details:
                 - message: The resource was not found.
@@ -3963,7 +3963,7 @@ paths:
           description: not found entity
         "500":
           content:
-            application/vnd.conekta-v2.2.0+json:
+            application/vnd.conekta-v2.1.0+json:
               example:
                 details:
                 - debug_message: There was a runtime error and Conekta engineers have
@@ -4016,13 +4016,13 @@ paths:
       responses:
         "200":
           content:
-            application/vnd.conekta-v2.2.0+json:
+            application/vnd.conekta-v2.1.0+json:
               schema:
                 $ref: '#/components/schemas/order_response'
           description: successful
         "401":
           content:
-            application/vnd.conekta-v2.2.0+json:
+            application/vnd.conekta-v2.1.0+json:
               example:
                 details:
                 - message: Please include your access key in your request.
@@ -4036,7 +4036,7 @@ paths:
           description: authentication error
         "404":
           content:
-            application/vnd.conekta-v2.2.0+json:
+            application/vnd.conekta-v2.1.0+json:
               example:
                 details:
                 - message: The resource was not found.
@@ -4052,7 +4052,7 @@ paths:
           description: not found entity
         "422":
           content:
-            application/vnd.conekta-v2.2.0+json:
+            application/vnd.conekta-v2.1.0+json:
               example:
                 details:
                 - message: The token does not exist.
@@ -4067,7 +4067,7 @@ paths:
           description: parameter validation error
         "500":
           content:
-            application/vnd.conekta-v2.2.0+json:
+            application/vnd.conekta-v2.1.0+json:
               example:
                 details:
                 - debug_message: There was a runtime error and Conekta engineers have
@@ -4127,13 +4127,13 @@ paths:
       responses:
         "200":
           content:
-            application/vnd.conekta-v2.2.0+json:
+            application/vnd.conekta-v2.1.0+json:
               schema:
                 $ref: '#/components/schemas/order_response'
           description: successful
         "401":
           content:
-            application/vnd.conekta-v2.2.0+json:
+            application/vnd.conekta-v2.1.0+json:
               example:
                 details:
                 - message: Please include your access key in your request.
@@ -4147,7 +4147,7 @@ paths:
           description: authentication error
         "402":
           content:
-            application/vnd.conekta-v2.2.0+json:
+            application/vnd.conekta-v2.1.0+json:
               example:
                 details:
                 - message: The card could not be processed.
@@ -4161,7 +4161,7 @@ paths:
           description: payment required error
         "404":
           content:
-            application/vnd.conekta-v2.2.0+json:
+            application/vnd.conekta-v2.1.0+json:
               example:
                 details:
                 - message: The resource was not found.
@@ -4177,7 +4177,7 @@ paths:
           description: not found entity
         "428":
           content:
-            application/vnd.conekta-v2.2.0+json:
+            application/vnd.conekta-v2.1.0+json:
               example:
                 details:
                 - debug_message: The order cannot be modified because it has already
@@ -4194,7 +4194,7 @@ paths:
           description: Precondition Required
         "500":
           content:
-            application/vnd.conekta-v2.2.0+json:
+            application/vnd.conekta-v2.1.0+json:
               example:
                 details:
                 - debug_message: There was a runtime error and Conekta engineers have
@@ -4260,13 +4260,13 @@ paths:
       responses:
         "200":
           content:
-            application/vnd.conekta-v2.2.0+json:
+            application/vnd.conekta-v2.1.0+json:
               schema:
                 $ref: '#/components/schemas/order_response'
           description: successful
         "401":
           content:
-            application/vnd.conekta-v2.2.0+json:
+            application/vnd.conekta-v2.1.0+json:
               example:
                 details:
                 - message: Please include your access key in your request.
@@ -4280,7 +4280,7 @@ paths:
           description: authentication error
         "404":
           content:
-            application/vnd.conekta-v2.2.0+json:
+            application/vnd.conekta-v2.1.0+json:
               example:
                 details:
                 - message: The resource was not found.
@@ -4296,7 +4296,7 @@ paths:
           description: not found entity
         "428":
           content:
-            application/vnd.conekta-v2.2.0+json:
+            application/vnd.conekta-v2.1.0+json:
               example:
                 details:
                 - debug_message: The order cannot be modified because it has already
@@ -4313,7 +4313,7 @@ paths:
           description: Precondition Required
         "500":
           content:
-            application/vnd.conekta-v2.2.0+json:
+            application/vnd.conekta-v2.1.0+json:
               example:
                 details:
                 - debug_message: There was a runtime error and Conekta engineers have
@@ -4375,13 +4375,13 @@ paths:
       responses:
         "200":
           content:
-            application/vnd.conekta-v2.2.0+json:
+            application/vnd.conekta-v2.1.0+json:
               schema:
                 $ref: '#/components/schemas/product_order_response'
           description: successful
         "401":
           content:
-            application/vnd.conekta-v2.2.0+json:
+            application/vnd.conekta-v2.1.0+json:
               example:
                 details:
                 - message: Please include your access key in your request.
@@ -4395,7 +4395,7 @@ paths:
           description: authentication error
         "404":
           content:
-            application/vnd.conekta-v2.2.0+json:
+            application/vnd.conekta-v2.1.0+json:
               example:
                 details:
                 - message: The resource was not found.
@@ -4411,7 +4411,7 @@ paths:
           description: not found entity
         "500":
           content:
-            application/vnd.conekta-v2.2.0+json:
+            application/vnd.conekta-v2.1.0+json:
               example:
                 details:
                 - debug_message: There was a runtime error and Conekta engineers have
@@ -4478,13 +4478,13 @@ paths:
       responses:
         "200":
           content:
-            application/vnd.conekta-v2.2.0+json:
+            application/vnd.conekta-v2.1.0+json:
               schema:
                 $ref: '#/components/schemas/product_order_response'
           description: successful
         "401":
           content:
-            application/vnd.conekta-v2.2.0+json:
+            application/vnd.conekta-v2.1.0+json:
               example:
                 details:
                 - message: Please include your access key in your request.
@@ -4498,7 +4498,7 @@ paths:
           description: authentication error
         "422":
           content:
-            application/vnd.conekta-v2.2.0+json:
+            application/vnd.conekta-v2.1.0+json:
               example:
                 details:
                 - message: The token does not exist.
@@ -4513,7 +4513,7 @@ paths:
           description: parameter validation error
         "404":
           content:
-            application/vnd.conekta-v2.2.0+json:
+            application/vnd.conekta-v2.1.0+json:
               example:
                 details:
                 - message: The resource was not found.
@@ -4529,7 +4529,7 @@ paths:
           description: not found entity
         "500":
           content:
-            application/vnd.conekta-v2.2.0+json:
+            application/vnd.conekta-v2.1.0+json:
               example:
                 details:
                 - debug_message: There was a runtime error and Conekta engineers have
@@ -4597,13 +4597,13 @@ paths:
       responses:
         "200":
           content:
-            application/vnd.conekta-v2.2.0+json:
+            application/vnd.conekta-v2.1.0+json:
               schema:
                 $ref: '#/components/schemas/product_order_response'
           description: successful
         "401":
           content:
-            application/vnd.conekta-v2.2.0+json:
+            application/vnd.conekta-v2.1.0+json:
               example:
                 details:
                 - message: Please include your access key in your request.
@@ -4617,7 +4617,7 @@ paths:
           description: authentication error
         "422":
           content:
-            application/vnd.conekta-v2.2.0+json:
+            application/vnd.conekta-v2.1.0+json:
               example:
                 details:
                 - message: The token does not exist.
@@ -4632,7 +4632,7 @@ paths:
           description: parameter validation error
         "404":
           content:
-            application/vnd.conekta-v2.2.0+json:
+            application/vnd.conekta-v2.1.0+json:
               example:
                 details:
                 - message: The resource was not found.
@@ -4648,7 +4648,7 @@ paths:
           description: not found entity
         "500":
           content:
-            application/vnd.conekta-v2.2.0+json:
+            application/vnd.conekta-v2.1.0+json:
               example:
                 details:
                 - debug_message: There was a runtime error and Conekta engineers have
@@ -4711,13 +4711,13 @@ paths:
       responses:
         "200":
           content:
-            application/vnd.conekta-v2.2.0+json:
+            application/vnd.conekta-v2.1.0+json:
               schema:
                 $ref: '#/components/schemas/order_response'
           description: successful
         "401":
           content:
-            application/vnd.conekta-v2.2.0+json:
+            application/vnd.conekta-v2.1.0+json:
               example:
                 details:
                 - message: Please include your access key in your request.
@@ -4731,7 +4731,7 @@ paths:
           description: authentication error
         "402":
           content:
-            application/vnd.conekta-v2.2.0+json:
+            application/vnd.conekta-v2.1.0+json:
               example:
                 details:
                 - message: The card could not be processed.
@@ -4745,7 +4745,7 @@ paths:
           description: payment required error
         "404":
           content:
-            application/vnd.conekta-v2.2.0+json:
+            application/vnd.conekta-v2.1.0+json:
               example:
                 details:
                 - message: The resource was not found.
@@ -4761,7 +4761,7 @@ paths:
           description: not found entity
         "422":
           content:
-            application/vnd.conekta-v2.2.0+json:
+            application/vnd.conekta-v2.1.0+json:
               example:
                 details:
                 - message: The token does not exist.
@@ -4776,7 +4776,7 @@ paths:
           description: parameter validation error
         "500":
           content:
-            application/vnd.conekta-v2.2.0+json:
+            application/vnd.conekta-v2.1.0+json:
               example:
                 details:
                 - debug_message: There was a runtime error and Conekta engineers have
@@ -4844,13 +4844,13 @@ paths:
       responses:
         "200":
           content:
-            application/vnd.conekta-v2.2.0+json:
+            application/vnd.conekta-v2.1.0+json:
               schema:
                 $ref: '#/components/schemas/order_response'
           description: successful
         "401":
           content:
-            application/vnd.conekta-v2.2.0+json:
+            application/vnd.conekta-v2.1.0+json:
               example:
                 details:
                 - message: Please include your access key in your request.
@@ -4864,7 +4864,7 @@ paths:
           description: authentication error
         "402":
           content:
-            application/vnd.conekta-v2.2.0+json:
+            application/vnd.conekta-v2.1.0+json:
               example:
                 details:
                 - message: The card could not be processed.
@@ -4878,7 +4878,7 @@ paths:
           description: payment required error
         "404":
           content:
-            application/vnd.conekta-v2.2.0+json:
+            application/vnd.conekta-v2.1.0+json:
               example:
                 details:
                 - message: The resource was not found.
@@ -4894,7 +4894,7 @@ paths:
           description: not found entity
         "422":
           content:
-            application/vnd.conekta-v2.2.0+json:
+            application/vnd.conekta-v2.1.0+json:
               example:
                 details:
                 - message: The token does not exist.
@@ -4909,7 +4909,7 @@ paths:
           description: parameter validation error
         "500":
           content:
-            application/vnd.conekta-v2.2.0+json:
+            application/vnd.conekta-v2.1.0+json:
               example:
                 details:
                 - debug_message: There was a runtime error and Conekta engineers have
@@ -4988,7 +4988,7 @@ paths:
           description: successful operation
         "401":
           content:
-            application/vnd.conekta-v2.2.0+json:
+            application/vnd.conekta-v2.1.0+json:
               example:
                 details:
                 - message: Please include your access key in your request.
@@ -5002,7 +5002,7 @@ paths:
           description: authentication error
         "500":
           content:
-            application/vnd.conekta-v2.2.0+json:
+            application/vnd.conekta-v2.1.0+json:
               example:
                 details:
                 - debug_message: There was a runtime error and Conekta engineers have
@@ -5054,7 +5054,7 @@ paths:
           description: successful operation
         "422":
           content:
-            application/vnd.conekta-v2.2.0+json:
+            application/vnd.conekta-v2.1.0+json:
               example:
                 details:
                 - message: The token does not exist.
@@ -5069,7 +5069,7 @@ paths:
           description: parameter validation error
         "401":
           content:
-            application/vnd.conekta-v2.2.0+json:
+            application/vnd.conekta-v2.1.0+json:
               example:
                 details:
                 - message: Please include your access key in your request.
@@ -5083,7 +5083,7 @@ paths:
           description: authentication error
         "402":
           content:
-            application/vnd.conekta-v2.2.0+json:
+            application/vnd.conekta-v2.1.0+json:
               example:
                 details:
                 - message: The card could not be processed.
@@ -5097,7 +5097,7 @@ paths:
           description: payment required error
         "404":
           content:
-            application/vnd.conekta-v2.2.0+json:
+            application/vnd.conekta-v2.1.0+json:
               example:
                 details:
                 - message: The resource was not found.
@@ -5113,7 +5113,7 @@ paths:
           description: not found entity
         "500":
           content:
-            application/vnd.conekta-v2.2.0+json:
+            application/vnd.conekta-v2.1.0+json:
               example:
                 details:
                 - debug_message: There was a runtime error and Conekta engineers have
@@ -5172,7 +5172,7 @@ paths:
           description: successful operation
         "401":
           content:
-            application/vnd.conekta-v2.2.0+json:
+            application/vnd.conekta-v2.1.0+json:
               example:
                 details:
                 - message: Please include your access key in your request.
@@ -5186,7 +5186,7 @@ paths:
           description: authentication error
         "404":
           content:
-            application/vnd.conekta-v2.2.0+json:
+            application/vnd.conekta-v2.1.0+json:
               example:
                 details:
                 - message: The resource was not found.
@@ -5202,7 +5202,7 @@ paths:
           description: not found entity
         "500":
           content:
-            application/vnd.conekta-v2.2.0+json:
+            application/vnd.conekta-v2.1.0+json:
               example:
                 details:
                 - debug_message: There was a runtime error and Conekta engineers have
@@ -5283,7 +5283,7 @@ paths:
       responses:
         "200":
           content:
-            application/vnd.conekta-v2.2.0+json:
+            application/vnd.conekta-v2.1.0+json:
               schema:
                 $ref: '#/components/schemas/checkouts_response'
           description: successful operation
@@ -5314,7 +5314,7 @@ paths:
                 type: string
         "401":
           content:
-            application/vnd.conekta-v2.2.0+json:
+            application/vnd.conekta-v2.1.0+json:
               example:
                 details:
                 - message: Please include your access key in your request.
@@ -5328,7 +5328,7 @@ paths:
           description: authentication error
         "402":
           content:
-            application/vnd.conekta-v2.2.0+json:
+            application/vnd.conekta-v2.1.0+json:
               example:
                 details:
                 - message: The card could not be processed.
@@ -5342,7 +5342,7 @@ paths:
           description: payment required error
         "422":
           content:
-            application/vnd.conekta-v2.2.0+json:
+            application/vnd.conekta-v2.1.0+json:
               example:
                 details:
                 - message: The token does not exist.
@@ -5357,7 +5357,7 @@ paths:
           description: parameter validation error
         "500":
           content:
-            application/vnd.conekta-v2.2.0+json:
+            application/vnd.conekta-v2.1.0+json:
               example:
                 details:
                 - debug_message: There was a runtime error and Conekta engineers have
@@ -5410,7 +5410,7 @@ paths:
       responses:
         "200":
           content:
-            application/vnd.conekta-v2.2.0+json:
+            application/vnd.conekta-v2.1.0+json:
               schema:
                 $ref: '#/components/schemas/checkout_response'
           description: successful operation
@@ -5443,7 +5443,7 @@ paths:
                 type: string
         "401":
           content:
-            application/vnd.conekta-v2.2.0+json:
+            application/vnd.conekta-v2.1.0+json:
               example:
                 details:
                 - message: Please include your access key in your request.
@@ -5457,7 +5457,7 @@ paths:
           description: authentication error
         "402":
           content:
-            application/vnd.conekta-v2.2.0+json:
+            application/vnd.conekta-v2.1.0+json:
               example:
                 details:
                 - message: The card could not be processed.
@@ -5471,7 +5471,7 @@ paths:
           description: payment required error
         "422":
           content:
-            application/vnd.conekta-v2.2.0+json:
+            application/vnd.conekta-v2.1.0+json:
               example:
                 details:
                 - message: The token does not exist.
@@ -5486,7 +5486,7 @@ paths:
           description: parameter validation error
         "500":
           content:
-            application/vnd.conekta-v2.2.0+json:
+            application/vnd.conekta-v2.1.0+json:
               example:
                 details:
                 - debug_message: There was a runtime error and Conekta engineers have
@@ -5545,7 +5545,7 @@ paths:
       responses:
         "200":
           content:
-            application/vnd.conekta-v2.2.0+json:
+            application/vnd.conekta-v2.1.0+json:
               schema:
                 $ref: '#/components/schemas/checkout_response'
           description: successful operation
@@ -5576,7 +5576,7 @@ paths:
                 type: string
         "401":
           content:
-            application/vnd.conekta-v2.2.0+json:
+            application/vnd.conekta-v2.1.0+json:
               example:
                 details:
                 - message: Please include your access key in your request.
@@ -5590,7 +5590,7 @@ paths:
           description: authentication error
         "402":
           content:
-            application/vnd.conekta-v2.2.0+json:
+            application/vnd.conekta-v2.1.0+json:
               example:
                 details:
                 - message: The card could not be processed.
@@ -5604,7 +5604,7 @@ paths:
           description: payment required error
         "404":
           content:
-            application/vnd.conekta-v2.2.0+json:
+            application/vnd.conekta-v2.1.0+json:
               example:
                 details:
                 - message: The resource was not found.
@@ -5620,7 +5620,7 @@ paths:
           description: not found entity
         "422":
           content:
-            application/vnd.conekta-v2.2.0+json:
+            application/vnd.conekta-v2.1.0+json:
               example:
                 details:
                 - message: The token does not exist.
@@ -5635,7 +5635,7 @@ paths:
           description: parameter validation error
         "500":
           content:
-            application/vnd.conekta-v2.2.0+json:
+            application/vnd.conekta-v2.1.0+json:
               example:
                 details:
                 - debug_message: There was a runtime error and Conekta engineers have
@@ -5694,7 +5694,7 @@ paths:
       responses:
         "200":
           content:
-            application/vnd.conekta-v2.2.0+json:
+            application/vnd.conekta-v2.1.0+json:
               schema:
                 $ref: '#/components/schemas/checkout_response'
           description: successful operation
@@ -5725,7 +5725,7 @@ paths:
                 type: string
         "401":
           content:
-            application/vnd.conekta-v2.2.0+json:
+            application/vnd.conekta-v2.1.0+json:
               example:
                 details:
                 - message: Please include your access key in your request.
@@ -5739,7 +5739,7 @@ paths:
           description: authentication error
         "402":
           content:
-            application/vnd.conekta-v2.2.0+json:
+            application/vnd.conekta-v2.1.0+json:
               example:
                 details:
                 - message: The card could not be processed.
@@ -5753,7 +5753,7 @@ paths:
           description: payment required error
         "404":
           content:
-            application/vnd.conekta-v2.2.0+json:
+            application/vnd.conekta-v2.1.0+json:
               example:
                 details:
                 - message: The resource was not found.
@@ -5769,7 +5769,7 @@ paths:
           description: not found entity
         "422":
           content:
-            application/vnd.conekta-v2.2.0+json:
+            application/vnd.conekta-v2.1.0+json:
               example:
                 details:
                 - message: The token does not exist.
@@ -5784,7 +5784,7 @@ paths:
           description: parameter validation error
         "500":
           content:
-            application/vnd.conekta-v2.2.0+json:
+            application/vnd.conekta-v2.1.0+json:
               example:
                 details:
                 - debug_message: There was a runtime error and Conekta engineers have
@@ -5845,7 +5845,7 @@ paths:
       responses:
         "200":
           content:
-            application/vnd.conekta-v2.2.0+json:
+            application/vnd.conekta-v2.1.0+json:
               schema:
                 $ref: '#/components/schemas/checkout_response'
           description: successful operation
@@ -5876,7 +5876,7 @@ paths:
                 type: string
         "401":
           content:
-            application/vnd.conekta-v2.2.0+json:
+            application/vnd.conekta-v2.1.0+json:
               example:
                 details:
                 - message: Please include your access key in your request.
@@ -5890,7 +5890,7 @@ paths:
           description: authentication error
         "402":
           content:
-            application/vnd.conekta-v2.2.0+json:
+            application/vnd.conekta-v2.1.0+json:
               example:
                 details:
                 - message: The card could not be processed.
@@ -5904,7 +5904,7 @@ paths:
           description: payment required error
         "404":
           content:
-            application/vnd.conekta-v2.2.0+json:
+            application/vnd.conekta-v2.1.0+json:
               example:
                 details:
                 - message: The resource was not found.
@@ -5920,7 +5920,7 @@ paths:
           description: not found entity
         "422":
           content:
-            application/vnd.conekta-v2.2.0+json:
+            application/vnd.conekta-v2.1.0+json:
               example:
                 details:
                 - message: The token does not exist.
@@ -5935,7 +5935,7 @@ paths:
           description: parameter validation error
         "500":
           content:
-            application/vnd.conekta-v2.2.0+json:
+            application/vnd.conekta-v2.1.0+json:
               example:
                 details:
                 - debug_message: There was a runtime error and Conekta engineers have
@@ -5996,7 +5996,7 @@ paths:
       responses:
         "200":
           content:
-            application/vnd.conekta-v2.2.0+json:
+            application/vnd.conekta-v2.1.0+json:
               schema:
                 $ref: '#/components/schemas/checkout_response'
           description: successful operation
@@ -6027,7 +6027,7 @@ paths:
                 type: string
         "401":
           content:
-            application/vnd.conekta-v2.2.0+json:
+            application/vnd.conekta-v2.1.0+json:
               example:
                 details:
                 - message: Please include your access key in your request.
@@ -6041,7 +6041,7 @@ paths:
           description: authentication error
         "402":
           content:
-            application/vnd.conekta-v2.2.0+json:
+            application/vnd.conekta-v2.1.0+json:
               example:
                 details:
                 - message: The card could not be processed.
@@ -6055,7 +6055,7 @@ paths:
           description: payment required error
         "404":
           content:
-            application/vnd.conekta-v2.2.0+json:
+            application/vnd.conekta-v2.1.0+json:
               example:
                 details:
                 - message: The resource was not found.
@@ -6071,7 +6071,7 @@ paths:
           description: not found entity
         "422":
           content:
-            application/vnd.conekta-v2.2.0+json:
+            application/vnd.conekta-v2.1.0+json:
               example:
                 details:
                 - message: The token does not exist.
@@ -6086,7 +6086,7 @@ paths:
           description: parameter validation error
         "500":
           content:
-            application/vnd.conekta-v2.2.0+json:
+            application/vnd.conekta-v2.1.0+json:
               example:
                 details:
                 - debug_message: There was a runtime error and Conekta engineers have
@@ -6174,7 +6174,7 @@ paths:
       responses:
         "200":
           content:
-            application/vnd.conekta-v2.2.0+json:
+            application/vnd.conekta-v2.1.0+json:
               examples:
                 card:
                   summary: Card
@@ -6204,7 +6204,7 @@ paths:
           description: successful operation
         "401":
           content:
-            application/vnd.conekta-v2.2.0+json:
+            application/vnd.conekta-v2.1.0+json:
               example:
                 details:
                 - message: Please include your access key in your request.
@@ -6218,7 +6218,7 @@ paths:
           description: authentication error
         "404":
           content:
-            application/vnd.conekta-v2.2.0+json:
+            application/vnd.conekta-v2.1.0+json:
               example:
                 details:
                 - message: The resource was not found.
@@ -6234,7 +6234,7 @@ paths:
           description: not found entity
         "500":
           content:
-            application/vnd.conekta-v2.2.0+json:
+            application/vnd.conekta-v2.1.0+json:
               example:
                 details:
                 - debug_message: There was a runtime error and Conekta engineers have
@@ -6295,13 +6295,13 @@ paths:
       responses:
         "200":
           content:
-            application/vnd.conekta-v2.2.0+json:
+            application/vnd.conekta-v2.1.0+json:
               schema:
                 $ref: '#/components/schemas/create_customer_payment_methods_response'
           description: successful operation
         "401":
           content:
-            application/vnd.conekta-v2.2.0+json:
+            application/vnd.conekta-v2.1.0+json:
               example:
                 details:
                 - message: Please include your access key in your request.
@@ -6315,7 +6315,7 @@ paths:
           description: authentication error
         "404":
           content:
-            application/vnd.conekta-v2.2.0+json:
+            application/vnd.conekta-v2.1.0+json:
               example:
                 details:
                 - message: The resource was not found.
@@ -6331,7 +6331,7 @@ paths:
           description: not found entity
         "422":
           content:
-            application/vnd.conekta-v2.2.0+json:
+            application/vnd.conekta-v2.1.0+json:
               example:
                 details:
                 - message: The token does not exist.
@@ -6346,7 +6346,7 @@ paths:
           description: parameter validation error
         "500":
           content:
-            application/vnd.conekta-v2.2.0+json:
+            application/vnd.conekta-v2.1.0+json:
               example:
                 details:
                 - debug_message: There was a runtime error and Conekta engineers have
@@ -6413,13 +6413,13 @@ paths:
       responses:
         "200":
           content:
-            application/vnd.conekta-v2.2.0+json:
+            application/vnd.conekta-v2.1.0+json:
               schema:
                 $ref: '#/components/schemas/update_customer_payment_methods_response'
           description: successful operation
         "401":
           content:
-            application/vnd.conekta-v2.2.0+json:
+            application/vnd.conekta-v2.1.0+json:
               example:
                 details:
                 - message: Please include your access key in your request.
@@ -6433,7 +6433,7 @@ paths:
           description: authentication error
         "404":
           content:
-            application/vnd.conekta-v2.2.0+json:
+            application/vnd.conekta-v2.1.0+json:
               example:
                 details:
                 - message: The resource was not found.
@@ -6449,7 +6449,7 @@ paths:
           description: not found entity
         "422":
           content:
-            application/vnd.conekta-v2.2.0+json:
+            application/vnd.conekta-v2.1.0+json:
               example:
                 details:
                 - message: The token does not exist.
@@ -6464,7 +6464,7 @@ paths:
           description: parameter validation error
         "500":
           content:
-            application/vnd.conekta-v2.2.0+json:
+            application/vnd.conekta-v2.1.0+json:
               example:
                 details:
                 - debug_message: There was a runtime error and Conekta engineers have
@@ -6532,13 +6532,13 @@ paths:
       responses:
         "200":
           content:
-            application/vnd.conekta-v2.2.0+json:
+            application/vnd.conekta-v2.1.0+json:
               schema:
                 $ref: '#/components/schemas/update_customer_payment_methods_response'
           description: successful operation
         "401":
           content:
-            application/vnd.conekta-v2.2.0+json:
+            application/vnd.conekta-v2.1.0+json:
               example:
                 details:
                 - message: Please include your access key in your request.
@@ -6552,7 +6552,7 @@ paths:
           description: authentication error
         "404":
           content:
-            application/vnd.conekta-v2.2.0+json:
+            application/vnd.conekta-v2.1.0+json:
               example:
                 details:
                 - message: The resource was not found.
@@ -6568,7 +6568,7 @@ paths:
           description: not found entity
         "422":
           content:
-            application/vnd.conekta-v2.2.0+json:
+            application/vnd.conekta-v2.1.0+json:
               example:
                 details:
                 - message: The token does not exist.
@@ -6583,7 +6583,7 @@ paths:
           description: parameter validation error
         "500":
           content:
-            application/vnd.conekta-v2.2.0+json:
+            application/vnd.conekta-v2.1.0+json:
               example:
                 details:
                 - debug_message: There was a runtime error and Conekta engineers have
@@ -6663,7 +6663,7 @@ paths:
       responses:
         "200":
           content:
-            application/vnd.conekta-v2.2.0+json:
+            application/vnd.conekta-v2.1.0+json:
               schema:
                 $ref: '#/components/schemas/get_plans_response'
           description: successful
@@ -6694,7 +6694,7 @@ paths:
                 type: string
         "422":
           content:
-            application/vnd.conekta-v2.2.0+json:
+            application/vnd.conekta-v2.1.0+json:
               example:
                 details:
                 - message: The token does not exist.
@@ -6709,7 +6709,7 @@ paths:
           description: parameter validation error
         "401":
           content:
-            application/vnd.conekta-v2.2.0+json:
+            application/vnd.conekta-v2.1.0+json:
               example:
                 details:
                 - message: Please include your access key in your request.
@@ -6723,7 +6723,7 @@ paths:
           description: authentication error
         "500":
           content:
-            application/vnd.conekta-v2.2.0+json:
+            application/vnd.conekta-v2.1.0+json:
               example:
                 details:
                 - debug_message: There was a runtime error and Conekta engineers have
@@ -6777,7 +6777,7 @@ paths:
       responses:
         "200":
           content:
-            application/vnd.conekta-v2.2.0+json:
+            application/vnd.conekta-v2.1.0+json:
               schema:
                 $ref: '#/components/schemas/plan_response'
           description: successful
@@ -6808,7 +6808,7 @@ paths:
                 type: string
         "422":
           content:
-            application/vnd.conekta-v2.2.0+json:
+            application/vnd.conekta-v2.1.0+json:
               example:
                 details:
                 - message: The token does not exist.
@@ -6823,7 +6823,7 @@ paths:
           description: parameter validation error
         "401":
           content:
-            application/vnd.conekta-v2.2.0+json:
+            application/vnd.conekta-v2.1.0+json:
               example:
                 details:
                 - message: Please include your access key in your request.
@@ -6837,7 +6837,7 @@ paths:
           description: authentication error
         "500":
           content:
-            application/vnd.conekta-v2.2.0+json:
+            application/vnd.conekta-v2.1.0+json:
               example:
                 details:
                 - debug_message: There was a runtime error and Conekta engineers have
@@ -6888,7 +6888,7 @@ paths:
       responses:
         "200":
           content:
-            application/vnd.conekta-v2.2.0+json:
+            application/vnd.conekta-v2.1.0+json:
               schema:
                 $ref: '#/components/schemas/plan_response'
           description: successful
@@ -6919,7 +6919,7 @@ paths:
                 type: string
         "422":
           content:
-            application/vnd.conekta-v2.2.0+json:
+            application/vnd.conekta-v2.1.0+json:
               example:
                 details:
                 - message: The token does not exist.
@@ -6934,7 +6934,7 @@ paths:
           description: parameter validation error
         "401":
           content:
-            application/vnd.conekta-v2.2.0+json:
+            application/vnd.conekta-v2.1.0+json:
               example:
                 details:
                 - message: Please include your access key in your request.
@@ -6948,7 +6948,7 @@ paths:
           description: authentication error
         "404":
           content:
-            application/vnd.conekta-v2.2.0+json:
+            application/vnd.conekta-v2.1.0+json:
               example:
                 details:
                 - message: The resource was not found.
@@ -6964,7 +6964,7 @@ paths:
           description: not found entity
         "500":
           content:
-            application/vnd.conekta-v2.2.0+json:
+            application/vnd.conekta-v2.1.0+json:
               example:
                 details:
                 - debug_message: There was a runtime error and Conekta engineers have
@@ -7022,7 +7022,7 @@ paths:
       responses:
         "200":
           content:
-            application/vnd.conekta-v2.2.0+json:
+            application/vnd.conekta-v2.1.0+json:
               schema:
                 $ref: '#/components/schemas/plan_response'
           description: successful
@@ -7053,7 +7053,7 @@ paths:
                 type: string
         "422":
           content:
-            application/vnd.conekta-v2.2.0+json:
+            application/vnd.conekta-v2.1.0+json:
               example:
                 details:
                 - message: The token does not exist.
@@ -7068,7 +7068,7 @@ paths:
           description: parameter validation error
         "401":
           content:
-            application/vnd.conekta-v2.2.0+json:
+            application/vnd.conekta-v2.1.0+json:
               example:
                 details:
                 - message: Please include your access key in your request.
@@ -7082,7 +7082,7 @@ paths:
           description: authentication error
         "404":
           content:
-            application/vnd.conekta-v2.2.0+json:
+            application/vnd.conekta-v2.1.0+json:
               example:
                 details:
                 - message: The resource was not found.
@@ -7098,7 +7098,7 @@ paths:
           description: not found entity
         "500":
           content:
-            application/vnd.conekta-v2.2.0+json:
+            application/vnd.conekta-v2.1.0+json:
               example:
                 details:
                 - debug_message: There was a runtime error and Conekta engineers have
@@ -7158,7 +7158,7 @@ paths:
       responses:
         "200":
           content:
-            application/vnd.conekta-v2.2.0+json:
+            application/vnd.conekta-v2.1.0+json:
               schema:
                 $ref: '#/components/schemas/plan_response'
           description: successful
@@ -7189,7 +7189,7 @@ paths:
                 type: string
         "422":
           content:
-            application/vnd.conekta-v2.2.0+json:
+            application/vnd.conekta-v2.1.0+json:
               example:
                 details:
                 - message: The token does not exist.
@@ -7204,7 +7204,7 @@ paths:
           description: parameter validation error
         "401":
           content:
-            application/vnd.conekta-v2.2.0+json:
+            application/vnd.conekta-v2.1.0+json:
               example:
                 details:
                 - message: Please include your access key in your request.
@@ -7218,7 +7218,7 @@ paths:
           description: authentication error
         "404":
           content:
-            application/vnd.conekta-v2.2.0+json:
+            application/vnd.conekta-v2.1.0+json:
               example:
                 details:
                 - message: The resource was not found.
@@ -7234,7 +7234,7 @@ paths:
           description: not found entity
         "500":
           content:
-            application/vnd.conekta-v2.2.0+json:
+            application/vnd.conekta-v2.1.0+json:
               example:
                 details:
                 - debug_message: There was a runtime error and Conekta engineers have
@@ -7296,7 +7296,7 @@ paths:
       responses:
         "200":
           content:
-            application/vnd.conekta-v2.2.0+json:
+            application/vnd.conekta-v2.1.0+json:
               examples:
                 sucessfull:
                   $ref: '#/components/examples/shipping'
@@ -7305,7 +7305,7 @@ paths:
           description: successful
         "401":
           content:
-            application/vnd.conekta-v2.2.0+json:
+            application/vnd.conekta-v2.1.0+json:
               example:
                 details:
                 - message: Please include your access key in your request.
@@ -7319,7 +7319,7 @@ paths:
           description: authentication error
         "404":
           content:
-            application/vnd.conekta-v2.2.0+json:
+            application/vnd.conekta-v2.1.0+json:
               example:
                 details:
                 - message: The resource was not found.
@@ -7335,7 +7335,7 @@ paths:
           description: not found entity
         "500":
           content:
-            application/vnd.conekta-v2.2.0+json:
+            application/vnd.conekta-v2.1.0+json:
               example:
                 details:
                 - debug_message: There was a runtime error and Conekta engineers have
@@ -7402,13 +7402,13 @@ paths:
       responses:
         "200":
           content:
-            application/vnd.conekta-v2.2.0+json:
+            application/vnd.conekta-v2.1.0+json:
               schema:
                 $ref: '#/components/schemas/shipping_order_response'
           description: successful
         "401":
           content:
-            application/vnd.conekta-v2.2.0+json:
+            application/vnd.conekta-v2.1.0+json:
               example:
                 details:
                 - message: Please include your access key in your request.
@@ -7422,7 +7422,7 @@ paths:
           description: authentication error
         "404":
           content:
-            application/vnd.conekta-v2.2.0+json:
+            application/vnd.conekta-v2.1.0+json:
               example:
                 details:
                 - message: The resource was not found.
@@ -7438,7 +7438,7 @@ paths:
           description: not found entity
         "422":
           content:
-            application/vnd.conekta-v2.2.0+json:
+            application/vnd.conekta-v2.1.0+json:
               example:
                 details:
                 - message: The token does not exist.
@@ -7453,7 +7453,7 @@ paths:
           description: parameter validation error
         "428":
           content:
-            application/vnd.conekta-v2.2.0+json:
+            application/vnd.conekta-v2.1.0+json:
               example:
                 details:
                 - debug_message: The order cannot be modified because it has already
@@ -7470,7 +7470,7 @@ paths:
           description: Precondition Required
         "500":
           content:
-            application/vnd.conekta-v2.2.0+json:
+            application/vnd.conekta-v2.1.0+json:
               example:
                 details:
                 - debug_message: There was a runtime error and Conekta engineers have
@@ -7538,13 +7538,13 @@ paths:
       responses:
         "200":
           content:
-            application/vnd.conekta-v2.2.0+json:
+            application/vnd.conekta-v2.1.0+json:
               schema:
                 $ref: '#/components/schemas/shipping_order_response'
           description: successful
         "401":
           content:
-            application/vnd.conekta-v2.2.0+json:
+            application/vnd.conekta-v2.1.0+json:
               example:
                 details:
                 - message: Please include your access key in your request.
@@ -7558,7 +7558,7 @@ paths:
           description: authentication error
         "404":
           content:
-            application/vnd.conekta-v2.2.0+json:
+            application/vnd.conekta-v2.1.0+json:
               example:
                 details:
                 - message: The resource was not found.
@@ -7574,7 +7574,7 @@ paths:
           description: not found entity
         "422":
           content:
-            application/vnd.conekta-v2.2.0+json:
+            application/vnd.conekta-v2.1.0+json:
               example:
                 details:
                 - message: The token does not exist.
@@ -7589,7 +7589,7 @@ paths:
           description: parameter validation error
         "500":
           content:
-            application/vnd.conekta-v2.2.0+json:
+            application/vnd.conekta-v2.1.0+json:
               example:
                 details:
                 - debug_message: There was a runtime error and Conekta engineers have
@@ -7651,13 +7651,13 @@ paths:
       responses:
         "200":
           content:
-            application/vnd.conekta-v2.2.0+json:
+            application/vnd.conekta-v2.1.0+json:
               schema:
                 $ref: '#/components/schemas/customer_shipping_contacts_response'
           description: successful operation
         "401":
           content:
-            application/vnd.conekta-v2.2.0+json:
+            application/vnd.conekta-v2.1.0+json:
               example:
                 details:
                 - message: Please include your access key in your request.
@@ -7671,7 +7671,7 @@ paths:
           description: authentication error
         "404":
           content:
-            application/vnd.conekta-v2.2.0+json:
+            application/vnd.conekta-v2.1.0+json:
               example:
                 details:
                 - message: The resource was not found.
@@ -7687,7 +7687,7 @@ paths:
           description: not found entity
         "422":
           content:
-            application/vnd.conekta-v2.2.0+json:
+            application/vnd.conekta-v2.1.0+json:
               example:
                 details:
                 - message: The token does not exist.
@@ -7702,7 +7702,7 @@ paths:
           description: parameter validation error
         "500":
           content:
-            application/vnd.conekta-v2.2.0+json:
+            application/vnd.conekta-v2.1.0+json:
               example:
                 details:
                 - debug_message: There was a runtime error and Conekta engineers have
@@ -7769,13 +7769,13 @@ paths:
       responses:
         "200":
           content:
-            application/vnd.conekta-v2.2.0+json:
+            application/vnd.conekta-v2.1.0+json:
               schema:
                 $ref: '#/components/schemas/customer_shipping_contacts_response'
           description: successful operation
         "401":
           content:
-            application/vnd.conekta-v2.2.0+json:
+            application/vnd.conekta-v2.1.0+json:
               example:
                 details:
                 - message: Please include your access key in your request.
@@ -7789,7 +7789,7 @@ paths:
           description: authentication error
         "404":
           content:
-            application/vnd.conekta-v2.2.0+json:
+            application/vnd.conekta-v2.1.0+json:
               example:
                 details:
                 - message: The resource was not found.
@@ -7805,7 +7805,7 @@ paths:
           description: not found entity
         "422":
           content:
-            application/vnd.conekta-v2.2.0+json:
+            application/vnd.conekta-v2.1.0+json:
               example:
                 details:
                 - message: The token does not exist.
@@ -7820,7 +7820,7 @@ paths:
           description: parameter validation error
         "500":
           content:
-            application/vnd.conekta-v2.2.0+json:
+            application/vnd.conekta-v2.1.0+json:
               example:
                 details:
                 - debug_message: There was a runtime error and Conekta engineers have
@@ -7888,13 +7888,13 @@ paths:
       responses:
         "200":
           content:
-            application/vnd.conekta-v2.2.0+json:
+            application/vnd.conekta-v2.1.0+json:
               schema:
                 $ref: '#/components/schemas/customer_shipping_contacts_response'
           description: successful operation
         "401":
           content:
-            application/vnd.conekta-v2.2.0+json:
+            application/vnd.conekta-v2.1.0+json:
               example:
                 details:
                 - message: Please include your access key in your request.
@@ -7908,7 +7908,7 @@ paths:
           description: authentication error
         "404":
           content:
-            application/vnd.conekta-v2.2.0+json:
+            application/vnd.conekta-v2.1.0+json:
               example:
                 details:
                 - message: The resource was not found.
@@ -7924,7 +7924,7 @@ paths:
           description: not found entity
         "422":
           content:
-            application/vnd.conekta-v2.2.0+json:
+            application/vnd.conekta-v2.1.0+json:
               example:
                 details:
                 - message: The token does not exist.
@@ -7939,7 +7939,7 @@ paths:
           description: parameter validation error
         "500":
           content:
-            application/vnd.conekta-v2.2.0+json:
+            application/vnd.conekta-v2.1.0+json:
               example:
                 details:
                 - debug_message: There was a runtime error and Conekta engineers have
@@ -7990,7 +7990,7 @@ paths:
       responses:
         "200":
           content:
-            application/vnd.conekta-v2.2.0+json:
+            application/vnd.conekta-v2.1.0+json:
               schema:
                 $ref: '#/components/schemas/subscription_response'
           description: successful
@@ -8021,7 +8021,7 @@ paths:
                 type: string
         "401":
           content:
-            application/vnd.conekta-v2.2.0+json:
+            application/vnd.conekta-v2.1.0+json:
               example:
                 details:
                 - message: Please include your access key in your request.
@@ -8035,7 +8035,7 @@ paths:
           description: authentication error
         "404":
           content:
-            application/vnd.conekta-v2.2.0+json:
+            application/vnd.conekta-v2.1.0+json:
               example:
                 details:
                 - message: The resource was not found.
@@ -8051,7 +8051,7 @@ paths:
           description: not found entity
         "500":
           content:
-            application/vnd.conekta-v2.2.0+json:
+            application/vnd.conekta-v2.1.0+json:
               example:
                 details:
                 - debug_message: There was a runtime error and Conekta engineers have
@@ -8113,7 +8113,7 @@ paths:
       responses:
         "200":
           content:
-            application/vnd.conekta-v2.2.0+json:
+            application/vnd.conekta-v2.1.0+json:
               schema:
                 $ref: '#/components/schemas/subscription_response'
           description: successful
@@ -8144,7 +8144,7 @@ paths:
                 type: string
         "422":
           content:
-            application/vnd.conekta-v2.2.0+json:
+            application/vnd.conekta-v2.1.0+json:
               example:
                 details:
                 - message: The token does not exist.
@@ -8159,7 +8159,7 @@ paths:
           description: parameter validation error
         "401":
           content:
-            application/vnd.conekta-v2.2.0+json:
+            application/vnd.conekta-v2.1.0+json:
               example:
                 details:
                 - message: Please include your access key in your request.
@@ -8173,7 +8173,7 @@ paths:
           description: authentication error
         "404":
           content:
-            application/vnd.conekta-v2.2.0+json:
+            application/vnd.conekta-v2.1.0+json:
               example:
                 details:
                 - message: The resource was not found.
@@ -8189,7 +8189,7 @@ paths:
           description: not found entity
         "500":
           content:
-            application/vnd.conekta-v2.2.0+json:
+            application/vnd.conekta-v2.1.0+json:
               example:
                 details:
                 - debug_message: There was a runtime error and Conekta engineers have
@@ -8251,7 +8251,7 @@ paths:
       responses:
         "200":
           content:
-            application/vnd.conekta-v2.2.0+json:
+            application/vnd.conekta-v2.1.0+json:
               schema:
                 $ref: '#/components/schemas/subscription_response'
           description: successful
@@ -8282,7 +8282,7 @@ paths:
                 type: string
         "422":
           content:
-            application/vnd.conekta-v2.2.0+json:
+            application/vnd.conekta-v2.1.0+json:
               example:
                 details:
                 - message: The token does not exist.
@@ -8297,7 +8297,7 @@ paths:
           description: parameter validation error
         "401":
           content:
-            application/vnd.conekta-v2.2.0+json:
+            application/vnd.conekta-v2.1.0+json:
               example:
                 details:
                 - message: Please include your access key in your request.
@@ -8311,7 +8311,7 @@ paths:
           description: authentication error
         "404":
           content:
-            application/vnd.conekta-v2.2.0+json:
+            application/vnd.conekta-v2.1.0+json:
               example:
                 details:
                 - message: The resource was not found.
@@ -8327,7 +8327,7 @@ paths:
           description: not found entity
         "500":
           content:
-            application/vnd.conekta-v2.2.0+json:
+            application/vnd.conekta-v2.1.0+json:
               example:
                 details:
                 - debug_message: There was a runtime error and Conekta engineers have
@@ -8388,7 +8388,7 @@ paths:
       responses:
         "200":
           content:
-            application/vnd.conekta-v2.2.0+json:
+            application/vnd.conekta-v2.1.0+json:
               schema:
                 $ref: '#/components/schemas/subscription_response'
           description: successful
@@ -8419,7 +8419,7 @@ paths:
                 type: string
         "401":
           content:
-            application/vnd.conekta-v2.2.0+json:
+            application/vnd.conekta-v2.1.0+json:
               example:
                 details:
                 - message: Please include your access key in your request.
@@ -8433,7 +8433,7 @@ paths:
           description: authentication error
         "404":
           content:
-            application/vnd.conekta-v2.2.0+json:
+            application/vnd.conekta-v2.1.0+json:
               example:
                 details:
                 - message: The resource was not found.
@@ -8449,7 +8449,7 @@ paths:
           description: not found entity
         "500":
           content:
-            application/vnd.conekta-v2.2.0+json:
+            application/vnd.conekta-v2.1.0+json:
               example:
                 details:
                 - debug_message: There was a runtime error and Conekta engineers have
@@ -8510,7 +8510,7 @@ paths:
       responses:
         "200":
           content:
-            application/vnd.conekta-v2.2.0+json:
+            application/vnd.conekta-v2.1.0+json:
               schema:
                 $ref: '#/components/schemas/subscription_events_response'
           description: successful
@@ -8541,7 +8541,7 @@ paths:
                 type: string
         "401":
           content:
-            application/vnd.conekta-v2.2.0+json:
+            application/vnd.conekta-v2.1.0+json:
               example:
                 details:
                 - message: Please include your access key in your request.
@@ -8555,7 +8555,7 @@ paths:
           description: authentication error
         "402":
           content:
-            application/vnd.conekta-v2.2.0+json:
+            application/vnd.conekta-v2.1.0+json:
               example:
                 details:
                 - message: The card could not be processed.
@@ -8569,7 +8569,7 @@ paths:
           description: payment required error
         "404":
           content:
-            application/vnd.conekta-v2.2.0+json:
+            application/vnd.conekta-v2.1.0+json:
               example:
                 details:
                 - message: The resource was not found.
@@ -8585,7 +8585,7 @@ paths:
           description: not found entity
         "422":
           content:
-            application/vnd.conekta-v2.2.0+json:
+            application/vnd.conekta-v2.1.0+json:
               example:
                 details:
                 - message: The token does not exist.
@@ -8600,7 +8600,7 @@ paths:
           description: parameter validation error
         "500":
           content:
-            application/vnd.conekta-v2.2.0+json:
+            application/vnd.conekta-v2.1.0+json:
               example:
                 details:
                 - debug_message: There was a runtime error and Conekta engineers have
@@ -8661,7 +8661,7 @@ paths:
       responses:
         "200":
           content:
-            application/vnd.conekta-v2.2.0+json:
+            application/vnd.conekta-v2.1.0+json:
               schema:
                 $ref: '#/components/schemas/subscription_response'
           description: successful
@@ -8692,7 +8692,7 @@ paths:
                 type: string
         "401":
           content:
-            application/vnd.conekta-v2.2.0+json:
+            application/vnd.conekta-v2.1.0+json:
               example:
                 details:
                 - message: Please include your access key in your request.
@@ -8706,7 +8706,7 @@ paths:
           description: authentication error
         "402":
           content:
-            application/vnd.conekta-v2.2.0+json:
+            application/vnd.conekta-v2.1.0+json:
               example:
                 details:
                 - message: The card could not be processed.
@@ -8720,7 +8720,7 @@ paths:
           description: payment required error
         "404":
           content:
-            application/vnd.conekta-v2.2.0+json:
+            application/vnd.conekta-v2.1.0+json:
               example:
                 details:
                 - message: The resource was not found.
@@ -8736,7 +8736,7 @@ paths:
           description: not found entity
         "500":
           content:
-            application/vnd.conekta-v2.2.0+json:
+            application/vnd.conekta-v2.1.0+json:
               example:
                 details:
                 - debug_message: There was a runtime error and Conekta engineers have
@@ -8797,7 +8797,7 @@ paths:
       responses:
         "200":
           content:
-            application/vnd.conekta-v2.2.0+json:
+            application/vnd.conekta-v2.1.0+json:
               schema:
                 $ref: '#/components/schemas/subscription_response'
           description: successful
@@ -8828,7 +8828,7 @@ paths:
                 type: string
         "401":
           content:
-            application/vnd.conekta-v2.2.0+json:
+            application/vnd.conekta-v2.1.0+json:
               example:
                 details:
                 - message: Please include your access key in your request.
@@ -8842,7 +8842,7 @@ paths:
           description: authentication error
         "402":
           content:
-            application/vnd.conekta-v2.2.0+json:
+            application/vnd.conekta-v2.1.0+json:
               example:
                 details:
                 - message: The card could not be processed.
@@ -8856,7 +8856,7 @@ paths:
           description: payment required error
         "404":
           content:
-            application/vnd.conekta-v2.2.0+json:
+            application/vnd.conekta-v2.1.0+json:
               example:
                 details:
                 - message: The resource was not found.
@@ -8872,7 +8872,7 @@ paths:
           description: not found entity
         "422":
           content:
-            application/vnd.conekta-v2.2.0+json:
+            application/vnd.conekta-v2.1.0+json:
               example:
                 details:
                 - message: The token does not exist.
@@ -8887,7 +8887,7 @@ paths:
           description: parameter validation error
         "500":
           content:
-            application/vnd.conekta-v2.2.0+json:
+            application/vnd.conekta-v2.1.0+json:
               example:
                 details:
                 - debug_message: There was a runtime error and Conekta engineers have
@@ -8949,13 +8949,13 @@ paths:
       responses:
         "200":
           content:
-            application/vnd.conekta-v2.2.0+json:
+            application/vnd.conekta-v2.1.0+json:
               schema:
                 $ref: '#/components/schemas/update_order_tax_response'
           description: successful
         "401":
           content:
-            application/vnd.conekta-v2.2.0+json:
+            application/vnd.conekta-v2.1.0+json:
               example:
                 details:
                 - message: Please include your access key in your request.
@@ -8969,7 +8969,7 @@ paths:
           description: authentication error
         "404":
           content:
-            application/vnd.conekta-v2.2.0+json:
+            application/vnd.conekta-v2.1.0+json:
               example:
                 details:
                 - message: The resource was not found.
@@ -8985,7 +8985,7 @@ paths:
           description: not found entity
         "500":
           content:
-            application/vnd.conekta-v2.2.0+json:
+            application/vnd.conekta-v2.1.0+json:
               example:
                 details:
                 - debug_message: There was a runtime error and Conekta engineers have
@@ -9052,13 +9052,13 @@ paths:
       responses:
         "200":
           content:
-            application/vnd.conekta-v2.2.0+json:
+            application/vnd.conekta-v2.1.0+json:
               schema:
                 $ref: '#/components/schemas/update_order_tax_response'
           description: successful
         "401":
           content:
-            application/vnd.conekta-v2.2.0+json:
+            application/vnd.conekta-v2.1.0+json:
               example:
                 details:
                 - message: Please include your access key in your request.
@@ -9072,7 +9072,7 @@ paths:
           description: authentication error
         "422":
           content:
-            application/vnd.conekta-v2.2.0+json:
+            application/vnd.conekta-v2.1.0+json:
               example:
                 details:
                 - message: The token does not exist.
@@ -9087,7 +9087,7 @@ paths:
           description: parameter validation error
         "404":
           content:
-            application/vnd.conekta-v2.2.0+json:
+            application/vnd.conekta-v2.1.0+json:
               example:
                 details:
                 - message: The resource was not found.
@@ -9103,7 +9103,7 @@ paths:
           description: not found entity
         "500":
           content:
-            application/vnd.conekta-v2.2.0+json:
+            application/vnd.conekta-v2.1.0+json:
               example:
                 details:
                 - debug_message: There was a runtime error and Conekta engineers have
@@ -9171,13 +9171,13 @@ paths:
       responses:
         "200":
           content:
-            application/vnd.conekta-v2.2.0+json:
+            application/vnd.conekta-v2.1.0+json:
               schema:
                 $ref: '#/components/schemas/update_order_tax_response'
           description: successful
         "401":
           content:
-            application/vnd.conekta-v2.2.0+json:
+            application/vnd.conekta-v2.1.0+json:
               example:
                 details:
                 - message: Please include your access key in your request.
@@ -9191,7 +9191,7 @@ paths:
           description: authentication error
         "422":
           content:
-            application/vnd.conekta-v2.2.0+json:
+            application/vnd.conekta-v2.1.0+json:
               example:
                 details:
                 - message: The token does not exist.
@@ -9206,7 +9206,7 @@ paths:
           description: parameter validation error
         "404":
           content:
-            application/vnd.conekta-v2.2.0+json:
+            application/vnd.conekta-v2.1.0+json:
               example:
                 details:
                 - message: The resource was not found.
@@ -9222,7 +9222,7 @@ paths:
           description: not found entity
         "500":
           content:
-            application/vnd.conekta-v2.2.0+json:
+            application/vnd.conekta-v2.1.0+json:
               example:
                 details:
                 - debug_message: There was a runtime error and Conekta engineers have
@@ -9270,7 +9270,7 @@ paths:
       responses:
         "200":
           content:
-            application/vnd.conekta-v2.2.0+json:
+            application/vnd.conekta-v2.1.0+json:
               schema:
                 $ref: '#/components/schemas/token_response'
           description: successful operation
@@ -9301,7 +9301,7 @@ paths:
                 type: string
         "401":
           content:
-            application/vnd.conekta-v2.2.0+json:
+            application/vnd.conekta-v2.1.0+json:
               example:
                 details:
                 - message: Please include your access key in your request.
@@ -9315,7 +9315,7 @@ paths:
           description: authentication error
         "422":
           content:
-            application/vnd.conekta-v2.2.0+json:
+            application/vnd.conekta-v2.1.0+json:
               example:
                 details:
                 - message: The token does not exist.
@@ -9330,7 +9330,7 @@ paths:
           description: parameter validation error
         "500":
           content:
-            application/vnd.conekta-v2.2.0+json:
+            application/vnd.conekta-v2.1.0+json:
               example:
                 details:
                 - debug_message: There was a runtime error and Conekta engineers have
@@ -9433,7 +9433,7 @@ paths:
       responses:
         "200":
           content:
-            application/vnd.conekta-v2.2.0+json:
+            application/vnd.conekta-v2.1.0+json:
               schema:
                 $ref: '#/components/schemas/get_transactions_response'
           description: successful
@@ -9464,7 +9464,7 @@ paths:
                 type: string
         "401":
           content:
-            application/vnd.conekta-v2.2.0+json:
+            application/vnd.conekta-v2.1.0+json:
               example:
                 details:
                 - message: Please include your access key in your request.
@@ -9478,7 +9478,7 @@ paths:
           description: authentication error
         "500":
           content:
-            application/vnd.conekta-v2.2.0+json:
+            application/vnd.conekta-v2.1.0+json:
               example:
                 details:
                 - debug_message: There was a runtime error and Conekta engineers have
@@ -9538,7 +9538,7 @@ paths:
       responses:
         "200":
           content:
-            application/vnd.conekta-v2.2.0+json:
+            application/vnd.conekta-v2.1.0+json:
               schema:
                 $ref: '#/components/schemas/transaction_response'
           description: successful
@@ -9569,7 +9569,7 @@ paths:
                 type: string
         "401":
           content:
-            application/vnd.conekta-v2.2.0+json:
+            application/vnd.conekta-v2.1.0+json:
               example:
                 details:
                 - message: Please include your access key in your request.
@@ -9583,7 +9583,7 @@ paths:
           description: authentication error
         "404":
           content:
-            application/vnd.conekta-v2.2.0+json:
+            application/vnd.conekta-v2.1.0+json:
               example:
                 details:
                 - message: Please include your access key in your request.
@@ -9597,7 +9597,7 @@ paths:
           description: authentication error
         "500":
           content:
-            application/vnd.conekta-v2.2.0+json:
+            application/vnd.conekta-v2.1.0+json:
               example:
                 details:
                 - debug_message: There was a runtime error and Conekta engineers have
@@ -9678,7 +9678,7 @@ paths:
       responses:
         "200":
           content:
-            application/vnd.conekta-v2.2.0+json:
+            application/vnd.conekta-v2.1.0+json:
               schema:
                 $ref: '#/components/schemas/get_transfers_response'
           description: successful
@@ -9709,7 +9709,7 @@ paths:
                 type: string
         "401":
           content:
-            application/vnd.conekta-v2.2.0+json:
+            application/vnd.conekta-v2.1.0+json:
               example:
                 details:
                 - message: Please include your access key in your request.
@@ -9723,7 +9723,7 @@ paths:
           description: authentication error
         "500":
           content:
-            application/vnd.conekta-v2.2.0+json:
+            application/vnd.conekta-v2.1.0+json:
               example:
                 details:
                 - debug_message: There was a runtime error and Conekta engineers have
@@ -9783,7 +9783,7 @@ paths:
       responses:
         "200":
           content:
-            application/vnd.conekta-v2.2.0+json:
+            application/vnd.conekta-v2.1.0+json:
               schema:
                 $ref: '#/components/schemas/transfer_response'
           description: successful
@@ -9814,7 +9814,7 @@ paths:
                 type: string
         "401":
           content:
-            application/vnd.conekta-v2.2.0+json:
+            application/vnd.conekta-v2.1.0+json:
               example:
                 details:
                 - message: Please include your access key in your request.
@@ -9828,7 +9828,7 @@ paths:
           description: authentication error
         "404":
           content:
-            application/vnd.conekta-v2.2.0+json:
+            application/vnd.conekta-v2.1.0+json:
               example:
                 details:
                 - message: Please include your access key in your request.
@@ -9842,7 +9842,7 @@ paths:
           description: authentication error
         "500":
           content:
-            application/vnd.conekta-v2.2.0+json:
+            application/vnd.conekta-v2.1.0+json:
               example:
                 details:
                 - debug_message: There was a runtime error and Conekta engineers have
@@ -9923,7 +9923,7 @@ paths:
       responses:
         "200":
           content:
-            application/vnd.conekta-v2.2.0+json:
+            application/vnd.conekta-v2.1.0+json:
               schema:
                 $ref: '#/components/schemas/get_webhook_keys_response'
           description: successful
@@ -9954,7 +9954,7 @@ paths:
                 type: string
         "401":
           content:
-            application/vnd.conekta-v2.2.0+json:
+            application/vnd.conekta-v2.1.0+json:
               example:
                 details:
                 - message: Please include your access key in your request.
@@ -9968,7 +9968,7 @@ paths:
           description: authentication error
         "500":
           content:
-            application/vnd.conekta-v2.2.0+json:
+            application/vnd.conekta-v2.1.0+json:
               example:
                 details:
                 - debug_message: There was a runtime error and Conekta engineers have
@@ -10017,13 +10017,13 @@ paths:
       responses:
         "200":
           content:
-            application/vnd.conekta-v2.2.0+json:
+            application/vnd.conekta-v2.1.0+json:
               schema:
                 $ref: '#/components/schemas/webhook-key_create_response'
           description: successful operation
         "401":
           content:
-            application/vnd.conekta-v2.2.0+json:
+            application/vnd.conekta-v2.1.0+json:
               example:
                 details:
                 - message: Please include your access key in your request.
@@ -10037,7 +10037,7 @@ paths:
           description: authentication error
         "500":
           content:
-            application/vnd.conekta-v2.2.0+json:
+            application/vnd.conekta-v2.1.0+json:
               example:
                 details:
                 - debug_message: There was a runtime error and Conekta engineers have
@@ -10088,7 +10088,7 @@ paths:
       responses:
         "200":
           content:
-            application/vnd.conekta-v2.2.0+json:
+            application/vnd.conekta-v2.1.0+json:
               schema:
                 $ref: '#/components/schemas/webhook-key_delete_response'
           description: successful
@@ -10119,7 +10119,7 @@ paths:
                 type: string
         "401":
           content:
-            application/vnd.conekta-v2.2.0+json:
+            application/vnd.conekta-v2.1.0+json:
               example:
                 details:
                 - message: Please include your access key in your request.
@@ -10133,7 +10133,7 @@ paths:
           description: authentication error
         "404":
           content:
-            application/vnd.conekta-v2.2.0+json:
+            application/vnd.conekta-v2.1.0+json:
               example:
                 details:
                 - message: The resource was not found.
@@ -10149,7 +10149,7 @@ paths:
           description: not found entity
         "500":
           content:
-            application/vnd.conekta-v2.2.0+json:
+            application/vnd.conekta-v2.1.0+json:
               example:
                 details:
                 - debug_message: There was a runtime error and Conekta engineers have
@@ -10207,7 +10207,7 @@ paths:
       responses:
         "200":
           content:
-            application/vnd.conekta-v2.2.0+json:
+            application/vnd.conekta-v2.1.0+json:
               schema:
                 $ref: '#/components/schemas/webhook-key_response'
           description: successful
@@ -10238,7 +10238,7 @@ paths:
                 type: string
         "401":
           content:
-            application/vnd.conekta-v2.2.0+json:
+            application/vnd.conekta-v2.1.0+json:
               example:
                 details:
                 - message: Please include your access key in your request.
@@ -10252,7 +10252,7 @@ paths:
           description: authentication error
         "404":
           content:
-            application/vnd.conekta-v2.2.0+json:
+            application/vnd.conekta-v2.1.0+json:
               example:
                 details:
                 - message: The resource was not found.
@@ -10268,7 +10268,7 @@ paths:
           description: not found entity
         "500":
           content:
-            application/vnd.conekta-v2.2.0+json:
+            application/vnd.conekta-v2.1.0+json:
               example:
                 details:
                 - debug_message: There was a runtime error and Conekta engineers have
@@ -10324,13 +10324,13 @@ paths:
       responses:
         "200":
           content:
-            application/vnd.conekta-v2.2.0+json:
+            application/vnd.conekta-v2.1.0+json:
               schema:
                 $ref: '#/components/schemas/webhook-key_response'
           description: successful operation
         "404":
           content:
-            application/vnd.conekta-v2.2.0+json:
+            application/vnd.conekta-v2.1.0+json:
               example:
                 details:
                 - message: The resource was not found.
@@ -10346,7 +10346,7 @@ paths:
           description: not found entity
         "401":
           content:
-            application/vnd.conekta-v2.2.0+json:
+            application/vnd.conekta-v2.1.0+json:
               example:
                 details:
                 - message: Please include your access key in your request.
@@ -10360,7 +10360,7 @@ paths:
           description: authentication error
         "500":
           content:
-            application/vnd.conekta-v2.2.0+json:
+            application/vnd.conekta-v2.1.0+json:
               example:
                 details:
                 - debug_message: There was a runtime error and Conekta engineers have
@@ -10448,7 +10448,7 @@ paths:
       responses:
         "200":
           content:
-            application/vnd.conekta-v2.2.0+json:
+            application/vnd.conekta-v2.1.0+json:
               schema:
                 $ref: '#/components/schemas/get_webhooks_response'
           description: successful
@@ -10479,7 +10479,7 @@ paths:
                 type: string
         "401":
           content:
-            application/vnd.conekta-v2.2.0+json:
+            application/vnd.conekta-v2.1.0+json:
               example:
                 details:
                 - message: Please include your access key in your request.
@@ -10493,7 +10493,7 @@ paths:
           description: authentication error
         "500":
           content:
-            application/vnd.conekta-v2.2.0+json:
+            application/vnd.conekta-v2.1.0+json:
               example:
                 details:
                 - debug_message: There was a runtime error and Conekta engineers have
@@ -10543,13 +10543,13 @@ paths:
       responses:
         "200":
           content:
-            application/vnd.conekta-v2.2.0+json:
+            application/vnd.conekta-v2.1.0+json:
               schema:
                 $ref: '#/components/schemas/webhook_response'
           description: successful operation
         "401":
           content:
-            application/vnd.conekta-v2.2.0+json:
+            application/vnd.conekta-v2.1.0+json:
               example:
                 details:
                 - message: Please include your access key in your request.
@@ -10563,7 +10563,7 @@ paths:
           description: authentication error
         "500":
           content:
-            application/vnd.conekta-v2.2.0+json:
+            application/vnd.conekta-v2.1.0+json:
               example:
                 details:
                 - debug_message: There was a runtime error and Conekta engineers have
@@ -10614,7 +10614,7 @@ paths:
       responses:
         "200":
           content:
-            application/vnd.conekta-v2.2.0+json:
+            application/vnd.conekta-v2.1.0+json:
               schema:
                 $ref: '#/components/schemas/webhook_response'
           description: successful
@@ -10645,7 +10645,7 @@ paths:
                 type: string
         "401":
           content:
-            application/vnd.conekta-v2.2.0+json:
+            application/vnd.conekta-v2.1.0+json:
               example:
                 details:
                 - message: Please include your access key in your request.
@@ -10659,7 +10659,7 @@ paths:
           description: authentication error
         "404":
           content:
-            application/vnd.conekta-v2.2.0+json:
+            application/vnd.conekta-v2.1.0+json:
               example:
                 details:
                 - message: The resource was not found.
@@ -10675,7 +10675,7 @@ paths:
           description: not found entity
         "500":
           content:
-            application/vnd.conekta-v2.2.0+json:
+            application/vnd.conekta-v2.1.0+json:
               example:
                 details:
                 - debug_message: There was a runtime error and Conekta engineers have
@@ -10733,7 +10733,7 @@ paths:
       responses:
         "200":
           content:
-            application/vnd.conekta-v2.2.0+json:
+            application/vnd.conekta-v2.1.0+json:
               schema:
                 $ref: '#/components/schemas/webhook_response'
           description: successful
@@ -10764,7 +10764,7 @@ paths:
                 type: string
         "401":
           content:
-            application/vnd.conekta-v2.2.0+json:
+            application/vnd.conekta-v2.1.0+json:
               example:
                 details:
                 - message: Please include your access key in your request.
@@ -10778,7 +10778,7 @@ paths:
           description: authentication error
         "404":
           content:
-            application/vnd.conekta-v2.2.0+json:
+            application/vnd.conekta-v2.1.0+json:
               example:
                 details:
                 - message: The resource was not found.
@@ -10794,7 +10794,7 @@ paths:
           description: not found entity
         "500":
           content:
-            application/vnd.conekta-v2.2.0+json:
+            application/vnd.conekta-v2.1.0+json:
               example:
                 details:
                 - debug_message: There was a runtime error and Conekta engineers have
@@ -10855,13 +10855,13 @@ paths:
       responses:
         "200":
           content:
-            application/vnd.conekta-v2.2.0+json:
+            application/vnd.conekta-v2.1.0+json:
               schema:
                 $ref: '#/components/schemas/webhook_response'
           description: successful operation
         "404":
           content:
-            application/vnd.conekta-v2.2.0+json:
+            application/vnd.conekta-v2.1.0+json:
               example:
                 details:
                 - message: The resource was not found.
@@ -10877,7 +10877,7 @@ paths:
           description: not found entity
         "401":
           content:
-            application/vnd.conekta-v2.2.0+json:
+            application/vnd.conekta-v2.1.0+json:
               example:
                 details:
                 - message: Please include your access key in your request.
@@ -10891,7 +10891,7 @@ paths:
           description: authentication error
         "500":
           content:
-            application/vnd.conekta-v2.2.0+json:
+            application/vnd.conekta-v2.1.0+json:
               example:
                 details:
                 - debug_message: There was a runtime error and Conekta engineers have
@@ -10943,13 +10943,13 @@ paths:
       responses:
         "200":
           content:
-            application/vnd.conekta-v2.2.0+json:
+            application/vnd.conekta-v2.1.0+json:
               schema:
                 $ref: '#/components/schemas/webhook_response'
           description: successful
         "401":
           content:
-            application/vnd.conekta-v2.2.0+json:
+            application/vnd.conekta-v2.1.0+json:
               example:
                 details:
                 - message: Please include your access key in your request.
@@ -10963,7 +10963,7 @@ paths:
           description: authentication error
         "404":
           content:
-            application/vnd.conekta-v2.2.0+json:
+            application/vnd.conekta-v2.1.0+json:
               example:
                 details:
                 - message: The resource was not found.
@@ -10979,7 +10979,7 @@ paths:
           description: not found entity
         "500":
           content:
-            application/vnd.conekta-v2.2.0+json:
+            application/vnd.conekta-v2.1.0+json:
               example:
                 details:
                 - debug_message: There was a runtime error and Conekta engineers have
@@ -11015,6 +11015,7 @@ components:
           expires_at: 1656634070
           store_name: OXXO
           reference: 98000013217610
+          customer_ip_address: 0.0.0.0
         object: charge
         description: Payment from order
         status: paid
@@ -11077,6 +11078,7 @@ components:
             type: card
             token_id: tok_2897348234
             payment_source_id: src_2tLkkyfMPh6v7pFry
+            customer_ip_address: 0.0.0.0
           reference_id: string
         currency: MXN
         customer_info:
@@ -11409,6 +11411,14 @@ components:
       example: 6463d6e35a4c3e001819e760
       in: path
       name: event_id
+      required: true
+      schema:
+        type: string
+    webhook_log_id:
+      description: webhook log identifier
+      example: webhl_2tsv6NzWJHBWCkqGt
+      in: path
+      name: webhook_log_id
       required: true
       schema:
         type: string
@@ -11808,7 +11818,7 @@ components:
   responses:
     "401":
       content:
-        application/vnd.conekta-v2.2.0+json:
+        application/vnd.conekta-v2.1.0+json:
           example:
             details:
             - message: Please include your access key in your request.
@@ -11822,7 +11832,7 @@ components:
       description: authentication error
     "403":
       content:
-        application/vnd.conekta-v2.2.0+json:
+        application/vnd.conekta-v2.1.0+json:
           example:
             details:
             - message: "Unauthorized access service, please contact support team"
@@ -11837,7 +11847,7 @@ components:
       description: forbidden error
     "500":
       content:
-        application/vnd.conekta-v2.2.0+json:
+        application/vnd.conekta-v2.1.0+json:
           example:
             details:
             - debug_message: There was a runtime error and Conekta engineers have
@@ -11853,7 +11863,7 @@ components:
       description: internal server error
     "404":
       content:
-        application/vnd.conekta-v2.2.0+json:
+        application/vnd.conekta-v2.1.0+json:
           example:
             details:
             - message: The resource was not found.
@@ -11869,7 +11879,7 @@ components:
       description: not found entity
     "422":
       content:
-        application/vnd.conekta-v2.2.0+json:
+        application/vnd.conekta-v2.1.0+json:
           example:
             details:
             - message: The token does not exist.
@@ -11884,7 +11894,7 @@ components:
       description: parameter validation error
     "422_whitelist":
       content:
-        application/vnd.conekta-v2.2.0+json:
+        application/vnd.conekta-v2.1.0+json:
           example:
             details:
             - debug_message: The "custom_field" parameter is not allowed
@@ -11898,7 +11908,7 @@ components:
       description: whitelist validation error
     "428":
       content:
-        application/vnd.conekta-v2.2.0+json:
+        application/vnd.conekta-v2.1.0+json:
           example:
             details:
             - debug_message: The order cannot be modified because it has already a
@@ -11915,7 +11925,7 @@ components:
       description: Precondition Required
     "402":
       content:
-        application/vnd.conekta-v2.2.0+json:
+        application/vnd.conekta-v2.1.0+json:
           example:
             details:
             - message: The card could not be processed.
@@ -12041,12 +12051,6 @@ components:
           nullable: true
           type: integer
           example: null
-        last_used_at:
-          description: Unix timestamp in seconds with the api key was used
-          format: int64
-          nullable: true
-          type: integer
-          example: null
         description:
           description: A name or brief explanation of what this api key is used for
           example: online store
@@ -12057,6 +12061,10 @@ components:
           type: string
         livemode:
           description: Indicates if the api key is in production
+          example: false
+          type: boolean
+        deleted:
+          description: Indicates if the api key was deleted
           example: false
           type: boolean
         object:
@@ -12105,12 +12113,10 @@ components:
           description: "Object name, value is 'api_key'"
           example: api_key
           type: string
-        last_used_at:
-          description: Unix timestamp in seconds with the api key was used
-          format: int64
-          nullable: true
-          type: integer
-          example: null
+        deleted:
+          description: Indicates if the api key was deleted
+          example: false
+          type: boolean
         role:
           description: Indicates if the api key is private or public
           example: private
@@ -12485,19 +12491,6 @@ components:
           type: string
       title: event_response
       type: object
-    resend_request:
-      properties:
-        webhooks_ids:
-          description: webhooks ids to resend event
-          example:
-          - 6307a60c41de27127515a575
-          - 6307a60c41de27127515a571
-          items:
-            type: string
-          type: array
-      required:
-      - webhooks_ids
-      type: object
     events_resend_response:
       description: event model
       properties:
@@ -12616,7 +12609,7 @@ components:
           additionalProperties:
             type: string
           example:
-            Accept: application/vnd.conekta-v2.2.0+json
+            Accept: application/vnd.conekta-v2.1.0+json
             Accept-Encoding: "gzip, deflate, br"
             Accept-Language: "es-419, es; q=0.9, en; q=0.8"
             Activitypermission: orders:read
@@ -13075,12 +13068,6 @@ components:
           example: 0
           nullable: true
           type: integer
-        max_retries:
-          example: 3
-          type: integer
-        retry_delay_hours:
-          example: 48
-          type: integer
       title: plan_response
       type: object
     shipping_order_response:
@@ -13531,32 +13518,29 @@ components:
     webhook_response:
       description: webhooks model
       properties:
+        deleted:
+          example: false
+          nullable: true
+          type: boolean
+        development_enabled:
+          example: false
+          type: boolean
         id:
-          description: id of the webhook
           example: 6307a60c41de27127515a575
           type: string
-        description:
-          description: A name or brief explanation of what this webhook is used for
-          example: Server payments processor
-          type: string
         livemode:
-          description: Indicates if the webhook is in production
-          example: true
-          type: boolean
-        active:
-          description: Indicates if the webhook is actived or not
           example: true
           type: boolean
         object:
-          description: "Object name, value is 'webhook'"
           example: event
           type: string
+        production_enabled:
+          example: true
+          type: boolean
         status:
-          description: Indicates if the webhook is ready to receive events or failing
           example: listening
           type: string
         subscribed_events:
-          description: lists the events that will be sent to the webhook
           example:
           - charge.created
           - charge.paid
@@ -13571,8 +13555,10 @@ components:
           items:
             type: string
           type: array
+        synchronous:
+          example: false
+          type: boolean
         url:
-          description: url or endpoint of the webhook
           example: https://username:password@mockoon.stg.conekta.io/payments-api/cash/merchant_approval
           type: string
       title: webhook_response
@@ -14254,18 +14240,6 @@ components:
           description: The number of days the customer will have a free trial.
           example: 0
           type: integer
-        max_retries:
-          description: (optional) Specifies the maximum number of retry attempts for
-            a subscription payment before it is canceled.
-          example: 3
-          minimum: 3
-          type: integer
-        retry_delay_hours:
-          description: (optional)  Defines the number of hours between subscription
-            payment retry attempts.
-          example: 50
-          minimum: 48
-          type: integer
       required:
       - amount
       - frequency
@@ -14491,13 +14465,14 @@ components:
           format: url
           pattern: ^(?!.*(localhost|127\.0\.0\.1)).*$
           type: string
-        subscribed_events:
-          description: events that will be sent to the webhook
-          example: customer.created
-          items:
-            type: string
-          type: array
+        synchronous:
+          default: false
+          description: It is a value that allows to decide if the events will be synchronous
+            or asynchronous. We recommend asynchronous = false
+          example: false
+          type: boolean
       required:
+      - synchronous
       - url
       title: a webhook
       type: object
@@ -14512,16 +14487,19 @@ components:
           format: url
           pattern: ^(?!.*(localhost|127\.0\.0\.1)).*$
           type: string
-        subscribed_events:
-          description: events that will be sent to the webhook
+        synchronous:
+          default: false
+          description: It is a value that allows to decide if the events will be synchronous
+            or asynchronous. We recommend asynchronous = false
+          example: false
+          type: boolean
+        events:
           example: customer.created
           items:
             type: string
           type: array
-        active:
-          description: whether the webhook is active or not
-          example: true
-          type: boolean
+      required:
+      - url
       title: update_webhook
       type: object
     details:
@@ -14578,6 +14556,9 @@ components:
           store_name:
             example: OXXO
             type: string
+          customer_ip_address:
+            example: 0.0.0.0
+            type: string
         title: charge_data_payment_method_cash_response
         type: object
     payment_method_card:
@@ -14626,6 +14607,11 @@ components:
           name:
             description: Name of the cardholder
             example: Fulanito Perez
+            type: string
+          customer_ip_address:
+            description: Optional field used to capture the customer's IP address
+              for fraud prevention and security monitoring purposes
+            example: 0.0.0.0
             type: string
         title: charge_data_payment_method_card_response
         type: object
@@ -14682,6 +14668,9 @@ components:
             type: string
           tracking_code:
             nullable: true
+            type: string
+          customer_ip_address:
+            example: 0.0.0.0
             type: string
         title: charge_data_payment_method_bank_transfer_response
         type: object
@@ -14903,6 +14892,11 @@ components:
           number:
             description: Card number
             example: "4242424242424242"
+            type: string
+          customer_ip_address:
+            description: Optional field used to capture the customer's IP address
+              for fraud prevention and security monitoring purposes
+            example: 0.0.0.0
             type: string
         required:
         - cvc
@@ -15830,7 +15824,7 @@ components:
           additionalProperties:
             type: string
           example:
-            Accept: application/vnd.conekta-v2.2.0+json
+            Accept: application/vnd.conekta-v2.1.0+json
             Accept-Encoding: "gzip, deflate, br"
             Accept-Language: "es-419, es; q=0.9, en; q=0.8"
             Activitypermission: orders:read
@@ -16431,6 +16425,11 @@ components:
           description: Optional id sent to indicate the bank contract for recurrent
             card charges.
           example: S781317595
+          type: string
+        customer_ip_address:
+          description: Optional field used to capture the customer's IP address for
+            fraud prevention and security monitoring purposes
+          example: 0.0.0.0
           type: string
       required:
       - type
