@@ -6663,7 +6663,7 @@ paths:
       responses:
         "200":
           content:
-            application/vnd.conekta-v2.2.0+json:
+            application/vnd.conekta-v2.1.0+json:
               schema:
                 $ref: '#/components/schemas/get_plans_response'
           description: successful
@@ -6690,7 +6690,7 @@ paths:
                 type: string
             Conekta-Media-Type:
               schema:
-                example: conekta-v2.2.0; format=application/json
+                example: conekta-v2.1.0; format=application/json
                 type: string
         "422":
           content:
@@ -6777,7 +6777,7 @@ paths:
       responses:
         "200":
           content:
-            application/vnd.conekta-v2.2.0+json:
+            application/vnd.conekta-v2.1.0+json:
               schema:
                 $ref: '#/components/schemas/plan_response'
           description: successful
@@ -6804,7 +6804,7 @@ paths:
                 type: string
             Conekta-Media-Type:
               schema:
-                example: conekta-v2.2.0; format=application/json
+                example: conekta-v2.1.0; format=application/json
                 type: string
         "422":
           content:
@@ -6888,7 +6888,7 @@ paths:
       responses:
         "200":
           content:
-            application/vnd.conekta-v2.2.0+json:
+            application/vnd.conekta-v2.1.0+json:
               schema:
                 $ref: '#/components/schemas/plan_response'
           description: successful
@@ -6915,7 +6915,7 @@ paths:
                 type: string
             Conekta-Media-Type:
               schema:
-                example: conekta-v2.2.0; format=application/json
+                example: conekta-v2.1.0; format=application/json
                 type: string
         "422":
           content:
@@ -7022,7 +7022,7 @@ paths:
       responses:
         "200":
           content:
-            application/vnd.conekta-v2.2.0+json:
+            application/vnd.conekta-v2.1.0+json:
               schema:
                 $ref: '#/components/schemas/plan_response'
           description: successful
@@ -7049,7 +7049,7 @@ paths:
                 type: string
             Conekta-Media-Type:
               schema:
-                example: conekta-v2.2.0; format=application/json
+                example: conekta-v2.1.0; format=application/json
                 type: string
         "422":
           content:
@@ -7158,7 +7158,7 @@ paths:
       responses:
         "200":
           content:
-            application/vnd.conekta-v2.2.0+json:
+            application/vnd.conekta-v2.1.0+json:
               schema:
                 $ref: '#/components/schemas/plan_response'
           description: successful
@@ -7185,7 +7185,7 @@ paths:
                 type: string
             Conekta-Media-Type:
               schema:
-                example: conekta-v2.2.0; format=application/json
+                example: conekta-v2.1.0; format=application/json
                 type: string
         "422":
           content:
