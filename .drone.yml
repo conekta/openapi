@@ -6,9 +6,9 @@ name: default
 trigger:
   branch:
     - main
+    - release/v2.2.0
   event:
     - pull_request
-
 
 steps:
   - name: build_image
