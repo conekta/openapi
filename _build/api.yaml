@@ -11015,6 +11015,7 @@ components:
           expires_at: 1656634070
           store_name: OXXO
           reference: 98000013217610
+          customer_ip_address: 0.0.0.0
         object: charge
         description: Payment from order
         status: paid
@@ -11075,8 +11076,9 @@ components:
           monthly_installments: 0
           payment_method:
             type: card
-            token_id: tok_2897348234
+            token_id: tok_28973499999
             payment_source_id: src_2tLkkyfMPh6v7pFry
+            customer_ip_address: 0.0.0.0
           reference_id: string
         currency: MXN
         customer_info:
@@ -11242,7 +11244,7 @@ components:
         - amount: 40000
           payment_method:
             type: card
-            token_id: tok_2897348234
+            token_id: tok_2897348297
         - amount: 40000
           payment_method:
             type: card
@@ -11293,7 +11295,7 @@ components:
         - amount: 10000
           payment_method:
             type: card
-            token_id: tok_2897348234
+            token_id: tok_2897348299
         - amount: 10000
           payment_method:
             type: card
@@ -14554,6 +14556,9 @@ components:
           store_name:
             example: OXXO
             type: string
+          customer_ip_address:
+            example: 0.0.0.0
+            type: string
         title: charge_data_payment_method_cash_response
         type: object
     payment_method_card:
@@ -14602,6 +14607,10 @@ components:
           name:
             description: Name of the cardholder
             example: Fulanito Perez
+            type: string
+          customer_ip_address:
+            description: ip number
+            example: 0.0.0.0
             type: string
         title: charge_data_payment_method_card_response
         type: object
@@ -14658,6 +14667,9 @@ components:
             type: string
           tracking_code:
             nullable: true
+            type: string
+          customer_ip_address:
+            example: 0.0.0.0
             type: string
         title: charge_data_payment_method_bank_transfer_response
         type: object
@@ -14879,6 +14891,10 @@ components:
           number:
             description: Card number
             example: "4242424242424242"
+            type: string
+          customer_ip_address:
+            description: ip number
+            example: 0.0.0.0
             type: string
         required:
         - cvc
@@ -16393,7 +16409,7 @@ components:
           example: card
           type: string
         token_id:
-          example: tok_2897348234
+          example: tok_2897348298
           type: string
         payment_source_id:
           example: src_2tLkkyfMPh6v7pFry
@@ -16407,6 +16423,9 @@ components:
           description: Optional id sent to indicate the bank contract for recurrent
             card charges.
           example: S781317595
+          type: string
+        customer_ip_address:
+          example: 0.0.0.0
           type: string
       required:
       - type

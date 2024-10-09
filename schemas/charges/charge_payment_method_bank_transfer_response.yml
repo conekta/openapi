@@ -54,4 +54,7 @@ payment_method_bank_transfer:
         tracking_code:
           type: string
           nullable: true
+        customer_ip_address:
+          type: string
+          example: "0.0.0.0"
         
