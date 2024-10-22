@@ -16638,6 +16638,7 @@ components:
           example: "123"
           maxLength: 4
           type: string
+          x-encripted: true
         device_fingerprint:
           description: It is a value that allows identifying the device fingerprint.
           example: zptcxk4p6w1ijwz85snf1l3bqe5g09ie
@@ -16662,6 +16663,7 @@ components:
           description: It is a value that allows identifying the number of the card.
           example: "4242424242424242"
           type: string
+          x-encripted: true
       required:
       - cvc
       - exp_month
