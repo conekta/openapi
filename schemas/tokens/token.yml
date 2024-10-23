@@ -17,6 +17,7 @@ properties:
         description: "It is a value that allows identifying the security code of the card."
         example: "123"
         maxLength: 4
+        x-encripted: true
       device_fingerprint: 
         type: string
         description: "It is a value that allows identifying the device fingerprint."
@@ -39,6 +40,7 @@ properties:
         type: string
         description: "It is a value that allows identifying the number of the card."
         example: "4242424242424242"
+        x-encripted: true
   checkout:
     deprecated: true
     type: object
