@@ -71,6 +71,11 @@ properties:
       livemode:
         type: boolean
         example: false
+      max_failed_retries:
+        type: integer
+        example: 3
+        format: int8
+        description: "Number of retries allowed before the checkout is marked as failed"
       metadata:
         additionalProperties: true
         maxProperties: 100
