@@ -2,6 +2,7 @@ post:
   tags:
     - Charges
   operationId: ordersCreateCharges
+  summary: Create charges
   description: Create charges for an existing orden
   responses:
     200:

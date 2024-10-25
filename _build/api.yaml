@@ -1576,6 +1576,7 @@ paths:
           description: internal server error
       security:
       - bearerAuth: []
+      summary: Create charges
       tags:
       - Charges
   /companies:
