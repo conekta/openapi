@@ -12163,6 +12163,220 @@
       ],
       "responseMode": null,
       "type": "http"
+    },
+    {
+      "uuid": "4c1c205f-00d0-4190-8a6e-6365f0642736",
+      "documentation": "creates new charges for an existing orden",
+      "method": "post",
+      "endpoint": "orders/:id/add_charges",
+      "responses": [
+        {
+          "uuid": "01f7224e-4c65-4060-98f0-fa8c0549feba",
+          "body": "{\n    \"object\": \"list\",\n    \"next_page_url\": null,\n    \"previous_page_url\": null,\n    \"has_more\": false,\n    \"data\": [\n        {\n            \"id\": \"671bd3706f697900017f064e\",\n            \"livemode\": true,\n            \"created_at\": 1729876848,\n            \"currency\": \"MXN\",\n            \"failure_code\": null,\n            \"failure_message\": null,\n            \"monthly_installments\": null,\n            \"device_fingerprint\": null,\n            \"channel\": null,\n            \"payment_method\": {\n                \"service_name\": \"Cash\",\n                \"barcode_url\": \"https://pt-common-s3-stg.s3.us-east-1.amazonaws.com/cash/cashin/bbva/10701620447140537269.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=ASIA3UN6375MMNQL5EX5%2F20241025%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20241025T172048Z&X-Amz-Expires=604800&X-Amz-Security-Token=IQoJb3JpZ2luX2VjEIb%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FwEaCXVzLWVhc3QtMSJIMEYCIQChqG0sLeO%2BS0e8a3b6FPMHeVcTeLGy8DCUjrIIcek1PgIhAIro%2FgFQPCn4FIK5Ai2%2F7NUS46EUpvFcbKXY9OsvIhKTKv4DCO7%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FwEQAxoMNzk5ODAxMDgxNjg4IgwHFRLs4FgKANgVkZUq0gOeJyD65rRYuQksxNnvaFmqZrSf1f0qE29YUHVLB8GAd8pRB7gaWPJAkh7nOobWFhcY1wULPmWc%2BxF9DkPLhH3j6edWS8sdGszVfsQ2tiG%2Fb%2FbrvDUhsiv%2BKfrTw701yWDlBVu%2FCow%2FxwWOjzdnY%2BDcSWwGrpFDt0cBm2d6xX%2BwXiBk49bTHpWpgEhGSeTyFt85SfMc0WHFu8jd%2F%2FAqjbtb84mlIbYh4vxk8JEBNvcEod9O6M%2FZmIMbhgpl3qULpjeAvbLKsm%2FtIH8EWr7xr%2BvhwQ8KcBulUfASgojHqfxSCKigfYIOpYYyjoehDK467MnMh5JzeKFVx8nQ1KHR4qup9JN%2B719D%2FMquu9hKy1lRzAV8Uqa%2FlkSsqXiQas4CY3RLpICWqZI%2BedXQZKXbD6EfnglwzKHCqVoy4XodpP6f8Si8hvc6bHsLA%2FQ%2BdJ1H5dqcLSBGMhLrEIlxbhjLTiE29d43uSUdq9PPM4rsS8TwL%2BLu6DPcKyIcGtB%2FnAqdDZouES2cf5Dxi1c8A1%2FTgdpgsHWcR2lmFEeQuQQsbBGCi4RuCeWXaONpv2xiorfStLxIZ695BJ9Cj%2B%2BmFDYNUozQF54lO6Xf%2FesbN7Gsvgq5e11yMKa17rgGOqQBRw4UIhiqN4vYD4GH0wZJ34YU1DsfgJfxmdBLmWWiG5%2BJ7xoNhr039YKYwyWIUzK4J1STz13U6kfyZADTv3zJ3v%2B8Utq1Vkil%2FbNys3qNNwXfGahROy08FioGoeQiUWSsfITogzlSe3nHbyRrOC7AOv%2BECzuhndAmBE1%2FYHS0MZlfaaqVHIN1L2YDPmtg%2ByDoCkyZONzGmWaqsMYrV4IUU2e7VJc%3D&X-Amz-SignedHeaders=host&x-id=GetObject&X-Amz-Signature=4107acec94ba3ea7000b3719f6d60a5883476daeed531564e0184d1f0f699e90\",\n                \"store\": null,\n                \"auth_code\": null,\n                \"agreement\": \"2409992\",\n                \"object\": \"cash_payment\",\n                \"type\": \"cash\",\n                \"expires_at\": 1732492800,\n                \"store_names\": [\n                    \"BBVA ATM\"\n                ],\n                \"store_name\": \"[\\\"BBVA ATM\\\"]\",\n                \"reference\": \"10701620447140537269\",\n                \"cashier_id\": null,\n                \"product_type\": \"bbva_cash_in\"\n            },\n            \"object\": \"charge\",\n            \"description\": \"Payment from order\",\n            \"is_refundable\": false,\n            \"reference_id\": null,\n            \"status\": \"pending_payment\",\n            \"amount\": 12000,\n            \"paid_at\": null,\n            \"customer_id\": \"\",\n            \"order_id\": \"ord_2wrW9arie9fUG4MfD\",\n            \"refunds\": null\n        },\n        {\n            \"id\": \"671bd36f6f697900017f0644\",\n            \"livemode\": true,\n            \"created_at\": 1729876847,\n            \"currency\": \"MXN\",\n            \"failure_code\": null,\n            \"failure_message\": null,\n            \"monthly_installments\": null,\n            \"device_fingerprint\": null,\n            \"channel\": null,\n            \"payment_method\": {\n                \"service_name\": \"Cash\",\n                \"barcode_url\": \"https://pt-common-s3-stg.s3.us-east-1.amazonaws.com/cash/cashin/pespay/10001823355239209611.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=ASIA3UN6375MMNQL5EX5%2F20241025%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20241025T172048Z&X-Amz-Expires=604800&X-Amz-Security-Token=IQoJb3JpZ2luX2VjEIb%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FwEaCXVzLWVhc3QtMSJIMEYCIQChqG0sLeO%2BS0e8a3b6FPMHeVcTeLGy8DCUjrIIcek1PgIhAIro%2FgFQPCn4FIK5Ai2%2F7NUS46EUpvFcbKXY9OsvIhKTKv4DCO7%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FwEQAxoMNzk5ODAxMDgxNjg4IgwHFRLs4FgKANgVkZUq0gOeJyD65rRYuQksxNnvaFmqZrSf1f0qE29YUHVLB8GAd8pRB7gaWPJAkh7nOobWFhcY1wULPmWc%2BxF9DkPLhH3j6edWS8sdGszVfsQ2tiG%2Fb%2FbrvDUhsiv%2BKfrTw701yWDlBVu%2FCow%2FxwWOjzdnY%2BDcSWwGrpFDt0cBm2d6xX%2BwXiBk49bTHpWpgEhGSeTyFt85SfMc0WHFu8jd%2F%2FAqjbtb84mlIbYh4vxk8JEBNvcEod9O6M%2FZmIMbhgpl3qULpjeAvbLKsm%2FtIH8EWr7xr%2BvhwQ8KcBulUfASgojHqfxSCKigfYIOpYYyjoehDK467MnMh5JzeKFVx8nQ1KHR4qup9JN%2B719D%2FMquu9hKy1lRzAV8Uqa%2FlkSsqXiQas4CY3RLpICWqZI%2BedXQZKXbD6EfnglwzKHCqVoy4XodpP6f8Si8hvc6bHsLA%2FQ%2BdJ1H5dqcLSBGMhLrEIlxbhjLTiE29d43uSUdq9PPM4rsS8TwL%2BLu6DPcKyIcGtB%2FnAqdDZouES2cf5Dxi1c8A1%2FTgdpgsHWcR2lmFEeQuQQsbBGCi4RuCeWXaONpv2xiorfStLxIZ695BJ9Cj%2B%2BmFDYNUozQF54lO6Xf%2FesbN7Gsvgq5e11yMKa17rgGOqQBRw4UIhiqN4vYD4GH0wZJ34YU1DsfgJfxmdBLmWWiG5%2BJ7xoNhr039YKYwyWIUzK4J1STz13U6kfyZADTv3zJ3v%2B8Utq1Vkil%2FbNys3qNNwXfGahROy08FioGoeQiUWSsfITogzlSe3nHbyRrOC7AOv%2BECzuhndAmBE1%2FYHS0MZlfaaqVHIN1L2YDPmtg%2ByDoCkyZONzGmWaqsMYrV4IUU2e7VJc%3D&X-Amz-SignedHeaders=host&x-id=GetObject&X-Amz-Signature=b3270051c29a26062dfaf6be4e53ed619cccc156e51e9f559b68b65f53b72904\",\n                \"store\": null,\n                \"auth_code\": null,\n                \"agreement\": null,\n                \"object\": \"cash_payment\",\n                \"type\": \"cash\",\n                \"expires_at\": 1732492800,\n                \"store_names\": [\n                    \"7 Eleven\",\n                    \"Farmacias del Ahorro\",\n                    \"Wallmart\",\n                    \"Bodega Aurerra\",\n                    \"Sam's\",\n                    \"WALDO'S\",\n                    \"Super Kiosko\"\n                ],\n                \"store_name\": \"[\\\"7 Eleven\\\",\\\"Farmacias del Ahorro\\\",\\\"Wallmart\\\",\\\"Bodega Aurerra\\\",\\\"Sam's\\\",\\\"WALDO'S\\\",\\\"Super Kiosko\\\"]\",\n                \"reference\": \"10001823355239209611\",\n                \"cashier_id\": null,\n                \"product_type\": \"pespay_cash_in\"\n            },\n            \"object\": \"charge\",\n            \"description\": \"Payment from order\",\n            \"is_refundable\": false,\n            \"reference_id\": null,\n            \"status\": \"pending_payment\",\n            \"amount\": 12000,\n            \"paid_at\": null,\n            \"customer_id\": \"\",\n            \"order_id\": \"ord_2wrW9arie9fUG4MfD\",\n            \"refunds\": null\n        }\n    ]\n}",
+          "latency": 0,
+          "statusCode": 200,
+          "label": "successful multiple cash charges",
+          "headers": [
+            {
+              "key": "Content-Type",
+              "value": "application/vnd.conekta-v2.1.0+json"
+            }
+          ],
+          "bodyType": "INLINE",
+          "filePath": "",
+          "databucketID": "",
+          "sendFileAsBody": false,
+          "rules": [
+            {
+              "target": "params",
+              "modifier": "id",
+              "value": "ord_2wrW9arie9fUG4MfD",
+              "invert": false,
+              "operator": "equals"
+            }
+          ],
+          "rulesOperator": "OR",
+          "disableTemplating": false,
+          "fallbackTo404": false,
+          "default": false,
+          "crudKey": "id",
+          "callbacks": []
+        },
+        {
+          "uuid": "9efc05d1-8520-455e-b792-5226788684f6",
+          "body": "{\n\t\"amount\": 58000,\n\t\"channel\": {\n\t\t\"checkout_request_id\": \"96fdd3ed-aeea-4a33-a788-e0d4bcd5b148\",\n\t\t\"checkout_request_type\": \"Integration\",\n\t\t\"id\": \"channel_2uiGPUL1WAuroL6bW\",\n\t\t\"segment\": \"Checkout\"\n\t},\n\t\"created_at\": 1697042821,\n\t\"currency\": \"MXN\",\n\t\"customer_custom_reference\": null,\n\t\"customer_id\": \"cus_2uiGPGUfaNSD6KzML\",\n\t\"description\": \"Payment from order\",\n\t\"device_fingerprint\": \"f4b1205f5ee91ae7b3bb995d074d4708\",\n\t\"failure_code\": null,\n\t\"failure_message\": null,\n\t\"id\": \"6526d18547171200170c9b77\",\n\t\"is_refundable\": true,\n\t\"livemode\": false,\n\t\"monthly_installments\": 3,\n\t\"object\": \"charge\",\n\t\"order_id\": \"ord_2uiGPHDV6Zzribeqy\",\n\t\"paid_at\": 1697042821,\n\t\"payment_method\": {\n\t\t\"account_type\": \"BANAMEX\",\n\t\t\"auth_code\": \"451754\",\n\t\t\"brand\": \"visa\",\n\t\t\"contract_id\": null,\n\t\t\"country\": \"MX\",\n\t\t\"exp_month\": \"11\",\n\t\t\"exp_year\": \"26\",\n\t\t\"fraud_indicators\": [],\n\t\t\"fraud_score\": null,\n\t\t\"issuer\": \"banamex\",\n\t\t\"last4\": \"4242\",\n\t\t\"name\": \"fran car\",\n\t\t\"normalized_device_fingerprint\": null,\n\t\t\"object\": \"card_payment\",\n\t\t\"token_id\": \"tok_2uiGPSp8sAKHidCV3\",\n\t\t\"type\": \"credit\"\n\t},\n\t\"reference_id\": null,\n\t\"refunds\": null,\n\t\"status\": \"paid\"\n}",
+          "latency": 0,
+          "statusCode": 200,
+          "label": "successful card with monthly installments",
+          "headers": [
+            {
+              "key": "Content-Type",
+              "value": "application/vnd.conekta-v2.1.0+json"
+            },
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            }
+          ],
+          "bodyType": "INLINE",
+          "filePath": "",
+          "databucketID": "",
+          "sendFileAsBody": false,
+          "rules": [
+            {
+              "target": "params",
+              "modifier": "id",
+              "value": "ord_2uiGPHDV6Zzribeqy",
+              "invert": false,
+              "operator": "equals"
+            }
+          ],
+          "rulesOperator": "OR",
+          "disableTemplating": false,
+          "fallbackTo404": false,
+          "default": false,
+          "crudKey": "id",
+          "callbacks": []
+        },
+        {
+          "uuid": "7cc6ec89-c3e4-46b7-92cf-a2b1da9fb6f1",
+          "body": "{\n    \"id\": \"6408c87bde4b8e00010744e3\",\n    \"livemode\": true,\n    \"created_at\": 1678297211,\n    \"currency\": \"MXN\",\n    \"failure_code\": null,\n    \"failure_message\": null,\n    \"monthly_installments\": null,\n    \"device_fingerprint\": null,\n    \"channel\": null,\n    \"payment_method\": {\n        \"clabe\": \"646180111805035472\",\n        \"bank\": \"STP\",\n        \"issuing_account_holder_name\": null,\n        \"issuing_account_tax_id\": null,\n        \"issuing_account_bank\": null,\n        \"issuing_account_number\": null,\n        \"receiving_account_holder_name\": null,\n        \"receiving_account_tax_id\": null,\n        \"receiving_account_number\": \"646180111805035472\",\n        \"receiving_account_bank\": \"STP\",\n        \"reference_number\": null,\n        \"description\": null,\n        \"tracking_code\": null,\n        \"executed_at\": null,\n        \"payment_attempts\": [],\n        \"object\": \"bank_transfer_payment\",\n        \"type\": \"spei\",\n        \"expires_at\": 1686057163\n    },\n    \"object\": \"charge\",\n    \"description\": \"Payment from order\",\n    \"reference_id\": null,\n    \"status\": \"pending_payment\",\n    \"amount\": {{body 'amount' }},\n    \"paid_at\": null,\n    \"customer_id\": \"\",\n    \"order_id\": \"ord_2tVLUFrQBB4HKz1zj\",\n    \"refunds\": null\n}",
+          "latency": 0,
+          "statusCode": 200,
+          "label": "successful spei",
+          "headers": [
+            {
+              "key": "Content-Type",
+              "value": "application/vnd.conekta-v2.1.0+json"
+            }
+          ],
+          "bodyType": "INLINE",
+          "filePath": "",
+          "databucketID": "",
+          "sendFileAsBody": false,
+          "rules": [
+            {
+              "target": "params",
+              "modifier": "id",
+              "value": "ord_2tVLUFrQBB4HKz1zj",
+              "invert": false,
+              "operator": "equals"
+            }
+          ],
+          "rulesOperator": "OR",
+          "disableTemplating": false,
+          "fallbackTo404": false,
+          "default": false,
+          "crudKey": "id",
+          "callbacks": []
+        },
+        {
+          "uuid": "99b25943-5549-4231-b240-33729e2b3410",
+          "body": "{\n    \"id\": \"6408c296de4b8e00010744d2\",\n    \"livemode\": true,\n    \"created_at\": 1678295702,\n    \"currency\": \"MXN\",\n    \"failure_code\": null,\n    \"failure_message\": null,\n    \"monthly_installments\": null,\n    \"device_fingerprint\": null,\n    \"channel\": null,\n    \"payment_method\": {\n        \"service_name\": \"OxxoPay\",\n        \"barcode_url\": \"https://pt-common-s3-stg.s3.amazonaws.com/81be09473aa801b1cebfe033126f8bdf957d38a5.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=ASIA3UN6375MLPPELML6%2F20230308%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20230308T171502Z&X-Amz-Expires=604800&X-Amz-Security-Token=IQoJb3JpZ2luX2VjEJH%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FwEaCXVzLWVhc3QtMSJHMEUCIGD1riDCaWeet%2BpkiE%2BWhhfnnJ8IXpGAjWhfd4YpUsUmAiEAsMpD1teauQrxSPM%2BxtgTJLZHyf2Q8rtwRk%2F6QuvglJ8qhwQISRACGgw3OTk4MDEwODE2ODgiDDjZv8d7fy8Jpvp7gyrkA0JltRVcObiZSwI49ZHdcVFpjrijgLlVZbWqchpbh3cTBa2n%2FqE%2FwRGJp0tG5j%2Fvw05GK4yXeLZWqDwN6t%2BsP6A4yshALl7IUjKMi%2Bq1DS5RF0gZ%2FUVoXZAGJWP5RkdN9M9vpmdmIo7WdvzSobbL5iRq1aEzGwe5agMZkxlSrZgQuBVxSi4n6cYoY7Ke3vAaqf00VQgt9GJBWnY94cCpes3KnmakypRXxxsC1Tv1Vsewpv%2Beh%2BO9e8XE8zCsXDnS%2FLi7o%2FEhyA0yISpV6p8kKU14DLJ3MZFfOo0%2FCiiiXTDt8UxwBZ2%2BTq4OOgm9MNzhvIFFEroVWPlw09oM03eW4YBFQr%2Fd3HsWGelTcDxsJAog7145jIaTsn2tw4XkoufuN5RTFy7IBB9RuOqR2rWRN%2FrO3ctAGjp7orosTk2DYi2NgqNTFeln%2BIZvdgAq%2F%2BgxJyVyo7HEULKOJb%2FoKc9k7PRGdxADz0l2thdErCnoLMNRBRppJ4EBQ67zuwACciM0BZHqhV67nLLu942lLoLvoJ%2BUvATOtA5B7ALKTn9HKdGyRFD2EYaRseXmZefKlPWfZTAxs1HcfopLdZFTc25AcvaAHGWYvVLJlfsJeQAwgaBHatvUjkXeZoYj7sWzZOuOWucJTu8w7uaioAY6pQGOVhhbPNbPMlR84ONIvFcspL0yM6bJT8KWXdgWEtBhlsmMKkERpVvp9sUz3tfgKe9g8u4vTzPgLf0HXry961QeEIQraot0WTsxud%2B599nvquiwNn3jzxN6LRQC4OpDPYpjENgRGj834OQNPreqDcCzZ2K1MtRowsn1EzmeopEm3lwYyq299T9FPRiDji8BZJTOeid7bEhAXOWXlmffEIhutSmrrkM%3D&X-Amz-SignedHeaders=host&X-Amz-Signature=b0beaae8283c59301af7cbe6f90204a449224be159b837b9fd637826dabc89a4\",\n        \"store\": null,\n        \"auth_code\": null,\n        \"object\": \"cash_payment\",\n        \"type\": \"oxxo\",\n        \"expires_at\": 1680912000,\n        \"store_name\": \"OXXO\",\n        \"reference\": \"93000262280900\",\n        \"cashier_id\": null\n    },\n    \"object\": \"charge\",\n    \"description\": \"Payment from order\",\n    \"reference_id\": null,\n    \"status\": \"pending_payment\",\n    \"amount\": 40000,\n    \"paid_at\": null,\n    \"customer_id\": \"\",\n    \"order_id\": \"ord_2tVL8dT1Hm3y3YiaN\",\n    \"refunds\": null\n}",
+          "latency": 0,
+          "statusCode": 200,
+          "label": "successful cash",
+          "headers": [
+            {
+              "key": "Content-Type",
+              "value": "application/vnd.conekta-v2.1.0+json"
+            }
+          ],
+          "bodyType": "INLINE",
+          "filePath": "",
+          "databucketID": "",
+          "sendFileAsBody": false,
+          "rules": [
+            {
+              "target": "params",
+              "modifier": "id",
+              "value": "ord_2tVL8dT1Hm3y3YiaN",
+              "invert": false,
+              "operator": "equals"
+            }
+          ],
+          "rulesOperator": "OR",
+          "disableTemplating": false,
+          "fallbackTo404": false,
+          "default": false,
+          "crudKey": "id",
+          "callbacks": []
+        },
+        {
+          "uuid": "43b69067-1282-4004-8c01-24f81db01230",
+          "body": "",
+          "latency": 0,
+          "statusCode": 401,
+          "label": "authentication error",
+          "headers": [
+            {
+              "key": "Content-Type",
+              "value": "application/vnd.conekta-v2.1.0+json"
+            }
+          ],
+          "bodyType": "INLINE",
+          "filePath": "",
+          "databucketID": "",
+          "sendFileAsBody": false,
+          "rules": [],
+          "rulesOperator": "OR",
+          "disableTemplating": false,
+          "fallbackTo404": false,
+          "default": false,
+          "crudKey": "id",
+          "callbacks": []
+        },
+        {
+          "uuid": "7b71bfc3-5a37-4829-aa88-18006fd5f2b8",
+          "body": "{\n  \"details\": [\n    {\n      \"code\": \"conekta.errors.authentication.missing_key\",\n      \"param\": \"\",\n      \"message\": \"Acceso no autorizado.\",\n      \"debug_message\": \"Please include your access key in your request.\"\n    }\n  ]\n}",
+          "latency": 0,
+          "statusCode": 404,
+          "label": "not found entity",
+          "headers": [
+            {
+              "key": "Content-Type",
+              "value": "application/vnd.conekta-v2.1.0+json"
+            }
+          ],
+          "bodyType": "INLINE",
+          "filePath": "",
+          "databucketID": "",
+          "sendFileAsBody": false,
+          "rules": [],
+          "rulesOperator": "OR",
+          "disableTemplating": false,
+          "fallbackTo404": false,
+          "default": false,
+          "crudKey": "id",
+          "callbacks": []
+        },
+        {
+          "uuid": "1dd7a641-fe75-4717-8260-0eb2cd82bba1",
+          "body": "",
+          "latency": 0,
+          "statusCode": 500,
+          "label": "internal server error",
+          "headers": [
+            {
+              "key": "Content-Type",
+              "value": "application/vnd.conekta-v2.1.0+json"
+            }
+          ],
+          "bodyType": "INLINE",
+          "filePath": "",
+          "databucketID": "",
+          "sendFileAsBody": false,
+          "rules": [],
+          "rulesOperator": "OR",
+          "disableTemplating": false,
+          "fallbackTo404": false,
+          "default": true,
+          "crudKey": "id",
+          "callbacks": []
+        }
+      ],
+      "responseMode": null,
+      "type": "http"
     }
   ],
   "rootChildren": [
@@ -12553,6 +12767,10 @@
     {
       "type": "route",
       "uuid": "ffacf12e-1faa-4076-9368-bf9b64665963"
+    },
+    {
+      "type": "route",
+      "uuid": "4c1c205f-00d0-4190-8a6e-6365f0642736"
     }
   ],
   "proxyMode": false,
