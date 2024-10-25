@@ -1,0 +1,28 @@
+post:
+  tags:
+    - Charges
+  operationId: ordersCreateCharges
+  description: Create charges for an existing orden
+  responses:
+    200:
+      description: successful
+      content:
+        application/vnd.conekta-v2.1.0+json:
+          schema:
+            $ref: ../../schemas/charges/charges_order_response.yml
+    401:
+     $ref: '../errors/401.yml'
+    404:
+     $ref: '../errors/404.yml'
+    428:
+     $ref: '../errors/428.yml'
+    500:
+     $ref: '../errors/500.yml'
+  security:
+    - bearerAuth: []
+  requestBody:
+    $ref: '../../requestBodies/charges/charge_create.yml'
+  parameters:
+    - $ref: '../../parameters/commons/path_param/id.yml'
+    - $ref: '../../parameters/commons/headers/accept_language.yml'
+    - $ref: '../../parameters/commons/headers/x_child_company_id.yml'

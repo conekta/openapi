@@ -34,6 +34,8 @@ paths:
     $ref: "./resources/charges/update_charge.yml"
   /orders/{id}/charges:
     $ref: "./resources/orders/order_charge_param.yml"
+  /orders/{id}/add_charges:
+    $ref: "./resources/orders/order_charges_param.yml"
   /companies:
     $ref: "./resources/companies/companies.yml"
   /companies/{id}:
