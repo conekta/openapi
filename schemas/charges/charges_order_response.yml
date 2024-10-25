@@ -6,6 +6,5 @@ allOf:
       data:
         type: array
         items:
-          title: charges_data_response
           allOf:
             - $ref: ../../schemas/charges/charge_response.yml

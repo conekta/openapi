@@ -12434,7 +12434,7 @@ components:
       - properties:
           data:
             items:
-              $ref: '#/components/schemas/charges_data_response'
+              $ref: '#/components/schemas/charges_order_response_allOf_data'
             type: array
         type: object
       description: The charges associated with the order
@@ -15768,10 +15768,9 @@ components:
       - $ref: '#/components/schemas/payment_method_card'
       - $ref: '#/components/schemas/payment_method_bank_transfer'
       title: charge_order_response_payment_method
-    charges_data_response:
+    charges_order_response_allOf_data:
       allOf:
       - $ref: '#/components/schemas/charge_response'
-      title: charges_data_response
     customer_antifraud_info_response:
       nullable: true
       properties:
