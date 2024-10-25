@@ -1,6 +1,6 @@
 title: order_checkout_request
 description: |
-  [Checkout](https://developers.conekta.com/v2.1.0/reference/payment-link) details
+  [Checkout](https://developers.conekta.com/v2.2.0/reference/payment-link) details
 required:
   - allowed_payment_methods
 properties:
@@ -26,6 +26,11 @@ properties:
       type: integer
       format: int8
     example: [3,6,12]
+  max_failed_retries:
+    type: integer
+    format: int8
+    description: "Number of retries allowed before the checkout is marked as failed"
+    example: 3
   name:
     type: string
     description: "Reason for payment"

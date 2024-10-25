@@ -4,7 +4,7 @@ servers:
     description: Conekta main server
 info:
   description: Conekta sdk
-  version: 2.1.0
+  version: 2.2.0
   contact:
     name: Engineering Conekta
     url: https://github.com/conekta/openapi/issues
@@ -34,6 +34,8 @@ paths:
     $ref: "./resources/charges/update_charge.yml"
   /orders/{id}/charges:
     $ref: "./resources/orders/order_charge_param.yml"
+  /orders/{id}/add_charges:
+    $ref: "./resources/orders/order_charges_param.yml"
   /companies:
     $ref: "./resources/companies/companies.yml"
   /companies/{id}:

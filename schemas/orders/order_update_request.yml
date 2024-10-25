@@ -19,7 +19,7 @@ properties:
       - $ref: ../customers/customer_info.yml
       - $ref: ../customers/customer_info_just_customer_id.yml
   discount_lines:
-    description: "List of [discounts](https://developers.conekta.com/v2.1.0/reference/orderscreatediscountline) that are applied to the order. You must have at least one discount."
+    description: "List of [discounts](https://developers.conekta.com/v2.2.0/reference/orderscreatediscountline) that are applied to the order. You must have at least one discount."
     type: array
     items:
       $ref: order_discount_lines_request.yml
@@ -56,7 +56,7 @@ properties:
         nullable: true
         description: "Tax ID of the fiscal entity"
   line_items:
-    description: "List of [products](https://developers.conekta.com/v2.1.0/reference/orderscreateproduct) that are sold in the order. You must have at least one product."
+    description: "List of [products](https://developers.conekta.com/v2.2.0/reference/orderscreateproduct) that are sold in the order. You must have at least one product."
     type: array
     items:
        $ref: product.yml
@@ -72,7 +72,7 @@ properties:
     $ref: ../../schemas/customers/customer_shipping_contacts.yml
   shipping_lines:
     type: array
-    description: "List of [shipping costs](https://developers.conekta.com/v2.1.0/reference/orderscreateshipping). If the online store offers digital products."
+    description: "List of [shipping costs](https://developers.conekta.com/v2.2.0/reference/orderscreateshipping). If the online store offers digital products."
     items:
       $ref: ../../schemas/orders/shipping_request.yml
   tax_lines:

@@ -8,7 +8,7 @@ post:
     200:
       description: successful operation
       content:
-        application/vnd.conekta-v2.1.0+json:
+        application/vnd.conekta-v2.2.0+json:
           schema:
               $ref: ../../schemas/payout_orders/payout_order_response.yml
     422:
@@ -37,7 +37,7 @@ get:
     200:
       description: successful operation
       content:
-        application/vnd.conekta-v2.1.0+json:
+        application/vnd.conekta-v2.2.0+json:
           schema:
             title: payout_orders_response
             allOf:

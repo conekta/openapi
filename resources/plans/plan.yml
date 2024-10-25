@@ -34,7 +34,7 @@ get:
         Conekta-Media-Type:
           schema:
             type: string
-            example: conekta-v2.1.0; format=application/json
+            example: conekta-v2.2.0; format=application/json
     422:
      $ref: '../errors/422.yml'
     401:
@@ -85,7 +85,7 @@ put:
         Conekta-Media-Type:
           schema:
             type: string
-            example: conekta-v2.1.0; format=application/json
+            example: conekta-v2.2.0; format=application/json
     422:
      $ref: '../errors/422.yml'
     401:
@@ -138,7 +138,7 @@ delete:
         Conekta-Media-Type:
           schema:
             type: string
-            example: conekta-v2.1.0; format=application/json
+            example: conekta-v2.2.0; format=application/json
     422:
      $ref: '../errors/422.yml'
     401:

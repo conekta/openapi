@@ -1,6 +1,10 @@
 title: charges_data_response
 type: object
 properties:
+  agreement:
+    type: string
+    example: "agreement_2tN73UdUSNrYRPD9r"
+    description: "Agreement ID"
   amount: 
     type: integer
     example: 4321
@@ -73,6 +77,10 @@ properties:
         cash_payment: payment_method_cash
         card_payment: payment_method_card
         bank_transfer_payment: payment_method_bank_transfer
+  product_type:
+    type: string
+    example: "bbva_cash_in"
+    description: "Product type, e.g. bbva_cash_in, cash_in, pespay_cash_in, etc."
   reference_id:
     type: string
     description: "Reference ID of the charge"
