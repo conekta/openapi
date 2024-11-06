@@ -5,6 +5,10 @@ payment_method_cash:
       title: charge_data_payment_method_cash_response
       description: use for cash responses
       properties:
+        agreement:
+          type: string
+          example: "agreement_2tN73UdUSNrYRPD9r"
+          description: "Agreement ID"
         auth_code:
           type: integer
           example: 542563
@@ -23,6 +27,10 @@ payment_method_cash:
           type: integer
           format: int64
           example: 0
+        product_type:
+          type: string
+          example: "bbva_cash_in"
+          description: "Product type, e.g. bbva_cash_in, cash_in, pespay_cash_in, etc."
         service_name:
           type: string
           example: "OxxoPay"
