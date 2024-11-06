@@ -82,6 +82,8 @@ paths:
     $ref: "./resources/payout_orders/payout_orders.yml"
   /payout_orders/{id}:
     $ref: "./resources/payout_orders/get_payout_order.yml"
+  /payout_orders/{id}/cancel:
+    $ref: "./resources/payout_orders/cancel_payout_order.yml"
   /checkouts:
     $ref: "./resources/checkouts/checkouts.yml"
   /checkouts/{id}:
