@@ -5370,13 +5370,13 @@ paths:
       responses:
         "200":
           content:
-            application/vnd.conekta-v2.1.0+json:
+            application/vnd.conekta-v2.2.0+json:
               schema:
                 $ref: '#/components/schemas/payout_order_response'
           description: successful operation
         "401":
           content:
-            application/vnd.conekta-v2.1.0+json:
+            application/vnd.conekta-v2.2.0+json:
               example:
                 details:
                 - message: Please include your access key in your request.
@@ -5390,7 +5390,7 @@ paths:
           description: authentication error
         "404":
           content:
-            application/vnd.conekta-v2.1.0+json:
+            application/vnd.conekta-v2.2.0+json:
               example:
                 details:
                 - message: The resource was not found.
@@ -5406,7 +5406,7 @@ paths:
           description: not found entity
         "500":
           content:
-            application/vnd.conekta-v2.1.0+json:
+            application/vnd.conekta-v2.2.0+json:
               example:
                 details:
                 - debug_message: There was a runtime error and Conekta engineers have
