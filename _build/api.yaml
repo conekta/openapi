@@ -16887,12 +16887,14 @@ components:
           example: "12"
           maxLength: 2
           type: string
+          x-encripted: true
         exp_year:
           description: It is a value that allows identifying the expiration year of
             the card.
           example: "26"
           maxLength: 2
           type: string
+          x-encripted: true
         name:
           description: It is a value that allows identifying the name of the cardholder.
           example: Miguel
