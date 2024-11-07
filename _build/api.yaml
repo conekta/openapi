@@ -16899,6 +16899,7 @@ components:
           description: It is a value that allows identifying the name of the cardholder.
           example: Miguel
           type: string
+          x-encripted: true
         number:
           description: It is a value that allows identifying the number of the card.
           example: "4242424242424242"

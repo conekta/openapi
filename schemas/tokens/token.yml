@@ -38,6 +38,7 @@ properties:
         type: string
         description: "It is a value that allows identifying the name of the cardholder."
         example: "Miguel"
+        x-encripted: true
       number:
         type: string
         description: "It is a value that allows identifying the number of the card."
