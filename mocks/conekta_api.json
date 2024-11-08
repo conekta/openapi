@@ -9579,9 +9579,9 @@
           "sendFileAsBody": false,
           "rules": [
             {
-              "target": "body",
-              "modifier": "card.name",
-              "value": "fran fail",
+              "target": "header",
+              "modifier": "Accept-language",
+              "value": "en",
               "invert": false,
               "operator": "equals"
             }
