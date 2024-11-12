@@ -16166,6 +16166,7 @@ components:
             failed
           example: 3
           format: int8
+          nullable: true
           type: integer
         metadata:
           additionalProperties: true
