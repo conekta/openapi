@@ -27,15 +27,18 @@ properties:
         description: "It is a value that allows identifying the expiration month of the card."
         example: "12"
         maxLength: 2
+        x-encripted: true
       exp_year: 
         type: string
         description: "It is a value that allows identifying the expiration year of the card."
         example: "26"
         maxLength: 2
+        x-encripted: true
       name: 
         type: string
         description: "It is a value that allows identifying the name of the cardholder."
         example: "Miguel"
+        x-encripted: true
       number:
         type: string
         description: "It is a value that allows identifying the number of the card."

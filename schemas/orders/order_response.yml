@@ -76,6 +76,7 @@ properties:
         example: 3
         format: int8
         description: "Number of retries allowed before the checkout is marked as failed"
+        nullable: true
       metadata:
         additionalProperties: true
         maxProperties: 100
