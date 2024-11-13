@@ -32,6 +32,10 @@ properties:
     type: string
     example: "custom_reference"
     description: Custom reference
+  date_of_birth:
+    type: string
+    description: "It is a parameter that allows to identify the date of birth of the client."
+    example: "24/07/1992"
   default_fiscal_entity_id:
     type: string
     nullable: true
@@ -92,6 +96,10 @@ properties:
     type: string
     example: Felipe
     description: Customer's name
+  national_id:
+    type: string
+    description: "It is a parameter that allows to identify the national identification number of the client."
+    example: "HEGG560427MVZRRL04"
   metadata:
     type: object
     additionalProperties: true
