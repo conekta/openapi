@@ -15599,7 +15599,6 @@ components:
         expires_at:
           example: 1553273553
           format: int64
-          nullable: true
           type: integer
         reason:
           description: Reason for the refund

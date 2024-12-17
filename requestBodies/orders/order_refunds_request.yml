@@ -2,19 +2,18 @@ description: requested field for a refund
 required: true
 content:
   application/json:
-    schema:  
+    schema:
       required:
         - amount
         - reason
       properties:
-        amount: 
+        amount:
           type: integer
           example: 500
           description: "Amount to be refunded in cents"
         expires_at:
           type: integer
           example: 1553273553
-          nullable: true
           format: int64
         reason:
           type: string
