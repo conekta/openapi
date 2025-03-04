@@ -14,8 +14,12 @@ post:
           examples:
             cash:
               $ref: ../../schemas/orders/examples/order_cash.yml
+            multiples_cash_charges:
+              $ref: ../../schemas/orders/examples/order_cash_multiple.yml
             card:
               $ref: ../../schemas/orders/examples/order_card.yml
+            bnpl:
+              $ref: ../../schemas/orders/examples/order_bnpl.yml
     422:
      $ref: '../errors/422.yml'
     401:

@@ -1,0 +1,88 @@
+value:
+  amount: 300000
+  amount_refunded: 0
+  channel:
+    checkout_request_id: "fdcb06d6-c9e1-44ee-921f-17723b63852f"
+    checkout_request_type: "PaymentLink"
+    id: "channel_2xaegxs5s69VP4pWw"
+    segment: "Checkout"
+  charges:
+    data:
+      - amount: 300000
+        channel:
+          checkout_request_id: "fdcb06d6-c9e1-44ee-921f-17723b63852f"
+          checkout_request_type: "PaymentLink"
+          id: "channel_2xaegxs5s69VP4pXA"
+          segment: "Checkout"
+        created_at: 1741015718
+        currency: "MXN"
+        customer_id: ""
+        description: "Payment from order"
+        device_fingerprint: null
+        failure_code: null
+        failure_message: null
+        id: "67c5caa665f9b400015dec40"
+        is_refundable: false
+        livemode: true
+        monthly_installments: null
+        object: "charge"
+        order_id: "ord_2xaegxs5s69VP4pWy"
+        paid_at: null
+        payment_method:
+          cancel_url: "https://pay.stg.conekta.io/payment-status/fdcb06d6-c9e1-44ee-921f-17723b63852f/cancel?order_id=ord_2xaegxs5s69VP4pWy&charge_id=67c5caa665f9b400015dec40"
+          expires_at: 1743694118
+          failure_url: "https://pay.stg.conekta.io/payment-status/fdcb06d6-c9e1-44ee-921f-17723b63852f/failure?order_id=ord_2xaegxs5s69VP4pWy&charge_id=67c5caa665f9b400015dec40"
+          object: "bnpl_payment"
+          product_type: "klarna_bnpl"
+          redirect_url: "https://pay.playground.klarna.com/na/hpp/payments/20sJ2LZ"
+          success_url: "https://pay.stg.conekta.io/payment-status/fdcb06d6-c9e1-44ee-921f-17723b63852f/success?order_id=ord_2xaegxs5s69VP4pWy&charge_id=67c5caa665f9b400015dec40"
+          type: "bnpl"
+        reference_id: null
+        refunds: null
+        status: "pending_payment"
+    has_more: false
+    object: "list"
+    total: 1
+  checkout: null
+  created_at: 1741015718
+  currency: "MXN"
+  customer_info:
+    corporate: false
+    customer_custom_reference: null
+    customer_id: "cus_2xZfwfjXxX9tZhVey"
+    email: "alexis.ruiz@google.com"
+    name: "Pedro Ruiz"
+    object: "customer_info"
+    phone: "+5215555555555"
+  discount_lines: null
+  fiscal_entity: null
+  id: "ord_2xaegxs5s69VP4pWy"
+  is_refundable: false
+  line_items:
+    data:
+      - antifraud_info: {}
+        brand: null
+        description: null
+        id: "line_item_2xaegxs5s69VP4pWv"
+        metadata: {}
+        name: "Test creditea"
+        object: "line_item"
+        parent_id: "ord_2xaegxs5s69VP4pWy"
+        quantity: 1
+        sku: null
+        tags: null
+        type: null
+        unit_price: 300000
+    has_more: false
+    object: "list"
+    total: 1
+  livemode: true
+  metadata: {}
+  object: "order"
+  payment_status: "pending_payment"
+  processing_mode: null
+  shipping_contact: null
+  shipping_lines: null
+  split_payment: false
+  tax_lines: null
+  updated_at: 1741015718

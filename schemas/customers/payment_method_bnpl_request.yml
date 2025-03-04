@@ -1,0 +1,41 @@
+title: payment_method_bnpl_request
+allOf:
+  - $ref: './customer_payment_method_request.yml'
+  - type: object
+    required:
+        - can_not_expire
+        - cancel_url
+        - failure_url
+        - product_type
+        - success_url
+        - type
+    properties:
+      cancel_url:
+        type: string
+        description: "URL to redirect the customer after a canceled payment"
+        example: "https://example.com/cancel"
+      can_not_expire:
+        type: boolean
+        example: true
+        description: "Indicates if the payment method can not expire"
+      failure_url:
+        type: string
+        description: "URL to redirect the customer after a failed payment"
+        example: "https://example.com/failure"
+      product_type:
+        type: string
+        example: "klarna_bnpl"
+        description: "Product type of the payment method, use for the payment method to know the product type"
+        enum:
+          - klarna_bnpl
+          - creditea_bnpl
+      success_url:
+        type: string
+        description: "URL to redirect the customer after a successful payment"
+        example: "https://example.com/success"
+      type:
+        type: string
+        example: "bnpl"
+        description: "Type of the payment method"
+
+     

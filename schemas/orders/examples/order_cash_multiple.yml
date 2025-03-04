@@ -1,13 +1,13 @@
 value:
   livemode: true
-  amount: 1560
+  amount: 156000
   currency: MXN
   payment_status: pending_payment
   amount_refunded: 0
   split_payment: false
   customer_info: 
     email: franco.longhi@conekta.com
-    phone: 539-933-3810
+    phone: 884-712-6894
     name: franco golden
     corporate: null
     customer_id: null
@@ -16,12 +16,12 @@ value:
   channel: null
   fiscal_entity: null
   object: order
-  id: ord_2xayxSvfWzQ2TLz7r
+  id: ord_2xazGvtKYTjxTUZU3
   metadata: {}
   is_refundable: false
   processing_mode: null
-  created_at: 1741103510
-  updated_at: 1741103510
+  created_at: 1741104962
+  updated_at: 1741104963
   line_items: 
     object: list
     has_more: false
@@ -29,15 +29,15 @@ value:
     data: 
       - name: APOYO URGENTE REFERENCIA
         description: null
-        unit_price: 1560
+        unit_price: 156000
         quantity: 1
         sku: COL094
         tags: null
         brand: CHEDRAUI
         type: null
         object: line_item
-        id: line_item_2xayxSvfWzQ2TLz7p
-        parent_id: ord_2xayxSvfWzQ2TLz7r
+        id: line_item_2xazGvtKYTjxTUZU1
+        parent_id: ord_2xazGvtKYTjxTUZU3
         metadata: {}
         antifraud_info: {}
   shipping_lines: null
@@ -46,11 +46,11 @@ value:
   charges: 
     object: list
     has_more: false
-    total: 1
+    total: 2
     data: 
-      - id: 67c72196e777ac0001f2140c
+      - id: 67c72742e777ac0001f21463
         livemode: true
-        created_at: 1741103510
+        created_at: 1741104962
         currency: MXN
         failure_code: null
         failure_message: null
@@ -59,7 +59,40 @@ value:
         channel: null
         payment_method: 
           service_name: Cash
-          barcode_url: https://barcodes.conekta.com/cash/cashin/datalogic/10001140326893401915.png
+          barcode_url: https://barcodes.conekta.com/cash/cashin/bbva/10830309851141878231.png
+          store: null
+          auth_code: null
+          agreement: "2409992"
+          object: cash_payment
+          type: cash
+          expires_at: 1743724800
+          store_names: 
+            - BBVA ATM
+          reference: 10830309851141878231
+          cashier_id: null
+          product_type: bbva_cash_in
+        object: charge
+        description: Payment from order
+        is_refundable: false
+        reference_id: null
+        status: pending_payment
+        amount: 156000
+        paid_at: null
+        customer_id: ""
+        order_id: ord_2xazGvtKYTjxTUZU3
+        refunds: null
+      - id: 67c72742e777ac0001f2145b
+        livemode: true
+        created_at: 1741104962
+        currency: MXN
+        failure_code: null
+        failure_message: null
+        monthly_installments: null
+        device_fingerprint: null
+        channel: null
+        payment_method: 
+          service_name: Cash
+          barcode_url: https://barcodes.conekta.com/cash/cashin/datalogic/10001244873740402013.png
           store: null
           auth_code: null
           agreement: null
@@ -90,7 +123,7 @@ value:
             - Farmacias Zapotlan
             - Farmatodo
             - Al Super
-          reference: 10001140326893401915
+          reference: 10001244873740402013
           cashier_id: null
           product_type: cash_in
         object: charge
@@ -98,8 +131,8 @@ value:
         is_refundable: false
         reference_id: null
         status: pending_payment
-        amount: 1560
+        amount: 156000
         paid_at: null
         customer_id: ""
-        order_id: ord_2xayxSvfWzQ2TLz7r
+        order_id: ord_2xazGvtKYTjxTUZU3
         refunds: null

@@ -1,0 +1,38 @@
+payment_method_bnpl_payment:
+  allOf:
+    - $ref: charge_payment_method_response.yml#/payment_method
+    - type: object
+      title: charge_data_payment_method_bnpl_payment_response
+      description: use for bnpl payment responses
+      required:
+          - product_type
+          - expires_at
+      properties:
+        cancel_url:
+          type: string
+          description: "URL to redirect the customer after a canceled payment"
+          example: "https://example.com/cancel"
+        expires_at:
+          type: integer
+          example: 1683053729
+          format: int64
+          description: "Expiration date of the charge"
+        failure_url:
+          type: string
+          description: "URL to redirect the customer after a failed payment"
+          example: "https://example.com/failure"
+        product_type:
+          type: string
+          description: "Product type of the charge"
+          examples:
+            - value: "klarna_bnpl"
+            - value: "creditea_bnpl"
+        redirect_url:
+          type: string
+          description: "URL to redirect the customer to complete the payment"
+          example: "https://example.com/redirect"
+        success_url:
+          type: string
+          description: "URL to redirect the customer after a successful payment"
+          example: "https://example.com/success"
+       

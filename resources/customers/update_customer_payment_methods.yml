@@ -17,6 +17,7 @@ put:
                   cash: payment_method_cash_response
                   card: payment_method_card_response
                   oxxo_recurrent: payment_method_cash_response
+                  cash_recurrent: payment_method_cash_response
                   spei_recurrent: payment_method_spei_recurrent
             oneOf:
               - $ref: '../../schemas/customers/customer_payment_method_cash_response.yml#/payment_method_cash_response' 
@@ -59,6 +60,7 @@ delete:
                   cash: payment_method_cash_response
                   card: payment_method_card_response
                   oxxo_recurrent: payment_method_cash_response
+                  cash_recurrent: payment_method_cash_response
                   spei_recurrent: payment_method_spei_recurrent
             oneOf:
               - $ref: '../../schemas/customers/customer_payment_method_cash_response.yml#/payment_method_cash_response' 

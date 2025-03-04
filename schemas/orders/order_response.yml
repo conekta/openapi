@@ -11,6 +11,7 @@ properties:
     description: "The total amount refunded in cents"
   channel:
     type: object
+    title: order_channel_response
     properties:
       segment:
         type: string
@@ -26,6 +27,7 @@ properties:
         example: "channel_2tNDzhA4Akmzj11AU"
   charges:
     description: "The charges associated with the order"
+    title: order_charges_response
     allOf:
       - $ref: ../pagination/pagination.yml
       - type: object
@@ -41,6 +43,8 @@ properties:
     properties:
       allowed_payment_methods:
         type: array
+        example: [ "cash", "card", "bank_transfer", "bnpl"]
+        description: "Are the payment methods available for this link"
         items:
           type: string
       can_not_expire:
@@ -154,6 +158,7 @@ properties:
       - $ref: order_customer_info_response.yml
       - $ref: ../customers/customer_info_just_customer_id_response.yml
   discount_lines:
+    title: order_discount_lines_response
     allOf:
       - $ref: ../pagination/pagination.yml
       - type: object

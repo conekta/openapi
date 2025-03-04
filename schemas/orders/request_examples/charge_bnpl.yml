@@ -1,0 +1,8 @@
+value:
+  payment_method: 
+    can_not_expire: true
+    cancel_url: https://pay.stg.conekta.io/payment-status/fdcb06d6-c9e1-44ee-921f-17723b63852f/cancel
+    failure_url:  https://pay.stg.conekta.io/payment-status/fdcb06d6-c9e1-44ee-921f-17723b63852f/failure
+    product_type: klarna_bnpl
+    success_url:  https://pay.stg.conekta.io/payment-status/fdcb06d6-c9e1-44ee-921f-17723b63852f/success
+    type: bnpl
