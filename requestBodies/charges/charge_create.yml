@@ -3,4 +3,9 @@ content:
   application/json:
     schema:  
       $ref: '../../schemas/charges/charge_request.yml'
+    examples:
+      bnpl:
+        $ref: '../../schemas/orders/request_examples/charge_bnpl.yml'
+      cash:
+        $ref: '../../schemas/orders/request_examples/charge_cash.yml'
 required: true
