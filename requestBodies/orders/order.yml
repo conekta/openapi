@@ -6,6 +6,8 @@ content:
     examples:
       order_with_charges:
         $ref: '../../schemas/orders/request_examples/order_with_charges.yml'
+      order_with_bnpl_charges:
+        $ref: '../../schemas/orders/request_examples/order_with_charges_bnpl.yml'
       order_with_checkout:
         $ref: '../../schemas/orders/request_examples/order_with_checkout.yml'
       split_payment_with_2_card_charges:

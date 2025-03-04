@@ -6,10 +6,12 @@ properties:
   amount:
     type: integer
     example: 40000
+    format: int64
     description: "Amount to be charged in cents"
   payment_method:
     title: charge_request_payment_method
     oneOf:
+      - $ref: '../customers/payment_method_bnpl_request.yml'
       - $ref: '../customers/payment_method_card_request.yml'
       - required:
           - type
