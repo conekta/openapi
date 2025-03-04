@@ -11,7 +11,8 @@ properties:
     type: array
     items:
       type: string
-    example: [ "cash", "card", "bank_transfer"]
+    example: [ "cash", "card", "bank_transfer", "bnpl"]
+    description: "Are the payment methods available for this link"
   can_not_expire:
     type: boolean
     example: false
