@@ -24,7 +24,7 @@ jobs:
         with:
           generator: openapi-yaml
           openapi-file: api.yaml
-          generator-tag: v7.9.0
+          generator-tag: v7.12.0
       - name: check if api.yaml are equals
         run: |
           if diff -q _build/api.yaml openapi-yaml-client/openapi/openapi.yaml >/dev/null; then
