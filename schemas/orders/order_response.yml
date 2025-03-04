@@ -41,6 +41,8 @@ properties:
     properties:
       allowed_payment_methods:
         type: array
+        example: [ "cash", "card", "bank_transfer", "bnpl"]
+        description: "Are the payment methods available for this link"
         items:
           type: string
       can_not_expire:

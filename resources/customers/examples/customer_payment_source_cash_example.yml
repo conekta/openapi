@@ -1,0 +1,51 @@
+value:
+  next_page_url: null,
+  previous_page_url: null,
+  has_more: false,
+  object: list,
+  data: [
+      {
+          id: off_ref_2xayPUpcxeTrotDHr,
+          object: payment_source,
+          provider: Cash,
+          store_names: [
+              7 Eleven,
+              Farmacias del Ahorro,
+              CIRCLE K,
+              Tiendas Extra,
+              Farmacia Benavides,
+              Soriana,
+              WALDO'S,
+              ELECZION,
+              Super Kiosko,
+              Farmacias Bazar,
+              Wolworth,
+              Del Sol,
+              Yepas,
+              Farmacias De Dios,
+              Farmacias Nosarco,
+              Farmacias Santa Cruz,
+              Farmacentro,
+              Farmacias GyM,
+              Farmacias San Francisco de Asis,
+              Farmacias Union,
+              Farmacias Zapotlan,
+              Farmatodo,
+              Al Super,
+              BBVA ATM
+          ],
+          type: cash_recurrent,
+          reference: 10001189383263801812_caca,
+          barcode: 10001189383263801812,
+          barcode_url: https://barcode.conekta.com/cash/cashin/10001189383263801812.png,
+          expires_at: 0,
+          created_at: 1741100921,
+          parent_id: cus_2xayPFXsb4LBZ2GUL,
+          agreements: [
+              {
+                  provider: bbva_cash_in,
+                  agreement: 2409526
+              }
+          ]
+      }
+  ]

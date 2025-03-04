@@ -2,7 +2,10 @@ summary: Create an order with checkout
 value:
   checkout:
     allowed_payment_methods:
-    - "[cash, card, bank_transfer]"
+      - cash
+      - card
+      - bank_transfer
+      - bnpl
     expires_at: 0
     failure_url: string
     monthly_installments_enabled: false

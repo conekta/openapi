@@ -13,7 +13,7 @@ properties:
     type: array
     items:
       type: string
-    example: [ "cash", "card", "bank_transfer"]
+    example: [ "cash", "card", "bank_transfer", "bnpl"]
     description: "Those are the payment methods that will be available for the link"
   expires_at:
     type: integer
