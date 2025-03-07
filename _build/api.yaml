@@ -13612,6 +13612,7 @@ components:
           agreements:
             items:
               $ref: '#/components/schemas/payment_method_cash_response_allOf_agreements'
+            title: payment_method_cash_agreements
             type: array
           reference:
             example: "93000262276908"

@@ -5,6 +5,7 @@ payment_method_cash_response:
       description: use for cash responses
       properties:
         agreements:
+          title: payment_method_cash_agreements
           type: array
           items:
             type: object
