@@ -15311,7 +15311,7 @@ components:
             type: string
           executed_at:
             nullable: true
-            type: integer
+            type: string
           expires_at:
             example: 1683053729
             format: int64
