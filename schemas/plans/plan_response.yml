@@ -39,3 +39,10 @@ properties:
     type: integer
     example: 0
     nullable: true
+  max_retries:
+    type: integer
+    example: 3
+  retry_delay_hours:
+    type: integer
+    example: 48
+

@@ -8,7 +8,7 @@ get:
     200:
       description: successful
       content:
-        application/vnd.conekta-v2.1.0+json:
+        application/vnd.conekta-v2.2.0+json:
           schema:
             title: get_webhooks_response
             allOf:
@@ -44,7 +44,7 @@ get:
         Conekta-Media-Type:
           schema:
             type: string
-            example: conekta-v2.1.0; format=application/json
+            example: conekta-v2.2.0; format=application/json
     401:
      $ref: '../errors/401.yml'
     500:
@@ -69,7 +69,7 @@ post:
     '200':
       description: successful operation
       content:
-        application/vnd.conekta-v2.1.0+json:
+        application/vnd.conekta-v2.2.0+json:
           schema:
              $ref: ../../schemas/webhooks/webhook_response.yml
     401:

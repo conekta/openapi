@@ -22,6 +22,12 @@ properties:
     example: null
     nullable: true
     format: int64
+  last_used_at:
+    type: integer
+    description: Unix timestamp in seconds with the api key was used
+    example: null
+    nullable: true
+    format: int64
   description:
     type: string
     description: A name or brief explanation of what this api key is used for
@@ -34,10 +40,6 @@ properties:
     type: boolean
     description: Indicates if the api key is in production
     example: false
-  deleted:
-    type: boolean
-    description: Indicates if the api key was deleted
-    example: nil
   object:
     type: string
     description: "Object name, value is 'api_key'"

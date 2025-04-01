@@ -8,4 +8,4 @@ allOf:
       token_id:
         type: string
         example: "tok_32hj4g234as"
-        description: Token id that will be used to create a "card" type payment method. See the (subscriptions)[https://developers.conekta.com/v2.1.0/reference/createsubscription] tutorial for more information on how to tokenize cards.
+        description: Token id that will be used to create a "card" type payment method. See the (subscriptions)[https://developers.conekta.com/v2.2.0/reference/createsubscription] tutorial for more information on how to tokenize cards.

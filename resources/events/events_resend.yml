@@ -3,12 +3,12 @@ post:
     - Events
   operationId: resendEvent
   summary: Resend Event
-  description: "Try to send an event"
+  description: "Resend event to selected webhooks"
   responses:
     200:
       description: successful operation
       content:
-        application/vnd.conekta-v2.1.0+json:
+        application/vnd.conekta-v2.2.0+json:
           schema:
             $ref: ../../schemas/events/events_resend_response.yml
     401:
@@ -21,5 +21,11 @@ post:
     - bearerAuth: []
   parameters:
     - $ref: "../../parameters/commons/path_param/event_id.yml"
-    - $ref: "../../parameters/commons/path_param/webhook_log_id.yml"
     - $ref: "../../parameters/commons/headers/accept_language.yml"
+  requestBody:
+    description: requested fields for resend an event
+    content:
+      application/json:
+        schema:
+          $ref: '../../schemas/events/resend_request.yml'
+    required: true

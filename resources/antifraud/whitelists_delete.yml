@@ -11,7 +11,7 @@ delete:
     200:
       description: successfully deleted rule
       content:
-        application/vnd.conekta-v2.1.0+json:
+        application/vnd.conekta-v2.2.0+json:
           schema:
             title: deleted_whitelist_rule_response
             properties:

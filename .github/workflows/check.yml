@@ -2,7 +2,7 @@ name: Check API YAML Modification on Pull Request
 
 on:
   pull_request:
-    branches: [ main, release/v2.2.0 ]
+    branches: [ main, releases/**, release/** ]
     types: [ opened, synchronize ]
 
 jobs:

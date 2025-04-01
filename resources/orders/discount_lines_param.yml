@@ -8,7 +8,7 @@ post:
     200:
       description: successful
       content:
-        application/vnd.conekta-v2.1.0+json:
+        application/vnd.conekta-v2.2.0+json:
           schema:
             $ref: ../../schemas/orders/discount_lines_response.yml
     401:
@@ -35,7 +35,7 @@ get:
     200:
       description: successful
       content:
-        application/vnd.conekta-v2.1.0+json:
+        application/vnd.conekta-v2.2.0+json:
           schema:
             title: get_order_discount_lines_response
             allOf:

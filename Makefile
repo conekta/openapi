@@ -1,4 +1,3 @@
-API_README_VERSION_ID = 641deb4041d58005f2c45bf3
 merge:
 	docker run --rm \
 	-v ${PWD}:/local openapitools/openapi-generator-cli:v7.12.0 generate \
@@ -8,4 +7,4 @@ merge:
 	--skip-validate-spec
 
 update-readme:
-	make merge && rdme openapi _build/api.yaml --id=$(API_README_VERSION_ID)  --key=${README_API_KEY}
+	make merge && rdme openapi _build/api.yaml --id=${API_README_VERSION_2_2_0_ID}  --key=${README_API_KEY}
