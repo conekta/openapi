@@ -8172,6 +8172,8 @@ paths:
       - Shipping Contacts
   /customers/{id}/subscription:
     get:
+      deprecated: true
+      description: "DEPRECATED: This endpoint will be removed in version 2.3.0."
       operationId: getSubscription
       parameters:
       - description: Identifier of the resource
@@ -8279,12 +8281,13 @@ paths:
           description: internal server error
       security:
       - bearerAuth: []
-      summary: Get Subscription
+      summary: "Get Subscription [Deprecated]"
       tags:
       - Subscriptions
     post:
-      description: You can create the subscription to include the plans that your
-        customers consume
+      deprecated: true
+      description: "DEPRECATED: This endpoint will be removed in version 2.3.0. You\
+        \ can create the subscription to include the plans that your customers consume"
       operationId: createSubscription
       parameters:
       - description: Identifier of the resource
@@ -8417,12 +8420,13 @@ paths:
           description: internal server error
       security:
       - bearerAuth: []
-      summary: Create Subscription
+      summary: "Create Subscription [Deprecated]"
       tags:
       - Subscriptions
     put:
-      description: You can modify the subscription to change the plans that your customers
-        consume
+      deprecated: true
+      description: "DEPRECATED: This endpoint will be removed in version 2.3.0. You\
+        \ can modify the subscription to change the plans that your customers consume"
       operationId: updateSubscription
       parameters:
       - description: Identifier of the resource
@@ -8555,13 +8559,13 @@ paths:
           description: internal server error
       security:
       - bearerAuth: []
-      summary: Update Subscription
+      summary: "Update Subscription [Deprecated]"
       tags:
       - Subscriptions
   /customers/{id}/subscription/cancel:
     post:
-      description: You can cancel the subscription to stop the plans that your customers
-        consume
+      deprecated: true
+      description: "DEPRECATED: This endpoint will be removed in version 2.3.0."
       operationId: cancelSubscription
       parameters:
       - description: Identifier of the resource
@@ -8677,14 +8681,15 @@ paths:
           description: internal server error
       security:
       - bearerAuth: []
-      summary: Cancel Subscription
+      summary: "Cancel Subscription [Deprecated]"
       tags:
       - Subscriptions
   /customers/{id}/subscription/events:
     get:
+      deprecated: true
       description: "You can get the events of the subscription(s) of a client, with\
         \ the customer id"
-      operationId: getAllEventsFromSubscription
+      operationId: getSubscriptionEvents
       parameters:
       - description: Identifier of the resource
         example: 6307a60c41de27127515a575
@@ -8828,13 +8833,13 @@ paths:
           description: internal server error
       security:
       - bearerAuth: []
-      summary: Get Events By Subscription
+      summary: "Get Subscription Events [Deprecated]"
       tags:
       - Subscriptions
   /customers/{id}/subscription/pause:
     post:
-      description: You can pause the subscription to stop the plans that your customers
-        consume
+      deprecated: true
+      description: "DEPRECATED: This endpoint will be removed in version 2.3.0."
       operationId: pauseSubscription
       parameters:
       - description: Identifier of the resource
@@ -8964,13 +8969,13 @@ paths:
           description: internal server error
       security:
       - bearerAuth: []
-      summary: Pause Subscription
+      summary: "Pause Subscription [Deprecated]"
       tags:
       - Subscriptions
   /customers/{id}/subscription/resume:
     post:
-      description: You can resume the subscription to start the plans that your customers
-        consume
+      deprecated: true
+      description: "DEPRECATED: This endpoint will be removed in version 2.3.0."
       operationId: resumeSubscription
       parameters:
       - description: Identifier of the resource
@@ -9115,7 +9120,7 @@ paths:
           description: internal server error
       security:
       - bearerAuth: []
-      summary: Resume Subscription
+      summary: "Resume Subscription [Deprecated]"
       tags:
       - Subscriptions
   /orders/{id}/tax_lines:

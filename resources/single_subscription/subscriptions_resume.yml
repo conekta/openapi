@@ -1,9 +1,10 @@
 post:
+  deprecated: true
   tags:
     - Subscriptions
-  operationId: pauseSubscription
-  summary: Pause Subscription
-  description: You can pause the subscription to stop the plans that your customers consume
+  operationId: resumeSubscription
+  summary: Resume Subscription [Deprecated]
+  description: "DEPRECATED: This endpoint will be removed in version 2.3.0."
   responses:
     200:
       description: successful
@@ -42,6 +43,8 @@ post:
      $ref: '../errors/402.yml'
     404:
      $ref: '../errors/404.yml'
+    422:
+     $ref: '../errors/422.yml'
     500:
      $ref: '../errors/500.yml'
   security:

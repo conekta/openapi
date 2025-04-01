@@ -1,9 +1,10 @@
 post:
+  deprecated: true
   tags:
     - Subscriptions
   operationId: createSubscription
-  summary: Create Subscription
-  description: You can create the subscription to include the plans that your customers consume
+  summary: Create Subscription [Deprecated]
+  description: "DEPRECATED: This endpoint will be removed in version 2.3.0. You can create the subscription to include the plans that your customers consume"
   responses:
     200:
       description: successful
@@ -53,11 +54,12 @@ post:
     - $ref: '../../parameters/commons/headers/accept_language.yml'
     - $ref: '../../parameters/commons/headers/x_child_company_id.yml'
 put:
+  deprecated: true
   tags:
     - Subscriptions
   operationId: updateSubscription
-  summary: Update Subscription
-  description: You can modify the subscription to change the plans that your customers consume
+  summary: Update Subscription [Deprecated]
+  description: "DEPRECATED: This endpoint will be removed in version 2.3.0. You can modify the subscription to change the plans that your customers consume"
   responses:
     200:
       description: successful
@@ -107,10 +109,12 @@ put:
     - $ref: '../../parameters/commons/headers/accept_language.yml'
     - $ref: '../../parameters/commons/headers/x_child_company_id.yml'
 get:
+  deprecated: true
   tags:
     - Subscriptions
   operationId: getSubscription
-  summary: Get Subscription
+  summary: Get Subscription [Deprecated]
+  description: "DEPRECATED: This endpoint will be removed in version 2.3.0."
   responses:
     200:
       description: successful

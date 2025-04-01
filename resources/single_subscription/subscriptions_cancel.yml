@@ -1,9 +1,10 @@
 post:
+  deprecated: true
   tags:
     - Subscriptions
-  operationId: resumeSubscription
-  summary: Resume Subscription
-  description: You can resume the subscription to start the plans that your customers consume
+  operationId: cancelSubscription
+  summary: Cancel Subscription [Deprecated]
+  description: "DEPRECATED: This endpoint will be removed in version 2.3.0."
   responses:
     200:
       description: successful
@@ -38,12 +39,8 @@ post:
             example: conekta-v2.2.0; format=application/json
     401:
      $ref: '../errors/401.yml'
-    402:
-     $ref: '../errors/402.yml'
     404:
      $ref: '../errors/404.yml'
-    422:
-     $ref: '../errors/422.yml'
     500:
      $ref: '../errors/500.yml'
   security:
