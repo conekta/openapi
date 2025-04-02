@@ -1,9 +1,9 @@
 post:
   tags:
     - Subscriptions
-  operationId: subscriptionCancel
-  summary: Cancel Subscription
-  description: Cancel a specific subscription
+  operationId: subscriptionsRetry
+  summary: Retry Failed Payment
+  description: Retry a failed payment for a specific subscription
   responses:
     200:
       description: successful
@@ -11,9 +11,6 @@ post:
         application/vnd.conekta-v2.2.0+json:
           schema:
             $ref: '../../schemas/subscriptions/subscription_response.yml'
-            x-methods:
-              cancel:
-                operationId: cancelSubscription
       headers:
         Date:
           description: The date and time that the response was sent
@@ -43,6 +40,8 @@ post:
      $ref: '../errors/401.yml'
     404:
      $ref: '../errors/404.yml'
+    422:
+     $ref: '../errors/422.yml'
     500:
      $ref: '../errors/500.yml'
   security:
@@ -51,4 +50,4 @@ post:
     - $ref: '../../parameters/commons/path_param/customer_id.yml'
     - $ref: '../../parameters/commons/path_param/subscription_id.yml'
     - $ref: '../../parameters/commons/headers/accept_language.yml'
-    - $ref: '../../parameters/commons/headers/x_child_company_id.yml'
+    - $ref: '../../parameters/commons/headers/x_child_company_id.yml' 

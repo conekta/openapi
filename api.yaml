@@ -110,16 +110,30 @@ paths:
     $ref: "./resources/customers/create_customer_shipping_contacts.yml"
   /customers/{id}/shipping_contacts/{shipping_contacts_id}:
     $ref: "./resources/customers/update_customer_shipping_contacts.yml"
-  /customers/{id}/subscription:
+  /customers/{customer_id}/subscriptions:
+    $ref: "./resources/subscriptions/subscriptions_list.yml"
+  /customers/{customer_id}/subscriptions/{id}:
     $ref: "./resources/subscriptions/subscriptions.yml"
-  /customers/{id}/subscription/cancel:
-    $ref: "./resources/subscriptions/subscriptions_cancel.yml"
-  /customers/{id}/subscription/events:
+  /customers/{customer_id}/subscriptions/{id}/events:
     $ref: "./resources/subscriptions/subscriptions_events.yml"
-  /customers/{id}/subscription/pause:
+  /customers/{customer_id}/subscriptions/{id}/cancel:
+    $ref: "./resources/subscriptions/subscriptions_cancel.yml"
+  /customers/{customer_id}/subscriptions/{id}/pause:
     $ref: "./resources/subscriptions/subscriptions_pause.yml"
-  /customers/{id}/subscription/resume:
+  /customers/{customer_id}/subscriptions/{id}/resume:
     $ref: "./resources/subscriptions/subscriptions_resume.yml"
+  /customers/{customer_id}/subscriptions/{id}/retry:
+    $ref: "./resources/subscriptions/subscriptions_retry.yml"
+  /customers/{id}/subscription:
+    $ref: "./resources/single_subscription/subscriptions.yml"
+  /customers/{id}/subscription/cancel:
+    $ref: "./resources/single_subscription/subscriptions_cancel.yml"
+  /customers/{id}/subscription/events:
+    $ref: "./resources/single_subscription/subscriptions_events.yml"
+  /customers/{id}/subscription/pause:
+    $ref: "./resources/single_subscription/subscriptions_pause.yml"
+  /customers/{id}/subscription/resume:
+    $ref: "./resources/single_subscription/subscriptions_resume.yml"
   /orders/{id}/tax_lines:
     $ref: "./resources/orders/order_tax_param.yml"
   /orders/{id}/tax_lines/{tax_id}:

@@ -1,9 +1,9 @@
 post:
   tags:
     - Subscriptions
-  operationId: resumeSubscription
+  operationId: subscriptionResume
   summary: Resume Subscription
-  description: You can resume the subscription to start the plans that your customers consume
+  description: Resume a specific paused subscription
   responses:
     200:
       description: successful
@@ -38,17 +38,14 @@ post:
             example: conekta-v2.2.0; format=application/json
     401:
      $ref: '../errors/401.yml'
-    402:
-     $ref: '../errors/402.yml'
     404:
      $ref: '../errors/404.yml'
-    422:
-     $ref: '../errors/422.yml'
     500:
      $ref: '../errors/500.yml'
   security:
     - bearerAuth: []
   parameters:
-    - $ref: '../../parameters/commons/path_param/id.yml'
+    - $ref: '../../parameters/commons/path_param/customer_id.yml'
+    - $ref: '../../parameters/commons/path_param/subscription_id.yml'
     - $ref: '../../parameters/commons/headers/accept_language.yml'
     - $ref: '../../parameters/commons/headers/x_child_company_id.yml'

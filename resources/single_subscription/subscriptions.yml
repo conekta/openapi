@@ -1,9 +1,65 @@
-put:
+post:
+  deprecated: true
   tags:
     - Subscriptions
-  operationId: subscriptionUpdate
-  summary: Update Subscription
-  description: Update a specific subscription
+  operationId: createSubscription
+  summary: Create Subscription [Deprecated]
+  description: "DEPRECATED: This endpoint will be removed in version 2.3.0. You can create the subscription to include the plans that your customers consume"
+  responses:
+    200:
+      description: successful
+      content:
+        application/vnd.conekta-v2.2.0+json:
+          schema:
+            $ref: '../../schemas/subscriptions/subscription_response.yml'
+      headers:
+        Date:
+          description: The date and time that the response was sent
+          schema:
+            type: string
+            example: "Fri, 03 Feb 2023 16:57:48 GMT"
+        Content-Type:
+          description: The format of the response body
+          schema:
+            type: string
+            example: "application/json; charset=utf-8"
+        Content-Length:
+          description: The length of the response body in bytes
+          schema:
+            type: string
+            example: "2737"
+        Connection:
+          description: The type of connection used to transfer the response
+          schema:
+            type: string
+            example: "keep-alive"
+        Conekta-Media-Type:
+          schema:
+            type: string
+            example: conekta-v2.2.0; format=application/json
+    422:
+     $ref: '../errors/422.yml'
+    401:
+     $ref: '../errors/401.yml'
+    404:
+     $ref: '../errors/404.yml'
+    500:
+     $ref: '../errors/500.yml'
+  security:
+    - bearerAuth: []
+  requestBody:
+    $ref: '../../requestBodies/subscriptions/subscription.yml'
+  parameters:
+    - $ref: '../../parameters/commons/path_param/id.yml'
+    - $ref: '../../parameters/commons/headers/accept_language.yml'
+    - $ref: '../../parameters/commons/headers/x_child_company_id.yml'
+put:
+  deprecated: true
+  tags:
+    - Subscriptions
+  operationId: updateSubscription
+  summary: Update Subscription [Deprecated]
+  description: "DEPRECATED: This endpoint will be removed in version 2.3.0. You can modify the subscription to change the plans that your customers consume"
   responses:
     200:
       description: successful
@@ -49,16 +105,16 @@ put:
   requestBody:
     $ref: '../../requestBodies/subscriptions/subscription_update.yml'
   parameters:
-    - $ref: '../../parameters/commons/path_param/customer_id.yml'
-    - $ref: '../../parameters/commons/path_param/subscription_id.yml'
+    - $ref: '../../parameters/commons/path_param/id.yml'
     - $ref: '../../parameters/commons/headers/accept_language.yml'
     - $ref: '../../parameters/commons/headers/x_child_company_id.yml'
 get:
+  deprecated: true
   tags:
     - Subscriptions
-  operationId: subscriptionsGet
-  summary: Get Subscription
-  description: Retrieve a specific subscription
+  operationId: getSubscription
+  summary: Get Subscription [Deprecated]
+  description: "DEPRECATED: This endpoint will be removed in version 2.3.0."
   responses:
     200:
       description: successful
@@ -100,7 +156,5 @@ get:
   security:
     - bearerAuth: []
   parameters:
-    - $ref: '../../parameters/commons/path_param/customer_id.yml'
-    - $ref: '../../parameters/commons/path_param/subscription_id.yml'
+    - $ref: '../../parameters/commons/path_param/id.yml'
     - $ref: '../../parameters/commons/headers/accept_language.yml'
-    - $ref: '../../parameters/commons/headers/x_child_company_id.yml'

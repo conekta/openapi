@@ -1,19 +1,26 @@
-post:
+get:
+  deprecated: true
   tags:
     - Subscriptions
-  operationId: subscriptionCancel
-  summary: Cancel Subscription
-  description: Cancel a specific subscription
+  operationId: getSubscriptionEvents
+  summary: Get Subscription Events [Deprecated]
+  description: "DEPRECATED: This endpoint will be removed in version 2.3.0. You can get the events of the subscription(s) of a client, with the customer id"
   responses:
     200:
       description: successful
       content:
         application/vnd.conekta-v2.2.0+json:
           schema:
-            $ref: '../../schemas/subscriptions/subscription_response.yml'
-            x-methods:
-              cancel:
-                operationId: cancelSubscription
+            title: subscription_events_response
+            allOf:
+              - $ref: ../../schemas/pagination/pagination.yml
+              - $ref: ../../schemas/pagination/page.yml
+              - type: object
+                properties:
+                  data:
+                    type: array
+                    items:
+                      $ref: '../../schemas/events/event_response.yml'
       headers:
         Date:
           description: The date and time that the response was sent
@@ -41,14 +48,17 @@ post:
             example: conekta-v2.2.0; format=application/json
     401:
      $ref: '../errors/401.yml'
+    402:
+     $ref: '../errors/402.yml'
     404:
      $ref: '../errors/404.yml'
+    422:
+     $ref: '../errors/422.yml'
     500:
      $ref: '../errors/500.yml'
   security:
     - bearerAuth: []
   parameters:
-    - $ref: '../../parameters/commons/path_param/customer_id.yml'
-    - $ref: '../../parameters/commons/path_param/subscription_id.yml'
+    - $ref: '../../parameters/commons/path_param/id.yml'
     - $ref: '../../parameters/commons/headers/accept_language.yml'
     - $ref: '../../parameters/commons/headers/x_child_company_id.yml'

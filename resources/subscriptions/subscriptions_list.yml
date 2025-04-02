@@ -1,9 +1,63 @@
-put:
+get:
   tags:
     - Subscriptions
-  operationId: subscriptionUpdate
-  summary: Update Subscription
-  description: Update a specific subscription
+  operationId: subscriptionList
+  summary: List Subscriptions
+  description: Get a list of subscriptions for a customer
+  responses:
+    200:
+      description: successful
+      content:
+        application/vnd.conekta-v2.2.0+json:
+          schema:
+            $ref: '../../schemas/subscriptions/subscription_response.yml'
+      headers:
+        Date:
+          description: The date and time that the response was sent
+          schema:
+            type: string
+            example: "Fri, 03 Feb 2023 16:57:48 GMT"
+        Content-Type:
+          description: The format of the response body
+          schema:
+            type: string
+            example: "application/json; charset=utf-8"
+        Content-Length:
+          description: The length of the response body in bytes
+          schema:
+            type: string
+            example: "2737"
+        Connection:
+          description: The type of connection used to transfer the response
+          schema:
+            type: string
+            example: "keep-alive"
+        Conekta-Media-Type:
+          schema:
+            type: string
+            example: conekta-v2.2.0; format=application/json
+    401:
+     $ref: '../errors/401.yml'
+    404:
+     $ref: '../errors/404.yml'
+    500:
+     $ref: '../errors/500.yml'
+  security:
+    - bearerAuth: []
+  parameters:
+    - $ref: '../../parameters/commons/path_param/customer_id.yml'
+    - $ref: '../../parameters/commons/headers/accept_language.yml'
+    - $ref: '../../parameters/commons/headers/x_child_company_id.yml'
+    - $ref: '../../parameters/commons/query/limit.yml'
+    - $ref: '../../parameters/commons/query/search.yml'
+    - $ref: '../../parameters/commons/query/next_page.yml'
+    - $ref: '../../parameters/commons/query/previous_page.yml'
+post:
+  tags:
+    - Subscriptions
+  operationId: subscriptionCreate
+  summary: Create Subscription
+  description: Create a new subscription for a customer (keeps existing subscriptions active)
   responses:
     200:
       description: successful
@@ -47,60 +101,8 @@ put:
   security:
     - bearerAuth: []
   requestBody:
-    $ref: '../../requestBodies/subscriptions/subscription_update.yml'
+    $ref: '../../requestBodies/subscriptions/subscription.yml'
   parameters:
     - $ref: '../../parameters/commons/path_param/customer_id.yml'
-    - $ref: '../../parameters/commons/path_param/subscription_id.yml'
-    - $ref: '../../parameters/commons/headers/accept_language.yml'
-    - $ref: '../../parameters/commons/headers/x_child_company_id.yml'
-get:
-  tags:
-    - Subscriptions
-  operationId: subscriptionsGet
-  summary: Get Subscription
-  description: Retrieve a specific subscription
-  responses:
-    200:
-      description: successful
-      content:
-        application/vnd.conekta-v2.2.0+json:
-          schema:
-            $ref: '../../schemas/subscriptions/subscription_response.yml'
-      headers:
-        Date:
-          description: The date and time that the response was sent
-          schema:
-            type: string
-            example: "Fri, 03 Feb 2023 16:57:48 GMT"
-        Content-Type:
-          description: The format of the response body
-          schema:
-            type: string
-            example: "application/json; charset=utf-8"
-        Content-Length:
-          description: The length of the response body in bytes
-          schema:
-            type: string
-            example: "2737"
-        Connection:
-          description: The type of connection used to transfer the response
-          schema:
-            type: string
-            example: "keep-alive"
-        Conekta-Media-Type:
-          schema:
-            type: string
-            example: conekta-v2.2.0; format=application/json
-    401:
-     $ref: '../errors/401.yml'
-    404:
-     $ref: '../errors/404.yml'
-    500:
-     $ref: '../errors/500.yml'
-  security:
-    - bearerAuth: []
-  parameters:
-    - $ref: '../../parameters/commons/path_param/customer_id.yml'
-    - $ref: '../../parameters/commons/path_param/subscription_id.yml'
     - $ref: '../../parameters/commons/headers/accept_language.yml'
     - $ref: '../../parameters/commons/headers/x_child_company_id.yml'
