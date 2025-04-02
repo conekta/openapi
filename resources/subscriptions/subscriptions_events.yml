@@ -1,7 +1,7 @@
 get:
   tags:
     - Subscriptions
-  operationId: Subscriptions.Events
+  operationId: subscriptionEvents
   summary: Get Subscription Events
   description: Get events for a specific subscription
   responses:
@@ -55,7 +55,7 @@ get:
     - bearerAuth: []
   parameters:
     - $ref: '../../parameters/commons/path_param/customer_id.yml'
-    - $ref: '../../parameters/commons/path_param/id.yml'
+    - $ref: '../../parameters/commons/path_param/subscription_id.yml'
     - $ref: '../../parameters/commons/headers/accept_language.yml'
     - $ref: '../../parameters/commons/headers/x_child_company_id.yml'
     - $ref: '../../parameters/commons/query/limit.yml'

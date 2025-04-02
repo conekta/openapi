@@ -1,5 +1,5 @@
-name: customer_id
 in: path
+name: "customer_id"
 description: Identifier of the customer resource
 required: true
 schema:

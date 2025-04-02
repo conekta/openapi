@@ -1,7 +1,7 @@
 post:
   tags:
     - Subscriptions
-  operationId: Subscriptions.Cancel
+  operationId: subscriptionCancel
   summary: Cancel Subscription
   description: Cancel a specific subscription
   responses:
@@ -11,6 +11,9 @@ post:
         application/vnd.conekta-v2.2.0+json:
           schema:
             $ref: '../../schemas/subscriptions/subscription_response.yml'
+            x-methods:
+              cancel:
+                operationId: cancelSubscription
       headers:
         Date:
           description: The date and time that the response was sent
@@ -46,6 +49,6 @@ post:
     - bearerAuth: []
   parameters:
     - $ref: '../../parameters/commons/path_param/customer_id.yml'
-    - $ref: '../../parameters/commons/path_param/id.yml'
+    - $ref: '../../parameters/commons/path_param/subscription_id.yml'
     - $ref: '../../parameters/commons/headers/accept_language.yml'
     - $ref: '../../parameters/commons/headers/x_child_company_id.yml'

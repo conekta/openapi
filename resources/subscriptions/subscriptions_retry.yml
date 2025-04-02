@@ -1,7 +1,7 @@
 post:
   tags:
     - Subscriptions
-  operationId: Subscriptions.Retry
+  operationId: subscriptionsRetry
   summary: Retry Failed Payment
   description: Retry a failed payment for a specific subscription
   responses:
@@ -48,6 +48,6 @@ post:
     - bearerAuth: []
   parameters:
     - $ref: '../../parameters/commons/path_param/customer_id.yml'
-    - $ref: '../../parameters/commons/path_param/id.yml'
+    - $ref: '../../parameters/commons/path_param/subscription_id.yml'
     - $ref: '../../parameters/commons/headers/accept_language.yml'
     - $ref: '../../parameters/commons/headers/x_child_company_id.yml' 
