@@ -55,7 +55,7 @@ get:
 post:
   tags:
     - Subscriptions
-  operationId: Subscriptions.Create
+  operationId: subscriptionCreate
   summary: Create Subscription
   description: Create a new subscription for a customer (keeps existing subscriptions active)
   responses:

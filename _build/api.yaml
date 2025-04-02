@@ -15,6 +15,38 @@ servers:
   url: https://api.conekta.io
 security:
 - bearerAuth: []
+tags:
+- description: |
+    ============================================
+    # Subscriptions API
+
+    ## Legacy Single Subscription (Deprecated)
+    These endpoints manage single subscriptions per customer.
+    All endpoints in this section are deprecated and will be removed in version 2.3.0.
+
+    Available endpoints:
+    - GET /customers/{customer_id}/subscription
+    - POST /customers/{customer_id}/subscription
+    - PUT /customers/{customer_id}/subscription
+    - POST /customers/{customer_id}/subscription/cancel
+    - POST /customers/{customer_id}/subscription/pause
+    - POST /customers/{customer_id}/subscription/resume
+
+    ============================================
+    ## Multiple Subscriptions API
+    These endpoints support managing multiple subscriptions per customer.
+
+    Available endpoints:
+    - GET /customers/{customer_id}/subscriptions
+    - POST /customers/{customer_id}/subscriptions
+    - GET /customers/{customer_id}/subscriptions/{id}
+    - PUT /customers/{customer_id}/subscriptions/{id}
+    - POST /customers/{customer_id}/subscriptions/{id}/cancel
+    - POST /customers/{customer_id}/subscriptions/{id}/pause
+    - POST /customers/{customer_id}/subscriptions/{id}/resume
+    - POST /customers/{customer_id}/subscriptions/{id}/retry
+    ============================================
+  name: Subscriptions
 paths:
   /antifraud/whitelists:
     get:
@@ -9126,7 +9158,7 @@ paths:
   /customers/{customer_id}/subscriptions:
     get:
       description: Get a list of subscriptions for a customer
-      operationId: Subscriptions.List
+      operationId: subscriptionList
       parameters:
       - description: Identifier of the customer resource
         in: path
@@ -9272,12 +9304,10 @@ paths:
       summary: List Subscriptions
       tags:
       - Subscriptions
-      x-tag-group: Multiple Subscriptions
-      x-api-group: Multiple Subscriptions
     post:
       description: Create a new subscription for a customer (keeps existing subscriptions
         active)
-      operationId: Subscriptions.Create
+      operationId: subscriptionCreate
       parameters:
       - description: Identifier of the customer resource
         in: path
@@ -9415,7 +9445,7 @@ paths:
   /customers/{customer_id}/subscriptions/{id}:
     get:
       description: Retrieve a specific subscription
-      operationId: Subscriptions.Get
+      operationId: subscriptionsGet
       parameters:
       - description: Identifier of the customer resource
         in: path
@@ -9542,7 +9572,7 @@ paths:
       - Subscriptions
     put:
       description: Update a specific subscription
-      operationId: Subscriptions.Update
+      operationId: subscriptionUpdate
       parameters:
       - description: Identifier of the customer resource
         in: path
@@ -9687,7 +9717,7 @@ paths:
   /customers/{customer_id}/subscriptions/{id}/events:
     get:
       description: Get events for a specific subscription
-      operationId: Subscriptions.Events
+      operationId: subscriptionEvents
       parameters:
       - description: Identifier of the customer resource
         in: path
@@ -9843,7 +9873,7 @@ paths:
   /customers/{customer_id}/subscriptions/{id}/cancel:
     post:
       description: Cancel a specific subscription
-      operationId: Subscriptions.Cancel
+      operationId: subscriptionCancel
       parameters:
       - description: Identifier of the customer resource
         in: path
@@ -9971,7 +10001,7 @@ paths:
   /customers/{customer_id}/subscriptions/{id}/pause:
     post:
       description: Pause a specific subscription
-      operationId: Subscriptions.Pause
+      operationId: subscriptionPause
       parameters:
       - description: Identifier of the customer resource
         in: path
@@ -10099,7 +10129,7 @@ paths:
   /customers/{customer_id}/subscriptions/{id}/resume:
     post:
       description: Resume a specific paused subscription
-      operationId: Subscriptions.Resume
+      operationId: subscriptionResume
       parameters:
       - description: Identifier of the customer resource
         in: path
@@ -10227,7 +10257,7 @@ paths:
   /customers/{customer_id}/subscriptions/{id}/retry:
     post:
       description: Retry a failed payment for a specific subscription
-      operationId: Subscriptions.Retry
+      operationId: subscriptionsRetry
       parameters:
       - description: Identifier of the customer resource
         in: path

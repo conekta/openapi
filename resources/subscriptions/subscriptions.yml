@@ -56,7 +56,7 @@ put:
 get:
   tags:
     - Subscriptions
-  operationId: Subscriptions.Get
+  operationId: subscriptionsGet
   summary: Get Subscription
   description: Retrieve a specific subscription
   responses:

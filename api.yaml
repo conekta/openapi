@@ -13,6 +13,38 @@ info:
   license:
     name: MIT-LICENSE
     url: "https://www.apache.org/licenses/LICENSE-2.0.html"
+tags:
+  - name: Subscriptions
+    description: |
+      ============================================
+      # Subscriptions API
+      
+      ## Legacy Single Subscription (Deprecated)
+      These endpoints manage single subscriptions per customer.
+      All endpoints in this section are deprecated and will be removed in version 2.3.0.
+      
+      Available endpoints:
+      - GET /customers/{customer_id}/subscription
+      - POST /customers/{customer_id}/subscription
+      - PUT /customers/{customer_id}/subscription
+      - POST /customers/{customer_id}/subscription/cancel
+      - POST /customers/{customer_id}/subscription/pause
+      - POST /customers/{customer_id}/subscription/resume
+      
+      ============================================
+      ## Multiple Subscriptions API
+      These endpoints support managing multiple subscriptions per customer.
+      
+      Available endpoints:
+      - GET /customers/{customer_id}/subscriptions
+      - POST /customers/{customer_id}/subscriptions
+      - GET /customers/{customer_id}/subscriptions/{id}
+      - PUT /customers/{customer_id}/subscriptions/{id}
+      - POST /customers/{customer_id}/subscriptions/{id}/cancel
+      - POST /customers/{customer_id}/subscriptions/{id}/pause
+      - POST /customers/{customer_id}/subscriptions/{id}/resume
+      - POST /customers/{customer_id}/subscriptions/{id}/retry
+      ============================================
 paths:
   /antifraud/whitelists:
     $ref: "./resources/antifraud/whitelists_index_create.yml"
