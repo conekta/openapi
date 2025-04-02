@@ -1,0 +1,7 @@
+name: customer_id
+in: path
+description: Identifier of the customer resource
+required: true
+schema:
+  type: string
+  example: "cus_2tGzG1GxtDAZHEGPH" 
