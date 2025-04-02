@@ -13,38 +13,6 @@ info:
   license:
     name: MIT-LICENSE
     url: "https://www.apache.org/licenses/LICENSE-2.0.html"
-tags:
-  - name: Subscriptions
-    description: |
-      ============================================
-      # Subscriptions API
-      
-      ## Legacy Single Subscription (Deprecated)
-      These endpoints manage single subscriptions per customer.
-      All endpoints in this section are deprecated and will be removed in version 2.3.0.
-      
-      Available endpoints:
-      - GET /customers/{customer_id}/subscription
-      - POST /customers/{customer_id}/subscription
-      - PUT /customers/{customer_id}/subscription
-      - POST /customers/{customer_id}/subscription/cancel
-      - POST /customers/{customer_id}/subscription/pause
-      - POST /customers/{customer_id}/subscription/resume
-      
-      ============================================
-      ## Multiple Subscriptions API
-      These endpoints support managing multiple subscriptions per customer.
-      
-      Available endpoints:
-      - GET /customers/{customer_id}/subscriptions
-      - POST /customers/{customer_id}/subscriptions
-      - GET /customers/{customer_id}/subscriptions/{id}
-      - PUT /customers/{customer_id}/subscriptions/{id}
-      - POST /customers/{customer_id}/subscriptions/{id}/cancel
-      - POST /customers/{customer_id}/subscriptions/{id}/pause
-      - POST /customers/{customer_id}/subscriptions/{id}/resume
-      - POST /customers/{customer_id}/subscriptions/{id}/retry
-      ============================================
 paths:
   /antifraud/whitelists:
     $ref: "./resources/antifraud/whitelists_index_create.yml"
@@ -142,16 +110,6 @@ paths:
     $ref: "./resources/customers/create_customer_shipping_contacts.yml"
   /customers/{id}/shipping_contacts/{shipping_contacts_id}:
     $ref: "./resources/customers/update_customer_shipping_contacts.yml"
-  /customers/{id}/subscription:
-    $ref: "./resources/single_subscription/subscriptions.yml"
-  /customers/{id}/subscription/cancel:
-    $ref: "./resources/single_subscription/subscriptions_cancel.yml"
-  /customers/{id}/subscription/events:
-    $ref: "./resources/single_subscription/subscriptions_events.yml"
-  /customers/{id}/subscription/pause:
-    $ref: "./resources/single_subscription/subscriptions_pause.yml"
-  /customers/{id}/subscription/resume:
-    $ref: "./resources/single_subscription/subscriptions_resume.yml"
   /customers/{customer_id}/subscriptions:
     $ref: "./resources/subscriptions/subscriptions_list.yml"
   /customers/{customer_id}/subscriptions/{id}:
@@ -166,6 +124,16 @@ paths:
     $ref: "./resources/subscriptions/subscriptions_resume.yml"
   /customers/{customer_id}/subscriptions/{id}/retry:
     $ref: "./resources/subscriptions/subscriptions_retry.yml"
+  /customers/{id}/subscription:
+    $ref: "./resources/single_subscription/subscriptions.yml"
+  /customers/{id}/subscription/cancel:
+    $ref: "./resources/single_subscription/subscriptions_cancel.yml"
+  /customers/{id}/subscription/events:
+    $ref: "./resources/single_subscription/subscriptions_events.yml"
+  /customers/{id}/subscription/pause:
+    $ref: "./resources/single_subscription/subscriptions_pause.yml"
+  /customers/{id}/subscription/resume:
+    $ref: "./resources/single_subscription/subscriptions_resume.yml"
   /orders/{id}/tax_lines:
     $ref: "./resources/orders/order_tax_param.yml"
   /orders/{id}/tax_lines/{tax_id}:

@@ -15,38 +15,6 @@ servers:
   url: https://api.conekta.io
 security:
 - bearerAuth: []
-tags:
-- description: |
-    ============================================
-    # Subscriptions API
-
-    ## Legacy Single Subscription (Deprecated)
-    These endpoints manage single subscriptions per customer.
-    All endpoints in this section are deprecated and will be removed in version 2.3.0.
-
-    Available endpoints:
-    - GET /customers/{customer_id}/subscription
-    - POST /customers/{customer_id}/subscription
-    - PUT /customers/{customer_id}/subscription
-    - POST /customers/{customer_id}/subscription/cancel
-    - POST /customers/{customer_id}/subscription/pause
-    - POST /customers/{customer_id}/subscription/resume
-
-    ============================================
-    ## Multiple Subscriptions API
-    These endpoints support managing multiple subscriptions per customer.
-
-    Available endpoints:
-    - GET /customers/{customer_id}/subscriptions
-    - POST /customers/{customer_id}/subscriptions
-    - GET /customers/{customer_id}/subscriptions/{id}
-    - PUT /customers/{customer_id}/subscriptions/{id}
-    - POST /customers/{customer_id}/subscriptions/{id}/cancel
-    - POST /customers/{customer_id}/subscriptions/{id}/pause
-    - POST /customers/{customer_id}/subscriptions/{id}/resume
-    - POST /customers/{customer_id}/subscriptions/{id}/retry
-    ============================================
-  name: Subscriptions
 paths:
   /antifraud/whitelists:
     get:
@@ -8202,959 +8170,6 @@ paths:
       summary: Update shipping contacts
       tags:
       - Shipping Contacts
-  /customers/{id}/subscription:
-    get:
-      deprecated: true
-      description: "DEPRECATED: This endpoint will be removed in version 2.3.0."
-      operationId: getSubscription
-      parameters:
-      - description: Identifier of the resource
-        example: 6307a60c41de27127515a575
-        in: path
-        name: id
-        required: true
-        schema:
-          type: string
-      - description: Use for knowing which language to use
-        examples:
-          es:
-            summary: for spanish request/response
-            value: es
-          en:
-            summary: for english request/response
-            value: en
-        in: header
-        name: Accept-Language
-        required: false
-        schema:
-          default: es
-          enum:
-          - es
-          - en
-          type: string
-      responses:
-        "200":
-          content:
-            application/vnd.conekta-v2.2.0+json:
-              schema:
-                $ref: '#/components/schemas/subscription_response'
-          description: successful
-          headers:
-            Date:
-              description: The date and time that the response was sent
-              schema:
-                example: "Fri, 03 Feb 2023 16:57:48 GMT"
-                type: string
-            Content-Type:
-              description: The format of the response body
-              schema:
-                example: application/json; charset=utf-8
-                type: string
-            Content-Length:
-              description: The length of the response body in bytes
-              schema:
-                example: "2737"
-                type: string
-            Connection:
-              description: The type of connection used to transfer the response
-              schema:
-                example: keep-alive
-                type: string
-            Conekta-Media-Type:
-              schema:
-                example: conekta-v2.2.0; format=application/json
-                type: string
-        "401":
-          content:
-            application/vnd.conekta-v2.2.0+json:
-              example:
-                details:
-                - message: Please include your access key in your request.
-                  param: null
-                  code: conekta.errors.authentication.missing_key
-                log_id: 507f1f77bcf86cd799439011
-                object: error
-                type: authentication_error
-              schema:
-                $ref: '#/components/schemas/error'
-          description: authentication error
-        "404":
-          content:
-            application/vnd.conekta-v2.2.0+json:
-              example:
-                details:
-                - message: The resource was not found.
-                  param: null
-                  code: conekta.errors.resource_not_found.entity
-                  debug_message: The object Webhook "641b1d5662d7e00001eaa46b" could
-                    not be found.
-                log_id: 641b6c253cd9a50001514fae
-                object: error
-                type: resource_not_found_error
-              schema:
-                $ref: '#/components/schemas/error'
-          description: not found entity
-        "500":
-          content:
-            application/vnd.conekta-v2.2.0+json:
-              example:
-                details:
-                - debug_message: There was a runtime error and Conekta engineers have
-                    been notified.
-                  message: There was a runtime error and Conekta engineers have been
-                    notified.
-                  param: null
-                  code: conekta.errors.api.system.general_failure
-                object: error
-                type: api_error
-                log_id: 641b6f2b3cd9a50001515098
-              schema:
-                $ref: '#/components/schemas/error'
-          description: internal server error
-      security:
-      - bearerAuth: []
-      summary: "Get Subscription [Deprecated]"
-      tags:
-      - Subscriptions
-    post:
-      deprecated: true
-      description: "DEPRECATED: This endpoint will be removed in version 2.3.0. You\
-        \ can create the subscription to include the plans that your customers consume"
-      operationId: createSubscription
-      parameters:
-      - description: Identifier of the resource
-        example: 6307a60c41de27127515a575
-        in: path
-        name: id
-        required: true
-        schema:
-          type: string
-      - description: Use for knowing which language to use
-        examples:
-          es:
-            summary: for spanish request/response
-            value: es
-          en:
-            summary: for english request/response
-            value: en
-        in: header
-        name: Accept-Language
-        required: false
-        schema:
-          default: es
-          enum:
-          - es
-          - en
-          type: string
-      - description: "In the case of a holding company, the company id of the child\
-          \ company to which will process the request."
-        example: 6441b6376b60c3a638da80af
-        in: header
-        name: X-Child-Company-Id
-        required: false
-        schema:
-          type: string
-      requestBody:
-        $ref: '#/components/requestBodies/subscription'
-      responses:
-        "200":
-          content:
-            application/vnd.conekta-v2.2.0+json:
-              schema:
-                $ref: '#/components/schemas/subscription_response'
-          description: successful
-          headers:
-            Date:
-              description: The date and time that the response was sent
-              schema:
-                example: "Fri, 03 Feb 2023 16:57:48 GMT"
-                type: string
-            Content-Type:
-              description: The format of the response body
-              schema:
-                example: application/json; charset=utf-8
-                type: string
-            Content-Length:
-              description: The length of the response body in bytes
-              schema:
-                example: "2737"
-                type: string
-            Connection:
-              description: The type of connection used to transfer the response
-              schema:
-                example: keep-alive
-                type: string
-            Conekta-Media-Type:
-              schema:
-                example: conekta-v2.2.0; format=application/json
-                type: string
-        "422":
-          content:
-            application/vnd.conekta-v2.2.0+json:
-              example:
-                details:
-                - message: The token does not exist.
-                  param: payment_method.token_id
-                  code: conekta.errors.parameter_validation.payment_method.token_id.nonexistent_token
-                  debug_message: The token does not exist.
-                log_id: 641b6d813cd9a50001515017
-                object: error
-                type: parameter_validation_error
-              schema:
-                $ref: '#/components/schemas/error'
-          description: parameter validation error
-        "401":
-          content:
-            application/vnd.conekta-v2.2.0+json:
-              example:
-                details:
-                - message: Please include your access key in your request.
-                  param: null
-                  code: conekta.errors.authentication.missing_key
-                log_id: 507f1f77bcf86cd799439011
-                object: error
-                type: authentication_error
-              schema:
-                $ref: '#/components/schemas/error'
-          description: authentication error
-        "404":
-          content:
-            application/vnd.conekta-v2.2.0+json:
-              example:
-                details:
-                - message: The resource was not found.
-                  param: null
-                  code: conekta.errors.resource_not_found.entity
-                  debug_message: The object Webhook "641b1d5662d7e00001eaa46b" could
-                    not be found.
-                log_id: 641b6c253cd9a50001514fae
-                object: error
-                type: resource_not_found_error
-              schema:
-                $ref: '#/components/schemas/error'
-          description: not found entity
-        "500":
-          content:
-            application/vnd.conekta-v2.2.0+json:
-              example:
-                details:
-                - debug_message: There was a runtime error and Conekta engineers have
-                    been notified.
-                  message: There was a runtime error and Conekta engineers have been
-                    notified.
-                  param: null
-                  code: conekta.errors.api.system.general_failure
-                object: error
-                type: api_error
-                log_id: 641b6f2b3cd9a50001515098
-              schema:
-                $ref: '#/components/schemas/error'
-          description: internal server error
-      security:
-      - bearerAuth: []
-      summary: "Create Subscription [Deprecated]"
-      tags:
-      - Subscriptions
-    put:
-      deprecated: true
-      description: "DEPRECATED: This endpoint will be removed in version 2.3.0. You\
-        \ can modify the subscription to change the plans that your customers consume"
-      operationId: updateSubscription
-      parameters:
-      - description: Identifier of the resource
-        example: 6307a60c41de27127515a575
-        in: path
-        name: id
-        required: true
-        schema:
-          type: string
-      - description: Use for knowing which language to use
-        examples:
-          es:
-            summary: for spanish request/response
-            value: es
-          en:
-            summary: for english request/response
-            value: en
-        in: header
-        name: Accept-Language
-        required: false
-        schema:
-          default: es
-          enum:
-          - es
-          - en
-          type: string
-      - description: "In the case of a holding company, the company id of the child\
-          \ company to which will process the request."
-        example: 6441b6376b60c3a638da80af
-        in: header
-        name: X-Child-Company-Id
-        required: false
-        schema:
-          type: string
-      requestBody:
-        $ref: '#/components/requestBodies/subscription_update'
-      responses:
-        "200":
-          content:
-            application/vnd.conekta-v2.2.0+json:
-              schema:
-                $ref: '#/components/schemas/subscription_response'
-          description: successful
-          headers:
-            Date:
-              description: The date and time that the response was sent
-              schema:
-                example: "Fri, 03 Feb 2023 16:57:48 GMT"
-                type: string
-            Content-Type:
-              description: The format of the response body
-              schema:
-                example: application/json; charset=utf-8
-                type: string
-            Content-Length:
-              description: The length of the response body in bytes
-              schema:
-                example: "2737"
-                type: string
-            Connection:
-              description: The type of connection used to transfer the response
-              schema:
-                example: keep-alive
-                type: string
-            Conekta-Media-Type:
-              schema:
-                example: conekta-v2.2.0; format=application/json
-                type: string
-        "422":
-          content:
-            application/vnd.conekta-v2.2.0+json:
-              example:
-                details:
-                - message: The token does not exist.
-                  param: payment_method.token_id
-                  code: conekta.errors.parameter_validation.payment_method.token_id.nonexistent_token
-                  debug_message: The token does not exist.
-                log_id: 641b6d813cd9a50001515017
-                object: error
-                type: parameter_validation_error
-              schema:
-                $ref: '#/components/schemas/error'
-          description: parameter validation error
-        "401":
-          content:
-            application/vnd.conekta-v2.2.0+json:
-              example:
-                details:
-                - message: Please include your access key in your request.
-                  param: null
-                  code: conekta.errors.authentication.missing_key
-                log_id: 507f1f77bcf86cd799439011
-                object: error
-                type: authentication_error
-              schema:
-                $ref: '#/components/schemas/error'
-          description: authentication error
-        "404":
-          content:
-            application/vnd.conekta-v2.2.0+json:
-              example:
-                details:
-                - message: The resource was not found.
-                  param: null
-                  code: conekta.errors.resource_not_found.entity
-                  debug_message: The object Webhook "641b1d5662d7e00001eaa46b" could
-                    not be found.
-                log_id: 641b6c253cd9a50001514fae
-                object: error
-                type: resource_not_found_error
-              schema:
-                $ref: '#/components/schemas/error'
-          description: not found entity
-        "500":
-          content:
-            application/vnd.conekta-v2.2.0+json:
-              example:
-                details:
-                - debug_message: There was a runtime error and Conekta engineers have
-                    been notified.
-                  message: There was a runtime error and Conekta engineers have been
-                    notified.
-                  param: null
-                  code: conekta.errors.api.system.general_failure
-                object: error
-                type: api_error
-                log_id: 641b6f2b3cd9a50001515098
-              schema:
-                $ref: '#/components/schemas/error'
-          description: internal server error
-      security:
-      - bearerAuth: []
-      summary: "Update Subscription [Deprecated]"
-      tags:
-      - Subscriptions
-  /customers/{id}/subscription/cancel:
-    post:
-      deprecated: true
-      description: "DEPRECATED: This endpoint will be removed in version 2.3.0."
-      operationId: cancelSubscription
-      parameters:
-      - description: Identifier of the resource
-        example: 6307a60c41de27127515a575
-        in: path
-        name: id
-        required: true
-        schema:
-          type: string
-      - description: Use for knowing which language to use
-        examples:
-          es:
-            summary: for spanish request/response
-            value: es
-          en:
-            summary: for english request/response
-            value: en
-        in: header
-        name: Accept-Language
-        required: false
-        schema:
-          default: es
-          enum:
-          - es
-          - en
-          type: string
-      - description: "In the case of a holding company, the company id of the child\
-          \ company to which will process the request."
-        example: 6441b6376b60c3a638da80af
-        in: header
-        name: X-Child-Company-Id
-        required: false
-        schema:
-          type: string
-      responses:
-        "200":
-          content:
-            application/vnd.conekta-v2.2.0+json:
-              schema:
-                $ref: '#/components/schemas/subscription_response'
-          description: successful
-          headers:
-            Date:
-              description: The date and time that the response was sent
-              schema:
-                example: "Fri, 03 Feb 2023 16:57:48 GMT"
-                type: string
-            Content-Type:
-              description: The format of the response body
-              schema:
-                example: application/json; charset=utf-8
-                type: string
-            Content-Length:
-              description: The length of the response body in bytes
-              schema:
-                example: "2737"
-                type: string
-            Connection:
-              description: The type of connection used to transfer the response
-              schema:
-                example: keep-alive
-                type: string
-            Conekta-Media-Type:
-              schema:
-                example: conekta-v2.2.0; format=application/json
-                type: string
-        "401":
-          content:
-            application/vnd.conekta-v2.2.0+json:
-              example:
-                details:
-                - message: Please include your access key in your request.
-                  param: null
-                  code: conekta.errors.authentication.missing_key
-                log_id: 507f1f77bcf86cd799439011
-                object: error
-                type: authentication_error
-              schema:
-                $ref: '#/components/schemas/error'
-          description: authentication error
-        "404":
-          content:
-            application/vnd.conekta-v2.2.0+json:
-              example:
-                details:
-                - message: The resource was not found.
-                  param: null
-                  code: conekta.errors.resource_not_found.entity
-                  debug_message: The object Webhook "641b1d5662d7e00001eaa46b" could
-                    not be found.
-                log_id: 641b6c253cd9a50001514fae
-                object: error
-                type: resource_not_found_error
-              schema:
-                $ref: '#/components/schemas/error'
-          description: not found entity
-        "500":
-          content:
-            application/vnd.conekta-v2.2.0+json:
-              example:
-                details:
-                - debug_message: There was a runtime error and Conekta engineers have
-                    been notified.
-                  message: There was a runtime error and Conekta engineers have been
-                    notified.
-                  param: null
-                  code: conekta.errors.api.system.general_failure
-                object: error
-                type: api_error
-                log_id: 641b6f2b3cd9a50001515098
-              schema:
-                $ref: '#/components/schemas/error'
-          description: internal server error
-      security:
-      - bearerAuth: []
-      summary: "Cancel Subscription [Deprecated]"
-      tags:
-      - Subscriptions
-  /customers/{id}/subscription/events:
-    get:
-      deprecated: true
-      description: "You can get the events of the subscription(s) of a client, with\
-        \ the customer id"
-      operationId: getSubscriptionEvents
-      parameters:
-      - description: Identifier of the resource
-        example: 6307a60c41de27127515a575
-        in: path
-        name: id
-        required: true
-        schema:
-          type: string
-      - description: Use for knowing which language to use
-        examples:
-          es:
-            summary: for spanish request/response
-            value: es
-          en:
-            summary: for english request/response
-            value: en
-        in: header
-        name: Accept-Language
-        required: false
-        schema:
-          default: es
-          enum:
-          - es
-          - en
-          type: string
-      - description: "In the case of a holding company, the company id of the child\
-          \ company to which will process the request."
-        example: 6441b6376b60c3a638da80af
-        in: header
-        name: X-Child-Company-Id
-        required: false
-        schema:
-          type: string
-      responses:
-        "200":
-          content:
-            application/vnd.conekta-v2.2.0+json:
-              schema:
-                $ref: '#/components/schemas/subscription_events_response'
-          description: successful
-          headers:
-            Date:
-              description: The date and time that the response was sent
-              schema:
-                example: "Fri, 03 Feb 2023 16:57:48 GMT"
-                type: string
-            Content-Type:
-              description: The format of the response body
-              schema:
-                example: application/json; charset=utf-8
-                type: string
-            Content-Length:
-              description: The length of the response body in bytes
-              schema:
-                example: "2737"
-                type: string
-            Connection:
-              description: The type of connection used to transfer the response
-              schema:
-                example: keep-alive
-                type: string
-            Conekta-Media-Type:
-              schema:
-                example: conekta-v2.2.0; format=application/json
-                type: string
-        "401":
-          content:
-            application/vnd.conekta-v2.2.0+json:
-              example:
-                details:
-                - message: Please include your access key in your request.
-                  param: null
-                  code: conekta.errors.authentication.missing_key
-                log_id: 507f1f77bcf86cd799439011
-                object: error
-                type: authentication_error
-              schema:
-                $ref: '#/components/schemas/error'
-          description: authentication error
-        "402":
-          content:
-            application/vnd.conekta-v2.2.0+json:
-              example:
-                details:
-                - message: The card could not be processed.
-                  code: conekta.errors.processing.tokenization.used
-                  debug_message: The token has already been used.
-                log_id: 641b6d073cd9a50001515007
-                object: error
-                type: processing_error
-              schema:
-                $ref: '#/components/schemas/error'
-          description: payment required error
-        "404":
-          content:
-            application/vnd.conekta-v2.2.0+json:
-              example:
-                details:
-                - message: The resource was not found.
-                  param: null
-                  code: conekta.errors.resource_not_found.entity
-                  debug_message: The object Webhook "641b1d5662d7e00001eaa46b" could
-                    not be found.
-                log_id: 641b6c253cd9a50001514fae
-                object: error
-                type: resource_not_found_error
-              schema:
-                $ref: '#/components/schemas/error'
-          description: not found entity
-        "422":
-          content:
-            application/vnd.conekta-v2.2.0+json:
-              example:
-                details:
-                - message: The token does not exist.
-                  param: payment_method.token_id
-                  code: conekta.errors.parameter_validation.payment_method.token_id.nonexistent_token
-                  debug_message: The token does not exist.
-                log_id: 641b6d813cd9a50001515017
-                object: error
-                type: parameter_validation_error
-              schema:
-                $ref: '#/components/schemas/error'
-          description: parameter validation error
-        "500":
-          content:
-            application/vnd.conekta-v2.2.0+json:
-              example:
-                details:
-                - debug_message: There was a runtime error and Conekta engineers have
-                    been notified.
-                  message: There was a runtime error and Conekta engineers have been
-                    notified.
-                  param: null
-                  code: conekta.errors.api.system.general_failure
-                object: error
-                type: api_error
-                log_id: 641b6f2b3cd9a50001515098
-              schema:
-                $ref: '#/components/schemas/error'
-          description: internal server error
-      security:
-      - bearerAuth: []
-      summary: "Get Subscription Events [Deprecated]"
-      tags:
-      - Subscriptions
-  /customers/{id}/subscription/pause:
-    post:
-      deprecated: true
-      description: "DEPRECATED: This endpoint will be removed in version 2.3.0."
-      operationId: pauseSubscription
-      parameters:
-      - description: Identifier of the resource
-        example: 6307a60c41de27127515a575
-        in: path
-        name: id
-        required: true
-        schema:
-          type: string
-      - description: Use for knowing which language to use
-        examples:
-          es:
-            summary: for spanish request/response
-            value: es
-          en:
-            summary: for english request/response
-            value: en
-        in: header
-        name: Accept-Language
-        required: false
-        schema:
-          default: es
-          enum:
-          - es
-          - en
-          type: string
-      - description: "In the case of a holding company, the company id of the child\
-          \ company to which will process the request."
-        example: 6441b6376b60c3a638da80af
-        in: header
-        name: X-Child-Company-Id
-        required: false
-        schema:
-          type: string
-      responses:
-        "200":
-          content:
-            application/vnd.conekta-v2.2.0+json:
-              schema:
-                $ref: '#/components/schemas/subscription_response'
-          description: successful
-          headers:
-            Date:
-              description: The date and time that the response was sent
-              schema:
-                example: "Fri, 03 Feb 2023 16:57:48 GMT"
-                type: string
-            Content-Type:
-              description: The format of the response body
-              schema:
-                example: application/json; charset=utf-8
-                type: string
-            Content-Length:
-              description: The length of the response body in bytes
-              schema:
-                example: "2737"
-                type: string
-            Connection:
-              description: The type of connection used to transfer the response
-              schema:
-                example: keep-alive
-                type: string
-            Conekta-Media-Type:
-              schema:
-                example: conekta-v2.2.0; format=application/json
-                type: string
-        "401":
-          content:
-            application/vnd.conekta-v2.2.0+json:
-              example:
-                details:
-                - message: Please include your access key in your request.
-                  param: null
-                  code: conekta.errors.authentication.missing_key
-                log_id: 507f1f77bcf86cd799439011
-                object: error
-                type: authentication_error
-              schema:
-                $ref: '#/components/schemas/error'
-          description: authentication error
-        "402":
-          content:
-            application/vnd.conekta-v2.2.0+json:
-              example:
-                details:
-                - message: The card could not be processed.
-                  code: conekta.errors.processing.tokenization.used
-                  debug_message: The token has already been used.
-                log_id: 641b6d073cd9a50001515007
-                object: error
-                type: processing_error
-              schema:
-                $ref: '#/components/schemas/error'
-          description: payment required error
-        "404":
-          content:
-            application/vnd.conekta-v2.2.0+json:
-              example:
-                details:
-                - message: The resource was not found.
-                  param: null
-                  code: conekta.errors.resource_not_found.entity
-                  debug_message: The object Webhook "641b1d5662d7e00001eaa46b" could
-                    not be found.
-                log_id: 641b6c253cd9a50001514fae
-                object: error
-                type: resource_not_found_error
-              schema:
-                $ref: '#/components/schemas/error'
-          description: not found entity
-        "500":
-          content:
-            application/vnd.conekta-v2.2.0+json:
-              example:
-                details:
-                - debug_message: There was a runtime error and Conekta engineers have
-                    been notified.
-                  message: There was a runtime error and Conekta engineers have been
-                    notified.
-                  param: null
-                  code: conekta.errors.api.system.general_failure
-                object: error
-                type: api_error
-                log_id: 641b6f2b3cd9a50001515098
-              schema:
-                $ref: '#/components/schemas/error'
-          description: internal server error
-      security:
-      - bearerAuth: []
-      summary: "Pause Subscription [Deprecated]"
-      tags:
-      - Subscriptions
-  /customers/{id}/subscription/resume:
-    post:
-      deprecated: true
-      description: "DEPRECATED: This endpoint will be removed in version 2.3.0."
-      operationId: resumeSubscription
-      parameters:
-      - description: Identifier of the resource
-        example: 6307a60c41de27127515a575
-        in: path
-        name: id
-        required: true
-        schema:
-          type: string
-      - description: Use for knowing which language to use
-        examples:
-          es:
-            summary: for spanish request/response
-            value: es
-          en:
-            summary: for english request/response
-            value: en
-        in: header
-        name: Accept-Language
-        required: false
-        schema:
-          default: es
-          enum:
-          - es
-          - en
-          type: string
-      - description: "In the case of a holding company, the company id of the child\
-          \ company to which will process the request."
-        example: 6441b6376b60c3a638da80af
-        in: header
-        name: X-Child-Company-Id
-        required: false
-        schema:
-          type: string
-      responses:
-        "200":
-          content:
-            application/vnd.conekta-v2.2.0+json:
-              schema:
-                $ref: '#/components/schemas/subscription_response'
-          description: successful
-          headers:
-            Date:
-              description: The date and time that the response was sent
-              schema:
-                example: "Fri, 03 Feb 2023 16:57:48 GMT"
-                type: string
-            Content-Type:
-              description: The format of the response body
-              schema:
-                example: application/json; charset=utf-8
-                type: string
-            Content-Length:
-              description: The length of the response body in bytes
-              schema:
-                example: "2737"
-                type: string
-            Connection:
-              description: The type of connection used to transfer the response
-              schema:
-                example: keep-alive
-                type: string
-            Conekta-Media-Type:
-              schema:
-                example: conekta-v2.2.0; format=application/json
-                type: string
-        "401":
-          content:
-            application/vnd.conekta-v2.2.0+json:
-              example:
-                details:
-                - message: Please include your access key in your request.
-                  param: null
-                  code: conekta.errors.authentication.missing_key
-                log_id: 507f1f77bcf86cd799439011
-                object: error
-                type: authentication_error
-              schema:
-                $ref: '#/components/schemas/error'
-          description: authentication error
-        "402":
-          content:
-            application/vnd.conekta-v2.2.0+json:
-              example:
-                details:
-                - message: The card could not be processed.
-                  code: conekta.errors.processing.tokenization.used
-                  debug_message: The token has already been used.
-                log_id: 641b6d073cd9a50001515007
-                object: error
-                type: processing_error
-              schema:
-                $ref: '#/components/schemas/error'
-          description: payment required error
-        "404":
-          content:
-            application/vnd.conekta-v2.2.0+json:
-              example:
-                details:
-                - message: The resource was not found.
-                  param: null
-                  code: conekta.errors.resource_not_found.entity
-                  debug_message: The object Webhook "641b1d5662d7e00001eaa46b" could
-                    not be found.
-                log_id: 641b6c253cd9a50001514fae
-                object: error
-                type: resource_not_found_error
-              schema:
-                $ref: '#/components/schemas/error'
-          description: not found entity
-        "422":
-          content:
-            application/vnd.conekta-v2.2.0+json:
-              example:
-                details:
-                - message: The token does not exist.
-                  param: payment_method.token_id
-                  code: conekta.errors.parameter_validation.payment_method.token_id.nonexistent_token
-                  debug_message: The token does not exist.
-                log_id: 641b6d813cd9a50001515017
-                object: error
-                type: parameter_validation_error
-              schema:
-                $ref: '#/components/schemas/error'
-          description: parameter validation error
-        "500":
-          content:
-            application/vnd.conekta-v2.2.0+json:
-              example:
-                details:
-                - debug_message: There was a runtime error and Conekta engineers have
-                    been notified.
-                  message: There was a runtime error and Conekta engineers have been
-                    notified.
-                  param: null
-                  code: conekta.errors.api.system.general_failure
-                object: error
-                type: api_error
-                log_id: 641b6f2b3cd9a50001515098
-              schema:
-                $ref: '#/components/schemas/error'
-          description: internal server error
-      security:
-      - bearerAuth: []
-      summary: "Resume Subscription [Deprecated]"
-      tags:
-      - Subscriptions
   /customers/{customer_id}/subscriptions:
     get:
       description: Get a list of subscriptions for a customer
@@ -10395,6 +9410,959 @@ paths:
       security:
       - bearerAuth: []
       summary: Retry Failed Payment
+      tags:
+      - Subscriptions
+  /customers/{id}/subscription:
+    get:
+      deprecated: true
+      description: "DEPRECATED: This endpoint will be removed in version 2.3.0."
+      operationId: getSubscription
+      parameters:
+      - description: Identifier of the resource
+        example: 6307a60c41de27127515a575
+        in: path
+        name: id
+        required: true
+        schema:
+          type: string
+      - description: Use for knowing which language to use
+        examples:
+          es:
+            summary: for spanish request/response
+            value: es
+          en:
+            summary: for english request/response
+            value: en
+        in: header
+        name: Accept-Language
+        required: false
+        schema:
+          default: es
+          enum:
+          - es
+          - en
+          type: string
+      responses:
+        "200":
+          content:
+            application/vnd.conekta-v2.2.0+json:
+              schema:
+                $ref: '#/components/schemas/subscription_response'
+          description: successful
+          headers:
+            Date:
+              description: The date and time that the response was sent
+              schema:
+                example: "Fri, 03 Feb 2023 16:57:48 GMT"
+                type: string
+            Content-Type:
+              description: The format of the response body
+              schema:
+                example: application/json; charset=utf-8
+                type: string
+            Content-Length:
+              description: The length of the response body in bytes
+              schema:
+                example: "2737"
+                type: string
+            Connection:
+              description: The type of connection used to transfer the response
+              schema:
+                example: keep-alive
+                type: string
+            Conekta-Media-Type:
+              schema:
+                example: conekta-v2.2.0; format=application/json
+                type: string
+        "401":
+          content:
+            application/vnd.conekta-v2.2.0+json:
+              example:
+                details:
+                - message: Please include your access key in your request.
+                  param: null
+                  code: conekta.errors.authentication.missing_key
+                log_id: 507f1f77bcf86cd799439011
+                object: error
+                type: authentication_error
+              schema:
+                $ref: '#/components/schemas/error'
+          description: authentication error
+        "404":
+          content:
+            application/vnd.conekta-v2.2.0+json:
+              example:
+                details:
+                - message: The resource was not found.
+                  param: null
+                  code: conekta.errors.resource_not_found.entity
+                  debug_message: The object Webhook "641b1d5662d7e00001eaa46b" could
+                    not be found.
+                log_id: 641b6c253cd9a50001514fae
+                object: error
+                type: resource_not_found_error
+              schema:
+                $ref: '#/components/schemas/error'
+          description: not found entity
+        "500":
+          content:
+            application/vnd.conekta-v2.2.0+json:
+              example:
+                details:
+                - debug_message: There was a runtime error and Conekta engineers have
+                    been notified.
+                  message: There was a runtime error and Conekta engineers have been
+                    notified.
+                  param: null
+                  code: conekta.errors.api.system.general_failure
+                object: error
+                type: api_error
+                log_id: 641b6f2b3cd9a50001515098
+              schema:
+                $ref: '#/components/schemas/error'
+          description: internal server error
+      security:
+      - bearerAuth: []
+      summary: "Get Subscription [Deprecated]"
+      tags:
+      - Subscriptions
+    post:
+      deprecated: true
+      description: "DEPRECATED: This endpoint will be removed in version 2.3.0. You\
+        \ can create the subscription to include the plans that your customers consume"
+      operationId: createSubscription
+      parameters:
+      - description: Identifier of the resource
+        example: 6307a60c41de27127515a575
+        in: path
+        name: id
+        required: true
+        schema:
+          type: string
+      - description: Use for knowing which language to use
+        examples:
+          es:
+            summary: for spanish request/response
+            value: es
+          en:
+            summary: for english request/response
+            value: en
+        in: header
+        name: Accept-Language
+        required: false
+        schema:
+          default: es
+          enum:
+          - es
+          - en
+          type: string
+      - description: "In the case of a holding company, the company id of the child\
+          \ company to which will process the request."
+        example: 6441b6376b60c3a638da80af
+        in: header
+        name: X-Child-Company-Id
+        required: false
+        schema:
+          type: string
+      requestBody:
+        $ref: '#/components/requestBodies/subscription'
+      responses:
+        "200":
+          content:
+            application/vnd.conekta-v2.2.0+json:
+              schema:
+                $ref: '#/components/schemas/subscription_response'
+          description: successful
+          headers:
+            Date:
+              description: The date and time that the response was sent
+              schema:
+                example: "Fri, 03 Feb 2023 16:57:48 GMT"
+                type: string
+            Content-Type:
+              description: The format of the response body
+              schema:
+                example: application/json; charset=utf-8
+                type: string
+            Content-Length:
+              description: The length of the response body in bytes
+              schema:
+                example: "2737"
+                type: string
+            Connection:
+              description: The type of connection used to transfer the response
+              schema:
+                example: keep-alive
+                type: string
+            Conekta-Media-Type:
+              schema:
+                example: conekta-v2.2.0; format=application/json
+                type: string
+        "422":
+          content:
+            application/vnd.conekta-v2.2.0+json:
+              example:
+                details:
+                - message: The token does not exist.
+                  param: payment_method.token_id
+                  code: conekta.errors.parameter_validation.payment_method.token_id.nonexistent_token
+                  debug_message: The token does not exist.
+                log_id: 641b6d813cd9a50001515017
+                object: error
+                type: parameter_validation_error
+              schema:
+                $ref: '#/components/schemas/error'
+          description: parameter validation error
+        "401":
+          content:
+            application/vnd.conekta-v2.2.0+json:
+              example:
+                details:
+                - message: Please include your access key in your request.
+                  param: null
+                  code: conekta.errors.authentication.missing_key
+                log_id: 507f1f77bcf86cd799439011
+                object: error
+                type: authentication_error
+              schema:
+                $ref: '#/components/schemas/error'
+          description: authentication error
+        "404":
+          content:
+            application/vnd.conekta-v2.2.0+json:
+              example:
+                details:
+                - message: The resource was not found.
+                  param: null
+                  code: conekta.errors.resource_not_found.entity
+                  debug_message: The object Webhook "641b1d5662d7e00001eaa46b" could
+                    not be found.
+                log_id: 641b6c253cd9a50001514fae
+                object: error
+                type: resource_not_found_error
+              schema:
+                $ref: '#/components/schemas/error'
+          description: not found entity
+        "500":
+          content:
+            application/vnd.conekta-v2.2.0+json:
+              example:
+                details:
+                - debug_message: There was a runtime error and Conekta engineers have
+                    been notified.
+                  message: There was a runtime error and Conekta engineers have been
+                    notified.
+                  param: null
+                  code: conekta.errors.api.system.general_failure
+                object: error
+                type: api_error
+                log_id: 641b6f2b3cd9a50001515098
+              schema:
+                $ref: '#/components/schemas/error'
+          description: internal server error
+      security:
+      - bearerAuth: []
+      summary: "Create Subscription [Deprecated]"
+      tags:
+      - Subscriptions
+    put:
+      deprecated: true
+      description: "DEPRECATED: This endpoint will be removed in version 2.3.0. You\
+        \ can modify the subscription to change the plans that your customers consume"
+      operationId: updateSubscription
+      parameters:
+      - description: Identifier of the resource
+        example: 6307a60c41de27127515a575
+        in: path
+        name: id
+        required: true
+        schema:
+          type: string
+      - description: Use for knowing which language to use
+        examples:
+          es:
+            summary: for spanish request/response
+            value: es
+          en:
+            summary: for english request/response
+            value: en
+        in: header
+        name: Accept-Language
+        required: false
+        schema:
+          default: es
+          enum:
+          - es
+          - en
+          type: string
+      - description: "In the case of a holding company, the company id of the child\
+          \ company to which will process the request."
+        example: 6441b6376b60c3a638da80af
+        in: header
+        name: X-Child-Company-Id
+        required: false
+        schema:
+          type: string
+      requestBody:
+        $ref: '#/components/requestBodies/subscription_update'
+      responses:
+        "200":
+          content:
+            application/vnd.conekta-v2.2.0+json:
+              schema:
+                $ref: '#/components/schemas/subscription_response'
+          description: successful
+          headers:
+            Date:
+              description: The date and time that the response was sent
+              schema:
+                example: "Fri, 03 Feb 2023 16:57:48 GMT"
+                type: string
+            Content-Type:
+              description: The format of the response body
+              schema:
+                example: application/json; charset=utf-8
+                type: string
+            Content-Length:
+              description: The length of the response body in bytes
+              schema:
+                example: "2737"
+                type: string
+            Connection:
+              description: The type of connection used to transfer the response
+              schema:
+                example: keep-alive
+                type: string
+            Conekta-Media-Type:
+              schema:
+                example: conekta-v2.2.0; format=application/json
+                type: string
+        "422":
+          content:
+            application/vnd.conekta-v2.2.0+json:
+              example:
+                details:
+                - message: The token does not exist.
+                  param: payment_method.token_id
+                  code: conekta.errors.parameter_validation.payment_method.token_id.nonexistent_token
+                  debug_message: The token does not exist.
+                log_id: 641b6d813cd9a50001515017
+                object: error
+                type: parameter_validation_error
+              schema:
+                $ref: '#/components/schemas/error'
+          description: parameter validation error
+        "401":
+          content:
+            application/vnd.conekta-v2.2.0+json:
+              example:
+                details:
+                - message: Please include your access key in your request.
+                  param: null
+                  code: conekta.errors.authentication.missing_key
+                log_id: 507f1f77bcf86cd799439011
+                object: error
+                type: authentication_error
+              schema:
+                $ref: '#/components/schemas/error'
+          description: authentication error
+        "404":
+          content:
+            application/vnd.conekta-v2.2.0+json:
+              example:
+                details:
+                - message: The resource was not found.
+                  param: null
+                  code: conekta.errors.resource_not_found.entity
+                  debug_message: The object Webhook "641b1d5662d7e00001eaa46b" could
+                    not be found.
+                log_id: 641b6c253cd9a50001514fae
+                object: error
+                type: resource_not_found_error
+              schema:
+                $ref: '#/components/schemas/error'
+          description: not found entity
+        "500":
+          content:
+            application/vnd.conekta-v2.2.0+json:
+              example:
+                details:
+                - debug_message: There was a runtime error and Conekta engineers have
+                    been notified.
+                  message: There was a runtime error and Conekta engineers have been
+                    notified.
+                  param: null
+                  code: conekta.errors.api.system.general_failure
+                object: error
+                type: api_error
+                log_id: 641b6f2b3cd9a50001515098
+              schema:
+                $ref: '#/components/schemas/error'
+          description: internal server error
+      security:
+      - bearerAuth: []
+      summary: "Update Subscription [Deprecated]"
+      tags:
+      - Subscriptions
+  /customers/{id}/subscription/cancel:
+    post:
+      deprecated: true
+      description: "DEPRECATED: This endpoint will be removed in version 2.3.0."
+      operationId: cancelSubscription
+      parameters:
+      - description: Identifier of the resource
+        example: 6307a60c41de27127515a575
+        in: path
+        name: id
+        required: true
+        schema:
+          type: string
+      - description: Use for knowing which language to use
+        examples:
+          es:
+            summary: for spanish request/response
+            value: es
+          en:
+            summary: for english request/response
+            value: en
+        in: header
+        name: Accept-Language
+        required: false
+        schema:
+          default: es
+          enum:
+          - es
+          - en
+          type: string
+      - description: "In the case of a holding company, the company id of the child\
+          \ company to which will process the request."
+        example: 6441b6376b60c3a638da80af
+        in: header
+        name: X-Child-Company-Id
+        required: false
+        schema:
+          type: string
+      responses:
+        "200":
+          content:
+            application/vnd.conekta-v2.2.0+json:
+              schema:
+                $ref: '#/components/schemas/subscription_response'
+          description: successful
+          headers:
+            Date:
+              description: The date and time that the response was sent
+              schema:
+                example: "Fri, 03 Feb 2023 16:57:48 GMT"
+                type: string
+            Content-Type:
+              description: The format of the response body
+              schema:
+                example: application/json; charset=utf-8
+                type: string
+            Content-Length:
+              description: The length of the response body in bytes
+              schema:
+                example: "2737"
+                type: string
+            Connection:
+              description: The type of connection used to transfer the response
+              schema:
+                example: keep-alive
+                type: string
+            Conekta-Media-Type:
+              schema:
+                example: conekta-v2.2.0; format=application/json
+                type: string
+        "401":
+          content:
+            application/vnd.conekta-v2.2.0+json:
+              example:
+                details:
+                - message: Please include your access key in your request.
+                  param: null
+                  code: conekta.errors.authentication.missing_key
+                log_id: 507f1f77bcf86cd799439011
+                object: error
+                type: authentication_error
+              schema:
+                $ref: '#/components/schemas/error'
+          description: authentication error
+        "404":
+          content:
+            application/vnd.conekta-v2.2.0+json:
+              example:
+                details:
+                - message: The resource was not found.
+                  param: null
+                  code: conekta.errors.resource_not_found.entity
+                  debug_message: The object Webhook "641b1d5662d7e00001eaa46b" could
+                    not be found.
+                log_id: 641b6c253cd9a50001514fae
+                object: error
+                type: resource_not_found_error
+              schema:
+                $ref: '#/components/schemas/error'
+          description: not found entity
+        "500":
+          content:
+            application/vnd.conekta-v2.2.0+json:
+              example:
+                details:
+                - debug_message: There was a runtime error and Conekta engineers have
+                    been notified.
+                  message: There was a runtime error and Conekta engineers have been
+                    notified.
+                  param: null
+                  code: conekta.errors.api.system.general_failure
+                object: error
+                type: api_error
+                log_id: 641b6f2b3cd9a50001515098
+              schema:
+                $ref: '#/components/schemas/error'
+          description: internal server error
+      security:
+      - bearerAuth: []
+      summary: "Cancel Subscription [Deprecated]"
+      tags:
+      - Subscriptions
+  /customers/{id}/subscription/events:
+    get:
+      deprecated: true
+      description: "You can get the events of the subscription(s) of a client, with\
+        \ the customer id"
+      operationId: getSubscriptionEvents
+      parameters:
+      - description: Identifier of the resource
+        example: 6307a60c41de27127515a575
+        in: path
+        name: id
+        required: true
+        schema:
+          type: string
+      - description: Use for knowing which language to use
+        examples:
+          es:
+            summary: for spanish request/response
+            value: es
+          en:
+            summary: for english request/response
+            value: en
+        in: header
+        name: Accept-Language
+        required: false
+        schema:
+          default: es
+          enum:
+          - es
+          - en
+          type: string
+      - description: "In the case of a holding company, the company id of the child\
+          \ company to which will process the request."
+        example: 6441b6376b60c3a638da80af
+        in: header
+        name: X-Child-Company-Id
+        required: false
+        schema:
+          type: string
+      responses:
+        "200":
+          content:
+            application/vnd.conekta-v2.2.0+json:
+              schema:
+                $ref: '#/components/schemas/subscription_events_response'
+          description: successful
+          headers:
+            Date:
+              description: The date and time that the response was sent
+              schema:
+                example: "Fri, 03 Feb 2023 16:57:48 GMT"
+                type: string
+            Content-Type:
+              description: The format of the response body
+              schema:
+                example: application/json; charset=utf-8
+                type: string
+            Content-Length:
+              description: The length of the response body in bytes
+              schema:
+                example: "2737"
+                type: string
+            Connection:
+              description: The type of connection used to transfer the response
+              schema:
+                example: keep-alive
+                type: string
+            Conekta-Media-Type:
+              schema:
+                example: conekta-v2.2.0; format=application/json
+                type: string
+        "401":
+          content:
+            application/vnd.conekta-v2.2.0+json:
+              example:
+                details:
+                - message: Please include your access key in your request.
+                  param: null
+                  code: conekta.errors.authentication.missing_key
+                log_id: 507f1f77bcf86cd799439011
+                object: error
+                type: authentication_error
+              schema:
+                $ref: '#/components/schemas/error'
+          description: authentication error
+        "402":
+          content:
+            application/vnd.conekta-v2.2.0+json:
+              example:
+                details:
+                - message: The card could not be processed.
+                  code: conekta.errors.processing.tokenization.used
+                  debug_message: The token has already been used.
+                log_id: 641b6d073cd9a50001515007
+                object: error
+                type: processing_error
+              schema:
+                $ref: '#/components/schemas/error'
+          description: payment required error
+        "404":
+          content:
+            application/vnd.conekta-v2.2.0+json:
+              example:
+                details:
+                - message: The resource was not found.
+                  param: null
+                  code: conekta.errors.resource_not_found.entity
+                  debug_message: The object Webhook "641b1d5662d7e00001eaa46b" could
+                    not be found.
+                log_id: 641b6c253cd9a50001514fae
+                object: error
+                type: resource_not_found_error
+              schema:
+                $ref: '#/components/schemas/error'
+          description: not found entity
+        "422":
+          content:
+            application/vnd.conekta-v2.2.0+json:
+              example:
+                details:
+                - message: The token does not exist.
+                  param: payment_method.token_id
+                  code: conekta.errors.parameter_validation.payment_method.token_id.nonexistent_token
+                  debug_message: The token does not exist.
+                log_id: 641b6d813cd9a50001515017
+                object: error
+                type: parameter_validation_error
+              schema:
+                $ref: '#/components/schemas/error'
+          description: parameter validation error
+        "500":
+          content:
+            application/vnd.conekta-v2.2.0+json:
+              example:
+                details:
+                - debug_message: There was a runtime error and Conekta engineers have
+                    been notified.
+                  message: There was a runtime error and Conekta engineers have been
+                    notified.
+                  param: null
+                  code: conekta.errors.api.system.general_failure
+                object: error
+                type: api_error
+                log_id: 641b6f2b3cd9a50001515098
+              schema:
+                $ref: '#/components/schemas/error'
+          description: internal server error
+      security:
+      - bearerAuth: []
+      summary: "Get Subscription Events [Deprecated]"
+      tags:
+      - Subscriptions
+  /customers/{id}/subscription/pause:
+    post:
+      deprecated: true
+      description: "DEPRECATED: This endpoint will be removed in version 2.3.0."
+      operationId: pauseSubscription
+      parameters:
+      - description: Identifier of the resource
+        example: 6307a60c41de27127515a575
+        in: path
+        name: id
+        required: true
+        schema:
+          type: string
+      - description: Use for knowing which language to use
+        examples:
+          es:
+            summary: for spanish request/response
+            value: es
+          en:
+            summary: for english request/response
+            value: en
+        in: header
+        name: Accept-Language
+        required: false
+        schema:
+          default: es
+          enum:
+          - es
+          - en
+          type: string
+      - description: "In the case of a holding company, the company id of the child\
+          \ company to which will process the request."
+        example: 6441b6376b60c3a638da80af
+        in: header
+        name: X-Child-Company-Id
+        required: false
+        schema:
+          type: string
+      responses:
+        "200":
+          content:
+            application/vnd.conekta-v2.2.0+json:
+              schema:
+                $ref: '#/components/schemas/subscription_response'
+          description: successful
+          headers:
+            Date:
+              description: The date and time that the response was sent
+              schema:
+                example: "Fri, 03 Feb 2023 16:57:48 GMT"
+                type: string
+            Content-Type:
+              description: The format of the response body
+              schema:
+                example: application/json; charset=utf-8
+                type: string
+            Content-Length:
+              description: The length of the response body in bytes
+              schema:
+                example: "2737"
+                type: string
+            Connection:
+              description: The type of connection used to transfer the response
+              schema:
+                example: keep-alive
+                type: string
+            Conekta-Media-Type:
+              schema:
+                example: conekta-v2.2.0; format=application/json
+                type: string
+        "401":
+          content:
+            application/vnd.conekta-v2.2.0+json:
+              example:
+                details:
+                - message: Please include your access key in your request.
+                  param: null
+                  code: conekta.errors.authentication.missing_key
+                log_id: 507f1f77bcf86cd799439011
+                object: error
+                type: authentication_error
+              schema:
+                $ref: '#/components/schemas/error'
+          description: authentication error
+        "402":
+          content:
+            application/vnd.conekta-v2.2.0+json:
+              example:
+                details:
+                - message: The card could not be processed.
+                  code: conekta.errors.processing.tokenization.used
+                  debug_message: The token has already been used.
+                log_id: 641b6d073cd9a50001515007
+                object: error
+                type: processing_error
+              schema:
+                $ref: '#/components/schemas/error'
+          description: payment required error
+        "404":
+          content:
+            application/vnd.conekta-v2.2.0+json:
+              example:
+                details:
+                - message: The resource was not found.
+                  param: null
+                  code: conekta.errors.resource_not_found.entity
+                  debug_message: The object Webhook "641b1d5662d7e00001eaa46b" could
+                    not be found.
+                log_id: 641b6c253cd9a50001514fae
+                object: error
+                type: resource_not_found_error
+              schema:
+                $ref: '#/components/schemas/error'
+          description: not found entity
+        "500":
+          content:
+            application/vnd.conekta-v2.2.0+json:
+              example:
+                details:
+                - debug_message: There was a runtime error and Conekta engineers have
+                    been notified.
+                  message: There was a runtime error and Conekta engineers have been
+                    notified.
+                  param: null
+                  code: conekta.errors.api.system.general_failure
+                object: error
+                type: api_error
+                log_id: 641b6f2b3cd9a50001515098
+              schema:
+                $ref: '#/components/schemas/error'
+          description: internal server error
+      security:
+      - bearerAuth: []
+      summary: "Pause Subscription [Deprecated]"
+      tags:
+      - Subscriptions
+  /customers/{id}/subscription/resume:
+    post:
+      deprecated: true
+      description: "DEPRECATED: This endpoint will be removed in version 2.3.0."
+      operationId: resumeSubscription
+      parameters:
+      - description: Identifier of the resource
+        example: 6307a60c41de27127515a575
+        in: path
+        name: id
+        required: true
+        schema:
+          type: string
+      - description: Use for knowing which language to use
+        examples:
+          es:
+            summary: for spanish request/response
+            value: es
+          en:
+            summary: for english request/response
+            value: en
+        in: header
+        name: Accept-Language
+        required: false
+        schema:
+          default: es
+          enum:
+          - es
+          - en
+          type: string
+      - description: "In the case of a holding company, the company id of the child\
+          \ company to which will process the request."
+        example: 6441b6376b60c3a638da80af
+        in: header
+        name: X-Child-Company-Id
+        required: false
+        schema:
+          type: string
+      responses:
+        "200":
+          content:
+            application/vnd.conekta-v2.2.0+json:
+              schema:
+                $ref: '#/components/schemas/subscription_response'
+          description: successful
+          headers:
+            Date:
+              description: The date and time that the response was sent
+              schema:
+                example: "Fri, 03 Feb 2023 16:57:48 GMT"
+                type: string
+            Content-Type:
+              description: The format of the response body
+              schema:
+                example: application/json; charset=utf-8
+                type: string
+            Content-Length:
+              description: The length of the response body in bytes
+              schema:
+                example: "2737"
+                type: string
+            Connection:
+              description: The type of connection used to transfer the response
+              schema:
+                example: keep-alive
+                type: string
+            Conekta-Media-Type:
+              schema:
+                example: conekta-v2.2.0; format=application/json
+                type: string
+        "401":
+          content:
+            application/vnd.conekta-v2.2.0+json:
+              example:
+                details:
+                - message: Please include your access key in your request.
+                  param: null
+                  code: conekta.errors.authentication.missing_key
+                log_id: 507f1f77bcf86cd799439011
+                object: error
+                type: authentication_error
+              schema:
+                $ref: '#/components/schemas/error'
+          description: authentication error
+        "402":
+          content:
+            application/vnd.conekta-v2.2.0+json:
+              example:
+                details:
+                - message: The card could not be processed.
+                  code: conekta.errors.processing.tokenization.used
+                  debug_message: The token has already been used.
+                log_id: 641b6d073cd9a50001515007
+                object: error
+                type: processing_error
+              schema:
+                $ref: '#/components/schemas/error'
+          description: payment required error
+        "404":
+          content:
+            application/vnd.conekta-v2.2.0+json:
+              example:
+                details:
+                - message: The resource was not found.
+                  param: null
+                  code: conekta.errors.resource_not_found.entity
+                  debug_message: The object Webhook "641b1d5662d7e00001eaa46b" could
+                    not be found.
+                log_id: 641b6c253cd9a50001514fae
+                object: error
+                type: resource_not_found_error
+              schema:
+                $ref: '#/components/schemas/error'
+          description: not found entity
+        "422":
+          content:
+            application/vnd.conekta-v2.2.0+json:
+              example:
+                details:
+                - message: The token does not exist.
+                  param: payment_method.token_id
+                  code: conekta.errors.parameter_validation.payment_method.token_id.nonexistent_token
+                  debug_message: The token does not exist.
+                log_id: 641b6d813cd9a50001515017
+                object: error
+                type: parameter_validation_error
+              schema:
+                $ref: '#/components/schemas/error'
+          description: parameter validation error
+        "500":
+          content:
+            application/vnd.conekta-v2.2.0+json:
+              example:
+                details:
+                - debug_message: There was a runtime error and Conekta engineers have
+                    been notified.
+                  message: There was a runtime error and Conekta engineers have been
+                    notified.
+                  param: null
+                  code: conekta.errors.api.system.general_failure
+                object: error
+                type: api_error
+                log_id: 641b6f2b3cd9a50001515098
+              schema:
+                $ref: '#/components/schemas/error'
+          description: internal server error
+      security:
+      - bearerAuth: []
+      summary: "Resume Subscription [Deprecated]"
       tags:
       - Subscriptions
   /orders/{id}/tax_lines:
@@ -13665,19 +13633,19 @@ components:
             $ref: '#/components/schemas/customer_update_shipping_contacts'
       description: requested field for customer update shippings contacts
       required: true
-    subscription_update:
-      content:
-        application/json:
-          schema:
-            $ref: '#/components/schemas/subscription_update_request'
-      description: requested field for update a subscription
-      required: true
     subscription:
       content:
         application/json:
           schema:
             $ref: '#/components/schemas/subscription_request'
       description: requested field for subscriptions
+      required: true
+    subscription_update:
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/subscription_update_request'
+      description: requested field for update a subscription
       required: true
     order_tax:
       content:
@@ -16363,21 +16331,6 @@ components:
           type: boolean
       title: customer_update_shipping_contacts_request
       type: object
-    subscription_update_request:
-      description: You can modify the subscription to change the plan used by your
-        customers.
-      properties:
-        plan_id:
-          example: f84gdgf5g48r15fd21g8w424fd1
-          type: string
-        card_id:
-          example: src_2qUCNd5AyQqfPMBuV
-          type: string
-        trial_end:
-          example: 1484040996
-          type: integer
-      title: updates a subscription
-      type: object
     subscription_request:
       description: "It is a parameter that allows to identify in the response, the\
         \ detailed content of the plans to which the client has subscribed"
@@ -16394,6 +16347,21 @@ components:
       required:
       - plan_id
       title: subscription_request
+      type: object
+    subscription_update_request:
+      description: You can modify the subscription to change the plan used by your
+        customers.
+      properties:
+        plan_id:
+          example: f84gdgf5g48r15fd21g8w424fd1
+          type: string
+        card_id:
+          example: src_2qUCNd5AyQqfPMBuV
+          type: string
+        trial_end:
+          example: 1484040996
+          type: integer
+      title: updates a subscription
       type: object
     order_tax_request:
       description: create new taxes for an existing order
