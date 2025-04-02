@@ -4,8 +4,7 @@ get:
     - Subscriptions
   operationId: getSubscriptionEvents
   summary: Get Subscription Events [Deprecated]
-  description: "DEPRECATED: This endpoint will be removed in version 2.3.0."
-  description: You can get the events of the subscription(s) of a client, with the customer id
+  description: "DEPRECATED: This endpoint will be removed in version 2.3.0. You can get the events of the subscription(s) of a client, with the customer id"
   responses:
     200:
       description: successful
