@@ -8,8 +8,6 @@ value:
     expires_at: 1746015865
     failure_url: string
     monthly_installments_enabled: false
-    monthly_installments_options:
-    - 0
     name: Embebido Prueba
     on_demand_enabled: true
     success_url: string
