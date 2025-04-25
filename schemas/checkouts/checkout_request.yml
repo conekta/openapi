@@ -6,7 +6,7 @@ required:
 properties:
   allowed_payment_methods:
     type: array
-    description: "Are the payment methods available for this link. For subscriptions, only 'card' is allowed."
+    description: "Are the payment methods available for this link. For subscriptions, only 'card' is allowed due to the recurring nature of the payments."
     items:
       type: string
       enum: ["cash", "card", "bank_transfer", "bnpl"]

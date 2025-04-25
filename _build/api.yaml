@@ -16995,7 +16995,7 @@ components:
       properties:
         allowed_payment_methods:
           description: "Are the payment methods available for this link. For subscriptions,\
-            \ only 'card' is allowed."
+            \ only 'card' is allowed due to the recurring nature of the payments."
           example:
           - cash
           - card
