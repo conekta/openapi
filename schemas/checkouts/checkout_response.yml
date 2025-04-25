@@ -13,6 +13,12 @@ properties:
       type: string
     example: [ "cash", "card", "bank_transfer", "bnpl"]
     description: "Are the payment methods available for this link"
+  plan_ids:
+    type: array
+    description: "List of plan IDs that are available for subscription"
+    items:
+      type: string
+    example: ["plan_123", "plan_456"]
   can_not_expire:
     type: boolean
     example: false
