@@ -10,6 +10,8 @@ content:
         $ref: '../../schemas/orders/request_examples/order_with_charges_bnpl.yml'
       order_with_checkout:
         $ref: '../../schemas/orders/request_examples/order_with_checkout.yml'
+      order_with_subscription:
+        $ref: '../../schemas/orders/request_examples/order_with_subscription.yml'
       split_payment_with_2_card_charges:
         $ref: '../../schemas/orders/request_examples/split_payment_with_2_cards.yml'
       split_payment_with_3_cash_charges:
