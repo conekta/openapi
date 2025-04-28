@@ -18749,6 +18749,7 @@ components:
           description: It is a list of plan IDs that will be associated with the order.
           example:
           - plan_123
+          - plan_456
           items:
             type: string
           type: array
