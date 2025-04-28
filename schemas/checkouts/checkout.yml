@@ -81,7 +81,7 @@ properties:
         type: array
         items:
           type: string
-        example: ["plan_123"]
+        example: ["plan_123", "plan_456"]
       metadata:
         type: object
         additionalProperties: true
