@@ -76,6 +76,12 @@ properties:
         type: array
         items:
           $ref: ../../schemas/orders/product.yml
+      plan_ids:
+        description: It is a list of plan IDs that will be associated with the order.
+        type: array
+        items:
+          type: string
+        example: ["plan_123"]
       metadata:
         type: object
         additionalProperties: true
