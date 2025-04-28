@@ -18745,6 +18745,13 @@ components:
           items:
             $ref: '#/components/schemas/product'
           type: array
+        plan_ids:
+          description: It is a list of plan IDs that will be associated with the order.
+          example:
+          - plan_123
+          items:
+            type: string
+          type: array
         metadata:
           additionalProperties: true
           description: It is a set of key-value pairs that you can attach to the order.
