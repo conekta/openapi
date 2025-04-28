@@ -3,4 +3,7 @@ content:
   application/json:
     schema:  
       $ref: '../../schemas/checkouts/checkout.yml'
+    examples:
+      create_checkout_with_plan_ids:
+        $ref: '../../schemas/checkouts/request_examples/create_checkout_with_plan_ids.yml'
 required: true
