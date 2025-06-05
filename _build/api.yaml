@@ -14981,6 +14981,10 @@ components:
       - $ref: '#/components/schemas/payment_method_response'
       - description: use for spei responses
         properties:
+          bank:
+            description: Bank name for the SPEI payment method
+            example: STP
+            type: string
           reference:
             example: "93000262276908"
             type: string
