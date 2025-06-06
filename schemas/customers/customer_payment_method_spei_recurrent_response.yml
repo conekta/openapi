@@ -4,6 +4,10 @@ payment_method_spei_recurrent:
     - type: object
       description: use for spei responses
       properties:
+        bank:
+          type: string
+          example: "STP"
+          description: "Bank name for the SPEI payment method"
         reference:
           type: string
           example: "93000262276908"
