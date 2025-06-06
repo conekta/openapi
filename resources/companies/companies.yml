@@ -57,3 +57,73 @@ get:
     - $ref: '../../parameters/commons/query/search.yml'
     - $ref: '../../parameters/commons/query/next_page.yml'
     - $ref: '../../parameters/commons/query/previous_page.yml'
+post:
+  tags:
+    - Companies
+  operationId: createCompany
+  summary: Create Company
+  description: Create a new company.
+  requestBody:
+    description: Company data
+    required: true
+    content:
+      application/json:
+        schema:
+          $ref: '../../schemas/companies/create_company_request.yml'
+  responses:
+    '201':
+      description: Company created successfully
+      content:
+        application/vnd.conekta-v2.2.0+json:
+          schema:
+            $ref: '../../schemas/companies/company_response.yml'
+      headers:
+        Date:
+          description: The date and time that the response was sent
+          schema:
+            type: string
+        Content-Type:
+          description: The format of the response body
+          schema:
+            type: string
+        Content-Length:
+          description: The length of the response body in bytes
+          schema:
+            type: string
+        Connection:
+          description: The type of connection used to transfer the response
+          schema:
+            type: string
+        Conekta-Media-Type:
+          schema:
+            type: string
+    '401':
+      $ref: '../errors/401.yml'
+    '500':
+      $ref: '../errors/500.yml'
+  security:
+    - bearerAuth: []
+  x-codeSamples:
+    - lang: cURL
+      source: |
+        curl --location 'https://api.conekta.com/companies' \
+        --header 'Content-Type: application/json' \
+        --header 'Accept: application/vnd.conekta-v2.2.0+json' \
+        --header 'Authorization: Bearer token' \
+        --data-raw '{
+            "name": "Fake Company Name",
+            "type_company": "subsidiary",
+            "comercial_info": {
+                "website": "http://www.example.com",
+                "mcc": "5000",
+                "merchant_support_email": "support@example.com",
+                "merchant_support_phone": "5550123456"
+            },
+            "fiscal_info": {
+                "business_phone": "5550123457",
+                "fiscal_type": "persona_fisica"
+            },
+            "bank_account_info":{
+                "clabe": "000000000000000000"
+            }
+        }'

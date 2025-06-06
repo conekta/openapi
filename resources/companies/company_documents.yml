@@ -1,0 +1,58 @@
+get:
+  tags:
+    - Companies
+  operationId: getCompanyDocuments
+  summary: Get Company Documents
+  description: Retrieve a list of documents associated with a specific company.
+  parameters:
+    - name: company_id
+      in: path
+      required: true
+      description: The unique identifier of the company.
+      schema:
+        type: string
+        example: "comp_2tXkM92sXN5xXyNMW"
+    - $ref: '../../parameters/commons/headers/accept_language.yml'
+  responses:
+    '200':
+      description: A list of documents for the company.
+      content:
+        application/vnd.conekta-v2.2.0+json:
+          schema:
+            type: array
+            items:
+              $ref: '../../schemas/companies/company_document_response.yml'
+      headers:
+        Date:
+          description: The date and time that the response was sent
+          schema:
+            type: string
+        Content-Type:
+          description: The format of the response body
+          schema:
+            type: string
+        Content-Length:
+          description: The length of the response body in bytes
+          schema:
+            type: string
+        Connection:
+          description: The type of connection used to transfer the response
+          schema:
+            type: string
+        Conekta-Media-Type:
+          schema:
+            type: string
+    '401':
+      $ref: '../errors/401.yml'
+    '404':
+      $ref: '../errors/404.yml'
+    '500':
+      $ref: '../errors/500.yml'
+  security:
+    - bearerAuth: []
+  x-codeSamples:
+    - lang: cURL
+      source: |
+        curl --location 'https://api.conekta.com/companies/company_id/documents' \
+        --header 'Accept: application/vnd.conekta-v2.2.0+json' \
+        --header 'Authorization: Bearer token' 

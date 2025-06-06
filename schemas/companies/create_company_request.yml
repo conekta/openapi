@@ -1,0 +1,53 @@
+title: Create Company Request
+type: object
+properties:
+  name:
+    type: string
+    description: The name of the company.
+    example: "test onboarding 21"
+  type_company:
+    type: string
+    description: The type of company, 'owner'
+    example: "owner"
+  comercial_info:
+    type: object
+    description: Commercial information for the company.
+    properties:
+      website:
+        type: string
+        format: url
+        description: The company's website URL.
+        example: "http://www.lavoz.com"
+      mcc:
+        type: string
+        description: The Merchant Category Code (MCC) for the company.
+        example: "5812"
+      merchant_support_email:
+        type: string
+        format: email
+        description: Email address for merchant support.
+        example: "test@test.com"
+      merchant_support_phone:
+        type: string
+        description: Phone number for merchant support.
+        example: "3317194530"
+  fiscal_info:
+    type: object
+    description: Fiscal information for the company.
+    properties:
+      business_phone:
+        type: string
+        description: The business phone number for fiscal purposes.
+        example: "3317194532"
+      fiscal_type:
+        type: string
+        description: The fiscal type of the company (e.g., 'moral', 'persona_fisica').
+        example: "moral"
+  bank_account_info:
+    type: object
+    description: Bank account information for the company.
+    properties:
+      clabe:
+        type: string
+        description: The 18-digit CLABE for the bank account.
+        example: "002010077777777771" 

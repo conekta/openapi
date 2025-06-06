@@ -1,0 +1,45 @@
+type: object
+title: CompanyDocumentResponse
+description: Response body after uploading a company document.
+properties:
+  file_classification:
+    type: string
+    description: |
+      Classification of the document.
+
+      | Tipo de archivo              | Descripción                                               |
+      | :--------------------------- | :-------------------------------------------------------- |
+      | `id_legal_representative`      | identificación oficial frente                             |
+      | `id_legal_representative_back` | identificación oficial atrás                              |
+      | `cfdi`                         | Prueba de situación fiscal                                |
+      | `constitutive_act_basic`       | Acta constitutiva                                         |
+      | `proof_of_address`             | Comprobante de domicilio del negocio                      |
+      | `power_of_attonery`            | Poderes de representación                                 |
+      | `deposit_account_cover`        | Carátula de la cuenta de depósito                         |
+      | `permit_casino`                | Permiso ante SEGOB                                        |
+      | `license_sanitation`           | Licencia sanitaria de COFEPRIS                            |
+      | `registration_tourism`         | Inscripción ante el Registro Nacional de Turismo (SECTUR) |
+    example: "id_legal_representative"
+    enum:
+      - id_legal_representative
+      - id_legal_representative_back
+      - cfdi
+      - constitutive_act_basic
+      - proof_of_address
+      - power_of_attonery
+      - deposit_account_cover
+      - permit_casino
+      - license_sanitation
+      - registration_tourism
+  file_name:
+    type: string
+    description: Name of the file as stored or processed.
+    example: "prueba3.pdf"
+  status:
+    type: string
+    description: Current status of the document.
+    example: "uploaded"
+required:
+  - file_classification
+  - file_name
+  - status 

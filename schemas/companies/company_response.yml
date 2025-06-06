@@ -1,38 +1,90 @@
-title: company_response
-description: Company model
 type: object
+title: company_response
 properties:
   id:
     type: string
-    example: "6441bb27659a060465da7335"
-    object:
-      type: string
-      enum: ["company"]
-    description: The child company's unique identifier
-  created_at:
-    type: integer
-    example: 1680397724
-    format: int64
-    description: The resource's creation date (unix timestamp)
+    description: The unique identifier for the company.
+    example: "6827305a1ec60400015eb116"
   name:
     type: string
-    example: "Child Company A"
-    description: The child company's name
-  object:
+    description: The name of the company.
+    example: "test"
+  active:
+    type: boolean
+    description: Indicates if the company is active.
+    example: false
+  account_status:
     type: string
-    enum: ['company']
-    description: The resource's type
+    description: The current status of the company's account.
+    example: "signed_up"
   parent_company_id:
     type: string
-    example: "6441bb3c62db5812e7920c31"
-    description: Id of the parent company
-  use_parent_fiscal_data:
-    type: boolean
-    example: false
-    description: Whether the parent company's fiscal data is to be used for liquidation and tax purposes
-  payout_destination:
-    $ref: './company_payout_destination_response.yml'
-    description: Where processed payments are to be deposited
-  fiscal_info:
-    $ref: './company_fiscal_info_response.yml'
-    description: The company's fiscal information
+    description: The identifier of the parent company, if any.
+    example: "680bf1da38716d00013543bc"
+    nullable: true
+  onboarding_status:
+    type: string
+    description: The current status of the company's onboarding process.
+    example: "pending"
+  documents:
+    type: array
+    description: A list of documents related to the company.
+    items:
+      type: object
+      properties:
+        file_classification:
+          type: string
+          description: |
+            Classification of the document.
+
+            | Tipo de archivo              | Descripción                                               |
+            | :--------------------------- | :-------------------------------------------------------- |
+            | `id_legal_representative`      | identificación oficial frente                             |
+            | `id_legal_representative_back` | identificación oficial atrás                              |
+            | `cfdi`                         | Prueba de situación fiscal                                |
+            | `constitutive_act_basic`       | Acta constitutiva                                         |
+            | `proof_of_address`             | Comprobante de domicilio del negocio                      |
+            | `power_of_attonery`            | Poderes de representación                                 |
+            | `deposit_account_cover`        | Carátula de la cuenta de depósito                         |
+            | `permit_casino`                | Permiso ante SEGOB                                        |
+            | `license_sanitation`           | Licencia sanitaria de COFEPRIS                            |
+            | `registration_tourism`         | Inscripción ante el Registro Nacional de Turismo (SECTUR) |
+          example: "deposit_account_cover"
+          enum:
+            - id_legal_representative
+            - id_legal_representative_back
+            - cfdi
+            - constitutive_act_basic
+            - proof_of_address
+            - power_of_attonery
+            - deposit_account_cover
+            - permit_casino
+            - license_sanitation
+            - registration_tourism
+        status:
+          type: string
+          description: The status of the document.
+          example: "pending"
+        file_name:
+          type: string
+          description: The name of the file.
+          nullable: true
+          example: null
+  created_at:
+    type: integer
+    format: int64
+    description: Timestamp of when the company was created.
+    example: 1748968241
+  object:
+    type: string
+    description: The type of object, typically "company".
+    example: "company"
+required:
+  - id
+  - name
+  - active
+  - account_status
+  - onboarding_status
+  - documents
+  - created_at
+  - object

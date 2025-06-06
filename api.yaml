@@ -40,6 +40,10 @@ paths:
     $ref: "./resources/companies/companies.yml"
   /companies/{id}:
     $ref: "./resources/companies/company.yml"
+  '/companies/{company_id}/document':
+    $ref: './resources/companies/company_document.yml'
+  '/companies/{company_id}/documents':
+    $ref: './resources/companies/company_documents.yml'
   /customers:
     $ref: "./resources/customers/create_customer.yml"
   /customers/{id}:
