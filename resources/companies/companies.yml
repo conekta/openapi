@@ -57,3 +57,124 @@ get:
     - $ref: '../../parameters/commons/query/search.yml'
     - $ref: '../../parameters/commons/query/next_page.yml'
     - $ref: '../../parameters/commons/query/previous_page.yml'
+post:
+  tags:
+    - Companies
+  operationId: createCompany
+  summary: Create Company
+  description: Create a new company.
+  requestBody:
+    description: Company data
+    required: true
+    content:
+      application/json:
+        schema:
+          type: object
+          properties:
+            name:
+              type: string
+              description: The name of the company.
+              example: "test onboarding 21"
+            type_company:
+              type: string
+              description: The type of company, 'owner'
+              example: "owner"
+            comercial_info:
+              type: object
+              description: Commercial information for the company.
+              properties:
+                website:
+                  type: string
+                  format: url
+                  description: The company's website URL.
+                  example: "http://www.lavoz.com"
+                mcc:
+                  type: string
+                  description: The Merchant Category Code (MCC) for the company.
+                  example: "5812"
+                merchant_support_email:
+                  type: string
+                  format: email
+                  description: Email address for merchant support.
+                  example: "test@test.com"
+                merchant_support_phone:
+                  type: string
+                  description: Phone number for merchant support.
+                  example: "3317194530"
+            fiscal_info:
+              type: object
+              description: Fiscal information for the company.
+              properties:
+                business_phone:
+                  type: string
+                  description: The business phone number for fiscal purposes.
+                  example: "3317194532"
+                fiscal_type:
+                  type: string
+                  description: The fiscal type of the company (e.g., 'moral', 'persona_fisica').
+                  example: "moral"
+            bank_account_info:
+              type: object
+              description: Bank account information for the company.
+              properties:
+                clabe:
+                  type: string
+                  description: The 18-digit CLABE for the bank account.
+                  example: "002010077777777771"
+  responses:
+    '201':
+      description: Company created successfully
+      content:
+        application/vnd.conekta-v2.2.0+json:
+          schema:
+            $ref: '../../schemas/companies/company_response.yml'
+      headers:
+        Date:
+          description: The date and time that the response was sent
+          schema:
+            type: string
+        Content-Type:
+          description: The format of the response body
+          schema:
+            type: string
+        Content-Length:
+          description: The length of the response body in bytes
+          schema:
+            type: string
+        Connection:
+          description: The type of connection used to transfer the response
+          schema:
+            type: string
+        Conekta-Media-Type:
+          schema:
+            type: string
+    '401':
+      $ref: '../errors/401.yml'
+    '500':
+      $ref: '../errors/500.yml'
+  security:
+    - bearerAuth: []
+  x-codeSamples:
+    - lang: cURL
+      source: |
+        curl --location 'https://api.conekta.com/companies' \
+        --header 'Content-Type: application/json' \
+        --header 'Accept: application/vnd.conekta-v2.2.0+json' \
+        --header 'Authorization: Bearer token' \
+        --data-raw '{
+            "name": "Fake Company Name",
+            "type_company": "subsidiary",
+            "comercial_info": {
+                "website": "http://www.example.com",
+                "mcc": "5000",
+                "merchant_support_email": "support@example.com",
+                "merchant_support_phone": "5550123456"
+            },
+            "fiscal_info": {
+                "business_phone": "5550123457",
+                "fiscal_type": "persona_fisica"
+            },
+            "bank_account_info":{
+                "clabe": "000000000000000000"
+            }
+        }'
