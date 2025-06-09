@@ -55,20 +55,6 @@ post:
       $ref: '../errors/500.yml'
   security:
     - bearerAuth: []
-  x-codeSamples:
-    - lang: cURL
-      source: |
-        curl --location 'https://api.conekta.com/companies/company_id/document' \
-        --header 'Content-Type: application/json' \
-        --header 'Accept: application/vnd.conekta-v2.2.0+json' \
-        --header 'Authorization: Bearer token' \
-        --data '{
-            "file_classification": "id_legal_representative",
-            "content_type": "application/pdf",
-            "international": false,
-            "file_name": "dummy_document.pdf",
-            "file_data": "VGhpcyBpcyBhIHRlc3QgZmlsZSBkYXRhIGluIGJhc2UgNjQuCg=="
-        }'
 patch:
   tags:
     - Companies
@@ -126,17 +112,3 @@ patch:
       $ref: '../errors/500.yml'
   security:
     - bearerAuth: []
-  x-codeSamples:
-    - lang: cURL
-      source: |
-        curl --location --request PATCH 'https://api.conekta.com/companies/company_id/document' \
-        --header 'Content-Type: application/json' \
-        --header 'Accept: application/vnd.conekta-v2.2.0+json' \
-        --header 'Authorization: Bearer token' \
-        --data '{ 
-            "file_classification": "id_legal_representative", 
-            "content_type": "application/pdf", 
-            "international": false, 
-            "file_name": "updated_dummy_document.pdf", 
-            "file_data": "VGhpcyBpcyBhbiB1cGRhdGVkIHRlc3QgZmlsZSBkYXRhIGluIGJhc2UgNjQuCg==" 
-        }' 

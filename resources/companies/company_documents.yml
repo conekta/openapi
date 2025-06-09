@@ -50,9 +50,3 @@ get:
       $ref: '../errors/500.yml'
   security:
     - bearerAuth: []
-  x-codeSamples:
-    - lang: cURL
-      source: |
-        curl --location 'https://api.conekta.com/companies/company_id/documents' \
-        --header 'Accept: application/vnd.conekta-v2.2.0+json' \
-        --header 'Authorization: Bearer token' 

@@ -103,27 +103,3 @@ post:
       $ref: '../errors/500.yml'
   security:
     - bearerAuth: []
-  x-codeSamples:
-    - lang: cURL
-      source: |
-        curl --location 'https://api.conekta.com/companies' \
-        --header 'Content-Type: application/json' \
-        --header 'Accept: application/vnd.conekta-v2.2.0+json' \
-        --header 'Authorization: Bearer token' \
-        --data-raw '{
-            "name": "Fake Company Name",
-            "type_company": "subsidiary",
-            "comercial_info": {
-                "website": "http://www.example.com",
-                "mcc": "5000",
-                "merchant_support_email": "support@example.com",
-                "merchant_support_phone": "5550123456"
-            },
-            "fiscal_info": {
-                "business_phone": "5550123457",
-                "fiscal_type": "persona_fisica"
-            },
-            "bank_account_info":{
-                "clabe": "000000000000000000"
-            }
-        }'
