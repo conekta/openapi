@@ -2122,7 +2122,7 @@ paths:
         name: company_id
         required: true
         schema:
-          example: comp_2tXkM92sXN5xXyNMW
+          example: 6307a60c41de27127515a575
           type: string
       - description: Use for knowing which language to use
         examples:
@@ -14694,7 +14694,7 @@ components:
       properties:
         name:
           description: The name of the company.
-          example: test onboarding 21
+          example: test
           type: string
         type_company:
           description: "The type of company, 'owner'"
@@ -18238,7 +18238,7 @@ components:
       properties:
         website:
           description: The company's website URL.
-          example: http://www.lavoz.com
+          example: http://www.test.com
           format: url
           type: string
         mcc:
@@ -18252,7 +18252,7 @@ components:
           type: string
         merchant_support_phone:
           description: Phone number for merchant support.
-          example: "3317194530"
+          example: "5300000000"
           type: string
       type: object
     create_company_request_fiscal_info:
@@ -18260,7 +18260,7 @@ components:
       properties:
         business_phone:
           description: The business phone number for fiscal purposes.
-          example: "3317194532"
+          example: "5300000000"
           type: string
         fiscal_type:
           description: "The fiscal type of the company (e.g., 'moral', 'persona_fisica')."
