@@ -11,7 +11,7 @@ get:
       description: The unique identifier of the company.
       schema:
         type: string
-        example: "comp_2tXkM92sXN5xXyNMW"
+        example: "6307a60c41de27127515a575"
     - $ref: '../../parameters/commons/headers/accept_language.yml'
   responses:
     '200':

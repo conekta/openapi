@@ -4,7 +4,7 @@ properties:
   name:
     type: string
     description: The name of the company.
-    example: "test onboarding 21"
+    example: "test"
   type_company:
     type: string
     description: The type of company, 'owner'
@@ -17,7 +17,7 @@ properties:
         type: string
         format: url
         description: The company's website URL.
-        example: "http://www.lavoz.com"
+        example: "http://www.test.com"
       mcc:
         type: string
         description: The Merchant Category Code (MCC) for the company.
@@ -30,7 +30,7 @@ properties:
       merchant_support_phone:
         type: string
         description: Phone number for merchant support.
-        example: "3317194530"
+        example: "5300000000"
   fiscal_info:
     type: object
     description: Fiscal information for the company.
@@ -38,7 +38,7 @@ properties:
       business_phone:
         type: string
         description: The business phone number for fiscal purposes.
-        example: "3317194532"
+        example: "5300000000"
       fiscal_type:
         type: string
         description: The fiscal type of the company (e.g., 'moral', 'persona_fisica').
