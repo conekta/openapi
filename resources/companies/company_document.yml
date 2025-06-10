@@ -1,82 +1,32 @@
-get:
-  tags:
-    - Companies
-  operationId: getCompanies
-  summary: Get List of Companies
-  description: 'Consume the list of child companies.  This is used for holding companies with several child entities.'
-  responses:
-    200:
-      description: successful
-      content:
-        application/vnd.conekta-v2.2.0+json:
-          schema:
-            title: get_companies_response
-            allOf:
-              - $ref: ../../schemas/pagination/pagination.yml
-              - $ref: ../../schemas/pagination/page.yml
-              - type: object
-                properties:
-                  data:
-                    type: array
-                    items:
-                      $ref: '../../schemas/companies/company_response.yml'
-      headers:
-        Date:
-          description: The date and time that the response was sent
-          schema:
-            type: string
-            example: "Fri, 03 Feb 2023 16:57:48 GMT"
-        Content-Type:
-          description: The format of the response body
-          schema:
-            type: string
-            example: "application/json; charset=utf-8"
-        Content-Length:
-          description: The length of the response body in bytes
-          schema:
-            type: string
-            example: "2737"
-        Connection:
-          description: The type of connection used to transfer the response
-          schema:
-            type: string
-            example: "keep-alive"
-        Conekta-Media-Type:
-          schema:
-            type: string
-            example: conekta-v2.2.0; format=application/json
-    401:
-     $ref: '../errors/401.yml'
-    500:
-     $ref: '../errors/500.yml'
-  security:
-    - bearerAuth: []
-  parameters:
-    - $ref: '../../parameters/commons/headers/accept_language.yml'
-    - $ref: '../../parameters/commons/query/limit.yml'
-    - $ref: '../../parameters/commons/query/search.yml'
-    - $ref: '../../parameters/commons/query/next_page.yml'
-    - $ref: '../../parameters/commons/query/previous_page.yml'
 post:
   tags:
     - Companies
-  operationId: createCompany
-  summary: Create Company
-  description: Create a new company.
+  operationId: uploadCompanyDocument
+  summary: Upload Company Document
+  description: Uploads a document associated with a specific company.
+  parameters:
+    - name: company_id
+      in: path
+      required: true
+      description: The unique identifier of the company.
+      schema:
+        type: string
+        example: "6827206b1ec60400015eb09a"
+    - $ref: '../../parameters/commons/headers/accept_language.yml'
   requestBody:
-    description: Company data
+    description: Document information to upload.
     required: true
     content:
       application/json:
         schema:
-          $ref: '../../schemas/companies/create_company_request.yml'
+          $ref: '../../schemas/companies/company_document_request.yml'
   responses:
     '201':
-      description: Company created successfully
+      description: Document uploaded successfully.
       content:
         application/vnd.conekta-v2.2.0+json:
           schema:
-            $ref: '../../schemas/companies/company_response.yml'
+            $ref: '../../schemas/companies/company_document_response.yml'
       headers:
         Date:
           description: The date and time that the response was sent
@@ -99,6 +49,65 @@ post:
             type: string
     '401':
       $ref: '../errors/401.yml'
+    '404':
+      $ref: '../errors/404.yml'
+    '500':
+      $ref: '../errors/500.yml'
+  security:
+    - bearerAuth: []
+patch:
+  tags:
+    - Companies
+  operationId: updateCompanyDocument
+  summary: Update Company Document
+  description: Updates an existing document associated with a specific company.
+  parameters:
+    - name: company_id
+      in: path
+      required: true
+      description: The unique identifier of the company.
+      schema:
+        type: string
+        example: "6827206b1ec60400015eb09a"
+    - $ref: '../../parameters/commons/headers/accept_language.yml'
+  requestBody:
+    description: Document information to update.
+    required: true
+    content:
+      application/json:
+        schema:
+          $ref: '../../schemas/companies/company_document_request.yml'
+  responses:
+    '200':
+      description: Document updated successfully.
+      content:
+        application/vnd.conekta-v2.2.0+json:
+          schema:
+            $ref: '../../schemas/companies/company_document_response.yml'
+      headers:
+        Date:
+          description: The date and time that the response was sent
+          schema:
+            type: string
+        Content-Type:
+          description: The format of the response body
+          schema:
+            type: string
+        Content-Length:
+          description: The length of the response body in bytes
+          schema:
+            type: string
+        Connection:
+          description: The type of connection used to transfer the response
+          schema:
+            type: string
+        Conekta-Media-Type:
+          schema:
+            type: string
+    '401':
+      $ref: '../errors/401.yml'
+    '404':
+      $ref: '../errors/404.yml'
     '500':
       $ref: '../errors/500.yml'
   security:
