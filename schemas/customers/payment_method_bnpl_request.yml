@@ -24,10 +24,10 @@ allOf:
         example: "https://example.com/failure"
       product_type:
         type: string
-        example: "klarna_bnpl"
+        example: "aplazo_bnpl"
         description: "Product type of the payment method, use for the payment method to know the product type"
         enum:
-          - klarna_bnpl
+          - aplazo_bnpl
           - creditea_bnpl
       success_url:
         type: string

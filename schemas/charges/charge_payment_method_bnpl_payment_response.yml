@@ -25,7 +25,7 @@ payment_method_bnpl_payment:
           type: string
           description: "Product type of the charge"
           examples:
-            - value: "klarna_bnpl"
+            - value: "aplazo_bnpl"
             - value: "creditea_bnpl"
         redirect_url:
           type: string

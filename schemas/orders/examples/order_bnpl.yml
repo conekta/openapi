@@ -33,8 +33,8 @@ value:
           expires_at: 1743694118
           failure_url: "https://pay.stg.conekta.io/payment-status/fdcb06d6-c9e1-44ee-921f-17723b63852f/failure?order_id=ord_2xaegxs5s69VP4pWy&charge_id=67c5caa665f9b400015dec40"
           object: "bnpl_payment"
-          product_type: "klarna_bnpl"
-          redirect_url: "https://pay.playground.klarna.com/na/hpp/payments/20sJ2LZ"
+          product_type: "aplazo_bnpl"
+          redirect_url: "https://pay.playground.com/na/hpp/payments/20sJ2LZ"
           success_url: "https://pay.stg.conekta.io/payment-status/fdcb06d6-c9e1-44ee-921f-17723b63852f/success?order_id=ord_2xaegxs5s69VP4pWy&charge_id=67c5caa665f9b400015dec40"
           type: "bnpl"
         reference_id: null
