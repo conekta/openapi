@@ -16743,6 +16743,7 @@ components:
             format
           example: 1760457350
           format: int64
+          minimum: 1
           type: number
       title: update_payment_methods_card
       type: object

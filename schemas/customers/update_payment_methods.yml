@@ -10,3 +10,4 @@ properties:
     description: "The expiration date of the payment method in Unix timestamp format"
     example: 1760457350
     format: int64
+    minimum: 1
