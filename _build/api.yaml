@@ -16735,8 +16735,15 @@ components:
     update_payment_methods:
       properties:
         name:
-          example: name of person
+          description: The name of the payment method holder
+          example: Payment recurrent
           type: string
+        expires_at:
+          description: The expiration date of the payment method in Unix timestamp
+            format
+          example: 1760457350
+          format: int64
+          type: number
       title: update_payment_methods_card
       type: object
     plan_request:
