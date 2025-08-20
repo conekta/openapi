@@ -18146,7 +18146,6 @@ components:
         mapping:
           cash: payment_method_cash_response
           card: payment_method_card_response
-          oxxo_recurrent: payment_method_cash_response
           cash_recurrent: payment_method_cash_response
           spei_recurrent: payment_method_spei_recurrent
         propertyName: type
@@ -18504,7 +18503,6 @@ components:
         mapping:
           cash: payment_method_cash_response
           card: payment_method_card_response
-          oxxo_recurrent: payment_method_cash_response
           cash_recurrent: payment_method_cash_response
           spei_recurrent: payment_method_spei_recurrent
         propertyName: type
