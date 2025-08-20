@@ -8,4 +8,6 @@ content:
         $ref: '../../schemas/orders/request_examples/charge_bnpl.yml'
       cash:
         $ref: '../../schemas/orders/request_examples/charge_cash.yml'
+      pay by bank:
+        $ref: '../../schemas/orders/request_examples/charge_pbb.yml'
 required: true

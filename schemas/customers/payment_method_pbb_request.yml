@@ -1,0 +1,25 @@
+title: payment_method_pbb_request
+allOf:
+  - $ref: './customer_payment_method_request.yml'
+  - type: object
+    required:
+        - product_type
+        - type
+    properties:
+      expires_at:
+        type: integer
+        example: 1680397724
+        format: int64
+        description: "Expiration date of the payment method, in Unix timestamp format"
+      product_type:
+        type: string
+        example: "bbva_pay_by_bank"
+        description: "Product type of the payment method, use for the payment method to know the product type"
+        enum:
+          - bbva_pay_by_bank
+      type:
+        type: string
+        example: "pay_by_bank"
+        description: "Type of the payment method"
+
+     

@@ -44,5 +44,5 @@ properties:
   url:
     description: 'url or endpoint of the webhook'
     type: string
-    example: "https://username:password@mockoon.stg.conekta.io/payments-api/cash/merchant_approval"
+    example: "https://username:password@mockoon.conekta.io/payments-api/cash/merchant_approval"
     

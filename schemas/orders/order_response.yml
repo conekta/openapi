@@ -138,7 +138,7 @@ properties:
         example: "HostedPayment"
       url:
         type: string
-        example: "https://pay.stg.conekta.io/checkout/6fca054a85194c43971ecea35cc519bb"
+        example: "https://pay.conekta.io/checkout/6fca054a85194c43971ecea35cc519bb"
   created_at:
     type: integer
     example: 1676328434
