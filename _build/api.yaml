@@ -4350,7 +4350,7 @@ paths:
                   $ref: '#/components/examples/order_card'
                 bnpl:
                   $ref: '#/components/examples/order_bnpl'
-                pay by bank:
+                pay_by_bank:
                   $ref: '#/components/examples/order_pbb'
               schema:
                 $ref: '#/components/schemas/order_response'
@@ -13999,7 +13999,7 @@ components:
               $ref: '#/components/examples/charge_bnpl'
             cash:
               $ref: '#/components/examples/charge_cash'
-            pay by bank:
+            pay_by_bank:
               $ref: '#/components/examples/charge_pbb'
           schema:
             $ref: '#/components/schemas/charge_request'
