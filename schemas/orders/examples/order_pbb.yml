@@ -30,7 +30,7 @@ value:
           redirect_url: "https://pay.playground.com/na/hpp/payments/20sJ2LZ"
           deep_link: "https://mgm.bbva.mx/WA3b/pbb?AGREEMENT=002484374&AMOUNT=1&CONCEPT=PagoDirecto&CURRENCY=MXN&REFERENCE=22277523174328893295"
           type: "pay_by_bank"
-          referecen: "22277523174328893295"
+          reference: "22277523174328893295"
         reference_id: null
         refunds: null
         status: "pending_payment"

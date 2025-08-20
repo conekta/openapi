@@ -13274,7 +13274,7 @@ components:
               redirect_url: https://pay.playground.com/na/hpp/payments/20sJ2LZ
               deep_link: https://mgm.bbva.mx/WA3b/pbb?AGREEMENT=002484374&AMOUNT=1&CONCEPT=PagoDirecto&CURRENCY=MXN&REFERENCE=22277523174328893295
               type: pay_by_bank
-              referecen: "22277523174328893295"
+              reference: "22277523174328893295"
             reference_id: null
             refunds: null
             status: pending_payment
@@ -13518,8 +13518,8 @@ components:
       value:
         charges:
         - payment_method:
-            product_type: pay_by_bank
-            type: bnpl
+            product_type: bbva_pay_by_bank
+            type: pay_by_bank
         currency: MXN
         customer_info:
           customer_id: cus_2xZfwfjXxX9tZhVey
