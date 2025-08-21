@@ -11,6 +11,7 @@ properties:
   payment_method:
     title: charge_request_payment_method
     oneOf:
+      - $ref: '../customers/payment_method_pbb_request.yml'
       - $ref: '../customers/payment_method_bnpl_request.yml'
       - $ref: '../customers/payment_method_card_request.yml'
       - required:

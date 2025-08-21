@@ -1,11 +1,6 @@
 value:
   amount: 300000
   amount_refunded: 0
-  channel:
-    checkout_request_id: "fdcb06d6-c9e1-44ee-921f-17723b63852f"
-    checkout_request_type: "PaymentLink"
-    id: "channel_2xaegxs5s69VP4pWw"
-    segment: "Checkout"
   charges:
     data:
       - amount: 300000
@@ -29,14 +24,13 @@ value:
         order_id: "ord_2xaegxs5s69VP4pWy"
         paid_at: null
         payment_method:
-          cancel_url: "https://pay.conekta.io/payment-status/fdcb06d6-c9e1-44ee-921f-17723b63852f/cancel?order_id=ord_2xaegxs5s69VP4pWy&charge_id=67c5caa665f9b400015dec40"
           expires_at: 1743694118
-          failure_url: "https://pay.conekta.io/payment-status/fdcb06d6-c9e1-44ee-921f-17723b63852f/failure?order_id=ord_2xaegxs5s69VP4pWy&charge_id=67c5caa665f9b400015dec40"
-          object: "bnpl_payment"
-          product_type: "aplazo_bnpl"
+          object: "pay_by_bank_payment"
+          product_type: "bbva_pay_by_bank"
           redirect_url: "https://pay.playground.com/na/hpp/payments/20sJ2LZ"
-          success_url: "https://pay.conekta.io/payment-status/fdcb06d6-c9e1-44ee-921f-17723b63852f/success?order_id=ord_2xaegxs5s69VP4pWy&charge_id=67c5caa665f9b400015dec40"
-          type: "bnpl"
+          deep_link: "https://mgm.bbva.mx/WA3b/pbb?AGREEMENT=002484374&AMOUNT=1&CONCEPT=PagoDirecto&CURRENCY=MXN&REFERENCE=22277523174328893295"
+          type: "pay_by_bank"
+          reference: "22277523174328893295"
         reference_id: null
         refunds: null
         status: "pending_payment"
@@ -65,7 +59,7 @@ value:
         description: null
         id: "line_item_2xaegxs5s69VP4pWv"
         metadata: {}
-        name: "Test creditea"
+        name: "Test pay by bank"
         object: "line_item"
         parent_id: "ord_2xaegxs5s69VP4pWy"
         quantity: 1

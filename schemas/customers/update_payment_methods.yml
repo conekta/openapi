@@ -6,7 +6,7 @@ properties:
     example: "Payment recurrent"
     description: "The name of the payment method holder"
   expires_at:
-    type: number
+    type: integer
     description: "The expiration date of the payment method in Unix timestamp format"
     example: 1760457350
     format: int64

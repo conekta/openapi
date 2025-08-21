@@ -20,6 +20,8 @@ post:
               $ref: ../../schemas/orders/examples/order_card.yml
             bnpl:
               $ref: ../../schemas/orders/examples/order_bnpl.yml
+            pay_by_bank:
+              $ref: ../../schemas/orders/examples/order_pbb.yml
     422:
      $ref: '../errors/422.yml'
     401:

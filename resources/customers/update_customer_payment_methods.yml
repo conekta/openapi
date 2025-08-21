@@ -16,11 +16,11 @@ put:
                 mapping:
                   cash: payment_method_cash_response
                   card: payment_method_card_response
-                  oxxo_recurrent: payment_method_cash_response
-                  cash_recurrent: payment_method_cash_response
+                  cash_recurrent: payment_method_cash_recurrent_response
                   spei_recurrent: payment_method_spei_recurrent
             oneOf:
               - $ref: '../../schemas/customers/customer_payment_method_cash_response.yml#/payment_method_cash_response' 
+              - $ref: '../../schemas/customers/customer_payment_method_cash_recurrent_response.yml#/payment_method_cash_recurrent_response' 
               - $ref: '../../schemas/customers/customer_payment_method_card_response.yml#/payment_method_card_response'
               - $ref: '../../schemas/customers/customer_payment_method_spei_recurrent_response.yml#/payment_method_spei_recurrent'
             
@@ -59,11 +59,11 @@ delete:
                 mapping:
                   cash: payment_method_cash_response
                   card: payment_method_card_response
-                  oxxo_recurrent: payment_method_cash_response
-                  cash_recurrent: payment_method_cash_response
+                  cash_recurrent: payment_method_cash_recurrent_response
                   spei_recurrent: payment_method_spei_recurrent
             oneOf:
-              - $ref: '../../schemas/customers/customer_payment_method_cash_response.yml#/payment_method_cash_response' 
+              - $ref: '../../schemas/customers/customer_payment_method_cash_response.yml#/payment_method_cash_response'
+              - $ref: '../../schemas/customers/customer_payment_method_cash_recurrent_response.yml#/payment_method_cash_recurrent_response' 
               - $ref: '../../schemas/customers/customer_payment_method_card_response.yml#/payment_method_card_response'
               - $ref: '../../schemas/customers/customer_payment_method_spei_recurrent_response.yml#/payment_method_spei_recurrent'
             

@@ -66,6 +66,7 @@ properties:
       - $ref: 'charge_payment_method_card_response.yml#/payment_method_card'
       - $ref: 'charge_payment_method_bank_transfer_response.yml#/payment_method_bank_transfer'
       - $ref: 'charge_payment_method_bnpl_payment_response.yml#/payment_method_bnpl_payment'
+      - $ref: 'charge_payment_method_pbb_payment_response.yml#/payment_method_pbb_payment'
     discriminator:
       propertyName: object
       mapping:
@@ -73,6 +74,7 @@ properties:
         card_payment: payment_method_card
         bank_transfer_payment: payment_method_bank_transfer
         bnpl_payment: payment_method_bnpl_payment
+        pbb_payment: payment_method_pbb_payment
   reference_id:
     type: string
     description: "Reference ID of the charge"
