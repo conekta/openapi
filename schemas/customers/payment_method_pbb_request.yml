@@ -11,6 +11,7 @@ allOf:
         example: 1680397724
         format: int64
         description: "Expiration date of the payment method, in Unix timestamp format"
+        minimum: 0
       product_type:
         type: string
         example: "bbva_pay_by_bank"

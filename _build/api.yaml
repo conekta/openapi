@@ -17563,6 +17563,7 @@ components:
               \ format"
             example: 1680397724
             format: int64
+            minimum: 0
             type: integer
           product_type:
             description: "Product type of the payment method, use for the payment\
