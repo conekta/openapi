@@ -13,7 +13,7 @@ payment_method_pbb_payment:
       properties:
         deep_link:
           type: string
-          description: "Deep link for the payment"
+          description: "Deep link for the payment, use for mobile apps/flows"
           example: "https://mgm.bbva.mx/WA3b/pbb?AGREEMENT=002484374&AMOUNT=1&CONCEPT=PagoDirecto&CURRENCY=MXN&REFERENCE=22277523174328893295"
         expires_at:
           type: integer
