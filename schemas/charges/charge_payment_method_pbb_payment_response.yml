@@ -20,6 +20,7 @@ payment_method_pbb_payment:
           example: 1683053729
           format: int64
           minimum: 0
+          exclusiveMinimum: true
           description: "Expiration date of the charge"
         product_type:
           type: string
