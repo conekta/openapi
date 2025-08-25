@@ -11,7 +11,7 @@ properties:
     type: array
     items:
       type: string
-    example: [ "cash", "card", "bank_transfer", "bnpl"]
+    example: [ "cash", "card", "bank_transfer", "bnpl", "pay_by_bank"]
     description: "Are the payment methods available for this link"
   plan_ids:
     type: array

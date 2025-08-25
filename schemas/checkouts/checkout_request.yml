@@ -9,8 +9,8 @@ properties:
     description: "Are the payment methods available for this link. For subscriptions, only 'card' is allowed due to the recurring nature of the payments."
     items:
       type: string
-      enum: ["cash", "card", "bank_transfer", "bnpl"]
-    example: [ "cash", "card", "bank_transfer", "bnpl"]
+      enum: ["cash", "card", "bank_transfer", "bnpl", "pay_by_bank"]
+    example: [ "cash", "card", "bank_transfer", "bnpl", "pay_by_bank"]
   plan_ids:
     type: array
     description: "List of plan IDs that will be available for subscription. This field is required for subscription payments."

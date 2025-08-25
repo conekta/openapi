@@ -13536,6 +13536,7 @@ components:
           - card
           - bank_transfer
           - bnpl
+          - pay_by_bank
           expires_at: 0
           failure_url: string
           monthly_installments_enabled: false
@@ -15472,6 +15473,7 @@ components:
           - card
           - bank_transfer
           - bnpl
+          - pay_by_bank
           items:
             type: string
           type: array
@@ -16745,6 +16747,7 @@ components:
           - card
           - bank_transfer
           - bnpl
+          - pay_by_bank
           items:
             type: string
           type: array
@@ -17678,12 +17681,14 @@ components:
           - card
           - bank_transfer
           - bnpl
+          - pay_by_bank
           items:
             enum:
             - cash
             - card
             - bank_transfer
             - bnpl
+            - pay_by_bank
             type: string
           type: array
         plan_ids:
@@ -18757,6 +18762,7 @@ components:
           - card
           - bank_transfer
           - bnpl
+          - pay_by_bank
           items:
             type: string
           type: array

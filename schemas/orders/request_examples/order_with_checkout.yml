@@ -6,6 +6,7 @@ value:
       - card
       - bank_transfer
       - bnpl
+      - pay_by_bank
     expires_at: 0
     failure_url: string
     monthly_installments_enabled: false
