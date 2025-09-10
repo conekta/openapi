@@ -1936,6 +1936,8 @@ paths:
                 example: keep-alive
                 type: string
             Conekta-Media-Type:
+              description: The version of the API used to process the request and
+                the format of the response body
               schema:
                 example: conekta-v2.2.0; format=application/json
                 type: string
