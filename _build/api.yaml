@@ -1883,6 +1883,98 @@ paths:
       summary: Get Company
       tags:
       - Companies
+  /companies/current:
+    get:
+      description: Retrieves information about the currently authenticated company.
+        This endpoint returns the same data as the standard company endpoint but automatically
+        uses the current company's context.
+      operationId: getCurrentCompany
+      parameters:
+      - description: Use for knowing which language to use
+        examples:
+          es:
+            summary: for spanish request/response
+            value: es
+          en:
+            summary: for english request/response
+            value: en
+        in: header
+        name: Accept-Language
+        required: false
+        schema:
+          default: es
+          enum:
+          - es
+          - en
+          type: string
+      responses:
+        "200":
+          content:
+            application/vnd.conekta-v2.2.0+json:
+              schema:
+                $ref: '#/components/schemas/company_response'
+          description: successful
+          headers:
+            Date:
+              description: The date and time that the response was sent
+              schema:
+                example: "Fri, 03 Feb 2023 16:57:48 GMT"
+                type: string
+            Content-Type:
+              description: The format of the response body
+              schema:
+                example: application/json; charset=utf-8
+                type: string
+            Content-Length:
+              description: The length of the response body in bytes
+              schema:
+                example: "2737"
+                type: string
+            Connection:
+              description: The type of connection used to transfer the response
+              schema:
+                example: keep-alive
+                type: string
+            Conekta-Media-Type:
+              schema:
+                example: conekta-v2.2.0; format=application/json
+                type: string
+        "401":
+          content:
+            application/vnd.conekta-v2.2.0+json:
+              example:
+                details:
+                - message: Please include your access key in your request.
+                  param: null
+                  code: conekta.errors.authentication.missing_key
+                log_id: 507f1f77bcf86cd799439011
+                object: error
+                type: authentication_error
+              schema:
+                $ref: '#/components/schemas/error'
+          description: authentication error
+        "500":
+          content:
+            application/vnd.conekta-v2.2.0+json:
+              example:
+                details:
+                - debug_message: There was a runtime error and Conekta engineers have
+                    been notified.
+                  message: There was a runtime error and Conekta engineers have been
+                    notified.
+                  param: null
+                  code: conekta.errors.api.system.general_failure
+                object: error
+                type: api_error
+                log_id: 641b6f2b3cd9a50001515098
+              schema:
+                $ref: '#/components/schemas/error'
+          description: internal server error
+      security:
+      - bearerAuth: []
+      summary: Get Current Company
+      tags:
+      - Companies
   /companies/{company_id}/document:
     patch:
       description: Updates an existing document associated with a specific company.
