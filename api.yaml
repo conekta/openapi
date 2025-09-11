@@ -40,6 +40,8 @@ paths:
     $ref: "./resources/companies/companies.yml"
   /companies/{id}:
     $ref: "./resources/companies/company.yml"
+  /companies/current:
+    $ref: "./resources/companies/company_current.yml"
   '/companies/{company_id}/document':
     $ref: './resources/companies/company_document.yml'
   '/companies/{company_id}/documents':
