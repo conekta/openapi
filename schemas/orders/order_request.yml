@@ -102,7 +102,8 @@ properties:
       $ref: order_tax_request.yml
   three_ds_mode:
     type: string
-    description: "Indicates the 3DS2 mode for the order, either smart or strict."
+    nullable: true
+    description: "Indicates the 3DS2 mode for the order, either smart or strict. This property is only applicable when 3DS is enabled. When 3DS is disabled, this field should be null."
     examples:
       - value: "smart"
         summary: "Those transactions that Conekta considers to present a risk to commerce will go through an additional verification flow (through 3DS2), provided that the issuing bank is compatible with this technology.If the transaction is not considered risky, it will continue its normal course, without going through 3DS2 authentication."
