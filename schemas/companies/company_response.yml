@@ -79,6 +79,18 @@ properties:
     type: string
     description: The type of object, typically "company".
     example: "company"
+  three_ds_enabled:
+    type: boolean
+    description: Indicates if 3DS authentication is enabled for the company.
+    example: true
+  three_ds_mode:
+    type: string
+    nullable: true
+    description: The 3DS mode for the company, either 'smart' or 'strict'. This property is only applicable when three_ds_enabled is true. When three_ds_enabled is false, this field will be null.
+    example: "strict"
+    enum:
+      - smart
+      - strict
 required:
   - id
   - name

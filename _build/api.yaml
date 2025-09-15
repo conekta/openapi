@@ -14991,6 +14991,20 @@ components:
           description: "The type of object, typically \"company\"."
           example: company
           type: string
+        three_ds_enabled:
+          description: Indicates if 3DS authentication is enabled for the company.
+          example: true
+          type: boolean
+        three_ds_mode:
+          description: "The 3DS mode for the company, either 'smart' or 'strict'.\
+            \ This property is only applicable when three_ds_enabled is true. When\
+            \ three_ds_enabled is false, this field will be null."
+          enum:
+          - smart
+          - strict
+          example: strict
+          nullable: true
+          type: string
       required:
       - account_status
       - active
@@ -16736,7 +16750,10 @@ components:
             $ref: '#/components/schemas/order_tax_request'
           type: array
         three_ds_mode:
-          description: "Indicates the 3DS2 mode for the order, either smart or strict."
+          description: "Indicates the 3DS2 mode for the order, either smart or strict.\
+            \ This property is only applicable when 3DS is enabled. When 3DS is disabled,\
+            \ this field should be null."
+          nullable: true
           type: string
       required:
       - currency
@@ -16977,7 +16994,10 @@ components:
             type: integer
           type: array
         three_ds_mode:
-          description: "Indicates the 3DS2 mode for the order, either smart or strict."
+          description: "Indicates the 3DS2 mode for the order, either smart or strict.\
+            \ This property is only applicable when 3DS is enabled. When 3DS is disabled,\
+            \ this field should be null."
+          nullable: true
           type: string
         name:
           description: Reason for charge
