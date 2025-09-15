@@ -14991,6 +14991,17 @@ components:
           description: "The type of object, typically \"company\"."
           example: company
           type: string
+        three_ds_enabled:
+          description: Indicates if 3DS authentication is enabled for the company.
+          example: true
+          type: boolean
+        three_ds_mode:
+          description: "The 3DS mode for the company, either 'smart' or 'strict'."
+          enum:
+          - smart
+          - strict
+          example: strict
+          type: string
       required:
       - account_status
       - active
