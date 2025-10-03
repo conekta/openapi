@@ -5,7 +5,7 @@ value:
   recurrent: false
   expires_at: 1745331574
   allowed_payment_methods: ["card"]
-  needs_shipping_contact: true
+  needs_shipping_contact: false
   plan_ids: ["plan_ejemplo_1", "plan_ejemplo_2"]
   order_template:
     line_items:
