@@ -5,7 +5,8 @@ value:
   recurrent: false
   expires_at: 1745331574
   allowed_payment_methods: ["card"]
-  needs_shipping_contact: true
+  needs_shipping_contact: false
+  plan_ids: ["plan_ejemplo_1", "plan_ejemplo_2"]
   order_template:
     line_items:
       - name: "Producto de Ejemplo"
@@ -18,5 +19,4 @@ value:
       phone: "5555555555"
     metadata:
       reference: "mi_referencia_123"
-      more_info: "datos_adicionales"
-    plan_ids: ["plan_ejemplo_1", "plan_ejemplo_2"] 
+      more_info: "datos_adicionales" 
