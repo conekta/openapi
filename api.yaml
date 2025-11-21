@@ -140,6 +140,8 @@ paths:
     $ref: "./resources/single_subscription/subscriptions_pause.yml"
   /customers/{id}/subscription/resume:
     $ref: "./resources/single_subscription/subscriptions_resume.yml"
+  /customers/{customer_id}/subscriptions/{id}/customer_portal:
+    $ref: "./resources/customer_portal/customer_portal.yml"
   /orders/{id}/tax_lines:
     $ref: "./resources/orders/order_tax_param.yml"
   /orders/{id}/tax_lines/{tax_id}:

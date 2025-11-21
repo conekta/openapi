@@ -1,0 +1,51 @@
+title: customer_portal_response
+description: Customer portal model
+type: object
+properties:
+  id:
+    type: string
+    description: Customer portal ID
+    example: "cpt_2tGzG1GxtDAZHEGPH"
+  object:
+    type: string
+    example: "customer_portal"
+  slug:
+    type: string
+    description: Unique slug identifier for the portal
+    example: "portal-abc123"
+  subscription_id:
+    type: string
+    description: Associated subscription ID
+    example: "sub_2tGzG1GxtDAZHEGPH"
+  customer_id:
+    type: string
+    description: Associated customer ID
+    example: "cus_2tGzG1GxtDAZHEGPH"
+  company_id:
+    type: string
+    description: Associated company ID
+    example: "com_2tGzG1GxtDAZHEGPH"
+  livemode:
+    type: boolean
+    description: Whether this is a live or test mode portal
+    example: true
+  portal_url:
+    type: string
+    format: uri
+    description: URL to access the customer portal
+    example: "https://portal.conekta.io/abc123"
+  created_at:
+    type: integer
+    format: int64
+    description: Unix timestamp of creation
+    example: 1677626837
+  updated_at:
+    type: integer
+    format: int64
+    description: Unix timestamp of last update
+    example: 1677626837
+  subscription:
+    $ref: './subscription_details.yml'
+  customer:
+    $ref: '../customers/customer_response.yml'
+
