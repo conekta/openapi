@@ -10028,21 +10028,14 @@ paths:
       summary: Retry Failed Payment
       tags:
       - Subscriptions
-  /customers/{customer_id}/subscriptions/{id}/customer_portal:
+  /subscriptions/{subscription_id}/customer_portal:
     get:
       description: Retrieves the customer portal for a subscription
       operationId: getCustomerPortal
       parameters:
-      - description: Identifier of the customer resource
-        in: path
-        name: customer_id
-        required: true
-        schema:
-          example: cus_2tGzG1GxtDAZHEGPH
-          type: string
       - description: Identifier of the subscription resource
         in: path
-        name: id
+        name: subscription_id
         required: true
         schema:
           example: sub_2tGzG1GxtDAZHEGPH
@@ -10144,16 +10137,9 @@ paths:
         \ exists, returns the existing one."
       operationId: createCustomerPortal
       parameters:
-      - description: Identifier of the customer resource
-        in: path
-        name: customer_id
-        required: true
-        schema:
-          example: cus_2tGzG1GxtDAZHEGPH
-          type: string
       - description: Identifier of the subscription resource
         in: path
-        name: id
+        name: subscription_id
         required: true
         schema:
           example: sub_2tGzG1GxtDAZHEGPH

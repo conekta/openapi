@@ -45,8 +45,13 @@ post:
   security:
     - bearerAuth: []
   parameters:
-    - $ref: '../../parameters/commons/path_param/customer_id.yml'
-    - $ref: '../../parameters/commons/path_param/subscription_id.yml'
+    - in: path
+      name: subscription_id
+      description: Identifier of the subscription resource
+      required: true
+      schema:
+        type: string
+        example: "sub_2tGzG1GxtDAZHEGPH"
     - $ref: '../../parameters/commons/headers/accept_language.yml'
     - $ref: '../../parameters/commons/headers/x_child_company_id.yml'
 get:
@@ -94,8 +99,13 @@ get:
   security:
     - bearerAuth: []
   parameters:
-    - $ref: '../../parameters/commons/path_param/customer_id.yml'
-    - $ref: '../../parameters/commons/path_param/subscription_id.yml'
+    - in: path
+      name: subscription_id
+      description: Identifier of the subscription resource
+      required: true
+      schema:
+        type: string
+        example: "sub_2tGzG1GxtDAZHEGPH"
     - $ref: '../../parameters/commons/headers/accept_language.yml'
     - $ref: '../../parameters/commons/headers/x_child_company_id.yml'
 
