@@ -1,0 +1,44 @@
+title: subscription_details
+description: Subscription details for customer portal
+type: object
+properties:
+  id:
+    type: string
+    example: "sub_2tGzG1GxtDAZHEGPH"
+  object:
+    type: string
+    example: "subscription"
+  status:
+    type: string
+    example: "active"
+  plan_id:
+    type: string
+    example: "plan_2tXx672QLQ68CkmMn"
+  customer_id:
+    type: string
+    example: "cus_2tKcHxhTz7xU5SymF"
+  next_billing_cycle:
+    type: integer
+    format: int64
+    nullable: true
+    example: 1677626827
+  created_at:
+    type: integer
+    format: int64
+    example: 1677626837
+  updated_at:
+    type: integer
+    format: int64
+    example: 1677626837
+  card:
+    type: object
+    properties:
+      id:
+        type: string
+        example: "src_2tKcHxhTz7xU5SymL"
+      object:
+        type: string
+        example: "card"
+  plan:
+    $ref: '../plans/plan_response.yml'
+
