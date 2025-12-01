@@ -2,34 +2,6 @@ title: subscription_details
 description: Subscription details for customer portal
 type: object
 properties:
-  id:
-    type: string
-    example: "sub_2yYsQuYtXAbP1fdYu"
-  object:
-    type: string
-    example: "subscription"
-  status:
-    type: string
-    example: "canceled"
-  plan_id:
-    type: string
-    example: "VG5"
-  customer_id:
-    type: string
-    example: "cus_2yDzKtEAD3khH8Sga"
-  next_billing_cycle:
-    type: integer
-    format: int64
-    nullable: true
-    example: 1876833632
-  created_at:
-    type: integer
-    format: int64
-    example: 1755873642
-  updated_at:
-    type: integer
-    format: int64
-    example: 1761745218
   card:
     type: object
     properties:
@@ -110,3 +82,31 @@ properties:
         type: integer
         format: int64
         example: 1742087277
+  id:
+    type: string
+    example: "sub_2yYsQuYtXAbP1fdYu"
+  object:
+    type: string
+    example: "subscription"
+  status:
+    type: string
+    example: "canceled"
+  plan_id:
+    type: string
+    example: "VG5"
+  customer_id:
+    type: string
+    example: "cus_2yDzKtEAD3khH8Sga"
+  next_billing_cycle:
+    type: integer
+    format: int64
+    nullable: true
+    example: 1876833632
+  created_at:
+    type: integer
+    format: int64
+    example: 1755873642
+  updated_at:
+    type: integer
+    format: int64
+    example: 1761745218
