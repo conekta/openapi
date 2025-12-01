@@ -4,41 +4,109 @@ type: object
 properties:
   id:
     type: string
-    example: "sub_2tGzG1GxtDAZHEGPH"
+    example: "sub_2yYsQuYtXAbP1fdYu"
   object:
     type: string
     example: "subscription"
   status:
     type: string
-    example: "active"
+    example: "canceled"
   plan_id:
     type: string
-    example: "plan_2tXx672QLQ68CkmMn"
+    example: "VG5"
   customer_id:
     type: string
-    example: "cus_2tKcHxhTz7xU5SymF"
+    example: "cus_2yDzKtEAD3khH8Sga"
   next_billing_cycle:
     type: integer
     format: int64
     nullable: true
-    example: 1677626827
+    example: 1876833632
   created_at:
     type: integer
     format: int64
-    example: 1677626837
+    example: 1755873642
   updated_at:
     type: integer
     format: int64
-    example: 1677626837
+    example: 1761745218
   card:
     type: object
     properties:
       id:
         type: string
-        example: "src_2tKcHxhTz7xU5SymL"
+        example: "src_2yw5zPrVahTy7xy7P"
+      created_at:
+        type: integer
+        format: int64
+        example: 1761745218
+      active:
+        type: boolean
+        example: true
       object:
         type: string
         example: "card"
+      exp_month:
+        type: string
+        example: "05"
+      exp_year:
+        type: string
+        example: "26"
+      brand:
+        type: string
+        example: "mastercard"
+      last4:
+        type: string
+        example: "1005"
+      name:
+        type: string
+        example: "test"
+      payment_source_status:
+        type: string
+        example: "active"
+      customer_id:
+        type: string
+        example: "cus_2yDzKtEAD3khH8Sga"
+      customer_custom_reference:
+        type: string
+        nullable: true
+        example: null
   plan:
-    $ref: '../plans/plan_response.yml'
-
+    type: object
+    properties:
+      id:
+        type: string
+        example: "VG5"
+      object:
+        type: string
+        example: "plan"
+      name:
+        type: string
+        example: "CLARO"
+      amount:
+        type: integer
+        format: int32
+        example: 30000
+      currency:
+        type: string
+        example: "USD"
+      interval:
+        type: string
+        example: "month"
+      frequency:
+        type: integer
+        format: int32
+        example: 1
+      trial_period_days:
+        type: integer
+        format: int32
+        nullable: true
+        example: null
+      expiry_count:
+        type: integer
+        format: int32
+        example: 1
+      created_at:
+        type: integer
+        format: int64
+        example: 1742087277

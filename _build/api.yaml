@@ -16278,52 +16278,52 @@ components:
     customer_portal_response:
       description: Customer portal model
       properties:
+        slug:
+          description: Unique slug identifier for the portal
+          example: agIvD4QSBl4Nunq4TmuozMw2ThtyVC
+          type: string
+        subscription_id:
+          description: Associated subscription ID
+          example: sub_2yYsQuYtXAbP1fdYu
+          type: string
+        customer_id:
+          description: Associated customer ID
+          example: cus_2yDzKtEAD3khH8Sga
+          type: string
+        livemode:
+          description: Whether this is a live or test mode portal
+          example: false
+          type: boolean
+        subscription:
+          $ref: '#/components/schemas/subscription_details'
+        customer:
+          $ref: '#/components/schemas/customer_details'
         id:
           description: Customer portal ID
-          example: cpt_2tGzG1GxtDAZHEGPH
+          example: scp_2ym7QbU9dTh7Froti
+          type: string
+        company_id:
+          description: Associated company ID
+          example: 63dad459920de10001d177b3
           type: string
         object:
           example: customer_portal
           type: string
-        slug:
-          description: Unique slug identifier for the portal
-          example: portal-abc123
-          type: string
-        subscription_id:
-          description: Associated subscription ID
-          example: sub_2tGzG1GxtDAZHEGPH
-          type: string
-        customer_id:
-          description: Associated customer ID
-          example: cus_2tGzG1GxtDAZHEGPH
-          type: string
-        company_id:
-          description: Associated company ID
-          example: com_2tGzG1GxtDAZHEGPH
-          type: string
-        livemode:
-          description: Whether this is a live or test mode portal
-          example: true
-          type: boolean
-        portal_url:
-          description: URL to access the customer portal
-          example: https://portal.conekta.io/abc123
-          format: uri
-          type: string
         created_at:
           description: Unix timestamp of creation
-          example: 1677626837
+          example: 1759108828
           format: int64
           type: integer
         updated_at:
           description: Unix timestamp of last update
-          example: 1677626837
+          example: 1759108828
           format: int64
           type: integer
-        subscription:
-          $ref: '#/components/schemas/subscription_details'
-        customer:
-          $ref: '#/components/schemas/customer_response'
+        portal_url:
+          description: URL to access the customer portal
+          example: https://pay.stg.conekta.io/subscription/management/agIvD4QSBl4Nunq4TmuozMw2ThtyVC
+          format: uri
+          type: string
       title: customer_portal_response
       type: object
     update_order_tax_response:
@@ -18066,38 +18066,56 @@ components:
       description: Subscription details for customer portal
       properties:
         id:
-          example: sub_2tGzG1GxtDAZHEGPH
+          example: sub_2yYsQuYtXAbP1fdYu
           type: string
         object:
           example: subscription
           type: string
         status:
-          example: active
+          example: canceled
           type: string
         plan_id:
-          example: plan_2tXx672QLQ68CkmMn
+          example: VG5
           type: string
         customer_id:
-          example: cus_2tKcHxhTz7xU5SymF
+          example: cus_2yDzKtEAD3khH8Sga
           type: string
         next_billing_cycle:
-          example: 1677626827
+          example: 1876833632
           format: int64
           nullable: true
           type: integer
         created_at:
-          example: 1677626837
+          example: 1755873642
           format: int64
           type: integer
         updated_at:
-          example: 1677626837
+          example: 1761745218
           format: int64
           type: integer
         card:
           $ref: '#/components/schemas/subscription_details_card'
         plan:
-          $ref: '#/components/schemas/plan_response'
+          $ref: '#/components/schemas/subscription_details_plan'
       title: subscription_details
+      type: object
+    customer_details:
+      description: Customer details for customer portal
+      properties:
+        id:
+          example: cus_2yDzKtEAD3khH8Sga
+          type: string
+        object:
+          example: customer
+          type: string
+        name:
+          example: mao
+          type: string
+        email:
+          example: maoarroya@gmail.com
+          format: email
+          type: string
+      title: customer_details
       type: object
     payment_method_pbb_request:
       allOf:
@@ -20130,11 +20148,82 @@ components:
     subscription_details_card:
       properties:
         id:
-          example: src_2tKcHxhTz7xU5SymL
+          example: src_2yw5zPrVahTy7xy7P
           type: string
+        created_at:
+          example: 1761745218
+          format: int64
+          type: integer
+        active:
+          example: true
+          type: boolean
         object:
           example: card
           type: string
+        exp_month:
+          example: "05"
+          type: string
+        exp_year:
+          example: "26"
+          type: string
+        brand:
+          example: mastercard
+          type: string
+        last4:
+          example: "1005"
+          type: string
+        name:
+          example: test
+          type: string
+        payment_source_status:
+          example: active
+          type: string
+        customer_id:
+          example: cus_2yDzKtEAD3khH8Sga
+          type: string
+        customer_custom_reference:
+          nullable: true
+          type: string
+          example: null
+      type: object
+    subscription_details_plan:
+      properties:
+        id:
+          example: VG5
+          type: string
+        object:
+          example: plan
+          type: string
+        name:
+          example: CLARO
+          type: string
+        amount:
+          example: 30000
+          format: int32
+          type: integer
+        currency:
+          example: USD
+          type: string
+        interval:
+          example: month
+          type: string
+        frequency:
+          example: 1
+          format: int32
+          type: integer
+        trial_period_days:
+          format: int32
+          nullable: true
+          type: integer
+          example: null
+        expiry_count:
+          example: 1
+          format: int32
+          type: integer
+        created_at:
+          example: 1742087277
+          format: int64
+          type: integer
       type: object
   securitySchemes:
     bearerAuth:
