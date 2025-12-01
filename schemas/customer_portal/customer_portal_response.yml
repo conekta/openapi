@@ -2,50 +2,50 @@ title: customer_portal_response
 description: Customer portal model
 type: object
 properties:
-  id:
-    type: string
-    description: Customer portal ID
-    example: "cpt_2tGzG1GxtDAZHEGPH"
-  object:
-    type: string
-    example: "customer_portal"
   slug:
     type: string
     description: Unique slug identifier for the portal
-    example: "portal-abc123"
+    example: "agIvD4QSBl4Nunq4TmuozMw2ThtyVC"
   subscription_id:
     type: string
     description: Associated subscription ID
-    example: "sub_2tGzG1GxtDAZHEGPH"
+    example: "sub_2yYsQuYtXAbP1fdYu"
   customer_id:
     type: string
     description: Associated customer ID
-    example: "cus_2tGzG1GxtDAZHEGPH"
-  company_id:
-    type: string
-    description: Associated company ID
-    example: "com_2tGzG1GxtDAZHEGPH"
+    example: "cus_2yDzKtEAD3khH8Sga"
   livemode:
     type: boolean
     description: Whether this is a live or test mode portal
-    example: true
-  portal_url:
+    example: false
+  subscription:
+    $ref: './subscription_details.yml'
+  customer:
+    $ref: './customer_details.yml'
+  id:
     type: string
-    format: uri
-    description: URL to access the customer portal
-    example: "https://portal.conekta.io/abc123"
+    description: Customer portal ID
+    example: "scp_2ym7QbU9dTh7Froti"
+  company_id:
+    type: string
+    description: Associated company ID
+    example: "63dad459920de10001d177b3"
+  object:
+    type: string
+    example: "customer_portal"
   created_at:
     type: integer
     format: int64
     description: Unix timestamp of creation
-    example: 1677626837
+    example: 1759108828
   updated_at:
     type: integer
     format: int64
     description: Unix timestamp of last update
-    example: 1677626837
-  subscription:
-    $ref: './subscription_details.yml'
-  customer:
-    $ref: '../customers/customer_response.yml'
+    example: 1759108828
+  portal_url:
+    type: string
+    format: uri
+    description: URL to access the customer portal
+    example: "https://pay.stg.conekta.io/subscription/management/agIvD4QSBl4Nunq4TmuozMw2ThtyVC"
 
