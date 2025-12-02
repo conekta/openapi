@@ -15,6 +15,10 @@ servers:
   url: https://api.conekta.io
 security:
 - bearerAuth: []
+tags:
+- description: "All subscription-related endpoints including creation, management,\
+    \ events, and customer portal"
+  name: Subscriptions
 paths:
   /antifraud/whitelists:
     get:
