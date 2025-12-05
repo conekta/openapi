@@ -171,6 +171,8 @@ security:
 tags:
   - name: Subscriptions
     description: All subscription-related endpoints including creation, management, events, and customer portal
+  - name: Subscriptions - Customer Portal
+    description: Customer portal endpoints for subscriptions
 components:
   schemas:
     event_types:

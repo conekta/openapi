@@ -19,6 +19,8 @@ tags:
 - description: "All subscription-related endpoints including creation, management,\
     \ events, and customer portal"
   name: Subscriptions
+- description: Customer portal endpoints for subscriptions
+  name: Subscriptions - Customer Portal
 paths:
   /antifraud/whitelists:
     get:
@@ -10135,7 +10137,7 @@ paths:
       - bearerAuth: []
       summary: Get customer portal
       tags:
-      - Subscriptions
+      - Subscriptions - Customer Portal
     post:
       description: "Creates a customer portal for a subscription. If a portal already\
         \ exists, returns the existing one."
@@ -10254,7 +10256,7 @@ paths:
       - bearerAuth: []
       summary: Create customer portal
       tags:
-      - Subscriptions
+      - Subscriptions - Customer Portal
   /customers/{id}/subscription:
     get:
       deprecated: true
