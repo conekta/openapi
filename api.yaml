@@ -168,6 +168,11 @@ paths:
     $ref: "./resources/webhooks/webhook_test.yml"
 security:
   - bearerAuth: []
+tags:
+  - name: Subscriptions
+    description: All subscription-related endpoints including creation, management, and events
+  - name: Subscriptions - Customer Portal
+    description: Customer portal endpoints for subscriptions
 components:
   schemas:
     event_types:
