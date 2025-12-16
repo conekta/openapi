@@ -20,8 +20,8 @@ properties:
     example: 1680397724
     format: int64
     description: |
-        It is the time when the link will expire. It is expressed in seconds since the Unix epoch.
-        The valid range is from 2 to 365 days (the valid range will be taken from the next day of the creation date at 00:01 hrs)
+        It is the time when the link will expire. 
+        It is expressed in seconds since the Unix epoch. The valid range is from 10 minutes to 365 days from the creation date.
   monthly_installments_enabled:
     type: boolean
     example: true
