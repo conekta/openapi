@@ -15,6 +15,13 @@ properties:
       type: string
     example: [ "cash", "card", "bank_transfer", "bnpl", "pay_by_bank"]
     description: "Those are the payment methods that will be available for the link"
+  exclude_card_networks:
+    type: array
+    description: "List of card networks to exclude from the checkout. This field is only applicable for card payments."
+    items:
+      type: string
+      enum: ["visa", "mastercard", "amex"]
+    example: ["visa", "amex"]
   expires_at:
     type: integer
     example: 1680397724
