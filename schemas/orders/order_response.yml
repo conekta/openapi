@@ -56,8 +56,8 @@ properties:
       exclude_card_networks:
         type: array
           items:
-          type: string
-          enum: ["visa", "mastercard", "amex"]
+            type: string
+            enum: ["visa", "mastercard", "amex"]
         example: ["visa", "amex"]
       expires_at:
         type: integer
