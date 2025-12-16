@@ -15937,8 +15937,15 @@ components:
           example: 0
           type: integer
         exclude_card_networks:
+          example:
+          - visa
+          - amex
           items:
-            type: object
+            enum:
+            - visa
+            - mastercard
+            - amex
+            type: string
           type: array
         expires_at:
           example: 1680397724
@@ -17250,10 +17257,23 @@ components:
           items:
             type: string
           type: array
+        exclude_card_networks:
+          description: List of card networks to exclude from the checkout. This field
+            is only applicable for card payments.
+          example:
+          - visa
+          - amex
+          items:
+            enum:
+            - visa
+            - mastercard
+            - amex
+            type: string
+          type: array
         expires_at:
-          description: |
-            It is the time when the link will expire. It is expressed in seconds since the Unix epoch.
-            The valid range is from 2 to 365 days (the valid range will be taken from the next day of the creation date at 00:01 hrs)
+          description: "It is the time when the link will expire. \nIt is expressed\
+            \ in seconds since the Unix epoch. The valid range is from 10 minutes\
+            \ to 365 days from the creation date.\n"
           example: 1680397724
           format: int64
           type: integer
@@ -18254,6 +18274,19 @@ components:
             - bank_transfer
             - bnpl
             - pay_by_bank
+            type: string
+          type: array
+        exclude_card_networks:
+          description: List of card networks to exclude from the checkout. This field
+            is only applicable for card payments.
+          example:
+          - visa
+          - amex
+          items:
+            enum:
+            - visa
+            - mastercard
+            - amex
             type: string
           type: array
         plan_ids:
@@ -19338,8 +19371,15 @@ components:
           example: 0
           type: integer
         exclude_card_networks:
+          example:
+          - visa
+          - amex
           items:
-            type: object
+            enum:
+            - visa
+            - mastercard
+            - amex
+            type: string
           type: array
         expires_at:
           example: 1676613599

@@ -29,7 +29,7 @@ properties:
   line_items:
     type: array
     items:
-       $ref: product.yml
+      $ref: product.yml
   metadata:
     type: object
     additionalProperties:
