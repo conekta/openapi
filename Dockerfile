@@ -1,4 +1,4 @@
-FROM node:20 as builder
+FROM public.ecr.aws/docker/library/node:20 as builder
 
 # Install OpenJDK-11
 RUN apt-get update && \
