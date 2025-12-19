@@ -15946,6 +15946,7 @@ components:
             - mastercard
             - amex
             type: string
+          title: checkout_response_exclude_card_networks
           type: array
         expires_at:
           example: 1680397724
@@ -17269,6 +17270,7 @@ components:
             - mastercard
             - amex
             type: string
+          title: checkout_exclude_card_networks
           type: array
         expires_at:
           description: "It is the time when the link will expire. \nIt is expressed\
@@ -18288,6 +18290,7 @@ components:
             - mastercard
             - amex
             type: string
+          title: checkout_request_exclude_card_networks
           type: array
         plan_ids:
           description: List of plan IDs that will be available for subscription. This
@@ -19380,6 +19383,7 @@ components:
             - mastercard
             - amex
             type: string
+          title: order_response_exclude_card_networks
           type: array
         expires_at:
           example: 1676613599
@@ -19727,6 +19731,7 @@ components:
           items:
             example: visa
             type: string
+          title: token_response_exclude_card_networks
           type: array
         expires_at:
           description: Date and time when the checkout expires.
