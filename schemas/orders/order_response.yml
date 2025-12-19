@@ -54,6 +54,7 @@ properties:
         type: integer
         example: 0
       exclude_card_networks:
+        title: order_response_exclude_card_networks
         type: array
         items:
           type: string
