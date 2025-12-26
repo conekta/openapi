@@ -16902,7 +16902,7 @@ components:
           card_payment: charge_payment_method_card_response.yml#/payment_method_card
           bank_transfer_payment: charge_payment_method_bank_transfer_response.yml#/payment_method_bank_transfer
           bnpl_payment: charge_payment_method_bnpl_payment_response.yml#/payment_method_bnpl_payment
-          pbb_payment: charge_payment_method_pbb_payment_response.yml#/payment_method_pbb_payment
+          pay_by_bank_payment: charge_payment_method_pbb_payment_response.yml#/payment_method_pbb_payment
         propertyName: object
       oneOf:
       - $ref: "#/components/schemas/payment_method_cash"
