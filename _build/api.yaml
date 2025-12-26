@@ -17636,7 +17636,7 @@ components:
           payment_source_status:
             example: active
             type: string
-    payment_method_spei_recurrent:
+    payment_method_spei_recurrent_response:
       allOf:
       - properties:
           type:
@@ -17671,7 +17671,7 @@ components:
           expires_at:
             example: none
             type: string
-      title: payment_method_spei_recurrent
+      title: payment_method_spei_recurrent_response
       x-discriminator-value: spei_recurrent
     customer_payment_methods_data:
       discriminator:
@@ -17679,13 +17679,13 @@ components:
           cash: payment_method_cash_response
           card: payment_method_card_response
           cash_recurrent: payment_method_cash_recurrent_response
-          spei_recurrent: payment_method_spei_recurrent
+          spei_recurrent: payment_method_spei_recurrent_response
         propertyName: type
       oneOf:
       - $ref: "#/components/schemas/customer_payment_methods_data_oneOf"
       - $ref: "#/components/schemas/payment_method_cash_recurrent_response"
       - $ref: "#/components/schemas/customer_payment_methods_data_oneOf_1"
-      - $ref: "#/components/schemas/payment_method_spei_recurrent"
+      - $ref: "#/components/schemas/payment_method_spei_recurrent_response"
       title: customer_payment_methods_data
     customer_payment_methods_response:
       allOf:
@@ -20884,13 +20884,13 @@ components:
           cash: payment_method_cash_response
           card: payment_method_card_response
           cash_recurrent: payment_method_cash_recurrent_response
-          spei_recurrent: payment_method_spei_recurrent
+          spei_recurrent: payment_method_spei_recurrent_response
         propertyName: type
       oneOf:
       - $ref: "#/components/schemas/payment_method_cash_recurrent_response"
       - $ref: "#/components/schemas/customer_payment_methods_data_oneOf"
       - $ref: "#/components/schemas/customer_payment_methods_data_oneOf_1"
-      - $ref: "#/components/schemas/payment_method_spei_recurrent"
+      - $ref: "#/components/schemas/payment_method_spei_recurrent_response"
       title: get_customer_payment_method_data_response
     get_payment_method_response:
       allOf:
@@ -20940,13 +20940,13 @@ components:
           cash: payment_method_cash_response
           card: payment_method_card_response
           cash_recurrent: payment_method_cash_recurrent_response
-          spei_recurrent: payment_method_spei_recurrent
+          spei_recurrent: payment_method_spei_recurrent_response
         propertyName: type
       oneOf:
       - $ref: "#/components/schemas/customer_payment_methods_data_oneOf"
       - $ref: "#/components/schemas/payment_method_cash_recurrent_response"
       - $ref: "#/components/schemas/customer_payment_methods_data_oneOf_1"
-      - $ref: "#/components/schemas/payment_method_spei_recurrent"
+      - $ref: "#/components/schemas/payment_method_spei_recurrent_response"
       title: create_customer_payment_methods_response
     update_payment_methods_card:
       properties:
@@ -20968,13 +20968,13 @@ components:
           cash: payment_method_cash_response
           card: payment_method_card_response
           cash_recurrent: payment_method_cash_recurrent_response
-          spei_recurrent: payment_method_spei_recurrent
+          spei_recurrent: payment_method_spei_recurrent_response
         propertyName: type
       oneOf:
       - $ref: "#/components/schemas/customer_payment_methods_data_oneOf"
       - $ref: "#/components/schemas/payment_method_cash_recurrent_response"
       - $ref: "#/components/schemas/customer_payment_methods_data_oneOf_1"
-      - $ref: "#/components/schemas/payment_method_spei_recurrent"
+      - $ref: "#/components/schemas/payment_method_spei_recurrent_response"
       title: update_customer_payment_methods_response
     plan_response:
       description: plans model
