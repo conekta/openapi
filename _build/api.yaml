@@ -11480,7 +11480,7 @@ paths:
           content:
             application/vnd.conekta-v2.2.0+json:
               schema:
-                $ref: "#/components/schemas/subscription_response_1"
+                $ref: "#/components/schemas/subscription_response"
           description: successful
           headers:
             Date:
@@ -21398,83 +21398,6 @@ components:
               $ref: "#/components/schemas/event_response"
             type: array
       title: subscription_events_response
-    subscription_response_1:
-      description: subscription model
-      properties:
-        billing_cycle_start:
-          example: 1677626827
-          format: int64
-          type: integer
-          nullable: true
-        billing_cycle_end:
-          example: 1677626827
-          format: int64
-          type: integer
-          nullable: true
-        canceled_at:
-          example: 1678258162
-          format: int64
-          type: integer
-          nullable: true
-        canceled_reason:
-          description: Reason for cancellation. This field appears when the subscription
-            status is 'canceled'.
-          example: user_cancelation
-          type: string
-        card_id:
-          example: src_2tKcHxhTz7xU5SymL
-          type: string
-        charge_id:
-          example: 2tKcHxhTz7xU5SymL
-          type: string
-          nullable: true
-        created_at:
-          example: 1677626837
-          format: int64
-          type: integer
-        customer_custom_reference:
-          example: dotnet_123456
-          type: string
-        customer_id:
-          example: cus_2tKcHxhTz7xU5SymF
-          type: string
-        id:
-          example: gold-plan
-          type: string
-        last_billing_cycle_order_id:
-          example: ord_2tSoMP7bZJbLiq4z8
-          type: string
-        object:
-          example: subscription
-          type: string
-        paused_at:
-          example: 1678258162
-          format: int64
-          type: integer
-          nullable: true
-        plan_id:
-          example: plan_2tXx672QLQ68CkmMn
-          type: string
-        status:
-          example: past_due
-          type: string
-        subscription_start:
-          example: 1677626837
-          type: integer
-        trial_start:
-          example: 1677626837
-          format: int64
-          type: integer
-          nullable: true
-        trial_end:
-          example: 1677626837
-          format: int64
-          type: integer
-          nullable: true
-      title: subscription_response
-      x-methods:
-        cancel:
-          operationId: cancelSubscription
     subscription_details_card:
       properties:
         id:
