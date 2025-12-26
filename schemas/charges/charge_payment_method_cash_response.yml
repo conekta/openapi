@@ -5,22 +5,25 @@ payment_method_cash:
       title: charge_data_payment_method_cash_response
       description: use for cash responses
       properties:
+        object:
+          type: string
+          enum: [cash_payment]   # o const: cash_payment
         agreement:
           type: string
-          example: "agreement_2tN73UdUSNrYRPD9r"
-          description: "Agreement ID"
+          description: Agreement ID
+          example: agreement_2tN73UdUSNrYRPD9r
         auth_code:
           type: integer
-          example: 542563
           nullable: true
+          example: 542563
         cashier_id:
           type: string
           nullable: true
-          example: "OINM01010"
+          example: OINM01010
         reference:
           type: string
           example: "93000262276908"
-        barcode_url: 
+        barcode_url:
           type: string
           example: "https://barcodes.conekta.com/644ebf80f2243197aad6cd8810375b905b613dbe.png"
         expires_at:
@@ -29,19 +32,18 @@ payment_method_cash:
           example: 0
         product_type:
           type: string
-          example: "bbva_cash_in"
-          description: "Product type, e.g. bbva_cash_in, cash_in, pespay_cash_in, etc."
+          description: Product type, e.g. bbva_cash_in, cash_in, pespay_cash_in, etc.
+          example: bbva_cash_in
         service_name:
           type: string
-          example: "store"
+          example: store
         store:
           type: string
           nullable: true
-          example: "10MON50EDI"
+          example: 10MON50EDI
         store_name:
           type: string
-          example: "wallmart"
+          example: wallmart
         customer_ip_address:
           type: string
-          example: "0.0.0.0"
-        
+          example: 0.0.0.0

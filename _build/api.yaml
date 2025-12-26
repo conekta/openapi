@@ -16235,6 +16235,10 @@ components:
         - object
       - description: use for cash responses
         properties:
+          object:
+            enum:
+            - cash_payment
+            type: string
           agreement:
             description: Agreement ID
             example: agreement_2tN73UdUSNrYRPD9r
