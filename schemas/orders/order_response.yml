@@ -30,6 +30,7 @@ properties:
     title: order_charges_response
     allOf:
       - $ref: ../pagination/pagination.yml
+      - $ref: ../pagination/page.yml
       - type: object
         properties:
           data:
