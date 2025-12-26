@@ -16625,9 +16625,10 @@ components:
           example: ord_2tN73UdUSNrYRPD9r
           type: string
         paid_at:
-          description: Payment date
+          description: charge Payment date
           example: 1676390742
           format: int64
+          nullable: true
           type: integer
         payment_method:
           $ref: "#/components/schemas/charge_response_payment_method"
@@ -17020,9 +17021,10 @@ components:
             example: ord_2tN73UdUSNrYRPD9r
             type: string
           paid_at:
-            description: Payment date
+            description: charge Payment date
             example: 1676390742
             format: int64
+            nullable: true
             type: integer
           payment_method:
             $ref: "#/components/schemas/charge_response_payment_method"
@@ -19017,9 +19019,10 @@ components:
             example: ord_2tN73UdUSNrYRPD9r
             type: string
           paid_at:
-            description: Payment date
+            description: charge Payment date
             example: 1676390742
             format: int64
+            nullable: true
             type: integer
           payment_method:
             $ref: "#/components/schemas/charge_response_payment_method"

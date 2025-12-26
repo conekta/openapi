@@ -65,10 +65,10 @@ properties:
     example: "ord_2tN73UdUSNrYRPD9r"
     description: "Order ID"
   paid_at:
-    type: integer
+    type: [integer, "null"]
     format: int64
     example: 1676390742
-    description: "Payment date"
+    description: "charge Payment date"
   payment_method:
     title: charge_response_payment_method
     propertyName: object
