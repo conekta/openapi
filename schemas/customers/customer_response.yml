@@ -164,5 +164,6 @@ properties:
                       format: int64
                       example: 1675715413
   subscription:
-     $ref: '.././../schemas/subscriptions/subscription_response.yml'
+     $ref: '../subscriptions/subscription_response.yml'
+     title: customer_subscription_response
      nullable: true

@@ -13,6 +13,8 @@ required:
   - payouts
   - reason
   - updated_at
+  - expires_at
+  - status
 properties:
   allowed_payout_methods:
     type: array
@@ -24,6 +26,7 @@ properties:
   amount:
     type: integer
     description: "The amount of the payout order."
+    format: int64
     example: 100
   created_at:
     type: integer

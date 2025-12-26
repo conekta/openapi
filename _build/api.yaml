@@ -10680,7 +10680,7 @@ paths:
           content:
             application/vnd.conekta-v2.2.0+json:
               schema:
-                $ref: "#/components/schemas/subscription_response_1"
+                $ref: "#/components/schemas/subscription_response"
           description: successful
           headers:
             Date:
@@ -10824,7 +10824,7 @@ paths:
           content:
             application/vnd.conekta-v2.2.0+json:
               schema:
-                $ref: "#/components/schemas/subscription_response_1"
+                $ref: "#/components/schemas/subscription_response"
           description: successful
           headers:
             Date:
@@ -10985,7 +10985,7 @@ paths:
           content:
             application/vnd.conekta-v2.2.0+json:
               schema:
-                $ref: "#/components/schemas/subscription_response_1"
+                $ref: "#/components/schemas/subscription_response"
           description: successful
           headers:
             Date:
@@ -11137,7 +11137,7 @@ paths:
           content:
             application/vnd.conekta-v2.2.0+json:
               schema:
-                $ref: "#/components/schemas/subscription_response_1"
+                $ref: "#/components/schemas/subscription_response"
           description: successful
           headers:
             Date:
@@ -11480,7 +11480,7 @@ paths:
           content:
             application/vnd.conekta-v2.2.0+json:
               schema:
-                $ref: "#/components/schemas/subscription_response_2"
+                $ref: "#/components/schemas/subscription_response_1"
           description: successful
           headers:
             Date:
@@ -11626,7 +11626,7 @@ paths:
           content:
             application/vnd.conekta-v2.2.0+json:
               schema:
-                $ref: "#/components/schemas/subscription_response_1"
+                $ref: "#/components/schemas/subscription_response"
           description: successful
           headers:
             Date:
@@ -11772,7 +11772,7 @@ paths:
           content:
             application/vnd.conekta-v2.2.0+json:
               schema:
-                $ref: "#/components/schemas/subscription_response_1"
+                $ref: "#/components/schemas/subscription_response"
           description: successful
           headers:
             Date:
@@ -11918,7 +11918,7 @@ paths:
           content:
             application/vnd.conekta-v2.2.0+json:
               schema:
-                $ref: "#/components/schemas/subscription_response_1"
+                $ref: "#/components/schemas/subscription_response"
           description: successful
           headers:
             Date:
@@ -12316,7 +12316,7 @@ paths:
           content:
             application/vnd.conekta-v2.2.0+json:
               schema:
-                $ref: "#/components/schemas/subscription_response_1"
+                $ref: "#/components/schemas/subscription_response"
           description: successful
           headers:
             Date:
@@ -12461,7 +12461,7 @@ paths:
           content:
             application/vnd.conekta-v2.2.0+json:
               schema:
-                $ref: "#/components/schemas/subscription_response_1"
+                $ref: "#/components/schemas/subscription_response"
           description: successful
           headers:
             Date:
@@ -12621,7 +12621,7 @@ paths:
           content:
             application/vnd.conekta-v2.2.0+json:
               schema:
-                $ref: "#/components/schemas/subscription_response_1"
+                $ref: "#/components/schemas/subscription_response"
           description: successful
           headers:
             Date:
@@ -12774,7 +12774,7 @@ paths:
           content:
             application/vnd.conekta-v2.2.0+json:
               schema:
-                $ref: "#/components/schemas/subscription_response_1"
+                $ref: "#/components/schemas/subscription_response"
           description: successful
           headers:
             Date:
@@ -13081,7 +13081,7 @@ paths:
           content:
             application/vnd.conekta-v2.2.0+json:
               schema:
-                $ref: "#/components/schemas/subscription_response_1"
+                $ref: "#/components/schemas/subscription_response"
           description: successful
           headers:
             Date:
@@ -13233,7 +13233,7 @@ paths:
           content:
             application/vnd.conekta-v2.2.0+json:
               schema:
-                $ref: "#/components/schemas/subscription_response_1"
+                $ref: "#/components/schemas/subscription_response"
           description: successful
           headers:
             Date:
@@ -17833,7 +17833,7 @@ components:
             items:
               $ref: "#/components/schemas/customer_shipping_contacts_data_response"
             type: array
-    subscription_response:
+    customer_subscription_response:
       description: subscription model
       properties:
         billing_cycle_start:
@@ -17906,7 +17906,7 @@ components:
           format: int64
           type: integer
           nullable: true
-      title: subscription_response
+      title: customer_subscription_response
       nullable: true
     customer_response:
       description: customer response
@@ -17981,7 +17981,7 @@ components:
         shipping_contacts:
           $ref: "#/components/schemas/customer_response_shipping_contacts"
         subscription:
-          $ref: "#/components/schemas/subscription_response"
+          $ref: "#/components/schemas/customer_subscription_response"
       required:
       - created_at
       - id
@@ -20405,6 +20405,7 @@ components:
         amount:
           description: The amount of the payout order.
           example: 100
+          format: int64
           type: integer
         created_at:
           description: The creation date of the payout order.
@@ -20466,11 +20467,13 @@ components:
       - created_at
       - currency
       - customer_info
+      - expires_at
       - id
       - livemode
       - object
       - payouts
       - reason
+      - status
       - updated_at
       title: payout_order_response
     payout_orders_response:
@@ -20558,6 +20561,11 @@ components:
           type: string
         customer_info:
           $ref: "#/components/schemas/payout_order_request_customer_info"
+        expires_at:
+          description: The expiration time of the payout order in Unix timestamp.
+          example: 1700000000
+          format: int64
+          type: integer
         metadata:
           additionalProperties: true
           description: The metadata of the payout order.
@@ -20576,6 +20584,7 @@ components:
       - amount
       - currency
       - customer_info
+      - expires_at
       - payout
       - reason
       title: payout_order_request
@@ -21266,7 +21275,7 @@ components:
           type: boolean
           nullable: true
       title: customer_update_shipping_contacts_request
-    subscription_response_1:
+    subscription_response:
       description: subscription model
       properties:
         billing_cycle_start:
@@ -21389,7 +21398,7 @@ components:
               $ref: "#/components/schemas/event_response"
             type: array
       title: subscription_events_response
-    subscription_response_2:
+    subscription_response_1:
       description: subscription model
       properties:
         billing_cycle_start:
