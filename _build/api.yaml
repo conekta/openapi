@@ -17531,6 +17531,7 @@ components:
           provider:
             example: Cash
             type: string
+      x-discriminator-value: cash
     payment_method_cash_recurrent_response:
       allOf:
       - allOf:
@@ -17578,6 +17579,7 @@ components:
             provider:
               example: Cash
               type: string
+        x-discriminator-value: cash
       description: Alias of cash response used when type=cash_recurrent
       title: payment_method_cash_recurrent_response
       x-discriminator-value: cash_recurrent

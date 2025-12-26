@@ -1,4 +1,5 @@
 payment_method_cash_response:
+  x-discriminator-value: cash 
   allOf:
     - $ref: customer_payment_method_response.yml#/payment_method_response
     - type: object
@@ -34,4 +35,3 @@ payment_method_cash_response:
         provider:
           type: string
           example: "Cash"
-        
