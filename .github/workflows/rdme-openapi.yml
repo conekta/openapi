@@ -19,9 +19,9 @@ jobs:
       contents: read
     steps:
       - name: Check out repo 📚
-        uses: actions/checkout@v3
+        uses: actions/checkout@v6
 
       - name: Run `openapi` command 🚀
-        uses: readmeio/rdme@v8
+        uses: readmeio/rdme@v10
         with:
           rdme: openapi _build/api.yaml --key=${{ secrets.README_API_KEY }} --id=${{ secrets.API_README_VERSION_2_2_0_ID }}
