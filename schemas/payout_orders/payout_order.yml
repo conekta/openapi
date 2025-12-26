@@ -8,6 +8,7 @@ required:
   - customer_info
   - payout
   - reason
+  - expires_at
 properties:
   allowed_payout_methods:
     type: array
@@ -19,6 +20,7 @@ properties:
     type: integer
     description: "The amount of the payout order."
     example: 100
+    format: int64
   currency:
     type: string
     description: "The currency in which the payout order is made."
@@ -28,6 +30,11 @@ properties:
     allOf:
       - $ref: '../../schemas/customers/customer_info_just_customer_id.yml'
     description: "The customer information to whom the payout order is made."
+  expires_at:
+    type: integer
+    description: "The expiration time of the payout order in Unix timestamp."
+    example: 1700000000
+    format: int64
   metadata:
     type: object
     description: "The metadata of the payout order."
