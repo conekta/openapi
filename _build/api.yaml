@@ -20508,15 +20508,16 @@ components:
             nullable: true
         title: page metadata
       title: payout_orders_response
-    customer_info_customer_id_1:
+    payout_order_request_customer_info:
+      allOf:
+      - properties:
+          customer_id:
+            example: cus_23874283647
+            type: string
+        required:
+        - customer_id
+        title: customer_info_customer_id
       description: The customer information to whom the payout order is made.
-      properties:
-        customer_id:
-          example: cus_23874283647
-          type: string
-      required:
-      - customer_id
-      title: customer_info_customer_id
     payout_method:
       description: The payout method of the payout order.
       properties:
@@ -20555,7 +20556,7 @@ components:
           example: MXN
           type: string
         customer_info:
-          $ref: "#/components/schemas/customer_info_customer_id_1"
+          $ref: "#/components/schemas/payout_order_request_customer_info"
         metadata:
           additionalProperties: true
           description: The metadata of the payout order.
@@ -20576,7 +20577,7 @@ components:
       - customer_info
       - payout
       - reason
-      title: payout order request
+      title: payout_order_request
     checkout_response:
       description: checkout response
       properties:

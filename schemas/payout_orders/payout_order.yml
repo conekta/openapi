@@ -1,4 +1,4 @@
-title: payout order request
+title: payout_order_request
 description: a payout order
 type: object
 required:
@@ -25,8 +25,9 @@ properties:
     example: "MXN"
     default: "MXN"
   customer_info:
+    allOf:
+      - $ref: '../../schemas/customers/customer_info_just_customer_id.yml'
     description: "The customer information to whom the payout order is made."
-    $ref: '../../schemas/customers/customer_info_just_customer_id.yml'
   metadata:
     type: object
     description: "The metadata of the payout order."
