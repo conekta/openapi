@@ -16401,7 +16401,7 @@ components:
             example: 0.0.0.0
             type: string
         title: charge_data_payment_method_bank_transfer_response
-    charge_response_payment_method_oneOf_3:
+    payment_method_bnpl_payment:
       allOf:
       - properties:
           type:
@@ -16445,7 +16445,8 @@ components:
         - expires_at
         - product_type
         title: charge_data_payment_method_bnpl_payment_response
-    charge_response_payment_method_oneOf_4:
+      title: payment_method_bnpl_payment
+    charge_response_payment_method_oneOf_3:
       allOf:
       - properties:
           type:
@@ -16498,8 +16499,8 @@ components:
       - $ref: "#/components/schemas/charge_response_payment_method_oneOf"
       - $ref: "#/components/schemas/charge_response_payment_method_oneOf_1"
       - $ref: "#/components/schemas/charge_response_payment_method_oneOf_2"
+      - $ref: "#/components/schemas/payment_method_bnpl_payment"
       - $ref: "#/components/schemas/charge_response_payment_method_oneOf_3"
-      - $ref: "#/components/schemas/charge_response_payment_method_oneOf_4"
       title: charge_response_payment_method
       propertyName: object
     charge_response_refunds_data:
@@ -16902,8 +16903,8 @@ components:
       - $ref: "#/components/schemas/charge_response_payment_method_oneOf"
       - $ref: "#/components/schemas/charge_response_payment_method_oneOf_1"
       - $ref: "#/components/schemas/charge_response_payment_method_oneOf_2"
+      - $ref: "#/components/schemas/payment_method_bnpl_payment"
       - $ref: "#/components/schemas/charge_response_payment_method_oneOf_3"
-      - $ref: "#/components/schemas/charge_response_payment_method_oneOf_4"
       title: charge_order_response_payment_method
     charges_response:
       properties:
