@@ -1556,7 +1556,7 @@ paths:
           content:
             application/vnd.conekta-v2.2.0+json:
               schema:
-                $ref: "#/components/schemas/charges_data_response"
+                $ref: "#/components/schemas/charges_response"
           description: successful
         "401":
           content:
@@ -16905,7 +16905,7 @@ components:
       - $ref: "#/components/schemas/charge_response_payment_method_oneOf_3"
       - $ref: "#/components/schemas/charge_response_payment_method_oneOf_4"
       title: charge_order_response_payment_method
-    charges_data_response:
+    charges_response:
       properties:
         amount:
           example: 4321
@@ -16966,7 +16966,7 @@ components:
         status:
           example: pending_payment
           type: string
-      title: charges_data_response
+      title: charges_response
     ordersCreateCharges_200_response_allOf_data_inner:
       allOf:
       - properties:
@@ -18957,7 +18957,7 @@ components:
           example: channel_2tNDzhA4Akmzj11AU
           type: string
       title: order_channel_response
-    charges_data_response_1:
+    charges_data_response:
       allOf:
       - properties:
           amount:
@@ -19051,7 +19051,7 @@ components:
       - properties:
           data:
             items:
-              $ref: "#/components/schemas/charges_data_response_1"
+              $ref: "#/components/schemas/charges_data_response"
             type: array
       description: The charges associated with the order
       title: order_charges_response
