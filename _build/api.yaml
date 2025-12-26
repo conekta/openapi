@@ -15721,7 +15721,7 @@ components:
       - order.pending_payment
       title: event_types
       type: string
-    risk_rules_data_inner:
+    risk_rule_data:
       properties:
         id:
           description: rule id
@@ -15751,6 +15751,7 @@ components:
           description: description of the rule
           example: secure customer example@example.com
           type: string
+      title: risk_rule_data
     GetRuleWhitelist_200_response:
       allOf:
       - description: pagination metadata
@@ -15783,7 +15784,7 @@ components:
       - properties:
           data:
             items:
-              $ref: "#/components/schemas/risk_rules_data_inner"
+              $ref: "#/components/schemas/risk_rule_data"
             type: array
         title: risk_rules
     details_error:
