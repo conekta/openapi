@@ -15786,7 +15786,7 @@ components:
             items:
               $ref: "#/components/schemas/risk_rules_data"
             type: array
-        title: risk_rules
+        title: risk_rules_list
     details_error:
       properties:
         code:
