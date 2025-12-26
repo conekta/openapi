@@ -1,4 +1,5 @@
 payment_method_pbb_payment:
+  title: payment_method_pbb_payment
   allOf:
     - $ref: charge_payment_method_response.yml#/payment_method
     - type: object

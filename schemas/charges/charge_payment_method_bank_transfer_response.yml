@@ -1,4 +1,5 @@
 payment_method_bank_transfer:
+  title: payment_method_bank_transfer
   allOf:
     - $ref: charge_payment_method_response.yml#/payment_method
     - type: object

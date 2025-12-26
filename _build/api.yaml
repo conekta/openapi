@@ -16223,7 +16223,7 @@ components:
         id:
           example: channel_2tNDzhA4Akmzj11AU
           type: string
-    charge_response_payment_method_oneOf:
+    payment_method_cash:
       allOf:
       - properties:
           type:
@@ -16276,7 +16276,8 @@ components:
             example: 0.0.0.0
             type: string
         title: charge_data_payment_method_cash_response
-    charge_response_payment_method_oneOf_1:
+      title: payment_method_cash
+    payment_method_card:
       allOf:
       - properties:
           type:
@@ -16336,7 +16337,8 @@ components:
             example: 0.0.0.0
             type: string
         title: charge_data_payment_method_card_response
-    charge_response_payment_method_oneOf_2:
+      title: payment_method_card
+    payment_method_bank_transfer:
       allOf:
       - properties:
           type:
@@ -16401,6 +16403,7 @@ components:
             example: 0.0.0.0
             type: string
         title: charge_data_payment_method_bank_transfer_response
+      title: payment_method_bank_transfer
     payment_method_bnpl_payment:
       allOf:
       - properties:
@@ -16446,7 +16449,7 @@ components:
         - product_type
         title: charge_data_payment_method_bnpl_payment_response
       title: payment_method_bnpl_payment
-    charge_response_payment_method_oneOf_3:
+    payment_method_pbb_payment:
       allOf:
       - properties:
           type:
@@ -16486,6 +16489,7 @@ components:
         - redirect_url
         - reference
         title: charge_data_payment_method_pbb_payment_response
+      title: payment_method_pbb_payment
     charge_response_payment_method:
       discriminator:
         mapping:
@@ -16496,11 +16500,11 @@ components:
           pay_by_bank_payment: payment_method_pbb_payment
         propertyName: object
       oneOf:
-      - $ref: "#/components/schemas/charge_response_payment_method_oneOf"
-      - $ref: "#/components/schemas/charge_response_payment_method_oneOf_1"
-      - $ref: "#/components/schemas/charge_response_payment_method_oneOf_2"
+      - $ref: "#/components/schemas/payment_method_cash"
+      - $ref: "#/components/schemas/payment_method_card"
+      - $ref: "#/components/schemas/payment_method_bank_transfer"
       - $ref: "#/components/schemas/payment_method_bnpl_payment"
-      - $ref: "#/components/schemas/charge_response_payment_method_oneOf_3"
+      - $ref: "#/components/schemas/payment_method_pbb_payment"
       title: charge_response_payment_method
       propertyName: object
     charge_response_refunds_data:
@@ -16900,11 +16904,11 @@ components:
           pbb_payment: charge_payment_method_pbb_payment_response.yml#/payment_method_pbb_payment
         propertyName: object
       oneOf:
-      - $ref: "#/components/schemas/charge_response_payment_method_oneOf"
-      - $ref: "#/components/schemas/charge_response_payment_method_oneOf_1"
-      - $ref: "#/components/schemas/charge_response_payment_method_oneOf_2"
+      - $ref: "#/components/schemas/payment_method_cash"
+      - $ref: "#/components/schemas/payment_method_card"
+      - $ref: "#/components/schemas/payment_method_bank_transfer"
       - $ref: "#/components/schemas/payment_method_bnpl_payment"
-      - $ref: "#/components/schemas/charge_response_payment_method_oneOf_3"
+      - $ref: "#/components/schemas/payment_method_pbb_payment"
       title: charge_order_response_payment_method
     charges_response:
       properties:
