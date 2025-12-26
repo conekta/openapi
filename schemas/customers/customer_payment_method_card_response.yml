@@ -1,4 +1,5 @@
 payment_method_card_response:
+  title: payment_method_card_response
   allOf:
     - $ref: customer_payment_method_response.yml#/payment_method_response
     - type: object
