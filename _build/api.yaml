@@ -16629,7 +16629,6 @@ components:
           example: 1676390742
           format: int64
           type: integer
-          nullable: true
         payment_method:
           $ref: "#/components/schemas/charge_response_payment_method"
         reference_id:
@@ -17025,7 +17024,6 @@ components:
             example: 1676390742
             format: int64
             type: integer
-            nullable: true
           payment_method:
             $ref: "#/components/schemas/charge_response_payment_method"
           reference_id:
@@ -19023,7 +19021,6 @@ components:
             example: 1676390742
             format: int64
             type: integer
-            nullable: true
           payment_method:
             $ref: "#/components/schemas/charge_response_payment_method"
           reference_id:

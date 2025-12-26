@@ -68,7 +68,6 @@ properties:
     type: integer
     format: int64
     example: 1676390742
-    nullable: true
     description: "Payment date"
   payment_method:
     title: charge_response_payment_method
