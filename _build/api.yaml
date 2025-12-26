@@ -16501,6 +16501,7 @@ components:
       - $ref: "#/components/schemas/charge_response_payment_method_oneOf_3"
       - $ref: "#/components/schemas/charge_response_payment_method_oneOf_4"
       title: charge_response_payment_method
+      propertyName: object
     charge_response_refunds_data:
       properties:
         amount:
