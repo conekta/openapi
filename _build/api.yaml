@@ -697,7 +697,7 @@ paths:
         content:
           application/json:
             schema:
-              $ref: "#/components/schemas/api_keys_request"
+              $ref: "#/components/schemas/api_key_request"
         description: requested field for a api keys
         required: true
       responses:
@@ -1556,7 +1556,7 @@ paths:
           content:
             application/vnd.conekta-v2.2.0+json:
               schema:
-                $ref: "#/components/schemas/charges_response"
+                $ref: "#/components/schemas/charge_order_response"
           description: successful
         "401":
           content:
@@ -1702,7 +1702,7 @@ paths:
           content:
             application/vnd.conekta-v2.2.0+json:
               schema:
-                $ref: "#/components/schemas/ordersCreateCharges_200_response"
+                $ref: "#/components/schemas/charges_order_response"
           description: successful
         "401":
           content:
@@ -2905,7 +2905,7 @@ paths:
         content:
           application/json:
             schema:
-              $ref: "#/components/schemas/customer_request"
+              $ref: "#/components/schemas/customer"
         description: requested field for customer
         required: true
       responses:
@@ -3279,7 +3279,7 @@ paths:
         content:
           application/json:
             schema:
-              $ref: "#/components/schemas/update_customer_request"
+              $ref: "#/components/schemas/update_customer"
         description: requested field for customer
         required: true
       responses:
@@ -3787,7 +3787,7 @@ paths:
           content:
             application/vnd.conekta-v2.2.0+json:
               schema:
-                $ref: "#/components/schemas/discount_lines_order_response"
+                $ref: "#/components/schemas/discount_lines_response"
           description: successful
         "401":
           content:
@@ -3898,7 +3898,7 @@ paths:
           content:
             application/vnd.conekta-v2.2.0+json:
               schema:
-                $ref: "#/components/schemas/discount_lines_order_response"
+                $ref: "#/components/schemas/discount_lines_response"
           description: successful
         "401":
           content:
@@ -4023,7 +4023,7 @@ paths:
           content:
             application/vnd.conekta-v2.2.0+json:
               schema:
-                $ref: "#/components/schemas/discount_lines_order_response"
+                $ref: "#/components/schemas/discount_lines_response"
           description: successful
         "401":
           content:
@@ -4155,7 +4155,7 @@ paths:
           content:
             application/vnd.conekta-v2.2.0+json:
               schema:
-                $ref: "#/components/schemas/discount_lines_order_response"
+                $ref: "#/components/schemas/discount_lines_response"
           description: successful
         "401":
           content:
@@ -4553,7 +4553,7 @@ paths:
           content:
             application/vnd.conekta-v2.2.0+json:
               schema:
-                $ref: "#/components/schemas/event_webhook_resend_response"
+                $ref: "#/components/schemas/events_resend_response"
           description: successful operation
         "401":
           content:
@@ -7692,7 +7692,7 @@ paths:
                       reference: mi_referencia_123
                       more_info: datos_adicionales
             schema:
-              $ref: "#/components/schemas/checkout_request"
+              $ref: "#/components/schemas/checkout"
         description: requested field for checkout
         required: true
       responses:
@@ -16006,7 +16006,7 @@ components:
               $ref: "#/components/schemas/api_key_response"
             type: array
       title: get_api_keys_response
-    api_keys_request:
+    api_key_request:
       properties:
         description:
           description: A name or brief explanation of what this api key is used for
@@ -16018,8 +16018,8 @@ components:
           descripción: Indicates if the api key is private or public
       required:
       - role
-      title: api_keys_request
-      name: api_keys_request
+      title: api_key_request
+      name: api_key_request
     api_key_create_response:
       allOf:
       - properties:
@@ -16913,7 +16913,7 @@ components:
       - $ref: "#/components/schemas/payment_method_pbb_payment"
       title: charge_order_response_payment_method
       propertyName: object
-    charges_response:
+    charge_order_response:
       properties:
         amount:
           example: 4321
@@ -16974,8 +16974,8 @@ components:
         status:
           example: pending_payment
           type: string
-      title: charges_response
-    ordersCreateCharges_200_response_allOf_data_inner:
+      title: charge_order_response
+    charges_order_response_allOf_data_inner:
       allOf:
       - properties:
           amount:
@@ -17049,7 +17049,7 @@ components:
         - order_id
         - status
         title: charge_response
-    ordersCreateCharges_200_response:
+    charges_order_response:
       allOf:
       - description: pagination metadata
         properties:
@@ -17065,12 +17065,26 @@ components:
         - has_more
         - object
         title: pagination metadata
+      - description: page metadata
+        properties:
+          next_page_url:
+            description: URL of the next page.
+            example: https://api.conekta.io/resources?limit=10&next=chrg_1
+            type: string
+            nullable: true
+          previous_page_url:
+            description: Url of the previous page.
+            example: https://api.conekta.io/resources?limit=10&previous=chrg_1
+            type: string
+            nullable: true
+        title: page metadata
       - properties:
           data:
             items:
-              $ref: "#/components/schemas/ordersCreateCharges_200_response_allOf_data_inner"
+              $ref: "#/components/schemas/charges_order_response_allOf_data_inner"
             type: array
       description: The charges associated with the order
+      title: charges_order_response
     company_response_documents_inner:
       properties:
         file_classification:
@@ -18025,7 +18039,7 @@ components:
             nullable: true
         title: page metadata
       title: customers_response
-    customer_request_antifraud_info:
+    customer_antifraud_info:
       properties:
         account_created_at:
           example: 1484040996
@@ -18170,11 +18184,11 @@ components:
       required:
       - plan_id
       title: subscription_request
-    customer_request:
+    customer:
       description: a customer
       properties:
         antifraud_info:
-          $ref: "#/components/schemas/customer_request_antifraud_info"
+          $ref: "#/components/schemas/customer_antifraud_info"
         corporate:
           default: false
           description: It is a value that allows identifying if the email is corporate
@@ -18250,8 +18264,8 @@ components:
       - email
       - name
       - phone
-      title: customer request
-    update_customer_request_antifraud_info:
+      title: customer
+    update_customer_antifraud_info:
       properties:
         account_created_at:
           example: 1484040996
@@ -18261,11 +18275,11 @@ components:
           example: 1485151007
           type: integer
       nullable: true
-    update_customer_request:
+    update_customer:
       description: update customer
       properties:
         antifraud_info:
-          $ref: "#/components/schemas/update_customer_request_antifraud_info"
+          $ref: "#/components/schemas/update_customer_antifraud_info"
         date_of_birth:
           description: It is a parameter that allows to identify the date of birth
             of the client.
@@ -18336,7 +18350,7 @@ components:
           type: array
         subscription:
           $ref: "#/components/schemas/subscription_request"
-      title: update customer request
+      title: update_customer
     create_customer_fiscal_entities_response:
       allOf:
       - properties:
@@ -18436,7 +18450,7 @@ components:
         - id
         - object
       title: update_customer_fiscal_entities_response
-    discount_lines_order_response:
+    discount_lines_response:
       allOf:
       - description: List of discounts that apply to the order.
         properties:
@@ -18478,7 +18492,7 @@ components:
         - id
         - object
         - parent_id
-      title: discount_lines_order_response
+      title: discount_lines_response
     get_order_discount_lines_response:
       allOf:
       - description: pagination metadata
@@ -18511,7 +18525,7 @@ components:
       - properties:
           data:
             items:
-              $ref: "#/components/schemas/discount_lines_order_response"
+              $ref: "#/components/schemas/discount_lines_response"
             type: array
       title: get_order_discount_lines_response
     order_discount_lines_request:
@@ -18665,7 +18679,7 @@ components:
           type: array
       required:
       - webhooks_ids
-    event_webhook_resend_response:
+    events_resend_response:
       description: event model
       properties:
         failed_attempts:
@@ -18690,7 +18704,7 @@ components:
           example: https://username:password@mockoon.conekta.io/payments-api/cash/merchant_approval
           format: uri
           type: string
-      title: event_webhook_resend_response
+      title: events_resend_response
     logs_response_data:
       properties:
         created_at:
@@ -19275,7 +19289,7 @@ components:
           - id
           - object
           - parent_id
-        title: discount_lines_order_response
+        title: discount_lines_response
       title: discount_lines_data_response
     order_discount_lines_response:
       allOf:
@@ -19338,7 +19352,7 @@ components:
         - external_number
         - postal_code
         - street1
-        title: order_fiscal_entity_address_request
+        title: fiscal_entity_address
       - properties:
           object:
             example: fiscal_entity_address
@@ -19845,7 +19859,7 @@ components:
       oneOf:
       - $ref: "#/components/schemas/customer_info"
       - $ref: "#/components/schemas/customer_info_customer_id"
-    order_fiscal_entity_address_request:
+    fiscal_entity_address:
       description: Address of the fiscal entity
       properties:
         street1:
@@ -19883,13 +19897,13 @@ components:
       - external_number
       - postal_code
       - street1
-      title: order_fiscal_entity_address_request
+      title: fiscal_entity_address
     order_fiscal_entity_request:
       description: "Fiscal entity of the order, Currently it is a purely informative\
         \ field"
       properties:
         address:
-          $ref: "#/components/schemas/order_fiscal_entity_address_request"
+          $ref: "#/components/schemas/fiscal_entity_address"
         email:
           description: Email of the fiscal entity
           example: test@gmail.com
@@ -20121,7 +20135,7 @@ components:
         \ field"
       properties:
         address:
-          $ref: "#/components/schemas/order_fiscal_entity_address_request"
+          $ref: "#/components/schemas/fiscal_entity_address"
         email:
           description: Email of the fiscal entity
           example: test@gmail.com
@@ -20758,13 +20772,13 @@ components:
               $ref: "#/components/schemas/checkout_response"
             type: array
       title: checkouts_response
-    checkout_request_order_template_customer_info:
+    checkout_order_template_customer_info:
       description: It is the information of the customer who will be created when
         receiving a new payment.
       oneOf:
       - $ref: "#/components/schemas/customer_info"
       - $ref: "#/components/schemas/customer_info_customer_id"
-    checkout_request_order_template:
+    checkout_order_template:
       description: It maintains the attributes with which the order will be created
         when receiving a new payment.
       properties:
@@ -20775,7 +20789,7 @@ components:
           maxLength: 3
           type: string
         customer_info:
-          $ref: "#/components/schemas/checkout_request_order_template_customer_info"
+          $ref: "#/components/schemas/checkout_order_template_customer_info"
         line_items:
           description: They are the products to buy. Each contains the "unit price"
             and "quantity" parameters that are used to calculate the total amount
@@ -20795,7 +20809,7 @@ components:
       required:
       - currency
       - line_items
-    checkout_request:
+    checkout:
       description: It is a sub-resource of the Order model that can be stipulated
         in order to configure its corresponding checkout
       properties:
@@ -20876,7 +20890,7 @@ components:
             type: string
           type: array
         order_template:
-          $ref: "#/components/schemas/checkout_request_order_template"
+          $ref: "#/components/schemas/checkout_order_template"
         payments_limit_count:
           description: It is the number of payments that can be made through the link.
           example: 5
@@ -20898,7 +20912,7 @@ components:
       - order_template
       - recurrent
       - type
-      title: checkout_request
+      title: checkout
     emailCheckout_request:
       properties:
         email:

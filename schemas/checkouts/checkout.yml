@@ -1,4 +1,4 @@
-title: checkout_request
+title: checkout
 description: "It is a sub-resource of the Order model that can be stipulated in order to configure its corresponding checkout"
 type: object
 required:

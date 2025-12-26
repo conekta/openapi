@@ -1,4 +1,4 @@
-title: charges_response
+title: charge_order_response
 type: object
 properties:
   amount: 

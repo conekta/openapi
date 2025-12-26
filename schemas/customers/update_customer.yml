@@ -1,4 +1,4 @@
-title: update customer request
+title: update_customer
 description: update customer
 type: object
 properties:
