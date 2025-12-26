@@ -1,4 +1,4 @@
-title: charges_data_response
+title: charge_response
 type: object
 required:
   - amount

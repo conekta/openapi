@@ -1392,7 +1392,7 @@ paths:
           content:
             application/vnd.conekta-v2.2.0+json:
               schema:
-                $ref: "#/components/schemas/charges_data_response"
+                $ref: "#/components/schemas/charge_response"
           description: successful
           headers:
             Date:
@@ -1556,7 +1556,7 @@ paths:
           content:
             application/vnd.conekta-v2.2.0+json:
               schema:
-                $ref: "#/components/schemas/charges_data_response_1"
+                $ref: "#/components/schemas/charges_data_response"
           description: successful
         "401":
           content:
@@ -16209,7 +16209,7 @@ components:
             $ref: "#/components/schemas/balance_common_fiels_response"
           type: array
       title: balance_response
-    charges_data_response_channel:
+    charge_response_channel:
       properties:
         segment:
           example: Checkout
@@ -16573,13 +16573,13 @@ components:
             type: array
       title: charge_response_refunds
       nullable: true
-    charges_data_response:
+    charge_response:
       properties:
         amount:
           example: 4321
           type: integer
         channel:
-          $ref: "#/components/schemas/charges_data_response_channel"
+          $ref: "#/components/schemas/charge_response_channel"
         created_at:
           example: 1676386026
           format: int64
@@ -16645,7 +16645,7 @@ components:
       - object
       - order_id
       - status
-      title: charges_data_response
+      title: charge_response
     get_charges_response:
       allOf:
       - description: pagination metadata
@@ -16678,7 +16678,7 @@ components:
       - properties:
           data:
             items:
-              $ref: "#/components/schemas/charges_data_response"
+              $ref: "#/components/schemas/charge_response"
             type: array
       title: get_charges_response
     charge_update_request:
@@ -16905,13 +16905,13 @@ components:
       - $ref: "#/components/schemas/charge_response_payment_method_oneOf_3"
       - $ref: "#/components/schemas/charge_response_payment_method_oneOf_4"
       title: charge_order_response_payment_method
-    charges_data_response_1:
+    charges_data_response:
       properties:
         amount:
           example: 4321
           type: integer
         channel:
-          $ref: "#/components/schemas/charges_data_response_channel"
+          $ref: "#/components/schemas/charge_response_channel"
         created_at:
           example: 1676386026
           format: int64
@@ -16974,7 +16974,7 @@ components:
             example: 4321
             type: integer
           channel:
-            $ref: "#/components/schemas/charges_data_response_channel"
+            $ref: "#/components/schemas/charge_response_channel"
           created_at:
             example: 1676386026
             format: int64
@@ -17040,7 +17040,7 @@ components:
         - object
         - order_id
         - status
-        title: charges_data_response
+        title: charge_response
     ordersCreateCharges_200_response:
       allOf:
       - description: pagination metadata
@@ -18957,14 +18957,14 @@ components:
           example: channel_2tNDzhA4Akmzj11AU
           type: string
       title: order_channel_response
-    charges_data_response_2:
+    charges_data_response_1:
       allOf:
       - properties:
           amount:
             example: 4321
             type: integer
           channel:
-            $ref: "#/components/schemas/charges_data_response_channel"
+            $ref: "#/components/schemas/charge_response_channel"
           created_at:
             example: 1676386026
             format: int64
@@ -19030,7 +19030,7 @@ components:
         - object
         - order_id
         - status
-        title: charges_data_response
+        title: charge_response
       title: charges_data_response
     order_charges_response:
       allOf:
@@ -19051,7 +19051,7 @@ components:
       - properties:
           data:
             items:
-              $ref: "#/components/schemas/charges_data_response_2"
+              $ref: "#/components/schemas/charges_data_response_1"
             type: array
       description: The charges associated with the order
       title: order_charges_response
