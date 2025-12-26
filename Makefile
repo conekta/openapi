@@ -1,6 +1,6 @@
 merge:
 	docker run --rm \
-	-v ${PWD}:/local openapitools/openapi-generator-cli:v7.13.0 generate \
+	-v ${PWD}:/local openapitools/openapi-generator-cli:v7.18.0 generate \
 	-g openapi-yaml \
 	-i /local/api.yaml \
 	-p outputFile=local/_build/api.yaml \
