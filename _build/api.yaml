@@ -16413,6 +16413,10 @@ components:
         - object
       - description: use for bnpl payment responses
         properties:
+          object:
+            enum:
+            - bnpl_payment
+            type: string
           cancel_url:
             description: URL to redirect the customer after a canceled payment
             example: https://example.com/cancel

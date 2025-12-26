@@ -8,6 +8,9 @@ payment_method_bnpl_payment:
           - product_type
           - expires_at
       properties:
+        object:
+          type: string
+          enum: [bnpl_payment]   # o const: bnpl_payment
         cancel_url:
           type: string
           description: "URL to redirect the customer after a canceled payment"
