@@ -4682,7 +4682,7 @@ paths:
           content:
             application/vnd.conekta-v2.2.0+json:
               schema:
-                $ref: "#/components/schemas/log_response_for_request"
+                $ref: "#/components/schemas/logs_response_for_request"
           description: successful
           headers:
             Date:
@@ -4803,7 +4803,7 @@ paths:
           content:
             application/vnd.conekta-v2.2.0+json:
               schema:
-                $ref: "#/components/schemas/log_response_for_request_1"
+                $ref: "#/components/schemas/log_response_for_request"
           description: successful
         "401":
           content:
@@ -18808,7 +18808,7 @@ components:
           example: 2.2.0
           type: string
       title: logs_response_data
-    log_response_for_request:
+    logs_response_for_request:
       description: logs model
       properties:
         has_more:
@@ -18833,8 +18833,8 @@ components:
             $ref: "#/components/schemas/logs_response_data"
           type: array
           nullable: true
-      title: log response for request
-    log_response_for_request_1:
+      title: logs_response_for_request
+    log_response_for_request:
       description: log model
       properties:
         created_at:
@@ -18956,7 +18956,7 @@ components:
       - created_at
       - id
       - livemode
-      title: log response for request
+      title: log_response_for_request
     order_channel_response:
       properties:
         segment:
