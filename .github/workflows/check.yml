@@ -13,7 +13,7 @@ jobs:
 
       # Checkout your code
       - name: Checkout
-        uses: actions/checkout@v2
+        uses: actions/checkout@v6
 
       # Generate your OpenAPI document (if you don't write it manually)
 
@@ -24,7 +24,7 @@ jobs:
         with:
           generator: openapi-yaml
           openapi-file: api.yaml
-          generator-tag: v7.13.0
+          generator-tag: v7.18.0
       - name: check if api.yaml are equals
         run: |
           if diff -q _build/api.yaml openapi-yaml-client/openapi/openapi.yaml >/dev/null; then
