@@ -16911,6 +16911,7 @@ components:
       - $ref: "#/components/schemas/payment_method_bnpl_payment"
       - $ref: "#/components/schemas/payment_method_pbb_payment"
       title: charge_order_response_payment_method
+      propertyName: object
     charges_response:
       properties:
         amount:
