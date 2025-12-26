@@ -1548,7 +1548,7 @@ paths:
                     product_type: bbva_pay_by_bank
                     type: pay_by_bank
             schema:
-              $ref: "#/components/schemas/charges"
+              $ref: "#/components/schemas/charge_request"
         description: requested field for a charge
         required: true
       responses:
@@ -1694,7 +1694,7 @@ paths:
                     product_type: bbva_pay_by_bank
                     type: pay_by_bank
             schema:
-              $ref: "#/components/schemas/charges"
+              $ref: "#/components/schemas/charge_request"
         description: requested field for a charge
         required: true
       responses:
@@ -16868,7 +16868,7 @@ components:
       - $ref: "#/components/schemas/payment_method_card_request"
       - $ref: "#/components/schemas/payment_method_general_request"
       title: charge_request_payment_method
-    charges:
+    charge_request:
       description: The charges to be made
       properties:
         amount:
@@ -16883,7 +16883,7 @@ components:
           type: string
       required:
       - payment_method
-      title: charges
+      title: charge_request
     charge_order_response_payment_method:
       discriminator:
         mapping:
@@ -20003,7 +20003,7 @@ components:
           description: "List of [charges](https://developers.conekta.com/v2.2.0/reference/orderscreatecharge)\
             \ that are applied to the order"
           items:
-            $ref: "#/components/schemas/charges"
+            $ref: "#/components/schemas/charge_request"
           type: array
         checkout:
           $ref: "#/components/schemas/order_checkout_request"
@@ -20119,7 +20119,7 @@ components:
       properties:
         charges:
           items:
-            $ref: "#/components/schemas/charges"
+            $ref: "#/components/schemas/charge_request"
           type: array
         checkout:
           $ref: "#/components/schemas/order_checkout_request"
