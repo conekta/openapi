@@ -1,5 +1,6 @@
 payment_method_bank_transfer:
   title: payment_method_bank_transfer
+  x-discriminator-value: bank_transfer_payment
   allOf:
     - $ref: charge_payment_method_response.yml#/payment_method
     - type: object

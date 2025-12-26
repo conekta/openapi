@@ -16404,6 +16404,7 @@ components:
             type: string
         title: charge_data_payment_method_bank_transfer_response
       title: payment_method_bank_transfer
+      x-discriminator-value: bank_transfer_payment
     payment_method_bnpl_payment:
       allOf:
       - properties:
