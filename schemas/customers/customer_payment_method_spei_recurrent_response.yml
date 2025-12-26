@@ -1,4 +1,6 @@
 payment_method_spei_recurrent:
+  title: payment_method_spei_recurrent
+  x-discriminator-value: spei_recurrent
   allOf:
     - $ref: customer_payment_method_response.yml#/payment_method_response
     - type: object
