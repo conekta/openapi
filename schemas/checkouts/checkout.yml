@@ -103,7 +103,7 @@ properties:
         items:
           $ref: ../../schemas/orders/order_tax_request.yml
       discount_lines:
-        description: "List of [discounts](https://developers.conekta.com/v2.2.0/reference/orderscreatediscountline) that are applied to the order. You must have at least one discount."
+        description: "List of [discounts](https://developers.conekta.com/v2.2.0/reference/orderscreatediscountline) that are applied to the order."
         type: array
         items:
           $ref: ../../schemas/orders/order_discount_lines_request.yml

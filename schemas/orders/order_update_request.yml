@@ -19,7 +19,7 @@ properties:
       - $ref: ../customers/customer_info.yml
       - $ref: ../customers/customer_info_just_customer_id.yml
   discount_lines:
-    description: "List of [discounts](https://developers.conekta.com/v2.2.0/reference/orderscreatediscountline) that are applied to the order. You must have at least one discount."
+    description: "List of [discounts](https://developers.conekta.com/v2.2.0/reference/orderscreatediscountline) that are applied to the order."
     type: array
     items:
       $ref: order_discount_lines_request.yml

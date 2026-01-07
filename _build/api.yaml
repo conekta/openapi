@@ -20080,7 +20080,7 @@ components:
           $ref: "#/components/schemas/a_order_customer_info"
         discount_lines:
           description: "List of [discounts](https://developers.conekta.com/v2.2.0/reference/orderscreatediscountline)\
-            \ that are applied to the order. You must have at least one discount."
+            \ that are applied to the order."
           items:
             $ref: "#/components/schemas/order_discount_lines_request"
           type: array
@@ -20196,7 +20196,7 @@ components:
           $ref: "#/components/schemas/order_update_customer_info"
         discount_lines:
           description: "List of [discounts](https://developers.conekta.com/v2.2.0/reference/orderscreatediscountline)\
-            \ that are applied to the order. You must have at least one discount."
+            \ that are applied to the order."
           items:
             $ref: "#/components/schemas/order_discount_lines_request"
           type: array
@@ -20818,7 +20818,7 @@ components:
           type: array
         discount_lines:
           description: "List of [discounts](https://developers.conekta.com/v2.2.0/reference/orderscreatediscountline)\
-            \ that are applied to the order. You must have at least one discount."
+            \ that are applied to the order."
           items:
             $ref: "#/components/schemas/order_discount_lines_request"
           type: array
