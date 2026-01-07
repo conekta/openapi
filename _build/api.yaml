@@ -19265,6 +19265,67 @@ components:
               $ref: "#/components/schemas/discount_lines_data_response"
             type: array
       title: order_discount_lines_response
+    tax_lines_data_response:
+      allOf:
+      - allOf:
+        - description: create new taxes for an existing order
+          properties:
+            amount:
+              description: The amount to be collected for tax in cents
+              example: 100
+              format: int64
+              minimum: 0
+              type: integer
+            description:
+              description: description or tax's name
+              example: testing
+              minLength: 2
+              type: string
+            metadata:
+              additionalProperties: true
+              example:
+                key: value
+              maxProperties: 100
+              type: object
+          required:
+          - amount
+          - description
+        - properties:
+            id:
+              example: tax_lin_2tQ8dC5mg1UADmVPo
+              type: string
+            object:
+              example: tax_line
+              type: string
+            parent_id:
+              example: ord_2tPAmKCEJqh8RE6nY
+              type: string
+        description: create new taxes for an existing order response
+        required:
+        - id
+      title: tax_lines_data_response
+    order_tax_lines_response:
+      allOf:
+      - description: pagination metadata
+        properties:
+          has_more:
+            description: Indicates if there are more pages to be requested
+            example: false
+            type: boolean
+          object:
+            description: "Object type, in this case is list"
+            example: list
+            type: string
+        required:
+        - has_more
+        - object
+        title: pagination metadata
+      - properties:
+          data:
+            items:
+              $ref: "#/components/schemas/tax_lines_data_response"
+            type: array
+      title: order_tax_lines_response
     order_fiscal_entity_address_response:
       allOf:
       - description: Address of the fiscal entity
@@ -19600,6 +19661,8 @@ components:
           $ref: "#/components/schemas/order_response_customer_info"
         discount_lines:
           $ref: "#/components/schemas/order_discount_lines_response"
+        tax_lines:
+          $ref: "#/components/schemas/order_tax_lines_response"
         fiscal_entity:
           $ref: "#/components/schemas/order_fiscal_entity_response"
         id:
@@ -20747,6 +20810,18 @@ components:
             key: value
           maxProperties: 100
           type: object
+        tax_lines:
+          description: "List of [taxes](https://developers.conekta.com/v2.2.0/reference/orderscreatetaxes)\
+            \ that are applied to the order."
+          items:
+            $ref: "#/components/schemas/a_order_tax_lines_inner"
+          type: array
+        discount_lines:
+          description: "List of [discounts](https://developers.conekta.com/v2.2.0/reference/orderscreatediscountline)\
+            \ that are applied to the order. You must have at least one discount."
+          items:
+            $ref: "#/components/schemas/order_discount_lines_request"
+          type: array
       required:
       - currency
       - line_items
