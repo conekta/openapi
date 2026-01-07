@@ -1,3 +1,4 @@
+title: order_tax_request
 description: "create new taxes for an existing order"
 type: object
 required:

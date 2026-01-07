@@ -13398,7 +13398,7 @@ paths:
         content:
           application/json:
             schema:
-              $ref: "#/components/schemas/a_order_tax_lines_inner"
+              $ref: "#/components/schemas/order_tax_request"
         description: requested field for a taxes
         required: true
       responses:
@@ -19290,6 +19290,7 @@ components:
           required:
           - amount
           - description
+          title: order_tax_request
         - properties:
             id:
               example: tax_lin_2tQ8dC5mg1UADmVPo
@@ -20036,7 +20037,7 @@ components:
       required:
       - amount
       title: shipping_request
-    a_order_tax_lines_inner:
+    order_tax_request:
       description: create new taxes for an existing order
       properties:
         amount:
@@ -20059,6 +20060,7 @@ components:
       required:
       - amount
       - description
+      title: order_tax_request
     a_order:
       description: a order
       properties:
@@ -20128,7 +20130,7 @@ components:
           description: "List of [taxes](https://developers.conekta.com/v2.2.0/reference/orderscreatetaxes)\
             \ that are applied to the order."
           items:
-            $ref: "#/components/schemas/a_order_tax_lines_inner"
+            $ref: "#/components/schemas/order_tax_request"
           type: array
         three_ds_mode:
           description: "Indicates the 3DS2 mode for the order, either smart or strict.\
@@ -20225,7 +20227,7 @@ components:
           type: array
         tax_lines:
           items:
-            $ref: "#/components/schemas/a_order_tax_lines_inner"
+            $ref: "#/components/schemas/order_tax_request"
           type: array
       title: order_update
     order_capture_request:
@@ -20814,7 +20816,7 @@ components:
           description: "List of [taxes](https://developers.conekta.com/v2.2.0/reference/orderscreatetaxes)\
             \ that are applied to the order."
           items:
-            $ref: "#/components/schemas/a_order_tax_lines_inner"
+            $ref: "#/components/schemas/order_tax_request"
           type: array
         discount_lines:
           description: "List of [discounts](https://developers.conekta.com/v2.2.0/reference/orderscreatediscountline)\
@@ -21723,6 +21725,7 @@ components:
         required:
         - amount
         - description
+        title: order_tax_request
       - properties:
           id:
             example: tax_lin_2tQ8dC5mg1UADmVPo
