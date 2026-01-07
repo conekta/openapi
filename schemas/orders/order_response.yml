@@ -173,6 +173,18 @@ properties:
               title: discount_lines_data_response
               allOf:
                 - $ref: ../../schemas/orders/discount_lines_response.yml
+  tax_lines:
+    title: order_tax_lines_response
+    allOf:
+      - $ref: ../pagination/pagination.yml
+      - type: object
+        properties:
+          data:
+            type: array
+            items:
+              title: tax_lines_data_response
+              allOf:
+                - $ref: ../../schemas/orders/update_order_tax_response.yml
   fiscal_entity:
     type: object
     title: order_fiscal_entity_response
