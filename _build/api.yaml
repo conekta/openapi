@@ -13406,7 +13406,7 @@ paths:
           content:
             application/vnd.conekta-v2.2.0+json:
               schema:
-                $ref: "#/components/schemas/ordersCreateTaxes_200_response"
+                $ref: "#/components/schemas/order_tax_response"
           description: successful
         "401":
           content:
@@ -13517,7 +13517,7 @@ paths:
           content:
             application/vnd.conekta-v2.2.0+json:
               schema:
-                $ref: "#/components/schemas/ordersCreateTaxes_200_response"
+                $ref: "#/components/schemas/order_tax_response"
           description: successful
         "401":
           content:
@@ -13649,7 +13649,7 @@ paths:
           content:
             application/vnd.conekta-v2.2.0+json:
               schema:
-                $ref: "#/components/schemas/ordersCreateTaxes_200_response"
+                $ref: "#/components/schemas/order_tax_response"
           description: successful
         "401":
           content:
@@ -19198,135 +19198,45 @@ components:
             example: cus_23874283647
             type: string
         title: customer_info_response
-    discount_lines_data_response:
+    order_tax_response:
       allOf:
-      - allOf:
-        - description: List of discounts that apply to the order.
-          properties:
-            amount:
-              description: "The amount to be deducted from the total sum of all payments,\
-                \ in cents."
-              example: 500
-              format: int64
-              minimum: 0
-              type: integer
-            code:
-              description: Discount code.
-              example: "123"
-              type: string
-            type:
-              description: "It can be 'loyalty', 'campaign', 'coupon' o 'sign'"
-              example: loyalty
-              type: string
-          required:
-          - amount
-          - code
-          - type
-          title: order_discount_lines_request
-          name: order_discount_lines_request
-        - properties:
-            id:
-              description: The discount line id
-              example: dis_lin_2tQQ58HPgPw7StE8z
-              type: string
-            object:
-              description: The object name
-              example: discount_line
-              type: string
-            parent_id:
-              description: The order id
-              example: ord_2tPAmKCEJqh8RE6nY
-              type: string
-          required:
-          - id
-          - object
-          - parent_id
-        title: discount_lines_order_response
-      title: discount_lines_data_response
-    order_discount_lines_response:
-      allOf:
-      - description: pagination metadata
+      - description: create new taxes for an existing order
         properties:
-          has_more:
-            description: Indicates if there are more pages to be requested
-            example: false
-            type: boolean
-          object:
-            description: "Object type, in this case is list"
-            example: list
+          amount:
+            description: The amount to be collected for tax in cents
+            example: 100
+            format: int64
+            minimum: 0
+            type: integer
+          description:
+            description: description or tax's name
+            example: testing
+            minLength: 2
             type: string
+          metadata:
+            additionalProperties: true
+            example:
+              key: value
+            maxProperties: 100
+            type: object
         required:
-        - has_more
-        - object
-        title: pagination metadata
+        - amount
+        - description
+        title: order_tax_request
       - properties:
-          data:
-            items:
-              $ref: "#/components/schemas/discount_lines_data_response"
-            type: array
-      title: order_discount_lines_response
-    tax_lines_data_response:
-      allOf:
-      - allOf:
-        - description: create new taxes for an existing order
-          properties:
-            amount:
-              description: The amount to be collected for tax in cents
-              example: 100
-              format: int64
-              minimum: 0
-              type: integer
-            description:
-              description: description or tax's name
-              example: testing
-              minLength: 2
-              type: string
-            metadata:
-              additionalProperties: true
-              example:
-                key: value
-              maxProperties: 100
-              type: object
-          required:
-          - amount
-          - description
-          title: order_tax_request
-        - properties:
-            id:
-              example: tax_lin_2tQ8dC5mg1UADmVPo
-              type: string
-            object:
-              example: tax_line
-              type: string
-            parent_id:
-              example: ord_2tPAmKCEJqh8RE6nY
-              type: string
-        description: create new taxes for an existing order response
-        required:
-        - id
-      title: tax_lines_data_response
-    order_tax_lines_response:
-      allOf:
-      - description: pagination metadata
-        properties:
-          has_more:
-            description: Indicates if there are more pages to be requested
-            example: false
-            type: boolean
-          object:
-            description: "Object type, in this case is list"
-            example: list
+          id:
+            example: tax_lin_2tQ8dC5mg1UADmVPo
             type: string
-        required:
-        - has_more
-        - object
-        title: pagination metadata
-      - properties:
-          data:
-            items:
-              $ref: "#/components/schemas/tax_lines_data_response"
-            type: array
-      title: order_tax_lines_response
+          object:
+            example: tax_line
+            type: string
+          parent_id:
+            example: ord_2tPAmKCEJqh8RE6nY
+            type: string
+      description: create new taxes for an existing order response
+      required:
+      - id
+      title: order_tax_response
     order_fiscal_entity_address_response:
       allOf:
       - description: Address of the fiscal entity
@@ -19661,9 +19571,15 @@ components:
         customer_info:
           $ref: "#/components/schemas/order_response_customer_info"
         discount_lines:
-          $ref: "#/components/schemas/order_discount_lines_response"
+          description: List of discounts that are applied to the order
+          items:
+            $ref: "#/components/schemas/discount_lines_order_response"
+          type: array
         tax_lines:
-          $ref: "#/components/schemas/order_tax_lines_response"
+          description: List of taxes that are applied to the order
+          items:
+            $ref: "#/components/schemas/order_tax_response"
+          type: array
         fiscal_entity:
           $ref: "#/components/schemas/order_fiscal_entity_response"
         id:
@@ -21701,44 +21617,6 @@ components:
           format: uri
           type: string
       title: customer_portal_response
-    ordersCreateTaxes_200_response:
-      allOf:
-      - description: create new taxes for an existing order
-        properties:
-          amount:
-            description: The amount to be collected for tax in cents
-            example: 100
-            format: int64
-            minimum: 0
-            type: integer
-          description:
-            description: description or tax's name
-            example: testing
-            minLength: 2
-            type: string
-          metadata:
-            additionalProperties: true
-            example:
-              key: value
-            maxProperties: 100
-            type: object
-        required:
-        - amount
-        - description
-        title: order_tax_request
-      - properties:
-          id:
-            example: tax_lin_2tQ8dC5mg1UADmVPo
-            type: string
-          object:
-            example: tax_line
-            type: string
-          parent_id:
-            example: ord_2tPAmKCEJqh8RE6nY
-            type: string
-      description: create new taxes for an existing order response
-      required:
-      - id
     ordersUpdateTaxes_request:
       description: create new taxes for an existing order
       properties:
