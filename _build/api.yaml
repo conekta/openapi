@@ -13398,7 +13398,7 @@ paths:
         content:
           application/json:
             schema:
-              $ref: "#/components/schemas/a_order_tax_lines_inner"
+              $ref: "#/components/schemas/order_tax_request"
         description: requested field for a taxes
         required: true
       responses:
@@ -13406,7 +13406,7 @@ paths:
           content:
             application/vnd.conekta-v2.2.0+json:
               schema:
-                $ref: "#/components/schemas/ordersCreateTaxes_200_response"
+                $ref: "#/components/schemas/order_tax_response"
           description: successful
         "401":
           content:
@@ -13517,7 +13517,7 @@ paths:
           content:
             application/vnd.conekta-v2.2.0+json:
               schema:
-                $ref: "#/components/schemas/ordersCreateTaxes_200_response"
+                $ref: "#/components/schemas/order_tax_response"
           description: successful
         "401":
           content:
@@ -13649,7 +13649,7 @@ paths:
           content:
             application/vnd.conekta-v2.2.0+json:
               schema:
-                $ref: "#/components/schemas/ordersCreateTaxes_200_response"
+                $ref: "#/components/schemas/order_tax_response"
           description: successful
         "401":
           content:
@@ -19198,73 +19198,45 @@ components:
             example: cus_23874283647
             type: string
         title: customer_info_response
-    discount_lines_data_response:
+    order_tax_response:
       allOf:
-      - allOf:
-        - description: List of discounts that apply to the order.
-          properties:
-            amount:
-              description: "The amount to be deducted from the total sum of all payments,\
-                \ in cents."
-              example: 500
-              format: int64
-              minimum: 0
-              type: integer
-            code:
-              description: Discount code.
-              example: "123"
-              type: string
-            type:
-              description: "It can be 'loyalty', 'campaign', 'coupon' o 'sign'"
-              example: loyalty
-              type: string
-          required:
-          - amount
-          - code
-          - type
-          title: order_discount_lines_request
-          name: order_discount_lines_request
-        - properties:
-            id:
-              description: The discount line id
-              example: dis_lin_2tQQ58HPgPw7StE8z
-              type: string
-            object:
-              description: The object name
-              example: discount_line
-              type: string
-            parent_id:
-              description: The order id
-              example: ord_2tPAmKCEJqh8RE6nY
-              type: string
-          required:
-          - id
-          - object
-          - parent_id
-        title: discount_lines_order_response
-      title: discount_lines_data_response
-    order_discount_lines_response:
-      allOf:
-      - description: pagination metadata
+      - description: create new taxes for an existing order
         properties:
-          has_more:
-            description: Indicates if there are more pages to be requested
-            example: false
-            type: boolean
-          object:
-            description: "Object type, in this case is list"
-            example: list
+          amount:
+            description: The amount to be collected for tax in cents
+            example: 100
+            format: int64
+            minimum: 0
+            type: integer
+          description:
+            description: description or tax's name
+            example: testing
+            minLength: 2
             type: string
+          metadata:
+            additionalProperties: true
+            example:
+              key: value
+            maxProperties: 100
+            type: object
         required:
-        - has_more
-        - object
-        title: pagination metadata
+        - amount
+        - description
+        title: order_tax_request
       - properties:
-          data:
-            items:
-              $ref: "#/components/schemas/discount_lines_data_response"
-            type: array
-      title: order_discount_lines_response
+          id:
+            example: tax_lin_2tQ8dC5mg1UADmVPo
+            type: string
+          object:
+            example: tax_line
+            type: string
+          parent_id:
+            example: ord_2tPAmKCEJqh8RE6nY
+            type: string
+      description: create new taxes for an existing order response
+      required:
+      - id
+      title: order_tax_response
     order_fiscal_entity_address_response:
       allOf:
       - description: Address of the fiscal entity
@@ -19599,7 +19571,15 @@ components:
         customer_info:
           $ref: "#/components/schemas/order_response_customer_info"
         discount_lines:
-          $ref: "#/components/schemas/order_discount_lines_response"
+          description: List of discounts that are applied to the order
+          items:
+            $ref: "#/components/schemas/discount_lines_order_response"
+          type: array
+        tax_lines:
+          description: List of taxes that are applied to the order
+          items:
+            $ref: "#/components/schemas/order_tax_response"
+          type: array
         fiscal_entity:
           $ref: "#/components/schemas/order_fiscal_entity_response"
         id:
@@ -19973,7 +19953,7 @@ components:
       required:
       - amount
       title: shipping_request
-    a_order_tax_lines_inner:
+    order_tax_request:
       description: create new taxes for an existing order
       properties:
         amount:
@@ -19996,6 +19976,7 @@ components:
       required:
       - amount
       - description
+      title: order_tax_request
     a_order:
       description: a order
       properties:
@@ -20017,7 +19998,7 @@ components:
           $ref: "#/components/schemas/a_order_customer_info"
         discount_lines:
           description: "List of [discounts](https://developers.conekta.com/v2.2.0/reference/orderscreatediscountline)\
-            \ that are applied to the order. You must have at least one discount."
+            \ that are applied to the order."
           items:
             $ref: "#/components/schemas/order_discount_lines_request"
           type: array
@@ -20065,7 +20046,7 @@ components:
           description: "List of [taxes](https://developers.conekta.com/v2.2.0/reference/orderscreatetaxes)\
             \ that are applied to the order."
           items:
-            $ref: "#/components/schemas/a_order_tax_lines_inner"
+            $ref: "#/components/schemas/order_tax_request"
           type: array
         three_ds_mode:
           description: "Indicates the 3DS2 mode for the order, either smart or strict.\
@@ -20133,7 +20114,7 @@ components:
           $ref: "#/components/schemas/order_update_customer_info"
         discount_lines:
           description: "List of [discounts](https://developers.conekta.com/v2.2.0/reference/orderscreatediscountline)\
-            \ that are applied to the order. You must have at least one discount."
+            \ that are applied to the order."
           items:
             $ref: "#/components/schemas/order_discount_lines_request"
           type: array
@@ -20162,7 +20143,7 @@ components:
           type: array
         tax_lines:
           items:
-            $ref: "#/components/schemas/a_order_tax_lines_inner"
+            $ref: "#/components/schemas/order_tax_request"
           type: array
       title: order_update
     order_capture_request:
@@ -20747,6 +20728,18 @@ components:
             key: value
           maxProperties: 100
           type: object
+        tax_lines:
+          description: "List of [taxes](https://developers.conekta.com/v2.2.0/reference/orderscreatetaxes)\
+            \ that are applied to the order."
+          items:
+            $ref: "#/components/schemas/order_tax_request"
+          type: array
+        discount_lines:
+          description: "List of [discounts](https://developers.conekta.com/v2.2.0/reference/orderscreatediscountline)\
+            \ that are applied to the order."
+          items:
+            $ref: "#/components/schemas/order_discount_lines_request"
+          type: array
       required:
       - currency
       - line_items
@@ -21624,43 +21617,6 @@ components:
           format: uri
           type: string
       title: customer_portal_response
-    ordersCreateTaxes_200_response:
-      allOf:
-      - description: create new taxes for an existing order
-        properties:
-          amount:
-            description: The amount to be collected for tax in cents
-            example: 100
-            format: int64
-            minimum: 0
-            type: integer
-          description:
-            description: description or tax's name
-            example: testing
-            minLength: 2
-            type: string
-          metadata:
-            additionalProperties: true
-            example:
-              key: value
-            maxProperties: 100
-            type: object
-        required:
-        - amount
-        - description
-      - properties:
-          id:
-            example: tax_lin_2tQ8dC5mg1UADmVPo
-            type: string
-          object:
-            example: tax_line
-            type: string
-          parent_id:
-            example: ord_2tPAmKCEJqh8RE6nY
-            type: string
-      description: create new taxes for an existing order response
-      required:
-      - id
     ordersUpdateTaxes_request:
       description: create new taxes for an existing order
       properties:

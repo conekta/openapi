@@ -162,17 +162,17 @@ properties:
       - $ref: order_customer_info_response.yml
       - $ref: ../customers/customer_info_just_customer_id_response.yml
   discount_lines:
+    type: array
     title: order_discount_lines_response
-    allOf:
-      - $ref: ../pagination/pagination.yml
-      - type: object
-        properties:
-          data:
-            type: array
-            items:
-              title: discount_lines_data_response
-              allOf:
-                - $ref: ../../schemas/orders/discount_lines_response.yml
+    description: "List of discounts that are applied to the order"
+    items:
+      $ref: ../../schemas/orders/discount_lines_response.yml
+  tax_lines:
+    type: array
+    title: order_tax_lines_response
+    description: "List of taxes that are applied to the order"
+    items:
+      $ref: ../../schemas/orders/update_order_tax_response.yml
   fiscal_entity:
     type: object
     title: order_fiscal_entity_response

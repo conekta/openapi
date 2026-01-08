@@ -97,6 +97,16 @@ properties:
         example: { "key": "value" }
         maxProperties: 100
         description: "It is a set of key-value pairs that you can attach to the order. It can be used to store additional information about the order in a structured format."
+      tax_lines:
+        description: "List of [taxes](https://developers.conekta.com/v2.2.0/reference/orderscreatetaxes) that are applied to the order."
+        type: array
+        items:
+          $ref: ../../schemas/orders/order_tax_request.yml
+      discount_lines:
+        description: "List of [discounts](https://developers.conekta.com/v2.2.0/reference/orderscreatediscountline) that are applied to the order."
+        type: array
+        items:
+          $ref: ../../schemas/orders/order_discount_lines_request.yml
   payments_limit_count:
     type: integer
     format: int8
