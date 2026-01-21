@@ -13721,7 +13721,7 @@ paths:
   /tokens:
     post:
       description: |
-        Generate a payment token, to associate it with a card
+        Generate a payment token, to associate it with a card, Endpoint could be use directly only for PCI compliance account
       operationId: createToken
       parameters:
       - description: Use for knowing which language to use
