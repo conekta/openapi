@@ -20644,6 +20644,7 @@ components:
           example: Issued
           type: string
         success_url:
+          description: The URL to redirect to after a successful payment.
           example: https://pay.conekta.com/success
           type: string
         type:
@@ -20829,7 +20830,12 @@ components:
           description: It is the number of payments that can be made through the link.
           example: 5
           format: int8
+          minimum: 1
           type: integer
+        success_url:
+          description: The URL to redirect to after a successful payment.
+          example: https://www.conekta.com/success
+          type: string
         recurrent:
           description: "false: single use. true: multiple payments"
           example: false
