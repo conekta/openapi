@@ -111,7 +111,12 @@ properties:
     type: integer
     format: int8
     example: 5
+    minimum: 1
     description: "It is the number of payments that can be made through the link."
+  success_url:
+    type: string
+    example: "https://www.conekta.com/success"
+    description: "The URL to redirect to after a successful payment."
   recurrent:
     type: boolean
     example: false
