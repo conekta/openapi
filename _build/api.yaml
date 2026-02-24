@@ -19871,15 +19871,14 @@ components:
           format: uri
           type: string
         type:
-          description: "This field represents the type of checkout, which determines\
-            \ the user experience during the payment process. 'HostedPayment' will\
-            \ redirect the customer to a Conekta-hosted page to complete the payment,\
-            \ while 'Integration' allows the payment process to be handled entirely\
-            \ on your site using Conekta's APIs and SDKs."
+          description: "Required. This field represents the type of checkout, which\
+            \ determines the user experience during the payment process. 'HostedPayment'\
+            \ will redirect the customer to a Conekta-hosted page to complete the\
+            \ payment, while 'Integration' allows the payment process to be handled\
+            \ entirely on your site using Conekta's APIs and SDKs."
           enum:
           - Integration
           - HostedPayment
-          example: Integration
           type: string
       required:
       - allowed_payment_methods
@@ -20149,7 +20148,6 @@ components:
           example: false
           type: boolean
         pre_authorize:
-          default: false
           description: Indicates whether the order charges must be preauthorized
           type: boolean
         processing_mode:
@@ -20259,7 +20257,6 @@ components:
           additionalProperties:
             type: string
         pre_authorize:
-          default: false
           description: Indicates whether the order charges must be preauthorized
           type: boolean
         shipping_contact:

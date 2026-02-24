@@ -67,6 +67,5 @@ properties:
     example: "https://www.mysite.com/success"
   type:
     type: string
-    description: "This field represents the type of checkout, which determines the user experience during the payment process. 'HostedPayment' will redirect the customer to a Conekta-hosted page to complete the payment, while 'Integration' allows the payment process to be handled entirely on your site using Conekta's APIs and SDKs."
-    example: "Integration"
+    description: "Required. This field represents the type of checkout, which determines the user experience during the payment process. 'HostedPayment' will redirect the customer to a Conekta-hosted page to complete the payment, while 'Integration' allows the payment process to be handled entirely on your site using Conekta's APIs and SDKs."
     enum: ["Integration", "HostedPayment"]
