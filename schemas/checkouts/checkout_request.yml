@@ -3,7 +3,6 @@ description: |
   [Checkout](https://developers.conekta.com/v2.2.0/reference/payment-link) details
 required:
   - allowed_payment_methods
-  - type
 properties:
   allowed_payment_methods:
     type: array

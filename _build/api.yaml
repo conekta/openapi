@@ -19882,7 +19882,6 @@ components:
           type: string
       required:
       - allowed_payment_methods
-      - type
       title: order_checkout_request
     customer_info:
       properties:
