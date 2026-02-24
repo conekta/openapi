@@ -32,8 +32,8 @@ properties:
     description: "Unix timestamp of checkout expiration"
   failure_url:
     type: string
+    format: uri
     description: "Redirection url back to the site in case of failed payment, applies only to HostedPayment."
-    pattern: "^https?:\\/\\/[a-zA-Z0-9][a-zA-Z0-9-]*(\\.[a-zA-Z0-9][a-zA-Z0-9-]*)+(:[0-9]+)?(\\/.*)?$"
     example: "https://www.mysite.com/failure"
   monthly_installments_enabled:
     type: boolean
@@ -62,8 +62,8 @@ properties:
     example: 10
   success_url:
     type: string
+    format: uri
     description: "Redirection url back to the site in case of successful payment, applies only to HostedPayment"
-    pattern: "^https?:\\/\\/[a-zA-Z0-9][a-zA-Z0-9-]*(\\.[a-zA-Z0-9][a-zA-Z0-9-]*)+(:[0-9]+)?(\\/.*)?$"
     example: "https://www.mysite.com/success"
   type:
     type: string

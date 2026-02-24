@@ -19833,8 +19833,7 @@ components:
           description: "Redirection url back to the site in case of failed payment,\
             \ applies only to HostedPayment."
           example: https://www.mysite.com/failure
-          pattern: "^https?:\\/\\/[a-zA-Z0-9][a-zA-Z0-9-]*(\\.[a-zA-Z0-9][a-zA-Z0-9-]*)+(:[0-9]+)?(\\\
-            /.*)?$"
+          format: uri
           type: string
         monthly_installments_enabled:
           example: false
@@ -19869,8 +19868,7 @@ components:
           description: "Redirection url back to the site in case of successful payment,\
             \ applies only to HostedPayment"
           example: https://www.mysite.com/success
-          pattern: "^https?:\\/\\/[a-zA-Z0-9][a-zA-Z0-9-]*(\\.[a-zA-Z0-9][a-zA-Z0-9-]*)+(:[0-9]+)?(\\\
-            /.*)?$"
+          format: uri
           type: string
         type:
           description: "This field represents the type of checkout, which determines\
