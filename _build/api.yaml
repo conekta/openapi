@@ -19252,6 +19252,8 @@ components:
           example: 0
           type: integer
         success_url:
+          description: "Redirection url back to the site in case of successful payment,\
+            \ applies only to HostedPayment"
           example: http://187.216.228.66:2222/SysVentasPagos/Acceso.aspx
           type: string
         starts_at:
@@ -19261,11 +19263,24 @@ components:
           example: Issued
           type: string
         type:
+          description: "This field represents the type of checkout, which determines\
+            \ the user experience during the payment process. 'HostedPayment' will\
+            \ redirect the customer to a Conekta-hosted page to complete the payment,\
+            \ while 'Integration' allows the payment process to be handled entirely\
+            \ on your site using Conekta's APIs and SDKs."
           example: HostedPayment
           type: string
         url:
+          description: "Indicate the url of the Conekta component to complete the\
+            \ payment. For HostedPayment, this will be a Conekta-hosted page"
           example: https://pay.conekta.io/checkout/6fca054a85194c43971ecea35cc519bb
           type: string
+      required:
+      - allowed_payment_methods
+      - id
+      - name
+      - object
+      - type
     order_response_customer_info:
       allOf:
       - properties:
