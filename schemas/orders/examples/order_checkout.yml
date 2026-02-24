@@ -1,0 +1,101 @@
+value:
+  amount: 12000
+  amount_refunded: 0
+  charges: null
+  checkout:
+    allowed_payment_methods:
+      - "card"
+      - "bnpl"
+      - "cash"
+      - "pay_by_bank"
+      - "bank_transfer"
+      - "apple"
+    can_not_expire: false
+    emails_sent: 0
+    exclude_card_networks: []
+    expires_at: 1772171999
+    failure_url: "https://natalie.net"
+    force_3ds_flow: false
+    id: "1263626c-53ae-4829-b092-2e7393f2d1b7"
+    is_redirect_on_failure: true
+    livemode: true
+    max_failed_retries: null
+    metadata: {}
+    monthly_installments_enabled: false
+    monthly_installments_options: []
+    name: "Pago de Servicio"
+    needs_shipping_contact: false
+    object: "checkout"
+    paid_payments_count: 0
+    payments_limit_count: null
+    plan_id: null
+    recurrent: false
+    redirection_time: null
+    slug: "1263626c53ae4829b0922e7393f2d1b7"
+    sms_sent: 0
+    starts_at: 1771912800
+    status: "Issued"
+    success_url: "https://giovanna.info"
+    three_ds_mode: null
+    type: "HostedPayment"
+    url: "https://pay.conekta.com/checkout/1263626c53ae4829b0922e7393f2d1b7"
+  channel:
+    checkout_request_id: "1263626c-53ae-4829-b092-2e7393f2d1b7"
+    checkout_request_type: "HostedPayment"
+    id: "channel_2zbhetCd6CmpJeFsY"
+    original_checkout_request_id: null
+    original_checkout_request_type: null
+    segment: "Checkout"
+  created_at: 1771950546
+  currency: "MXN"
+  customer_info:
+    corporate: null
+    customer_id: null
+    date_of_birth: null
+    email: "xono.bernie@conekta.com"
+    name: "Juan Rosas"
+    national_id: null
+    object: "customer_info"
+    phone: "5531431590"
+  discount_lines: null
+  fiscal_entity: null
+  id: "ord_2zbhesToa1DAgNbP6"
+  is_refundable: false
+  line_items:
+    data:
+      - antifraud_info: {}
+        brand: "addidas"
+        description: null
+        id: "line_item_2zbhesToa1DAgNbP3"
+        metadata: {}
+        name: "Aretes Tres Círculos Numerales"
+        object: "line_item"
+        parent_id: "ord_2zbhesToa1DAgNbP6"
+        quantity: 1
+        sku: "COL094"
+        tags: null
+        type: null
+        unit_price: 10000
+    has_more: false
+    object: "list"
+    total: 1
+  livemode: true
+  metadata: {}
+  object: "order"
+  payment_status: null
+  processing_mode: null
+  shipping_contact: null
+  shipping_lines: null
+  split_payment: null
+  tax_lines:
+    data:
+      - amount: 2000
+        description: "test"
+        id: "tax_lin_2zbhesToa1DAgNbP4"
+        metadata: null
+        object: "tax_line"
+        parent_id: "ord_2zbhesToa1DAgNbP6"
+    has_more: false
+    object: "list"
+    total: 1
+  updated_at: 1771950546
