@@ -19852,11 +19852,19 @@ components:
             \ applies only to HostedPayment"
           type: string
         type:
-          description: This field represents the type of checkout
+          description: "This field represents the type of checkout, which determines\
+            \ the user experience during the payment process. 'HostedPayment' will\
+            \ redirect the customer to a Conekta-hosted page to complete the payment,\
+            \ while 'Integration' allows the payment process to be handled entirely\
+            \ on your site using Conekta's APIs and SDKs."
+          enum:
+          - Integration
+          - HostedPayment
           example: Integration
           type: string
       required:
       - allowed_payment_methods
+      - type
       title: order_checkout_request
     customer_info:
       properties:

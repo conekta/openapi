@@ -3,6 +3,7 @@ description: |
   [Checkout](https://developers.conekta.com/v2.2.0/reference/payment-link) details
 required:
   - allowed_payment_methods
+  - type
 properties:
   allowed_payment_methods:
     type: array
@@ -62,5 +63,6 @@ properties:
     description: "Redirection url back to the site in case of successful payment, applies only to HostedPayment"
   type:
     type: string
-    description: "This field represents the type of checkout"
+    description: "This field represents the type of checkout, which determines the user experience during the payment process. 'HostedPayment' will redirect the customer to a Conekta-hosted page to complete the payment, while 'Integration' allows the payment process to be handled entirely on your site using Conekta's APIs and SDKs."
     example: "Integration"
+    enum: ["Integration", "HostedPayment"]
