@@ -29,9 +29,11 @@ properties:
     type: integer
     format: int64
     description: "Unix timestamp of checkout expiration"
-  failure_url: 
+  failure_url:
     type: string
+    format: uri
     description: "Redirection url back to the site in case of failed payment, applies only to HostedPayment."
+    example: "https://www.mysite.com/failure"
   monthly_installments_enabled:
     type: boolean
     example: false
@@ -59,8 +61,10 @@ properties:
     example: 10
   success_url:
     type: string
+    format: uri
     description: "Redirection url back to the site in case of successful payment, applies only to HostedPayment"
+    example: "https://www.mysite.com/success"
   type:
     type: string
-    description: "This field represents the type of checkout"
-    example: "Integration"
+    description: "Required. This field represents the type of checkout, which determines the user experience during the payment process. 'HostedPayment' will redirect the customer to a Conekta-hosted page to complete the payment, while 'Integration' allows the payment process to be handled entirely on your site using Conekta's APIs and SDKs."
+    enum: ["Integration", "HostedPayment"]

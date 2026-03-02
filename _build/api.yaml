@@ -5857,6 +5857,108 @@ paths:
                     split_payment: false
                     tax_lines: null
                     updated_at: 1741015718
+                checkout:
+                  value:
+                    amount: 12000
+                    amount_refunded: 0
+                    charges: null
+                    checkout:
+                      allowed_payment_methods:
+                      - card
+                      - bnpl
+                      - cash
+                      - pay_by_bank
+                      - bank_transfer
+                      - apple
+                      can_not_expire: false
+                      emails_sent: 0
+                      exclude_card_networks: []
+                      expires_at: 1772171999
+                      failure_url: https://natalie.net
+                      force_3ds_flow: false
+                      id: 1263626c-53ae-4829-b092-2e7393f2d1b7
+                      is_redirect_on_failure: true
+                      livemode: true
+                      max_failed_retries: null
+                      metadata: {}
+                      monthly_installments_enabled: false
+                      monthly_installments_options: []
+                      name: Pago de Servicio
+                      needs_shipping_contact: false
+                      object: checkout
+                      paid_payments_count: 0
+                      payments_limit_count: null
+                      plan_id: null
+                      recurrent: false
+                      redirection_time: null
+                      slug: 1263626c53ae4829b0922e7393f2d1b7
+                      sms_sent: 0
+                      starts_at: 1771912800
+                      status: Issued
+                      success_url: https://giovanna.info
+                      three_ds_mode: null
+                      type: HostedPayment
+                      url: https://pay.conekta.com/checkout/1263626c53ae4829b0922e7393f2d1b7
+                    channel:
+                      checkout_request_id: 1263626c-53ae-4829-b092-2e7393f2d1b7
+                      checkout_request_type: HostedPayment
+                      id: channel_2zbhetCd6CmpJeFsY
+                      original_checkout_request_id: null
+                      original_checkout_request_type: null
+                      segment: Checkout
+                    created_at: 1771950546
+                    currency: MXN
+                    customer_info:
+                      corporate: null
+                      customer_id: null
+                      date_of_birth: null
+                      email: xono.bernie@conekta.com
+                      name: Juan Rosas
+                      national_id: null
+                      object: customer_info
+                      phone: "5531431590"
+                    discount_lines: null
+                    fiscal_entity: null
+                    id: ord_2zbhesToa1DAgNbP6
+                    is_refundable: false
+                    line_items:
+                      data:
+                      - antifraud_info: {}
+                        brand: addidas
+                        description: null
+                        id: line_item_2zbhesToa1DAgNbP3
+                        metadata: {}
+                        name: Aretes Tres Círculos Numerales
+                        object: line_item
+                        parent_id: ord_2zbhesToa1DAgNbP6
+                        quantity: 1
+                        sku: COL094
+                        tags: null
+                        type: null
+                        unit_price: 10000
+                      has_more: false
+                      object: list
+                      total: 1
+                    livemode: true
+                    metadata: {}
+                    object: order
+                    payment_status: null
+                    processing_mode: null
+                    shipping_contact: null
+                    shipping_lines: null
+                    split_payment: null
+                    tax_lines:
+                      data:
+                      - amount: 2000
+                        description: test
+                        id: tax_lin_2zbhesToa1DAgNbP4
+                        metadata: null
+                        object: tax_line
+                        parent_id: ord_2zbhesToa1DAgNbP6
+                      has_more: false
+                      object: list
+                      total: 1
+                    updated_at: 1771950546
               schema:
                 $ref: "#/components/schemas/order_response"
           description: successful operation
@@ -13398,7 +13500,7 @@ paths:
         content:
           application/json:
             schema:
-              $ref: "#/components/schemas/order_request_tax_lines_inner"
+              $ref: "#/components/schemas/order_tax_request"
         description: requested field for a taxes
         required: true
       responses:
@@ -13406,7 +13508,7 @@ paths:
           content:
             application/vnd.conekta-v2.2.0+json:
               schema:
-                $ref: "#/components/schemas/ordersCreateTaxes_200_response"
+                $ref: "#/components/schemas/order_tax_response"
           description: successful
         "401":
           content:
@@ -13517,7 +13619,7 @@ paths:
           content:
             application/vnd.conekta-v2.2.0+json:
               schema:
-                $ref: "#/components/schemas/ordersCreateTaxes_200_response"
+                $ref: "#/components/schemas/order_tax_response"
           description: successful
         "401":
           content:
@@ -13649,7 +13751,7 @@ paths:
           content:
             application/vnd.conekta-v2.2.0+json:
               schema:
-                $ref: "#/components/schemas/ordersCreateTaxes_200_response"
+                $ref: "#/components/schemas/order_tax_response"
           description: successful
         "401":
           content:
@@ -13721,7 +13823,7 @@ paths:
   /tokens:
     post:
       description: |
-        Generate a payment token, to associate it with a card
+        Generate a payment token, to associate it with a card, Endpoint could be use directly only for PCI compliance account
       operationId: createToken
       parameters:
       - description: Use for knowing which language to use
@@ -19198,6 +19300,8 @@ components:
           example: 0
           type: integer
         success_url:
+          description: "Redirection url back to the site in case of successful payment,\
+            \ applies only to HostedPayment"
           example: http://187.216.228.66:2222/SysVentasPagos/Acceso.aspx
           type: string
         starts_at:
@@ -19207,11 +19311,24 @@ components:
           example: Issued
           type: string
         type:
+          description: "This field represents the type of checkout, which determines\
+            \ the user experience during the payment process. 'HostedPayment' will\
+            \ redirect the customer to a Conekta-hosted page to complete the payment,\
+            \ while 'Integration' allows the payment process to be handled entirely\
+            \ on your site using Conekta's APIs and SDKs."
           example: HostedPayment
           type: string
         url:
+          description: "Indicate the url of the Conekta component to complete the\
+            \ payment. For HostedPayment, this will be a Conekta-hosted page"
           example: https://pay.conekta.io/checkout/6fca054a85194c43971ecea35cc519bb
           type: string
+      required:
+      - allowed_payment_methods
+      - id
+      - name
+      - object
+      - type
     order_response_customer_info:
       allOf:
       - properties:
@@ -19246,73 +19363,45 @@ components:
             example: cus_23874283647
             type: string
         title: customer_info_response
-    discount_lines_data_response:
+    order_tax_response:
       allOf:
-      - allOf:
-        - description: List of discounts that apply to the order.
-          properties:
-            amount:
-              description: "The amount to be deducted from the total sum of all payments,\
-                \ in cents."
-              example: 500
-              format: int64
-              minimum: 0
-              type: integer
-            code:
-              description: Discount code.
-              example: "123"
-              type: string
-            type:
-              description: "It can be 'loyalty', 'campaign', 'coupon' o 'sign'"
-              example: loyalty
-              type: string
-          required:
-          - amount
-          - code
-          - type
-          title: order_discount_lines_request
-          name: order_discount_lines_request
-        - properties:
-            id:
-              description: The discount line id
-              example: dis_lin_2tQQ58HPgPw7StE8z
-              type: string
-            object:
-              description: The object name
-              example: discount_line
-              type: string
-            parent_id:
-              description: The order id
-              example: ord_2tPAmKCEJqh8RE6nY
-              type: string
-          required:
-          - id
-          - object
-          - parent_id
-        title: discount_lines_response
-      title: discount_lines_data_response
-    order_discount_lines_response:
-      allOf:
-      - description: pagination metadata
+      - description: create new taxes for an existing order
         properties:
-          has_more:
-            description: Indicates if there are more pages to be requested
-            example: false
-            type: boolean
-          object:
-            description: "Object type, in this case is list"
-            example: list
+          amount:
+            description: The amount to be collected for tax in cents
+            example: 100
+            format: int64
+            minimum: 0
+            type: integer
+          description:
+            description: description or tax's name
+            example: testing
+            minLength: 2
             type: string
+          metadata:
+            additionalProperties: true
+            example:
+              key: value
+            maxProperties: 100
+            type: object
         required:
-        - has_more
-        - object
-        title: pagination metadata
+        - amount
+        - description
+        title: order_tax_request
       - properties:
-          data:
-            items:
-              $ref: "#/components/schemas/discount_lines_data_response"
-            type: array
-      title: order_discount_lines_response
+          id:
+            example: tax_lin_2tQ8dC5mg1UADmVPo
+            type: string
+          object:
+            example: tax_line
+            type: string
+          parent_id:
+            example: ord_2tPAmKCEJqh8RE6nY
+            type: string
+      description: create new taxes for an existing order response
+      required:
+      - id
+      title: order_tax_response
     order_fiscal_entity_address_response:
       allOf:
       - description: Address of the fiscal entity
@@ -19647,7 +19736,15 @@ components:
         customer_info:
           $ref: "#/components/schemas/order_response_customer_info"
         discount_lines:
-          $ref: "#/components/schemas/order_discount_lines_response"
+          description: List of discounts that are applied to the order
+          items:
+            $ref: "#/components/schemas/discount_lines_response"
+          type: array
+        tax_lines:
+          description: List of taxes that are applied to the order
+          items:
+            $ref: "#/components/schemas/order_tax_response"
+          type: array
         fiscal_entity:
           $ref: "#/components/schemas/order_fiscal_entity_response"
         id:
@@ -19783,6 +19880,8 @@ components:
         failure_url:
           description: "Redirection url back to the site in case of failed payment,\
             \ applies only to HostedPayment."
+          example: https://www.mysite.com/failure
+          format: uri
           type: string
         monthly_installments_enabled:
           example: false
@@ -19816,10 +19915,18 @@ components:
         success_url:
           description: "Redirection url back to the site in case of successful payment,\
             \ applies only to HostedPayment"
+          example: https://www.mysite.com/success
+          format: uri
           type: string
         type:
-          description: This field represents the type of checkout
-          example: Integration
+          description: "Required. This field represents the type of checkout, which\
+            \ determines the user experience during the payment process. 'HostedPayment'\
+            \ will redirect the customer to a Conekta-hosted page to complete the\
+            \ payment, while 'Integration' allows the payment process to be handled\
+            \ entirely on your site using Conekta's APIs and SDKs."
+          enum:
+          - Integration
+          - HostedPayment
           type: string
       required:
       - allowed_payment_methods
@@ -20021,7 +20128,7 @@ components:
       required:
       - amount
       title: shipping_request
-    order_request_tax_lines_inner:
+    order_tax_request:
       description: create new taxes for an existing order
       properties:
         amount:
@@ -20044,6 +20151,7 @@ components:
       required:
       - amount
       - description
+      title: order_tax_request
     order_request:
       description: a order
       properties:
@@ -20065,7 +20173,7 @@ components:
           $ref: "#/components/schemas/order_request_customer_info"
         discount_lines:
           description: "List of [discounts](https://developers.conekta.com/v2.2.0/reference/orderscreatediscountline)\
-            \ that are applied to the order. You must have at least one discount."
+            \ that are applied to the order."
           items:
             $ref: "#/components/schemas/order_discount_lines_request"
           type: array
@@ -20087,7 +20195,6 @@ components:
           example: false
           type: boolean
         pre_authorize:
-          default: false
           description: Indicates whether the order charges must be preauthorized
           type: boolean
         processing_mode:
@@ -20113,7 +20220,7 @@ components:
           description: "List of [taxes](https://developers.conekta.com/v2.2.0/reference/orderscreatetaxes)\
             \ that are applied to the order."
           items:
-            $ref: "#/components/schemas/order_request_tax_lines_inner"
+            $ref: "#/components/schemas/order_tax_request"
           type: array
         three_ds_mode:
           description: "Indicates the 3DS2 mode for the order, either smart or strict.\
@@ -20181,7 +20288,7 @@ components:
           $ref: "#/components/schemas/order_update_customer_info"
         discount_lines:
           description: "List of [discounts](https://developers.conekta.com/v2.2.0/reference/orderscreatediscountline)\
-            \ that are applied to the order. You must have at least one discount."
+            \ that are applied to the order."
           items:
             $ref: "#/components/schemas/order_discount_lines_request"
           type: array
@@ -20197,7 +20304,6 @@ components:
           additionalProperties:
             type: string
         pre_authorize:
-          default: false
           description: Indicates whether the order charges must be preauthorized
           type: boolean
         shipping_contact:
@@ -20210,7 +20316,7 @@ components:
           type: array
         tax_lines:
           items:
-            $ref: "#/components/schemas/order_request_tax_lines_inner"
+            $ref: "#/components/schemas/order_tax_request"
           type: array
       title: order_update
     order_capture_request:
@@ -20722,6 +20828,7 @@ components:
           example: Issued
           type: string
         success_url:
+          description: The URL to redirect to after a successful payment.
           example: https://pay.conekta.com/success
           type: string
         type:
@@ -20806,6 +20913,18 @@ components:
             key: value
           maxProperties: 100
           type: object
+        tax_lines:
+          description: "List of [taxes](https://developers.conekta.com/v2.2.0/reference/orderscreatetaxes)\
+            \ that are applied to the order."
+          items:
+            $ref: "#/components/schemas/order_tax_request"
+          type: array
+        discount_lines:
+          description: "List of [discounts](https://developers.conekta.com/v2.2.0/reference/orderscreatediscountline)\
+            \ that are applied to the order."
+          items:
+            $ref: "#/components/schemas/order_discount_lines_request"
+          type: array
       required:
       - currency
       - line_items
@@ -20895,7 +21014,12 @@ components:
           description: It is the number of payments that can be made through the link.
           example: 5
           format: int8
+          minimum: 1
           type: integer
+        success_url:
+          description: The URL to redirect to after a successful payment.
+          example: https://www.conekta.com/success
+          type: string
         recurrent:
           description: "false: single use. true: multiple payments"
           example: false
@@ -21606,43 +21730,6 @@ components:
           format: uri
           type: string
       title: customer_portal_response
-    ordersCreateTaxes_200_response:
-      allOf:
-      - description: create new taxes for an existing order
-        properties:
-          amount:
-            description: The amount to be collected for tax in cents
-            example: 100
-            format: int64
-            minimum: 0
-            type: integer
-          description:
-            description: description or tax's name
-            example: testing
-            minLength: 2
-            type: string
-          metadata:
-            additionalProperties: true
-            example:
-              key: value
-            maxProperties: 100
-            type: object
-        required:
-        - amount
-        - description
-      - properties:
-          id:
-            example: tax_lin_2tQ8dC5mg1UADmVPo
-            type: string
-          object:
-            example: tax_line
-            type: string
-          parent_id:
-            example: ord_2tPAmKCEJqh8RE6nY
-            type: string
-      description: create new taxes for an existing order response
-      required:
-      - id
     ordersUpdateTaxes_request:
       description: create new taxes for an existing order
       properties:

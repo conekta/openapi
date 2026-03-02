@@ -97,6 +97,7 @@ properties:
   success_url:
     type: string
     example: "https://pay.conekta.com/success"
+    description: "The URL to redirect to after a successful payment."
   type:
     type: string
     example: "PaymentLink"

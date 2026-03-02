@@ -4,7 +4,7 @@ post:
   operationId: createToken
   summary: Create Token
   description: |
-    Generate a payment token, to associate it with a card
+    Generate a payment token, to associate it with a card, Endpoint could be use directly only for PCI compliance account
   responses:
     200:
       description: successful operation
