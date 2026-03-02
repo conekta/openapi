@@ -11,9 +11,6 @@ post:
         application/vnd.conekta-v2.2.0+json:
           schema:
             $ref: '../../schemas/subscriptions/subscription_response.yml'
-            x-methods:
-              cancel:
-                operationId: cancelSubscription
       headers:
         Date:
           description: The date and time that the response was sent

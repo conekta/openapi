@@ -1,5 +1,5 @@
-title: api_keys_request
-name: api_keys_request
+title: api_key_request
+name: api_key_request
 required:
   - role
 properties:

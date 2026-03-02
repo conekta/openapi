@@ -1,4 +1,4 @@
-title: discount_lines_order_response
+title: discount_lines_response
 allOf:
   - $ref: 'order_discount_lines_request.yml'
   - type: object

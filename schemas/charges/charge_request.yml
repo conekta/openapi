@@ -1,4 +1,4 @@
-title: charges
+title: charge_request
 description: "The charges to be made"
 required:
   - payment_method

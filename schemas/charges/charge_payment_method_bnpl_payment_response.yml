@@ -1,4 +1,6 @@
 payment_method_bnpl_payment:
+  title: payment_method_bnpl_payment
+  x-discriminator-value: bnpl_payment
   allOf:
     - $ref: charge_payment_method_response.yml#/payment_method
     - type: object
@@ -8,6 +10,9 @@ payment_method_bnpl_payment:
           - product_type
           - expires_at
       properties:
+        object:
+          type: string
+          enum: [bnpl_payment]   # o const: bnpl_payment
         cancel_url:
           type: string
           description: "URL to redirect the customer after a canceled payment"

@@ -27,7 +27,7 @@ jobs:
         with:
           generator: openapi-yaml
           openapi-file: api.yaml
-          generator-tag: v7.18.0
+          generator-tag: v7.20.0
       - name: check if api.yaml are equals
         run: |
           if diff -q _build/api.yaml openapi-yaml-client/openapi/openapi.yaml >/dev/null; then
@@ -35,4 +35,13 @@ jobs:
           else
             echo "exists differences between files _build/api.yaml"
             exit 1
+          fi
+      - name: Check for auto-generated schema names
+        run: |
+          PATTERNS='_allOf|_allof|_AllOf|_inner|_200_response|_201_response|_request_request'
+          if grep -P "$PATTERNS" openapi-yaml-client/openapi/openapi.yaml; then
+            echo "::error::Found auto-generated schema names in api.yaml. Add 'title' to inline schemas to fix naming."
+            exit 1
+          else
+            echo "No auto-generated schema names found"
           fi

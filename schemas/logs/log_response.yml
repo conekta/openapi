@@ -1,4 +1,4 @@
-title: log response for request
+title: log_response_for_request
 description: log model
 type: object
 required:
