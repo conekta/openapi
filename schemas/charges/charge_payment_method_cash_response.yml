@@ -1,5 +1,6 @@
 payment_method_cash:
   title: payment_method_cash
+  x-discriminator-value: cash_payment
   allOf:
     - $ref: charge_payment_method_response.yml#/payment_method
     - type: object

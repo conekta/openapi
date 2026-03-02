@@ -15939,6 +15939,7 @@ components:
             type: string
         title: charge_data_payment_method_cash_response
       title: payment_method_cash
+      x-discriminator-value: cash_payment
     payment_method_card:
       allOf:
       - properties:
@@ -16000,6 +16001,7 @@ components:
             type: string
         title: charge_data_payment_method_card_response
       title: payment_method_card
+      x-discriminator-value: card_payment
     payment_method_bank_transfer:
       allOf:
       - properties:
@@ -16112,6 +16114,7 @@ components:
         - product_type
         title: charge_data_payment_method_bnpl_payment_response
       title: payment_method_bnpl_payment
+      x-discriminator-value: bnpl_payment
     payment_method_pbb_payment:
       allOf:
       - properties:
@@ -16153,6 +16156,7 @@ components:
         - reference
         title: charge_data_payment_method_pbb_payment_response
       title: payment_method_pbb_payment
+      x-discriminator-value: pay_by_bank_payment
     charge_response_payment_method:
       discriminator:
         mapping:
