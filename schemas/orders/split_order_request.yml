@@ -37,7 +37,6 @@ properties:
   pre_authorize:
     type: boolean
     description: "Indicates whether the order charges must be preauthorized"
-    default: false
   shipping_contact:
     $ref: ../../schemas/customers/customer_shipping_contacts.yml
   shipping_lines:

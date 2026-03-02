@@ -40,6 +40,12 @@ properties:
                 - $ref: ../../schemas/charges/charge_response.yml
   checkout:
     type: object
+    required:
+      - allowed_payment_methods
+      - id
+      - name
+      - object
+      - type
     properties:
       allowed_payment_methods:
         type: array
@@ -130,6 +136,7 @@ properties:
         example: 0
       success_url:
         type: string
+        description: "Redirection url back to the site in case of successful payment, applies only to HostedPayment"
         example: "http://187.216.228.66:2222/SysVentasPagos/Acceso.aspx"
       starts_at:
         type: integer
@@ -139,9 +146,11 @@ properties:
         example: "Issued"
       type:
         type: string
+        description: "This field represents the type of checkout, which determines the user experience during the payment process. 'HostedPayment' will redirect the customer to a Conekta-hosted page to complete the payment, while 'Integration' allows the payment process to be handled entirely on your site using Conekta's APIs and SDKs."
         example: "HostedPayment"
       url:
         type: string
+        description: "Indicate the url of the Conekta component to complete the payment. For HostedPayment, this will be a Conekta-hosted page"
         example: "https://pay.conekta.io/checkout/6fca054a85194c43971ecea35cc519bb"
   created_at:
     type: integer
