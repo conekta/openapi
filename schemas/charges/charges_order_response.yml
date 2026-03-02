@@ -8,5 +8,4 @@ allOf:
       data:
         type: array
         items:
-          allOf:
-            - $ref: ../../schemas/charges/charge_response.yml
+          $ref: ../../schemas/charges/charge_response.yml

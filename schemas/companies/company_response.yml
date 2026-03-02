@@ -30,6 +30,7 @@ properties:
     type: array
     description: A list of documents related to the company.
     items:
+      title: company_document_response
       type: object
       properties:
         file_classification:

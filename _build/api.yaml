@@ -51,7 +51,7 @@ paths:
           content:
             application/vnd.conekta-v2.2.0+json:
               schema:
-                $ref: "#/components/schemas/GetRuleWhitelist_200_response"
+                $ref: "#/components/schemas/risk_rules_list"
           description: All the rules
         "401":
           content:
@@ -328,7 +328,7 @@ paths:
           content:
             application/vnd.conekta-v2.2.0+json:
               schema:
-                $ref: "#/components/schemas/GetRuleWhitelist_200_response"
+                $ref: "#/components/schemas/risk_rules_list"
           description: All the rules
         "401":
           content:
@@ -10371,7 +10371,7 @@ paths:
           content:
             application/vnd.conekta-v2.2.0+json:
               schema:
-                $ref: "#/components/schemas/CreateCustomerShippingContacts_200_response"
+                $ref: "#/components/schemas/customer_shipping_contacts_response"
           description: successful operation
         "401":
           content:
@@ -10497,7 +10497,7 @@ paths:
           content:
             application/vnd.conekta-v2.2.0+json:
               schema:
-                $ref: "#/components/schemas/CreateCustomerShippingContacts_200_response"
+                $ref: "#/components/schemas/customer_shipping_contacts_response"
           description: successful operation
         "401":
           content:
@@ -10629,7 +10629,7 @@ paths:
           content:
             application/vnd.conekta-v2.2.0+json:
               schema:
-                $ref: "#/components/schemas/CreateCustomerShippingContacts_200_response"
+                $ref: "#/components/schemas/customer_shipping_contacts_response"
           description: successful operation
         "401":
           content:
@@ -15854,7 +15854,7 @@ components:
           example: secure customer example@example.com
           type: string
       title: risk_rules_data
-    GetRuleWhitelist_200_response:
+    risk_rules_list:
       allOf:
       - description: pagination metadata
         properties:
@@ -15888,7 +15888,7 @@ components:
             items:
               $ref: "#/components/schemas/risk_rules_data"
             type: array
-        title: risk_rules_list
+      title: risk_rules_list
     details_error:
       properties:
         code:
@@ -17077,80 +17077,6 @@ components:
           example: pending_payment
           type: string
       title: charge_order_response
-    charges_order_response_allOf_data_inner:
-      allOf:
-      - properties:
-          amount:
-            example: 4321
-            type: integer
-          channel:
-            $ref: "#/components/schemas/charge_response_channel"
-          created_at:
-            example: 1676386026
-            format: int64
-            type: integer
-          currency:
-            example: MXN
-            type: string
-          customer_id:
-            type: string
-          description:
-            example: Payment from order
-            type: string
-          device_fingerprint:
-            example: 6FR3chaU4Y1nGAW5NAGd1rcjAKa142Ba
-            type: string
-          failure_code:
-            example: suspected_fraud
-            type: string
-          failure_message:
-            example: Este cargo ha sido declinado porque el comportamiento del comprador
-              es sospechoso.
-            type: string
-          id:
-            description: Charge ID
-            example: 63efa757cf65380001aec040
-            type: string
-          livemode:
-            description: Whether the charge was made in live mode or not
-            example: false
-            type: boolean
-          object:
-            example: charge
-            type: string
-          order_id:
-            description: Order ID
-            example: ord_2tN73UdUSNrYRPD9r
-            type: string
-          paid_at:
-            description: charge Payment date
-            example: 1676390742
-            format: int64
-            nullable: true
-            type: integer
-          payment_method:
-            $ref: "#/components/schemas/charge_response_payment_method"
-          reference_id:
-            description: Reference ID of the charge
-            example: ref_2tN73UdUSNrYRPD9r
-            type: string
-            nullable: true
-          refunds:
-            $ref: "#/components/schemas/charge_response_refunds"
-          status:
-            description: Charge status
-            example: pending_payment
-            type: string
-        required:
-        - amount
-        - created_at
-        - currency
-        - id
-        - livemode
-        - object
-        - order_id
-        - status
-        title: charge_response
     charges_order_response:
       allOf:
       - description: pagination metadata
@@ -17183,11 +17109,11 @@ components:
       - properties:
           data:
             items:
-              $ref: "#/components/schemas/charges_order_response_allOf_data_inner"
+              $ref: "#/components/schemas/charge_response"
             type: array
       description: The charges associated with the order
       title: charges_order_response
-    company_response_documents_inner:
+    company_document_response:
       properties:
         file_classification:
           description: |
@@ -17227,6 +17153,7 @@ components:
           type: string
           nullable: true
           example: null
+      title: company_document_response
     company_response:
       properties:
         id:
@@ -17257,7 +17184,7 @@ components:
         documents:
           description: A list of documents related to the company.
           items:
-            $ref: "#/components/schemas/company_response_documents_inner"
+            $ref: "#/components/schemas/company_document_response"
           type: array
         created_at:
           description: Timestamp of when the company was created.
@@ -19630,7 +19557,7 @@ components:
           example: redirect_to_url
           type: string
       title: order_next_action_response
-    order_response_shipping_contact_allOf_address:
+    customer_shipping_contacts_address:
       properties:
         object:
           example: shipping_address
@@ -19657,6 +19584,7 @@ components:
           example: true
           type: boolean
           nullable: true
+      title: customer_shipping_contacts_address
     order_response_shipping_contact:
       allOf:
       - properties:
@@ -19681,7 +19609,7 @@ components:
             type: string
             nullable: true
           address:
-            $ref: "#/components/schemas/order_response_shipping_contact_allOf_address"
+            $ref: "#/components/schemas/customer_shipping_contacts_address"
           parent_id:
             type: string
           default:
@@ -19705,6 +19633,7 @@ components:
           deleted:
             example: false
             type: boolean
+        title: customer_shipping_contacts_response
     order_response:
       description: order response
       properties:
@@ -21360,7 +21289,7 @@ components:
           parent_id:
             type: string
       title: shipping_order_response
-    CreateCustomerShippingContacts_200_response:
+    customer_shipping_contacts_response:
       description: Contains the detail of the shipping addresses that the client has
         active or has used in Conekta
       properties:
@@ -21375,7 +21304,7 @@ components:
           type: string
           nullable: true
         address:
-          $ref: "#/components/schemas/order_response_shipping_contact_allOf_address"
+          $ref: "#/components/schemas/customer_shipping_contacts_address"
         parent_id:
           type: string
         default:
@@ -21399,6 +21328,7 @@ components:
         deleted:
           example: false
           type: boolean
+      title: customer_shipping_contacts_response
     customer_update_shipping_contacts_request:
       description: |-
         [Shipping](https://developers.conekta.com/v2.2.0/reference/createcustomershippingcontacts)

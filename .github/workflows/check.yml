@@ -36,3 +36,12 @@ jobs:
             echo "exists differences between files _build/api.yaml"
             exit 1
           fi
+      - name: Check for auto-generated schema names
+        run: |
+          PATTERNS='_allOf|_allof|_AllOf|_inner|_200_response|_201_response|_request_request'
+          if grep -P "$PATTERNS" openapi-yaml-client/openapi/openapi.yaml; then
+            echo "::error::Found auto-generated schema names in api.yaml. Add 'title' to inline schemas to fix naming."
+            exit 1
+          else
+            echo "No auto-generated schema names found"
+          fi
