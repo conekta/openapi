@@ -1,0 +1,40 @@
+title: chargeback_response
+type: object
+description: "Chargeback object. Present on a charge only when the charge has a chargeback."
+properties:
+  id:
+    type: string
+    example: "chbk_2zPxWFUnGNLySoumn"
+  status:
+    type: string
+    example: "lost"
+  reason:
+    type: string
+    example: "unrecognized"
+  note:
+    type: string
+    nullable: true
+  followup_status:
+    type: string
+    nullable: true
+  response_from_client:
+    type: string
+    nullable: true
+  files:
+    type: array
+    items:
+      $ref: chargeback_file_response.yml
+  object:
+    type: string
+    example: "chargeback"
+  charge_id:
+    type: string
+    example: "6966a06c044243000156c24d"
+  created_at:
+    type: integer
+    format: int64
+    example: 1768846800
+  evidence_due_by:
+    type: integer
+    format: int64
+    example: 1769126399

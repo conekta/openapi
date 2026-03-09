@@ -137,6 +137,10 @@ properties:
                   example: "pending"
                   description: refund status
     nullable: true
+  chargeback:
+    $ref: ../chargebacks/chargeback_response.yml
+    nullable: true
+    description: "Present only when the charge has a chargeback"
   status:
     type: string
     example: "pending_payment"

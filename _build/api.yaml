@@ -16245,6 +16245,64 @@ components:
             type: array
       title: charge_response_refunds
       nullable: true
+    chargeback_file_response:
+      description: A file associated with a chargeback (e.g. evidence document)
+      properties:
+        id:
+          example: chbkf_2zPxWFUnGNLySoums
+          type: string
+        file_name:
+          example: 20251221500000000000201.pdf
+          type: string
+        url:
+          type: string
+          nullable: true
+        created_at:
+          example: 1768846800
+          format: int64
+          type: integer
+      title: chargeback_file_response
+    chargeback_response:
+      description: Present only when the charge has a chargeback
+      properties:
+        id:
+          example: chbk_2zPxWFUnGNLySoumn
+          type: string
+        status:
+          example: lost
+          type: string
+        reason:
+          example: unrecognized
+          type: string
+        note:
+          type: string
+          nullable: true
+        followup_status:
+          type: string
+          nullable: true
+        response_from_client:
+          type: string
+          nullable: true
+        files:
+          items:
+            $ref: "#/components/schemas/chargeback_file_response"
+          type: array
+        object:
+          example: chargeback
+          type: string
+        charge_id:
+          example: 6966a06c044243000156c24d
+          type: string
+        created_at:
+          example: 1768846800
+          format: int64
+          type: integer
+        evidence_due_by:
+          example: 1769126399
+          format: int64
+          type: integer
+      title: chargeback_response
+      nullable: true
     charge_response:
       properties:
         amount:
@@ -16304,6 +16362,8 @@ components:
           nullable: true
         refunds:
           $ref: "#/components/schemas/charge_response_refunds"
+        chargeback:
+          $ref: "#/components/schemas/chargeback_response"
         status:
           description: Charge status
           example: pending_payment
@@ -18638,6 +18698,8 @@ components:
             nullable: true
           refunds:
             $ref: "#/components/schemas/charge_response_refunds"
+          chargeback:
+            $ref: "#/components/schemas/chargeback_response"
           status:
             description: Charge status
             example: pending_payment
