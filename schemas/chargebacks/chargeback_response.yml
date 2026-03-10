@@ -1,0 +1,80 @@
+title: chargeback_response
+type: object
+description: "Chargeback object"
+properties:
+  id:
+    type: string
+    example: "chbk_2zPxWFUnGNLySoumn"
+  status:
+    type: string
+    example: "lost"
+    enum:
+      - won
+      - lost
+      - action_required
+      - pending_review
+      - under_review
+      - covered
+      - rt
+      - rt_sent
+      - represented
+  reason:
+    type: string
+    example: "unrecognized"
+    enum:
+      - unauthorized
+      - unauthorized_by_client
+      - unrecognized_like_fraud
+      - insufficient_evidence
+      - illegible_evidence
+      - general
+      - late_evidence
+      - incorrect_exchange
+      - fraudulent_business
+      - billing
+      - twice_transaction
+      - transaction_not_refunded
+      - bank_doc_request
+      - unrecognized_purchase
+      - subscription_canceled
+      - copy_of_purchase
+      - differents_amounts
+      - subscription_not_requested
+      - damaged_products
+      - show_documents
+      - duplicate
+      - fraudulent
+      - service_canceled
+      - product_unacceptable
+      - product_not_received
+      - incorrect_amount
+      - chip_liabiliaty_shift
+      - credit_not_processed
+  note:
+    type: [string, "null"]
+  followup_status:
+    type: [string, "null"]
+    enum:
+      - customer_uncontacted
+      - customer_contacted
+      - customer_unreachable
+  response_from_client:
+    type: [string, "null"]
+  files:
+    type: array
+    items:
+      $ref: chargeback_file_response.yml
+  object:
+    type: string
+    example: "chargeback"
+  charge_id:
+    type: string
+    example: "6966a06c044243000156c24d"
+  created_at:
+    type: integer
+    format: int64
+    example: 1768846800
+  evidence_due_by:
+    type: integer
+    format: int64
+    example: 1769126399

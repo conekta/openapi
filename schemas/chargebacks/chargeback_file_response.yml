@@ -1,0 +1,16 @@
+title: chargeback_file_response
+type: object
+description: "A file associated with a chargeback (e.g. evidence document)"
+properties:
+  id:
+    type: string
+    example: "chbkf_2zPxWFUnGNLySoums"
+  file_name:
+    type: string
+    example: "20251221500000000000201.pdf"
+  url:
+    type: [string, "null"]
+  created_at:
+    type: integer
+    format: int64
+    example: 1768846800

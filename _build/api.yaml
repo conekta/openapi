@@ -16245,6 +16245,107 @@ components:
             type: array
       title: charge_response_refunds
       nullable: true
+    chargeback_file_response:
+      description: A file associated with a chargeback (e.g. evidence document)
+      properties:
+        id:
+          example: chbkf_2zPxWFUnGNLySoums
+          type: string
+        file_name:
+          example: 20251221500000000000201.pdf
+          type: string
+        url:
+          nullable: true
+          type: string
+        created_at:
+          example: 1768846800
+          format: int64
+          type: integer
+      title: chargeback_file_response
+    chargeback_response:
+      description: Chargeback object
+      nullable: true
+      properties:
+        id:
+          example: chbk_2zPxWFUnGNLySoumn
+          type: string
+        status:
+          enum:
+          - won
+          - lost
+          - action_required
+          - pending_review
+          - under_review
+          - covered
+          - rt
+          - rt_sent
+          - represented
+          example: lost
+          type: string
+        reason:
+          enum:
+          - unauthorized
+          - unauthorized_by_client
+          - unrecognized_like_fraud
+          - insufficient_evidence
+          - illegible_evidence
+          - general
+          - late_evidence
+          - incorrect_exchange
+          - fraudulent_business
+          - billing
+          - twice_transaction
+          - transaction_not_refunded
+          - bank_doc_request
+          - unrecognized_purchase
+          - subscription_canceled
+          - copy_of_purchase
+          - differents_amounts
+          - subscription_not_requested
+          - damaged_products
+          - show_documents
+          - duplicate
+          - fraudulent
+          - service_canceled
+          - product_unacceptable
+          - product_not_received
+          - incorrect_amount
+          - chip_liabiliaty_shift
+          - credit_not_processed
+          example: unrecognized
+          type: string
+        note:
+          nullable: true
+          type: string
+        followup_status:
+          enum:
+          - customer_uncontacted
+          - customer_contacted
+          - customer_unreachable
+          nullable: true
+          type: string
+        response_from_client:
+          nullable: true
+          type: string
+        files:
+          items:
+            $ref: "#/components/schemas/chargeback_file_response"
+          type: array
+        object:
+          example: chargeback
+          type: string
+        charge_id:
+          example: 6966a06c044243000156c24d
+          type: string
+        created_at:
+          example: 1768846800
+          format: int64
+          type: integer
+        evidence_due_by:
+          example: 1769126399
+          format: int64
+          type: integer
+      title: chargeback_response
     charge_response:
       properties:
         amount:
@@ -16304,6 +16405,8 @@ components:
           nullable: true
         refunds:
           $ref: "#/components/schemas/charge_response_refunds"
+        chargeback:
+          $ref: "#/components/schemas/chargeback_response"
         status:
           description: Charge status
           example: pending_payment
@@ -18638,6 +18741,8 @@ components:
             nullable: true
           refunds:
             $ref: "#/components/schemas/charge_response_refunds"
+          chargeback:
+            $ref: "#/components/schemas/chargeback_response"
           status:
             description: Charge status
             example: pending_payment
