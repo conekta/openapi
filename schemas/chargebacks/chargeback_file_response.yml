@@ -9,8 +9,7 @@ properties:
     type: string
     example: "20251221500000000000201.pdf"
   url:
-    type: string
-    nullable: true
+    type: [string, "null"]
   created_at:
     type: integer
     format: int64

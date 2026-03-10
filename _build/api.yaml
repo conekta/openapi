@@ -16255,34 +16255,78 @@ components:
           example: 20251221500000000000201.pdf
           type: string
         url:
-          type: string
           nullable: true
+          type: string
         created_at:
           example: 1768846800
           format: int64
           type: integer
       title: chargeback_file_response
     chargeback_response:
-      description: Present only when the charge has a chargeback
+      description: Chargeback object
+      nullable: true
       properties:
         id:
           example: chbk_2zPxWFUnGNLySoumn
           type: string
         status:
+          enum:
+          - won
+          - lost
+          - action_required
+          - pending_review
+          - under_review
+          - covered
+          - rt
+          - rt_sent
+          - represented
           example: lost
           type: string
         reason:
+          enum:
+          - unauthorized
+          - unauthorized_by_client
+          - unrecognized_like_fraud
+          - insufficient_evidence
+          - illegible_evidence
+          - general
+          - late_evidence
+          - incorrect_exchange
+          - fraudulent_business
+          - billing
+          - twice_transaction
+          - transaction_not_refunded
+          - bank_doc_request
+          - unrecognized_purchase
+          - subscription_canceled
+          - copy_of_purchase
+          - differents_amounts
+          - subscription_not_requested
+          - damaged_products
+          - show_documents
+          - duplicate
+          - fraudulent
+          - service_canceled
+          - product_unacceptable
+          - product_not_received
+          - incorrect_amount
+          - chip_liabiliaty_shift
+          - credit_not_processed
           example: unrecognized
           type: string
         note:
-          type: string
           nullable: true
+          type: string
         followup_status:
-          type: string
+          enum:
+          - customer_uncontacted
+          - customer_contacted
+          - customer_unreachable
           nullable: true
+          type: string
         response_from_client:
-          type: string
           nullable: true
+          type: string
         files:
           items:
             $ref: "#/components/schemas/chargeback_file_response"
@@ -16302,7 +16346,6 @@ components:
           format: int64
           type: integer
       title: chargeback_response
-      nullable: true
     charge_response:
       properties:
         amount:
