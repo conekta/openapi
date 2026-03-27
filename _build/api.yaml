@@ -17347,6 +17347,7 @@ components:
             example: visa
             type: string
           issuer:
+            description: Name of the institution that issued the card
             example: santander
             type: string
           name:
