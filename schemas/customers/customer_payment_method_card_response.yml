@@ -23,6 +23,9 @@ payment_method_card_response:
         brand:
           type: string
           example: "visa"
+        issuer:
+          type: string
+          example: "santander"
         name: 
           type: string
           example: Fulano Perez"
