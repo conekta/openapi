@@ -5201,7 +5201,7 @@
           "headers": [
             {
               "key": "Content-Type",
-              "value": "application/vnd.conekta-v2.2.0+json"
+              "value": "application/json"
             }
           ],
           "bodyType": "INLINE",
@@ -5211,14 +5211,14 @@
           "rules": [
             {
               "target": "body",
-              "modifier": "charges.payment_method.token_id",
+              "modifier": "charges.0.payment_method.token_id",
               "value": "",
               "invert": true,
               "operator": "null"
             },
             {
               "target": "body",
-              "modifier": "charges.payment_method.type",
+              "modifier": "charges.0.payment_method.type",
               "value": "card",
               "invert": false,
               "operator": "equals"
@@ -5240,7 +5240,7 @@
           "headers": [
             {
               "key": "Content-Type",
-              "value": "application/vnd.conekta-v2.2.0+json"
+              "value": "application/json"
             }
           ],
           "bodyType": "INLINE",
@@ -5250,21 +5250,21 @@
           "rules": [
             {
               "target": "body",
-              "modifier": "charges.payment_method.token_id",
+              "modifier": "charges.0.payment_method.token_id",
               "value": "tok_2znsHppi6bHeDPSHi",
               "invert": true,
               "operator": "null"
             },
             {
               "target": "body",
-              "modifier": "charges.payment_method.type",
+              "modifier": "charges.0.payment_method.type",
               "value": "card",
               "invert": false,
               "operator": "equals"
             },
             {
               "target": "body",
-              "modifier": "charges.payment_method.monthly_installments",
+              "modifier": "charges.0.payment_methodd.monthly_installments",
               "value": "6",
               "invert": false,
               "operator": "equals"
@@ -5459,14 +5459,18 @@
         },
         {
           "uuid": "221cf518-a626-4b95-9558-a80f6d1df0ee",
-          "body": "",
+          "body": "{\n  \"error\": \"test\"\n}",
           "latency": 0,
           "statusCode": 422,
           "label": "parameter validation error",
           "headers": [
             {
               "key": "Content-Type",
-              "value": "application/vnd.conekta-v2.2.0+json"
+              "value": "application/json"
+            },
+            {
+              "key": "",
+              "value": ""
             }
           ],
           "bodyType": "INLINE",
