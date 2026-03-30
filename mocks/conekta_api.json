@@ -5562,7 +5562,7 @@
           "headers": [
             {
               "key": "Content-Type",
-              "value": "application/vnd.conekta-v2.2.0+json"
+              "value": "application/json"
             }
           ],
           "bodyType": "INLINE",
@@ -5582,6 +5582,70 @@
           "disableTemplating": false,
           "fallbackTo404": false,
           "default": true,
+          "crudKey": "id",
+          "callbacks": []
+        },
+        {
+          "uuid": "a2e86618-5d17-4136-9017-55b238069659",
+          "body": "{\n    \"livemode\": false,\n    \"amount\": 100000,\n    \"currency\": \"MXN\",\n    \"payment_status\": \"paid\",\n    \"amount_refunded\": 0,\n    \"split_payment\": null,\n    \"customer_info\": {\n        \"email\": \"Providenci.Fahey@hotmail.com\",\n        \"phone\": \"3143159054\",\n        \"name\": \"frane amas\",\n        \"corporate\": null,\n        \"customer_id\": null,\n        \"date_of_birth\": null,\n        \"national_id\": null,\n        \"object\": \"customer_info\"\n    },\n    \"shipping_contact\": {\n        \"receiver\": \"fran carero\",\n        \"phone\": \"+573143159054\",\n        \"between_streets\": null,\n        \"address\": {\n            \"street1\": \"av viva\",\n            \"street2\": \"ava\",\n            \"city\": \"cdmx\",\n            \"state\": \"cdmx\",\n            \"country\": \"mx\",\n            \"residential\": true,\n            \"object\": \"shipping_address\",\n            \"postal_code\": \"01000\"\n        },\n        \"id\": \"ship_cont_2znsJ8YNbNoDDsN3o\",\n        \"object\": \"shipping_contact\",\n        \"created_at\": 1774901615,\n        \"metadata\": null\n    },\n    \"channel\": null,\n    \"fiscal_entity\": null,\n    \"object\": \"order\",\n    \"id\": \"ord_2znsJ8YNbNoDDsN3p\",\n    \"metadata\": {\n        \"test\": \"false\"\n    },\n    \"is_refundable\": true,\n    \"processing_mode\": null,\n    \"created_at\": 1774901615,\n    \"updated_at\": 1774901615,\n    \"line_items\": {\n        \"object\": \"list\",\n        \"has_more\": false,\n        \"total\": 1,\n        \"data\": [\n            {\n                \"name\": \"APOYO URGENTE REFERENCIA\",\n                \"description\": null,\n                \"unit_price\": 100000,\n                \"quantity\": 1,\n                \"sku\": \"COL094\",\n                \"tags\": null,\n                \"brand\": \"CHEDRAUI\",\n                \"type\": null,\n                \"object\": \"line_item\",\n                \"id\": \"line_item_2znsJ8YNbNoDDsN3k\",\n                \"parent_id\": \"ord_2znsJ8YNbNoDDsN3p\",\n                \"metadata\": {},\n                \"antifraud_info\": {}\n            }\n        ]\n    },\n    \"shipping_lines\": {\n        \"object\": \"list\",\n        \"has_more\": false,\n        \"total\": 1,\n        \"data\": [\n            {\n                \"amount\": 0,\n                \"carrier\": \"fedex\",\n                \"method\": null,\n                \"tracking_number\": \"4234234\",\n                \"object\": \"shipping_line\",\n                \"id\": \"ship_lin_2znsJ8YNbNoDDsN3m\",\n                \"parent_id\": \"ord_2znsJ8YNbNoDDsN3p\",\n                \"metadata\": null\n            }\n        ]\n    },\n    \"tax_lines\": null,\n    \"discount_lines\": null,\n    \"charges\": {\n        \"object\": \"list\",\n        \"has_more\": false,\n        \"total\": 1,\n        \"data\": [\n            {\n                \"id\": \"69cad96f5325490001cdd4ab\",\n                \"livemode\": false,\n                \"created_at\": 1774901615,\n                \"currency\": \"MXN\",\n                \"failure_code\": null,\n                \"failure_message\": null,\n                \"monthly_installments\": 6,\n                \"device_fingerprint\": null,\n                \"session_id\": null,\n                \"channel\": null,\n                \"payment_method\": {\n                    \"name\": \"ñeyueyute nene\",\n                    \"exp_month\": \"08\",\n                    \"exp_year\": \"26\",\n                    \"auth_code\": \"755667\",\n                    \"object\": \"card_payment\",\n                    \"type\": \"credit\",\n                    \"normalized_device_fingerprint\": null,\n                    \"last4\": \"4242\",\n                    \"brand\": \"visa\",\n                    \"issuer\": \"BANAMEX\",\n                    \"account_type\": \"Credit\",\n                    \"contract_id\": null,\n                    \"country\": \"MX\",\n                    \"fraud_score\": null,\n                    \"fraud_indicators\": [],\n                    \"token_id\": \"tok_2znsHppi6bHeDPSHi\",\n                    \"antifraud_is_self_service_rules\": false,\n                    \"three_ds_flow_required\": false\n                },\n                \"object\": \"charge\",\n                \"description\": \"Payment from order\",\n                \"is_refundable\": true,\n                \"reference_id\": null,\n                \"status\": \"paid\",\n                \"amount\": 100000,\n                \"paid_at\": 1774901615,\n                \"customer_id\": \"\",\n                \"order_id\": \"ord_2znsJ8YNbNoDDsN3p\",\n                \"refunds\": null\n            }\n        ]\n    }\n}",
+          "latency": 0,
+          "statusCode": 200,
+          "label": "successful card",
+          "headers": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            }
+          ],
+          "bodyType": "INLINE",
+          "filePath": "",
+          "databucketID": "",
+          "sendFileAsBody": false,
+          "rules": [
+            {
+              "target": "params",
+              "modifier": "id",
+              "value": "ord_2znsJ8YNbNoDDsN3p",
+              "invert": false,
+              "operator": "equals"
+            }
+          ],
+          "rulesOperator": "OR",
+          "disableTemplating": false,
+          "fallbackTo404": false,
+          "default": false,
+          "crudKey": "id",
+          "callbacks": []
+        },
+        {
+          "uuid": "2f396358-9a62-4410-a24e-8d9d9dc7a054",
+          "body": "{\n    \"livemode\": false,\n    \"amount\": 100000,\n    \"currency\": \"MXN\",\n    \"payment_status\": \"expired\",\n    \"amount_refunded\": 0,\n    \"split_payment\": null,\n    \"customer_info\": {\n        \"email\": \"Providenci.Fahey@hotmail.com\",\n        \"phone\": \"3143159054\",\n        \"name\": \"frane amas\",\n        \"corporate\": null,\n        \"customer_id\": null,\n        \"date_of_birth\": null,\n        \"national_id\": null,\n        \"object\": \"customer_info\"\n    },\n    \"shipping_contact\": {\n        \"receiver\": \"fran carero\",\n        \"phone\": \"+573143159054\",\n        \"between_streets\": null,\n        \"address\": {\n            \"street1\": \"av viva\",\n            \"street2\": \"ava\",\n            \"city\": \"cdmx\",\n            \"state\": \"cdmx\",\n            \"country\": \"mx\",\n            \"residential\": true,\n            \"object\": \"shipping_address\",\n            \"postal_code\": \"01000\"\n        },\n        \"id\": \"ship_cont_2znsJ8YNbNoDDsN3o\",\n        \"object\": \"shipping_contact\",\n        \"created_at\": 1774901615,\n        \"metadata\": null\n    },\n    \"channel\": null,\n    \"fiscal_entity\": null,\n    \"object\": \"order\",\n    \"id\": \"ord_2znsJ8YNbNoDDsN3p\",\n    \"metadata\": {\n        \"test\": \"false\"\n    },\n    \"is_refundable\": true,\n    \"processing_mode\": null,\n    \"created_at\": 1774901615,\n    \"updated_at\": 1774901615,\n    \"line_items\": {\n        \"object\": \"list\",\n        \"has_more\": false,\n        \"total\": 1,\n        \"data\": [\n            {\n                \"name\": \"APOYO URGENTE REFERENCIA\",\n                \"description\": null,\n                \"unit_price\": 100000,\n                \"quantity\": 1,\n                \"sku\": \"COL094\",\n                \"tags\": null,\n                \"brand\": \"CHEDRAUI\",\n                \"type\": null,\n                \"object\": \"line_item\",\n                \"id\": \"line_item_2znsJ8YNbNoDDsN3k\",\n                \"parent_id\": \"ord_2znsJ8YNbNoDDsN3p\",\n                \"metadata\": {},\n                \"antifraud_info\": {}\n            }\n        ]\n    },\n    \"shipping_lines\": {\n        \"object\": \"list\",\n        \"has_more\": false,\n        \"total\": 1,\n        \"data\": [\n            {\n                \"amount\": 0,\n                \"carrier\": \"fedex\",\n                \"method\": null,\n                \"tracking_number\": \"4234234\",\n                \"object\": \"shipping_line\",\n                \"id\": \"ship_lin_2znsJ8YNbNoDDsN3m\",\n                \"parent_id\": \"ord_2znsJ8YNbNoDDsN3p\",\n                \"metadata\": null\n            }\n        ]\n    },\n    \"tax_lines\": null,\n    \"discount_lines\": null,\n    \"charges\": {\n        \"object\": \"list\",\n        \"has_more\": false,\n        \"total\": 0,\n        \"data\": []\n    }\n}",
+          "latency": 0,
+          "statusCode": 200,
+          "label": "expired card ",
+          "headers": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            }
+          ],
+          "bodyType": "INLINE",
+          "filePath": "",
+          "databucketID": "",
+          "sendFileAsBody": false,
+          "rules": [
+            {
+              "target": "params",
+              "modifier": "id",
+              "value": "ord_2znsJ8YNbNoDDsNes",
+              "invert": false,
+              "operator": "equals"
+            }
+          ],
+          "rulesOperator": "OR",
+          "disableTemplating": false,
+          "fallbackTo404": false,
+          "default": false,
           "crudKey": "id",
           "callbacks": []
         },
