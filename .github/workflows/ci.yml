@@ -1,0 +1,102 @@
+name: CI
+
+on:
+  pull_request:
+    branches:
+      - main
+  workflow_dispatch:
+
+concurrency:
+  group: ci-${{ github.workflow }}-${{ github.event.pull_request.number || github.ref }}
+  cancel-in-progress: true
+
+permissions:
+  contents: read
+
+env:
+  AWS_REGION: us-east-1
+  AWS_ACCOUNT_ID: "462204803675"
+  DOCKER_BUILDKIT: "1"
+
+jobs:
+  build-and-push:
+    name: Build and push image
+    runs-on: ubuntu-latest
+    timeout-minutes: 60
+    outputs:
+      image: ${{ steps.ecr.outputs.image }}
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v6
+
+      - name: Authenticate to AWS and ECR
+        uses: ./.github/actions/aws-ecr-auth
+        with:
+          aws-region: ${{ env.AWS_REGION }}
+        secrets:
+          aws_access_key_id: ${{ secrets.AWS_ACCESS_KEY_ID }}
+          aws_secret_access_key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+
+      - name: Compute ECR image coordinates
+        id: ecr
+        run: |
+          REPO_LOWER=$(echo "${{ github.repository }}" | tr '[:upper:]' '[:lower:]')
+          REGISTRY="${{ env.AWS_ACCOUNT_ID }}.dkr.ecr.${{ env.AWS_REGION }}.amazonaws.com"
+          TAG="${{ github.run_number }}"
+          echo "repository=$REPO_LOWER" >> "$GITHUB_OUTPUT"
+          echo "registry=$REGISTRY" >> "$GITHUB_OUTPUT"
+          echo "tag=$TAG" >> "$GITHUB_OUTPUT"
+          echo "image=$REGISTRY/$REPO_LOWER:$TAG" >> "$GITHUB_OUTPUT"
+
+      - name: Ensure ECR repository exists
+        run: |
+          aws ecr describe-repositories --repository-names "${{ steps.ecr.outputs.repository }}" \
+            || aws ecr create-repository --repository-name "${{ steps.ecr.outputs.repository }}"
+
+      - name: Set up Docker Buildx
+        uses: docker/setup-buildx-action@v3
+
+      - name: Build and push
+        uses: docker/build-push-action@v6
+        with:
+          context: .
+          file: Dockerfile
+          target: builder
+          push: true
+          tags: ${{ steps.ecr.outputs.image }}
+          cache-from: type=gha
+          cache-to: type=gha,mode=max
+
+  validate:
+    name: Validate OpenAPI
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    needs: [build-and-push]
+    steps:
+      - name: Authenticate to AWS and ECR
+        uses: ./.github/actions/aws-ecr-auth
+        with:
+          aws-region: ${{ env.AWS_REGION }}
+        secrets:
+          aws_access_key_id: ${{ secrets.AWS_ACCESS_KEY_ID }}
+          aws_secret_access_key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+
+      - name: Validate
+        run: docker run --rm ${{ needs.build-and-push.outputs.image }} openapi-generator-cli validate -i api.yaml
+
+  openapi-generate:
+    name: Generate OpenAPI YAML
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    needs: [build-and-push]
+    steps:
+      - name: Authenticate to AWS and ECR
+        uses: ./.github/actions/aws-ecr-auth
+        with:
+          aws-region: ${{ env.AWS_REGION }}
+        secrets:
+          aws_access_key_id: ${{ secrets.AWS_ACCESS_KEY_ID }}
+          aws_secret_access_key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+
+      - name: Generate
+        run: docker run --rm ${{ needs.build-and-push.outputs.image }} openapi-generator-cli generate -i api.yaml -g openapi-yaml

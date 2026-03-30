@@ -1,0 +1,30 @@
+name: Authenticate to AWS and Amazon ECR
+description: >
+  Configures AWS credentials and logs in to Amazon ECR so subsequent steps can use the AWS CLI
+  and Docker against the registry. Matches the former repeated configure + login steps in CI.
+
+inputs:
+  aws-region:
+    description: AWS region (must match the ECR registry region).
+    required: true
+
+secrets:
+  aws_access_key_id:
+    description: AWS access key ID (repository secret AWS_ACCESS_KEY_ID).
+    required: true
+  aws_secret_access_key:
+    description: AWS secret access key (repository secret AWS_SECRET_ACCESS_KEY).
+    required: true
+
+runs:
+  using: composite
+  steps:
+    - name: Configure AWS credentials
+      uses: aws-actions/configure-aws-credentials@v4
+      with:
+        aws-access-key-id: ${{ secrets.aws_access_key_id }}
+        aws-secret-access-key: ${{ secrets.aws_secret_access_key }}
+        aws-region: ${{ inputs.aws-region }}
+
+    - name: Login to Amazon ECR
+      uses: aws-actions/amazon-ecr-login@v2
