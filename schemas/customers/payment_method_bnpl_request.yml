@@ -28,9 +28,9 @@ allOf:
         description: "Product type of the payment method, use for the payment method to know the product type"
         enum:
           - aplazo_bnpl
-          - creditea_bnpl
-          - coppel_bnpl
           - azteca_bnpl
+          - coppel_bnpl
+          - creditea_bnpl
       success_url:
         type: string
         description: "URL to redirect the customer after a successful payment"
