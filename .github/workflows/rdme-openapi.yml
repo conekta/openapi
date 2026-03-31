@@ -8,7 +8,6 @@ on:
       # This workflow will run every time you push code to the following branch: `main`
       # Check out GitHub's docs for more info on configuring this:
       # https://docs.github.com/actions/using-workflows/events-that-trigger-workflows
-      - main
       - 'releases/**'
       - 'release/**'
 
@@ -22,6 +21,6 @@ jobs:
         uses: actions/checkout@v6
 
       - name: Run `openapi` command 🚀
-        uses: readmeio/rdme@v8
+        uses: readmeio/rdme@v10
         with:
-          rdme: openapi _build/api.yaml --key=${{ secrets.README_API_KEY }} --id=${{ secrets.API_README_VERSION_2_2_0_ID }}
+          rdme: openapi upload _build/api.yaml --key=${{ secrets.README_API_KEY }} --branch=v2.3.0
