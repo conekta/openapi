@@ -8438,6 +8438,7 @@ paths:
                       exp_month: "01"
                       exp_year: "25"
                       brand: visa
+                      issuer: santander
                       name: random name
                       parent_id: cus_2tUkvasdas1s4ihjs
                       default: false
@@ -17344,6 +17345,10 @@ components:
             type: string
           brand:
             example: visa
+            type: string
+          issuer:
+            description: Name of the institution that issued the card
+            example: santander
             type: string
           name:
             example: Fulano Perez"

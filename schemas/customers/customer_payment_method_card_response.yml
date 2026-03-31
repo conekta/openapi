@@ -8,7 +8,7 @@ payment_method_card_response:
         last4:
           type: string
           example: "6410"
-        bin: 
+        bin:
           type: string
           example: "40276657"
         card_type:
@@ -23,7 +23,11 @@ payment_method_card_response:
         brand:
           type: string
           example: "visa"
-        name: 
+        issuer:
+          type: string
+          example: "santander"
+          description: "Name of the institution that issued the card"
+        name:
           type: string
           example: Fulano Perez"
         default:
@@ -33,4 +37,4 @@ payment_method_card_response:
         payment_source_status:
           type: string
           example: "active"
-        
+

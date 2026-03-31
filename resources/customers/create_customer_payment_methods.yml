@@ -94,6 +94,7 @@ get:
                     exp_month: "01"
                     exp_year: "25"
                     brand: "visa"
+                    issuer: "santander"
                     name: "random name"
                     parent_id: "cus_2tUkvasdas1s4ihjs"
                     default: false
