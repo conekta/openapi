@@ -31,6 +31,8 @@ payment_method_bnpl_payment:
           description: "Product type of the charge"
           examples:
             - value: "aplazo_bnpl"
+            - value: "azteca_bnpl"
+            - value: "coppel_bnpl"
             - value: "creditea_bnpl"
         redirect_url:
           type: string
