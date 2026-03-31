@@ -32,6 +32,8 @@ payment_method_bnpl_payment:
           examples:
             - value: "aplazo_bnpl"
             - value: "creditea_bnpl"
+            - value: "azteca_bnpl"
+            - value: "coppel_bnpl"
         redirect_url:
           type: string
           description: "URL to redirect the customer to complete the payment"

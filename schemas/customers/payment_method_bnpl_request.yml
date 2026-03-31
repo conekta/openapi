@@ -29,6 +29,8 @@ allOf:
         enum:
           - aplazo_bnpl
           - creditea_bnpl
+          - coppel_bnpl
+          - azteca_bnpl
       success_url:
         type: string
         description: "URL to redirect the customer after a successful payment"

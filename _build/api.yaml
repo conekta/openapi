@@ -16531,6 +16531,8 @@ components:
             enum:
             - aplazo_bnpl
             - creditea_bnpl
+            - coppel_bnpl
+            - azteca_bnpl
             example: aplazo_bnpl
             type: string
           success_url:
