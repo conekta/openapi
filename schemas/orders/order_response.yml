@@ -1,12 +1,5 @@
 title: order_response
 description: "order response"
-required:
-  - amount
-  - created_at
-  - currency
-  - id
-  - livemode
-  - object
 properties:
   amount:
     type: integer

@@ -19414,13 +19414,6 @@ components:
           example: 1676328434
           format: int64
           type: integer
-      required:
-      - amount
-      - created_at
-      - currency
-      - id
-      - livemode
-      - object
       title: order_response
     get_orders_response:
       allOf:
