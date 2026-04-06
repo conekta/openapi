@@ -1,4 +1,4 @@
-openapi: 3.1.0
+openapi: 3.1.2
 info:
   contact:
     email: engineering@conekta.com
@@ -18814,6 +18814,22 @@ components:
           items:
             type: string
           type: array
+        excluded_payment_methods:
+          description: Payment methods excluded from the checkout. This field is only
+            returned when excluded_payment_methods is provided in the request.
+          example:
+          - cash
+          - bank_transfer
+          items:
+            enum:
+            - cash
+            - card
+            - bank_transfer
+            - bnpl
+            - pay_by_bank
+            type: string
+          title: order_response_excluded_payment_methods
+          type: array
         can_not_expire:
           example: false
           type: boolean
@@ -18905,6 +18921,7 @@ components:
           description: "Redirection url back to the site in case of successful payment,\
             \ applies only to HostedPayment"
           example: http://187.216.228.66:2222/SysVentasPagos/Acceso.aspx
+          format: uri
           type: string
         starts_at:
           example: 1676354400
@@ -18924,10 +18941,11 @@ components:
           description: "Indicate the url of the Conekta component to complete the\
             \ payment. For HostedPayment, this will be a Conekta-hosted page"
           example: https://pay.conekta.io/checkout/6fca054a85194c43971ecea35cc519bb
+          format: uri
           type: string
       required:
-      - allowed_payment_methods
       - id
+      - livemode
       - name
       - object
       - type
@@ -19396,6 +19414,13 @@ components:
           example: 1676328434
           format: int64
           type: integer
+      required:
+      - amount
+      - created_at
+      - currency
+      - id
+      - livemode
+      - object
       title: order_response
     get_orders_response:
       allOf:
@@ -19441,7 +19466,8 @@ components:
       properties:
         allowed_payment_methods:
           description: "Are the payment methods available for this link. For subscriptions,\
-            \ only 'card' is allowed due to the recurring nature of the payments."
+            \ only 'card' is allowed due to the recurring nature of the payments.\
+            \ This field is mutually exclusive with excluded_payment_methods."
           example:
           - cash
           - card
@@ -19456,6 +19482,22 @@ components:
             - bnpl
             - pay_by_bank
             type: string
+          type: array
+        excluded_payment_methods:
+          description: Payment methods to be excluded from the checkout. This field
+            is mutually exclusive with allowed_payment_methods.
+          example:
+          - cash
+          - bank_transfer
+          items:
+            enum:
+            - cash
+            - card
+            - bank_transfer
+            - bnpl
+            - pay_by_bank
+            type: string
+          title: checkout_request_excluded_payment_methods
           type: array
         exclude_card_networks:
           description: List of card networks to exclude from the checkout. This field
@@ -19535,8 +19577,6 @@ components:
           - Integration
           - HostedPayment
           type: string
-      required:
-      - allowed_payment_methods
       title: order_checkout_request
     customer_info:
       properties:
@@ -20345,6 +20385,22 @@ components:
           items:
             type: string
           type: array
+        excluded_payment_methods:
+          description: Payment methods excluded from the checkout. This field is only
+            returned when excluded_payment_methods is provided in the request.
+          example:
+          - cash
+          - bank_transfer
+          items:
+            enum:
+            - cash
+            - card
+            - bank_transfer
+            - bnpl
+            - pay_by_bank
+            type: string
+          title: checkout_response_excluded_payment_methods
+          type: array
         plan_ids:
           description: List of plan IDs that are available for subscription
           example:
@@ -20544,7 +20600,7 @@ components:
       properties:
         allowed_payment_methods:
           description: Those are the payment methods that will be available for the
-            link
+            link. This field is mutually exclusive with excluded_payment_methods.
           example:
           - cash
           - card
@@ -20553,6 +20609,22 @@ components:
           - pay_by_bank
           items:
             type: string
+          type: array
+        excluded_payment_methods:
+          description: Payment methods to be excluded from the checkout. This field
+            is mutually exclusive with allowed_payment_methods.
+          example:
+          - cash
+          - bank_transfer
+          items:
+            enum:
+            - cash
+            - card
+            - bank_transfer
+            - bnpl
+            - pay_by_bank
+            type: string
+          title: checkout_excluded_payment_methods
           type: array
         exclude_card_networks:
           description: List of card networks to exclude from the checkout. This field
@@ -20641,7 +20713,6 @@ components:
           example: PaymentLink
           type: string
       required:
-      - allowed_payment_methods
       - expires_at
       - name
       - order_template

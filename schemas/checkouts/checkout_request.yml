@@ -1,16 +1,22 @@
 title: order_checkout_request
 description: |
   [Checkout](https://developers.conekta.com/v2.3.0/reference/payment-link) details
-required:
-  - allowed_payment_methods
 properties:
   allowed_payment_methods:
     type: array
-    description: "Are the payment methods available for this link. For subscriptions, only 'card' is allowed due to the recurring nature of the payments."
+    description: "Are the payment methods available for this link. For subscriptions, only 'card' is allowed due to the recurring nature of the payments. This field is mutually exclusive with excluded_payment_methods."
     items:
       type: string
       enum: ["cash", "card", "bank_transfer", "bnpl", "pay_by_bank"]
     example: [ "cash", "card", "bank_transfer", "bnpl", "pay_by_bank"]
+  excluded_payment_methods:
+    title: checkout_request_excluded_payment_methods
+    type: array
+    description: "Payment methods to be excluded from the checkout. This field is mutually exclusive with allowed_payment_methods."
+    items:
+      type: string
+      enum: ["cash", "card", "bank_transfer", "bnpl", "pay_by_bank"]
+    example: ["cash", "bank_transfer"]
   exclude_card_networks:
     title: checkout_request_exclude_card_networks
     type: array

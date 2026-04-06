@@ -13,6 +13,14 @@ properties:
       type: string
     example: [ "cash", "card", "bank_transfer", "bnpl", "pay_by_bank"]
     description: "Are the payment methods available for this link"
+  excluded_payment_methods:
+    title: checkout_response_excluded_payment_methods
+    type: array
+    items:
+      type: string
+      enum: ["cash", "card", "bank_transfer", "bnpl", "pay_by_bank"]
+    example: ["cash", "bank_transfer"]
+    description: "Payment methods excluded from the checkout. This field is only returned when excluded_payment_methods is provided in the request."
   plan_ids:
     type: array
     description: "List of plan IDs that are available for subscription"

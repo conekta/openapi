@@ -1,5 +1,12 @@
 title: order_response
 description: "order response"
+required:
+  - amount
+  - created_at
+  - currency
+  - id
+  - livemode
+  - object
 properties:
   amount:
     type: integer
@@ -42,8 +49,8 @@ properties:
   checkout:
     type: object
     required:
-      - allowed_payment_methods
       - id
+      - livemode
       - name
       - object
       - type
@@ -54,6 +61,14 @@ properties:
         description: "Are the payment methods available for this link"
         items:
           type: string
+      excluded_payment_methods:
+        title: order_response_excluded_payment_methods
+        type: array
+        items:
+          type: string
+          enum: ["cash", "card", "bank_transfer", "bnpl", "pay_by_bank"]
+        example: ["cash", "bank_transfer"]
+        description: "Payment methods excluded from the checkout. This field is only returned when excluded_payment_methods is provided in the request."
       can_not_expire:
         type: boolean
         example: false
@@ -139,6 +154,7 @@ properties:
         type: string
         description: "Redirection url back to the site in case of successful payment, applies only to HostedPayment"
         example: "http://187.216.228.66:2222/SysVentasPagos/Acceso.aspx"
+        format: uri
       starts_at:
         type: integer
         example: 1676354400
@@ -153,6 +169,7 @@ properties:
         type: string
         description: "Indicate the url of the Conekta component to complete the payment. For HostedPayment, this will be a Conekta-hosted page"
         example: "https://pay.conekta.io/checkout/6fca054a85194c43971ecea35cc519bb"
+        format: uri
   created_at:
     type: integer
     example: 1676328434
