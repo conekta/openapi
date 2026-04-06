@@ -7,4 +7,4 @@ merge:
 	--skip-validate-spec
 
 update-readme:
-	make merge && rdme openapi _build/api.yaml --id=${API_README_VERSION_2_3_0_ID}  --key=${README_API_KEY}
+	make merge && rdme openapi upload --key=${README_API_KEY} --branch=v2.3.0 --slug=conekta-api  _build/api.yaml 
