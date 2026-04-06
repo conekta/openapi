@@ -2,7 +2,6 @@ title: checkout
 description: "It is a sub-resource of the Order model that can be stipulated in order to configure its corresponding checkout"
 type: object
 required:
-  - allowed_payment_methods
   - name
   - type
   - order_template
@@ -14,7 +13,15 @@ properties:
     items:
       type: string
     example: [ "cash", "card", "bank_transfer", "bnpl", "pay_by_bank"]
-    description: "Those are the payment methods that will be available for the link"
+    description: "Those are the payment methods that will be available for the link. This field is mutually exclusive with excluded_payment_methods."
+  excluded_payment_methods:
+    title: checkout_excluded_payment_methods
+    type: array
+    description: "Payment methods to be excluded from the checkout. This field is mutually exclusive with allowed_payment_methods."
+    items:
+      type: string
+      enum: ["cash", "card", "bank_transfer", "bnpl", "pay_by_bank"]
+    example: ["cash", "bank_transfer"]
   exclude_card_networks:
     title: checkout_exclude_card_networks
     type: array
