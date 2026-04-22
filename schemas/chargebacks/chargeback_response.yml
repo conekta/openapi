@@ -22,6 +22,7 @@ properties:
     type: string
     example: "unrecognized"
     enum:
+      - unrecognized
       - unauthorized
       - unauthorized_by_client
       - unrecognized_like_fraud
