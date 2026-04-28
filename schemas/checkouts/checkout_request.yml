@@ -27,8 +27,11 @@ properties:
     example: ["plan_123", "plan_456"]
   expires_at:
     type: integer
+    minimum: 1
     format: int64
-    description: "Unix timestamp of checkout expiration"
+    description: |
+        It is the time when the link will expire. 
+        It is expressed in seconds since the Unix epoch. The valid range is from 5 minutes to 365 days from the creation date.
   failure_url:
     type: string
     format: uri

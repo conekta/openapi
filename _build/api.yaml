@@ -19676,8 +19676,11 @@ components:
             type: string
           type: array
         expires_at:
-          description: Unix timestamp of checkout expiration
+          description: "It is the time when the link will expire. \nIt is expressed\
+            \ in seconds since the Unix epoch. The valid range is from 5 minutes to\
+            \ 365 days from the creation date.\n"
           format: int64
+          minimum: 1
           type: integer
         failure_url:
           description: "Redirection url back to the site in case of failed payment,\
@@ -20765,10 +20768,11 @@ components:
           type: array
         expires_at:
           description: "It is the time when the link will expire. \nIt is expressed\
-            \ in seconds since the Unix epoch. The valid range is from 10 minutes\
-            \ to 365 days from the creation date.\n"
+            \ in seconds since the Unix epoch. The valid range is from 5 minutes to\
+            \ 365 days from the creation date.\n"
           example: 1680397724
           format: int64
+          minimum: 1
           type: integer
         monthly_installments_enabled:
           description: This flag allows you to specify if months without interest

@@ -1,6 +1,6 @@
-FROM public.ecr.aws/docker/library/node:20 as builder
+FROM public.ecr.aws/docker/library/node:24 AS builder
 
-# Install OpenJDK-11
+# Install OpenJDK-17
 RUN apt-get update && \
     apt-get install -y openjdk-17-jre-headless && \
     apt-get clean;
