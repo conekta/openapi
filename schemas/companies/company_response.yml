@@ -18,10 +18,9 @@ properties:
     description: The current status of the company's account.
     example: "signed_up"
   parent_company_id:
-    type: string
+    type: [string, "null"]
     description: The identifier of the parent company, if any.
     example: "680bf1da38716d00013543bc"
-    nullable: true
   onboarding_status:
     type: string
     description: The current status of the company's onboarding process.
@@ -67,9 +66,8 @@ properties:
           description: The status of the document.
           example: "pending"
         file_name:
-          type: string
+          type: [string, "null"]
           description: The name of the file.
-          nullable: true
           example: null
   created_at:
     type: integer
@@ -85,8 +83,7 @@ properties:
     description: Indicates if 3DS authentication is enabled for the company.
     example: true
   three_ds_mode:
-    type: string
-    nullable: true
+    type: [string, "null"]
     description: The 3DS mode for the company, either 'smart' or 'strict'. This property is only applicable when three_ds_enabled is true. When three_ds_enabled is false, this field will be null.
     example: "strict"
     enum:

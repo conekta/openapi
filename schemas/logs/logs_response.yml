@@ -13,16 +13,13 @@ properties:
     readOnly: true
   next_page_url: 
     description: URL of the next page.
-    type: string
-    nullable: true
+    type: [string, "null"]
   previous_page_url:
     description: Url of the previous page.
-    type: string
-    nullable: true
+    type: [string, "null"]
   data:
     description: set to page results.
-    nullable: true
-    type: array
+    type: [array, "null"]
     items:
       title: logs_response_data
       properties:
@@ -41,19 +38,16 @@ properties:
           type: boolean
           example: true
         loggable_id:
-          type: string
-          nullable: true
+          type: [string, "null"]
           example: "ord_87632467832"
         loggable_type:
-          type: string
-          nullable: true
+          type: [string, "null"]
           example: "order"
         method:
           type: string
           example: "POST"
         oauth_token_id:
-          type: string
-          nullable: true
+          type: [string, "null"]
         query_string:
           type: object
           additionalProperties: true

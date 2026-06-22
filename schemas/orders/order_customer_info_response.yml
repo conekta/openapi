@@ -2,10 +2,9 @@ title:  order_customer_info_response
 type: object
 properties:
   customer_custom_reference:
-    type: string
+    type: [string, "null"]
     example: "custom_reference"
     description: Custom reference
-    nullable: true
   name:
     type: string
     example: "DevTest"

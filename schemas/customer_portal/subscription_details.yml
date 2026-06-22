@@ -40,8 +40,7 @@ properties:
         type: string
         example: "cus_2yDzKtEAD3khH8Sga"
       customer_custom_reference:
-        type: string
-        nullable: true
+        type: [string, "null"]
         example: null
   plan:
     type: object
@@ -70,9 +69,8 @@ properties:
         format: int32
         example: 1
       trial_period_days:
-        type: integer
+        type: [integer, "null"]
         format: int32
-        nullable: true
         example: null
       expiry_count:
         type: integer
@@ -98,9 +96,8 @@ properties:
     type: string
     example: "cus_2yDzKtEAD3khH8Sga"
   next_billing_cycle:
-    type: integer
+    type: [integer, "null"]
     format: int64
-    nullable: true
     example: 1876833632
   created_at:
     type: integer

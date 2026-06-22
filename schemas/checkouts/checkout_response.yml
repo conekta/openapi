@@ -83,10 +83,9 @@ properties:
     type: integer
     example: 0
   payments_limit_count:
-    type: integer
+    type: [integer, "null"]
     format: int8
     example: 5
-    nullable: true
   recurrent:
     type: boolean
     example: false

@@ -11,8 +11,7 @@ details:
             type: string
             example: conekta.errors.authentication.missing_key
           param:
-            type: string
-            nullable: true
+            type: [string, "null"]
           message:
             type: string
             example: "Acceso no autorizado."

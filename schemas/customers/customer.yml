@@ -7,8 +7,7 @@ required:
   - phone
 properties:
   antifraud_info:
-      type: object
-      nullable: true
+      type: [object, "null"]
       properties:
         account_created_at:
           type: integer

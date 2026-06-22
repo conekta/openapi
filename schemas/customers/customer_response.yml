@@ -10,8 +10,7 @@ required:
 properties:
   antifraud_info:
     title: customer_antifraud_info_response
-    type: object
-    nullable: true
+    type: [object, "null"]
     properties:
       first_paid_at:
         type: integer
@@ -37,15 +36,13 @@ properties:
     description: "It is a parameter that allows to identify the date of birth of the client."
     example: "24/07/1992"
   default_fiscal_entity_id:
-    type: string
-    nullable: true
+    type: [string, "null"]
     example: "fis_ent_2tKqqAfqPi21oCmEJ"
   default_shipping_contact_id:
     type: string
     example: "ship_cont_2tKZsTYcsryyu7Ah8"
   default_payment_source_id:
-    type: string
-    nullable: true
+    type: [string, "null"]
     example: src_2tHJfJ79KyUwpxTio
   email:
     type: string
@@ -164,6 +161,7 @@ properties:
                       format: int64
                       example: 1675715413
   subscription:
-     $ref: '../subscriptions/subscription_response.yml'
      title: customer_subscription_response
-     nullable: true
+     anyOf:
+       - $ref: '../subscriptions/subscription_response.yml'
+       - type: "null"

@@ -50,8 +50,7 @@ properties:
       format: int8
     example: [3,6,12]
   three_ds_mode:
-    type: string
-    nullable: true
+    type: [string, "null"]
     description: "Indicates the 3DS2 mode for the order, either smart or strict. This property is only applicable when 3DS is enabled. When 3DS is disabled, this field should be null."
     examples:
       - value: "smart"
@@ -67,9 +66,8 @@ properties:
     example: false
     description:  "This flag allows you to fill in the shipping information at checkout."
   on_demand_enabled:
-    type: boolean
+    type: [boolean, "null"]
     example: true
-    nullable: true
     description: "This flag allows you to specify if the link will be on demand."
   plan_ids:
     description: It is a list of plan IDs that will be associated with the order.

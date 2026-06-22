@@ -87,12 +87,11 @@ properties:
         bnpl_payment: payment_method_bnpl_payment
         pay_by_bank_payment: payment_method_pbb_payment
   reference_id:
-    type: string
+    type: [string, "null"]
     description: "Reference ID of the charge"
     example: ref_2tN73UdUSNrYRPD9r
-    nullable: true
   refunds:
-    type: object
+    type: [object, "null"]
     title: charge_response_refunds
     allOf:
       - $ref: ../pagination/pagination.yml
@@ -136,7 +135,6 @@ properties:
                   type: string
                   example: "pending"
                   description: refund status
-    nullable: true
   chargeback:
     description: "Present only when the charge has a chargeback"
     oneOf:

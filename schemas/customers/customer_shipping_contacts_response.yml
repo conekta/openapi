@@ -8,9 +8,8 @@ properties:
     type: string
     example:   "Marvin Fuller"
   between_streets: 
-    type: string
+    type: [string, "null"]
     example: "Ackerman Crescent"
-    nullable: true
   address:
     title: customer_shipping_contacts_address
     type: object
@@ -37,9 +36,8 @@ properties:
         type: string
         example: MX
       residential:
-        type: boolean
+        type: [boolean, "null"]
         example: true
-        nullable: true
   parent_id:
     type: string
   default:

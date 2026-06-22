@@ -36,7 +36,6 @@ post:
               example: 500
               description: Amount to capture
               minimum: 1
-              nullable: false
   parameters:
     - $ref: '../../parameters/commons/path_param/id.yml'
     - $ref: '../../parameters/commons/headers/accept_language.yml'
