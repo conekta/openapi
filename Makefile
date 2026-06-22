@@ -1,10 +1,6 @@
 merge:
 	docker run --rm \
-	-v ${PWD}:/local openapitools/openapi-generator-cli:v7.23.0 generate \
-	-g openapi-yaml \
-	-i /local/api.yaml \
-	-p outputFile=local/_build/api.yaml \
-	--skip-validate-spec
+	-v ${PWD}:/spec redocly/cli:2.34.0 bundle api.yaml -o /spec/_build/api.yaml
 
 update-readme:
 	make merge && rdme openapi _build/api.yaml --id=${API_README_VERSION_2_2_0_ID}  --key=${README_API_KEY}
