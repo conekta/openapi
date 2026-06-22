@@ -1,0 +1,20 @@
+summary: Create an order with checkout and force save card
+value:
+  checkout:
+    allowed_payment_methods:
+      - card
+    force_save_card: true
+    name: Compra
+    type: Integration
+  currency: MXN
+  customer_info:
+    customer_id: "cus_2n9g6x7q1w5k8v3a"
+  line_items:
+    description: string
+    sku: string
+    name: Box of Cohiba S1s
+    unit_price: 20000
+    quantity: 1
+    tags:
+    - string
+    brand: string

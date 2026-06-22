@@ -50,7 +50,7 @@ properties:
     properties:
       allowed_payment_methods:
         type: array
-        example: [ "cash", "card", "bank_transfer", "bnpl", "pay_by_bank"]
+        example: [ "cash", "card", "bank_transfer", "bnpl", "pay_by_bank", "apple", "google"]
         description: "Are the payment methods available for this link"
         items:
           type: string
@@ -85,6 +85,11 @@ properties:
       force_3ds_flow:
         type: boolean
         example: false
+      force_save_card:
+        type: boolean
+        example: false
+        description: "Indicates whether the card used for the payment should be saved for future purchases. This field is only applicable for card payments."
+        nullable: true
       id:
         type: string
         example:  "6fca054a-8519-4c43-971e-cea35cc519bb"
