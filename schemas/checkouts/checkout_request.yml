@@ -9,8 +9,8 @@ properties:
     description: "Are the payment methods available for this link. For subscriptions, only 'card' is allowed due to the recurring nature of the payments."
     items:
       type: string
-      enum: ["cash", "card", "bank_transfer", "bnpl", "pay_by_bank"]
-    example: [ "cash", "card", "bank_transfer", "bnpl", "pay_by_bank"]
+      enum: ["cash", "card", "bank_transfer", "bnpl", "pay_by_bank", 'google', 'apple']
+    example: [ "cash", "card", "bank_transfer", "bnpl", "pay_by_bank", "google", "apple"]
   exclude_card_networks:
     title: checkout_request_exclude_card_networks
     type: array
@@ -37,6 +37,11 @@ properties:
     format: uri
     description: "Redirection url back to the site in case of failed payment, applies only to HostedPayment."
     example: "https://www.mysite.com/failure"
+  force_save_card:
+    type: boolean
+    example: false
+    description: "Indicates whether the card used for the payment should be saved for future purchases. This field is only applicable for card payments."
+    nullable: true
   monthly_installments_enabled:
     type: boolean
     example: false

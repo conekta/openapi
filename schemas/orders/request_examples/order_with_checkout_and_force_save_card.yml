@@ -1,0 +1,27 @@
+summary: Create an order with checkout and force save card
+value:
+  checkout:
+    allowed_payment_methods:
+      - cash
+      - card
+      - bank_transfer
+      - bnpl
+      - pay_by_bank
+    force_save_card: true
+    name: Compra
+    type: Integration
+  currency: MXN
+  customer_info:
+    name: DevTest
+    email: test@conekta.com
+    phone: '5522997233'
+    corporate: false
+  line_items:
+    description: string
+    sku: string
+    name: Box of Cohiba S1s
+    unit_price: 20000
+    quantity: 1
+    tags:
+    - string
+    brand: string
