@@ -2017,7 +2017,6 @@ paths:
                   example: 500
                   description: Amount to capture
                   minimum: 1
-                  nullable: false
       parameters:
         - $ref: '#/components/parameters/id'
         - $ref: '#/components/parameters/accept_language'
@@ -5133,13 +5132,15 @@ components:
       properties:
         next_page_url:
           description: URL of the next page.
-          type: string
-          nullable: true
+          type:
+            - string
+            - 'null'
           example: https://api.conekta.io/resources?limit=10&next=chrg_1
         previous_page_url:
           description: Url of the previous page.
-          type: string
-          nullable: true
+          type:
+            - string
+            - 'null'
           example: https://api.conekta.io/resources?limit=10&previous=chrg_1
     risk_rules_list:
       title: risk_rules_list
@@ -5195,8 +5196,9 @@ components:
                 type: string
                 example: conekta.errors.authentication.missing_key
               param:
-                type: string
-                nullable: true
+                type:
+                  - string
+                  - 'null'
               message:
                 type: string
                 example: Acceso no autorizado.
@@ -5212,9 +5214,10 @@ components:
           properties:
             log_id:
               description: log id
-              type: string
+              type:
+                - string
+                - 'null'
               example: 507f1f77bcf86cd799439011
-              nullable: true
             type:
               type: string
               example: authentication_error
@@ -5260,16 +5263,18 @@ components:
           example: 1684167923
           format: int64
         deactivated_at:
-          type: integer
+          type:
+            - integer
+            - 'null'
           description: Unix timestamp in seconds of when the api key was deleted
           example: null
-          nullable: true
           format: int64
         last_used_at:
-          type: integer
+          type:
+            - integer
+            - 'null'
           description: Unix timestamp in seconds with the api key was used
           example: null
-          nullable: true
           format: int64
         description:
           type: string
@@ -5344,10 +5349,11 @@ components:
           description: Object name, value is 'api_key'
           example: api_key
         last_used_at:
-          type: integer
+          type:
+            - integer
+            - 'null'
           description: Unix timestamp in seconds with the api key was used
           example: null
-          nullable: true
           format: int64
         role:
           type: string
@@ -5444,12 +5450,14 @@ components:
               example: agreement_2tN73UdUSNrYRPD9r
               description: Agreement ID
             auth_code:
-              type: integer
+              type:
+                - integer
+                - 'null'
               example: 542563
-              nullable: true
             cashier_id:
-              type: string
-              nullable: true
+              type:
+                - string
+                - 'null'
               example: OINM01010
             reference:
               type: string
@@ -5469,8 +5477,9 @@ components:
               type: string
               example: store
             store:
-              type: string
-              nullable: true
+              type:
+                - string
+                - 'null'
               example: 10MON50EDI
             store_name:
               type: string
@@ -5549,33 +5558,40 @@ components:
               type: string
               example: '646180111805034237'
             description:
-              type: string
-              nullable: true
+              type:
+                - string
+                - 'null'
             executed_at:
-              type: string
-              nullable: true
+              type:
+                - string
+                - 'null'
             expires_at:
               type: integer
               example: 1683053729
               format: int64
             issuing_account_bank:
-              type: string
-              nullable: true
+              type:
+                - string
+                - 'null'
             issuing_account_number:
-              type: string
-              nullable: true
+              type:
+                - string
+                - 'null'
             issuing_account_holder_name:
-              type: string
-              nullable: true
+              type:
+                - string
+                - 'null'
             issuing_account_tax_id:
-              type: string
-              nullable: true
+              type:
+                - string
+                - 'null'
             payment_attempts:
               type: array
               items: {}
             receiving_account_holder_name:
-              type: string
-              nullable: true
+              type:
+                - string
+                - 'null'
             receiving_account_number:
               type: string
               example: '646180111805034237'
@@ -5583,14 +5599,17 @@ components:
               type: string
               example: STP
             receiving_account_tax_id:
-              type: string
-              nullable: true
+              type:
+                - string
+                - 'null'
             reference_number:
-              type: string
-              nullable: true
+              type:
+                - string
+                - 'null'
             tracking_code:
-              type: string
-              nullable: true
+              type:
+                - string
+                - 'null'
             customer_ip_address:
               type: string
               example: 0.0.0.0
@@ -5877,12 +5896,15 @@ components:
               bnpl_payment: payment_method_bnpl_payment
               pay_by_bank_payment: payment_method_pbb_payment
         reference_id:
-          type: string
+          type:
+            - string
+            - 'null'
           description: Reference ID of the charge
           example: ref_2tN73UdUSNrYRPD9r
-          nullable: true
         refunds:
-          type: object
+          type:
+            - object
+            - 'null'
           title: charge_response_refunds
           allOf:
             - $ref: '#/components/schemas/pagination'
@@ -5926,7 +5948,6 @@ components:
                         type: string
                         example: pending
                         description: refund status
-          nullable: true
         chargeback:
           description: Present only when the charge has a chargeback
           oneOf:
@@ -6156,9 +6177,10 @@ components:
           type: string
           example: Payment from order
         device_fingerprint:
-          type: string
+          type:
+            - string
+            - 'null'
           example: 6FR3chaU4Y1nGAW5NAGd1rcjAKa142Ba
-          nullable: true
         failure_code:
           type: string
           example: suspected_fraud
@@ -6172,17 +6194,19 @@ components:
           type: boolean
           example: true
         monthly_installments:
-          type: integer
-          nullable: true
+          type:
+            - integer
+            - 'null'
         object:
           type: string
         order_id:
           type: string
           example: ord_2tN73UdUSNrYRPD9r
         paid_at:
-          type: integer
+          type:
+            - integer
+            - 'null'
           example: 1676390742
-          nullable: true
         payment_method:
           title: charge_order_response_payment_method
           propertyName: object
@@ -6201,10 +6225,11 @@ components:
               bnpl_payment: payment_method_bnpl_payment
               pay_by_bank_payment: payment_method_pbb_payment
         reference_id:
-          type: string
+          type:
+            - string
+            - 'null'
           description: Reference ID of the charge
           example: ref_2tN73UdUSNrYRPD9r
-          nullable: true
         refunds:
           type: array
           items: {}
@@ -6244,10 +6269,11 @@ components:
           description: The current status of the company's account.
           example: signed_up
         parent_company_id:
-          type: string
+          type:
+            - string
+            - 'null'
           description: The identifier of the parent company, if any.
           example: 680bf1da38716d00013543bc
-          nullable: true
         onboarding_status:
           type: string
           description: The current status of the company's onboarding process.
@@ -6293,9 +6319,10 @@ components:
                 description: The status of the document.
                 example: pending
               file_name:
-                type: string
+                type:
+                  - string
+                  - 'null'
                 description: The name of the file.
-                nullable: true
                 example: null
         created_at:
           type: integer
@@ -6311,8 +6338,9 @@ components:
           description: Indicates if 3DS authentication is enabled for the company.
           example: true
         three_ds_mode:
-          type: string
-          nullable: true
+          type:
+            - string
+            - 'null'
           description: The 3DS mode for the company, either 'smart' or 'strict'. This property is only applicable when three_ds_enabled is true. When three_ds_enabled is false, this field will be null.
           example: strict
           enum:
@@ -6709,17 +6737,20 @@ components:
               example: MX
               description: this field follows the [ISO 3166-1 alpha-2 standard](https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2)
             residential:
-              type: boolean
+              type:
+                - boolean
+                - 'null'
               example: true
-              nullable: true
         parent_id:
           type: string
         default:
-          type: boolean
-          nullable: true
+          type:
+            - boolean
+            - 'null'
         deleted:
-          type: boolean
-          nullable: true
+          type:
+            - boolean
+            - 'null'
         metadata:
           type: object
           additionalProperties: true
@@ -6731,20 +6762,23 @@ components:
       type: object
       properties:
         billing_cycle_start:
-          type: integer
+          type:
+            - integer
+            - 'null'
           example: 1677626827
           format: int64
-          nullable: true
         billing_cycle_end:
-          type: integer
+          type:
+            - integer
+            - 'null'
           example: 1677626827
           format: int64
-          nullable: true
         canceled_at:
-          type: integer
+          type:
+            - integer
+            - 'null'
           example: 1678258162
           format: int64
-          nullable: true
         canceled_reason:
           type: string
           example: user_cancelation
@@ -6753,9 +6787,10 @@ components:
           type: string
           example: src_2tKcHxhTz7xU5SymL
         charge_id:
-          type: string
+          type:
+            - string
+            - 'null'
           example: 2tKcHxhTz7xU5SymL
-          nullable: true
         created_at:
           type: integer
           example: 1677626837
@@ -6776,10 +6811,11 @@ components:
           type: string
           example: subscription
         paused_at:
-          type: integer
+          type:
+            - integer
+            - 'null'
           example: 1678258162
           format: int64
-          nullable: true
         plan_id:
           type: string
           example: plan_2tXx672QLQ68CkmMn
@@ -6790,14 +6826,16 @@ components:
           type: integer
           example: 1677626837
         trial_start:
-          type: integer
+          type:
+            - integer
+            - 'null'
           example: 1677626837
           format: int64
-          nullable: true
         trial_end:
-          type: integer
+          type:
+            - integer
+            - 'null'
           example: 1677626837
-          nullable: true
           format: int64
     customer_response:
       title: customer response
@@ -6812,8 +6850,9 @@ components:
       properties:
         antifraud_info:
           title: customer_antifraud_info_response
-          type: object
-          nullable: true
+          type:
+            - object
+            - 'null'
           properties:
             first_paid_at:
               type: integer
@@ -6839,15 +6878,17 @@ components:
           description: It is a parameter that allows to identify the date of birth of the client.
           example: 24/07/1992
         default_fiscal_entity_id:
-          type: string
-          nullable: true
+          type:
+            - string
+            - 'null'
           example: fis_ent_2tKqqAfqPi21oCmEJ
         default_shipping_contact_id:
           type: string
           example: ship_cont_2tKZsTYcsryyu7Ah8
         default_payment_source_id:
-          type: string
-          nullable: true
+          type:
+            - string
+            - 'null'
           example: src_2tHJfJ79KyUwpxTio
         email:
           type: string
@@ -6966,9 +7007,10 @@ components:
                             format: int64
                             example: 1675715413
         subscription:
-          $ref: '#/components/schemas/subscription_response'
           title: customer_subscription_response
-          nullable: true
+          anyOf:
+            - $ref: '#/components/schemas/subscription_response'
+            - type: 'null'
     payment_method_token_request:
       title: payment_method_token_request
       allOf:
@@ -7027,8 +7069,9 @@ components:
         - phone
       properties:
         antifraud_info:
-          type: object
-          nullable: true
+          type:
+            - object
+            - 'null'
           properties:
             account_created_at:
               type: integer
@@ -7110,8 +7153,9 @@ components:
       type: object
       properties:
         antifraud_info:
-          type: object
-          nullable: true
+          type:
+            - object
+            - 'null'
           properties:
             account_created_at:
               type: integer
@@ -7384,16 +7428,19 @@ components:
           readOnly: true
         next_page_url:
           description: URL of the next page.
-          type: string
-          nullable: true
+          type:
+            - string
+            - 'null'
         previous_page_url:
           description: Url of the previous page.
-          type: string
-          nullable: true
+          type:
+            - string
+            - 'null'
         data:
           description: set to page results.
-          nullable: true
-          type: array
+          type:
+            - array
+            - 'null'
           items:
             title: logs_response_data
             properties:
@@ -7412,19 +7459,22 @@ components:
                 type: boolean
                 example: true
               loggable_id:
-                type: string
-                nullable: true
+                type:
+                  - string
+                  - 'null'
                 example: ord_87632467832
               loggable_type:
-                type: string
-                nullable: true
+                type:
+                  - string
+                  - 'null'
                 example: order
               method:
                 type: string
                 example: POST
               oauth_token_id:
-                type: string
-                nullable: true
+                type:
+                  - string
+                  - 'null'
               query_string:
                 type: object
                 additionalProperties: true
@@ -7530,19 +7580,22 @@ components:
           type: boolean
           example: true
         loggable_id:
-          type: string
-          nullable: true
+          type:
+            - string
+            - 'null'
           example: ord_87632467832
         loggable_type:
-          type: string
-          nullable: true
+          type:
+            - string
+            - 'null'
           example: order
         method:
           type: string
           example: POST
         oauth_token_id:
-          type: string
-          nullable: true
+          type:
+            - string
+            - 'null'
         query_string:
           type: object
           additionalProperties: true
@@ -7629,10 +7682,11 @@ components:
       type: object
       properties:
         customer_custom_reference:
-          type: string
+          type:
+            - string
+            - 'null'
           example: custom_reference
           description: Custom reference
-          nullable: true
         name:
           type: string
           example: DevTest
@@ -7757,10 +7811,11 @@ components:
           example: Nuevo Leon 254
           description: Street name and number
         street2:
-          type: string
+          type:
+            - string
+            - 'null'
           example: Departamento 404
           description: Street name and number
-          nullable: true
         postal_code:
           type: string
           example: '06100'
@@ -7850,9 +7905,10 @@ components:
           type: string
           example: Marvin Fuller
         between_streets:
-          type: string
+          type:
+            - string
+            - 'null'
           example: Ackerman Crescent
-          nullable: true
         address:
           title: customer_shipping_contacts_address
           type: object
@@ -7879,9 +7935,10 @@ components:
               type: string
               example: MX
             residential:
-              type: boolean
+              type:
+                - boolean
+                - 'null'
               example: true
-              nullable: true
         parent_id:
           type: string
         default:
@@ -7998,10 +8055,11 @@ components:
               type: boolean
               example: false
             force_save_card:
-              type: boolean
+              type:
+                - boolean
+                - 'null'
               example: false
               description: Indicates whether the card used for the payment should be saved for future purchases. This field is only applicable for card payments.
-              nullable: true
             id:
               type: string
               example: 6fca054a-8519-4c43-971e-cea35cc519bb
@@ -8012,11 +8070,12 @@ components:
               type: boolean
               example: false
             max_failed_retries:
-              type: integer
+              type:
+                - integer
+                - 'null'
               example: 3
               format: int8
               description: Number of retries allowed before the checkout is marked as failed
-              nullable: true
             metadata:
               additionalProperties: true
               maxProperties: 100
@@ -8039,9 +8098,10 @@ components:
               type: string
               example: checkout
             on_demand_enabled:
-              type: boolean
+              type:
+                - boolean
+                - 'null'
               example: true
-              nullable: true
             paid_payments_count:
               type: integer
               example: 0
@@ -8049,8 +8109,9 @@ components:
               type: boolean
               example: false
             redirection_time:
-              type: integer
-              nullable: true
+              type:
+                - integer
+                - 'null'
               example: 2
               format: int8
               description: number of seconds to wait before redirecting to the success_url
@@ -8099,52 +8160,56 @@ components:
         discount_lines:
           description: List of discounts that are applied to the order
           title: order_discount_lines_response
-          nullable: true
-          allOf:
-            - $ref: '#/components/schemas/pagination'
-            - $ref: '#/components/schemas/page'
-            - type: object
-              properties:
-                data:
-                  type: array
-                  items:
-                    title: discount_lines_data_response
-                    allOf:
-                      - $ref: '#/components/schemas/discount_lines_response'
+          anyOf:
+            - type: 'null'
+            - allOf:
+                - $ref: '#/components/schemas/pagination'
+                - $ref: '#/components/schemas/page'
+                - type: object
+                  properties:
+                    data:
+                      type: array
+                      items:
+                        title: discount_lines_data_response
+                        allOf:
+                          - $ref: '#/components/schemas/discount_lines_response'
         tax_lines:
           description: List of taxes that are applied to the order
           title: order_tax_lines_response
-          nullable: true
-          allOf:
-            - $ref: '#/components/schemas/pagination'
-            - $ref: '#/components/schemas/page'
-            - type: object
-              properties:
-                data:
-                  type: array
-                  items:
-                    title: tax_lines_data_response
-                    allOf:
-                      - $ref: '#/components/schemas/update_order_tax_response'
+          anyOf:
+            - type: 'null'
+            - allOf:
+                - $ref: '#/components/schemas/pagination'
+                - $ref: '#/components/schemas/page'
+                - type: object
+                  properties:
+                    data:
+                      type: array
+                      items:
+                        title: tax_lines_data_response
+                        allOf:
+                          - $ref: '#/components/schemas/update_order_tax_response'
         shipping_lines:
           description: List of shipping costs applied to the order
           title: order_shipping_lines_response
-          nullable: true
-          allOf:
-            - $ref: '#/components/schemas/pagination'
-            - $ref: '#/components/schemas/page'
-            - type: object
-              properties:
-                data:
-                  type: array
-                  items:
-                    title: shipping_lines_data_response
-                    allOf:
-                      - $ref: '#/components/schemas/shipping_order_response'
+          anyOf:
+            - type: 'null'
+            - allOf:
+                - $ref: '#/components/schemas/pagination'
+                - $ref: '#/components/schemas/page'
+                - type: object
+                  properties:
+                    data:
+                      type: array
+                      items:
+                        title: shipping_lines_data_response
+                        allOf:
+                          - $ref: '#/components/schemas/shipping_order_response'
         fiscal_entity:
-          type: object
+          type:
+            - object
+            - 'null'
           title: order_fiscal_entity_response
-          nullable: true
           description: Fiscal entity of the order, Currently it is a purely informative field
           required:
             - address
@@ -8163,25 +8228,28 @@ components:
                       type: string
                       example: fiscal_entity_address
             email:
-              type: string
+              type:
+                - string
+                - 'null'
               example: test@gmail.com
               description: Email of the fiscal entity
-              nullable: true
             metadata:
               type: object
               additionalProperties: true
               maxProperties: 100
               description: Metadata associated with the fiscal entity
             name:
-              type: string
+              type:
+                - string
+                - 'null'
               example: Conekta Inc
-              nullable: true
               description: Name of the fiscal entity
             tax_id:
-              type: string
+              type:
+                - string
+                - 'null'
               example: '324234234'
               description: Tax ID of the fiscal entity
-              nullable: true
             id:
               type: string
               example: fis_ent_2tN85VYaSMyDvjB3M
@@ -8195,10 +8263,11 @@ components:
               type: string
               example: fiscal_entity
             phone:
-              type: string
+              type:
+                - string
+                - 'null'
               example: '+525511223344'
               description: Phone of the fiscal entity
-              nullable: true
         id:
           type: string
           example: ord_2tMtQQpDvfnNjiuFG
@@ -8483,18 +8552,20 @@ components:
               maxProperties: 100
               description: Metadata associated with the fiscal entity
             name:
-              type: string
+              type:
+                - string
+                - 'null'
               example: Conekta Inc
-              nullable: true
               description: Name of the fiscal entity
             phone:
               type: string
               example: '+525511223344'
               description: Phone of the fiscal entity
             tax_id:
-              type: string
+              type:
+                - string
+                - 'null'
               example: AAA010101AAA
-              nullable: true
               description: Tax ID of the fiscal entity
         line_items:
           description: List of [products](https://developers.conekta.com/v2.2.0/reference/orderscreateproduct) that are sold in the order. You must have at least one product.
@@ -8535,8 +8606,9 @@ components:
           items:
             $ref: '#/components/schemas/order_tax_request'
         three_ds_mode:
-          type: string
-          nullable: true
+          type:
+            - string
+            - 'null'
           description: Indicates the 3DS2 mode for the order, either smart or strict. This property is only applicable when 3DS is enabled. When 3DS is disabled, this field should be null.
           examples:
             - value: smart
@@ -8582,9 +8654,10 @@ components:
               example: test@gmail.com
               description: Email of the fiscal entity
             name:
-              type: string
+              type:
+                - string
+                - 'null'
               example: Conekta Inc
-              nullable: true
               description: Name of the fiscal entity
             metadata:
               type: object
@@ -8596,9 +8669,10 @@ components:
               example: '+525511223344'
               description: Phone of the fiscal entity
             tax_id:
-              type: string
+              type:
+                - string
+                - 'null'
               example: AAA010101AAA
-              nullable: true
               description: Tax ID of the fiscal entity
         line_items:
           description: List of [products](https://developers.conekta.com/v2.2.0/reference/orderscreateproduct) that are sold in the order. You must have at least one product.
@@ -8971,10 +9045,11 @@ components:
           type: integer
           example: 0
         payments_limit_count:
-          type: integer
+          type:
+            - integer
+            - 'null'
           format: int8
           example: 5
-          nullable: true
         recurrent:
           type: boolean
           example: false
@@ -9060,8 +9135,9 @@ components:
             - 6
             - 12
         three_ds_mode:
-          type: string
-          nullable: true
+          type:
+            - string
+            - 'null'
           description: Indicates the 3DS2 mode for the order, either smart or strict. This property is only applicable when 3DS is enabled. When 3DS is disabled, this field should be null.
           examples:
             - value: smart
@@ -9077,9 +9153,10 @@ components:
           example: false
           description: This flag allows you to fill in the shipping information at checkout.
         on_demand_enabled:
-          type: boolean
+          type:
+            - boolean
+            - 'null'
           example: true
-          nullable: true
           description: This flag allows you to specify if the link will be on demand.
         plan_ids:
           description: It is a list of plan IDs that will be associated with the order.
@@ -9177,9 +9254,10 @@ components:
           example: MXN
           maxLength: 3
         expiry_count:
-          type: integer
+          type:
+            - integer
+            - 'null'
           example: 12
-          nullable: true
         frequency:
           type: integer
           example: 1
@@ -9199,9 +9277,10 @@ components:
           type: string
           example: plan
         trial_period_days:
-          type: integer
+          type:
+            - integer
+            - 'null'
           example: 0
-          nullable: true
         max_retries:
           type: integer
           example: 3
@@ -9243,7 +9322,6 @@ components:
           description: internal reference id
         interval:
           type: string
-          nullable: false
           enum:
             - week
             - half_month
@@ -9333,17 +9411,20 @@ components:
               example: MX
               description: this field follows the [ISO 3166-1 alpha-2 standard](https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2)
             residential:
-              type: boolean
+              type:
+                - boolean
+                - 'null'
               example: true
-              nullable: true
         parent_id:
           type: string
         default:
-          type: boolean
-          nullable: true
+          type:
+            - boolean
+            - 'null'
         deleted:
-          type: boolean
-          nullable: true
+          type:
+            - boolean
+            - 'null'
     subscription_update_request:
       title: updates a subscription
       description: You can modify the subscription to change the plan used by your customers.
@@ -9401,8 +9482,9 @@ components:
               type: string
               example: cus_2yDzKtEAD3khH8Sga
             customer_custom_reference:
-              type: string
-              nullable: true
+              type:
+                - string
+                - 'null'
               example: null
         plan:
           type: object
@@ -9431,9 +9513,10 @@ components:
               format: int32
               example: 1
             trial_period_days:
-              type: integer
+              type:
+                - integer
+                - 'null'
               format: int32
-              nullable: true
               example: null
             expiry_count:
               type: integer
@@ -9459,9 +9542,10 @@ components:
           type: string
           example: cus_2yDzKtEAD3khH8Sga
         next_billing_cycle:
-          type: integer
+          type:
+            - integer
+            - 'null'
           format: int64
-          nullable: true
           example: 1876833632
         created_at:
           type: integer
@@ -9566,8 +9650,9 @@ components:
       type: object
       properties:
         card:
-          type: object
-          nullable: true
+          type:
+            - object
+            - 'null'
           required:
             - exp_month
             - exp_year
@@ -9609,8 +9694,9 @@ components:
               x-encripted: true
         checkout:
           deprecated: true
-          type: object
-          nullable: true
+          type:
+            - object
+            - 'null'
           properties:
             returns_control_on:
               type: string
@@ -9628,8 +9714,9 @@ components:
       properties:
         checkout:
           deprecated: true
-          nullable: true
-          type: object
+          type:
+            - object
+            - 'null'
           properties:
             allowed_payment_methods:
               type: array
@@ -9990,11 +10077,12 @@ components:
           format: int64
           description: Unix timestamp in seconds with the creation date of the webhook key
         deactivated_at:
-          type: integer
+          type:
+            - integer
+            - 'null'
           example: null
           format: int64
           description: Unix timestamp in seconds with the deactivation date of the webhook key
-          nullable: true
         public_key:
           type: string
           description: Public key to be used in the webhook

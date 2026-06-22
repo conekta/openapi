@@ -32,9 +32,8 @@ properties:
     type: string
     example: "Payment from order"
   device_fingerprint:
-    type: string
+    type: [string, "null"]
     example: "6FR3chaU4Y1nGAW5NAGd1rcjAKa142Ba"
-    nullable: true
   failure_code: 
     type: string
     example: "suspected_fraud"
@@ -48,17 +47,15 @@ properties:
     type: boolean
     example: true
   monthly_installments:
-    type: integer
-    nullable: true
+    type: [integer, "null"]
   object:
     type: string
   order_id:
     type: string
     example: "ord_2tN73UdUSNrYRPD9r"
   paid_at:
-    type: integer
+    type: [integer, "null"]
     example: 1676390742
-    nullable: true
   payment_method:
     title: charge_order_response_payment_method
     propertyName: object
@@ -77,10 +74,9 @@ properties:
         bnpl_payment: payment_method_bnpl_payment
         pay_by_bank_payment: payment_method_pbb_payment
   reference_id:
-    type: string
+    type: [string, "null"]
     description: "Reference ID of the charge"
     example: ref_2tN73UdUSNrYRPD9r
-    nullable: true
   refunds:
     type: array
     items: {}

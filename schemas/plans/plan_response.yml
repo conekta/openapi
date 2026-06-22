@@ -14,9 +14,8 @@ properties:
     example: "MXN"
     maxLength: 3
   expiry_count:
-    type: integer
+    type: [integer, "null"]
     example: 12
-    nullable: true
   frequency:
     type: integer
     example: 1
@@ -36,9 +35,8 @@ properties:
     type: string
     example: "plan"
   trial_period_days:
-    type: integer
+    type: [integer, "null"]
     example: 0
-    nullable: true
   max_retries:
     type: integer
     example: 3

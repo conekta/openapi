@@ -21,19 +21,16 @@ properties:
     type: boolean
     example: true
   loggable_id:
-    type: string
-    nullable: true
+    type: [string, "null"]
     example: "ord_87632467832"
   loggable_type:
-    type: string
-    nullable: true
+    type: [string, "null"]
     example: "order"
   method:
     type: string
     example: "POST"
   oauth_token_id:
-    type: string
-    nullable: true
+    type: [string, "null"]
   query_string:
     type: object
     additionalProperties: true

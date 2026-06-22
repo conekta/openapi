@@ -37,9 +37,8 @@ properties:
         example: "test@gmail.com"
         description: "Email of the fiscal entity"
       name:
-        type: string
+        type: [string, "null"]
         example: "Conekta Inc"
-        nullable: true
         description: "Name of the fiscal entity"
       metadata:
         type: object
@@ -51,9 +50,8 @@ properties:
         example: "+525511223344"
         description: "Phone of the fiscal entity"
       tax_id:
-        type: string
+        type: [string, "null"]
         example: "AAA010101AAA"
-        nullable: true
         description: "Tax ID of the fiscal entity"
   line_items:
     description: "List of [products](https://developers.conekta.com/v2.2.0/reference/orderscreateproduct) that are sold in the order. You must have at least one product."

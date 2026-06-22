@@ -78,10 +78,9 @@ properties:
         type: boolean
         example: false
       force_save_card:
-        type: boolean
+        type: [boolean, "null"]
         example: false
         description: "Indicates whether the card used for the payment should be saved for future purchases. This field is only applicable for card payments."
-        nullable: true
       id:
         type: string
         example:  "6fca054a-8519-4c43-971e-cea35cc519bb"
@@ -92,11 +91,10 @@ properties:
         type: boolean
         example: false
       max_failed_retries:
-        type: integer
+        type: [integer, "null"]
         example: 3
         format: int8
         description: "Number of retries allowed before the checkout is marked as failed"
-        nullable: true
       metadata:
         additionalProperties: true
         maxProperties: 100
@@ -119,9 +117,8 @@ properties:
         type: string
         example: "checkout"
       on_demand_enabled:
-        type: boolean
+        type: [boolean, "null"]
         example: true
-        nullable: true
       paid_payments_count:
         type: integer
         example: 0
@@ -129,8 +126,7 @@ properties:
         type: boolean
         example: false
       redirection_time:
-        type: integer
-        nullable: true
+        type: [integer, "null"]
         example: 2
         format: int8
         description: "number of seconds to wait before redirecting to the success_url"
@@ -179,52 +175,54 @@ properties:
   discount_lines:
     description: "List of discounts that are applied to the order"
     title: order_discount_lines_response
-    nullable: true
-    allOf:
-      - $ref: ../pagination/pagination.yml
-      - $ref: ../pagination/page.yml
-      - type: object
-        properties:
-          data:
-            type: array
-            items:
-              title: discount_lines_data_response
-              allOf:
-                - $ref: ../../schemas/orders/discount_lines_response.yml
+    anyOf:
+      - type: "null"
+      - allOf:
+          - $ref: ../pagination/pagination.yml
+          - $ref: ../pagination/page.yml
+          - type: object
+            properties:
+              data:
+                type: array
+                items:
+                  title: discount_lines_data_response
+                  allOf:
+                    - $ref: ../../schemas/orders/discount_lines_response.yml
   tax_lines:
     description: "List of taxes that are applied to the order"
     title: order_tax_lines_response
-    nullable: true
-    allOf:
-      - $ref: ../pagination/pagination.yml
-      - $ref: ../pagination/page.yml
-      - type: object
-        properties:
-          data:
-            type: array
-            items:
-              title: tax_lines_data_response
-              allOf:
-                - $ref: ../../schemas/orders/update_order_tax_response.yml
+    anyOf:
+      - type: "null"
+      - allOf:
+          - $ref: ../pagination/pagination.yml
+          - $ref: ../pagination/page.yml
+          - type: object
+            properties:
+              data:
+                type: array
+                items:
+                  title: tax_lines_data_response
+                  allOf:
+                    - $ref: ../../schemas/orders/update_order_tax_response.yml
   shipping_lines:
     description: "List of shipping costs applied to the order"
     title: order_shipping_lines_response
-    nullable: true
-    allOf:
-      - $ref: ../pagination/pagination.yml
-      - $ref: ../pagination/page.yml
-      - type: object
-        properties:
-          data:
-            type: array
-            items:
-              title: shipping_lines_data_response
-              allOf:
-                - $ref: ../../schemas/charges/shipping_order_response.yml
+    anyOf:
+      - type: "null"
+      - allOf:
+          - $ref: ../pagination/pagination.yml
+          - $ref: ../pagination/page.yml
+          - type: object
+            properties:
+              data:
+                type: array
+                items:
+                  title: shipping_lines_data_response
+                  allOf:
+                    - $ref: ../../schemas/charges/shipping_order_response.yml
   fiscal_entity:
-    type: object
+    type: [object, "null"]
     title: order_fiscal_entity_response
-    nullable: true
     description: "Fiscal entity of the order, Currently it is a purely informative field"
     required:
       - address
@@ -243,25 +241,22 @@ properties:
                 type: string
                 example: "fiscal_entity_address"
       email:
-        type: string
+        type: [string, "null"]
         example: "test@gmail.com"
         description: "Email of the fiscal entity"
-        nullable: true
       metadata:
         type: object
         additionalProperties: true
         maxProperties: 100
         description: "Metadata associated with the fiscal entity"
       name: 
-        type: string
+        type: [string, "null"]
         example: "Conekta Inc"
-        nullable: true
         description: "Name of the fiscal entity"
       tax_id:
-        type: string
+        type: [string, "null"]
         example: "324234234"
         description: "Tax ID of the fiscal entity"
-        nullable: true
       id:
         type: string
         example: "fis_ent_2tN85VYaSMyDvjB3M"
@@ -275,10 +270,9 @@ properties:
         type: string
         example: "fiscal_entity"
       phone:
-        type: string
+        type: [string, "null"]
         example: "+525511223344"
         description: "Phone of the fiscal entity"
-        nullable: true
   id:
     type: string
     example: "ord_2tMtQQpDvfnNjiuFG"

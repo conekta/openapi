@@ -17,16 +17,14 @@ properties:
     example: 1684167923
     format: int64
   deactivated_at:
-    type: integer
+    type: [integer, "null"]
     description: Unix timestamp in seconds of when the api key was deleted
     example: null
-    nullable: true
     format: int64
   last_used_at:
-    type: integer
+    type: [integer, "null"]
     description: Unix timestamp in seconds with the api key was used
     example: null
-    nullable: true
     format: int64
   description:
     type: string
