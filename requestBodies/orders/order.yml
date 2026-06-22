@@ -12,6 +12,8 @@ content:
         $ref: '../../schemas/orders/request_examples/order_with_charges_pbb.yml'
       order_with_checkout:
         $ref: '../../schemas/orders/request_examples/order_with_checkout.yml'
+      order_with_checkout_and_force_save_card:
+        $ref: '../../schemas/orders/request_examples/order_with_checkout_and_force_save_card.yml'
       order_with_subscription:
         $ref: '../../schemas/orders/request_examples/order_with_subscription.yml'
       split_payment_with_2_card_charges:
