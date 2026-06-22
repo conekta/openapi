@@ -18,30 +18,18 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v6
 
-      # Generate your OpenAPI document (if you don't write it manually)
-
-      # Use the action to generate a client package
-      # This uses the default path for the openapi document and thus assumes there is an openapi.json in the current workspace.
-      - name: Generate Client
-        uses: openapi-generators/openapitools-generator-action@v1
-        with:
-          generator: openapi-yaml
-          openapi-file: api.yaml
-          generator-tag: v7.23.0
-      - name: check if api.yaml are equals
+      # Bundle the multi-file spec into a single document with Redocly.
+      # Must match the `make merge` command so the committed _build/api.yaml stays in sync.
+      - name: Bundle OpenAPI document
         run: |
-          if diff -q _build/api.yaml openapi-yaml-client/openapi/openapi.yaml >/dev/null; then
+          docker run --rm -v "${PWD}:/spec" redocly/cli:2.34.0 bundle api.yaml -o /spec/api.bundled.tmp.yaml
+
+      - name: check if _build/api.yaml is up to date
+        run: |
+          if diff -q _build/api.yaml api.bundled.tmp.yaml >/dev/null; then
             echo "files are equals"
           else
-            echo "exists differences between files _build/api.yaml"
+            echo "::error::_build/api.yaml is out of date. Run 'make merge' and commit the result."
+            diff _build/api.yaml api.bundled.tmp.yaml | head -80
             exit 1
-          fi
-      - name: Check for auto-generated schema names
-        run: |
-          PATTERNS='_allOf|_allof|_AllOf|_inner|_200_response|_201_response|_request_request'
-          if grep -P "$PATTERNS" openapi-yaml-client/openapi/openapi.yaml; then
-            echo "::error::Found auto-generated schema names in api.yaml. Add 'title' to inline schemas to fix naming."
-            exit 1
-          else
-            echo "No auto-generated schema names found"
           fi
