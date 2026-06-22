@@ -41,7 +41,6 @@ properties:
     type: boolean
     example: false
     description: "Indicates whether the card used for the payment should be saved for future purchases. This field is only applicable for card payments."
-    nullable: true
   monthly_installments_enabled:
     type: boolean
     example: false

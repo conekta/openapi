@@ -2,7 +2,7 @@ FROM public.ecr.aws/docker/library/node:26 AS builder
 
 # Install OpenJDK-17
 RUN apt-get update && \
-    apt-get install -y openjdk-17-jre-headless && \
+    apt-get install -y openjdk-21-jre-headless && \
     apt-get clean;
 
 RUN npm install @openapitools/openapi-generator-cli -g

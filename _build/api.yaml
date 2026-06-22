@@ -19787,7 +19787,6 @@ components:
             for future purchases. This field is only applicable for card payments.
           example: false
           type: boolean
-          nullable: true
         monthly_installments_enabled:
           example: false
           type: boolean
