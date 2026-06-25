@@ -1,6 +1,10 @@
 merge:
 	docker run --rm \
-	-v ${PWD}:/spec redocly/cli:2.34.0 bundle api.yaml -o /spec/_build/api.yaml
+	-v ${PWD}:/local openapitools/openapi-generator-cli:v7.23.0 generate \
+	-g openapi-yaml \
+	-i /local/api.yaml \
+	-p outputFile=local/_build/api.yaml \
+	--skip-validate-spec
 
 update-readme:
 	make merge && rdme openapi upload --key=${README_API_KEY} --branch=v2.3.0 --slug=conekta-api  _build/api.yaml 

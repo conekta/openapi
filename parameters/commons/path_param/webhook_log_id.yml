@@ -4,4 +4,4 @@ description: webhook log identifier
 required: true
 schema:
   type: string
-example: "webhl_2tsv6NzWJHBWCkqGt"
+  example: "webhl_2tsv6NzWJHBWCkqGt"

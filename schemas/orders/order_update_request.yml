@@ -15,6 +15,7 @@ properties:
     example:  "MXN"
     maxLength: 3
   customer_info:
+    title: order_update_customer_info
     oneOf:
       - $ref: ../customers/customer_info.yml
       - $ref: ../customers/customer_info_just_customer_id.yml
