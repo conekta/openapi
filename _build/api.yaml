@@ -16173,7 +16173,7 @@ components:
             example: 1683053729
             exclusiveMinimum: true
             format: int64
-            minimum: 7
+            minimum: 0
             type: integer
           product_type:
             description: Product type of the charge
