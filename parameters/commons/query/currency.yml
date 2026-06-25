@@ -4,4 +4,7 @@ description: "currency of the object to be retrieved"
 required: false
 schema:
   type: string
-  example: "MXN"
+examples:
+  currency:
+    summary: currency of the object to be retrieved
+    value: "MXN"

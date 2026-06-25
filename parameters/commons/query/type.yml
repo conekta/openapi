@@ -4,4 +4,7 @@ description: "type of the object to be retrieved"
 required: false
 schema:
   type: string
-  example: "capture"
+examples:
+  type:
+    summary: type of the object to be retrieved
+    value: "capture"

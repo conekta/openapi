@@ -4826,70 +4826,91 @@ paths:
           type: string
         style: form
       - description: Filters by order status
+        examples:
+          payment_status:
+            summary: Filters by order status
+            value: paid
         explode: true
         in: query
         name: payment_status
         required: false
         schema:
-          example: paid
           type: string
         style: form
       - description: Filters by last payment info status
+        examples:
+          last_payment_info.status:
+            summary: Filters by last payment info status
+            value: pending_payment
         explode: true
         in: query
         name: last_payment_info.status
         required: false
         schema:
-          example: pending_payment
           type: string
         style: form
       - description: created equal to
+        examples:
+          created_at:
+            summary: created equal to
+            value: 1612137600
         explode: true
         in: query
         name: created_at
         required: false
         schema:
-          example: 1612137600
           format: int64
           type: integer
         style: form
       - description: created at greater than or equal to
+        examples:
+          created_at.gte:
+            summary: created at greater than or equal to
+            value: 1612137600
         explode: true
         in: query
         name: created_at.gte
         required: false
         schema:
-          example: 1612137600
           format: int64
           type: integer
         style: form
       - description: created at less than or equal to
+        examples:
+          created_at.lte:
+            summary: created at less than or equal to
+            value: 1612137600
         explode: true
         in: query
         name: created_at.lte
         required: false
         schema:
-          example: 1612137600
           format: int64
           type: integer
         style: form
       - description: updated at greater than or equal to
+        examples:
+          updated_at.gte:
+            summary: updated at greater than or equal to
+            value: 1612137600
         explode: true
         in: query
         name: updated_at.gte
         required: false
         schema:
-          example: 1612137600
           format: int64
           type: integer
         style: form
       - description: updated at less than or equal to
+        examples:
+          updated_at.lte:
+            summary: updated at less than or equal to
+            value: 1612137600
         explode: true
         in: query
         name: updated_at.lte
         required: false
         schema:
-          example: 1612137600
           format: int64
           type: integer
         style: form
@@ -8967,6 +8988,30 @@ paths:
         required: false
         schema:
           type: string
+        style: form
+      - description: currency of the object to be retrieved
+        examples:
+          currency:
+            summary: currency of the object to be retrieved
+            value: MXN
+        explode: true
+        in: query
+        name: currency
+        required: false
+        schema:
+          type: string
+        style: form
+      - description: frequency of the object to be retrieved
+        examples:
+          frequency:
+            summary: Frequency of the object to be retrieved
+            value: 1
+        explode: true
+        in: query
+        name: frequency
+        required: false
+        schema:
+          type: integer
         style: form
       responses:
         "200":
@@ -13634,39 +13679,51 @@ paths:
           type: string
         style: form
       - description: id of the object to be retrieved
+        examples:
+          id:
+            summary: id of the object to be retrieved
+            value: 65412a893cd69a0001c25892
         explode: true
         in: query
         name: id
         required: false
         schema:
-          example: 65412a893cd69a0001c25892
           type: string
         style: form
       - description: id of the charge used for filtering
+        examples:
+          charge_id:
+            summary: id of the charge used for filtering
+            value: 65412a893cd69a0001c25892
         explode: true
         in: query
         name: charge_id
         required: false
         schema:
-          example: 65412a893cd69a0001c25892
           type: string
         style: form
       - description: type of the object to be retrieved
+        examples:
+          type:
+            summary: type of the object to be retrieved
+            value: capture
         explode: true
         in: query
         name: type
         required: false
         schema:
-          example: capture
           type: string
         style: form
       - description: currency of the object to be retrieved
+        examples:
+          currency:
+            summary: currency of the object to be retrieved
+            value: MXN
         explode: true
         in: query
         name: currency
         required: false
         schema:
-          example: MXN
           type: string
         style: form
       responses:

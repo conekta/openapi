@@ -4,5 +4,8 @@ description: "created at greater than or equal to"
 required: false
 schema:
   type: integer
-  example: 1612137600
   format: int64
+examples:
+  created_at.gte:
+    summary: created at greater than or equal to
+    value: 1612137600

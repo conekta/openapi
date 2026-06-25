@@ -1,0 +1,10 @@
+in: query
+name: "frequency"
+description: "frequency of the object to be retrieved"
+required: false
+schema:
+  type: integer
+examples:
+  frequency:
+    summary: Frequency of the object to be retrieved
+    value: 1

@@ -4,4 +4,7 @@ description: "Filters by last payment info status"
 required: false
 schema:
   type: string
-  example: "pending_payment"
+examples:
+  last_payment_info.status:
+    summary: Filters by last payment info status
+    value: "pending_payment"
