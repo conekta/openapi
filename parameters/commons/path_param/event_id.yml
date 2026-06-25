@@ -4,4 +4,4 @@ description: event identifier
 required: true
 schema:
   type: string
-example: "6463d6e35a4c3e001819e760"
+  example: "6463d6e35a4c3e001819e760"
