@@ -1,0 +1,41 @@
+title: shipping_contact_address
+type: object
+description: "Address of the person who will receive the order"
+properties:
+  street1:
+    type: string
+    minLength: 2
+    maxLength: 249
+    example: Nuevo Leon 254
+    description: "Street and number of the delivery address."
+  street2:
+    type: string
+    maxLength: 249
+    example: Departamento 404
+    description: "Apartment, suite or interior reference for the delivery address."
+  postal_code:
+    type: string
+    maxLength: 250
+    example: "06100"
+    description: "Postal code of the delivery address. For Mexican addresses (country MX) it must be a 5-digit postal code."
+  city:
+    type: string
+    maxLength: 249
+    example: "Ciudad de Mexico"
+    description: "City of the delivery address."
+  state:
+    type: string
+    maxLength: 249
+    example: "Ciudad de Mexico"
+    description: "State of the delivery address."
+  country:
+    type: string
+    minLength: 2
+    maxLength: 249
+    example: MX
+    description: "Country of the delivery address. This field follows the [ISO 3166-1 alpha-2 standard](https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2)."
+  residential:
+    type: [boolean, "null"]
+    default: true
+    example: true
+    description: "Indicates whether the delivery address is residential."

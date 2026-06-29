@@ -17499,31 +17499,55 @@ components:
         title: customerPaymentMethods
       title: customer_payment_methods_response
     customer_shipping_contacts_request_address:
-      description: Address of the person who will receive the order
-      properties:
-        street1:
-          example: Nuevo Leon 254
-          type: string
-        street2:
-          example: Departamento 404
-          type: string
-        postal_code:
-          example: "06100"
-          type: string
-        city:
-          example: Ciudad de Mexico
-          type: string
-        state:
-          example: Ciudad de Mexico
-          type: string
-        country:
-          description: "this field follows the [ISO 3166-1 alpha-2 standard](https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2)"
-          example: MX
-          type: string
-        residential:
-          example: true
-          nullable: true
-          type: boolean
+      allOf:
+      - description: Address of the person who will receive the order
+        properties:
+          street1:
+            description: Street and number of the delivery address.
+            example: Nuevo Leon 254
+            maxLength: 249
+            minLength: 2
+            type: string
+          street2:
+            description: "Apartment, suite or interior reference for the delivery\
+              \ address."
+            example: Departamento 404
+            maxLength: 249
+            type: string
+          postal_code:
+            description: Postal code of the delivery address. For Mexican addresses
+              (country MX) it must be a 5-digit postal code.
+            example: "06100"
+            maxLength: 250
+            type: string
+          city:
+            description: City of the delivery address.
+            example: Ciudad de Mexico
+            maxLength: 249
+            type: string
+          state:
+            description: State of the delivery address.
+            example: Ciudad de Mexico
+            maxLength: 249
+            type: string
+          country:
+            description: "Country of the delivery address. This field follows the\
+              \ [ISO 3166-1 alpha-2 standard](https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2)."
+            example: MX
+            maxLength: 249
+            minLength: 2
+            type: string
+          residential:
+            default: true
+            description: Indicates whether the delivery address is residential.
+            example: true
+            nullable: true
+            type: boolean
+        title: shipping_contact_address
+      required:
+      - country
+      - postal_code
+      - street1
     customer_shipping_contacts_data_response:
       allOf:
       - description: |-
@@ -19229,14 +19253,20 @@ components:
             carrier:
               description: Carrier name for the shipment
               example: FEDEX
+              maxLength: 249
+              minLength: 3
               type: string
             tracking_number:
               description: Tracking number can be used to track the shipment
               example: TRACK123
+              maxLength: 249
+              minLength: 3
               type: string
             method:
               description: Method of shipment
               example: Same day
+              maxLength: 249
+              minLength: 3
               type: string
             metadata:
               additionalProperties: true
@@ -19402,11 +19432,14 @@ components:
           brand:
             description: The brand of the item.
             example: Cohiba
+            maxLength: 249
+            minLength: 2
             type: string
           description:
             description: Short description of the item
             example: Imported From Mex.
-            maxLength: 250
+            maxLength: 249
+            minLength: 3
             type: string
           metadata:
             additionalProperties: true
@@ -19420,6 +19453,8 @@ components:
           name:
             description: The name of the item. It will be displayed in the order.
             example: Box of Cohiba S1s
+            maxLength: 249
+            minLength: 3
             type: string
           quantity:
             description: The quantity of the item in the order.
@@ -19431,6 +19466,8 @@ components:
             description: The stock keeping unit for the item. It is used to identify
               the item in the order.
             example: XYZ12345
+            maxLength: 249
+            minLength: 1
             type: string
           tags:
             description: List of tags for the item. It is used to identify the item
@@ -19439,7 +19476,10 @@ components:
             - food
             - mexican food
             items:
+              maxLength: 249
+              minLength: 2
               type: string
+            minItems: 1
             type: array
             default: null
           unit_price:
@@ -19973,11 +20013,14 @@ components:
         brand:
           description: The brand of the item.
           example: Cohiba
+          maxLength: 249
+          minLength: 2
           type: string
         description:
           description: Short description of the item
           example: Imported From Mex.
-          maxLength: 250
+          maxLength: 249
+          minLength: 3
           type: string
         metadata:
           additionalProperties: true
@@ -19991,6 +20034,8 @@ components:
         name:
           description: The name of the item. It will be displayed in the order.
           example: Box of Cohiba S1s
+          maxLength: 249
+          minLength: 3
           type: string
         quantity:
           description: The quantity of the item in the order.
@@ -20002,6 +20047,8 @@ components:
           description: The stock keeping unit for the item. It is used to identify
             the item in the order.
           example: XYZ12345
+          maxLength: 249
+          minLength: 1
           type: string
         tags:
           description: List of tags for the item. It is used to identify the item
@@ -20010,7 +20057,10 @@ components:
           - food
           - mexican food
           items:
+            maxLength: 249
+            minLength: 2
             type: string
+          minItems: 1
           type: array
           default: null
         unit_price:
@@ -20035,14 +20085,20 @@ components:
         carrier:
           description: Carrier name for the shipment
           example: FEDEX
+          maxLength: 249
+          minLength: 3
           type: string
         tracking_number:
           description: Tracking number can be used to track the shipment
           example: TRACK123
+          maxLength: 249
+          minLength: 3
           type: string
         method:
           description: Method of shipment
           example: Same day
+          maxLength: 249
+          minLength: 3
           type: string
         metadata:
           additionalProperties: true
@@ -20279,11 +20335,14 @@ components:
           brand:
             description: The brand of the item.
             example: Cohiba
+            maxLength: 249
+            minLength: 2
             type: string
           description:
             description: Short description of the item
             example: Imported From Mex.
-            maxLength: 250
+            maxLength: 249
+            minLength: 3
             type: string
           metadata:
             additionalProperties: true
@@ -20297,6 +20356,8 @@ components:
           name:
             description: The name of the item. It will be displayed in the order.
             example: Box of Cohiba S1s
+            maxLength: 249
+            minLength: 3
             type: string
           quantity:
             description: The quantity of the item in the order.
@@ -20308,6 +20369,8 @@ components:
             description: The stock keeping unit for the item. It is used to identify
               the item in the order.
             example: XYZ12345
+            maxLength: 249
+            minLength: 1
             type: string
           tags:
             description: List of tags for the item. It is used to identify the item
@@ -20316,7 +20379,10 @@ components:
             - food
             - mexican food
             items:
+              maxLength: 249
+              minLength: 2
               type: string
+            minItems: 1
             type: array
             default: null
           unit_price:
@@ -20344,12 +20410,17 @@ components:
           additionalProperties:
             type: object
         description:
-          maxLength: 250
+          maxLength: 249
+          minLength: 3
           type: string
         sku:
+          maxLength: 249
+          minLength: 1
           type: string
         name:
           example: Box of Cohiba S1s
+          maxLength: 249
+          minLength: 3
           type: string
         unit_price:
           example: 20000
@@ -20363,10 +20434,15 @@ components:
           type: integer
         tags:
           items:
+            maxLength: 249
+            minLength: 2
             type: string
+          minItems: 1
           type: array
           default: null
         brand:
+          maxLength: 249
+          minLength: 2
           type: string
         metadata:
           additionalProperties:
@@ -21320,14 +21396,20 @@ components:
           carrier:
             description: Carrier name for the shipment
             example: FEDEX
+            maxLength: 249
+            minLength: 3
             type: string
           tracking_number:
             description: Tracking number can be used to track the shipment
             example: TRACK123
+            maxLength: 249
+            minLength: 3
             type: string
           method:
             description: Method of shipment
             example: Same day
+            maxLength: 249
+            minLength: 3
             type: string
           metadata:
             additionalProperties: true
@@ -21388,6 +21470,50 @@ components:
           example: false
           type: boolean
       title: customer_shipping_contacts_response
+    shipping_contact_address:
+      description: Address of the person who will receive the order
+      properties:
+        street1:
+          description: Street and number of the delivery address.
+          example: Nuevo Leon 254
+          maxLength: 249
+          minLength: 2
+          type: string
+        street2:
+          description: "Apartment, suite or interior reference for the delivery address."
+          example: Departamento 404
+          maxLength: 249
+          type: string
+        postal_code:
+          description: Postal code of the delivery address. For Mexican addresses
+            (country MX) it must be a 5-digit postal code.
+          example: "06100"
+          maxLength: 250
+          type: string
+        city:
+          description: City of the delivery address.
+          example: Ciudad de Mexico
+          maxLength: 249
+          type: string
+        state:
+          description: State of the delivery address.
+          example: Ciudad de Mexico
+          maxLength: 249
+          type: string
+        country:
+          description: "Country of the delivery address. This field follows the [ISO\
+            \ 3166-1 alpha-2 standard](https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2)."
+          example: MX
+          maxLength: 249
+          minLength: 2
+          type: string
+        residential:
+          default: true
+          description: Indicates whether the delivery address is residential.
+          example: true
+          nullable: true
+          type: boolean
+      title: shipping_contact_address
     customer_update_shipping_contacts_request:
       description: |-
         [Shipping](https://developers.conekta.com/v2.3.0/reference/createcustomershippingcontacts)
@@ -21406,7 +21532,7 @@ components:
           example: Ackerman Crescent
           type: string
         address:
-          $ref: "#/components/schemas/customer_shipping_contacts_request_address"
+          $ref: "#/components/schemas/shipping_contact_address"
         parent_id:
           type: string
         default:
