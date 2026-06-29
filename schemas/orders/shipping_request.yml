@@ -10,17 +10,20 @@ properties:
     description: Shipping amount in cents
   carrier:
     type: string
-    maxLength: 250
+    minLength: 3
+    maxLength: 249
     example: FEDEX
     description: Carrier name for the shipment
   tracking_number:
     type: string
-    maxLength: 250
+    minLength: 3
+    maxLength: 249
     example: "TRACK123"
     description: Tracking number can be used to track the shipment
   method:
     type: string
-    maxLength: 250
+    minLength: 3
+    maxLength: 249
     example: "Same day"
     description: Method of shipment
   metadata:
