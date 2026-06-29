@@ -15,32 +15,8 @@ properties:
     type: string
     example: "Ackerman Crescent"
     description: "The street names between which the order will be delivered."
-  address: 
-    type: object
-    description: "Address of the person who will receive the order"
-    properties:
-      street1:
-        type: string
-        example: Nuevo Leon 254
-      street2: 
-        type: string
-        example: Departamento 404
-      postal_code:
-        type: string
-        example: "06100"
-      city: 
-        type: string
-        example: "Ciudad de Mexico"
-      state:
-        type: string
-        example: "Ciudad de Mexico"
-      country:
-        type: string
-        example: MX
-        description: "this field follows the [ISO 3166-1 alpha-2 standard](https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2)"
-      residential:
-        type: [boolean, "null"]
-        example: true
+  address:
+    $ref: shipping_contact_address.yml
   parent_id:
     type: string
   default:

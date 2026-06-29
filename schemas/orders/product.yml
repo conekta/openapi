@@ -11,6 +11,7 @@ properties:
     example: { "key": "value" }
   brand:
     type: string
+    maxLength: 250
     example: "Cohiba"
     description: "The brand of the item."
   description:
@@ -27,6 +28,7 @@ properties:
     default: {}
   name:
     type: string
+    maxLength: 250
     example: "Box of Cohiba S1s"
     description: "The name of the item. It will be displayed in the order."
   quantity:
@@ -37,12 +39,14 @@ properties:
     description: "The quantity of the item in the order."
   sku:
     type: string
+    maxLength: 250
     example: "XYZ12345"
     description: "The stock keeping unit for the item. It is used to identify the item in the order."
   tags:
     type: array
     items:
       type: string
+      maxLength: 250
     example: [ "food", "mexican food"]
     description: "List of tags for the item. It is used to identify the item in the order."
   unit_price: 
