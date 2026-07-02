@@ -52,14 +52,14 @@ properties:
   three_ds_mode:
     type: [string, "null"]
     enum: ["strict", "not_strict", "smart", null]
-    description: "Indicates the 3DS2 mode: 'strict', 'not_strict' or 'smart'. Accepted on creation only. When this field is null the checkout defers to the company-level 3DS configuration."
+    description: "Indicates the 3DS2 mode: 'strict', 'not_strict' or 'smart'. Accepted on creation only. Null appears in responses when no mode is configured; to defer to the company-level 3DS configuration, omit the field on creation (an explicit null is rejected)."
     examples:
       - value: "smart"
         summary: "Risk-based 3DS: transactions that Conekta considers risky go through the 3DS2 verification flow (provided the issuing bank supports it); low-risk transactions continue without 3DS2 authentication."
       - value: "strict"
         summary: "All transactions require 3DS2 authentication as a complementary security measure, except those rejected by our Anti-Fraud. The issuing bank must support 3DS2."
       - value: "not_strict"
-        summary: "The 3DS2 challenge is also always initiated, behaving like 'strict'. Acceptance of authentication attempts is governed by the company-level 3DS configuration, not by this mode."
+        summary: "The 3DS2 flow is also always initiated, behaving like 'strict'. Acceptance of authentication attempts is governed by the company-level 3DS configuration, not by this mode."
   name:
     type: string
     description: Reason for charge

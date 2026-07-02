@@ -11,10 +11,12 @@ properties:
     type: string
     example:   "Marvin Fuller"
     description: "Name of the person who will receive the order"
-  between_streets: 
+  between_streets:
     type: string
+    maxLength: 249
+    pattern: "[A-Za-z]{2}"
     example: "Ackerman Crescent"
-    description: "The street names between which the order will be delivered."
+    description: "The street names between which the order will be delivered. Must contain at least two consecutive ASCII letters."
   address:
     $ref: shipping_contact_address.yml
   parent_id:

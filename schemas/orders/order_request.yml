@@ -104,13 +104,13 @@ properties:
     items:
       $ref: order_tax_request.yml
   three_ds_mode:
-    type: [string, "null"]
-    enum: ["strict", "not_strict", "smart", null]
-    description: "Indicates the 3DS2 mode: 'strict', 'not_strict' or 'smart'. The value is validated against the allowed set on creation. When this field is null the order defers to the company-level 3DS configuration."
+    type: string
+    enum: ["strict", "not_strict", "smart"]
+    description: "Indicates the 3DS2 mode: 'strict', 'not_strict' or 'smart'. The value is validated against the allowed set on creation; sending an explicit null is rejected. Omit the field to create the order without requesting 3DS through the API (company-level 3DS applies only to orders paid through Checkout or when antifraud forces 3DS)."
     examples:
       - value: "smart"
         summary: "Risk-based 3DS: transactions that Conekta considers risky go through the 3DS2 verification flow (provided the issuing bank supports it); low-risk transactions continue without 3DS2 authentication."
       - value: "strict"
         summary: "All transactions require 3DS2 authentication as a complementary security measure, except those rejected by our Anti-Fraud. The issuing bank must support 3DS2."
       - value: "not_strict"
-        summary: "The 3DS2 challenge is also always initiated, behaving like 'strict'. Acceptance of authentication attempts is governed by the company-level 3DS configuration, not by this mode."
+        summary: "The 3DS2 flow is also always initiated, behaving like 'strict'. Acceptance of authentication attempts is governed by the company-level 3DS configuration, not by this mode."

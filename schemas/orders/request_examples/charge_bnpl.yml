@@ -1,6 +1,5 @@
 value:
-  payment_method: 
-    can_not_expire: true
+  payment_method:
     cancel_url: https://pay.conekta.io/payment-status/fdcb06d6-c9e1-44ee-921f-17723b63852f/cancel
     failure_url:  https://pay.conekta.io/payment-status/fdcb06d6-c9e1-44ee-921f-17723b63852f/failure
     product_type: aplazo_bnpl

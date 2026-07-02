@@ -1499,7 +1499,6 @@ paths:
               bnpl:
                 value:
                   payment_method:
-                    can_not_expire: true
                     cancel_url: https://pay.conekta.io/payment-status/fdcb06d6-c9e1-44ee-921f-17723b63852f/cancel
                     failure_url: https://pay.conekta.io/payment-status/fdcb06d6-c9e1-44ee-921f-17723b63852f/failure
                     product_type: aplazo_bnpl
@@ -1641,7 +1640,6 @@ paths:
               bnpl:
                 value:
                   payment_method:
-                    can_not_expire: true
                     cancel_url: https://pay.conekta.io/payment-status/fdcb06d6-c9e1-44ee-921f-17723b63852f/cancel
                     failure_url: https://pay.conekta.io/payment-status/fdcb06d6-c9e1-44ee-921f-17723b63852f/failure
                     product_type: aplazo_bnpl
@@ -5094,7 +5092,6 @@ paths:
                     checkout_request_type: PaymentLink
                   charges:
                   - payment_method:
-                      can_not_expire: true
                       cancel_url: https://pay.conekta.io/payment-status/fdcb06d6-c9e1-44ee-921f-17723b63852f/cancel
                       failure_url: https://pay.conekta.io/payment-status/fdcb06d6-c9e1-44ee-921f-17723b63852f/failure
                       product_type: aplazo_bnpl
@@ -16692,9 +16689,10 @@ components:
             minLength: 4
             type: string
           name:
-            description: Cardholder name. Must include first and last name separated
-              by a space; single-word names are rejected. Letters only — digits and
-              most symbols are rejected.
+            description: "Cardholder name. Must include first and last name separated\
+              \ by a space; single-word names are rejected. Letters (including accented\
+              \ Latin characters), spaces, and the characters , . ' - are accepted;\
+              \ digits and other symbols are rejected."
             example: John Doe
             maxLength: 249
             type: string
@@ -17656,7 +17654,10 @@ components:
             type: string
           between_streets:
             description: The street names between which the order will be delivered.
+              Must contain at least two consecutive ASCII letters.
             example: Ackerman Crescent
+            maxLength: 249
+            pattern: "[A-Za-z]{2}"
             type: string
           address:
             $ref: "#/components/schemas/customer_shipping_contacts_request_address"
@@ -18017,7 +18018,10 @@ components:
           type: string
         between_streets:
           description: The street names between which the order will be delivered.
+            Must contain at least two consecutive ASCII letters.
           example: Ackerman Crescent
+          maxLength: 249
+          pattern: "[A-Za-z]{2}"
           type: string
         address:
           $ref: "#/components/schemas/customer_shipping_contacts_request_address"
@@ -19279,7 +19283,7 @@ components:
             description:
               description: description or tax's name
               example: testing
-              minLength: 2
+              minLength: 3
               type: string
             metadata:
               additionalProperties:
@@ -20231,7 +20235,7 @@ components:
         description:
           description: description or tax's name
           example: testing
-          minLength: 2
+          minLength: 3
           type: string
         metadata:
           additionalProperties:
@@ -20322,14 +20326,14 @@ components:
           default: null
         three_ds_mode:
           description: "Indicates the 3DS2 mode: 'strict', 'not_strict' or 'smart'.\
-            \ The value is validated against the allowed set on creation. When this\
-            \ field is null the order defers to the company-level 3DS configuration."
+            \ The value is validated against the allowed set on creation; sending\
+            \ an explicit null is rejected. Omit the field to create the order without\
+            \ requesting 3DS through the API (company-level 3DS applies only to orders\
+            \ paid through Checkout or when antifraud forces 3DS)."
           enum:
           - strict
           - not_strict
           - smart
-          - null
-          nullable: true
           type: string
       required:
       - currency
@@ -21168,8 +21172,9 @@ components:
           default: null
         three_ds_mode:
           description: "Indicates the 3DS2 mode: 'strict', 'not_strict' or 'smart'.\
-            \ Accepted on creation only. When this field is null the checkout defers\
-            \ to the company-level 3DS configuration."
+            \ Accepted on creation only. Null appears in responses when no mode is\
+            \ configured; to defer to the company-level 3DS configuration, omit the\
+            \ field on creation (an explicit null is rejected)."
           enum:
           - strict
           - not_strict
@@ -21660,7 +21665,10 @@ components:
           type: string
         between_streets:
           description: The street names between which the order will be delivered.
+            Must contain at least two consecutive ASCII letters.
           example: Ackerman Crescent
+          maxLength: 249
+          pattern: "[A-Za-z]{2}"
           type: string
         address:
           $ref: "#/components/schemas/shipping_contact_address"
@@ -21989,7 +21997,7 @@ components:
           description:
             description: description or tax's name
             example: testing
-            minLength: 2
+            minLength: 3
             type: string
           metadata:
             additionalProperties:
@@ -22027,7 +22035,7 @@ components:
         description:
           description: description or tax's name
           example: testing
-          minLength: 2
+          minLength: 3
           type: string
         metadata:
           additionalProperties:
