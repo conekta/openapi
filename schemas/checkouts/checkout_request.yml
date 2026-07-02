@@ -20,11 +20,11 @@ properties:
   exclude_card_networks:
     title: checkout_request_exclude_card_networks
     type: array
-    description: "List of card networks to exclude from the checkout. This field is only applicable for card payments."
+    description: "List of card networks to exclude from the checkout. This field is only applicable for card payments. Accepted values: 'visa_master_card' (a single token excluding both Visa and Mastercard) and 'amex'. Values are echoed back in CamelCase (e.g. 'VisaMasterCard') in responses."
     items:
       type: string
-      enum: ["visa", "mastercard", "amex"]
-    example: ["visa", "amex"]
+      enum: ["visa_master_card", "amex"]
+    example: ["visa_master_card"]
   plan_ids:
     type: array
     description: "List of plan IDs that will be available for subscription. This field is required for subscription payments."

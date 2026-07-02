@@ -23,10 +23,5 @@ properties:
     type: string
     example: MX
     description: "this field follows the [ISO 3166-1 alpha-2 standard](https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2)"
-  residential:
-    type: boolean
-    example: true
-    default: false
   external_number:
     type: string
-    

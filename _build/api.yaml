@@ -16623,13 +16623,15 @@ components:
         title: customer_payment_method_request
       - properties:
           cancel_url:
-            description: URL to redirect the customer after a canceled payment
+            description: Optional URL to redirect the customer after a canceled payment
             example: https://example.com/cancel
             type: string
-          can_not_expire:
-            description: Indicates if the payment method can not expire
-            example: true
-            type: boolean
+          expires_at:
+            description: "Optional expiry for the BNPL order, expressed in seconds\
+              \ since the Unix epoch"
+            example: 1680397724
+            format: int64
+            type: integer
           failure_url:
             description: URL to redirect the customer after a failed payment
             example: https://example.com/failure
@@ -16653,8 +16655,6 @@ components:
             example: bnpl
             type: string
         required:
-        - can_not_expire
-        - cancel_url
         - failure_url
         - product_type
         - success_url
@@ -16692,12 +16692,24 @@ components:
             minLength: 4
             type: string
           name:
-            description: Cardholder name
+            description: Cardholder name. Must include first and last name separated
+              by a space; single-word names are rejected.
             example: John Doe
+            maxLength: 249
             type: string
           number:
             description: Card number
             example: "4242424242424242"
+            type: string
+          contract_id:
+            description: Optional merchant-supplied identifier (exactly 10 characters)
+              that links a card transaction to a recurring/subscription contract at
+              the acquiring bank. Forwarded to the bank gateway and stored on the
+              resulting charge. Accepted on creation only; ignored on update. Do not
+              place sensitive bank data here — the value is returned in charge responses.
+            example: "3456788363"
+            maxLength: 10
+            minLength: 10
             type: string
           customer_ip_address:
             description: Optional field used to capture the customer's IP address
@@ -17245,10 +17257,6 @@ components:
             description: "this field follows the [ISO 3166-1 alpha-2 standard](https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2)"
             example: MX
             type: string
-          residential:
-            default: false
-            example: true
-            type: boolean
           external_number:
             type: string
         required:
@@ -19247,6 +19255,13 @@ components:
             default: null
       description: List of discounts that are applied to the order
       nullable: true
+    order_tax_request_metadata_value:
+      oneOf:
+      - maxLength: 249
+        type: string
+      - type: integer
+      - type: number
+      - type: boolean
     tax_lines_data_response:
       allOf:
       - allOf:
@@ -19264,11 +19279,11 @@ components:
               minLength: 2
               type: string
             metadata:
-              additionalProperties: true
+              additionalProperties:
+                $ref: "#/components/schemas/order_tax_request_metadata_value"
               example:
                 key: value
               maxProperties: 100
-              type: object
           required:
           - amount
           - description
@@ -19354,13 +19369,14 @@ components:
               minLength: 3
               type: string
             metadata:
-              additionalProperties: true
-              description: Hash where the user can send additional information for
-                each 'shipping'.
+              additionalProperties:
+                $ref: "#/components/schemas/order_tax_request_metadata_value"
+              description: "Hash where the user can send additional information for\
+                \ each 'shipping'. Values must be scalar (string of at most 249 characters,\
+                \ integer, number or boolean); nested objects and arrays are rejected."
               example:
                 key: value
               maxProperties: 100
-              type: object
           required:
           - amount
           title: shipping_request
@@ -19529,14 +19545,15 @@ components:
             minLength: 3
             type: string
           metadata:
-            additionalProperties: true
+            additionalProperties:
+              $ref: "#/components/schemas/order_tax_request_metadata_value"
             default: {}
-            description: It is a key/value hash that can hold custom fields. Maximum
-              100 elements and allows special characters.
+            description: "It is a key/value hash that can hold custom fields. Maximum\
+              \ 100 elements. Values must be scalar (string of at most 249 characters,\
+              \ integer, number or boolean); nested objects and arrays are rejected."
             example:
               key: value
             maxProperties: 100
-            type: object
           name:
             description: The name of the item. It will be displayed in the order.
             example: Box of Cohiba S1s
@@ -19895,15 +19912,15 @@ components:
           type: array
           default: null
         exclude_card_networks:
-          description: List of card networks to exclude from the checkout. This field
-            is only applicable for card payments.
+          description: "List of card networks to exclude from the checkout. This field\
+            \ is only applicable for card payments. Accepted values: 'visa_master_card'\
+            \ (a single token excluding both Visa and Mastercard) and 'amex'. Values\
+            \ are echoed back in CamelCase (e.g. 'VisaMasterCard') in responses."
           example:
-          - visa
-          - amex
+          - visa_master_card
           items:
             enum:
-            - visa
-            - mastercard
+            - visa_master_card
             - amex
             type: string
           title: checkout_request_exclude_card_networks
@@ -20110,14 +20127,15 @@ components:
           minLength: 3
           type: string
         metadata:
-          additionalProperties: true
+          additionalProperties:
+            $ref: "#/components/schemas/order_tax_request_metadata_value"
           default: {}
-          description: It is a key/value hash that can hold custom fields. Maximum
-            100 elements and allows special characters.
+          description: "It is a key/value hash that can hold custom fields. Maximum\
+            \ 100 elements. Values must be scalar (string of at most 249 characters,\
+            \ integer, number or boolean); nested objects and arrays are rejected."
           example:
             key: value
           maxProperties: 100
-          type: object
         name:
           description: The name of the item. It will be displayed in the order.
           example: Box of Cohiba S1s
@@ -20188,13 +20206,14 @@ components:
           minLength: 3
           type: string
         metadata:
-          additionalProperties: true
-          description: Hash where the user can send additional information for each
-            'shipping'.
+          additionalProperties:
+            $ref: "#/components/schemas/order_tax_request_metadata_value"
+          description: "Hash where the user can send additional information for each\
+            \ 'shipping'. Values must be scalar (string of at most 249 characters,\
+            \ integer, number or boolean); nested objects and arrays are rejected."
           example:
             key: value
           maxProperties: 100
-          type: object
       required:
       - amount
       title: shipping_request
@@ -20213,11 +20232,11 @@ components:
           minLength: 2
           type: string
         metadata:
-          additionalProperties: true
+          additionalProperties:
+            $ref: "#/components/schemas/order_tax_request_metadata_value"
           example:
             key: value
           maxProperties: 100
-          type: object
       required:
       - amount
       - description
@@ -20259,10 +20278,12 @@ components:
           type: array
           default: null
         metadata:
-          additionalProperties: true
-          description: Metadata associated with the order
+          additionalProperties:
+            $ref: "#/components/schemas/order_tax_request_metadata_value"
+          description: "Metadata associated with the order. Values must be scalar\
+            \ (string of at most 249 characters, integer, number or boolean); nested\
+            \ objects and arrays are rejected."
           maxProperties: 100
-          type: object
         needs_shipping_contact:
           description: Allows you to fill out the shipping information at checkout
           example: false
@@ -20298,9 +20319,15 @@ components:
           type: array
           default: null
         three_ds_mode:
-          description: "Indicates the 3DS2 mode for the order, either smart or strict.\
-            \ This property is only applicable when 3DS is enabled. When 3DS is disabled,\
-            \ this field should be null."
+          description: "Indicates the 3DS2 mode: 'strict', 'not_strict' or 'smart'.\
+            \ Accepted on creation only. This property is only applicable when 3DS\
+            \ is enabled; when 3DS is disabled this field should be null (no 3DS flow\
+            \ is applied)."
+          enum:
+          - strict
+          - not_strict
+          - smart
+          - null
           nullable: true
           type: string
       required:
@@ -20381,7 +20408,8 @@ components:
           default: null
         metadata:
           additionalProperties:
-            type: string
+            $ref: "#/components/schemas/order_tax_request_metadata_value"
+          maxProperties: 100
         pre_authorize:
           description: Indicates whether the order charges must be preauthorized
           type: boolean
@@ -20432,14 +20460,15 @@ components:
             minLength: 3
             type: string
           metadata:
-            additionalProperties: true
+            additionalProperties:
+              $ref: "#/components/schemas/order_tax_request_metadata_value"
             default: {}
-            description: It is a key/value hash that can hold custom fields. Maximum
-              100 elements and allows special characters.
+            description: "It is a key/value hash that can hold custom fields. Maximum\
+              \ 100 elements. Values must be scalar (string of at most 249 characters,\
+              \ integer, number or boolean); nested objects and arrays are rejected."
             example:
               key: value
             maxProperties: 100
-            type: object
           name:
             description: The name of the item. It will be displayed in the order.
             example: Box of Cohiba S1s
@@ -20533,7 +20562,8 @@ components:
           type: string
         metadata:
           additionalProperties:
-            type: string
+            $ref: "#/components/schemas/order_tax_request_metadata_value"
+          maxProperties: 100
       title: update_product
     orderRefund_request:
       properties:
@@ -21097,16 +21127,18 @@ components:
           type: array
           default: null
         exclude_card_networks:
-          description: List of card networks to exclude from the checkout. This field
-            is only applicable for card payments.
+          description: "List of card networks to exclude from the checkout. This field\
+            \ is only applicable for card payments. Accepted request values: 'visa_master_card'\
+            \ (a single token excluding both Visa and Mastercard) and 'amex'. Responses\
+            \ echo the stored values in CamelCase (e.g. 'VisaMasterCard', 'Amex')."
           example:
-          - visa
-          - amex
+          - visa_master_card
           items:
             enum:
-            - visa
-            - mastercard
+            - visa_master_card
             - amex
+            - VisaMasterCard
+            - Amex
             type: string
           title: checkout_exclude_card_networks
           type: array
@@ -21137,9 +21169,15 @@ components:
           type: array
           default: null
         three_ds_mode:
-          description: "Indicates the 3DS2 mode for the order, either smart or strict.\
-            \ This property is only applicable when 3DS is enabled. When 3DS is disabled,\
-            \ this field should be null."
+          description: "Indicates the 3DS2 mode: 'strict', 'not_strict' or 'smart'.\
+            \ Accepted on creation only. This property is only applicable when 3DS\
+            \ is enabled; when 3DS is disabled this field should be null (no 3DS flow\
+            \ is applied)."
+          enum:
+          - strict
+          - not_strict
+          - smart
+          - null
           nullable: true
           type: string
         name:
@@ -21505,13 +21543,14 @@ components:
             minLength: 3
             type: string
           metadata:
-            additionalProperties: true
-            description: Hash where the user can send additional information for each
-              'shipping'.
+            additionalProperties:
+              $ref: "#/components/schemas/order_tax_request_metadata_value"
+            description: "Hash where the user can send additional information for\
+              \ each 'shipping'. Values must be scalar (string of at most 249 characters,\
+              \ integer, number or boolean); nested objects and arrays are rejected."
             example:
               key: value
             maxProperties: 100
-            type: object
         required:
         - amount
         title: shipping_request
@@ -21954,11 +21993,11 @@ components:
             minLength: 2
             type: string
           metadata:
-            additionalProperties: true
+            additionalProperties:
+              $ref: "#/components/schemas/order_tax_request_metadata_value"
             example:
               key: value
             maxProperties: 100
-            type: object
         required:
         - amount
         - description
@@ -21993,7 +22032,7 @@ components:
           type: string
         metadata:
           additionalProperties:
-            type: object
+            $ref: "#/components/schemas/order_tax_request_metadata_value"
           maxProperties: 100
     token_request_card:
       nullable: true

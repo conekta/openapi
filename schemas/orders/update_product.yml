@@ -41,5 +41,11 @@ properties:
     maxLength: 249
   metadata:
     type: object
+    maxProperties: 100
     additionalProperties:
-      type: string
+      oneOf:
+        - type: string
+          maxLength: 249
+        - type: integer
+        - type: number
+        - type: boolean

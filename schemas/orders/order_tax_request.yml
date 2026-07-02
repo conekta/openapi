@@ -18,6 +18,12 @@ properties:
     description: description or tax's name
   metadata:
     type: object
-    additionalProperties: true
+    additionalProperties:
+      oneOf:
+        - type: string
+          maxLength: 249
+        - type: integer
+        - type: number
+        - type: boolean
     example: { "key": "value" }
     maxProperties: 100

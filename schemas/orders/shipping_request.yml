@@ -27,8 +27,14 @@ properties:
     example: "Same day"
     description: Method of shipment
   metadata:
-    description: Hash where the user can send additional information for each 'shipping'.
+    description: Hash where the user can send additional information for each 'shipping'. Values must be scalar (string of at most 249 characters, integer, number or boolean); nested objects and arrays are rejected.
     type: object
-    additionalProperties: true
+    additionalProperties:
+      oneOf:
+        - type: string
+          maxLength: 249
+        - type: integer
+        - type: number
+        - type: boolean
     example: { "key": "value" }
     maxProperties: 100

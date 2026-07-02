@@ -3,8 +3,6 @@ allOf:
   - $ref: './customer_payment_method_request.yml'
   - type: object
     required:
-        - can_not_expire
-        - cancel_url
         - failure_url
         - product_type
         - success_url
@@ -12,12 +10,13 @@ allOf:
     properties:
       cancel_url:
         type: string
-        description: "URL to redirect the customer after a canceled payment"
+        description: "Optional URL to redirect the customer after a canceled payment"
         example: "https://example.com/cancel"
-      can_not_expire:
-        type: boolean
-        example: true
-        description: "Indicates if the payment method can not expire"
+      expires_at:
+        type: integer
+        format: int64
+        example: 1680397724
+        description: "Optional expiry for the BNPL order, expressed in seconds since the Unix epoch"
       failure_url:
         type: string
         description: "URL to redirect the customer after a failed payment"

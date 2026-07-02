@@ -15,5 +15,10 @@ properties:
   metadata:
     type: object
     additionalProperties:
-      type: object
+      oneOf:
+        - type: string
+          maxLength: 249
+        - type: integer
+        - type: number
+        - type: boolean
     maxProperties: 100

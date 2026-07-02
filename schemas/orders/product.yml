@@ -24,8 +24,14 @@ properties:
   metadata:
     type: object
     maxProperties: 100
-    description: It is a key/value hash that can hold custom fields. Maximum 100 elements and allows special characters.
-    additionalProperties: true
+    description: It is a key/value hash that can hold custom fields. Maximum 100 elements. Values must be scalar (string of at most 249 characters, integer, number or boolean); nested objects and arrays are rejected.
+    additionalProperties:
+      oneOf:
+        - type: string
+          maxLength: 249
+        - type: integer
+        - type: number
+        - type: boolean
     example: { "key": "value" }
     default: {}
   name:

@@ -66,9 +66,15 @@ properties:
       $ref: product.yml
   metadata:
     type: object
-    additionalProperties: true
+    additionalProperties:
+      oneOf:
+        - type: string
+          maxLength: 249
+        - type: integer
+        - type: number
+        - type: boolean
     maxProperties: 100
-    description: "Metadata associated with the order"
+    description: "Metadata associated with the order. Values must be scalar (string of at most 249 characters, integer, number or boolean); nested objects and arrays are rejected."
   needs_shipping_contact:
     type: boolean
     example: false
@@ -99,9 +105,12 @@ properties:
       $ref: order_tax_request.yml
   three_ds_mode:
     type: [string, "null"]
-    description: "Indicates the 3DS2 mode for the order, either smart or strict. This property is only applicable when 3DS is enabled. When 3DS is disabled, this field should be null."
+    enum: ["strict", "not_strict", "smart", null]
+    description: "Indicates the 3DS2 mode: 'strict', 'not_strict' or 'smart'. Accepted on creation only. This property is only applicable when 3DS is enabled; when 3DS is disabled this field should be null (no 3DS flow is applied)."
     examples:
       - value: "smart"
-        summary: "Those transactions that Conekta considers to present a risk to commerce will go through an additional verification flow (through 3DS2), provided that the issuing bank is compatible with this technology.If the transaction is not considered risky, it will continue its normal course, without going through 3DS2 authentication."
+        summary: "Risk-based 3DS: transactions that Conekta considers risky go through the 3DS2 verification flow (provided the issuing bank supports it); low-risk transactions continue without 3DS2 authentication."
       - value: "strict"
-        summary: "All transactions will require 3DS2 authentication as a complementary measure for the security of charges, except those that are rejected by our Anti-Fraud. The issuing bank must be compatible with 3DS2 technology."
+        summary: "All transactions require 3DS2 authentication as a complementary security measure, except those rejected by our Anti-Fraud. The issuing bank must support 3DS2."
+      - value: "not_strict"
+        summary: "The 3DS2 challenge is also always initiated; intended as the more lenient variant of 'strict' where authentication attempts may be accepted."
