@@ -19376,7 +19376,7 @@ components:
                 $ref: "#/components/schemas/order_tax_request_metadata_value"
               description: "Hash where the user can send additional information for\
                 \ each 'shipping'. Values must be scalar (string of at most 249 characters,\
-                \ integer, number or boolean); nested objects and arrays are rejected."
+                \ integer, number or boolean); nested objects and arrays are not supported."
               example:
                 key: value
               maxProperties: 100
@@ -19553,7 +19553,7 @@ components:
             default: {}
             description: "It is a key/value hash that can hold custom fields. Maximum\
               \ 100 elements. Values must be scalar (string of at most 249 characters,\
-              \ integer, number or boolean); nested objects and arrays are rejected."
+              \ integer, number or boolean); nested objects and arrays are not supported."
             example:
               key: value
             maxProperties: 100
@@ -20134,7 +20134,7 @@ components:
           default: {}
           description: "It is a key/value hash that can hold custom fields. Maximum\
             \ 100 elements. Values must be scalar (string of at most 249 characters,\
-            \ integer, number or boolean); nested objects and arrays are rejected."
+            \ integer, number or boolean); nested objects and arrays are not supported."
           example:
             key: value
           maxProperties: 100
@@ -20212,7 +20212,7 @@ components:
             $ref: "#/components/schemas/order_tax_request_metadata_value"
           description: "Hash where the user can send additional information for each\
             \ 'shipping'. Values must be scalar (string of at most 249 characters,\
-            \ integer, number or boolean); nested objects and arrays are rejected."
+            \ integer, number or boolean); nested objects and arrays are not supported."
           example:
             key: value
           maxProperties: 100
@@ -20284,7 +20284,7 @@ components:
             $ref: "#/components/schemas/order_tax_request_metadata_value"
           description: "Metadata associated with the order. Values must be scalar\
             \ (string of at most 249 characters, integer, number or boolean); nested\
-            \ objects and arrays are rejected."
+            \ objects and arrays are not supported."
           maxProperties: 100
         needs_shipping_contact:
           description: Allows you to fill out the shipping information at checkout
@@ -20466,7 +20466,7 @@ components:
             default: {}
             description: "It is a key/value hash that can hold custom fields. Maximum\
               \ 100 elements. Values must be scalar (string of at most 249 characters,\
-              \ integer, number or boolean); nested objects and arrays are rejected."
+              \ integer, number or boolean); nested objects and arrays are not supported."
             example:
               key: value
             maxProperties: 100
@@ -21544,7 +21544,7 @@ components:
               $ref: "#/components/schemas/order_tax_request_metadata_value"
             description: "Hash where the user can send additional information for\
               \ each 'shipping'. Values must be scalar (string of at most 249 characters,\
-              \ integer, number or boolean); nested objects and arrays are rejected."
+              \ integer, number or boolean); nested objects and arrays are not supported."
             example:
               key: value
             maxProperties: 100

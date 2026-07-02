@@ -74,7 +74,7 @@ properties:
         - type: number
         - type: boolean
     maxProperties: 100
-    description: "Metadata associated with the order. Values must be scalar (string of at most 249 characters, integer, number or boolean); nested objects and arrays are rejected."
+    description: "Metadata associated with the order. Values must be scalar (string of at most 249 characters, integer, number or boolean); nested objects and arrays are not supported."
   needs_shipping_contact:
     type: boolean
     example: false
