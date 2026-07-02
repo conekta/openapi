@@ -31,7 +31,7 @@ allOf:
         type: string
         maxLength: 249
         example: "John Doe"
-        description: "Cardholder name. Must include first and last name separated by a space; single-word names are rejected."
+        description: "Cardholder name. Must include first and last name separated by a space; single-word names are rejected. Letters only — digits and most symbols are rejected."
       number:
         type: string
         example: "4242424242424242"

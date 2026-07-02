@@ -20,7 +20,7 @@ properties:
   exclude_card_networks:
     title: checkout_request_exclude_card_networks
     type: array
-    description: "List of card networks to exclude from the checkout. This field is only applicable for card payments. Accepted values: 'visa_master_card' (a single token excluding both Visa and Mastercard) and 'amex'. Values are echoed back in CamelCase (e.g. 'VisaMasterCard') in responses."
+    description: "List of card networks to exclude from the checkout. This field is only applicable for card payments. Accepted values: 'visa_master_card' (a single token excluding both Visa and Mastercard) and 'amex'."
     items:
       type: string
       enum: ["visa_master_card", "amex"]

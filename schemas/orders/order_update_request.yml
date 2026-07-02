@@ -63,7 +63,7 @@ properties:
     type: object
     maxProperties: 100
     additionalProperties:
-      oneOf:
+      anyOf:
         - type: string
           maxLength: 249
         - type: integer

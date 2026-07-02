@@ -19,7 +19,7 @@ properties:
   metadata:
     type: object
     additionalProperties:
-      oneOf:
+      anyOf:
         - type: string
           maxLength: 249
         - type: integer

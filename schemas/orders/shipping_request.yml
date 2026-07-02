@@ -30,7 +30,7 @@ properties:
     description: Hash where the user can send additional information for each 'shipping'. Values must be scalar (string of at most 249 characters, integer, number or boolean); nested objects and arrays are rejected.
     type: object
     additionalProperties:
-      oneOf:
+      anyOf:
         - type: string
           maxLength: 249
         - type: integer

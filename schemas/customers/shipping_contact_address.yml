@@ -21,8 +21,9 @@ properties:
   city:
     type: string
     maxLength: 249
+    pattern: "[A-Za-z]{2}"
     example: "Ciudad de Mexico"
-    description: "City of the delivery address."
+    description: "City of the delivery address. Must contain at least two consecutive ASCII letters."
   state:
     type: string
     maxLength: 249

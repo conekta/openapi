@@ -16628,7 +16628,7 @@ components:
             type: string
           expires_at:
             description: "Optional expiry for the BNPL order, expressed in seconds\
-              \ since the Unix epoch"
+              \ since the Unix epoch. Defaults to one month from creation when omitted."
             example: 1680397724
             format: int64
             type: integer
@@ -16693,7 +16693,8 @@ components:
             type: string
           name:
             description: Cardholder name. Must include first and last name separated
-              by a space; single-word names are rejected.
+              by a space; single-word names are rejected. Letters only — digits and
+              most symbols are rejected.
             example: John Doe
             maxLength: 249
             type: string
@@ -17610,9 +17611,11 @@ components:
             maxLength: 250
             type: string
           city:
-            description: City of the delivery address.
+            description: City of the delivery address. Must contain at least two consecutive
+              ASCII letters.
             example: Ciudad de Mexico
             maxLength: 249
+            pattern: "[A-Za-z]{2}"
             type: string
           state:
             description: State of the delivery address.
@@ -19256,7 +19259,7 @@ components:
       description: List of discounts that are applied to the order
       nullable: true
     order_tax_request_metadata_value:
-      oneOf:
+      anyOf:
       - maxLength: 249
         type: string
       - type: integer
@@ -19914,8 +19917,7 @@ components:
         exclude_card_networks:
           description: "List of card networks to exclude from the checkout. This field\
             \ is only applicable for card payments. Accepted values: 'visa_master_card'\
-            \ (a single token excluding both Visa and Mastercard) and 'amex'. Values\
-            \ are echoed back in CamelCase (e.g. 'VisaMasterCard') in responses."
+            \ (a single token excluding both Visa and Mastercard) and 'amex'."
           example:
           - visa_master_card
           items:
@@ -20320,9 +20322,8 @@ components:
           default: null
         three_ds_mode:
           description: "Indicates the 3DS2 mode: 'strict', 'not_strict' or 'smart'.\
-            \ Accepted on creation only. This property is only applicable when 3DS\
-            \ is enabled; when 3DS is disabled this field should be null (no 3DS flow\
-            \ is applied)."
+            \ The value is validated against the allowed set on creation. When this\
+            \ field is null the order defers to the company-level 3DS configuration."
           enum:
           - strict
           - not_strict
@@ -21128,17 +21129,14 @@ components:
           default: null
         exclude_card_networks:
           description: "List of card networks to exclude from the checkout. This field\
-            \ is only applicable for card payments. Accepted request values: 'visa_master_card'\
-            \ (a single token excluding both Visa and Mastercard) and 'amex'. Responses\
-            \ echo the stored values in CamelCase (e.g. 'VisaMasterCard', 'Amex')."
+            \ is only applicable for card payments. Accepted values: 'visa_master_card'\
+            \ (a single token excluding both Visa and Mastercard) and 'amex'."
           example:
           - visa_master_card
           items:
             enum:
             - visa_master_card
             - amex
-            - VisaMasterCard
-            - Amex
             type: string
           title: checkout_exclude_card_networks
           type: array
@@ -21170,9 +21168,8 @@ components:
           default: null
         three_ds_mode:
           description: "Indicates the 3DS2 mode: 'strict', 'not_strict' or 'smart'.\
-            \ Accepted on creation only. This property is only applicable when 3DS\
-            \ is enabled; when 3DS is disabled this field should be null (no 3DS flow\
-            \ is applied)."
+            \ Accepted on creation only. When this field is null the checkout defers\
+            \ to the company-level 3DS configuration."
           enum:
           - strict
           - not_strict
@@ -21623,9 +21620,11 @@ components:
           maxLength: 250
           type: string
         city:
-          description: City of the delivery address.
+          description: City of the delivery address. Must contain at least two consecutive
+            ASCII letters.
           example: Ciudad de Mexico
           maxLength: 249
+          pattern: "[A-Za-z]{2}"
           type: string
         state:
           description: State of the delivery address.
