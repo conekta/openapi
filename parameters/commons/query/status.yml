@@ -4,4 +4,7 @@ description: "status of the object to be retrieved"
 required: false
 schema:
   type: string
-  example: "pending"
+examples:
+  status:
+    summary: status of the object to be retrieved
+    value: "pending"

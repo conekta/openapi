@@ -4,4 +4,7 @@ description: "Filters by order status"
 required: false
 schema:
   type: string
-  example: "paid"
+examples:
+  payment_status:
+    summary: Filters by order status
+    value: "paid"

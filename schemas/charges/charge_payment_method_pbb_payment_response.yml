@@ -21,8 +21,7 @@ payment_method_pbb_payment:
           type: integer
           example: 1683053729
           format: int64
-          minimum: 0
-          exclusiveMinimum: 7
+          exclusiveMinimum: 0
           description: "Expiration date of the charge"
         product_type:
           type: string
