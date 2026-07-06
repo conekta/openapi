@@ -9,11 +9,11 @@ allOf:
         - type
     properties:
       cancel_url:
-        type: string
+        type: [string, "null"]
         description: "Optional URL to redirect the customer after a canceled payment"
         example: "https://example.com/cancel"
       expires_at:
-        type: integer
+        type: [integer, "null"]
         format: int64
         example: 1680397724
         description: "Optional expiry for the BNPL order, expressed in seconds since the Unix epoch. Defaults to one month from creation when omitted."
