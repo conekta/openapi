@@ -1,0 +1,10 @@
+in: query
+name: "client"
+description: "client of the object to be retrieved"
+required: false
+schema:
+  type: string
+examples:
+  client:
+    summary: client of the object to be retrieved
+    value: "checkout"
