@@ -4,4 +4,7 @@ description: "id of the charge used for filtering"
 required: false
 schema:
   type: string
-  example: "65412a893cd69a0001c25892"
+examples:
+  charge_id:
+    summary: id of the charge used for filtering
+    value: "65412a893cd69a0001c25892"

@@ -11,8 +11,14 @@ properties:
     type: array
     items:
       type: string
-    example: [ "cash", "card", "bank_transfer", "bnpl"]
+    example: [ "cash", "card", "bank_transfer", "bnpl", "pay_by_bank"]
     description: "Are the payment methods available for this link"
+  plan_ids:
+    type: array
+    description: "List of plan IDs that are available for subscription"
+    items:
+      type: string
+    example: ["plan_123", "plan_456"]
   can_not_expire:
     type: boolean
     example: false
@@ -20,8 +26,12 @@ properties:
     type: integer
     example: 0
   exclude_card_networks:
+    title: checkout_response_exclude_card_networks
     type: array
-    items: {}
+    items:
+      type: string
+      enum: ["visa", "mastercard", "amex"]
+    example: ["visa", "amex"]
   expires_at:
     type: integer
     example: 1680397724
@@ -87,6 +97,7 @@ properties:
   success_url:
     type: string
     example: "https://pay.conekta.com/success"
+    description: "The URL to redirect to after a successful payment."
   type:
     type: string
     example: "PaymentLink"

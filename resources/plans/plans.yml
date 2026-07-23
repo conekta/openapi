@@ -59,6 +59,8 @@ get:
     - $ref: '../../parameters/commons/query/search.yml'
     - $ref: '../../parameters/commons/query/next_page.yml'
     - $ref: '../../parameters/commons/query/previous_page.yml'
+    - $ref: '../../parameters/commons/query/currency.yml'
+    - $ref: '../../parameters/commons/query/frequency.yml'
 post:
   tags:
     - Plans

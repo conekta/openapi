@@ -5,5 +5,5 @@ required:
 properties:
   type:
     type: string
-    example: card | cash | spei | bnpl
+    example: card | cash | spei | bnpl | pay_by_bank
     description: Type of payment method

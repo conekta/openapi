@@ -1,4 +1,4 @@
-title: a order
+title: split_order_request
 description: a order
 type: object
 required:
@@ -29,7 +29,7 @@ properties:
   line_items:
     type: array
     items:
-       $ref: product.yml
+      $ref: product.yml
   metadata:
     type: object
     additionalProperties:
@@ -37,7 +37,6 @@ properties:
   pre_authorize:
     type: boolean
     description: "Indicates whether the order charges must be preauthorized"
-    default: false
   shipping_contact:
     $ref: ../../schemas/customers/customer_shipping_contacts.yml
   shipping_lines:

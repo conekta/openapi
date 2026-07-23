@@ -1,0 +1,150 @@
+get:
+  tags:
+    - Companies
+  operationId: getCurrentCompany
+  summary: Get Current Company
+  description: Retrieves information about the currently authenticated company. This endpoint returns the same data as the standard company endpoint but automatically uses the current company's context.
+  responses:
+    200:
+      description: successful
+      content:
+        application/vnd.conekta-v2.2.0+json:
+          schema:
+            $ref: '../../schemas/companies/company_response.yml'
+          example:
+            id: "2a1b3c4d5e6f7g8h9i0j1k2l"
+            name: "Mi Empresa S.A. de C.V."
+            mcc: "5311"
+            active: true
+            account_status: "activated"
+            antifraud_vertical: "physical_goods"
+            created_at: 1510699009
+            payment_link_enabled: true
+            commercial_info:
+              web_page: "https://miempresa.mx"
+              facebook: ""
+              category: "Venta al menudeo"
+              average_sale: "Range10KPlus"
+              monthly_sales: "Range0To100K"
+              shipping: false
+              physical: false
+              already_selling: true
+              tos_page: "https://miempresa.com/terminos"
+              website_instructions: ""
+              object: "commercial_info"
+            legal_info:
+              name: "MARIA GONZALEZ"
+              email: "maria.gonzalez@miempresa.com"
+              identification_type: "ife"
+              signed_contract_uploaded: false
+              curp: "GOMA930207MSLNZR00"
+              object: "legal_info"
+            fiscal_info:
+              tax_id: "EMP121008MU7"
+              legal_entity_name: "Mi Empresa S.A. de C.V."
+              business_type: "Persona moral"
+              phone: "5563794965"
+              address:
+                street1: "AVENIDA INSURGENTES"
+                street2: "ROMA NORTE"
+                street3: "Cuauhtémoc"
+                city: "México"
+                state: "CIUDAD DE MEXICO"
+                country: "MEX"
+                zip: "06700"
+                external_number: "123"
+                internal_number: "201"
+                object: "address"
+              bank_account:
+                account_number: "123456789012345678"
+                account_holder_name: "Mi Empresa S.A. de C.V."
+                bank: "Sistema de Transferencias y Pagos STP, S.A. de C.V., SOFOM E.N.R."
+                object: "fiscal_info_bank_account"
+              files:
+                - id: "1239z8y7x6w5v4u3t2s1r0q9p8o"
+                  file_name: "constancia_fiscal.pdf"
+                  file_type: "fiscal_id"
+                  url: "https://example.com/documents/constancia-fiscal.pdf"
+                  object: "file"
+              object: "fiscal_info"
+            user_accounts:
+              - role: "owner"
+                token: "1234567890"
+                livemode: true
+                object: "user_account"
+            capture_fees:
+              oxxo_commission: 0.035
+              banorte_commission: 0.01
+              spei_commission: 0.01
+              amex_commission: 0.029
+              credit_commission: 0.029
+              debit_commission: 0.029
+              oxxo_fixed_cost: 0
+              banorte_fixed_cost: 1200
+              spei_fixed_cost: 800
+              amex_fixed_cost: 250
+              credit_fixed_cost: 250
+              debit_fixed_cost: 250
+              credit_three_month_installments_commission: 0.049
+              credit_six_month_installments_commission: 0.079
+              credit_nine_month_installments_commission: 0.109
+              credit_twelve_month_installments_commission: 0.139
+              amex_three_month_installments_commission: 0.039
+              amex_six_month_installments_commission: 0.059
+              amex_nine_month_installments_commission: 0.079
+              amex_twelve_month_installments_commission: 0.099
+            webhooks:
+              - id: "1234567890"
+                url: "https://miempresa.com/api/webhook"
+                subscribed_events: ["charge.created", "charge.paid", "order.paid"]
+                status: "listening"
+                object: "webhook"
+                production_enabled: true
+                development_enabled: false
+            object: "company"
+            oxxo_payments_enabled: true
+            spei_payments_enabled: true
+            card_payments_enabled: true
+            bnpl_payments_enabled: true
+            direct_debit_payments_enabled: true
+            voucher_card_enabled: false
+            card_max_limit: 10000000
+            voucher_card_categories: []
+            internal_scopes: ["orders"]
+            retention: true
+            three_ds_enabled: true
+            three_ds_mode: "strict"
+      headers:
+        Date:
+          description: The date and time that the response was sent
+          schema:
+            type: string
+            example: "Fri, 03 Feb 2023 16:57:48 GMT"
+        Content-Type:
+          description: The format of the response body
+          schema:
+            type: string
+            example: "application/json; charset=utf-8"
+        Content-Length:
+          description: The length of the response body in bytes
+          schema:
+            type: string
+            example: "2737"
+        Connection:
+          description: The type of connection used to transfer the response
+          schema:
+            type: string
+            example: "keep-alive"
+        Conekta-Media-Type:
+          description: The version of the API used to process the request and the format of the response body
+          schema:
+            type: string
+            example: conekta-v2.2.0; format=application/json
+    401:
+      $ref: '../errors/401.yml'
+    500:
+      $ref: '../errors/500.yml'
+  security:
+    - bearerAuth: []
+  parameters:
+    - $ref: '../../parameters/commons/headers/accept_language.yml'

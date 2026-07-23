@@ -4,4 +4,4 @@ description:  identifier
 required: true
 schema:
   type: string
-example: "ship_lin_2tQ974hSHcsdeSZHG"
+  example: "ship_lin_2tQ974hSHcsdeSZHG"

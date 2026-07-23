@@ -1,0 +1,5 @@
+value:
+  payment_method: 
+    expires_at: 1680397724
+    product_type: bbva_pay_by_bank
+    type: pay_by_bank

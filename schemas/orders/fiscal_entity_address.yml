@@ -1,4 +1,4 @@
-title: order_fiscal_entity_address_request
+title: fiscal_entity_address
 required:
   - street1
   - city

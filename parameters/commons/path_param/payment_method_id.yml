@@ -4,4 +4,4 @@ description:  Identifier of the payment method
 required: true
 schema:
   type: string
-example: "src_2tQ974hSHcsdeSZHG"
+  example: "src_2tQ974hSHcsdeSZHG"

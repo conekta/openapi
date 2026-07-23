@@ -4,4 +4,4 @@ description: discount line id identifier
 required: true
 schema:
   type: string
-example: "dis_lin_2tQ974hSHcsdeSZHG"
+  example: "dis_lin_2tQ974hSHcsdeSZHG"

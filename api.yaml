@@ -1,4 +1,4 @@
-openapi: "3.0.3"
+openapi: "3.1.0"
 servers:
   - url: https://api.conekta.io
     description: Conekta main server
@@ -40,6 +40,12 @@ paths:
     $ref: "./resources/companies/companies.yml"
   /companies/{id}:
     $ref: "./resources/companies/company.yml"
+  /companies/current:
+    $ref: "./resources/companies/company_current.yml"
+  '/companies/{company_id}/document':
+    $ref: './resources/companies/company_document.yml'
+  '/companies/{company_id}/documents':
+    $ref: './resources/companies/company_documents.yml'
   /customers:
     $ref: "./resources/customers/create_customer.yml"
   /customers/{id}:
@@ -110,16 +116,32 @@ paths:
     $ref: "./resources/customers/create_customer_shipping_contacts.yml"
   /customers/{id}/shipping_contacts/{shipping_contacts_id}:
     $ref: "./resources/customers/update_customer_shipping_contacts.yml"
-  /customers/{id}/subscription:
+  /customers/{customer_id}/subscriptions:
+    $ref: "./resources/subscriptions/subscriptions_list.yml"
+  /customers/{customer_id}/subscriptions/{id}:
     $ref: "./resources/subscriptions/subscriptions.yml"
-  /customers/{id}/subscription/cancel:
-    $ref: "./resources/subscriptions/subscriptions_cancel.yml"
-  /customers/{id}/subscription/events:
+  /customers/{customer_id}/subscriptions/{id}/events:
     $ref: "./resources/subscriptions/subscriptions_events.yml"
-  /customers/{id}/subscription/pause:
+  /customers/{customer_id}/subscriptions/{id}/cancel:
+    $ref: "./resources/subscriptions/subscriptions_cancel.yml"
+  /customers/{customer_id}/subscriptions/{id}/pause:
     $ref: "./resources/subscriptions/subscriptions_pause.yml"
-  /customers/{id}/subscription/resume:
+  /customers/{customer_id}/subscriptions/{id}/resume:
     $ref: "./resources/subscriptions/subscriptions_resume.yml"
+  /customers/{customer_id}/subscriptions/{id}/retry:
+    $ref: "./resources/subscriptions/subscriptions_retry.yml"
+  /subscriptions/{subscription_id}/customer_portal:
+    $ref: "./resources/customer_portal/customer_portal.yml"
+  /customers/{id}/subscription:
+    $ref: "./resources/single_subscription/subscriptions.yml"
+  /customers/{id}/subscription/cancel:
+    $ref: "./resources/single_subscription/subscriptions_cancel.yml"
+  /customers/{id}/subscription/events:
+    $ref: "./resources/single_subscription/subscriptions_events.yml"
+  /customers/{id}/subscription/pause:
+    $ref: "./resources/single_subscription/subscriptions_pause.yml"
+  /customers/{id}/subscription/resume:
+    $ref: "./resources/single_subscription/subscriptions_resume.yml"
   /orders/{id}/tax_lines:
     $ref: "./resources/orders/order_tax_param.yml"
   /orders/{id}/tax_lines/{tax_id}:
@@ -146,6 +168,11 @@ paths:
     $ref: "./resources/webhooks/webhook_test.yml"
 security:
   - bearerAuth: []
+tags:
+  - name: Subscriptions
+    description: All subscription-related endpoints including creation, management, and events
+  - name: Subscriptions - Customer Portal
+    description: Customer portal endpoints for subscriptions
 components:
   schemas:
     event_types:

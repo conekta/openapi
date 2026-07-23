@@ -1,0 +1,18 @@
+title: customer_details
+description: Customer details for customer portal
+type: object
+properties:
+  id:
+    type: string
+    example: "cus_2yDzKtEAD3khH8Sga"
+  object:
+    type: string
+    example: "customer"
+  name:
+    type: string
+    example: "mao"
+  email:
+    type: string
+    format: email
+    example: "maoarroya@gmail.com"
+

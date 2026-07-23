@@ -1,0 +1,13 @@
+summary: Create an order with a pay by bank charge
+value:
+  charges:
+    - payment_method:
+        product_type: "bbva_pay_by_bank"
+        type: "pay_by_bank"
+  currency: "MXN"
+  customer_info:
+    customer_id: "cus_2xZfwfjXxX9tZhVey"
+  line_items:
+    - name: "Test pay by bank"
+      quantity: 1
+      unit_price: 300000

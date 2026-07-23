@@ -1,9 +1,15 @@
-payment_method_spei_recurrent:
+payment_method_spei_recurrent_response:
+  title: payment_method_spei_recurrent_response
+  x-discriminator-value: spei_recurrent
   allOf:
     - $ref: customer_payment_method_response.yml#/payment_method_response
     - type: object
       description: use for spei responses
       properties:
+        bank:
+          type: string
+          example: "STP"
+          description: "Bank name for the SPEI payment method"
         reference:
           type: string
           example: "93000262276908"

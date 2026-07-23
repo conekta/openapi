@@ -15,9 +15,11 @@ on:
 jobs:
   rdme-openapi:
     runs-on: ubuntu-latest
+    permissions:
+      contents: read
     steps:
       - name: Check out repo 📚
-        uses: actions/checkout@v3
+        uses: actions/checkout@v6
 
       - name: Run `openapi` command 🚀
         uses: readmeio/rdme@v8

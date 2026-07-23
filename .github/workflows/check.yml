@@ -1,5 +1,8 @@
 name: Check API YAML Modification on Pull Request
 
+permissions:
+  contents: read
+
 on:
   pull_request:
     branches: [ main, releases/**, release/** ]
@@ -13,7 +16,7 @@ jobs:
 
       # Checkout your code
       - name: Checkout
-        uses: actions/checkout@v2
+        uses: actions/checkout@v6
 
       # Generate your OpenAPI document (if you don't write it manually)
 
@@ -24,7 +27,7 @@ jobs:
         with:
           generator: openapi-yaml
           openapi-file: api.yaml
-          generator-tag: v7.12.0
+          generator-tag: v7.23.0
       - name: check if api.yaml are equals
         run: |
           if diff -q _build/api.yaml openapi-yaml-client/openapi/openapi.yaml >/dev/null; then
@@ -32,4 +35,13 @@ jobs:
           else
             echo "exists differences between files _build/api.yaml"
             exit 1
+          fi
+      - name: Check for auto-generated schema names
+        run: |
+          PATTERNS='_allOf|_allof|_AllOf|_inner|_200_response|_201_response|_request_request'
+          if grep -P "$PATTERNS" openapi-yaml-client/openapi/openapi.yaml; then
+            echo "::error::Found auto-generated schema names in api.yaml. Add 'title' to inline schemas to fix naming."
+            exit 1
+          else
+            echo "No auto-generated schema names found"
           fi

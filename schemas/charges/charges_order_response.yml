@@ -1,10 +1,11 @@
 description: "The charges associated with the order"
+title: charges_order_response
 allOf:
   - $ref: ../pagination/pagination.yml
+  - $ref: ../pagination/page.yml
   - type: object
     properties:
       data:
         type: array
         items:
-          allOf:
-            - $ref: ../../schemas/charges/charge_response.yml
+          $ref: ../../schemas/charges/charge_response.yml

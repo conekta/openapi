@@ -1,4 +1,4 @@
-title: event_webhook_resend_response
+title: events_resend_response
 description: event model
 type: object
 properties:
@@ -22,5 +22,5 @@ properties:
     example: {}
   url:
     type: string
-    example: "https://username:password@mockoon.stg.conekta.io/payments-api/cash/merchant_approval"
+    example: "https://username:password@mockoon.conekta.io/payments-api/cash/merchant_approval"
     format: uri

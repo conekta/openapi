@@ -6,17 +6,41 @@ required:
 properties:
   allowed_payment_methods:
     type: array
-    description: "Are the payment methods available for this link"
+    description: "Are the payment methods available for this link. For subscriptions, only 'card' is allowed due to the recurring nature of the payments."
     items:
       type: string
-    example: [ "cash", "card", "bank_transfer", "bnpl"]
+      enum: ["cash", "card", "bank_transfer", "bnpl", "pay_by_bank", 'google', 'apple']
+    example: [ "cash", "card", "bank_transfer", "bnpl", "pay_by_bank", "google", "apple"]
+  exclude_card_networks:
+    title: checkout_request_exclude_card_networks
+    type: array
+    description: "List of card networks to exclude from the checkout. This field is only applicable for card payments."
+    items:
+      type: string
+      enum: ["visa", "mastercard", "amex"]
+    example: ["visa", "amex"]
+  plan_ids:
+    type: array
+    description: "List of plan IDs that will be available for subscription. This field is required for subscription payments."
+    items:
+      type: string
+    example: ["plan_123", "plan_456"]
   expires_at:
     type: integer
+    minimum: 1
     format: int64
-    description: "Unix timestamp of checkout expiration"
-  failure_url: 
+    description: |
+        It is the time when the link will expire. 
+        It is expressed in seconds since the Unix epoch. The valid range is from 5 minutes to 365 days from the creation date.
+  failure_url:
     type: string
+    format: uri
     description: "Redirection url back to the site in case of failed payment, applies only to HostedPayment."
+    example: "https://www.mysite.com/failure"
+  force_save_card:
+    type: boolean
+    example: false
+    description: "Indicates whether the card used for the payment should be saved for future purchases. This field is only applicable for card payments."
   monthly_installments_enabled:
     type: boolean
     example: false
@@ -44,8 +68,10 @@ properties:
     example: 10
   success_url:
     type: string
+    format: uri
     description: "Redirection url back to the site in case of successful payment, applies only to HostedPayment"
+    example: "https://www.mysite.com/success"
   type:
     type: string
-    description: "This field represents the type of checkout"
-    example: "Integration"
+    description: "Required. This field represents the type of checkout, which determines the user experience during the payment process. 'HostedPayment' will redirect the customer to a Conekta-hosted page to complete the payment, while 'Integration' allows the payment process to be handled entirely on your site using Conekta's APIs and SDKs."
+    enum: ["Integration", "HostedPayment"]

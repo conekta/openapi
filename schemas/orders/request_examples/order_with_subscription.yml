@@ -1,0 +1,27 @@
+summary: Create an order with subscription plans
+value:
+  checkout:
+    allowed_payment_methods:
+      - card
+    plan_ids:
+      - nuevo-plan
+    expires_at: 1746015865
+    failure_url: string
+    monthly_installments_enabled: false
+    name: Embebido Prueba
+    on_demand_enabled: true
+    success_url: string
+    type: Integration
+    max_failed_retries: 3
+    is_redirect_on_failure: true
+  currency: MXN
+  customer_info:
+    name: Prueba
+    email: prueba@prueba.com
+    phone: '+5218181818181'
+    corporate: false
+    object: customer_info
+  shipping_lines:
+  - amount: 0
+    metadata:
+      key: value 

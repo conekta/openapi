@@ -1,9 +1,9 @@
 post:
   tags:
     - Subscriptions
-  operationId: cancelSubscription
+  operationId: subscriptionCancel
   summary: Cancel Subscription
-  description: You can cancel the subscription to stop the plans that your customers consume
+  description: Cancel a specific subscription
   responses:
     200:
       description: successful
@@ -45,6 +45,7 @@ post:
   security:
     - bearerAuth: []
   parameters:
-    - $ref: '../../parameters/commons/path_param/id.yml'
+    - $ref: '../../parameters/commons/path_param/customer_id.yml'
+    - $ref: '../../parameters/commons/path_param/subscription_id.yml'
     - $ref: '../../parameters/commons/headers/accept_language.yml'
     - $ref: '../../parameters/commons/headers/x_child_company_id.yml'

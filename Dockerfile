@@ -1,12 +1,12 @@
-FROM node:16 as builder
+FROM public.ecr.aws/docker/library/node:26 AS builder
 
-# Install OpenJDK-11
+# Install OpenJDK-17
 RUN apt-get update && \
-    apt-get install -y openjdk-11-jre-headless && \
+    apt-get install -y openjdk-21-jre-headless && \
     apt-get clean;
 
 RUN npm install @openapitools/openapi-generator-cli -g
-RUN openapi-generator-cli version-manager set 7.3.0
+RUN openapi-generator-cli version-manager set 7.23.0
 WORKDIR /app
 
 COPY parameters/ parameters/

@@ -1,9 +1,9 @@
 get:
   tags:
     - Subscriptions
-  operationId: getAllEventsFromSubscription
-  description: You can get the events of the subscription(s) of a client, with the customer id
-  summary: Get Events By Subscription
+  operationId: subscriptionEvents
+  summary: Get Subscription Events
+  description: Get events for a specific subscription
   responses:
     200:
       description: successful
@@ -47,17 +47,18 @@ get:
             example: conekta-v2.2.0; format=application/json
     401:
      $ref: '../errors/401.yml'
-    402:
-     $ref: '../errors/402.yml'
     404:
      $ref: '../errors/404.yml'
-    422:
-     $ref: '../errors/422.yml'
     500:
      $ref: '../errors/500.yml'
   security:
     - bearerAuth: []
   parameters:
-    - $ref: '../../parameters/commons/path_param/id.yml'
+    - $ref: '../../parameters/commons/path_param/customer_id.yml'
+    - $ref: '../../parameters/commons/path_param/subscription_id.yml'
     - $ref: '../../parameters/commons/headers/accept_language.yml'
     - $ref: '../../parameters/commons/headers/x_child_company_id.yml'
+    - $ref: '../../parameters/commons/query/limit.yml'
+    - $ref: '../../parameters/commons/query/search.yml'
+    - $ref: '../../parameters/commons/query/next_page.yml'
+    - $ref: '../../parameters/commons/query/previous_page.yml'

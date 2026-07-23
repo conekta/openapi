@@ -1,4 +1,4 @@
-title: a webhook
+title: webhook_request
 description: a webhook
 type: object
 required:

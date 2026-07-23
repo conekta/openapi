@@ -8,8 +8,14 @@ content:
         $ref: '../../schemas/orders/request_examples/order_with_charges.yml'
       order_with_bnpl_charges:
         $ref: '../../schemas/orders/request_examples/order_with_charges_bnpl.yml'
+      order_with_pbb_charges:
+        $ref: '../../schemas/orders/request_examples/order_with_charges_pbb.yml'
       order_with_checkout:
         $ref: '../../schemas/orders/request_examples/order_with_checkout.yml'
+      order_with_checkout_and_force_save_card:
+        $ref: '../../schemas/orders/request_examples/order_with_checkout_and_force_save_card.yml'
+      order_with_subscription:
+        $ref: '../../schemas/orders/request_examples/order_with_subscription.yml'
       split_payment_with_2_card_charges:
         $ref: '../../schemas/orders/request_examples/split_payment_with_2_cards.yml'
       split_payment_with_3_cash_charges:
