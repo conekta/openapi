@@ -9,8 +9,7 @@ required:
 properties:
   checkout:
     deprecated: true
-    nullable: true
-    type: object
+    type: [object, "null"]
     properties:
       allowed_payment_methods:
         type: array

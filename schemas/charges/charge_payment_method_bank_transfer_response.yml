@@ -14,33 +14,26 @@ payment_method_bank_transfer:
           type: string
           example: "646180111805034237"
         description:
-          type: string
-          nullable: true
+          type: [string, "null"]
         executed_at:
-          type: string
-          nullable: true
+          type: [string, "null"]
         expires_at:
           type: integer
           example: 1683053729
           format: int64
         issuing_account_bank:
-          type: string
-          nullable: true
+          type: [string, "null"]
         issuing_account_number:
-          type: string
-          nullable: true
+          type: [string, "null"]
         issuing_account_holder_name:
-          type: string
-          nullable: true
+          type: [string, "null"]
         issuing_account_tax_id:
-          type: string
-          nullable: true
+          type: [string, "null"]
         payment_attempts:
           type: array
           items: {}
         receiving_account_holder_name:
-          type: string
-          nullable: true
+          type: [string, "null"]
         receiving_account_number:
           type: string
           example: "646180111805034237"
@@ -48,14 +41,11 @@ payment_method_bank_transfer:
           type: string
           example: "STP"
         receiving_account_tax_id:
-          type: string
-          nullable: true
+          type: [string, "null"]
         reference_number:
-          type: string
-          nullable: true
+          type: [string, "null"]
         tracking_code:
-          type: string
-          nullable: true
+          type: [string, "null"]
         customer_ip_address:
           type: string
           example: "0.0.0.0"

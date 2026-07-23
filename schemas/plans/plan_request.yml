@@ -32,7 +32,6 @@ properties:
     description: internal reference id
   interval:
     type: string
-    nullable: false
     enum:
       - week
       - half_month

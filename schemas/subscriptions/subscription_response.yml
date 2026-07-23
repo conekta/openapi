@@ -3,20 +3,17 @@ description: subscription model
 type: object
 properties:
   billing_cycle_start:
-    type: integer
+    type: [integer, "null"]
     example: 1677626827
     format: int64
-    nullable: true
   billing_cycle_end:
-    type: integer
+    type: [integer, "null"]
     example: 1677626827
     format: int64
-    nullable: true
   canceled_at:
-    type: integer
+    type: [integer, "null"]
     example: 1678258162
     format: int64
-    nullable: true
   canceled_reason:
     type: string
     example: "user_cancelation"
@@ -25,9 +22,8 @@ properties:
     type: string
     example: "src_2tKcHxhTz7xU5SymL"
   charge_id:
-    type: string
+    type: [string, "null"]
     example: "2tKcHxhTz7xU5SymL"
-    nullable: true
   created_at:
     type: integer
     example: 1677626837
@@ -48,10 +44,9 @@ properties:
     type: string
     example: "subscription"
   paused_at:
-    type: integer
+    type: [integer, "null"]
     example: 1678258162
     format: int64
-    nullable: true
   plan_id:
     type: string
     example: "plan_2tXx672QLQ68CkmMn"
@@ -62,12 +57,10 @@ properties:
     type: integer
     example: 1677626837
   trial_start:
-    type: integer
+    type: [integer, "null"]
     example: 1677626837
     format: int64
-    nullable: true
   trial_end:
-    type: integer
+    type: [integer, "null"]
     example: 1677626837
-    nullable: true
     format: int64

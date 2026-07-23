@@ -24,7 +24,7 @@ post:
     '201':
       description: Document uploaded successfully.
       content:
-        application/vnd.conekta-v2.2.0+json:
+        application/vnd.conekta-v2.3.0+json:
           schema:
             $ref: '../../schemas/companies/company_document_response.yml'
       headers:
@@ -81,7 +81,7 @@ patch:
     '200':
       description: Document updated successfully.
       content:
-        application/vnd.conekta-v2.2.0+json:
+        application/vnd.conekta-v2.3.0+json:
           schema:
             $ref: '../../schemas/companies/company_document_response.yml'
       headers:

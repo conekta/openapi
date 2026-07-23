@@ -7,7 +7,7 @@ required:
   - line_items
 properties:
   charges:
-    description: "List of [charges](https://developers.conekta.com/v2.2.0/reference/orderscreatecharge) that are applied to the order"
+    description: "List of [charges](https://developers.conekta.com/v2.3.0/reference/orderscreatecharge) that are applied to the order"
     type: array
     items:
       $ref: ../../schemas/charges/charge_request.yml
@@ -25,7 +25,7 @@ properties:
       - $ref: ../customers/customer_info.yml
       - $ref: ../customers/customer_info_just_customer_id.yml
   discount_lines:
-    description: "List of [discounts](https://developers.conekta.com/v2.2.0/reference/orderscreatediscountline) that are applied to the order."
+    description: "List of [discounts](https://developers.conekta.com/v2.3.0/reference/orderscreatediscountline) that are applied to the order."
     type: array
     items:
       $ref: order_discount_lines_request.yml
@@ -48,21 +48,19 @@ properties:
         maxProperties: 100
         description: "Metadata associated with the fiscal entity"
       name:
-        type: string
+        type: [string, "null"]
         example: "Conekta Inc"
-        nullable: true
         description: "Name of the fiscal entity"
       phone:
         type: string
         example: "+525511223344"
         description: "Phone of the fiscal entity"
       tax_id:
-        type: string
+        type: [string, "null"]
         example: "AAA010101AAA"
-        nullable: true
         description: "Tax ID of the fiscal entity"
   line_items:
-    description: "List of [products](https://developers.conekta.com/v2.2.0/reference/orderscreateproduct) that are sold in the order. You must have at least one product."
+    description: "List of [products](https://developers.conekta.com/v2.3.0/reference/orderscreateproduct) that are sold in the order. You must have at least one product."
     type: array
     items:
       $ref: product.yml
@@ -90,18 +88,17 @@ properties:
   shipping_contact:
     $ref: ../../schemas/customers/customer_shipping_contacts.yml
   shipping_lines:
-    description: "List of [shipping costs](https://developers.conekta.com/v2.2.0/reference/orderscreateshipping). If the online store offers digital products."
+    description: "List of [shipping costs](https://developers.conekta.com/v2.3.0/reference/orderscreateshipping). If the online store offers digital products."
     type: array
     items:
       $ref: ../../schemas/orders/shipping_request.yml
   tax_lines:
-    description: "List of [taxes](https://developers.conekta.com/v2.2.0/reference/orderscreatetaxes) that are applied to the order."
+    description: "List of [taxes](https://developers.conekta.com/v2.3.0/reference/orderscreatetaxes) that are applied to the order."
     type: array
     items:
       $ref: order_tax_request.yml
   three_ds_mode:
-    type: string
-    nullable: true
+    type: [string, "null"]
     description: "Indicates the 3DS2 mode for the order, either smart or strict. This property is only applicable when 3DS is enabled. When 3DS is disabled, this field should be null."
     examples:
       - value: "smart"

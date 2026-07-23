@@ -12,12 +12,10 @@ payment_method_cash:
           example: "agreement_2tN73UdUSNrYRPD9r"
           description: "Agreement ID"
         auth_code:
-          type: integer
+          type: [integer, "null"]
           example: 542563
-          nullable: true
         cashier_id:
-          type: string
-          nullable: true
+          type: [string, "null"]
           example: "OINM01010"
         reference:
           type: string
@@ -37,8 +35,7 @@ payment_method_cash:
           type: string
           example: "store"
         store:
-          type: string
-          nullable: true
+          type: [string, "null"]
           example: "10MON50EDI"
         store_name:
           type: string

@@ -4,11 +4,9 @@ type: object
 properties:
   next_page_url: 
     description: URL of the next page.
-    type: string
-    nullable: true
+    type: [string, "null"]
     example: "https://api.conekta.io/resources?limit=10&next=chrg_1"
   previous_page_url:
     description: Url of the previous page.
-    type: string
-    nullable: true
+    type: [string, "null"]
     example: "https://api.conekta.io/resources?limit=10&previous=chrg_1"

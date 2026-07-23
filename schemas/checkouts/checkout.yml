@@ -2,7 +2,6 @@ title: checkout
 description: "It is a sub-resource of the Order model that can be stipulated in order to configure its corresponding checkout"
 type: object
 required:
-  - allowed_payment_methods
   - name
   - type
   - order_template
@@ -14,7 +13,15 @@ properties:
     items:
       type: string
     example: [ "cash", "card", "bank_transfer", "bnpl", "pay_by_bank"]
-    description: "Those are the payment methods that will be available for the link"
+    description: "Those are the payment methods that will be available for the link. This field is mutually exclusive with excluded_payment_methods."
+  excluded_payment_methods:
+    title: checkout_excluded_payment_methods
+    type: array
+    description: "Payment methods to be excluded from the checkout. This field is mutually exclusive with allowed_payment_methods."
+    items:
+      type: string
+      enum: ["cash", "card", "bank_transfer", "bnpl", "pay_by_bank"]
+    example: ["cash", "bank_transfer"]
   exclude_card_networks:
     title: checkout_exclude_card_networks
     type: array
@@ -43,8 +50,7 @@ properties:
       format: int8
     example: [3,6,12]
   three_ds_mode:
-    type: string
-    nullable: true
+    type: [string, "null"]
     description: "Indicates the 3DS2 mode for the order, either smart or strict. This property is only applicable when 3DS is enabled. When 3DS is disabled, this field should be null."
     examples:
       - value: "smart"
@@ -60,9 +66,8 @@ properties:
     example: false
     description:  "This flag allows you to fill in the shipping information at checkout."
   on_demand_enabled:
-    type: boolean
+    type: [boolean, "null"]
     example: true
-    nullable: true
     description: "This flag allows you to specify if the link will be on demand."
   plan_ids:
     description: It is a list of plan IDs that will be associated with the order.
@@ -99,12 +104,12 @@ properties:
         maxProperties: 100
         description: "It is a set of key-value pairs that you can attach to the order. It can be used to store additional information about the order in a structured format."
       tax_lines:
-        description: "List of [taxes](https://developers.conekta.com/v2.2.0/reference/orderscreatetaxes) that are applied to the order."
+        description: "List of [taxes](https://developers.conekta.com/v2.3.0/reference/orderscreatetaxes) that are applied to the order."
         type: array
         items:
           $ref: ../../schemas/orders/order_tax_request.yml
       discount_lines:
-        description: "List of [discounts](https://developers.conekta.com/v2.2.0/reference/orderscreatediscountline) that are applied to the order."
+        description: "List of [discounts](https://developers.conekta.com/v2.3.0/reference/orderscreatediscountline) that are applied to the order."
         type: array
         items:
           $ref: ../../schemas/orders/order_discount_lines_request.yml

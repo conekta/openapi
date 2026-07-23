@@ -3,8 +3,7 @@ description: a token
 type: object
 properties:
   card:
-    type: object
-    nullable: true
+    type: [object, "null"]
     required:
         - exp_month
         - exp_year
@@ -46,8 +45,7 @@ properties:
         x-encripted: true
   checkout:
     deprecated: true
-    type: object
-    nullable: true
+    type: [object, "null"]
     properties:
       returns_control_on: 
         type: string

@@ -17,7 +17,7 @@ get:
     '200':
       description: A list of documents for the company.
       content:
-        application/vnd.conekta-v2.2.0+json:
+        application/vnd.conekta-v2.3.0+json:
           schema:
             type: array
             items:
