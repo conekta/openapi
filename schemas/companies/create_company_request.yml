@@ -50,4 +50,9 @@ properties:
       clabe:
         type: string
         description: The 18-digit CLABE for the bank account.
-        example: "002010077777777771" 
+        example: "002010077777777771"
+  users:
+    type: array
+    description: User emails for the company
+    items:
+      type: string
