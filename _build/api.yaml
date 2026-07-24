@@ -16989,6 +16989,10 @@ components:
           example: strict
           nullable: true
           type: string
+        onboarding_url:
+          description: The URL to resume onboarding
+          example: https://onboarding.conekta.com/resume/6827305a1ec60400015eb116
+          type: string
       required:
       - account_status
       - active
@@ -17090,6 +17094,12 @@ components:
           $ref: "#/components/schemas/Create_Company_Request_fiscal_info"
         bank_account_info:
           $ref: "#/components/schemas/Create_Company_Request_bank_account_info"
+        users:
+          description: User emails for the company
+          items:
+            type: string
+          type: array
+          default: null
       title: Create Company Request
     CompanyDocumentRequest:
       description: Request body for uploading a company document.

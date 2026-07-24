@@ -89,6 +89,10 @@ properties:
     enum:
       - smart
       - strict
+  onboarding_url:
+    type: string
+    description: The URL to resume onboarding
+    example: "https://onboarding.conekta.com/resume/6827305a1ec60400015eb116"
 required:
   - id
   - name
