@@ -10,10 +10,15 @@ properties:
   description:
     type: string
     example: "testing"
-    minLength: 2
+    minLength: 3
     description: description or tax's name
   metadata:
     type: object
     additionalProperties:
-      type: object
+      anyOf:
+        - type: string
+          maxLength: 249
+        - type: integer
+        - type: number
+        - type: boolean
     maxProperties: 100

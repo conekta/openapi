@@ -61,8 +61,14 @@ properties:
       $ref: product.yml
   metadata:
     type: object
+    maxProperties: 100
     additionalProperties:
-      type: string
+      anyOf:
+        - type: string
+          maxLength: 249
+        - type: integer
+        - type: number
+        - type: boolean
   pre_authorize:
     type: boolean
     description: "Indicates whether the order charges must be preauthorized"
