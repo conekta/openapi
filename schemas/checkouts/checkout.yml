@@ -50,9 +50,9 @@ properties:
       format: int8
     example: [3,6,12]
   three_ds_mode:
-    type: [string, "null"]
-    enum: ["strict", "not_strict", "smart", null]
-    description: "Indicates the 3DS2 mode: 'strict', 'not_strict' or 'smart'. Accepted on creation only. Null appears in responses when no mode is configured; to defer to the company-level 3DS configuration, omit the field on creation (an explicit null is rejected)."
+    type: string
+    enum: ["strict", "not_strict", "smart"]
+    description: "Indicates the 3DS2 mode: 'strict', 'not_strict' or 'smart'. To defer to the company-level 3DS configuration, omit the field (an explicit null is rejected on creation)."
     examples:
       - value: "smart"
         summary: "Risk-based 3DS: transactions that Conekta considers risky go through the 3DS2 verification flow (provided the issuing bank supports it); low-risk transactions continue without 3DS2 authentication."

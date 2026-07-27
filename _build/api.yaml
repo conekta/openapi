@@ -21174,15 +21174,12 @@ components:
           default: null
         three_ds_mode:
           description: "Indicates the 3DS2 mode: 'strict', 'not_strict' or 'smart'.\
-            \ Accepted on creation only. Null appears in responses when no mode is\
-            \ configured; to defer to the company-level 3DS configuration, omit the\
-            \ field on creation (an explicit null is rejected)."
+            \ To defer to the company-level 3DS configuration, omit the field (an\
+            \ explicit null is rejected on creation)."
           enum:
           - strict
           - not_strict
           - smart
-          - null
-          nullable: true
           type: string
         name:
           description: Reason for charge
