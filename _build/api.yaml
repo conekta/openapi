@@ -16622,14 +16622,12 @@ components:
           cancel_url:
             description: Optional URL to redirect the customer after a canceled payment
             example: https://example.com/cancel
-            nullable: true
             type: string
           expires_at:
             description: "Optional expiry for the BNPL order, expressed in seconds\
               \ since the Unix epoch. Defaults to one month from creation when omitted."
             example: 1680397724
             format: int64
-            nullable: true
             type: integer
           failure_url:
             description: URL to redirect the customer after a failed payment
