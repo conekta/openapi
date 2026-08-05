@@ -1,0 +1,6 @@
+description: requested field for monthly installments validate
+content:
+  application/json:
+    schema:
+      $ref: '../../schemas/monthly_installments/monthly_installments_validate.yml'
+required: true
