@@ -28,6 +28,10 @@ jobs:
           generator: openapi-yaml
           openapi-file: api.yaml
           generator-tag: v7.24.0
+      # Same post-processing as `make merge`: the openapi-yaml generator injects
+      # meaningless `default: null` on array properties; strip them before comparing.
+      - name: Strip null defaults
+        run: sed -i '/^[[:space:]]*default: null$/d' openapi-yaml-client/openapi/openapi.yaml
       - name: check if api.yaml are equals
         run: |
           if diff -q _build/api.yaml openapi-yaml-client/openapi/openapi.yaml >/dev/null; then

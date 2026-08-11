@@ -2576,7 +2576,6 @@ paths:
                 items:
                   $ref: "#/components/schemas/CompanyDocumentResponse"
                 type: array
-                default: null
           description: A list of documents for the company.
           headers:
             Date:
@@ -15541,7 +15540,6 @@ components:
             items:
               $ref: "#/components/schemas/risk_rules_data"
             type: array
-            default: null
       title: risk_rules_list
     details_error:
       properties:
@@ -15565,7 +15563,6 @@ components:
             items:
               $ref: "#/components/schemas/details_error"
             type: array
-            default: null
       - properties:
           log_id:
             description: log id
@@ -15760,7 +15757,6 @@ components:
             items:
               $ref: "#/components/schemas/api_key_response"
             type: array
-            default: null
       title: get_api_keys_response
     api_key_request:
       properties:
@@ -15919,43 +15915,36 @@ components:
           items:
             $ref: "#/components/schemas/balance_common_fiels_response"
           type: array
-          default: null
         cashout_retention_amount:
           description: The balance's cashout retention amount
           items:
             $ref: "#/components/schemas/balance_common_fiels_response"
           type: array
-          default: null
         conekta_retention:
           description: The balance's conekta retention
           items:
             $ref: "#/components/schemas/balance_common_fiels_response"
           type: array
-          default: null
         gateway:
           description: The balance's gateway
           items:
             $ref: "#/components/schemas/balance_common_fiels_response"
           type: array
-          default: null
         pending:
           description: The balance's pending
           items:
             $ref: "#/components/schemas/balance_common_fiels_response"
           type: array
-          default: null
         retained:
           description: The balance's retained
           items:
             $ref: "#/components/schemas/balance_common_fiels_response"
           type: array
-          default: null
         retention_amount:
           description: The balance's retention amount
           items:
             $ref: "#/components/schemas/balance_common_fiels_response"
           type: array
-          default: null
         target_collateral_amount:
           description: The balance's target collateral amount
           type: object
@@ -15964,13 +15953,11 @@ components:
           items:
             $ref: "#/components/schemas/balance_common_fiels_response"
           type: array
-          default: null
         temporarily_retained:
           description: The balance's temporarily retained
           items:
             $ref: "#/components/schemas/balance_common_fiels_response"
           type: array
-          default: null
       title: balance_response
     charge_response_channel:
       properties:
@@ -16083,7 +16070,6 @@ components:
           fraud_indicators:
             items: {}
             type: array
-            default: null
           issuer:
             description: Issuer of the card
             example: BANAMEX
@@ -16147,7 +16133,6 @@ components:
           payment_attempts:
             items: {}
             type: array
-            default: null
           receiving_account_holder_name:
             nullable: true
             type: string
@@ -16347,7 +16332,6 @@ components:
             items:
               $ref: "#/components/schemas/charge_response_refunds_data"
             type: array
-            default: null
       title: charge_response_refunds
     chargeback_file_response:
       description: A file associated with a chargeback (e.g. evidence document)
@@ -16436,7 +16420,6 @@ components:
           items:
             $ref: "#/components/schemas/chargeback_file_response"
           type: array
-          default: null
         object:
           example: chargeback
           type: string
@@ -16561,7 +16544,6 @@ components:
             items:
               $ref: "#/components/schemas/charge_response"
             type: array
-            default: null
       title: get_charges_response
     charge_update_request:
       description: requested field for update a charge
@@ -16862,7 +16844,6 @@ components:
         refunds:
           items: {}
           type: array
-          default: null
         status:
           example: pending_payment
           type: string
@@ -16901,7 +16882,6 @@ components:
             items:
               $ref: "#/components/schemas/charge_response"
             type: array
-            default: null
       description: The charges associated with the order
       title: charges_order_response
     company_document_response:
@@ -16976,7 +16956,6 @@ components:
           items:
             $ref: "#/components/schemas/company_document_response"
           type: array
-          default: null
         created_at:
           description: Timestamp of when the company was created.
           example: 1748968241
@@ -17048,7 +17027,6 @@ components:
             items:
               $ref: "#/components/schemas/company_response"
             type: array
-            default: null
       title: get_companies_response
     Create_Company_Request_comercial_info:
       description: Commercial information for the company.
@@ -17110,7 +17088,6 @@ components:
           items:
             type: string
           type: array
-          default: null
       title: Create Company Request
     CompanyDocumentRequest:
       description: Request body for uploading a company document.
@@ -17324,7 +17301,6 @@ components:
             items:
               $ref: "#/components/schemas/customer_fiscal_entities_data_response"
             type: array
-            default: null
       title: customer_fiscal_entities_response
     cash_agreements_response:
       properties:
@@ -17366,7 +17342,6 @@ components:
             items:
               $ref: "#/components/schemas/cash_agreements_response"
             type: array
-            default: null
           reference:
             example: "93000262276908"
             type: string
@@ -17416,7 +17391,6 @@ components:
               items:
                 $ref: "#/components/schemas/cash_agreements_response"
               type: array
-              default: null
             reference:
               example: "93000262276908"
               type: string
@@ -17583,7 +17557,6 @@ components:
               $ref: "#/components/schemas/customer_payment_methods_data"
             title: customer_payment_methods_data
             type: array
-            default: null
         title: customerPaymentMethods
       title: customer_payment_methods_response
     customer_shipping_contacts_request_address:
@@ -17714,7 +17687,6 @@ components:
             items:
               $ref: "#/components/schemas/customer_shipping_contacts_data_response"
             type: array
-            default: null
     subscription_response:
       description: subscription model
       nullable: true
@@ -17879,7 +17851,6 @@ components:
               $ref: "#/components/schemas/customer_response"
             title: customers_data_response
             type: array
-            default: null
       - description: pagination metadata
         properties:
           has_more:
@@ -18097,7 +18068,6 @@ components:
           items:
             $ref: "#/components/schemas/fiscal_entity_request"
           type: array
-          default: null
         metadata:
           additionalProperties: true
           maxProperties: 100
@@ -18117,7 +18087,6 @@ components:
           items:
             $ref: "#/components/schemas/customer_payment_methods_request"
           type: array
-          default: null
         phone:
           description: Is the customer's phone number
           example: "+5215555555555"
@@ -18133,7 +18102,6 @@ components:
           items:
             $ref: "#/components/schemas/customer_shipping_contacts_request"
           type: array
-          default: null
         subscription:
           $ref: "#/components/schemas/subscription_request"
       required:
@@ -18204,7 +18172,6 @@ components:
           items:
             $ref: "#/components/schemas/fiscal_entity_request"
           type: array
-          default: null
         metadata:
           additionalProperties: true
           maxProperties: 100
@@ -18220,14 +18187,12 @@ components:
           items:
             $ref: "#/components/schemas/customer_payment_methods_request"
           type: array
-          default: null
         shipping_contacts:
           description: Contains the detail of the shipping addresses that the client
             has active or has used in Conekta
           items:
             $ref: "#/components/schemas/customer_shipping_contacts_request"
           type: array
-          default: null
         subscription:
           $ref: "#/components/schemas/subscription_request"
       title: update_customer
@@ -18407,7 +18372,6 @@ components:
             items:
               $ref: "#/components/schemas/discount_lines_response"
             type: array
-            default: null
       title: get_order_discount_lines_response
     order_discount_lines_request:
       description: List of discounts that apply to the order.
@@ -18509,7 +18473,6 @@ components:
           items:
             $ref: "#/components/schemas/WebhookLog"
           type: array
-          default: null
         webhook_status:
           example: successful
           type: string
@@ -18548,7 +18511,6 @@ components:
             items:
               $ref: "#/components/schemas/event_response"
             type: array
-            default: null
       title: get_events_response
     resendEvent_request:
       properties:
@@ -18560,7 +18522,6 @@ components:
           items:
             type: string
           type: array
-          default: null
       required:
       - webhooks_ids
     events_resend_response:
@@ -18690,7 +18651,6 @@ components:
           items:
             type: string
           type: array
-          default: null
         status:
           example: 200
           type: string
@@ -18732,7 +18692,6 @@ components:
             $ref: "#/components/schemas/logs_response_data"
           nullable: true
           type: array
-          default: null
       title: logs_response_for_request
     log_response_for_request:
       description: log model
@@ -18836,7 +18795,6 @@ components:
           items:
             type: string
           type: array
-          default: null
         status:
           example: 200
           type: string
@@ -18983,7 +18941,6 @@ components:
             items:
               $ref: "#/components/schemas/charges_data_response"
             type: array
-            default: null
       description: The charges associated with the order
       title: order_charges_response
     order_response_checkout:
@@ -19001,7 +18958,6 @@ components:
           items:
             type: string
           type: array
-          default: null
         excluded_payment_methods:
           description: Payment methods excluded from the checkout. This field is only
             returned when excluded_payment_methods is provided in the request.
@@ -19018,7 +18974,6 @@ components:
             type: string
           title: order_response_excluded_payment_methods
           type: array
-          default: null
         can_not_expire:
           example: false
           type: boolean
@@ -19037,7 +18992,6 @@ components:
             type: string
           title: order_response_exclude_card_networks
           type: array
-          default: null
         expires_at:
           example: 1676613599
           format: int64
@@ -19082,7 +19036,6 @@ components:
             format: int8
             type: integer
           type: array
-          default: null
         name:
           example: ord-2tNDzhA4Akmzj11AS
           type: string
@@ -19259,7 +19212,6 @@ components:
             items:
               $ref: "#/components/schemas/discount_lines_data_response"
             type: array
-            default: null
       description: List of discounts that are applied to the order
       nullable: true
     order_tax_request_metadata_value:
@@ -19344,7 +19296,6 @@ components:
             items:
               $ref: "#/components/schemas/tax_lines_data_response"
             type: array
-            default: null
       description: List of taxes that are applied to the order
       nullable: true
     shipping_lines_data_response:
@@ -19430,7 +19381,6 @@ components:
             items:
               $ref: "#/components/schemas/shipping_lines_data_response"
             type: array
-            default: null
       description: List of shipping costs applied to the order
       nullable: true
     order_fiscal_entity_address_response:
@@ -19592,7 +19542,6 @@ components:
               type: string
             minItems: 1
             type: array
-            default: null
           unit_price:
             description: The price of the item in cents.
             example: 20000
@@ -19646,7 +19595,6 @@ components:
             items:
               $ref: "#/components/schemas/product_data_response"
             type: array
-            default: null
       title: order_response_products
     order_next_action_response_redirect_to_url:
       description: contains the following attributes that will guide to continue the
@@ -19841,7 +19789,6 @@ components:
             items:
               $ref: "#/components/schemas/order_response"
             type: array
-            default: null
         required:
         - data
         title: orders_response
@@ -19900,7 +19847,6 @@ components:
             - google
             type: string
           type: array
-          default: null
         excluded_payment_methods:
           description: Payment methods to be excluded from the checkout. This field
             is mutually exclusive with allowed_payment_methods.
@@ -19917,7 +19863,6 @@ components:
             type: string
           title: checkout_request_excluded_payment_methods
           type: array
-          default: null
         exclude_card_networks:
           description: "List of card networks to exclude from the checkout. This field\
             \ is only applicable for card payments. Accepted values: 'visa_master_card'\
@@ -19931,7 +19876,6 @@ components:
             type: string
           title: checkout_request_exclude_card_networks
           type: array
-          default: null
         plan_ids:
           description: List of plan IDs that will be available for subscription. This
             field is required for subscription payments.
@@ -19941,7 +19885,6 @@ components:
           items:
             type: string
           type: array
-          default: null
         expires_at:
           description: "It is the time when the link will expire. \nIt is expressed\
             \ in seconds since the Unix epoch. The valid range is from 5 minutes to\
@@ -19972,7 +19915,6 @@ components:
             format: int8
             type: integer
           type: array
-          default: null
         max_failed_retries:
           description: Number of retries allowed before the checkout is marked as
             failed
@@ -20173,7 +20115,6 @@ components:
             type: string
           minItems: 1
           type: array
-          default: null
         unit_price:
           description: The price of the item in cents.
           example: 20000
@@ -20256,7 +20197,6 @@ components:
           items:
             $ref: "#/components/schemas/charge_request"
           type: array
-          default: null
         checkout:
           $ref: "#/components/schemas/order_checkout_request"
         currency:
@@ -20273,7 +20213,6 @@ components:
           items:
             $ref: "#/components/schemas/order_discount_lines_request"
           type: array
-          default: null
         fiscal_entity:
           $ref: "#/components/schemas/order_fiscal_entity_request"
         line_items:
@@ -20282,7 +20221,6 @@ components:
           items:
             $ref: "#/components/schemas/product"
           type: array
-          default: null
         metadata:
           additionalProperties:
             $ref: "#/components/schemas/order_tax_request_metadata_value"
@@ -20316,14 +20254,12 @@ components:
           items:
             $ref: "#/components/schemas/shipping_request"
           type: array
-          default: null
         tax_lines:
           description: "List of [taxes](https://developers.conekta.com/v2.3.0/reference/orderscreatetaxes)\
             \ that are applied to the order."
           items:
             $ref: "#/components/schemas/order_tax_request"
           type: array
-          default: null
         three_ds_mode:
           description: "Indicates the 3DS2 mode: 'strict', 'not_strict' or 'smart'.\
             \ The value is validated against the allowed set on creation; sending\
@@ -20384,7 +20320,6 @@ components:
           items:
             $ref: "#/components/schemas/charge_request"
           type: array
-          default: null
         checkout:
           $ref: "#/components/schemas/order_checkout_request"
         currency:
@@ -20401,7 +20336,6 @@ components:
           items:
             $ref: "#/components/schemas/order_discount_lines_request"
           type: array
-          default: null
         fiscal_entity:
           $ref: "#/components/schemas/order_update_fiscal_entity_request"
         line_items:
@@ -20410,7 +20344,6 @@ components:
           items:
             $ref: "#/components/schemas/product"
           type: array
-          default: null
         metadata:
           additionalProperties:
             $ref: "#/components/schemas/order_tax_request_metadata_value"
@@ -20426,12 +20359,10 @@ components:
           items:
             $ref: "#/components/schemas/shipping_request"
           type: array
-          default: null
         tax_lines:
           items:
             $ref: "#/components/schemas/order_tax_request"
           type: array
-          default: null
       title: order_update
     order_capture_request:
       properties:
@@ -20505,7 +20436,6 @@ components:
               type: string
             minItems: 1
             type: array
-            default: null
           unit_price:
             description: The price of the item in cents.
             example: 20000
@@ -20560,7 +20490,6 @@ components:
             type: string
           minItems: 1
           type: array
-          default: null
         brand:
           maxLength: 249
           minLength: 2
@@ -20673,7 +20602,6 @@ components:
             type: string
           minItems: 1
           type: array
-          default: null
         amount:
           description: The amount of the payout order.
           example: 100
@@ -20721,7 +20649,6 @@ components:
             $ref: "#/components/schemas/payout_order_payouts_item"
           title: payout_order_payouts
           type: array
-          default: null
         reason:
           description: The reason for the payout order.
           example: Payout order for the customer
@@ -20758,7 +20685,6 @@ components:
               $ref: "#/components/schemas/payout_order_response"
             title: payout_orders_data_response
             type: array
-            default: null
       - description: pagination metadata
         properties:
           has_more:
@@ -20825,7 +20751,6 @@ components:
           items:
             type: string
           type: array
-          default: null
         amount:
           description: The amount of the payout order.
           example: 100
@@ -20879,7 +20804,6 @@ components:
           items:
             type: string
           type: array
-          default: null
         excluded_payment_methods:
           description: Payment methods excluded from the checkout. This field is only
             returned when excluded_payment_methods is provided in the request.
@@ -20896,7 +20820,6 @@ components:
             type: string
           title: checkout_response_excluded_payment_methods
           type: array
-          default: null
         plan_ids:
           description: List of plan IDs that are available for subscription
           example:
@@ -20905,7 +20828,6 @@ components:
           items:
             type: string
           type: array
-          default: null
         can_not_expire:
           example: false
           type: boolean
@@ -20924,7 +20846,6 @@ components:
             type: string
           title: checkout_response_exclude_card_networks
           type: array
-          default: null
         expires_at:
           example: 1680397724
           format: int64
@@ -20958,7 +20879,6 @@ components:
             format: int8
             type: integer
           type: array
-          default: null
         name:
           description: Reason for charge
           example: Payment Link Name 1594138857
@@ -21043,7 +20963,6 @@ components:
             items:
               $ref: "#/components/schemas/checkout_response"
             type: array
-            default: null
       title: checkouts_response
     checkout_order_template_customer_info:
       description: It is the information of the customer who will be created when
@@ -21070,7 +20989,6 @@ components:
           items:
             $ref: "#/components/schemas/product"
           type: array
-          default: null
         metadata:
           additionalProperties: true
           description: It is a set of key-value pairs that you can attach to the order.
@@ -21086,14 +21004,12 @@ components:
           items:
             $ref: "#/components/schemas/order_tax_request"
           type: array
-          default: null
         discount_lines:
           description: "List of [discounts](https://developers.conekta.com/v2.3.0/reference/orderscreatediscountline)\
             \ that are applied to the order."
           items:
             $ref: "#/components/schemas/order_discount_lines_request"
           type: array
-          default: null
       required:
       - currency
       - line_items
@@ -21113,7 +21029,6 @@ components:
           items:
             type: string
           type: array
-          default: null
         excluded_payment_methods:
           description: Payment methods to be excluded from the checkout. This field
             is mutually exclusive with allowed_payment_methods.
@@ -21130,7 +21045,6 @@ components:
             type: string
           title: checkout_excluded_payment_methods
           type: array
-          default: null
         exclude_card_networks:
           description: "List of card networks to exclude from the checkout. This field\
             \ is only applicable for card payments. Accepted values: 'visa_master_card'\
@@ -21144,7 +21058,6 @@ components:
             type: string
           title: checkout_exclude_card_networks
           type: array
-          default: null
         expires_at:
           description: "It is the time when the link will expire. \nIt is expressed\
             \ in seconds since the Unix epoch. The valid range is from 5 minutes to\
@@ -21169,7 +21082,6 @@ components:
             format: int8
             type: integer
           type: array
-          default: null
         three_ds_mode:
           description: "Indicates the 3DS2 mode: 'strict', 'not_strict' or 'smart'.\
             \ To defer to the company-level 3DS configuration, omit the field (an\
@@ -21201,7 +21113,6 @@ components:
           items:
             type: string
           type: array
-          default: null
         order_template:
           $ref: "#/components/schemas/checkout_order_template"
         payments_limit_count:
@@ -21293,7 +21204,6 @@ components:
             items:
               $ref: "#/components/schemas/get_customer_payment_method_data_response"
             type: array
-            default: null
       title: get_payment_method_response
     CreateCustomerPaymentMethods_request:
       description: Contains details of the payment methods that the customer has active
@@ -21425,7 +21335,6 @@ components:
             items:
               $ref: "#/components/schemas/plan_response"
             type: array
-            default: null
       title: get_plans_response
     plan_request:
       description: a plan
@@ -21800,7 +21709,6 @@ components:
             items:
               $ref: "#/components/schemas/event_response"
             type: array
-            default: null
       title: subscription_events_response
     subscription_details_card:
       properties:
@@ -22109,7 +22017,6 @@ components:
             example: card
             type: string
           type: array
-          default: null
         can_not_expire:
           description: Indicates if the checkout can not expire.
           example: false
@@ -22123,7 +22030,6 @@ components:
             type: string
           title: token_response_exclude_card_networks
           type: array
-          default: null
         expires_at:
           description: Date and time when the checkout expires.
           example: 1675715413
@@ -22158,7 +22064,6 @@ components:
             example: 3
             type: integer
           type: array
-          default: null
         name:
           example: tok-2toNoPZpJgRU4PvgZ
           type: string
@@ -22337,7 +22242,6 @@ components:
             items:
               $ref: "#/components/schemas/transaction_response"
             type: array
-            default: null
       title: get_transactions_response
     transfer_method_response:
       description: Method used to make the transfer.
@@ -22459,7 +22363,6 @@ components:
             items:
               $ref: "#/components/schemas/transfers_response"
             type: array
-            default: null
       title: get_transfers_response
     transfer_destination_response:
       description: Method used to make the transfer.
@@ -22617,7 +22520,6 @@ components:
             items:
               $ref: "#/components/schemas/webhook_key_response"
             type: array
-            default: null
       title: get_webhook_keys_response
     webhook_key_request:
       properties:
@@ -22739,7 +22641,6 @@ components:
           items:
             type: string
           type: array
-          default: null
         url:
           description: url or endpoint of the webhook
           example: https://username:password@mockoon.conekta.io/payments-api/cash/merchant_approval
@@ -22779,7 +22680,6 @@ components:
             items:
               $ref: "#/components/schemas/webhook_response"
             type: array
-            default: null
       title: get_webhooks_response
     webhook_request:
       description: a webhook
@@ -22798,7 +22698,6 @@ components:
           items:
             type: string
           type: array
-          default: null
       required:
       - url
       title: webhook_request
@@ -22819,7 +22718,6 @@ components:
           items:
             type: string
           type: array
-          default: null
         active:
           description: whether the webhook is active or not
           example: true
