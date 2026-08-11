@@ -10,6 +10,7 @@ on:
       # https://docs.github.com/actions/using-workflows/events-that-trigger-workflows
       - 'releases/**'
       - 'release/**'
+      - main
 
 jobs:
   rdme-openapi:
