@@ -98,8 +98,6 @@ paths:
     $ref: "./resources/checkouts/checkout_cancel.yml"
   /checkouts/{id}/email:
     $ref: "./resources/checkouts/checkout_email.yml"
-  /checkouts/{id}/sms:
-    $ref: "./resources/checkouts/checkout_sms.yml"
   /customers/{id}/payment_sources:
     $ref: "./resources/customers/create_customer_payment_methods.yml"
   /customers/{id}/payment_sources/{payment_method_id}:
