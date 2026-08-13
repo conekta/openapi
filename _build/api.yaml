@@ -16273,11 +16273,19 @@ components:
           type: integer
         channel:
           $ref: "#/components/schemas/charge_response_channel"
+        conekta_account_id:
+          description: "Conekta account ID of the charge, if the charge was paid through\
+            \ a Conekta account."
+          example: 019ff731-2448-7a6b-b95b-5d4a36035da9
+          type: string
+          nullable: true
         created_at:
+          description: "Charge creation date, in seconds since the Unix epoch"
           example: 1676386026
           format: int64
           type: integer
         currency:
+          description: "Currency of the charge, in ISO 4217 format"
           example: MXN
           type: string
         customer_id:
@@ -16332,7 +16340,6 @@ components:
           example: pending_payment
           type: string
       required:
-      - amount
       - created_at
       - currency
       - id
@@ -18669,11 +18676,19 @@ components:
             type: integer
           channel:
             $ref: "#/components/schemas/charge_response_channel"
+          conekta_account_id:
+            description: "Conekta account ID of the charge, if the charge was paid\
+              \ through a Conekta account."
+            example: 019ff731-2448-7a6b-b95b-5d4a36035da9
+            type: string
+            nullable: true
           created_at:
+            description: "Charge creation date, in seconds since the Unix epoch"
             example: 1676386026
             format: int64
             type: integer
           currency:
+            description: "Currency of the charge, in ISO 4217 format"
             example: MXN
             type: string
           customer_id:
@@ -18728,7 +18743,6 @@ components:
             example: pending_payment
             type: string
         required:
-        - amount
         - created_at
         - currency
         - id
@@ -19612,6 +19626,13 @@ components:
           example: 1676328434
           format: int64
           type: integer
+      required:
+      - amount
+      - created_at
+      - currency
+      - id
+      - livemode
+      - object
       title: order_response
     get_orders_response:
       allOf:
