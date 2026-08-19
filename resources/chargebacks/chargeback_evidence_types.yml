@@ -1,0 +1,50 @@
+get:
+  tags:
+    - Chargebacks
+  operationId: getChargebackEvidenceTypes
+  summary: Get Chargeback Evidence Types
+  description: Retrieve the catalog of evidence types accepted for a chargeback, including which are mandatory and their allowed file formats.
+  parameters:
+    - $ref: '../../parameters/commons/path_param/charge_id.yml'
+    - $ref: '../../parameters/commons/path_param/chargeback_id.yml'
+    - $ref: '../../parameters/commons/headers/accept_language.yml'
+    - $ref: '../../parameters/commons/headers/x_child_company_id.yml'
+  responses:
+    '200':
+      description: The list of evidence types accepted for the chargeback.
+      content:
+        application/vnd.conekta-v2.3.0+json:
+          schema:
+            type: array
+            items:
+              $ref: '../../schemas/chargebacks/chargeback_evidence_type_response.yml'
+      headers:
+        Date:
+          description: The date and time that the response was sent
+          schema:
+            type: string
+        Content-Type:
+          description: The format of the response body
+          schema:
+            type: string
+        Content-Length:
+          description: The length of the response body in bytes
+          schema:
+            type: string
+        Connection:
+          description: The type of connection used to transfer the response
+          schema:
+            type: string
+        Conekta-Media-Type:
+          schema:
+            type: string
+    '400':
+      $ref: '../errors/400.yml'
+    '401':
+      $ref: '../errors/401.yml'
+    '404':
+      $ref: '../errors/404.yml'
+    '500':
+      $ref: '../errors/500.yml'
+  security:
+    - bearerAuth: []

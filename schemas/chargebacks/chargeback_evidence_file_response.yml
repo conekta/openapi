@@ -1,0 +1,38 @@
+title: chargeback_evidence_file_response
+type: object
+description: "A file uploaded as evidence for a chargeback"
+properties:
+  id:
+    type: string
+    example: "chbkf_2zPxWFUnGNLySoums"
+  name:
+    type: string
+    example: "20251221500000000000201.pdf"
+  created_at:
+    type: string
+    format: date-time
+    example: "2025-12-21T15:00:00Z"
+  evidence_type:
+    type: string
+    example: "contract"
+    enum:
+      - charge_information
+      - contract
+      - other_evidence
+      - receipt_of_shipment
+      - identification
+      - order_details
+      - terms_and_conditions
+      - cardholder_information
+      - proof_invalidate_claim
+      - internal_validations
+      - proof_of_cancellation
+      - recurring_contract
+      - proof_of_return
+      - exhibit_8
+      - duplicate_analysis
+      - full_evidence
+  url:
+    description: Presigned download URL for the file. Only present when fetching a single file.
+    type: [string, "null"]
+    example: "https://conekta-files.s3.amazonaws.com/chbkf_2zPxWFUnGNLySoums?signature=..."

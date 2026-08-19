@@ -16,6 +16,8 @@ servers:
 security:
 - bearerAuth: []
 tags:
+- description: Chargeback evidence file and evidence-type endpoints
+  name: Chargebacks
 - description: "All subscription-related endpoints including creation, management,\
     \ and events"
   name: Subscriptions
@@ -1449,6 +1451,654 @@ paths:
       summary: Update a charge
       tags:
       - Charges
+  /charges/{charge_id}/chargebacks/{chargeback_id}/files:
+    get:
+      description: Retrieve the list of evidence files uploaded for a chargeback.
+      operationId: getChargebackFiles
+      parameters:
+      - description: Identifier of the charge resource
+        explode: false
+        in: path
+        name: charge_id
+        required: true
+        schema:
+          example: 6966a06c044243000156c24d
+          type: string
+        style: simple
+      - description: Identifier of the chargeback resource
+        explode: false
+        in: path
+        name: chargeback_id
+        required: true
+        schema:
+          example: chbk_2zPxWFUnGNLySoumn
+          type: string
+        style: simple
+      - description: Use for knowing which language to use
+        examples:
+          es:
+            summary: for spanish request/response
+            value: es
+          en:
+            summary: for english request/response
+            value: en
+        explode: false
+        in: header
+        name: Accept-Language
+        required: false
+        schema:
+          default: es
+          enum:
+          - es
+          - en
+          type: string
+        style: simple
+      - description: "In the case of a holding company, the company id of the child\
+          \ company to which will process the request."
+        example: 6441b6376b60c3a638da80af
+        explode: false
+        in: header
+        name: X-Child-Company-Id
+        required: false
+        schema:
+          type: string
+        style: simple
+      responses:
+        "200":
+          content:
+            application/vnd.conekta-v2.3.0+json:
+              schema:
+                items:
+                  $ref: "#/components/schemas/chargeback_evidence_file_response"
+                nullable: true
+                type: array
+          description: A list of evidence files for the chargeback.
+          headers:
+            Date:
+              description: The date and time that the response was sent
+              explode: false
+              schema:
+                type: string
+              style: simple
+            Content-Type:
+              description: The format of the response body
+              explode: false
+              schema:
+                type: string
+              style: simple
+            Content-Length:
+              description: The length of the response body in bytes
+              explode: false
+              schema:
+                type: string
+              style: simple
+            Connection:
+              description: The type of connection used to transfer the response
+              explode: false
+              schema:
+                type: string
+              style: simple
+            Conekta-Media-Type:
+              explode: false
+              schema:
+                type: string
+              style: simple
+        "400":
+          content:
+            application/vnd.conekta-v2.3.0+json:
+              example:
+                details:
+                - message: The chargeback status does not allow this operation.
+                  code: conekta.errors.business.chargebacks.could_not_be_processed
+                  debug_message: chargeback status is won
+                log_id: 641b6c253cd9a50001514fae
+                object: error
+                type: parameter_validation_error
+              schema:
+                $ref: "#/components/schemas/error"
+          description: bad request
+        "401":
+          content:
+            application/vnd.conekta-v2.3.0+json:
+              example:
+                details:
+                - message: Please include your access key in your request.
+                  code: conekta.errors.authentication.missing_key
+                log_id: 507f1f77bcf86cd799439011
+                object: error
+                type: authentication_error
+              schema:
+                $ref: "#/components/schemas/error"
+          description: authentication error
+        "404":
+          content:
+            application/vnd.conekta-v2.3.0+json:
+              example:
+                details:
+                - message: The resource was not found.
+                  code: conekta.errors.resource_not_found.entity
+                  debug_message: The object Webhook "641b1d5662d7e00001eaa46b" could
+                    not be found.
+                log_id: 641b6c253cd9a50001514fae
+                object: error
+                type: resource_not_found_error
+              schema:
+                $ref: "#/components/schemas/error"
+          description: not found entity
+        "500":
+          content:
+            application/vnd.conekta-v2.3.0+json:
+              example:
+                details:
+                - debug_message: There was a runtime error and Conekta engineers have
+                    been notified.
+                  message: There was a runtime error and Conekta engineers have been
+                    notified.
+                  code: conekta.errors.api.system.general_failure
+                object: error
+                type: api_error
+                log_id: 641b6f2b3cd9a50001515098
+              schema:
+                $ref: "#/components/schemas/error"
+          description: internal server error
+      security:
+      - bearerAuth: []
+      summary: Get Chargeback Files
+      tags:
+      - Chargebacks
+  /charges/{charge_id}/chargebacks/{chargeback_id}/files/{file_id}:
+    get:
+      description: Retrieve the metadata and a presigned download URL for a single
+        chargeback evidence file.
+      operationId: getChargebackFile
+      parameters:
+      - description: Identifier of the charge resource
+        explode: false
+        in: path
+        name: charge_id
+        required: true
+        schema:
+          example: 6966a06c044243000156c24d
+          type: string
+        style: simple
+      - description: Identifier of the chargeback resource
+        explode: false
+        in: path
+        name: chargeback_id
+        required: true
+        schema:
+          example: chbk_2zPxWFUnGNLySoumn
+          type: string
+        style: simple
+      - description: Identifier of the chargeback evidence file
+        explode: false
+        in: path
+        name: file_id
+        required: true
+        schema:
+          example: chbkf_2zPxWFUnGNLySoums
+          type: string
+        style: simple
+      - description: Use for knowing which language to use
+        examples:
+          es:
+            summary: for spanish request/response
+            value: es
+          en:
+            summary: for english request/response
+            value: en
+        explode: false
+        in: header
+        name: Accept-Language
+        required: false
+        schema:
+          default: es
+          enum:
+          - es
+          - en
+          type: string
+        style: simple
+      - description: "In the case of a holding company, the company id of the child\
+          \ company to which will process the request."
+        example: 6441b6376b60c3a638da80af
+        explode: false
+        in: header
+        name: X-Child-Company-Id
+        required: false
+        schema:
+          type: string
+        style: simple
+      responses:
+        "200":
+          content:
+            application/vnd.conekta-v2.3.0+json:
+              schema:
+                $ref: "#/components/schemas/chargeback_evidence_file_response"
+          description: The requested evidence file.
+          headers:
+            Date:
+              description: The date and time that the response was sent
+              explode: false
+              schema:
+                type: string
+              style: simple
+            Content-Type:
+              description: The format of the response body
+              explode: false
+              schema:
+                type: string
+              style: simple
+            Content-Length:
+              description: The length of the response body in bytes
+              explode: false
+              schema:
+                type: string
+              style: simple
+            Connection:
+              description: The type of connection used to transfer the response
+              explode: false
+              schema:
+                type: string
+              style: simple
+            Conekta-Media-Type:
+              explode: false
+              schema:
+                type: string
+              style: simple
+        "400":
+          content:
+            application/vnd.conekta-v2.3.0+json:
+              example:
+                details:
+                - message: The chargeback status does not allow this operation.
+                  code: conekta.errors.business.chargebacks.could_not_be_processed
+                  debug_message: chargeback status is won
+                log_id: 641b6c253cd9a50001514fae
+                object: error
+                type: parameter_validation_error
+              schema:
+                $ref: "#/components/schemas/error"
+          description: bad request
+        "401":
+          content:
+            application/vnd.conekta-v2.3.0+json:
+              example:
+                details:
+                - message: Please include your access key in your request.
+                  code: conekta.errors.authentication.missing_key
+                log_id: 507f1f77bcf86cd799439011
+                object: error
+                type: authentication_error
+              schema:
+                $ref: "#/components/schemas/error"
+          description: authentication error
+        "404":
+          content:
+            application/vnd.conekta-v2.3.0+json:
+              example:
+                details:
+                - message: The resource was not found.
+                  code: conekta.errors.resource_not_found.entity
+                  debug_message: The object Webhook "641b1d5662d7e00001eaa46b" could
+                    not be found.
+                log_id: 641b6c253cd9a50001514fae
+                object: error
+                type: resource_not_found_error
+              schema:
+                $ref: "#/components/schemas/error"
+          description: not found entity
+        "500":
+          content:
+            application/vnd.conekta-v2.3.0+json:
+              example:
+                details:
+                - debug_message: There was a runtime error and Conekta engineers have
+                    been notified.
+                  message: There was a runtime error and Conekta engineers have been
+                    notified.
+                  code: conekta.errors.api.system.general_failure
+                object: error
+                type: api_error
+                log_id: 641b6f2b3cd9a50001515098
+              schema:
+                $ref: "#/components/schemas/error"
+          description: internal server error
+      security:
+      - bearerAuth: []
+      summary: Get Chargeback File
+      tags:
+      - Chargebacks
+  /charges/{charge_id}/chargebacks/{chargeback_id}/files/batch:
+    post:
+      description: |
+        Uploads multiple evidence files for a chargeback in a single request. Each part of the multipart body must be keyed by an evidence type (see the evidence-types endpoint for the valid values for this chargeback), with exactly one file per evidence type. Limits: at most 10 files per request, at most 2MB per file, and only application/pdf, image/jpeg or image/png content is accepted. The chargeback must be in the `action_required` status, and none of the submitted evidence types may already exist on the chargeback. On success the chargeback transitions to `pending_review`.
+      operationId: uploadChargebackFilesBatch
+      parameters:
+      - description: Identifier of the charge resource
+        explode: false
+        in: path
+        name: charge_id
+        required: true
+        schema:
+          example: 6966a06c044243000156c24d
+          type: string
+        style: simple
+      - description: Identifier of the chargeback resource
+        explode: false
+        in: path
+        name: chargeback_id
+        required: true
+        schema:
+          example: chbk_2zPxWFUnGNLySoumn
+          type: string
+        style: simple
+      - description: Use for knowing which language to use
+        examples:
+          es:
+            summary: for spanish request/response
+            value: es
+          en:
+            summary: for english request/response
+            value: en
+        explode: false
+        in: header
+        name: Accept-Language
+        required: false
+        schema:
+          default: es
+          enum:
+          - es
+          - en
+          type: string
+        style: simple
+      - description: "In the case of a holding company, the company id of the child\
+          \ company to which will process the request."
+        example: 6441b6376b60c3a638da80af
+        explode: false
+        in: header
+        name: X-Child-Company-Id
+        required: false
+        schema:
+          type: string
+        style: simple
+      requestBody:
+        content:
+          multipart/form-data:
+            schema:
+              $ref: "#/components/schemas/chargeback_files_batch_request"
+        description: |
+          Multipart form where each field name is an evidence type and its value is the file to upload for that evidence type. Include only the fields being uploaded (at most 10 per request); every field is optional.
+        required: true
+      responses:
+        "200":
+          content:
+            application/vnd.conekta-v2.3.0+json:
+              schema:
+                $ref: "#/components/schemas/chargeback_files_batch_response"
+          description: Files uploaded successfully.
+          headers:
+            Date:
+              description: The date and time that the response was sent
+              explode: false
+              schema:
+                type: string
+              style: simple
+            Content-Type:
+              description: The format of the response body
+              explode: false
+              schema:
+                type: string
+              style: simple
+            Content-Length:
+              description: The length of the response body in bytes
+              explode: false
+              schema:
+                type: string
+              style: simple
+            Connection:
+              description: The type of connection used to transfer the response
+              explode: false
+              schema:
+                type: string
+              style: simple
+            Conekta-Media-Type:
+              explode: false
+              schema:
+                type: string
+              style: simple
+        "400":
+          content:
+            application/vnd.conekta-v2.3.0+json:
+              example:
+                details:
+                - message: The chargeback status does not allow this operation.
+                  code: conekta.errors.business.chargebacks.could_not_be_processed
+                  debug_message: chargeback status is won
+                log_id: 641b6c253cd9a50001514fae
+                object: error
+                type: parameter_validation_error
+              schema:
+                $ref: "#/components/schemas/error"
+          description: bad request
+        "401":
+          content:
+            application/vnd.conekta-v2.3.0+json:
+              example:
+                details:
+                - message: Please include your access key in your request.
+                  code: conekta.errors.authentication.missing_key
+                log_id: 507f1f77bcf86cd799439011
+                object: error
+                type: authentication_error
+              schema:
+                $ref: "#/components/schemas/error"
+          description: authentication error
+        "404":
+          content:
+            application/vnd.conekta-v2.3.0+json:
+              example:
+                details:
+                - message: The resource was not found.
+                  code: conekta.errors.resource_not_found.entity
+                  debug_message: The object Webhook "641b1d5662d7e00001eaa46b" could
+                    not be found.
+                log_id: 641b6c253cd9a50001514fae
+                object: error
+                type: resource_not_found_error
+              schema:
+                $ref: "#/components/schemas/error"
+          description: not found entity
+        "422":
+          content:
+            application/vnd.conekta-v2.3.0+json:
+              example:
+                details:
+                - message: The token does not exist.
+                  param: payment_method.token_id
+                  code: conekta.errors.parameter_validation.payment_method.token_id.nonexistent_token
+                  debug_message: The token does not exist.
+                log_id: 641b6d813cd9a50001515017
+                object: error
+                type: parameter_validation_error
+              schema:
+                $ref: "#/components/schemas/error"
+          description: parameter validation error
+        "500":
+          content:
+            application/vnd.conekta-v2.3.0+json:
+              example:
+                details:
+                - debug_message: There was a runtime error and Conekta engineers have
+                    been notified.
+                  message: There was a runtime error and Conekta engineers have been
+                    notified.
+                  code: conekta.errors.api.system.general_failure
+                object: error
+                type: api_error
+                log_id: 641b6f2b3cd9a50001515098
+              schema:
+                $ref: "#/components/schemas/error"
+          description: internal server error
+      security:
+      - bearerAuth: []
+      summary: Upload Chargeback Evidence Files (Batch)
+      tags:
+      - Chargebacks
+  /charges/{charge_id}/chargebacks/{chargeback_id}/evidence-types:
+    get:
+      description: "Retrieve the catalog of evidence types accepted for a chargeback,\
+        \ including which are mandatory and their allowed file formats."
+      operationId: getChargebackEvidenceTypes
+      parameters:
+      - description: Identifier of the charge resource
+        explode: false
+        in: path
+        name: charge_id
+        required: true
+        schema:
+          example: 6966a06c044243000156c24d
+          type: string
+        style: simple
+      - description: Identifier of the chargeback resource
+        explode: false
+        in: path
+        name: chargeback_id
+        required: true
+        schema:
+          example: chbk_2zPxWFUnGNLySoumn
+          type: string
+        style: simple
+      - description: Use for knowing which language to use
+        examples:
+          es:
+            summary: for spanish request/response
+            value: es
+          en:
+            summary: for english request/response
+            value: en
+        explode: false
+        in: header
+        name: Accept-Language
+        required: false
+        schema:
+          default: es
+          enum:
+          - es
+          - en
+          type: string
+        style: simple
+      - description: "In the case of a holding company, the company id of the child\
+          \ company to which will process the request."
+        example: 6441b6376b60c3a638da80af
+        explode: false
+        in: header
+        name: X-Child-Company-Id
+        required: false
+        schema:
+          type: string
+        style: simple
+      responses:
+        "200":
+          content:
+            application/vnd.conekta-v2.3.0+json:
+              schema:
+                items:
+                  $ref: "#/components/schemas/chargeback_evidence_type_response"
+                type: array
+          description: The list of evidence types accepted for the chargeback.
+          headers:
+            Date:
+              description: The date and time that the response was sent
+              explode: false
+              schema:
+                type: string
+              style: simple
+            Content-Type:
+              description: The format of the response body
+              explode: false
+              schema:
+                type: string
+              style: simple
+            Content-Length:
+              description: The length of the response body in bytes
+              explode: false
+              schema:
+                type: string
+              style: simple
+            Connection:
+              description: The type of connection used to transfer the response
+              explode: false
+              schema:
+                type: string
+              style: simple
+            Conekta-Media-Type:
+              explode: false
+              schema:
+                type: string
+              style: simple
+        "400":
+          content:
+            application/vnd.conekta-v2.3.0+json:
+              example:
+                details:
+                - message: The chargeback status does not allow this operation.
+                  code: conekta.errors.business.chargebacks.could_not_be_processed
+                  debug_message: chargeback status is won
+                log_id: 641b6c253cd9a50001514fae
+                object: error
+                type: parameter_validation_error
+              schema:
+                $ref: "#/components/schemas/error"
+          description: bad request
+        "401":
+          content:
+            application/vnd.conekta-v2.3.0+json:
+              example:
+                details:
+                - message: Please include your access key in your request.
+                  code: conekta.errors.authentication.missing_key
+                log_id: 507f1f77bcf86cd799439011
+                object: error
+                type: authentication_error
+              schema:
+                $ref: "#/components/schemas/error"
+          description: authentication error
+        "404":
+          content:
+            application/vnd.conekta-v2.3.0+json:
+              example:
+                details:
+                - message: The resource was not found.
+                  code: conekta.errors.resource_not_found.entity
+                  debug_message: The object Webhook "641b1d5662d7e00001eaa46b" could
+                    not be found.
+                log_id: 641b6c253cd9a50001514fae
+                object: error
+                type: resource_not_found_error
+              schema:
+                $ref: "#/components/schemas/error"
+          description: not found entity
+        "500":
+          content:
+            application/vnd.conekta-v2.3.0+json:
+              example:
+                details:
+                - debug_message: There was a runtime error and Conekta engineers have
+                    been notified.
+                  message: There was a runtime error and Conekta engineers have been
+                    notified.
+                  code: conekta.errors.api.system.general_failure
+                object: error
+                type: api_error
+                log_id: 641b6f2b3cd9a50001515098
+              schema:
+                $ref: "#/components/schemas/error"
+          description: internal server error
+      security:
+      - bearerAuth: []
+      summary: Get Chargeback Evidence Types
+      tags:
+      - Chargebacks
   /orders/{id}/charges:
     post:
       description: Create charge for an existing orden
@@ -16391,6 +17041,141 @@ components:
           example: "278482642"
           type: string
       title: charge_update_request
+    chargeback_evidence_file_response:
+      description: A file uploaded as evidence for a chargeback
+      properties:
+        id:
+          example: chbkf_2zPxWFUnGNLySoums
+          type: string
+        name:
+          example: 20251221500000000000201.pdf
+          type: string
+        created_at:
+          example: 2025-12-21T15:00:00Z
+          format: date-time
+          type: string
+        evidence_type:
+          enum:
+          - charge_information
+          - contract
+          - other_evidence
+          - receipt_of_shipment
+          - identification
+          - order_details
+          - terms_and_conditions
+          - cardholder_information
+          - proof_invalidate_claim
+          - internal_validations
+          - proof_of_cancellation
+          - recurring_contract
+          - proof_of_return
+          - exhibit_8
+          - duplicate_analysis
+          - full_evidence
+          example: contract
+          type: string
+        url:
+          description: Presigned download URL for the file. Only present when fetching
+            a single file.
+          example: https://conekta-files.s3.amazonaws.com/chbkf_2zPxWFUnGNLySoums?signature=...
+          nullable: true
+          type: string
+      title: chargeback_evidence_file_response
+    chargeback_files_batch_request:
+      properties:
+        charge_information:
+          format: binary
+          type: string
+        contract:
+          format: binary
+          type: string
+        other_evidence:
+          format: binary
+          type: string
+        receipt_of_shipment:
+          format: binary
+          type: string
+        identification:
+          format: binary
+          type: string
+        order_details:
+          format: binary
+          type: string
+        terms_and_conditions:
+          format: binary
+          type: string
+        cardholder_information:
+          format: binary
+          type: string
+        proof_invalidate_claim:
+          format: binary
+          type: string
+        internal_validations:
+          format: binary
+          type: string
+        proof_of_cancellation:
+          format: binary
+          type: string
+        recurring_contract:
+          format: binary
+          type: string
+        proof_of_return:
+          format: binary
+          type: string
+        exhibit_8:
+          format: binary
+          type: string
+        duplicate_analysis:
+          format: binary
+          type: string
+        full_evidence:
+          format: binary
+          type: string
+      title: chargeback_files_batch_request
+    chargeback_files_batch_response:
+      description: Result of a batch evidence file upload
+      properties:
+        files:
+          items:
+            $ref: "#/components/schemas/chargeback_evidence_file_response"
+          type: array
+      title: chargeback_files_batch_response
+    chargeback_evidence_type_response:
+      description: "An evidence type accepted for a chargeback, and the constraints\
+        \ for uploading it"
+      properties:
+        type:
+          enum:
+          - charge_information
+          - contract
+          - other_evidence
+          - receipt_of_shipment
+          - identification
+          - order_details
+          - terms_and_conditions
+          - cardholder_information
+          - proof_invalidate_claim
+          - internal_validations
+          - proof_of_cancellation
+          - recurring_contract
+          - proof_of_return
+          - exhibit_8
+          - duplicate_analysis
+          - full_evidence
+          example: contract
+          type: string
+        permit_formats:
+          example:
+          - application/pdf
+          - image/jpeg
+          - image/png
+          items:
+            type: string
+          type: array
+        required:
+          example: true
+          type: boolean
+      title: chargeback_evidence_type_response
     payment_method_pbb_request:
       allOf:
       - description: Contains details of the payment methods that the customer has

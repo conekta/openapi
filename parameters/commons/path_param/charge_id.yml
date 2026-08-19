@@ -1,0 +1,7 @@
+in: path
+name: "charge_id"
+description: Identifier of the charge resource
+required: true
+schema:
+  type: string
+  example: "6966a06c044243000156c24d"
