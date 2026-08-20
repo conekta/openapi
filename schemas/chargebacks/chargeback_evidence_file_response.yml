@@ -13,25 +13,7 @@ properties:
     format: date-time
     example: "2025-12-21T15:00:00Z"
   evidence_type:
-    type: string
-    example: "contract"
-    enum:
-      - charge_information
-      - contract
-      - other_evidence
-      - receipt_of_shipment
-      - identification
-      - order_details
-      - terms_and_conditions
-      - cardholder_information
-      - proof_invalidate_claim
-      - internal_validations
-      - proof_of_cancellation
-      - recurring_contract
-      - proof_of_return
-      - exhibit_8
-      - duplicate_analysis
-      - full_evidence
+    $ref: chargeback_evidence_type.yml
   url:
     description: Presigned download URL for the file. Only present when fetching a single file.
     type: [string, "null"]

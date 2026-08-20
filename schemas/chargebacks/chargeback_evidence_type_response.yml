@@ -3,25 +3,7 @@ type: object
 description: "An evidence type accepted for a chargeback, and the constraints for uploading it"
 properties:
   type:
-    type: string
-    example: "contract"
-    enum:
-      - charge_information
-      - contract
-      - other_evidence
-      - receipt_of_shipment
-      - identification
-      - order_details
-      - terms_and_conditions
-      - cardholder_information
-      - proof_invalidate_claim
-      - internal_validations
-      - proof_of_cancellation
-      - recurring_contract
-      - proof_of_return
-      - exhibit_8
-      - duplicate_analysis
-      - full_evidence
+    $ref: chargeback_evidence_type.yml
   permit_formats:
     type: array
     items:

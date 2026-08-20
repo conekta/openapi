@@ -17060,6 +17060,7 @@ components:
           format: date-time
           type: string
         evidence_type:
+          description: The evidence type used for a chargeback file upload
           enum:
           - charge_information
           - contract
@@ -17078,6 +17079,7 @@ components:
           - duplicate_analysis
           - full_evidence
           example: contract
+          title: chargeback_evidence_type
           type: string
         url:
           description: Presigned download URL for the file. Only present when fetching
@@ -17150,6 +17152,7 @@ components:
         \ for uploading it"
       properties:
         type:
+          description: The evidence type used for a chargeback file upload
           enum:
           - charge_information
           - contract
@@ -17168,6 +17171,7 @@ components:
           - duplicate_analysis
           - full_evidence
           example: contract
+          title: chargeback_evidence_type
           type: string
         permit_formats:
           example:
