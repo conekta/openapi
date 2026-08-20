@@ -1,0 +1,52 @@
+post:
+  tags:
+    - Chargebacks
+  operationId: uploadChargebackFilesBatch
+  summary: Upload Chargeback Evidence Files (Batch)
+  description: "Uploads multiple evidence files for a chargeback in a single request. Each part of the multipart body must be keyed by an evidence type (see the evidence-types endpoint for the valid values for this chargeback), with exactly one file per evidence type. Limits: at most 10 files per request, at most 2MB per file, and only application/pdf, image/jpeg or image/png content is accepted. The chargeback must be in the `action_required` status, and none of the submitted evidence types may already exist on the chargeback. On success the chargeback transitions to `pending_review`."
+  parameters:
+    - $ref: '../../parameters/commons/path_param/charge_id.yml'
+    - $ref: '../../parameters/commons/path_param/chargeback_id.yml'
+    - $ref: '../../parameters/commons/headers/accept_language.yml'
+    - $ref: '../../parameters/commons/headers/x_child_company_id.yml'
+  requestBody:
+    $ref: '../../requestBodies/chargebacks/chargeback_files_batch.yml'
+  responses:
+    '200':
+      description: Files uploaded successfully.
+      content:
+        application/vnd.conekta-v2.3.0+json:
+          schema:
+            $ref: '../../schemas/chargebacks/chargeback_files_batch_response.yml'
+      headers:
+        Date:
+          description: The date and time that the response was sent
+          schema:
+            type: string
+        Content-Type:
+          description: The format of the response body
+          schema:
+            type: string
+        Content-Length:
+          description: The length of the response body in bytes
+          schema:
+            type: string
+        Connection:
+          description: The type of connection used to transfer the response
+          schema:
+            type: string
+        Conekta-Media-Type:
+          schema:
+            type: string
+    '400':
+      $ref: '../errors/400.yml'
+    '401':
+      $ref: '../errors/401.yml'
+    '404':
+      $ref: '../errors/404.yml'
+    '422':
+      $ref: '../errors/422.yml'
+    '500':
+      $ref: '../errors/500.yml'
+  security:
+    - bearerAuth: []

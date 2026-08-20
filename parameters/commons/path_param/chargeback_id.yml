@@ -1,0 +1,7 @@
+in: path
+name: "chargeback_id"
+description: Identifier of the chargeback resource
+required: true
+schema:
+  type: string
+  example: "chbk_2zPxWFUnGNLySoumn"

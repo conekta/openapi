@@ -1,0 +1,21 @@
+title: chargeback_evidence_type
+type: string
+description: "The evidence type used for a chargeback file upload"
+example: "contract"
+enum:
+  - charge_information
+  - contract
+  - other_evidence
+  - receipt_of_shipment
+  - identification
+  - order_details
+  - terms_and_conditions
+  - cardholder_information
+  - proof_invalidate_claim
+  - internal_validations
+  - proof_of_cancellation
+  - recurring_contract
+  - proof_of_return
+  - exhibit_8
+  - duplicate_analysis
+  - full_evidence

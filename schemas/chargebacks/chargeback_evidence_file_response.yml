@@ -1,0 +1,20 @@
+title: chargeback_evidence_file_response
+type: object
+description: "A file uploaded as evidence for a chargeback"
+properties:
+  id:
+    type: string
+    example: "chbkf_2zPxWFUnGNLySoums"
+  name:
+    type: string
+    example: "20251221500000000000201.pdf"
+  created_at:
+    type: string
+    format: date-time
+    example: "2025-12-21T15:00:00Z"
+  evidence_type:
+    $ref: chargeback_evidence_type.yml
+  url:
+    description: Presigned download URL for the file. Only present when fetching a single file.
+    type: [string, "null"]
+    example: "https://conekta-files.s3.amazonaws.com/chbkf_2zPxWFUnGNLySoums?signature=..."

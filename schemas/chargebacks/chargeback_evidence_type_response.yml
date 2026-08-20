@@ -1,0 +1,14 @@
+title: chargeback_evidence_type_response
+type: object
+description: "An evidence type accepted for a chargeback, and the constraints for uploading it"
+properties:
+  type:
+    $ref: chargeback_evidence_type.yml
+  permit_formats:
+    type: array
+    items:
+      type: string
+    example: ["application/pdf", "image/jpeg", "image/png"]
+  required:
+    type: boolean
+    example: true
