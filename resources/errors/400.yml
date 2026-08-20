@@ -8,10 +8,10 @@ content:
         {
           message: "The chargeback status does not allow this operation.",
           param:  null,
-          code:  "conekta.errors.business.chargebacks.could_not_be_processed",
+          code:  "conekta.errors.business.chargebacks.cannot_process",
           debug_message: "chargeback status is won",
         }
       ]
       log_id: "641b6c253cd9a50001514fae"
       object: "error"
-      type: "parameter_validation_error"
+      type: "resource_error"

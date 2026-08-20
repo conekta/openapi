@@ -175,8 +175,6 @@ paths:
 security:
   - bearerAuth: []
 tags:
-  - name: Chargebacks
-    description: Chargeback evidence file and evidence-type endpoints
   - name: Subscriptions
     description: All subscription-related endpoints including creation, management, and events
   - name: Subscriptions - Customer Portal

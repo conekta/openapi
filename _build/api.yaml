@@ -16,8 +16,6 @@ servers:
 security:
 - bearerAuth: []
 tags:
-- description: Chargeback evidence file and evidence-type endpoints
-  name: Chargebacks
 - description: "All subscription-related endpoints including creation, management,\
     \ and events"
   name: Subscriptions
@@ -1549,11 +1547,11 @@ paths:
               example:
                 details:
                 - message: The chargeback status does not allow this operation.
-                  code: conekta.errors.business.chargebacks.could_not_be_processed
+                  code: conekta.errors.business.chargebacks.cannot_process
                   debug_message: chargeback status is won
                 log_id: 641b6c253cd9a50001514fae
                 object: error
-                type: parameter_validation_error
+                type: resource_error
               schema:
                 $ref: "#/components/schemas/error"
           description: bad request
@@ -1711,11 +1709,11 @@ paths:
               example:
                 details:
                 - message: The chargeback status does not allow this operation.
-                  code: conekta.errors.business.chargebacks.could_not_be_processed
+                  code: conekta.errors.business.chargebacks.cannot_process
                   debug_message: chargeback status is won
                 log_id: 641b6c253cd9a50001514fae
                 object: error
-                type: parameter_validation_error
+                type: resource_error
               schema:
                 $ref: "#/components/schemas/error"
           description: bad request
@@ -1770,8 +1768,14 @@ paths:
       - Chargebacks
   /charges/{charge_id}/chargebacks/{chargeback_id}/files/batch:
     post:
-      description: |
-        Uploads multiple evidence files for a chargeback in a single request. Each part of the multipart body must be keyed by an evidence type (see the evidence-types endpoint for the valid values for this chargeback), with exactly one file per evidence type. Limits: at most 10 files per request, at most 2MB per file, and only application/pdf, image/jpeg or image/png content is accepted. The chargeback must be in the `action_required` status, and none of the submitted evidence types may already exist on the chargeback. On success the chargeback transitions to `pending_review`.
+      description: "Uploads multiple evidence files for a chargeback in a single request.\
+        \ Each part of the multipart body must be keyed by an evidence type (see the\
+        \ evidence-types endpoint for the valid values for this chargeback), with\
+        \ exactly one file per evidence type. Limits: at most 10 files per request,\
+        \ at most 2MB per file, and only application/pdf, image/jpeg or image/png\
+        \ content is accepted. The chargeback must be in the `action_required` status,\
+        \ and none of the submitted evidence types may already exist on the chargeback.\
+        \ On success the chargeback transitions to `pending_review`."
       operationId: uploadChargebackFilesBatch
       parameters:
       - description: Identifier of the charge resource
@@ -1826,8 +1830,9 @@ paths:
           multipart/form-data:
             schema:
               $ref: "#/components/schemas/chargeback_files_batch_request"
-        description: |
-          Multipart form where each field name is an evidence type and its value is the file to upload for that evidence type. Include only the fields being uploaded (at most 10 per request); every field is optional.
+        description: Multipart form where each field name is an evidence type and
+          its value is the file to upload for that evidence type. Include only the
+          fields being uploaded (at most 10 per request); every field is optional.
         required: true
       responses:
         "200":
@@ -1872,11 +1877,11 @@ paths:
               example:
                 details:
                 - message: The chargeback status does not allow this operation.
-                  code: conekta.errors.business.chargebacks.could_not_be_processed
+                  code: conekta.errors.business.chargebacks.cannot_process
                   debug_message: chargeback status is won
                 log_id: 641b6c253cd9a50001514fae
                 object: error
-                type: parameter_validation_error
+                type: resource_error
               schema:
                 $ref: "#/components/schemas/error"
           description: bad request
@@ -2042,11 +2047,11 @@ paths:
               example:
                 details:
                 - message: The chargeback status does not allow this operation.
-                  code: conekta.errors.business.chargebacks.could_not_be_processed
+                  code: conekta.errors.business.chargebacks.cannot_process
                   debug_message: chargeback status is won
                 log_id: 641b6c253cd9a50001514fae
                 object: error
-                type: parameter_validation_error
+                type: resource_error
               schema:
                 $ref: "#/components/schemas/error"
           description: bad request

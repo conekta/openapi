@@ -3,79 +3,14 @@ post:
     - Chargebacks
   operationId: uploadChargebackFilesBatch
   summary: Upload Chargeback Evidence Files (Batch)
-  description: >
-    Uploads multiple evidence files for a chargeback in a single request. Each part of the
-    multipart body must be keyed by an evidence type (see the evidence-types endpoint for the
-    valid values for this chargeback), with exactly one file per evidence type. Limits: at most
-    10 files per request, at most 2MB per file, and only application/pdf, image/jpeg or image/png
-    content is accepted. The chargeback must be in the `action_required` status, and none of the
-    submitted evidence types may already exist on the chargeback. On success the chargeback
-    transitions to `pending_review`.
+  description: "Uploads multiple evidence files for a chargeback in a single request. Each part of the multipart body must be keyed by an evidence type (see the evidence-types endpoint for the valid values for this chargeback), with exactly one file per evidence type. Limits: at most 10 files per request, at most 2MB per file, and only application/pdf, image/jpeg or image/png content is accepted. The chargeback must be in the `action_required` status, and none of the submitted evidence types may already exist on the chargeback. On success the chargeback transitions to `pending_review`."
   parameters:
     - $ref: '../../parameters/commons/path_param/charge_id.yml'
     - $ref: '../../parameters/commons/path_param/chargeback_id.yml'
     - $ref: '../../parameters/commons/headers/accept_language.yml'
     - $ref: '../../parameters/commons/headers/x_child_company_id.yml'
   requestBody:
-    description: >
-      Multipart form where each field name is an evidence type and its value is the file to
-      upload for that evidence type. Include only the fields being uploaded (at most 10 per
-      request); every field is optional.
-    required: true
-    content:
-      multipart/form-data:
-        schema:
-          title: chargeback_files_batch_request
-          type: object
-          properties:
-            charge_information:
-              type: string
-              format: binary
-            contract:
-              type: string
-              format: binary
-            other_evidence:
-              type: string
-              format: binary
-            receipt_of_shipment:
-              type: string
-              format: binary
-            identification:
-              type: string
-              format: binary
-            order_details:
-              type: string
-              format: binary
-            terms_and_conditions:
-              type: string
-              format: binary
-            cardholder_information:
-              type: string
-              format: binary
-            proof_invalidate_claim:
-              type: string
-              format: binary
-            internal_validations:
-              type: string
-              format: binary
-            proof_of_cancellation:
-              type: string
-              format: binary
-            recurring_contract:
-              type: string
-              format: binary
-            proof_of_return:
-              type: string
-              format: binary
-            exhibit_8:
-              type: string
-              format: binary
-            duplicate_analysis:
-              type: string
-              format: binary
-            full_evidence:
-              type: string
-              format: binary
+    $ref: '../../requestBodies/chargebacks/chargeback_files_batch.yml'
   responses:
     '200':
       description: Files uploaded successfully.
