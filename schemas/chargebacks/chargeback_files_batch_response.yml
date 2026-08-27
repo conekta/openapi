@@ -1,0 +1,8 @@
+title: chargeback_files_batch_response
+type: object
+description: "Result of a batch evidence file upload"
+properties:
+  files:
+    type: array
+    items:
+      $ref: chargeback_evidence_file_response.yml
