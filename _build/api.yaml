@@ -17091,6 +17091,7 @@ components:
           metadata:
             additionalProperties:
               type: object
+            type: object
           company_name:
             example: conekta
             type: string
@@ -17742,6 +17743,7 @@ components:
         metadata:
           additionalProperties:
             type: object
+          type: object
         company_name:
           example: conekta
           type: string
@@ -18048,6 +18050,7 @@ components:
           metadata:
             additionalProperties:
               type: object
+            type: object
           company_name:
             example: conekta
             type: string
@@ -18088,6 +18091,7 @@ components:
         metadata:
           additionalProperties:
             type: object
+          type: object
         company_name:
           example: conekta
           type: string
@@ -18106,6 +18110,7 @@ components:
           metadata:
             additionalProperties:
               type: object
+            type: object
           company_name:
             example: conekta
             type: string
@@ -18455,6 +18460,7 @@ components:
             Accept-Language: "es-419, es; q=0.9, en; q=0.8"
             Activitypermission: orders:read
             Apiversion: 2.3.0
+          type: object
         response_body:
           type: object
         response_headers:
@@ -18482,6 +18488,7 @@ components:
             X-Frame-Options: SAMEORIGIN
             X-Permitted-Cross-Domain-Policies: none
             X-XSS-Protection: 1; mode=block
+          type: object
         searchable_tags:
           example:
           - 6307a60c41de27127515a575
@@ -18599,6 +18606,7 @@ components:
             Accept-Language: "es-419, es; q=0.9, en; q=0.8"
             Activitypermission: orders:read
             Apiversion: 2.3.0
+          type: object
         response_body:
           type: object
         response_headers:
@@ -18626,6 +18634,7 @@ components:
             X-Frame-Options: SAMEORIGIN
             X-Permitted-Cross-Domain-Policies: none
             X-XSS-Protection: 1; mode=block
+          type: object
         searchable_tags:
           example:
           - 6307a60c41de27127515a575
@@ -19088,6 +19097,7 @@ components:
               example:
                 key: value
               maxProperties: 100
+              type: object
           required:
           - amount
           - description
@@ -19180,6 +19190,7 @@ components:
               example:
                 key: value
               maxProperties: 100
+              type: object
           required:
           - amount
           title: shipping_request
@@ -19356,6 +19367,7 @@ components:
             example:
               key: value
             maxProperties: 100
+            type: object
           name:
             description: The name of the item. It will be displayed in the order.
             example: Box of Cohiba S1s
@@ -19936,6 +19948,7 @@ components:
           example:
             key: value
           maxProperties: 100
+          type: object
         name:
           description: The name of the item. It will be displayed in the order.
           example: Box of Cohiba S1s
@@ -20013,6 +20026,7 @@ components:
           example:
             key: value
           maxProperties: 100
+          type: object
       required:
       - amount
       title: shipping_request
@@ -20036,6 +20050,7 @@ components:
           example:
             key: value
           maxProperties: 100
+          type: object
       required:
       - amount
       - description
@@ -20080,6 +20095,7 @@ components:
             \ (string of at most 249 characters, integer, number or boolean); nested\
             \ objects and arrays are not supported."
           maxProperties: 100
+          type: object
         needs_shipping_contact:
           description: Allows you to fill out the shipping information at checkout
           example: false
@@ -20200,6 +20216,7 @@ components:
           additionalProperties:
             $ref: "#/components/schemas/order_tax_request_metadata_value"
           maxProperties: 100
+          type: object
         pre_authorize:
           description: Indicates whether the order charges must be preauthorized
           type: boolean
@@ -20257,6 +20274,7 @@ components:
             example:
               key: value
             maxProperties: 100
+            type: object
           name:
             description: The name of the item. It will be displayed in the order.
             example: Box of Cohiba S1s
@@ -20312,6 +20330,7 @@ components:
         antifraud_info:
           additionalProperties:
             type: object
+          type: object
         description:
           maxLength: 249
           minLength: 3
@@ -20350,6 +20369,7 @@ components:
           additionalProperties:
             $ref: "#/components/schemas/order_tax_request_metadata_value"
           maxProperties: 100
+          type: object
       title: update_product
     orderRefund_request:
       properties:
@@ -21315,6 +21335,7 @@ components:
             example:
               key: value
             maxProperties: 100
+            type: object
         required:
         - amount
         title: shipping_request
@@ -21766,6 +21787,7 @@ components:
             example:
               key: value
             maxProperties: 100
+            type: object
         required:
         - amount
         - description
@@ -21802,6 +21824,7 @@ components:
           additionalProperties:
             $ref: "#/components/schemas/order_tax_request_metadata_value"
           maxProperties: 100
+          type: object
     token_request_card:
       nullable: true
       properties:
