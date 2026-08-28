@@ -27,7 +27,7 @@ jobs:
         with:
           generator: openapi-yaml
           openapi-file: api.yaml
-          generator-tag: v7.24.0
+          generator-tag: v7.25.0
       # Same post-processing as `make merge`: the openapi-yaml generator injects
       # meaningless `default: null` on array properties; strip them before comparing.
       - name: Strip null defaults
