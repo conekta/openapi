@@ -32,6 +32,14 @@ paths:
     $ref: "./resources/charges/charges.yml"
   /charges/{id}:
     $ref: "./resources/charges/update_charge.yml"
+  /charges/{charge_id}/chargebacks/{chargeback_id}/files:
+    $ref: "./resources/chargebacks/chargeback_files.yml"
+  /charges/{charge_id}/chargebacks/{chargeback_id}/files/{file_id}:
+    $ref: "./resources/chargebacks/chargeback_file.yml"
+  /charges/{charge_id}/chargebacks/{chargeback_id}/files/batch:
+    $ref: "./resources/chargebacks/chargeback_files_batch.yml"
+  /charges/{charge_id}/chargebacks/{chargeback_id}/evidence-types:
+    $ref: "./resources/chargebacks/chargeback_evidence_types.yml"
   /orders/{id}/charges:
     $ref: "./resources/orders/order_charge_param.yml"
   /orders/{id}/add_charges:
