@@ -1,0 +1,49 @@
+post:
+  tags:
+    - Apple Pay
+  operationId: createApplePaySession
+  summary: Create Apple Pay Session
+  description: |
+    Validate an Apple Pay merchant session using Conekta's Apple Pay certificates. Call this
+    endpoint from your backend with the `validationURL` received in the `onvalidatemerchant`
+    event and return the response to the browser to complete the merchant validation.
+
+    This endpoint does not require authentication, it is meant to be called during the Apple Pay
+    checkout flow.
+  parameters:
+    - $ref: '../../parameters/commons/headers/accept_language.yml'
+  requestBody:
+    $ref: '../../requestBodies/apple_pay/apple_pay_session.yml'
+  responses:
+    '201':
+      description: The validated Apple Pay merchant session.
+      content:
+        application/json:
+          schema:
+            $ref: '../../schemas/apple_pay/apple_pay_session_response.yml'
+      headers:
+        Date:
+          description: The date and time that the response was sent
+          schema:
+            type: string
+            example: "Thu, 18 Sep 2025 19:04:08 GMT"
+        Content-Type:
+          description: The format of the response body
+          schema:
+            type: string
+            example: "application/json; charset=utf-8"
+        Content-Length:
+          description: The length of the response body in bytes
+          schema:
+            type: string
+            example: "4996"
+        Connection:
+          description: The type of connection used to transfer the response
+          schema:
+            type: string
+            example: "keep-alive"
+    '422':
+      $ref: '../errors/422.yml'
+    '500':
+      $ref: '../errors/500.yml'
+  security: []

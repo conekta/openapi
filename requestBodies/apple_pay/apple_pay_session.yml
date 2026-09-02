@@ -1,0 +1,6 @@
+description: requested fields for creating an Apple Pay session
+content:
+  application/json:
+    schema:
+      $ref: '../../schemas/apple_pay/apple_pay_session_request.yml'
+required: true

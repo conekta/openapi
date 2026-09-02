@@ -26,6 +26,8 @@ paths:
     $ref: "./resources/api_keys/api_keys.yml"
   /api_keys/{id}:
     $ref: "./resources/api_keys/api_key.yml"
+  /apple_pay/session:
+    $ref: "./resources/apple_pay/apple_pay_session.yml"
   /balance:
     $ref: "./resources/balances/balances.yml"
   /charges:
@@ -175,6 +177,8 @@ paths:
 security:
   - bearerAuth: []
 tags:
+  - name: Apple Pay
+    description: Apple Pay endpoints used during the Apple Pay checkout flow
   - name: Subscriptions
     description: All subscription-related endpoints including creation, management, and events
   - name: Subscriptions - Customer Portal

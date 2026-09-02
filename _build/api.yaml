@@ -16,6 +16,8 @@ servers:
 security:
 - bearerAuth: []
 tags:
+- description: Apple Pay endpoints used during the Apple Pay checkout flow
+  name: Apple Pay
 - description: "All subscription-related endpoints including creation, management,\
     \ and events"
   name: Subscriptions
@@ -1062,6 +1064,114 @@ paths:
       summary: Update Api Key
       tags:
       - Api Keys
+  /apple_pay/session:
+    post:
+      description: |
+        Validate an Apple Pay merchant session using Conekta's Apple Pay certificates. Call this
+        endpoint from your backend with the `validationURL` received in the `onvalidatemerchant`
+        event and return the response to the browser to complete the merchant validation.
+
+        This endpoint does not require authentication, it is meant to be called during the Apple Pay
+        checkout flow.
+      operationId: createApplePaySession
+      parameters:
+      - description: Use for knowing which language to use
+        examples:
+          es:
+            summary: for spanish request/response
+            value: es
+          en:
+            summary: for english request/response
+            value: en
+        explode: false
+        in: header
+        name: Accept-Language
+        required: false
+        schema:
+          default: es
+          enum:
+          - es
+          - en
+          type: string
+        style: simple
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/apple_pay_session_request"
+        description: requested fields for creating an Apple Pay session
+        required: true
+      responses:
+        "201":
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/apple_pay_session_response"
+          description: The validated Apple Pay merchant session.
+          headers:
+            Date:
+              description: The date and time that the response was sent
+              explode: false
+              schema:
+                example: "Thu, 18 Sep 2025 19:04:08 GMT"
+                type: string
+              style: simple
+            Content-Type:
+              description: The format of the response body
+              explode: false
+              schema:
+                example: application/json; charset=utf-8
+                type: string
+              style: simple
+            Content-Length:
+              description: The length of the response body in bytes
+              explode: false
+              schema:
+                example: "4996"
+                type: string
+              style: simple
+            Connection:
+              description: The type of connection used to transfer the response
+              explode: false
+              schema:
+                example: keep-alive
+                type: string
+              style: simple
+        "422":
+          content:
+            application/vnd.conekta-v2.3.0+json:
+              example:
+                details:
+                - message: The token does not exist.
+                  param: payment_method.token_id
+                  code: conekta.errors.parameter_validation.payment_method.token_id.nonexistent_token
+                  debug_message: The token does not exist.
+                log_id: 641b6d813cd9a50001515017
+                object: error
+                type: parameter_validation_error
+              schema:
+                $ref: "#/components/schemas/error"
+          description: parameter validation error
+        "500":
+          content:
+            application/vnd.conekta-v2.3.0+json:
+              example:
+                details:
+                - debug_message: There was a runtime error and Conekta engineers have
+                    been notified.
+                  message: There was a runtime error and Conekta engineers have been
+                    notified.
+                  code: conekta.errors.api.system.general_failure
+                object: error
+                type: api_error
+                log_id: 641b6f2b3cd9a50001515098
+              schema:
+                $ref: "#/components/schemas/error"
+          description: internal server error
+      security: []
+      summary: Create Apple Pay Session
+      tags:
+      - Apple Pay
   /balance:
     get:
       description: Get a company's balance
@@ -16380,6 +16490,120 @@ components:
             example: true
             type: boolean
       title: delete_api_keys_response
+    apple_pay_session_request:
+      description: Data required to validate an Apple Pay merchant session
+      properties:
+        validationURL:
+          description: |
+            Validation URL provided by Apple in the `onvalidatemerchant` event. Only Apple Pay gateway
+            hosts are accepted: `https://apple-pay-gateway.apple.com` and
+            `https://apple-pay-gateway-cert.apple.com`.
+          example: https://apple-pay-gateway.apple.com/paymentservices/startSession
+          format: uri
+          type: string
+        domain:
+          description: |
+            Fully qualified domain where the Apple Pay button is displayed, sent to Apple as the
+            initiative context. It must be a domain previously registered with Conekta. When omitted,
+            the domain configured for the account is used.
+          example: pay.conekta.io
+          type: string
+        source:
+          default: internal
+          description: |
+            Origin of the Apple Pay integration requesting the session. `external` uses the integrator
+            credentials, any other value uses the merchant credentials.
+          enum:
+          - internal
+          - external
+          example: external
+          title: apple_pay_source
+          type: string
+        companyId:
+          description: |
+            Apple Pay merchant identifier to validate the session with. When omitted, the merchant
+            identifier configured for the account is used.
+          example: merchant.io.conekta
+          type: string
+      required:
+      - validationURL
+      title: apple_pay_session_request
+    apple_pay_session_response:
+      description: |
+        Apple Pay merchant session returned by Apple. Pass this object as-is to
+        `session.completeMerchantValidation` in the browser.
+      example:
+        epochTimestamp: 1758222248547
+        expiresAt: 1758225848547
+        merchantSessionIdentifier: SSHC1DDFEB554674D38992774400AE24AB1_916523AAED1343F5BC5815E12BEE9250AFFDC1A17C46B0DE5A943F0F94927C24
+        nonce: b94448de
+        merchantIdentifier: 9358DF186D848FFCE03D9D5230EC85E0E3EA4175C0402A14D32A67504F2C6EBD
+        domainName: pay.conekta.io
+        displayName: Conekta
+        signature: 308006092a864886f70d010702a0803080020101310d300b06096086480165030402013080...
+        operationalAnalyticsIdentifier: Conekta:9358DF186D848FFCE03D9D5230EC85E0E3EA4175C0402A14D32A67504F2C6EBD
+        retries: 0
+        pspId: 9358DF186D848FFCE03D9D5230EC85E0E3EA4175C0402A14D32A67504F2C6EBD
+      properties:
+        epochTimestamp:
+          description: "Date and time, in milliseconds since epoch, when the session\
+            \ was created."
+          example: 1758222248547
+          format: int64
+          type: integer
+        expiresAt:
+          description: "Date and time, in milliseconds since epoch, when the session\
+            \ expires."
+          example: 1758225848547
+          format: int64
+          type: integer
+        merchantSessionIdentifier:
+          description: Unique identifier of the merchant session generated by Apple.
+          example: SSHC1DDFEB554674D38992774400AE24AB1_916523AAED1343F5BC5815E12BEE9250AFFDC1A17C46B0DE5A943F0F94927C24
+          type: string
+        nonce:
+          description: Single-use value used by Apple to verify the session.
+          example: b94448de
+          type: string
+        merchantIdentifier:
+          description: Hashed Apple Pay merchant identifier the session was validated
+            with.
+          example: 9358DF186D848FFCE03D9D5230EC85E0E3EA4175C0402A14D32A67504F2C6EBD
+          type: string
+        domainName:
+          description: Domain the session was validated for.
+          example: pay.conekta.io
+          type: string
+        displayName:
+          description: Merchant name shown in the Apple Pay sheet.
+          example: Conekta
+          type: string
+        signature:
+          description: "Apple signature of the session, in hexadecimal format."
+          example: 308006092a864886f70d010702a0803080020101310d300b06096086480165030402013080...
+          type: string
+        operationalAnalyticsIdentifier:
+          description: Identifier used by Apple for analytics purposes.
+          example: Conekta:9358DF186D848FFCE03D9D5230EC85E0E3EA4175C0402A14D32A67504F2C6EBD
+          type: string
+        retries:
+          description: Number of times the session validation has been retried.
+          example: 0
+          type: integer
+        pspId:
+          description: Payment service provider identifier assigned by Apple.
+          example: 9358DF186D848FFCE03D9D5230EC85E0E3EA4175C0402A14D32A67504F2C6EBD
+          type: string
+      required:
+      - displayName
+      - domainName
+      - epochTimestamp
+      - expiresAt
+      - merchantIdentifier
+      - merchantSessionIdentifier
+      - nonce
+      - signature
+      title: apple_pay_session_response
     balance_common_fiels_response:
       description: balance common fields model
       properties:
