@@ -78,6 +78,8 @@ paths:
     $ref: "./resources/logs/log.yml"
   /logs/{id}:
     $ref: "./resources/logs/log_by_id.yml"
+  /monthly_installments/validate:
+    $ref: "./resources/monthly_installments/monthly_installments_validate.yml"
   /orders:
     $ref: "./resources/orders/order.yml"
   /orders/{id}:

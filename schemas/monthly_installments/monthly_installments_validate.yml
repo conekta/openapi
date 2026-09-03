@@ -1,0 +1,18 @@
+title: monthly installments validate request
+description: BIN and amount to evaluate for interest-free monthly installments
+type: object
+required:
+  - bin
+  - amount
+properties:
+  bin:
+    type: string
+    description: "First 6 or 8 digits of the card number (Bank Identification Number). An 8 digit BIN that yields no match is retried with its first 6 digits."
+    example: "411111"
+    minLength: 6
+    maxLength: 8
+    pattern: '^[0-9]{6}(?:[0-9]{2})?$'
+  amount:
+    type: integer
+    description: "Amount to charge in the smallest currency unit (cents for MXN). Used to compute the monthly fee of each available plan."
+    example: 350000
