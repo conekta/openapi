@@ -5517,6 +5517,129 @@ paths:
       summary: Get Log
       tags:
       - Logs
+  /monthly_installments/validate:
+    post:
+      description: |
+        Returns the interest-free monthly installment plans available for a card BIN and an amount, so a checkout can offer only the plans a later charge will accept. Requires monthly installments to be enabled on the company.
+      operationId: validateMonthlyInstallments
+      parameters:
+      - description: Use for knowing which language to use
+        examples:
+          es:
+            summary: for spanish request/response
+            value: es
+          en:
+            summary: for english request/response
+            value: en
+        explode: false
+        in: header
+        name: Accept-Language
+        required: false
+        schema:
+          default: es
+          enum:
+          - es
+          - en
+          type: string
+        style: simple
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/monthly_installments_validate_request"
+        description: requested field for monthly installments validate
+        required: true
+      responses:
+        "200":
+          content:
+            application/vnd.conekta-v2.3.0+json:
+              schema:
+                $ref: "#/components/schemas/monthly_installments_validate_response"
+          description: successful operation
+          headers:
+            Date:
+              description: The date and time that the response was sent
+              explode: false
+              schema:
+                example: "Fri, 03 Feb 2023 16:57:48 GMT"
+                type: string
+              style: simple
+            Content-Type:
+              description: The format of the response body
+              explode: false
+              schema:
+                example: application/json; charset=utf-8
+                type: string
+              style: simple
+            Content-Length:
+              description: The length of the response body in bytes
+              explode: false
+              schema:
+                example: "245"
+                type: string
+              style: simple
+            Connection:
+              description: The type of connection used to transfer the response
+              explode: false
+              schema:
+                example: keep-alive
+                type: string
+              style: simple
+            Conekta-Media-Type:
+              explode: false
+              schema:
+                example: conekta-v2.3.0; format=application/json
+                type: string
+              style: simple
+        "401":
+          content:
+            application/vnd.conekta-v2.3.0+json:
+              example:
+                details:
+                - message: Please include your access key in your request.
+                  code: conekta.errors.authentication.missing_key
+                log_id: 507f1f77bcf86cd799439011
+                object: error
+                type: authentication_error
+              schema:
+                $ref: "#/components/schemas/error"
+          description: authentication error
+        "422":
+          content:
+            application/vnd.conekta-v2.3.0+json:
+              example:
+                details:
+                - message: The token does not exist.
+                  param: payment_method.token_id
+                  code: conekta.errors.parameter_validation.payment_method.token_id.nonexistent_token
+                  debug_message: The token does not exist.
+                log_id: 641b6d813cd9a50001515017
+                object: error
+                type: parameter_validation_error
+              schema:
+                $ref: "#/components/schemas/error"
+          description: parameter validation error
+        "500":
+          content:
+            application/vnd.conekta-v2.3.0+json:
+              example:
+                details:
+                - debug_message: There was a runtime error and Conekta engineers have
+                    been notified.
+                  message: There was a runtime error and Conekta engineers have been
+                    notified.
+                  code: conekta.errors.api.system.general_failure
+                object: error
+                type: api_error
+                log_id: 641b6f2b3cd9a50001515098
+              schema:
+                $ref: "#/components/schemas/error"
+          description: internal server error
+      security:
+      - bearerAuth: []
+      summary: Validate Monthly Installments
+      tags:
+      - Monthly Installments
   /orders:
     get:
       description: Get order details in the form of a list
@@ -19680,6 +19803,79 @@ components:
       - id
       - livemode
       title: log_response_for_request
+    monthly_installments_validate_request:
+      description: BIN and amount to evaluate for interest-free monthly installments
+      properties:
+        bin:
+          description: First 6 or 8 digits of the card number (Bank Identification
+            Number). An 8 digit BIN that yields no match is retried with its first
+            6 digits.
+          example: "411111"
+          maxLength: 8
+          minLength: 6
+          pattern: "^[0-9]{6}(?:[0-9]{2})?$"
+          type: string
+        amount:
+          description: Amount to charge in the smallest currency unit (cents for MXN).
+            Used to compute the monthly fee of each available plan.
+          example: 350000
+          type: integer
+      required:
+      - amount
+      - bin
+      title: monthly installments validate request
+    monthly_installments_validate_response_available_installments_inner:
+      properties:
+        months:
+          description: "Number of monthly installments of the plan. One of 3, 6, 9,\
+            \ 12, 18 or 24."
+          example: 3
+          type: integer
+        amount:
+          description: "Amount of each monthly installment in the smallest currency\
+            \ unit, rounded up."
+          example: 116667
+          type: integer
+      required:
+      - amount
+      - months
+    monthly_installments_validate_response_bin_info:
+      properties:
+        country:
+          description: "Country that issued the card. Monthly installments only apply\
+            \ to mx, with the exception of American Express."
+          example: mx
+          type: string
+        scheme:
+          description: Card scheme. Monthly installments only apply to credit.
+          example: credit
+          type: string
+        issuer:
+          description: Bank that issued the card.
+          example: banamex
+          type: string
+      required:
+      - country
+      - issuer
+      - scheme
+    monthly_installments_validate_response:
+      description: monthly installments validate response
+      properties:
+        available_installments:
+          description: "Interest-free monthly installment plans available for this\
+            \ card and amount. Empty when the card does not qualify for monthly installments,\
+            \ for example a debit card or a credit card not issued in Mexico. An empty\
+            \ array is not an error."
+          items:
+            $ref: "#/components/schemas/monthly_installments_validate_response_available_installments_inner"
+          title: monthly_installments_validate_response_available_installments
+          type: array
+        bin_info:
+          $ref: "#/components/schemas/monthly_installments_validate_response_bin_info"
+      required:
+      - available_installments
+      - bin_info
+      title: monthly_installments_validate_response
     order_channel_response:
       properties:
         segment:
