@@ -1,0 +1,10 @@
+title: apple_pay_source
+type: string
+description: |
+  Origin of the Apple Pay integration requesting the session. `external` uses the integrator
+  credentials, any other value uses the merchant credentials.
+enum:
+  - internal
+  - external
+default: "internal"
+example: "external"

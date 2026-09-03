@@ -26,12 +26,22 @@ paths:
     $ref: "./resources/api_keys/api_keys.yml"
   /api_keys/{id}:
     $ref: "./resources/api_keys/api_key.yml"
+  /apple_pay/session:
+    $ref: "./resources/apple_pay/apple_pay_session.yml"
   /balance:
     $ref: "./resources/balances/balances.yml"
   /charges:
     $ref: "./resources/charges/charges.yml"
   /charges/{id}:
     $ref: "./resources/charges/update_charge.yml"
+  /charges/{charge_id}/chargebacks/{chargeback_id}/files:
+    $ref: "./resources/chargebacks/chargeback_files.yml"
+  /charges/{charge_id}/chargebacks/{chargeback_id}/files/{file_id}:
+    $ref: "./resources/chargebacks/chargeback_file.yml"
+  /charges/{charge_id}/chargebacks/{chargeback_id}/files/batch:
+    $ref: "./resources/chargebacks/chargeback_files_batch.yml"
+  /charges/{charge_id}/chargebacks/{chargeback_id}/evidence-types:
+    $ref: "./resources/chargebacks/chargeback_evidence_types.yml"
   /orders/{id}/charges:
     $ref: "./resources/orders/order_charge_param.yml"
   /orders/{id}/add_charges:
@@ -100,8 +110,6 @@ paths:
     $ref: "./resources/checkouts/checkout_cancel.yml"
   /checkouts/{id}/email:
     $ref: "./resources/checkouts/checkout_email.yml"
-  /checkouts/{id}/sms:
-    $ref: "./resources/checkouts/checkout_sms.yml"
   /customers/{id}/payment_sources:
     $ref: "./resources/customers/create_customer_payment_methods.yml"
   /customers/{id}/payment_sources/{payment_method_id}:
@@ -171,6 +179,8 @@ paths:
 security:
   - bearerAuth: []
 tags:
+  - name: Apple Pay
+    description: Apple Pay endpoints used during the Apple Pay checkout flow
   - name: Subscriptions
     description: All subscription-related endpoints including creation, management, and events
   - name: Subscriptions - Customer Portal

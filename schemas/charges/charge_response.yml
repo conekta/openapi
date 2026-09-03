@@ -1,7 +1,6 @@
 title: charge_response
 type: object
 required:
-  - amount
   - created_at
   - currency
   - id
@@ -28,13 +27,20 @@ properties:
       id:
         type: string
         example: "channel_2tNDzhA4Akmzj11AU"
+  conekta_account_id:
+    type: string
+    example: "019ff731-2448-7a6b-b95b-5d4a36035da9"
+    description: "Conekta account ID of the charge, if the charge was paid through a Conekta account."
+    nullable: true
   created_at:
     type: integer
     example: 1676386026
     format: int64
+    description: "Charge creation date, in seconds since the Unix epoch"
   currency:
     type: string
     example: MXN
+    description: "Currency of the charge, in ISO 4217 format"
   customer_id:
     type: string
   description:
