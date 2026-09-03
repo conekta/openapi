@@ -19824,7 +19824,7 @@ components:
       - amount
       - bin
       title: monthly installments validate request
-    monthly_installments_validate_response_available_installments_inner:
+    monthly_installments_validate_response_available_installments:
       properties:
         months:
           description: "Number of monthly installments of the plan. One of 3, 6, 9,\
@@ -19839,6 +19839,7 @@ components:
       required:
       - amount
       - months
+      title: monthly_installments_validate_response_available_installments
     monthly_installments_validate_response_bin_info:
       properties:
         country:
@@ -19867,8 +19868,7 @@ components:
             \ for example a debit card or a credit card not issued in Mexico. An empty\
             \ array is not an error."
           items:
-            $ref: "#/components/schemas/monthly_installments_validate_response_available_installments_inner"
-          title: monthly_installments_validate_response_available_installments
+            $ref: "#/components/schemas/monthly_installments_validate_response_available_installments"
           type: array
         bin_info:
           $ref: "#/components/schemas/monthly_installments_validate_response_bin_info"
