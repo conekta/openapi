@@ -5817,6 +5817,18 @@ paths:
           format: int64
           type: integer
         style: form
+      - description: "Filters by amount equal to the given value, in cents"
+        examples:
+          amount:
+            summary: amount equal to
+            value: 10000
+        explode: true
+        in: query
+        name: amount
+        required: false
+        schema:
+          type: integer
+        style: form
       responses:
         "200":
           content:

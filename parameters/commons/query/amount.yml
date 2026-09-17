@@ -1,0 +1,10 @@
+in: query
+name: "amount"
+description: "Filters by amount equal to the given value, in cents"
+required: false
+schema:
+  type: integer
+examples:
+  amount:
+    summary: amount equal to
+    value: 10000
