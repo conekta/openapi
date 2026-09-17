@@ -1,0 +1,15 @@
+in: query
+name: "method.in[]"
+description: "Filters logs by HTTP method. The parameter can be sent multiple times to filter by more than one method, e.g. `method.in[]=POST&method.in[]=PUT`"
+required: false
+style: form
+explode: true
+schema:
+  type: array
+  items:
+    type: string
+    example: "POST"
+examples:
+  method.in[]:
+    summary: Filters logs by one or more HTTP methods
+    value: ["POST", "PUT"]

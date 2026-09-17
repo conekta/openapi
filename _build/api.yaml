@@ -5342,6 +5342,24 @@ paths:
         schema:
           type: string
         style: form
+      - description: "Filters logs by HTTP method. The parameter can be sent multiple\
+          \ times to filter by more than one method, e.g. `method.in[]=POST&method.in[]=PUT`"
+        examples:
+          method.in[]:
+            summary: Filters logs by one or more HTTP methods
+            value:
+            - POST
+            - PUT
+        explode: true
+        in: query
+        name: "method.in[]"
+        required: false
+        schema:
+          items:
+            example: POST
+            type: string
+          type: array
+        style: form
       responses:
         "200":
           content:
