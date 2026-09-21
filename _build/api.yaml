@@ -19536,8 +19536,6 @@ components:
           items:
             type: string
           type: array
-      required:
-      - webhooks_ids
     events_resend_response:
       description: event model
       properties:
