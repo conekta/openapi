@@ -2257,6 +2257,17 @@ paths:
         schema:
           type: string
         style: simple
+      - description: Unique key to make the request idempotent. Retrying a request
+          with the same key returns the original response instead of performing the
+          operation again.
+        example: a1b2c3d4-e5f6-7890-abcd-ef1234567890
+        explode: false
+        in: header
+        name: Idempotency-Key
+        required: false
+        schema:
+          type: string
+        style: simple
       requestBody:
         content:
           application/json:
@@ -2394,6 +2405,17 @@ paths:
         explode: false
         in: header
         name: X-Child-Company-Id
+        required: false
+        schema:
+          type: string
+        style: simple
+      - description: Unique key to make the request idempotent. Retrying a request
+          with the same key returns the original response instead of performing the
+          operation again.
+        example: a1b2c3d4-e5f6-7890-abcd-ef1234567890
+        explode: false
+        in: header
+        name: Idempotency-Key
         required: false
         schema:
           type: string
@@ -5903,6 +5925,17 @@ paths:
         schema:
           type: string
         style: simple
+      - description: Unique key to make the request idempotent. Retrying a request
+          with the same key returns the original response instead of performing the
+          operation again.
+        example: a1b2c3d4-e5f6-7890-abcd-ef1234567890
+        explode: false
+        in: header
+        name: Idempotency-Key
+        required: false
+        schema:
+          type: string
+        style: simple
       requestBody:
         content:
           application/json:
@@ -8454,6 +8487,17 @@ paths:
         explode: false
         in: header
         name: X-Child-Company-Id
+        required: false
+        schema:
+          type: string
+        style: simple
+      - description: Unique key to make the request idempotent. Retrying a request
+          with the same key returns the original response instead of performing the
+          operation again.
+        example: a1b2c3d4-e5f6-7890-abcd-ef1234567890
+        explode: false
+        in: header
+        name: Idempotency-Key
         required: false
         schema:
           type: string
