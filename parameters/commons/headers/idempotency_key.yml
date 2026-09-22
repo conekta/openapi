@@ -1,0 +1,7 @@
+in: header
+name: "Idempotency-Key"
+description: Unique key to make the request idempotent. Retrying a request with the same key returns the original response instead of performing the operation again.
+required: false
+schema:
+  type: string
+example: "a1b2c3d4-e5f6-7890-abcd-ef1234567890"

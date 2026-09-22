@@ -39,6 +39,7 @@ post:
   parameters:
     - $ref: '../../parameters/commons/headers/accept_language.yml'
     - $ref: '../../parameters/commons/headers/x_child_company_id.yml'
+    - $ref: '../../parameters/commons/headers/idempotency_key.yml'
 get:
   tags:
     - Orders
