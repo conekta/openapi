@@ -1,6 +1,4 @@
 type: object
-required:
-  - webhooks_ids
 properties:
   webhooks_ids:
     type: array
