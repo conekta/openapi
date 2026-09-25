@@ -2,13 +2,12 @@ summary: Create an order with charges
 value:
   charges:
   - amount: 40000
-    expires_at: 1677196303
-    monthly_installments: 0
     payment_method:
       type: card
       token_id: tok_2897348234
       payment_source_id: src_2tLkkyfMPh6v7pFry
       customer_ip_address: 0.0.0.0
+      monthly_installments: 3
     reference_id: string
   currency: MXN
   customer_info:
