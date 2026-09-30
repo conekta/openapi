@@ -21399,6 +21399,18 @@ components:
           example: https://my-website.com
           format: uri
           type: string
+        reuse_customer_cash_reference:
+          description: Reuses the customer's recurrent cash reference (`cash_recurrent`
+            payment source) in the order's cash charges instead of generating a new
+            reference. Requires `customer_info.customer_id`.
+          example: true
+          type: boolean
+        reuse_customer_clabe:
+          description: Reuses the customer's recurrent SPEI CLABE (`spei_recurrent`
+            payment source) in the order's SPEI charges instead of generating a new
+            CLABE. Requires `customer_info.customer_id`.
+          example: true
+          type: boolean
         shipping_contact:
           $ref: "#/components/schemas/customer_shipping_contacts_request"
         shipping_lines:
