@@ -17994,6 +17994,10 @@ components:
           description: The current status of the company's account.
           example: signed_up
           type: string
+        card_payments_enabled:
+          description: Indicates if card payments are enabled for the company.
+          example: true
+          type: boolean
         parent_company_id:
           description: "The identifier of the parent company, if any."
           example: 680bf1da38716d00013543bc

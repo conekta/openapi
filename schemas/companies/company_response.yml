@@ -17,6 +17,10 @@ properties:
     type: string
     description: The current status of the company's account.
     example: "signed_up"
+  card_payments_enabled:
+    type: boolean
+    description: Indicates if card payments are enabled for the company.
+    example: true
   parent_company_id:
     type: [string, "null"]
     description: The identifier of the parent company, if any.
