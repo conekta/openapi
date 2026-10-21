@@ -56,6 +56,8 @@ paths:
     $ref: './resources/companies/company_document.yml'
   '/companies/{company_id}/documents':
     $ref: './resources/companies/company_documents.yml'
+  /settings/payment-methods:
+    $ref: "./resources/companies/payment_method_settings.yml"
   /customers:
     $ref: "./resources/customers/create_customer.yml"
   /customers/{id}:

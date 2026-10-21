@@ -1,0 +1,20 @@
+type: object
+title: payment_method_setting
+description: Enablement flags for a single payment method.
+properties:
+  admin:
+    type: boolean
+    description: Indicates if the payment method is enabled by Conekta for the company.
+    example: true
+  merchant:
+    type: boolean
+    description: Indicates if the payment method is enabled by the merchant in its own settings.
+    example: true
+  effective:
+    type: boolean
+    description: Final state of the payment method. It is only true when both `admin` and `merchant` are enabled.
+    example: true
+required:
+  - admin
+  - merchant
+  - effective

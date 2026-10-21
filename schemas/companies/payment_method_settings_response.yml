@@ -1,0 +1,26 @@
+type: object
+title: payment_method_settings_response
+description: Enablement status of each payment method available for the company.
+properties:
+  card_payment:
+    $ref: './payment_method_setting.yml'
+  apple_payment:
+    $ref: './payment_method_setting.yml'
+  google_payment:
+    $ref: './payment_method_setting.yml'
+  cash_payment:
+    $ref: './payment_method_setting.yml'
+  bank_transfer_payment:
+    $ref: './payment_method_setting.yml'
+  bnpl_payment:
+    $ref: './payment_method_setting.yml'
+  pay_by_bank_payment:
+    $ref: './payment_method_setting.yml'
+required:
+  - card_payment
+  - apple_payment
+  - google_payment
+  - cash_payment
+  - bank_transfer_payment
+  - bnpl_payment
+  - pay_by_bank_payment
