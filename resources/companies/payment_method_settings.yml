@@ -1,0 +1,76 @@
+get:
+  tags:
+    - Companies
+  operationId: getPaymentMethodSettings
+  summary: Get Payment Method Settings
+  description: Retrieves the enablement status of each payment method for the currently authenticated company. For every payment method the response indicates whether it is enabled by Conekta (`admin`), enabled by the merchant (`merchant`), and the resulting state (`effective`).
+  responses:
+    200:
+      description: successful
+      content:
+        application/vnd.conekta-v2.3.0+json:
+          schema:
+            $ref: '../../schemas/companies/payment_method_settings_response.yml'
+          example:
+            card_payment:
+              admin: true
+              merchant: true
+              effective: true
+            apple_payment:
+              admin: true
+              merchant: true
+              effective: true
+            google_payment:
+              admin: true
+              merchant: true
+              effective: true
+            cash_payment:
+              admin: true
+              merchant: true
+              effective: true
+            bank_transfer_payment:
+              admin: true
+              merchant: true
+              effective: true
+            bnpl_payment:
+              admin: true
+              merchant: false
+              effective: false
+            pay_by_bank_payment:
+              admin: false
+              merchant: true
+              effective: false
+      headers:
+        Date:
+          description: The date and time that the response was sent
+          schema:
+            type: string
+            example: "Fri, 03 Feb 2023 16:57:48 GMT"
+        Content-Type:
+          description: The format of the response body
+          schema:
+            type: string
+            example: "application/json; charset=utf-8"
+        Content-Length:
+          description: The length of the response body in bytes
+          schema:
+            type: string
+            example: "512"
+        Connection:
+          description: The type of connection used to transfer the response
+          schema:
+            type: string
+            example: "keep-alive"
+        Conekta-Media-Type:
+          description: The version of the API used to process the request and the format of the response body
+          schema:
+            type: string
+            example: conekta-v2.3.0; format=application/json
+    401:
+      $ref: '../errors/401.yml'
+    500:
+      $ref: '../errors/500.yml'
+  security:
+    - bearerAuth: []
+  parameters:
+    - $ref: '../../parameters/commons/headers/accept_language.yml'
