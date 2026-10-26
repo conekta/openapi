@@ -1,0 +1,32 @@
+post:
+  tags:
+    - Orders
+  operationId: VoidOrder
+  description: Void an order that has been previously authorized and not yet captured. The order and its charges are moved to the voided status.
+  summary: Void Order
+  responses:
+    200:
+      description: successful
+      content:
+        application/vnd.conekta-v2.3.0+json:
+          schema:
+            $ref: ../../schemas/orders/order_response.yml
+          examples:
+            card:
+              $ref: ../../schemas/orders/examples/order_void.yml
+    401:
+     $ref: '../errors/401.yml'
+    402:
+     $ref: '../errors/402.yml'
+    404:
+     $ref: '../errors/404.yml'
+    428:
+     $ref: '../errors/428.yml'
+    500:
+     $ref: '../errors/500.yml'
+  security:
+    - bearerAuth: []
+  parameters:
+    - $ref: '../../parameters/commons/path_param/id.yml'
+    - $ref: '../../parameters/commons/headers/accept_language.yml'
+    - $ref: '../../parameters/commons/headers/x_child_company_id.yml'

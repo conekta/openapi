@@ -6187,6 +6187,74 @@
       "streamingInterval": 0
     },
     {
+      "uuid": "bfe076c1-6fe1-4513-bc88-4e15fa7fc703",
+      "documentation": "Void an order that has been previously authorized and not yet captured.",
+      "method": "post",
+      "endpoint": "orders/:id/void",
+      "responses": [
+        {
+          "uuid": "e110fe8f-ae68-4280-a135-a2f52ace7c24",
+          "body": "{\n    \"livemode\": false,\n    \"amount\": 100000,\n    \"currency\": \"MXN\",\n    \"payment_status\": \"voided\",\n    \"amount_refunded\": 0,\n    \"split_payment\": null,\n    \"customer_info\": {\n        \"email\": \"andres@conekta.com\",\n        \"phone\": null,\n        \"name\": \"Canary Bot\",\n        \"corporate\": false,\n        \"customer_id\": \"cus_31xVJsegWYCYAQKqp\",\n        \"date_of_birth\": null,\n        \"national_id\": null,\n        \"object\": \"customer_info\",\n        \"customer_custom_reference\": null\n    },\n    \"shipping_contact\": {\n        \"receiver\": \"fran carero\",\n        \"phone\": \"+573143159054\",\n        \"between_streets\": null,\n        \"address\": {\n            \"street1\": \"av viva\",\n            \"street2\": \"ava\",\n            \"city\": \"cdmx\",\n            \"state\": \"cdmx\",\n            \"country\": \"mx\",\n            \"residential\": true,\n            \"object\": \"shipping_address\",\n            \"postal_code\": \"01000\"\n        },\n        \"id\": \"ship_cont_31yUZoy1hmFioz8r3\",\n        \"object\": \"shipping_contact\",\n        \"created_at\": 1793033695,\n        \"metadata\": null\n    },\n    \"channel\": null,\n    \"fiscal_entity\": null,\n    \"object\": \"order\",\n    \"id\": \"ord_31yUZoy1hmFioz8r4\",\n    \"metadata\": {\n        \"test\": \"false\"\n    },\n    \"is_refundable\": false,\n    \"processing_mode\": null,\n    \"created_at\": 1793033695,\n    \"updated_at\": 1793033769,\n    \"line_items\": {\n        \"object\": \"list\",\n        \"has_more\": false,\n        \"total\": 1,\n        \"data\": [\n            {\n                \"name\": \"APOYO URGENTE REFERENCIA\",\n                \"description\": null,\n                \"unit_price\": 100000,\n                \"quantity\": 1,\n                \"sku\": \"COL094\",\n                \"tags\": null,\n                \"brand\": \"CHEDRAUI\",\n                \"type\": null,\n                \"object\": \"line_item\",\n                \"id\": \"line_item_31yUZoy1hmFioz8qz\",\n                \"parent_id\": \"ord_31yUZoy1hmFioz8r4\",\n                \"metadata\": {},\n                \"antifraud_info\": {}\n            }\n        ]\n    },\n    \"shipping_lines\": {\n        \"object\": \"list\",\n        \"has_more\": false,\n        \"total\": 1,\n        \"data\": [\n            {\n                \"amount\": 0,\n                \"carrier\": \"fedex\",\n                \"method\": null,\n                \"tracking_number\": \"4234234\",\n                \"object\": \"shipping_line\",\n                \"id\": \"ship_lin_31yUZoy1hmFioz8r1\",\n                \"parent_id\": \"ord_31yUZoy1hmFioz8r4\",\n                \"metadata\": null\n            }\n        ]\n    },\n    \"tax_lines\": null,\n    \"discount_lines\": null,\n    \"charges\": {\n        \"object\": \"list\",\n        \"has_more\": false,\n        \"total\": 1,\n        \"data\": [\n            {\n                \"id\": \"6adf85dfd549e40001584705\",\n                \"livemode\": false,\n                \"created_at\": 1793033695,\n                \"currency\": \"MXN\",\n                \"failure_code\": null,\n                \"failure_message\": null,\n                \"monthly_installments\": null,\n                \"device_fingerprint\": null,\n                \"session_id\": null,\n                \"channel\": null,\n                \"payment_method\": {\n                    \"name\": \"ñeyueyute nene\",\n                    \"exp_month\": \"08\",\n                    \"exp_year\": \"27\",\n                    \"auth_code\": \"668467\",\n                    \"object\": \"card_payment\",\n                    \"type\": \"credit\",\n                    \"normalized_device_fingerprint\": null,\n                    \"last4\": \"4242\",\n                    \"brand\": \"visa\",\n                    \"issuer\": \"BANAMEX\",\n                    \"account_type\": \"Credit\",\n                    \"contract_id\": null,\n                    \"country\": \"MX\",\n                    \"fraud_score\": null,\n                    \"fraud_indicators\": [],\n                    \"token_id\": \"tok_31yUZioH4NKBS6VR1\",\n                    \"antifraud_is_self_service_rules\": false,\n                    \"three_ds_flow_required\": false\n                },\n                \"object\": \"charge\",\n                \"description\": \"Payment from order\",\n                \"is_refundable\": false,\n                \"reference_id\": null,\n                \"status\": \"voided\",\n                \"amount\": 100000,\n                \"paid_at\": null,\n                \"customer_id\": \"cus_31xVJsegWYCYAQKqp\",\n                \"order_id\": \"ord_31yUZoy1hmFioz8r4\",\n                \"customer_custom_reference\": null,\n                \"refunds\": null\n            }\n        ]\n    }\n}",
+          "latency": 0,
+          "statusCode": 200,
+          "label": "successful voided",
+          "headers": [
+            {
+              "key": "Content-Type",
+              "value": "application/vnd.conekta-v2.3.0+json"
+            }
+          ],
+          "bodyType": "INLINE",
+          "filePath": "",
+          "databucketID": "",
+          "sendFileAsBody": false,
+          "rules": [
+            {
+              "target": "params",
+              "modifier": "id",
+              "value": "ord_31yUZoy1hmFioz8r4",
+              "invert": false,
+              "operator": "equals"
+            }
+          ],
+          "rulesOperator": "OR",
+          "disableTemplating": false,
+          "fallbackTo404": false,
+          "default": false,
+          "crudKey": "id",
+          "callbacks": []
+        },
+        {
+          "uuid": "0d764a1f-8da6-45fd-b8ea-f30caa943acf",
+          "body": "{\n    \"details\": [\n        {\n            \"debug_message\": \"The object Order \\\"{{urlParam 'id'}}\\\" could not be found.\",\n            \"message\": \"The resource was not found.\",\n            \"code\": \"conekta.errors.resource_not_found.entity\"\n        }\n    ],\n    \"object\": \"error\",\n    \"type\": \"resource_not_found_error\",\n    \"log_id\": \"6407b2dde1329a000175b9ce\"\n}",
+          "latency": 0,
+          "statusCode": 404,
+          "label": "not found entity",
+          "headers": [
+            {
+              "key": "Content-Type",
+              "value": "application/vnd.conekta-v2.3.0+json"
+            }
+          ],
+          "bodyType": "INLINE",
+          "filePath": "",
+          "databucketID": "",
+          "sendFileAsBody": false,
+          "rules": [],
+          "rulesOperator": "OR",
+          "disableTemplating": false,
+          "fallbackTo404": false,
+          "default": true,
+          "crudKey": "id",
+          "callbacks": []
+        }
+      ],
+      "responseMode": null,
+      "type": "http",
+      "streamingMode": null,
+      "streamingInterval": 0
+    },
+    {
       "uuid": "41ab0029-f324-480a-b628-2122516e18fa",
       "documentation": "creates a new charge for an existing orden",
       "method": "post",
@@ -13184,6 +13252,10 @@
     {
       "type": "route",
       "uuid": "7aa265f5-931d-4cd0-b299-97eee4307662"
+    },
+    {
+      "type": "route",
+      "uuid": "bfe076c1-6fe1-4513-bc88-4e15fa7fc703"
     },
     {
       "type": "route",

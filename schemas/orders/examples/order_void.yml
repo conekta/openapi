@@ -1,0 +1,122 @@
+value:
+  livemode: false
+  amount: 100000
+  currency: "MXN"
+  payment_status: "voided"
+  amount_refunded: 0
+  split_payment: null
+  customer_info:
+    email: "andres@conekta.com"
+    phone: null
+    name: "Canary Bot"
+    corporate: false
+    customer_id: "cus_31xVJsegWYCYAQKqp"
+    date_of_birth: null
+    national_id: null
+    object: "customer_info"
+    customer_custom_reference: null
+  shipping_contact:
+    receiver: "fran carero"
+    phone: "+573143159054"
+    between_streets: null
+    address:
+      street1: "av viva"
+      street2: "ava"
+      city: "cdmx"
+      state: "cdmx"
+      country: "mx"
+      residential: true
+      object: "shipping_address"
+      postal_code: "01000"
+    id: "ship_cont_31yUZoy1hmFioz8r3"
+    object: "shipping_contact"
+    created_at: 1793033695
+    metadata: null
+  channel: null
+  fiscal_entity: null
+  object: "order"
+  id: "ord_31yUZoy1hmFioz8r4"
+  metadata:
+    test: "false"
+  is_refundable: false
+  processing_mode: null
+  created_at: 1793033695
+  updated_at: 1793033769
+  line_items:
+    object: "list"
+    has_more: false
+    total: 1
+    data:
+      - name: "APOYO URGENTE REFERENCIA"
+        description: null
+        unit_price: 100000
+        quantity: 1
+        sku: "COL094"
+        tags: null
+        brand: "CHEDRAUI"
+        type: null
+        object: "line_item"
+        id: "line_item_31yUZoy1hmFioz8qz"
+        parent_id: "ord_31yUZoy1hmFioz8r4"
+        metadata: {}
+        antifraud_info: {}
+  shipping_lines:
+    object: "list"
+    has_more: false
+    total: 1
+    data:
+      - amount: 0
+        carrier: "fedex"
+        method: null
+        tracking_number: "4234234"
+        object: "shipping_line"
+        id: "ship_lin_31yUZoy1hmFioz8r1"
+        parent_id: "ord_31yUZoy1hmFioz8r4"
+        metadata: null
+  tax_lines: null
+  discount_lines: null
+  charges:
+    object: "list"
+    has_more: false
+    total: 1
+    data:
+      - id: "6adf85dfd549e40001584705"
+        livemode: false
+        created_at: 1793033695
+        currency: "MXN"
+        failure_code: null
+        failure_message: null
+        monthly_installments: null
+        device_fingerprint: null
+        session_id: null
+        channel: null
+        payment_method:
+          name: "ñeyueyute nene"
+          exp_month: "08"
+          exp_year: "27"
+          auth_code: "668467"
+          object: "card_payment"
+          type: "credit"
+          normalized_device_fingerprint: null
+          last4: "4242"
+          brand: "visa"
+          issuer: "BANAMEX"
+          account_type: "Credit"
+          contract_id: null
+          country: "MX"
+          fraud_score: null
+          fraud_indicators: []
+          token_id: "tok_31yUZioH4NKBS6VR1"
+          antifraud_is_self_service_rules: false
+          three_ds_flow_required: false
+        object: "charge"
+        description: "Payment from order"
+        is_refundable: false
+        reference_id: null
+        status: "voided"
+        amount: 100000
+        paid_at: null
+        customer_id: "cus_31xVJsegWYCYAQKqp"
+        order_id: "ord_31yUZoy1hmFioz8r4"
+        customer_custom_reference: null
+        refunds: null
