@@ -63,6 +63,8 @@ properties:
     type: boolean
     example: false
     description: "Whether the charge was made in live mode or not"
+  next_action:
+    $ref: ../orders/order_next_action_response.yml
   object:
     type: string
     example: "charge"

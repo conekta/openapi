@@ -17237,6 +17237,33 @@ components:
         id:
           example: channel_2tNDzhA4Akmzj11AU
           type: string
+    order_next_action_response_redirect_to_url:
+      description: contains the following attributes that will guide to continue the
+        flow
+      properties:
+        url:
+          description: "pay.conekta.com/{id} Indicates the url of the Conekta component\
+            \ to authenticate the flow through 3DS2."
+          example: https://pay.conekta.com/6fca054a85194c43971ecea35cc519bb
+          format: uri
+          type: string
+        return_url:
+          description: "Indicates the url to which the 3DS2 flow returns at the end,\
+            \ when the integration is redirected."
+          example: https://my-website.com"
+          format: uri
+          type: string
+    order_next_action_response:
+      description: contains the following attributes that will guide to continue the
+        flow
+      properties:
+        redirect_to_url:
+          $ref: "#/components/schemas/order_next_action_response_redirect_to_url"
+        type:
+          description: Indicates the type of action to be taken
+          example: redirect_to_url
+          type: string
+      title: order_next_action_response
     payment_method_cash:
       allOf:
       - properties:
@@ -17744,6 +17771,8 @@ components:
           description: Whether the charge was made in live mode or not
           example: false
           type: boolean
+        next_action:
+          $ref: "#/components/schemas/order_next_action_response"
         object:
           example: charge
           type: string
@@ -20419,6 +20448,8 @@ components:
             description: Whether the charge was made in live mode or not
             example: false
             type: boolean
+          next_action:
+            $ref: "#/components/schemas/order_next_action_response"
           object:
             example: charge
             type: string
@@ -21149,33 +21180,6 @@ components:
               $ref: "#/components/schemas/product_data_response"
             type: array
       title: order_response_products
-    order_next_action_response_redirect_to_url:
-      description: contains the following attributes that will guide to continue the
-        flow
-      properties:
-        url:
-          description: "pay.conekta.com/{id} Indicates the url of the Conekta component\
-            \ to authenticate the flow through 3DS2."
-          example: https://pay.conekta.com/6fca054a85194c43971ecea35cc519bb
-          format: uri
-          type: string
-        return_url:
-          description: "Indicates the url to which the 3DS2 flow returns at the end,\
-            \ when the integration is redirected."
-          example: https://my-website.com"
-          format: uri
-          type: string
-    order_next_action_response:
-      description: contains the following attributes that will guide to continue the
-        flow
-      properties:
-        redirect_to_url:
-          $ref: "#/components/schemas/order_next_action_response_redirect_to_url"
-        type:
-          description: Indicates the type of action to be taken
-          example: redirect_to_url
-          type: string
-      title: order_next_action_response
     customer_shipping_contacts_address:
       properties:
         object:
