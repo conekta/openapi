@@ -50,3 +50,16 @@ properties:
     type: string
     description: Indicates if the api key is private or public
     example: private
+  scopes:
+    allOf:
+      - $ref: "./api_key_scopes.yml"
+    description: Permissions of the api key. Public keys have `tokens:write`. Absent on keys created before scopes existed, which can access every endpoint.
+  ip_whitelist:
+    allOf:
+      - $ref: "./api_key_ip_whitelist.yml"
+    description: Public IPv4 addresses allowed to use the api key. Absent when the key can be used from any IP.
+  expires_at:
+    type: [integer, "null"]
+    description: Unix timestamp in seconds of when the api key expires. `null` for a key that never expires.
+    example: 1692029881
+    format: int64

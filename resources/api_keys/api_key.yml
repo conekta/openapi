@@ -3,7 +3,7 @@ get:
     - Api Keys
   operationId: getApiKey
   summary: Get Api Key
-  description: "Gets a api key that corresponds to a api key ID"
+  description: "Gets an api key that corresponds to an api key ID. The authentication_token of a private key is only returned when the key is created."
   responses:
     200:
       description: successful
@@ -23,6 +23,8 @@ get:
             example: conekta-v2.3.0; format=application/json
     401:
       $ref: "../errors/401.yml"
+    403:
+      $ref: "../errors/403.yml"
     404:
       $ref: "../errors/404.yml"
     500:
@@ -38,7 +40,7 @@ put:
     - Api Keys
   operationId: updateApiKey
   summary: Update Api Key
-  description: "Update an existing api key"
+  description: "Updates an existing api key: activate or deactivate it, change its description or IP whitelist, or shorten its life to rotate it. Public keys cannot be updated or deleted while they are the only public key."
   responses:
     "200":
       description: successful operation
@@ -46,10 +48,14 @@ put:
         application/vnd.conekta-v2.3.0+json:
           schema:
             $ref: ../../schemas/api_keys/api_key_response.yml
-    404:
-      $ref: "../errors/404.yml"
     401:
       $ref: "../errors/401.yml"
+    403:
+      $ref: "../errors/403.yml"
+    404:
+      $ref: "../errors/404.yml"
+    422:
+      $ref: "../errors/422.yml"
     500:
       $ref: "../errors/500.yml"
   security:
@@ -58,17 +64,7 @@ put:
     content:
       application/json:
         schema:
-          type: object
-          title: api_key_update_request
-          properties:
-            active:
-              type: boolean
-              example: true
-              description: Indicates if the webhook key is active
-            description:
-              type: string
-              example: online store
-              description: A name or brief explanation of what this api key is used for
+          $ref: "../../schemas/api_keys/api_key_update_request.yml"
   parameters:
     - $ref: "../../parameters/commons/path_param/id.yml"
     - $ref: "../../parameters/commons/headers/accept_language.yml"
@@ -77,7 +73,7 @@ delete:
     - Api Keys
   operationId: deleteApiKey
   summary: Delete Api Key
-  description: "Deletes a api key that corresponds to a api key ID"
+  description: "Deletes an api key that corresponds to an api key ID. The key stops working immediately and the deletion cannot be undone; to stop using a key reversibly, deactivate it instead."
   responses:
     200:
       description: successful
@@ -104,8 +100,12 @@ delete:
             example: conekta-v2.3.0; format=application/json
     401:
       $ref: "../errors/401.yml"
+    403:
+      $ref: "../errors/403.yml"
     404:
       $ref: "../errors/404.yml"
+    422:
+      $ref: "../errors/422.yml"
     500:
       $ref: "../errors/500.yml"
   security:

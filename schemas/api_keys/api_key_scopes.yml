@@ -1,0 +1,11 @@
+title: api_key_scopes
+type: array
+description: |
+  Permissions of the api key, in `resource:action` form. A `write` scope also grants the `read` scope of the same resource.
+  Available scopes: `antifraud`, `api_keys`, `balances`, `charges`, `checkouts`, `company_users`, `customers`, `events`, `orders`, `partner_center`, `payouts`, `reports`, `settings`, `subscriptions`, `transfers` and `webhooks` with `:read` or `:write`; `logs:read`, `receipts:read`, `transactions:read` and `tokens:write`.
+  A request to an endpoint whose scope the key does not hold is answered with 403.
+items:
+  type: string
+example:
+  - orders:write
+  - customers:read

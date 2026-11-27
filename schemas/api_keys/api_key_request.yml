@@ -1,5 +1,5 @@
 title: api_key_request
-name: api_key_request
+type: object
 required:
   - role
 properties:
@@ -9,5 +9,24 @@ properties:
     example: online store
   role:
     type: string
+    enum:
+      - private
+      - public
     example: private
-    descripción: Indicates if the api key is private or public
+    description: Indicates if the api key is private or public. A company can have only one public key, and up to 10 private keys per mode (live and test) that have not expired.
+  scopes:
+    allOf:
+      - $ref: "./api_key_scopes.yml"
+    description: |
+      Required for private keys: list at least one scope. Grant only the scopes the integration needs.
+      Ignored for public keys, which always get `tokens:write`.
+      An api key restricted to some scopes can only create keys with scopes it holds itself.
+  ip_whitelist:
+    $ref: "./api_key_ip_whitelist.yml"
+  expires_in_seconds:
+    type: [integer, "null"]
+    description: |
+      Lifetime of the key, counted from its creation. One of `604800` (7 days), `2592000` (30 days), `7776000` (90 days), `15552000` (180 days) or `31536000` (365 days); `null` or omitted for a key that never expires.
+      Only private keys can expire. An expired key is rejected with 401.
+    example: 7776000
+    format: int64
