@@ -1,7 +1,7 @@
 title: api_key_ip_whitelist
 type: [array, "null"]
 description: |
-  Public IPv4 addresses allowed to use the api key, up to 10. Requests from any other IP are rejected with 401, as if the key did not exist.
+  Public IPv4 addresses allowed to use the api key, up to 10. Requests from any other IP are rejected with 401, as if the key did not exist, unless `ip_whitelist_mode` is a monitor mode.
   Ranges (CIDR), IPv6 and private addresses are not accepted. `null` means the key can be used from any IP; an empty list is rejected.
   Only private keys can have an IP whitelist.
 minItems: 1

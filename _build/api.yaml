@@ -1052,8 +1052,9 @@ paths:
       - Api Keys
     put:
       description: "Updates an existing api key: activate or deactivate it, change\
-        \ its description or IP whitelist, or shorten its life to rotate it. Public\
-        \ keys cannot be updated or deleted while they are the only public key."
+        \ its description, IP whitelist or IP whitelist mode, or shorten its life\
+        \ to rotate it. Public keys cannot be updated or deleted while they are the\
+        \ only public key."
       operationId: updateApiKey
       parameters:
       - description: Identifier of the resource
@@ -17001,7 +17002,7 @@ components:
         ip_whitelist:
           allOf:
           - description: |
-              Public IPv4 addresses allowed to use the api key, up to 10. Requests from any other IP are rejected with 401, as if the key did not exist.
+              Public IPv4 addresses allowed to use the api key, up to 10. Requests from any other IP are rejected with 401, as if the key did not exist, unless `ip_whitelist_mode` is a monitor mode.
               Ranges (CIDR), IPv6 and private addresses are not accepted. `null` means the key can be used from any IP; an empty list is rejected.
               Only private keys can have an IP whitelist.
             example:
@@ -17015,6 +17016,21 @@ components:
             title: api_key_ip_whitelist
           description: Public IPv4 addresses allowed to use the api key. Absent when
             the key can be used from any IP.
+        ip_whitelist_mode:
+          description: |
+            What happens when the key is used from an IP outside its `ip_whitelist`:
+            - `enforce` (default): the request is rejected with 401.
+            - `monitor_strict`: the request is allowed, and every new IP outside the whitelist triggers an alert.
+            - `monitor_suspicious`: the request is allowed, and an alert is triggered only for suspicious IPs: anonymization networks or known malicious networks, or a country or network not seen before for the key. The countries and networks of the whitelist count as already seen.
+            Each IP alerts at most once per key. Alerts appear in the Panel notifications; email is sent at most once a week per company.
+            Use a monitor mode to check which IPs a key is really used from before enforcing the whitelist.
+          enum:
+          - enforce
+          - monitor_strict
+          - monitor_suspicious
+          example: enforce
+          title: api_key_ip_whitelist_mode
+          type: string
         expires_at:
           description: Unix timestamp in seconds of when the api key expires. `null`
             for a key that never expires.
@@ -17091,7 +17107,7 @@ components:
             An api key restricted to some scopes can only create keys with scopes it holds itself.
         ip_whitelist:
           description: |
-            Public IPv4 addresses allowed to use the api key, up to 10. Requests from any other IP are rejected with 401, as if the key did not exist.
+            Public IPv4 addresses allowed to use the api key, up to 10. Requests from any other IP are rejected with 401, as if the key did not exist, unless `ip_whitelist_mode` is a monitor mode.
             Ranges (CIDR), IPv6 and private addresses are not accepted. `null` means the key can be used from any IP; an empty list is rejected.
             Only private keys can have an IP whitelist.
           example:
@@ -17194,7 +17210,7 @@ components:
           ip_whitelist:
             allOf:
             - description: |
-                Public IPv4 addresses allowed to use the api key, up to 10. Requests from any other IP are rejected with 401, as if the key did not exist.
+                Public IPv4 addresses allowed to use the api key, up to 10. Requests from any other IP are rejected with 401, as if the key did not exist, unless `ip_whitelist_mode` is a monitor mode.
                 Ranges (CIDR), IPv6 and private addresses are not accepted. `null` means the key can be used from any IP; an empty list is rejected.
                 Only private keys can have an IP whitelist.
               example:
@@ -17208,6 +17224,21 @@ components:
               title: api_key_ip_whitelist
             description: Public IPv4 addresses allowed to use the api key. Absent
               when the key can be used from any IP.
+          ip_whitelist_mode:
+            description: |
+              What happens when the key is used from an IP outside its `ip_whitelist`:
+              - `enforce` (default): the request is rejected with 401.
+              - `monitor_strict`: the request is allowed, and every new IP outside the whitelist triggers an alert.
+              - `monitor_suspicious`: the request is allowed, and an alert is triggered only for suspicious IPs: anonymization networks or known malicious networks, or a country or network not seen before for the key. The countries and networks of the whitelist count as already seen.
+              Each IP alerts at most once per key. Alerts appear in the Panel notifications; email is sent at most once a week per company.
+              Use a monitor mode to check which IPs a key is really used from before enforcing the whitelist.
+            enum:
+            - enforce
+            - monitor_strict
+            - monitor_suspicious
+            example: enforce
+            title: api_key_ip_whitelist_mode
+            type: string
           expires_at:
             description: Unix timestamp in seconds of when the api key expires. `null`
               for a key that never expires.
@@ -17232,7 +17263,7 @@ components:
         ip_whitelist:
           allOf:
           - description: |
-              Public IPv4 addresses allowed to use the api key, up to 10. Requests from any other IP are rejected with 401, as if the key did not exist.
+              Public IPv4 addresses allowed to use the api key, up to 10. Requests from any other IP are rejected with 401, as if the key did not exist, unless `ip_whitelist_mode` is a monitor mode.
               Ranges (CIDR), IPv6 and private addresses are not accepted. `null` means the key can be used from any IP; an empty list is rejected.
               Only private keys can have an IP whitelist.
             example:
@@ -17247,6 +17278,21 @@ components:
           description: |
             Replaces the IP whitelist of the key. Send the full list: entries not included are removed. Send `null` to let the key be used from any IP, or omit the field to keep the current list.
             Up to 10 public IPv4 addresses; ranges (CIDR), IPv6, private addresses and empty lists are rejected. Only private keys can have an IP whitelist.
+        ip_whitelist_mode:
+          description: |
+            What happens when the key is used from an IP outside its `ip_whitelist`:
+            - `enforce` (default): the request is rejected with 401.
+            - `monitor_strict`: the request is allowed, and every new IP outside the whitelist triggers an alert.
+            - `monitor_suspicious`: the request is allowed, and an alert is triggered only for suspicious IPs: anonymization networks or known malicious networks, or a country or network not seen before for the key. The countries and networks of the whitelist count as already seen.
+            Each IP alerts at most once per key. Alerts appear in the Panel notifications; email is sent at most once a week per company.
+            Use a monitor mode to check which IPs a key is really used from before enforcing the whitelist.
+          enum:
+          - enforce
+          - monitor_strict
+          - monitor_suspicious
+          example: enforce
+          title: api_key_ip_whitelist_mode
+          type: string
         expires_in_seconds:
           description: |
             Makes the key expire this many seconds from now, at most 604800 (7 days); `0` expires it immediately. It can only shorten the life of the key: if the key already expires sooner, its expiry is kept.
@@ -17318,7 +17364,7 @@ components:
           ip_whitelist:
             allOf:
             - description: |
-                Public IPv4 addresses allowed to use the api key, up to 10. Requests from any other IP are rejected with 401, as if the key did not exist.
+                Public IPv4 addresses allowed to use the api key, up to 10. Requests from any other IP are rejected with 401, as if the key did not exist, unless `ip_whitelist_mode` is a monitor mode.
                 Ranges (CIDR), IPv6 and private addresses are not accepted. `null` means the key can be used from any IP; an empty list is rejected.
                 Only private keys can have an IP whitelist.
               example:
@@ -17332,6 +17378,21 @@ components:
               title: api_key_ip_whitelist
             description: Public IPv4 addresses allowed to use the api key. Absent
               when the key can be used from any IP.
+          ip_whitelist_mode:
+            description: |
+              What happens when the key is used from an IP outside its `ip_whitelist`:
+              - `enforce` (default): the request is rejected with 401.
+              - `monitor_strict`: the request is allowed, and every new IP outside the whitelist triggers an alert.
+              - `monitor_suspicious`: the request is allowed, and an alert is triggered only for suspicious IPs: anonymization networks or known malicious networks, or a country or network not seen before for the key. The countries and networks of the whitelist count as already seen.
+              Each IP alerts at most once per key. Alerts appear in the Panel notifications; email is sent at most once a week per company.
+              Use a monitor mode to check which IPs a key is really used from before enforcing the whitelist.
+            enum:
+            - enforce
+            - monitor_strict
+            - monitor_suspicious
+            example: enforce
+            title: api_key_ip_whitelist_mode
+            type: string
           expires_at:
             description: Unix timestamp in seconds of when the api key expires. `null`
               for a key that never expires.

@@ -40,7 +40,7 @@ put:
     - Api Keys
   operationId: updateApiKey
   summary: Update Api Key
-  description: "Updates an existing api key: activate or deactivate it, change its description or IP whitelist, or shorten its life to rotate it. Public keys cannot be updated or deleted while they are the only public key."
+  description: "Updates an existing api key: activate or deactivate it, change its description, IP whitelist or IP whitelist mode, or shorten its life to rotate it. Public keys cannot be updated or deleted while they are the only public key."
   responses:
     "200":
       description: successful operation
