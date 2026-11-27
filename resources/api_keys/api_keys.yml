@@ -32,6 +32,8 @@ get:
             example: conekta-v2.3.0; format=application/json
     401:
       $ref: "../errors/401.yml"
+    403:
+      $ref: "../errors/403.yml"
     500:
       $ref: "../errors/500.yml"
   security:
@@ -53,7 +55,7 @@ post:
     - Api Keys
   operationId: createApiKey
   summary: Create Api Key
-  description: "Create a api key"
+  description: "Creates an api key. Private keys require at least one scope, and can be restricted to an IP whitelist and given an expiry."
   responses:
     200:
       description: successful operation
@@ -66,8 +68,8 @@ post:
                 properties:
                   authentication_token:
                     type: string
-                    example: key_rpHzxufNgjFCdprEEFZRTKi
-                    description: It is occupied as a user when authenticated with basic authentication, with a blank password. This value will only appear once, in the request to create a new key. Copy and save it in a safe place.
+                    example: key_u8jzPde0IgxLd6GncfBAepfJBd0Kh8oOOL8dKLzdocJ2isAjIhKtJ0RlgLKOmxgJTeKdNnFRIBXuDL7DxtpYlSXpfKtHF4vUCsMe
+                    description: The full api key. Send it as a bearer token, or as the username of basic authentication with a blank password. For private keys it is returned only in this response, because Conekta does not store it; copy it to a secret manager right away.
               - $ref: "../../schemas/api_keys/api_key_response.yml"
       headers:
         Content-Type:
@@ -81,6 +83,8 @@ post:
             example: conekta-v2.3.0; format=application/json
     401:
       $ref: "../errors/401.yml"
+    403:
+      $ref: "../errors/403.yml"
     422:
       $ref: "../errors/422.yml"
     500:

@@ -625,6 +625,21 @@ paths:
               schema:
                 $ref: "#/components/schemas/error"
           description: authentication error
+        "403":
+          content:
+            application/vnd.conekta-v2.3.0+json:
+              example:
+                details:
+                - message: "Unauthorized access service, please contact support team"
+                  code: conekta.errors.forbidden.authentication.invalid_whitelist_access
+                  debug_message: "Unauthorized access to whitelists service, please\
+                    \ contact support team"
+                log_id: 641b6d073cd9a50001515007
+                object: error
+                type: processing_error
+              schema:
+                $ref: "#/components/schemas/error"
+          description: forbidden error
         "500":
           content:
             application/vnd.conekta-v2.3.0+json:
@@ -647,7 +662,8 @@ paths:
       tags:
       - Api Keys
     post:
-      description: Create a api key
+      description: "Creates an api key. Private keys require at least one scope, and\
+        \ can be restricted to an IP whitelist and given an expiry."
       operationId: createApiKey
       parameters:
       - description: Use for knowing which language to use
@@ -720,6 +736,21 @@ paths:
               schema:
                 $ref: "#/components/schemas/error"
           description: authentication error
+        "403":
+          content:
+            application/vnd.conekta-v2.3.0+json:
+              example:
+                details:
+                - message: "Unauthorized access service, please contact support team"
+                  code: conekta.errors.forbidden.authentication.invalid_whitelist_access
+                  debug_message: "Unauthorized access to whitelists service, please\
+                    \ contact support team"
+                log_id: 641b6d073cd9a50001515007
+                object: error
+                type: processing_error
+              schema:
+                $ref: "#/components/schemas/error"
+          description: forbidden error
         "422":
           content:
             application/vnd.conekta-v2.3.0+json:
@@ -758,7 +789,9 @@ paths:
       - Api Keys
   /api_keys/{id}:
     delete:
-      description: Deletes a api key that corresponds to a api key ID
+      description: "Deletes an api key that corresponds to an api key ID. The key\
+        \ stops working immediately and the deletion cannot be undone; to stop using\
+        \ a key reversibly, deactivate it instead."
       operationId: deleteApiKey
       parameters:
       - description: Identifier of the resource
@@ -823,6 +856,21 @@ paths:
               schema:
                 $ref: "#/components/schemas/error"
           description: authentication error
+        "403":
+          content:
+            application/vnd.conekta-v2.3.0+json:
+              example:
+                details:
+                - message: "Unauthorized access service, please contact support team"
+                  code: conekta.errors.forbidden.authentication.invalid_whitelist_access
+                  debug_message: "Unauthorized access to whitelists service, please\
+                    \ contact support team"
+                log_id: 641b6d073cd9a50001515007
+                object: error
+                type: processing_error
+              schema:
+                $ref: "#/components/schemas/error"
+          description: forbidden error
         "404":
           content:
             application/vnd.conekta-v2.3.0+json:
@@ -838,6 +886,21 @@ paths:
               schema:
                 $ref: "#/components/schemas/error"
           description: not found entity
+        "422":
+          content:
+            application/vnd.conekta-v2.3.0+json:
+              example:
+                details:
+                - message: The token does not exist.
+                  param: payment_method.token_id
+                  code: conekta.errors.parameter_validation.payment_method.token_id.nonexistent_token
+                  debug_message: The token does not exist.
+                log_id: 641b6d813cd9a50001515017
+                object: error
+                type: parameter_validation_error
+              schema:
+                $ref: "#/components/schemas/error"
+          description: parameter validation error
         "500":
           content:
             application/vnd.conekta-v2.3.0+json:
@@ -860,7 +923,8 @@ paths:
       tags:
       - Api Keys
     get:
-      description: Gets a api key that corresponds to a api key ID
+      description: Gets an api key that corresponds to an api key ID. The authentication_token
+        of a private key is only returned when the key is created.
       operationId: getApiKey
       parameters:
       - description: Identifier of the resource
@@ -935,6 +999,21 @@ paths:
               schema:
                 $ref: "#/components/schemas/error"
           description: authentication error
+        "403":
+          content:
+            application/vnd.conekta-v2.3.0+json:
+              example:
+                details:
+                - message: "Unauthorized access service, please contact support team"
+                  code: conekta.errors.forbidden.authentication.invalid_whitelist_access
+                  debug_message: "Unauthorized access to whitelists service, please\
+                    \ contact support team"
+                log_id: 641b6d073cd9a50001515007
+                object: error
+                type: processing_error
+              schema:
+                $ref: "#/components/schemas/error"
+          description: forbidden error
         "404":
           content:
             application/vnd.conekta-v2.3.0+json:
@@ -972,7 +1051,10 @@ paths:
       tags:
       - Api Keys
     put:
-      description: Update an existing api key
+      description: "Updates an existing api key: activate or deactivate it, change\
+        \ its description, IP whitelist or IP whitelist mode, or shorten its life\
+        \ to rotate it. Public keys cannot be updated or deleted while they are the\
+        \ only public key."
       operationId: updateApiKey
       parameters:
       - description: Identifier of the resource
@@ -1015,6 +1097,34 @@ paths:
               schema:
                 $ref: "#/components/schemas/api_key_response"
           description: successful operation
+        "401":
+          content:
+            application/vnd.conekta-v2.3.0+json:
+              example:
+                details:
+                - message: Please include your access key in your request.
+                  code: conekta.errors.authentication.missing_key
+                log_id: 507f1f77bcf86cd799439011
+                object: error
+                type: authentication_error
+              schema:
+                $ref: "#/components/schemas/error"
+          description: authentication error
+        "403":
+          content:
+            application/vnd.conekta-v2.3.0+json:
+              example:
+                details:
+                - message: "Unauthorized access service, please contact support team"
+                  code: conekta.errors.forbidden.authentication.invalid_whitelist_access
+                  debug_message: "Unauthorized access to whitelists service, please\
+                    \ contact support team"
+                log_id: 641b6d073cd9a50001515007
+                object: error
+                type: processing_error
+              schema:
+                $ref: "#/components/schemas/error"
+          description: forbidden error
         "404":
           content:
             application/vnd.conekta-v2.3.0+json:
@@ -1030,19 +1140,21 @@ paths:
               schema:
                 $ref: "#/components/schemas/error"
           description: not found entity
-        "401":
+        "422":
           content:
             application/vnd.conekta-v2.3.0+json:
               example:
                 details:
-                - message: Please include your access key in your request.
-                  code: conekta.errors.authentication.missing_key
-                log_id: 507f1f77bcf86cd799439011
+                - message: The token does not exist.
+                  param: payment_method.token_id
+                  code: conekta.errors.parameter_validation.payment_method.token_id.nonexistent_token
+                  debug_message: The token does not exist.
+                log_id: 641b6d813cd9a50001515017
                 object: error
-                type: authentication_error
+                type: parameter_validation_error
               schema:
                 $ref: "#/components/schemas/error"
-          description: authentication error
+          description: parameter validation error
         "500":
           content:
             application/vnd.conekta-v2.3.0+json:
@@ -16872,6 +16984,60 @@ components:
           description: Indicates if the api key is private or public
           example: private
           type: string
+        scopes:
+          allOf:
+          - description: |
+              Permissions of the api key, in `resource:action` form. A `write` scope also grants the `read` scope of the same resource.
+              Available scopes: `antifraud`, `api_keys`, `balances`, `charges`, `checkouts`, `company_users`, `customers`, `events`, `orders`, `partner_center`, `payouts`, `reports`, `settings`, `subscriptions`, `transfers` and `webhooks` with `:read` or `:write`; `logs:read`, `receipts:read`, `transactions:read` and `tokens:write`.
+              A request to an endpoint whose scope the key does not hold is answered with 403.
+            example:
+            - orders:write
+            - customers:read
+            items:
+              type: string
+            title: api_key_scopes
+          description: "Permissions of the api key. Public keys have `tokens:write`.\
+            \ Absent on keys created before scopes existed, which can access every\
+            \ endpoint."
+        ip_whitelist:
+          allOf:
+          - description: |
+              Public IPv4 addresses allowed to use the api key, up to 10. Requests from any other IP are rejected with 401, as if the key did not exist, unless `ip_whitelist_mode` is a monitor mode.
+              Ranges (CIDR), IPv6 and private addresses are not accepted. `null` means the key can be used from any IP; an empty list is rejected.
+              Only private keys can have an IP whitelist.
+            example:
+            - 203.0.113.7
+            - 198.51.100.24
+            items:
+              type: string
+            maxItems: 10
+            minItems: 1
+            nullable: true
+            title: api_key_ip_whitelist
+          description: Public IPv4 addresses allowed to use the api key. Absent when
+            the key can be used from any IP.
+        ip_whitelist_mode:
+          description: |
+            What happens when the key is used from an IP outside its `ip_whitelist`:
+            - `enforce` (default): the request is rejected with 401.
+            - `monitor_strict`: the request is allowed, and every new IP outside the whitelist triggers an alert.
+            - `monitor_suspicious`: the request is allowed, and an alert is triggered only for suspicious IPs: anonymization networks or known malicious networks, or a country or network not seen before for the key. The countries and networks of the whitelist count as already seen.
+            Each IP alerts at most once per key. Alerts appear in the Panel notifications; email is sent at most once a week per company.
+            Use a monitor mode to check which IPs a key is really used from before enforcing the whitelist.
+          enum:
+          - enforce
+          - monitor_strict
+          - monitor_suspicious
+          example: enforce
+          title: api_key_ip_whitelist_mode
+          type: string
+        expires_at:
+          description: Unix timestamp in seconds of when the api key expires. `null`
+            for a key that never expires.
+          example: 1692029881
+          format: int64
+          nullable: true
+          type: integer
       title: api_key_response
     get_api_keys_response:
       allOf:
@@ -16915,21 +17081,65 @@ components:
           example: online store
           type: string
         role:
+          description: "Indicates if the api key is private or public. A company can\
+            \ have only one public key, and up to 10 private keys per mode (live and\
+            \ test) that have not expired."
+          enum:
+          - private
+          - public
           example: private
           type: string
-          descripción: Indicates if the api key is private or public
+        scopes:
+          allOf:
+          - description: |
+              Permissions of the api key, in `resource:action` form. A `write` scope also grants the `read` scope of the same resource.
+              Available scopes: `antifraud`, `api_keys`, `balances`, `charges`, `checkouts`, `company_users`, `customers`, `events`, `orders`, `partner_center`, `payouts`, `reports`, `settings`, `subscriptions`, `transfers` and `webhooks` with `:read` or `:write`; `logs:read`, `receipts:read`, `transactions:read` and `tokens:write`.
+              A request to an endpoint whose scope the key does not hold is answered with 403.
+            example:
+            - orders:write
+            - customers:read
+            items:
+              type: string
+            title: api_key_scopes
+          description: |
+            Required for private keys: list at least one scope. Grant only the scopes the integration needs.
+            Ignored for public keys, which always get `tokens:write`.
+            An api key restricted to some scopes can only create keys with scopes it holds itself.
+        ip_whitelist:
+          description: |
+            Public IPv4 addresses allowed to use the api key, up to 10. Requests from any other IP are rejected with 401, as if the key did not exist, unless `ip_whitelist_mode` is a monitor mode.
+            Ranges (CIDR), IPv6 and private addresses are not accepted. `null` means the key can be used from any IP; an empty list is rejected.
+            Only private keys can have an IP whitelist.
+          example:
+          - 203.0.113.7
+          - 198.51.100.24
+          items:
+            type: string
+          maxItems: 10
+          minItems: 1
+          nullable: true
+          title: api_key_ip_whitelist
+          type: array
+        expires_in_seconds:
+          description: |
+            Lifetime of the key, counted from its creation. One of `604800` (7 days), `2592000` (30 days), `7776000` (90 days), `15552000` (180 days) or `31536000` (365 days); `null` or omitted for a key that never expires.
+            Only private keys can expire. An expired key is rejected with 401.
+          example: 7776000
+          format: int64
+          nullable: true
+          type: integer
       required:
       - role
       title: api_key_request
-      name: api_key_request
     api_key_create_response:
       allOf:
       - properties:
           authentication_token:
-            description: "It is occupied as a user when authenticated with basic authentication,\
-              \ with a blank password. This value will only appear once, in the request\
-              \ to create a new key. Copy and save it in a safe place."
-            example: key_rpHzxufNgjFCdprEEFZRTKi
+            description: "The full api key. Send it as a bearer token, or as the username\
+              \ of basic authentication with a blank password. For private keys it\
+              \ is returned only in this response, because Conekta does not store\
+              \ it; copy it to a secret manager right away."
+            example: key_u8jzPde0IgxLd6GncfBAepfJBd0Kh8oOOL8dKLzdocJ2isAjIhKtJ0RlgLKOmxgJTeKdNnFRIBXuDL7DxtpYlSXpfKtHF4vUCsMe
             type: string
       - description: api keys model
         properties:
@@ -16982,18 +17192,116 @@ components:
             description: Indicates if the api key is private or public
             example: private
             type: string
+          scopes:
+            allOf:
+            - description: |
+                Permissions of the api key, in `resource:action` form. A `write` scope also grants the `read` scope of the same resource.
+                Available scopes: `antifraud`, `api_keys`, `balances`, `charges`, `checkouts`, `company_users`, `customers`, `events`, `orders`, `partner_center`, `payouts`, `reports`, `settings`, `subscriptions`, `transfers` and `webhooks` with `:read` or `:write`; `logs:read`, `receipts:read`, `transactions:read` and `tokens:write`.
+                A request to an endpoint whose scope the key does not hold is answered with 403.
+              example:
+              - orders:write
+              - customers:read
+              items:
+                type: string
+              title: api_key_scopes
+            description: "Permissions of the api key. Public keys have `tokens:write`.\
+              \ Absent on keys created before scopes existed, which can access every\
+              \ endpoint."
+          ip_whitelist:
+            allOf:
+            - description: |
+                Public IPv4 addresses allowed to use the api key, up to 10. Requests from any other IP are rejected with 401, as if the key did not exist, unless `ip_whitelist_mode` is a monitor mode.
+                Ranges (CIDR), IPv6 and private addresses are not accepted. `null` means the key can be used from any IP; an empty list is rejected.
+                Only private keys can have an IP whitelist.
+              example:
+              - 203.0.113.7
+              - 198.51.100.24
+              items:
+                type: string
+              maxItems: 10
+              minItems: 1
+              nullable: true
+              title: api_key_ip_whitelist
+            description: Public IPv4 addresses allowed to use the api key. Absent
+              when the key can be used from any IP.
+          ip_whitelist_mode:
+            description: |
+              What happens when the key is used from an IP outside its `ip_whitelist`:
+              - `enforce` (default): the request is rejected with 401.
+              - `monitor_strict`: the request is allowed, and every new IP outside the whitelist triggers an alert.
+              - `monitor_suspicious`: the request is allowed, and an alert is triggered only for suspicious IPs: anonymization networks or known malicious networks, or a country or network not seen before for the key. The countries and networks of the whitelist count as already seen.
+              Each IP alerts at most once per key. Alerts appear in the Panel notifications; email is sent at most once a week per company.
+              Use a monitor mode to check which IPs a key is really used from before enforcing the whitelist.
+            enum:
+            - enforce
+            - monitor_strict
+            - monitor_suspicious
+            example: enforce
+            title: api_key_ip_whitelist_mode
+            type: string
+          expires_at:
+            description: Unix timestamp in seconds of when the api key expires. `null`
+              for a key that never expires.
+            example: 1692029881
+            format: int64
+            nullable: true
+            type: integer
         title: api_key_response
       title: api_key_create_response
     api_key_update_request:
       properties:
         active:
-          description: Indicates if the webhook key is active
+          description: Indicates if the api key is active. A deactivated key is deleted
+            3 days later unless it is reactivated first. The original private key
+            cannot be deactivated.
           example: true
           type: boolean
         description:
           description: A name or brief explanation of what this api key is used for
           example: online store
           type: string
+        ip_whitelist:
+          allOf:
+          - description: |
+              Public IPv4 addresses allowed to use the api key, up to 10. Requests from any other IP are rejected with 401, as if the key did not exist, unless `ip_whitelist_mode` is a monitor mode.
+              Ranges (CIDR), IPv6 and private addresses are not accepted. `null` means the key can be used from any IP; an empty list is rejected.
+              Only private keys can have an IP whitelist.
+            example:
+            - 203.0.113.7
+            - 198.51.100.24
+            items:
+              type: string
+            maxItems: 10
+            minItems: 1
+            nullable: true
+            title: api_key_ip_whitelist
+          description: |
+            Replaces the IP whitelist of the key. Send the full list: entries not included are removed. Send `null` to let the key be used from any IP, or omit the field to keep the current list.
+            Up to 10 public IPv4 addresses; ranges (CIDR), IPv6, private addresses and empty lists are rejected. Only private keys can have an IP whitelist.
+        ip_whitelist_mode:
+          description: |
+            What happens when the key is used from an IP outside its `ip_whitelist`:
+            - `enforce` (default): the request is rejected with 401.
+            - `monitor_strict`: the request is allowed, and every new IP outside the whitelist triggers an alert.
+            - `monitor_suspicious`: the request is allowed, and an alert is triggered only for suspicious IPs: anonymization networks or known malicious networks, or a country or network not seen before for the key. The countries and networks of the whitelist count as already seen.
+            Each IP alerts at most once per key. Alerts appear in the Panel notifications; email is sent at most once a week per company.
+            Use a monitor mode to check which IPs a key is really used from before enforcing the whitelist.
+          enum:
+          - enforce
+          - monitor_strict
+          - monitor_suspicious
+          example: enforce
+          title: api_key_ip_whitelist_mode
+          type: string
+        expires_in_seconds:
+          description: |
+            Makes the key expire this many seconds from now, at most 604800 (7 days); `0` expires it immediately. It can only shorten the life of the key: if the key already expires sooner, its expiry is kept.
+            Use it to rotate a key: create the new key, then set a grace period on the old one while your integration switches over. Only private keys can expire.
+          example: 86400
+          format: int64
+          maximum: 604800
+          minimum: 0
+          type: integer
       title: api_key_update_request
     delete_api_keys_response:
       allOf:
@@ -17038,6 +17346,60 @@ components:
             description: Indicates if the api key is private or public
             example: private
             type: string
+          scopes:
+            allOf:
+            - description: |
+                Permissions of the api key, in `resource:action` form. A `write` scope also grants the `read` scope of the same resource.
+                Available scopes: `antifraud`, `api_keys`, `balances`, `charges`, `checkouts`, `company_users`, `customers`, `events`, `orders`, `partner_center`, `payouts`, `reports`, `settings`, `subscriptions`, `transfers` and `webhooks` with `:read` or `:write`; `logs:read`, `receipts:read`, `transactions:read` and `tokens:write`.
+                A request to an endpoint whose scope the key does not hold is answered with 403.
+              example:
+              - orders:write
+              - customers:read
+              items:
+                type: string
+              title: api_key_scopes
+            description: "Permissions of the api key. Public keys have `tokens:write`.\
+              \ Absent on keys created before scopes existed, which can access every\
+              \ endpoint."
+          ip_whitelist:
+            allOf:
+            - description: |
+                Public IPv4 addresses allowed to use the api key, up to 10. Requests from any other IP are rejected with 401, as if the key did not exist, unless `ip_whitelist_mode` is a monitor mode.
+                Ranges (CIDR), IPv6 and private addresses are not accepted. `null` means the key can be used from any IP; an empty list is rejected.
+                Only private keys can have an IP whitelist.
+              example:
+              - 203.0.113.7
+              - 198.51.100.24
+              items:
+                type: string
+              maxItems: 10
+              minItems: 1
+              nullable: true
+              title: api_key_ip_whitelist
+            description: Public IPv4 addresses allowed to use the api key. Absent
+              when the key can be used from any IP.
+          ip_whitelist_mode:
+            description: |
+              What happens when the key is used from an IP outside its `ip_whitelist`:
+              - `enforce` (default): the request is rejected with 401.
+              - `monitor_strict`: the request is allowed, and every new IP outside the whitelist triggers an alert.
+              - `monitor_suspicious`: the request is allowed, and an alert is triggered only for suspicious IPs: anonymization networks or known malicious networks, or a country or network not seen before for the key. The countries and networks of the whitelist count as already seen.
+              Each IP alerts at most once per key. Alerts appear in the Panel notifications; email is sent at most once a week per company.
+              Use a monitor mode to check which IPs a key is really used from before enforcing the whitelist.
+            enum:
+            - enforce
+            - monitor_strict
+            - monitor_suspicious
+            example: enforce
+            title: api_key_ip_whitelist_mode
+            type: string
+          expires_at:
+            description: Unix timestamp in seconds of when the api key expires. `null`
+              for a key that never expires.
+            example: 1692029881
+            format: int64
+            nullable: true
+            type: integer
         title: api_key_response_delete
       - properties:
           deleted:

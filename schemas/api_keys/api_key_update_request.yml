@@ -1,0 +1,31 @@
+title: api_key_update_request
+type: object
+properties:
+  active:
+    type: boolean
+    example: true
+    description: Indicates if the api key is active. A deactivated key is deleted 3 days later unless it is reactivated first. The original private key cannot be deactivated.
+  description:
+    type: string
+    example: online store
+    description: A name or brief explanation of what this api key is used for
+  ip_whitelist:
+    allOf:
+      - $ref: "./api_key_ip_whitelist.yml"
+    description: |
+      Replaces the IP whitelist of the key. Send the full list: entries not included are removed. Send `null` to let the key be used from any IP, or omit the field to keep the current list.
+      Up to 10 public IPv4 addresses; ranges (CIDR), IPv6, private addresses and empty lists are rejected. Only private keys can have an IP whitelist.
+  ip_whitelist_mode:
+    allOf:
+      - $ref: "./api_key_ip_whitelist_mode.yml"
+    description: |
+      Sets what happens when the key is used from an IP outside its `ip_whitelist`: `enforce` rejects the request, `monitor_strict` and `monitor_suspicious` allow it and alert. Only private keys accept it.
+  expires_in_seconds:
+    type: integer
+    minimum: 0
+    maximum: 604800
+    description: |
+      Makes the key expire this many seconds from now, at most 604800 (7 days); `0` expires it immediately. It can only shorten the life of the key: if the key already expires sooner, its expiry is kept.
+      Use it to rotate a key: create the new key, then set a grace period on the old one while your integration switches over. Only private keys can expire.
+    example: 86400
+    format: int64

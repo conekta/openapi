@@ -1,0 +1,14 @@
+title: api_key_ip_whitelist_mode
+type: string
+enum:
+  - enforce
+  - monitor_strict
+  - monitor_suspicious
+description: |
+  What happens when the key is used from an IP outside its `ip_whitelist`:
+  - `enforce` (default): the request is rejected with 401.
+  - `monitor_strict`: the request is allowed, and every new IP outside the whitelist triggers an alert.
+  - `monitor_suspicious`: the request is allowed, and an alert is triggered only for suspicious IPs: anonymization networks or known malicious networks, or a country or network not seen before for the key. The countries and networks of the whitelist count as already seen.
+  Each IP alerts at most once per key. Alerts appear in the Panel notifications; email is sent at most once a week per company.
+  Use a monitor mode to check which IPs a key is really used from before enforcing the whitelist.
+example: enforce
